@@ -33,12 +33,13 @@ public class AFND extends javax.swing.JFrame {
         jInternalFrame1.setLocation(100, 160);
         this.jLabel1.setBackground(Color.BLACK);
         
+        
     }
     private void iniciaTitulo(){
         Font n = new Font("Comic Sans MS",1,36);
         Map attributes = n.getAttributes();
         attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
-        Titulo.setFont(n.deriveFont(attributes));
+        AFND2_Titulo.setFont(n.deriveFont(attributes));
         
     }
 
@@ -54,7 +55,32 @@ public class AFND extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jInternalFrame1 = new javax.swing.JInternalFrame();
         jPanel4 = new javax.swing.JPanel();
+        Config_AFND = new javax.swing.JPanel();
+        AFND2_InternalPanel = new javax.swing.JPanel();
+        AFND2_LabelAlfabeto = new javax.swing.JLabel();
+        AFND2_LabelEstadosFinais = new javax.swing.JLabel();
+        AFND2_LabelEstados = new javax.swing.JLabel();
+        AFND2_LabelEstadoInicial = new javax.swing.JLabel();
+        AFND2_LabelTabelaTransicao = new javax.swing.JLabel();
+        AFND2_TextFieldAlfabeto = new javax.swing.JTextField();
+        AFND2_jScrollPane2 = new javax.swing.JScrollPane();
+        AFND2_jTable1 = new javax.swing.JTable();
+        AFND2_TextFieldEstados = new javax.swing.JTextField();
+        AFND2_TextFieldEstadoInicial = new javax.swing.JTextField();
+        AFND2_TextFieldEstadosFinais = new javax.swing.JTextField();
+        AFND2_Titulo = new javax.swing.JLabel();
+        AFND2_HelpIcon = new javax.swing.JLabel();
+        AFND2_Titulo1 = new javax.swing.JLabel();
+        Result_AFND = new javax.swing.JPanel();
+        AFND3_Titulo1 = new javax.swing.JLabel();
+        AFND3_HelpIcon = new javax.swing.JLabel();
+        AFND3_Titulo2 = new javax.swing.JLabel();
+        AFND3_jScrollPane2 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
+        AFND3_Titulo3 = new javax.swing.JLabel();
+        AFND3_TextFieldEntrada = new javax.swing.JTextField();
         jPanel5 = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
         Titulo2 = new javax.swing.JLabel();
         Titulo3 = new javax.swing.JLabel();
         Titulo4 = new javax.swing.JLabel();
@@ -94,6 +120,285 @@ public class AFND extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(70, 71, 74));
         jPanel4.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel4.setLayout(new java.awt.CardLayout());
+
+        Config_AFND.setBackground(new java.awt.Color(70, 71, 74));
+
+        AFND2_LabelAlfabeto.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        AFND2_LabelAlfabeto.setForeground(new java.awt.Color(255, 255, 255));
+        AFND2_LabelAlfabeto.setText("Alfabeto");
+
+        AFND2_LabelEstadosFinais.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        AFND2_LabelEstadosFinais.setForeground(new java.awt.Color(255, 255, 255));
+        AFND2_LabelEstadosFinais.setText("Estados Finais");
+
+        AFND2_LabelEstados.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        AFND2_LabelEstados.setForeground(new java.awt.Color(255, 255, 255));
+        AFND2_LabelEstados.setText("Estados");
+
+        AFND2_LabelEstadoInicial.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        AFND2_LabelEstadoInicial.setForeground(new java.awt.Color(255, 255, 255));
+        AFND2_LabelEstadoInicial.setText("Estado Inicial");
+
+        AFND2_LabelTabelaTransicao.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        AFND2_LabelTabelaTransicao.setForeground(new java.awt.Color(255, 255, 255));
+        AFND2_LabelTabelaTransicao.setText("Tabela de transição");
+
+        AFND2_TextFieldAlfabeto.setBackground(new java.awt.Color(255, 255, 255));
+        AFND2_TextFieldAlfabeto.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        AFND2_TextFieldAlfabeto.setForeground(new java.awt.Color(0, 0, 0));
+        AFND2_TextFieldAlfabeto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        AFND2_TextFieldAlfabeto.setText("0,1");
+        AFND2_TextFieldAlfabeto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AFND2_TextFieldAlfabetoActionPerformed(evt);
+            }
+        });
+
+        AFND2_jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        AFND2_jScrollPane2.setViewportView(AFND2_jTable1);
+
+        AFND2_TextFieldEstados.setBackground(new java.awt.Color(255, 255, 255));
+        AFND2_TextFieldEstados.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        AFND2_TextFieldEstados.setForeground(new java.awt.Color(0, 0, 0));
+        AFND2_TextFieldEstados.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        AFND2_TextFieldEstados.setText("[q0,q1]");
+
+        AFND2_TextFieldEstadoInicial.setBackground(new java.awt.Color(255, 255, 255));
+        AFND2_TextFieldEstadoInicial.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        AFND2_TextFieldEstadoInicial.setForeground(new java.awt.Color(0, 0, 0));
+        AFND2_TextFieldEstadoInicial.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        AFND2_TextFieldEstadoInicial.setText("q0");
+        AFND2_TextFieldEstadoInicial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AFND2_TextFieldEstadoInicialActionPerformed(evt);
+            }
+        });
+
+        AFND2_TextFieldEstadosFinais.setBackground(new java.awt.Color(255, 255, 255));
+        AFND2_TextFieldEstadosFinais.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        AFND2_TextFieldEstadosFinais.setForeground(new java.awt.Color(0, 0, 0));
+        AFND2_TextFieldEstadosFinais.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        AFND2_TextFieldEstadosFinais.setText("q1");
+        AFND2_TextFieldEstadosFinais.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AFND2_TextFieldEstadosFinaisActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout AFND2_InternalPanelLayout = new javax.swing.GroupLayout(AFND2_InternalPanel);
+        AFND2_InternalPanel.setLayout(AFND2_InternalPanelLayout);
+        AFND2_InternalPanelLayout.setHorizontalGroup(
+            AFND2_InternalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AFND2_InternalPanelLayout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addGroup(AFND2_InternalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(AFND2_LabelTabelaTransicao)
+                    .addGroup(AFND2_InternalPanelLayout.createSequentialGroup()
+                        .addComponent(AFND2_LabelAlfabeto)
+                        .addGap(155, 155, 155)
+                        .addComponent(AFND2_TextFieldAlfabeto, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(AFND2_InternalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(AFND2_jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(AFND2_InternalPanelLayout.createSequentialGroup()
+                            .addComponent(AFND2_LabelEstadosFinais)
+                            .addGap(89, 89, 89)
+                            .addComponent(AFND2_TextFieldEstadosFinais))
+                        .addGroup(AFND2_InternalPanelLayout.createSequentialGroup()
+                            .addGroup(AFND2_InternalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(AFND2_LabelEstadoInicial)
+                                .addComponent(AFND2_LabelEstados))
+                            .addGap(96, 96, 96)
+                            .addGroup(AFND2_InternalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(AFND2_TextFieldEstados, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(AFND2_TextFieldEstadoInicial, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(92, Short.MAX_VALUE))
+        );
+        AFND2_InternalPanelLayout.setVerticalGroup(
+            AFND2_InternalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AFND2_InternalPanelLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(AFND2_InternalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AFND2_LabelAlfabeto)
+                    .addComponent(AFND2_TextFieldAlfabeto, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(AFND2_InternalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AFND2_InternalPanelLayout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(AFND2_LabelEstadosFinais))
+                    .addComponent(AFND2_TextFieldEstadosFinais, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9)
+                .addGroup(AFND2_InternalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(AFND2_LabelEstadoInicial)
+                    .addComponent(AFND2_TextFieldEstadoInicial, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(AFND2_InternalPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AFND2_LabelEstados)
+                    .addComponent(AFND2_TextFieldEstados, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(AFND2_LabelTabelaTransicao)
+                .addGap(18, 18, 18)
+                .addComponent(AFND2_jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(78, Short.MAX_VALUE))
+        );
+
+        AFND2_Titulo.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
+        AFND2_Titulo.setForeground(new java.awt.Color(255, 255, 255));
+        AFND2_Titulo.setText("<html><p style=\"padding-bottom: 16px;\">Autômato FND</p></html>");
+        AFND2_Titulo.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
+
+        AFND2_HelpIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lf/studio/ícone - ajuda.png"))); // NOI18N
+        AFND2_HelpIcon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                AFND2_HelpIconMouseEntered(evt);
+            }
+        });
+
+        AFND2_Titulo1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        AFND2_Titulo1.setForeground(new java.awt.Color(255, 255, 255));
+        AFND2_Titulo1.setText("Configuração");
+
+        javax.swing.GroupLayout Config_AFNDLayout = new javax.swing.GroupLayout(Config_AFND);
+        Config_AFND.setLayout(Config_AFNDLayout);
+        Config_AFNDLayout.setHorizontalGroup(
+            Config_AFNDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Config_AFNDLayout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addComponent(AFND2_InternalPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(174, Short.MAX_VALUE))
+            .addGroup(Config_AFNDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(Config_AFNDLayout.createSequentialGroup()
+                    .addGap(44, 44, 44)
+                    .addGroup(Config_AFNDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(AFND2_Titulo1)
+                        .addGroup(Config_AFNDLayout.createSequentialGroup()
+                            .addComponent(AFND2_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(AFND2_HelpIcon)))
+                    .addContainerGap(379, Short.MAX_VALUE)))
+        );
+        Config_AFNDLayout.setVerticalGroup(
+            Config_AFNDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Config_AFNDLayout.createSequentialGroup()
+                .addContainerGap(184, Short.MAX_VALUE)
+                .addComponent(AFND2_InternalPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(93, 93, 93))
+            .addGroup(Config_AFNDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(Config_AFNDLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(Config_AFNDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(AFND2_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Config_AFNDLayout.createSequentialGroup()
+                            .addGap(10, 10, 10)
+                            .addComponent(AFND2_HelpIcon)))
+                    .addGap(57, 57, 57)
+                    .addComponent(AFND2_Titulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(527, Short.MAX_VALUE)))
+        );
+
+        jPanel4.add(Config_AFND, "Config AFND");
+
+        AFND3_Titulo1.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
+        AFND3_Titulo1.setForeground(new java.awt.Color(255, 255, 255));
+        AFND3_Titulo1.setText("<html><p style=\"padding-bottom: 16px;\">Autômato FND</p></html>");
+        AFND3_Titulo1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
+
+        AFND3_HelpIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/lf/studio/ícone - ajuda.png"))); // NOI18N
+        AFND3_HelpIcon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                AFND3_HelpIconMouseEntered(evt);
+            }
+        });
+
+        AFND3_Titulo2.setFont(new java.awt.Font("Comic Sans MS", 1, 20)); // NOI18N
+        AFND3_Titulo2.setForeground(new java.awt.Color(255, 255, 255));
+        AFND3_Titulo2.setText("Entrada");
+
+        jList1.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        AFND3_jScrollPane2.setViewportView(jList1);
+
+        AFND3_Titulo3.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        AFND3_Titulo3.setForeground(new java.awt.Color(255, 255, 255));
+        AFND3_Titulo3.setText("Processamento");
+
+        AFND3_TextFieldEntrada.setBackground(new java.awt.Color(255, 255, 255));
+        AFND3_TextFieldEntrada.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        AFND3_TextFieldEntrada.setForeground(new java.awt.Color(0, 0, 0));
+        AFND3_TextFieldEntrada.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        AFND3_TextFieldEntrada.setText("00001");
+        AFND3_TextFieldEntrada.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AFND3_TextFieldEntradaActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Result_AFNDLayout = new javax.swing.GroupLayout(Result_AFND);
+        Result_AFND.setLayout(Result_AFNDLayout);
+        Result_AFNDLayout.setHorizontalGroup(
+            Result_AFNDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Result_AFNDLayout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addComponent(AFND3_Titulo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(AFND3_HelpIcon)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Result_AFNDLayout.createSequentialGroup()
+                .addContainerGap(235, Short.MAX_VALUE)
+                .addGroup(Result_AFNDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(AFND3_jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(Result_AFNDLayout.createSequentialGroup()
+                        .addComponent(AFND3_Titulo2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(AFND3_TextFieldEntrada)))
+                .addGap(186, 186, 186))
+            .addGroup(Result_AFNDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(Result_AFNDLayout.createSequentialGroup()
+                    .addGap(66, 66, 66)
+                    .addComponent(AFND3_Titulo3)
+                    .addContainerGap(494, Short.MAX_VALUE)))
+        );
+        Result_AFNDLayout.setVerticalGroup(
+            Result_AFNDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Result_AFNDLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Result_AFNDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(AFND3_Titulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Result_AFNDLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(AFND3_HelpIcon)))
+                .addGap(124, 124, 124)
+                .addComponent(AFND3_jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(Result_AFNDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AFND3_Titulo2, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AFND3_TextFieldEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(241, Short.MAX_VALUE))
+            .addGroup(Result_AFNDLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(Result_AFNDLayout.createSequentialGroup()
+                    .addGap(146, 146, 146)
+                    .addComponent(AFND3_Titulo3, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(505, Short.MAX_VALUE)))
+        );
+
+        jPanel4.add(Result_AFND, "Result_AFND");
+
+        jPanel5.setBackground(new java.awt.Color(70, 71, 74));
+        jPanel5.setForeground(new java.awt.Color(255, 255, 255));
 
         Titulo2.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         Titulo2.setForeground(new java.awt.Color(255, 255, 255));
@@ -174,62 +479,62 @@ public class AFND extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(35, 35, 35)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Titulo6)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
+                    .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(44, 44, 44)
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
+                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
                             .addComponent(Titulo2)
                             .addGap(155, 155, 155)
                             .addComponent(jTextField1))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
                             .addComponent(Titulo3)
                             .addGap(89, 89, 89)
                             .addComponent(jTextField5))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
-                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel6Layout.createSequentialGroup()
+                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(Titulo5)
                                 .addComponent(Titulo4))
                             .addGap(96, 96, 96)
-                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(jTextField2, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
                                 .addComponent(jTextField3)))))
                 .addContainerGap(22, Short.MAX_VALUE))
         );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Titulo2)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(5, 5, 5)
                         .addComponent(Titulo3))
                     .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(9, 9, 9)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(Titulo5)
                     .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(Titulo4)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Titulo6)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(15, Short.MAX_VALUE))
@@ -240,7 +545,6 @@ public class AFND extends javax.swing.JFrame {
         Titulo.setText("<html><p style=\"padding-bottom: 16px;\">Autômato FND</p></html>");
         Titulo.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
 
-        jLabel9.setIcon(new javax.swing.ImageIcon("C:\\Users\\kelvi\\Desktop\\Kelvin\\Faculdade\\5º Semestre\\Engenharia de Software\\Sprint 3\\Aleatorio\\ícone - ajuda")); // NOI18N
         jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 jLabel9MouseEntered(evt);
@@ -259,45 +563,47 @@ public class AFND extends javax.swing.JFrame {
         jLabel10.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jLabel10.setOpaque(true);
 
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel4Layout.createSequentialGroup()
+                    .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel5Layout.createSequentialGroup()
                             .addGap(112, 112, 112)
-                            .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addComponent(Titulo1)
-                                .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGroup(jPanel5Layout.createSequentialGroup()
                                     .addComponent(Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                     .addComponent(jLabel9))))
-                        .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGroup(jPanel5Layout.createSequentialGroup()
                             .addGap(77, 77, 77)
-                            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(78, Short.MAX_VALUE))
+                            .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(167, Short.MAX_VALUE))
         );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(20, 20, 20)
                         .addComponent(Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel5Layout.createSequentialGroup()
                         .addGap(30, 30, 30)
                         .addComponent(jLabel9)))
                 .addGap(75, 75, 75)
                 .addComponent(Titulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44))
         );
+
+        jPanel4.add(jPanel5, "card4");
 
         jPanel2.setBackground(new java.awt.Color(27, 28, 29));
         jPanel2.setForeground(new java.awt.Color(255, 255, 255));
@@ -383,16 +689,16 @@ public class AFND extends javax.swing.JFrame {
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(53, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -459,25 +765,49 @@ public class AFND extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel9MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseEntered
+    private void AFND2_HelpIconMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AFND2_HelpIconMouseEntered
         
-    }//GEN-LAST:event_jLabel9MouseEntered
+    }//GEN-LAST:event_AFND2_HelpIconMouseEntered
+
+    private void AFND2_TextFieldAlfabetoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AFND2_TextFieldAlfabetoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AFND2_TextFieldAlfabetoActionPerformed
+
+    private void AFND2_TextFieldEstadosFinaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AFND2_TextFieldEstadosFinaisActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AFND2_TextFieldEstadosFinaisActionPerformed
+
+    private void AFND2_TextFieldEstadoInicialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AFND2_TextFieldEstadoInicialActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AFND2_TextFieldEstadoInicialActionPerformed
+
+    private void AFND3_HelpIconMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AFND3_HelpIconMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AFND3_HelpIconMouseEntered
+
+    private void AFND3_TextFieldEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AFND3_TextFieldEntradaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AFND3_TextFieldEntradaActionPerformed
 
     private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
-
     private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField3ActionPerformed
 
+    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField5ActionPerformed
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jLabel9MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseEntered
+
+    }//GEN-LAST:event_jLabel9MouseEntered
 
     /**
      * @param args the command line arguments
@@ -519,6 +849,29 @@ public class AFND extends javax.swing.JFrame {
         return jInternalFrame1;
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel AFND2_HelpIcon;
+    private javax.swing.JPanel AFND2_InternalPanel;
+    private javax.swing.JLabel AFND2_LabelAlfabeto;
+    private javax.swing.JLabel AFND2_LabelEstadoInicial;
+    private javax.swing.JLabel AFND2_LabelEstados;
+    private javax.swing.JLabel AFND2_LabelEstadosFinais;
+    private javax.swing.JLabel AFND2_LabelTabelaTransicao;
+    private javax.swing.JTextField AFND2_TextFieldAlfabeto;
+    private javax.swing.JTextField AFND2_TextFieldEstadoInicial;
+    private javax.swing.JTextField AFND2_TextFieldEstados;
+    private javax.swing.JTextField AFND2_TextFieldEstadosFinais;
+    private javax.swing.JLabel AFND2_Titulo;
+    private javax.swing.JLabel AFND2_Titulo1;
+    private javax.swing.JScrollPane AFND2_jScrollPane2;
+    private javax.swing.JTable AFND2_jTable1;
+    private javax.swing.JLabel AFND3_HelpIcon;
+    private javax.swing.JTextField AFND3_TextFieldEntrada;
+    private javax.swing.JLabel AFND3_Titulo1;
+    private javax.swing.JLabel AFND3_Titulo2;
+    private javax.swing.JLabel AFND3_Titulo3;
+    private javax.swing.JScrollPane AFND3_jScrollPane2;
+    private javax.swing.JPanel Config_AFND;
+    private javax.swing.JPanel Result_AFND;
     private javax.swing.JLabel Titulo;
     private javax.swing.JLabel Titulo1;
     private javax.swing.JLabel Titulo2;
@@ -538,11 +891,13 @@ public class AFND extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
