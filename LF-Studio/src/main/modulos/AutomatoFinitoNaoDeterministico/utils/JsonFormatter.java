@@ -1,9 +1,9 @@
-package main.modulos.AutomatoFinitoNAoDeterministico.utils;
+package main.modulos.AutomatoFinitoNaoDeterministico.utils;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import main.modulos.AutomatoFinitoNAoDeterministico.domain.Automato;
-import main.modulos.AutomatoFinitoNAoDeterministico.domain.NaoDeterministico;
+import main.modulos.AutomatoFinitoNaoDeterministico.domain.Automato;
+import main.modulos.AutomatoFinitoNaoDeterministico.domain.NaoDeterministico;
 
 import java.io.FileReader;
 import java.io.FileWriter;

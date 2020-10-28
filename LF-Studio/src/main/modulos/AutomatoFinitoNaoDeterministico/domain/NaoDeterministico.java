@@ -1,7 +1,7 @@
 
-package main.modulos.AutomatoFinitoNAoDeterministico.domain;
-import main.modulos.AutomatoFinitoNAoDeterministico.exceptions.IsNotBelongOnLanguage;
-import main.modulos.AutomatoFinitoNAoDeterministico.utils.IOValidator;
+package main.modulos.AutomatoFinitoNaoDeterministico.domain;
+import main.modulos.AutomatoFinitoNaoDeterministico.exceptions.IsNotBelongOnLanguage;
+import main.modulos.AutomatoFinitoNaoDeterministico.utils.IOValidator;
 
 import java.util.ArrayList;
 import java.util.List;

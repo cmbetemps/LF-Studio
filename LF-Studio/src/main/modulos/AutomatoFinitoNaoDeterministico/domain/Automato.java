@@ -1,4 +1,4 @@
-package main.modulos.AutomatoFinitoNAoDeterministico.domain;
+package main.modulos.AutomatoFinitoNaoDeterministico.domain;
 
 import java.util.Arrays;
 
