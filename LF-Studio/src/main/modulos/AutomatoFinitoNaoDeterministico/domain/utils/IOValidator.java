@@ -1,6 +1,6 @@
-package main.modulos.AutomatoFinitoNaoDeterministico.utils;
+package main.modulos.AutomatoFinitoNaoDeterministico.domain.utils;
 
-import main.modulos.AutomatoFinitoNaoDeterministico.exceptions.InvalidFormatException;
+import main.modulos.AutomatoFinitoNaoDeterministico.domain.exceptions.InvalidFormatException;
 
 public class IOValidator {
   private  boolean debug;

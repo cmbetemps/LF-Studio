@@ -1,4 +1,4 @@
-package main.modulos.AutomatoFinitoNaoDeterministico.utils;
+package main.modulos.AutomatoFinitoNaoDeterministico.domain.utils;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
