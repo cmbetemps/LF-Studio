@@ -1,4 +1,4 @@
-package main.modulos.AutomatoFinitoDeterministico;
+package main.modulos.AutomatoFinitoDeterministico.screens;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
