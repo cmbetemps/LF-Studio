@@ -1,5 +1,5 @@
 
-package main.modulos.AutomatoFinitoNaoDeterministico.domain;
+package main.modulos.AutomatoFinitoNaoDeterministico.domain.models;
 import main.modulos.AutomatoFinitoNaoDeterministico.domain.exceptions.IsNotBelongOnLanguage;
 import main.modulos.AutomatoFinitoNaoDeterministico.domain.utils.IOValidator;
 
