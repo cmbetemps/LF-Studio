@@ -7,39 +7,32 @@ package lf.studio;
 
 
 
+import java.awt.CardLayout;
 import java.awt.Color;
 import java.awt.font.TextAttribute;
+import java.util.ArrayList;
 import java.util.Map;
 import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
-import java.awt.Font;
-
-
 /**
  *
  * @author thiag
  */
 public class AFND extends javax.swing.JFrame {
 
+    public CardLayout cl;
+    
     /**
      * Creates new form Padrao
      */
     public AFND() {
-        super("Simulador MIPS");
+        super("LFPrototipo");
         initComponents();
-        iniciaTitulo();
         this.JanelaVisivel.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         JanelaVisivel.setSize(1200, 700);
         JanelaVisivel.setLocation(100, 160);
         this.jLabel1.setBackground(Color.BLACK);
-        
-        
-    }
-    private void iniciaTitulo(){
-        Font n = new Font("Comic Sans MS",1,36);
-        Map attributes = n.getAttributes();
-        attributes.put(TextAttribute.UNDERLINE, TextAttribute.UNDERLINE_ON);
-        AFND2_Titulo.setFont(n.deriveFont(attributes));
+        cl = (CardLayout) JanelaExecucao.getLayout();
         
     }
 
@@ -101,6 +94,7 @@ public class AFND extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.LINE_AXIS));
 
         JanelaPrincipal.setBackground(new java.awt.Color(70, 71, 74));
@@ -143,6 +137,11 @@ public class AFND extends javax.swing.JFrame {
         AFND2_TextFieldAlfabeto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AFND2_TextFieldAlfabetoActionPerformed(evt);
+            }
+        });
+        AFND2_TextFieldAlfabeto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                AFND2_TextFieldAlfabetoKeyReleased(evt);
             }
         });
 
@@ -264,7 +263,6 @@ public class AFND extends javax.swing.JFrame {
         AFND2_Titulo.setText("<html><p style=\"padding-bottom: 16px;\">Autômato FND</p></html>");
         AFND2_Titulo.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
 
-        AFND2_HelpIcon.setIcon(new javax.swing.ImageIcon("C:\\Users\\kelvi\\Desktop\\Kelvin\\Faculdade\\5º Semestre\\Engenharia de Software\\Sprint 3\\Aleatorio\\ícone - ajuda")); // NOI18N
         AFND2_HelpIcon.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 AFND2_HelpIconMouseEntered(evt);
@@ -282,6 +280,11 @@ public class AFND extends javax.swing.JFrame {
         AFND2_LabelProcessarAutomato.setText("Processar autômato");
         AFND2_LabelProcessarAutomato.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         AFND2_LabelProcessarAutomato.setOpaque(true);
+        AFND2_LabelProcessarAutomato.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AFND2_LabelProcessarAutomatoMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout Config_AFNDLayout = new javax.swing.GroupLayout(Config_AFND);
         Config_AFND.setLayout(Config_AFNDLayout);
@@ -351,6 +354,11 @@ public class AFND extends javax.swing.JFrame {
         AFND1_LabelNovoAutomato.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         AFND1_LabelNovoAutomato.setText("Novo autômato");
         AFND1_LabelNovoAutomato.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        AFND1_LabelNovoAutomato.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AFND1_LabelNovoAutomatoMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout InicioAFND_1Layout = new javax.swing.GroupLayout(InicioAFND_1);
         InicioAFND_1.setLayout(InicioAFND_1Layout);
@@ -591,6 +599,11 @@ public class AFND extends javax.swing.JFrame {
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel1.setText("    Automato AFND");
         jLabel1.setMaximumSize(new java.awt.Dimension(344, 539));
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -702,6 +715,40 @@ public class AFND extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_AFND3_TextFieldEntrada1ActionPerformed
 
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        cl.show(JanelaExecucao, "card4");
+    }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void AFND1_LabelNovoAutomatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AFND1_LabelNovoAutomatoMouseClicked
+        cl.show(JanelaExecucao,"Config AFND");
+    }//GEN-LAST:event_AFND1_LabelNovoAutomatoMouseClicked
+
+    private void AFND2_LabelProcessarAutomatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AFND2_LabelProcessarAutomatoMouseClicked
+        cl.show(JanelaExecucao,"Result_AFND");
+    }//GEN-LAST:event_AFND2_LabelProcessarAutomatoMouseClicked
+
+    private void AFND2_TextFieldAlfabetoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AFND2_TextFieldAlfabetoKeyReleased
+        recebeTexto();
+        AFND2_jTable1.setEditingColumn(0);
+        
+    }//GEN-LAST:event_AFND2_TextFieldAlfabetoKeyReleased
+
+    private ArrayList<String> recebeTexto(){
+        
+        String testa = AFND2_TextFieldAlfabeto.getText();
+        String aux = "";
+        ArrayList<String> possivelAlfabeto = new ArrayList<>();
+        for (int i = 0; i < testa.length(); i++) {
+            if(!String.valueOf(testa.charAt(i)).equals(",")){
+            aux += testa.charAt(i);
+            }else{
+                possivelAlfabeto.add(aux);
+                aux = "";
+            }
+        }
+        return possivelAlfabeto;
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -711,6 +758,9 @@ public class AFND extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
+        //</editor-fold>
+        //</editor-fold>
+        /* Create and display the form */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -727,10 +777,7 @@ public class AFND extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(AFND.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-
-        /* Create and display the form */
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new AFND().setVisible(true);

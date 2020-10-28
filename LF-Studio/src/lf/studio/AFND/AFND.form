@@ -3,6 +3,7 @@
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
+    <Property name="resizable" type="boolean" value="false"/>
   </Properties>
   <SyntheticProperties>
     <SyntheticProperty name="formSizePolicy" type="int" value="1"/>
@@ -321,6 +322,7 @@
                           </Properties>
                           <Events>
                             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AFND2_TextFieldAlfabetoActionPerformed"/>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="AFND2_TextFieldAlfabetoKeyReleased"/>
                           </Events>
                         </Component>
                         <Container class="javax.swing.JScrollPane" name="AFND2_jScrollPane2">
@@ -424,11 +426,6 @@
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JLabel" name="AFND2_HelpIcon">
-                      <Properties>
-                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="2" name="C:\Users\kelvi\Desktop\Kelvin\Faculdade\5&#xba; Semestre\Engenharia de Software\Sprint 3\Aleatorio\&#xed;cone - ajuda"/>
-                        </Property>
-                      </Properties>
                       <Events>
                         <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="AFND2_HelpIconMouseEntered"/>
                       </Events>
@@ -460,6 +457,9 @@
                         <Property name="horizontalTextPosition" type="int" value="0"/>
                         <Property name="opaque" type="boolean" value="true"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="AFND2_LabelProcessarAutomatoMouseClicked"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>
@@ -609,6 +609,9 @@
                             <Property name="text" type="java.lang.String" value="Novo aut&#xf4;mato"/>
                             <Property name="horizontalTextPosition" type="int" value="0"/>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="AFND1_LabelNovoAutomatoMouseClicked"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -1052,6 +1055,9 @@
                               <Dimension value="[344, 539]"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel1MouseClicked"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
