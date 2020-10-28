@@ -18,14 +18,14 @@ import javax.swing.JInternalFrame;
  *
  * @author thiag
  */
-public class FNDScreen extends javax.swing.JFrame {
+public class AFNDScreen extends javax.swing.JFrame {
 
     public CardLayout cl;
     
     /**
      * Creates new form Padrao
      */
-    public FNDScreen() {
+    public AFNDScreen() {
         super("LFPrototipo");
         initComponents();
         this.JanelaVisivel.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
@@ -769,18 +769,18 @@ public class FNDScreen extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FNDScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AFNDScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FNDScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AFNDScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FNDScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AFNDScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FNDScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(AFNDScreen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new FNDScreen().setVisible(true);
+                new AFNDScreen().setVisible(true);
             }
         });
     }
