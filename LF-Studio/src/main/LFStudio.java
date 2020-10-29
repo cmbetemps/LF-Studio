@@ -19,21 +19,17 @@ import javax.swing.JInternalFrame;
  * @author thiag
  */
 public class LFStudio extends javax.swing.JFrame {
-
     public CardLayout cl;
-    
-    /**
-     * Creates new form Padrao
-     */
+   
     public LFStudio() {
         super("LFPrototipo");
         initComponents();
         this.JanelaVisivel.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         JanelaVisivel.setSize(1200, 700);
         JanelaVisivel.setLocation(100, 160);
-        this.jLabel1.setBackground(Color.BLACK);
+        this.menuAFND.setBackground(Color.BLACK);
         cl = (CardLayout) JanelaExecucao.getLayout();
-        
+        cl.show(JanelaExecucao, "afndInicio");
     }
 
     /**
@@ -78,7 +74,7 @@ public class LFStudio extends javax.swing.JFrame {
         AFND3_Titulo6 = new javax.swing.JLabel();
         AFND3_TextFieldEntrada1 = new javax.swing.JTextField();
         AFND3_JLabelProcessarAutomato = new javax.swing.JLabel();
-        pilhaConfig = new javax.swing.JPanel();
+        pilhaProcessamento = new javax.swing.JPanel();
         t_proces1 = new javax.swing.JLabel();
         processamento1 = new javax.swing.JPanel();
         ajuda1 = new javax.swing.JButton();
@@ -86,30 +82,64 @@ public class LFStudio extends javax.swing.JFrame {
         validar_palavra = new javax.swing.JButton();
         t_e = new javax.swing.JLabel();
         r_e = new javax.swing.JTextField();
-        pilhaProcessamento = new javax.swing.JPanel();
-        t_proces2 = new javax.swing.JLabel();
-        processamento2 = new javax.swing.JPanel();
-        ajuda2 = new javax.swing.JButton();
-        t_auto1 = new javax.swing.JLabel();
-        validar_palavra1 = new javax.swing.JButton();
-        t_e1 = new javax.swing.JLabel();
-        r_e1 = new javax.swing.JTextField();
         pilhaInicio = new javax.swing.JPanel();
         pilhaTitle = new javax.swing.JPanel();
         LabelAutomatoPilha = new javax.swing.JLabel();
         LabelImportarPilha = new javax.swing.JLabel();
         LabelNovoAutomato = new javax.swing.JLabel();
+        pilhaConfig = new javax.swing.JPanel();
+        painel = new javax.swing.JPanel();
+        t_tra = new javax.swing.JLabel();
+        t_ea = new javax.swing.JLabel();
+        t_ei = new javax.swing.JLabel();
+        t_ap = new javax.swing.JLabel();
+        t_a = new javax.swing.JLabel();
+        r_ei = new javax.swing.JTextField();
+        r_a = new javax.swing.JTextField();
+        r_ap = new javax.swing.JTextField();
+        r_ea = new javax.swing.JTextField();
+        r_sip = new javax.swing.JTextField();
+        t_sa = new javax.swing.JLabel();
+        salvar_automato = new javax.swing.JButton();
+        t_sip = new javax.swing.JLabel();
+        transicoes = new javax.swing.JPanel();
+        t_auto2 = new javax.swing.JLabel();
+        t_config = new javax.swing.JLabel();
+        processar_automato = new javax.swing.JButton();
+        ajuda = new javax.swing.JButton();
+        fdInicio = new javax.swing.JPanel();
+        fdTitle = new javax.swing.JPanel();
+        LabelAutomatoFD = new javax.swing.JLabel();
+        LabelImportarFD = new javax.swing.JLabel();
+        LabelNovoAutomatoFD = new javax.swing.JLabel();
+        fdConfig = new javax.swing.JPanel();
+        AFND2_InternalPanel1 = new javax.swing.JPanel();
+        AFND2_LabelAlfabeto1 = new javax.swing.JLabel();
+        AFND2_LabelEstadosFinais1 = new javax.swing.JLabel();
+        AFND2_LabelEstados1 = new javax.swing.JLabel();
+        AFND2_LabelEstadoInicial1 = new javax.swing.JLabel();
+        AFND2_LabelTabelaTransicao1 = new javax.swing.JLabel();
+        AFND2_TextFieldAlfabeto1 = new javax.swing.JTextField();
+        AFND2_jScrollPane3 = new javax.swing.JScrollPane();
+        AFND2_jTable2 = new javax.swing.JTable();
+        AFND2_TextFieldEstados1 = new javax.swing.JTextField();
+        AFND2_TextFieldEstadoInicial1 = new javax.swing.JTextField();
+        AFND2_TextFieldEstadosFinais1 = new javax.swing.JTextField();
+        AFND2_JButtonSalvarAutomato1 = new javax.swing.JButton();
+        AFND2_Titulo2 = new javax.swing.JLabel();
+        AFND2_Titulo3 = new javax.swing.JLabel();
+        AFND2_LabelProcessarAutomato1 = new javax.swing.JLabel();
         Menu = new javax.swing.JPanel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        menuScroll = new javax.swing.JScrollPane();
+        menuPanel = new javax.swing.JPanel();
+        menuGLC = new javax.swing.JLabel();
+        menuPilha = new javax.swing.JLabel();
+        menuRegX = new javax.swing.JLabel();
+        menuTuring = new javax.swing.JLabel();
+        menuAfd = new javax.swing.JLabel();
+        titleLFStudio = new javax.swing.JLabel();
+        menuGramaticaReg = new javax.swing.JLabel();
+        menuAFND = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -302,18 +332,18 @@ public class LFStudio extends javax.swing.JFrame {
         afndConfigLayout.setHorizontalGroup(
             afndConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(afndConfigLayout.createSequentialGroup()
-                .addContainerGap(74, Short.MAX_VALUE)
+                .addContainerGap(81, Short.MAX_VALUE)
                 .addGroup(afndConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(AFND2_InternalPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AFND2_LabelProcessarAutomato, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addContainerGap(81, Short.MAX_VALUE))
             .addGroup(afndConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(afndConfigLayout.createSequentialGroup()
                     .addGap(44, 44, 44)
                     .addGroup(afndConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(AFND2_Titulo1)
                         .addComponent(AFND2_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(325, Short.MAX_VALUE)))
+                    .addContainerGap(338, Short.MAX_VALUE)))
         );
         afndConfigLayout.setVerticalGroup(
             afndConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -332,7 +362,7 @@ public class LFStudio extends javax.swing.JFrame {
                     .addContainerGap(547, Short.MAX_VALUE)))
         );
 
-        JanelaExecucao.add(afndConfig, "Config AFND");
+        JanelaExecucao.add(afndConfig, "afndConfig");
 
         afndInicio.setBackground(new java.awt.Color(70, 71, 74));
 
@@ -369,25 +399,23 @@ public class LFStudio extends javax.swing.JFrame {
             .addGroup(InicioAFND_1Layout.createSequentialGroup()
                 .addGroup(InicioAFND_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(InicioAFND_1Layout.createSequentialGroup()
+                        .addGap(126, 126, 126)
+                        .addComponent(AFND1_LabelAutomatoFND, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(InicioAFND_1Layout.createSequentialGroup()
                         .addGap(151, 151, 151)
-                        .addComponent(AFND1_LabelNovoAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(InicioAFND_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addGroup(InicioAFND_1Layout.createSequentialGroup()
-                            .addGap(151, 151, 151)
-                            .addComponent(AFND1_LabelImportarAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, InicioAFND_1Layout.createSequentialGroup()
-                            .addGap(95, 95, 95)
-                            .addComponent(AFND1_LabelAutomatoFND, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(196, Short.MAX_VALUE))
+                        .addGroup(InicioAFND_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(AFND1_LabelNovoAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(AFND1_LabelImportarAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(165, Short.MAX_VALUE))
         );
         InicioAFND_1Layout.setVerticalGroup(
             InicioAFND_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InicioAFND_1Layout.createSequentialGroup()
-                .addGap(88, 88, 88)
-                .addComponent(AFND1_LabelAutomatoFND, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(134, 134, 134)
+                .addGap(85, 85, 85)
+                .addComponent(AFND1_LabelAutomatoFND, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(143, 143, 143)
                 .addComponent(AFND1_LabelNovoAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(AFND1_LabelImportarAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(132, Short.MAX_VALUE))
         );
@@ -396,7 +424,7 @@ public class LFStudio extends javax.swing.JFrame {
         afndInicio.setLayout(afndInicioLayout);
         afndInicioLayout.setHorizontalGroup(
             afndInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 667, Short.MAX_VALUE)
+            .addGap(0, 680, Short.MAX_VALUE)
             .addGroup(afndInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(afndInicioLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -413,7 +441,7 @@ public class LFStudio extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
-        JanelaExecucao.add(afndInicio, "card4");
+        JanelaExecucao.add(afndInicio, "afndInicio");
 
         AFND3_Titulo4.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
         AFND3_Titulo4.setForeground(new java.awt.Color(255, 255, 255));
@@ -464,7 +492,7 @@ public class LFStudio extends javax.swing.JFrame {
                 .addComponent(AFND3_Titulo4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, afndResultadoLayout.createSequentialGroup()
-                .addContainerGap(173, Short.MAX_VALUE)
+                .addContainerGap(186, Short.MAX_VALUE)
                 .addGroup(afndResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, afndResultadoLayout.createSequentialGroup()
                         .addGroup(afndResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -482,7 +510,7 @@ public class LFStudio extends javax.swing.JFrame {
                 .addGroup(afndResultadoLayout.createSequentialGroup()
                     .addGap(66, 66, 66)
                     .addComponent(AFND3_Titulo6)
-                    .addContainerGap(396, Short.MAX_VALUE)))
+                    .addContainerGap(409, Short.MAX_VALUE)))
         );
         afndResultadoLayout.setVerticalGroup(
             afndResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -505,9 +533,9 @@ public class LFStudio extends javax.swing.JFrame {
                     .addContainerGap(537, Short.MAX_VALUE)))
         );
 
-        JanelaExecucao.add(afndResultado, "Result_AFND");
+        JanelaExecucao.add(afndResultado, "afndProcessamento");
 
-        pilhaConfig.setBackground(new java.awt.Color(70, 71, 74));
+        pilhaProcessamento.setBackground(new java.awt.Color(70, 71, 74));
 
         t_proces1.setBackground(new java.awt.Color(70, 71, 74));
         t_proces1.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
@@ -557,126 +585,29 @@ public class LFStudio extends javax.swing.JFrame {
 
         r_e.setBackground(new java.awt.Color(255, 255, 255));
 
-        javax.swing.GroupLayout pilhaConfigLayout = new javax.swing.GroupLayout(pilhaConfig);
-        pilhaConfig.setLayout(pilhaConfigLayout);
-        pilhaConfigLayout.setHorizontalGroup(
-            pilhaConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pilhaConfigLayout.createSequentialGroup()
-                .addContainerGap(108, Short.MAX_VALUE)
-                .addGroup(pilhaConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pilhaConfigLayout.createSequentialGroup()
-                        .addGroup(pilhaConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(t_proces1)
-                            .addGroup(pilhaConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(processamento1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(pilhaConfigLayout.createSequentialGroup()
-                                    .addComponent(t_e)
-                                    .addGap(18, 18, 18)
-                                    .addGroup(pilhaConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(r_e)
-                                        .addComponent(validar_palavra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
-                        .addGap(76, 76, 76))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pilhaConfigLayout.createSequentialGroup()
-                        .addComponent(t_auto)
-                        .addGap(18, 18, 18)
-                        .addComponent(ajuda1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(162, 162, 162))))
-        );
-        pilhaConfigLayout.setVerticalGroup(
-            pilhaConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pilhaConfigLayout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(pilhaConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(ajuda1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(t_auto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
-                .addComponent(t_proces1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(processamento1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addGroup(pilhaConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(t_e, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(r_e, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(validar_palavra)
-                .addContainerGap(207, Short.MAX_VALUE))
-        );
-
-        JanelaExecucao.add(pilhaConfig, "card5");
-
-        pilhaProcessamento.setBackground(new java.awt.Color(70, 71, 74));
-
-        t_proces2.setBackground(new java.awt.Color(70, 71, 74));
-        t_proces2.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
-        t_proces2.setForeground(new java.awt.Color(255, 255, 255));
-        t_proces2.setText("Processamento");
-
-        processamento2.setBackground(new java.awt.Color(196, 196, 196));
-
-        javax.swing.GroupLayout processamento2Layout = new javax.swing.GroupLayout(processamento2);
-        processamento2.setLayout(processamento2Layout);
-        processamento2Layout.setHorizontalGroup(
-            processamento2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 483, Short.MAX_VALUE)
-        );
-        processamento2Layout.setVerticalGroup(
-            processamento2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 321, Short.MAX_VALUE)
-        );
-
-        ajuda2.setBackground(new java.awt.Color(70, 71, 74));
-        ajuda2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ajuda2ActionPerformed(evt);
-            }
-        });
-
-        t_auto1.setBackground(new java.awt.Color(70, 71, 74));
-        t_auto1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
-        t_auto1.setForeground(new java.awt.Color(255, 255, 255));
-        t_auto1.setText("Automato de Pilha");
-
-        validar_palavra1.setBackground(java.awt.SystemColor.activeCaptionText);
-        validar_palavra1.setFont(new java.awt.Font("Calibri Light", 1, 16)); // NOI18N
-        validar_palavra1.setForeground(new java.awt.Color(255, 255, 255));
-        validar_palavra1.setText("Validar Palavra");
-        validar_palavra1.setToolTipText("");
-        validar_palavra1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                validar_palavra1ActionPerformed(evt);
-            }
-        });
-
-        t_e1.setBackground(new java.awt.Color(70, 71, 74));
-        t_e1.setFont(new java.awt.Font("Calibri Light", 1, 18)); // NOI18N
-        t_e1.setForeground(new java.awt.Color(255, 255, 255));
-        t_e1.setText("Entrada:");
-
-        r_e1.setBackground(new java.awt.Color(255, 255, 255));
-
         javax.swing.GroupLayout pilhaProcessamentoLayout = new javax.swing.GroupLayout(pilhaProcessamento);
         pilhaProcessamento.setLayout(pilhaProcessamentoLayout);
         pilhaProcessamentoLayout.setHorizontalGroup(
             pilhaProcessamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pilhaProcessamentoLayout.createSequentialGroup()
-                .addContainerGap(108, Short.MAX_VALUE)
+                .addContainerGap(121, Short.MAX_VALUE)
                 .addGroup(pilhaProcessamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pilhaProcessamentoLayout.createSequentialGroup()
                         .addGroup(pilhaProcessamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(t_proces2)
+                            .addComponent(t_proces1)
                             .addGroup(pilhaProcessamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(processamento2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(processamento1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(pilhaProcessamentoLayout.createSequentialGroup()
-                                    .addComponent(t_e1)
+                                    .addComponent(t_e)
                                     .addGap(18, 18, 18)
                                     .addGroup(pilhaProcessamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                        .addComponent(r_e1)
-                                        .addComponent(validar_palavra1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                        .addComponent(r_e)
+                                        .addComponent(validar_palavra, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                         .addGap(76, 76, 76))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pilhaProcessamentoLayout.createSequentialGroup()
-                        .addComponent(t_auto1)
+                        .addComponent(t_auto)
                         .addGap(18, 18, 18)
-                        .addComponent(ajuda2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ajuda1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(162, 162, 162))))
         );
         pilhaProcessamentoLayout.setVerticalGroup(
@@ -684,22 +615,22 @@ public class LFStudio extends javax.swing.JFrame {
             .addGroup(pilhaProcessamentoLayout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addGroup(pilhaProcessamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(ajuda2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(t_auto1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(ajuda1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(t_auto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
-                .addComponent(t_proces2)
+                .addComponent(t_proces1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(processamento2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(processamento1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(pilhaProcessamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(t_e1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(r_e1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(t_e, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(r_e, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(validar_palavra1)
+                .addComponent(validar_palavra)
                 .addContainerGap(207, Short.MAX_VALUE))
         );
 
-        JanelaExecucao.add(pilhaProcessamento, "card6");
+        JanelaExecucao.add(pilhaProcessamento, "pilhaProcessamento");
 
         pilhaInicio.setBackground(new java.awt.Color(70, 71, 74));
 
@@ -716,6 +647,11 @@ public class LFStudio extends javax.swing.JFrame {
         LabelImportarPilha.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         LabelImportarPilha.setText("Importar autômato");
         LabelImportarPilha.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        LabelImportarPilha.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LabelImportarPilhaMouseClicked(evt);
+            }
+        });
 
         LabelNovoAutomato.setBackground(new java.awt.Color(0, 0, 0));
         LabelNovoAutomato.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
@@ -761,7 +697,7 @@ public class LFStudio extends javax.swing.JFrame {
         pilhaInicio.setLayout(pilhaInicioLayout);
         pilhaInicioLayout.setHorizontalGroup(
             pilhaInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 667, Short.MAX_VALUE)
+            .addGap(0, 680, Short.MAX_VALUE)
             .addGroup(pilhaInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pilhaInicioLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -778,7 +714,527 @@ public class LFStudio extends javax.swing.JFrame {
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
 
-        JanelaExecucao.add(pilhaInicio, "card4");
+        JanelaExecucao.add(pilhaInicio, "pilhaInicio");
+
+        pilhaConfig.setBackground(new java.awt.Color(70, 71, 74));
+
+        painel.setBackground(new java.awt.Color(51, 51, 51));
+
+        t_tra.setBackground(new java.awt.Color(51, 51, 51));
+        t_tra.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        t_tra.setForeground(new java.awt.Color(255, 255, 255));
+        t_tra.setText("Transições");
+
+        t_ea.setBackground(new java.awt.Color(51, 51, 51));
+        t_ea.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        t_ea.setForeground(new java.awt.Color(255, 255, 255));
+        t_ea.setText("Estados de Aceitação:");
+
+        t_ei.setBackground(new java.awt.Color(51, 51, 51));
+        t_ei.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        t_ei.setForeground(new java.awt.Color(255, 255, 255));
+        t_ei.setText("Estado Inicial:");
+
+        t_ap.setBackground(new java.awt.Color(51, 51, 51));
+        t_ap.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        t_ap.setForeground(new java.awt.Color(255, 255, 255));
+        t_ap.setText("Alfabeto da Pilha:");
+
+        t_a.setBackground(new java.awt.Color(51, 51, 51));
+        t_a.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        t_a.setForeground(new java.awt.Color(255, 255, 255));
+        t_a.setText("Alfabeto:");
+
+        r_ei.setBackground(new java.awt.Color(255, 255, 255));
+        r_ei.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                r_eiActionPerformed(evt);
+            }
+        });
+
+        r_a.setBackground(new java.awt.Color(255, 255, 255));
+        r_a.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                r_aActionPerformed(evt);
+            }
+        });
+
+        r_ap.setBackground(new java.awt.Color(255, 255, 255));
+        r_ap.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                r_apActionPerformed(evt);
+            }
+        });
+
+        r_ea.setBackground(new java.awt.Color(255, 255, 255));
+        r_ea.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                r_eaActionPerformed(evt);
+            }
+        });
+
+        r_sip.setBackground(new java.awt.Color(255, 255, 255));
+        r_sip.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                r_sipActionPerformed(evt);
+            }
+        });
+
+        t_sa.setBackground(new java.awt.Color(51, 51, 51));
+        t_sa.setFont(new java.awt.Font("Calibri Light", 0, 14)); // NOI18N
+        t_sa.setForeground(new java.awt.Color(255, 255, 255));
+        t_sa.setText("Salvar Automato");
+
+        salvar_automato.setBackground(new java.awt.Color(51, 51, 51));
+
+        t_sip.setBackground(new java.awt.Color(51, 51, 51));
+        t_sip.setFont(new java.awt.Font("Comic Sans MS", 1, 14)); // NOI18N
+        t_sip.setForeground(new java.awt.Color(255, 255, 255));
+        t_sip.setText("Simbolos Iniciais da Pilha:");
+
+        transicoes.setBackground(new java.awt.Color(255, 255, 255));
+
+        javax.swing.GroupLayout transicoesLayout = new javax.swing.GroupLayout(transicoes);
+        transicoes.setLayout(transicoesLayout);
+        transicoesLayout.setHorizontalGroup(
+            transicoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        transicoesLayout.setVerticalGroup(
+            transicoesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout painelLayout = new javax.swing.GroupLayout(painel);
+        painel.setLayout(painelLayout);
+        painelLayout.setHorizontalGroup(
+            painelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelLayout.createSequentialGroup()
+                .addGap(22, 22, 22)
+                .addGroup(painelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(t_tra)
+                    .addGroup(painelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(t_ei)
+                        .addComponent(t_ea)
+                        .addComponent(t_ap)
+                        .addComponent(t_a)
+                        .addComponent(t_sip, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(transicoes, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGroup(painelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(painelLayout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addGroup(painelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(r_a, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(r_ei, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(r_ap, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(r_ea, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(r_sip, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(48, Short.MAX_VALUE))
+                    .addGroup(painelLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(salvar_automato, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(t_sa)
+                        .addContainerGap())))
+        );
+        painelLayout.setVerticalGroup(
+            painelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(painelLayout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(painelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(t_a)
+                    .addComponent(r_a, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(painelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(t_ap)
+                    .addComponent(r_ap, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(painelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(t_ea)
+                    .addComponent(r_ea, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(painelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(t_ei)
+                    .addComponent(r_ei, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(painelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(r_sip, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(t_sip))
+                .addGap(12, 12, 12)
+                .addComponent(t_tra)
+                .addGap(18, 18, 18)
+                .addGroup(painelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(transicoes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(painelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(salvar_automato, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(t_sa)))
+                .addContainerGap(21, Short.MAX_VALUE))
+        );
+
+        t_auto2.setBackground(new java.awt.Color(70, 71, 74));
+        t_auto2.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        t_auto2.setForeground(new java.awt.Color(255, 255, 255));
+        t_auto2.setText("Automato de Pilha");
+
+        t_config.setBackground(new java.awt.Color(70, 71, 74));
+        t_config.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        t_config.setForeground(new java.awt.Color(255, 255, 255));
+        t_config.setText("Configurações");
+
+        processar_automato.setBackground(java.awt.SystemColor.activeCaptionText);
+        processar_automato.setFont(new java.awt.Font("Calibri Light", 1, 16)); // NOI18N
+        processar_automato.setForeground(new java.awt.Color(255, 255, 255));
+        processar_automato.setText("Processar Automato");
+        processar_automato.setToolTipText("");
+        processar_automato.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                processar_automatoMouseClicked(evt);
+            }
+        });
+        processar_automato.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                processar_automatoActionPerformed(evt);
+            }
+        });
+
+        ajuda.setBackground(new java.awt.Color(70, 71, 74));
+        ajuda.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ajudaActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout pilhaConfigLayout = new javax.swing.GroupLayout(pilhaConfig);
+        pilhaConfig.setLayout(pilhaConfigLayout);
+        pilhaConfigLayout.setHorizontalGroup(
+            pilhaConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pilhaConfigLayout.createSequentialGroup()
+                .addGroup(pilhaConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(pilhaConfigLayout.createSequentialGroup()
+                        .addGap(230, 230, 230)
+                        .addComponent(t_auto2)
+                        .addGap(18, 18, 18)
+                        .addComponent(ajuda, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(pilhaConfigLayout.createSequentialGroup()
+                        .addGap(102, 102, 102)
+                        .addGroup(pilhaConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(t_config)
+                            .addComponent(painel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pilhaConfigLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(processar_automato)))
+                .addContainerGap(72, Short.MAX_VALUE))
+        );
+        pilhaConfigLayout.setVerticalGroup(
+            pilhaConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pilhaConfigLayout.createSequentialGroup()
+                .addContainerGap(38, Short.MAX_VALUE)
+                .addGroup(pilhaConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(t_auto2)
+                    .addComponent(ajuda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(t_config)
+                .addGap(18, 18, 18)
+                .addComponent(painel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(processar_automato)
+                .addGap(177, 177, 177))
+        );
+
+        JanelaExecucao.add(pilhaConfig, "pilhaConfig");
+
+        fdInicio.setBackground(new java.awt.Color(70, 71, 74));
+
+        fdTitle.setBackground(new java.awt.Color(70, 71, 74));
+
+        LabelAutomatoFD.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
+        LabelAutomatoFD.setForeground(new java.awt.Color(255, 255, 255));
+        LabelAutomatoFD.setText("<html><p style=\"padding-bottom: 16px;\">Autômato FD</p></html>");
+        LabelAutomatoFD.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
+
+        LabelImportarFD.setBackground(new java.awt.Color(0, 0, 0));
+        LabelImportarFD.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        LabelImportarFD.setForeground(new java.awt.Color(255, 255, 255));
+        LabelImportarFD.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        LabelImportarFD.setText("Importar autômato");
+        LabelImportarFD.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        LabelImportarFD.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LabelImportarFDMouseClicked(evt);
+            }
+        });
+
+        LabelNovoAutomatoFD.setBackground(new java.awt.Color(0, 0, 0));
+        LabelNovoAutomatoFD.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        LabelNovoAutomatoFD.setForeground(new java.awt.Color(255, 255, 255));
+        LabelNovoAutomatoFD.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        LabelNovoAutomatoFD.setText("Novo autômato");
+        LabelNovoAutomatoFD.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        LabelNovoAutomatoFD.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LabelNovoAutomatoFDMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout fdTitleLayout = new javax.swing.GroupLayout(fdTitle);
+        fdTitle.setLayout(fdTitleLayout);
+        fdTitleLayout.setHorizontalGroup(
+            fdTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(fdTitleLayout.createSequentialGroup()
+                .addGroup(fdTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(fdTitleLayout.createSequentialGroup()
+                        .addGap(95, 95, 95)
+                        .addComponent(LabelAutomatoFD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(fdTitleLayout.createSequentialGroup()
+                        .addGap(151, 151, 151)
+                        .addGroup(fdTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(LabelImportarFD, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LabelNovoAutomatoFD, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(196, Short.MAX_VALUE))
+        );
+        fdTitleLayout.setVerticalGroup(
+            fdTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fdTitleLayout.createSequentialGroup()
+                .addGap(88, 88, 88)
+                .addComponent(LabelAutomatoFD, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(134, 134, 134)
+                .addComponent(LabelNovoAutomatoFD, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(LabelImportarFD, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(132, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout fdInicioLayout = new javax.swing.GroupLayout(fdInicio);
+        fdInicio.setLayout(fdInicioLayout);
+        fdInicioLayout.setHorizontalGroup(
+            fdInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 680, Short.MAX_VALUE)
+            .addGroup(fdInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(fdInicioLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(fdTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+        fdInicioLayout.setVerticalGroup(
+            fdInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 731, Short.MAX_VALUE)
+            .addGroup(fdInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(fdInicioLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(fdTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        JanelaExecucao.add(fdInicio, "fdInicio");
+
+        fdConfig.setBackground(new java.awt.Color(70, 71, 74));
+
+        AFND2_LabelAlfabeto1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        AFND2_LabelAlfabeto1.setForeground(new java.awt.Color(255, 255, 255));
+        AFND2_LabelAlfabeto1.setText("Alfabeto");
+
+        AFND2_LabelEstadosFinais1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        AFND2_LabelEstadosFinais1.setForeground(new java.awt.Color(255, 255, 255));
+        AFND2_LabelEstadosFinais1.setText("Estados Finais");
+
+        AFND2_LabelEstados1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        AFND2_LabelEstados1.setForeground(new java.awt.Color(255, 255, 255));
+        AFND2_LabelEstados1.setText("Estados");
+
+        AFND2_LabelEstadoInicial1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        AFND2_LabelEstadoInicial1.setForeground(new java.awt.Color(255, 255, 255));
+        AFND2_LabelEstadoInicial1.setText("Estado Inicial");
+
+        AFND2_LabelTabelaTransicao1.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        AFND2_LabelTabelaTransicao1.setForeground(new java.awt.Color(255, 255, 255));
+        AFND2_LabelTabelaTransicao1.setText("Tabela de transição");
+
+        AFND2_TextFieldAlfabeto1.setBackground(new java.awt.Color(255, 255, 255));
+        AFND2_TextFieldAlfabeto1.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        AFND2_TextFieldAlfabeto1.setForeground(new java.awt.Color(0, 0, 0));
+        AFND2_TextFieldAlfabeto1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        AFND2_TextFieldAlfabeto1.setText("0,1");
+        AFND2_TextFieldAlfabeto1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AFND2_TextFieldAlfabeto1ActionPerformed(evt);
+            }
+        });
+        AFND2_TextFieldAlfabeto1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                AFND2_TextFieldAlfabeto1KeyReleased(evt);
+            }
+        });
+
+        AFND2_jTable2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        AFND2_jScrollPane3.setViewportView(AFND2_jTable2);
+
+        AFND2_TextFieldEstados1.setBackground(new java.awt.Color(255, 255, 255));
+        AFND2_TextFieldEstados1.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        AFND2_TextFieldEstados1.setForeground(new java.awt.Color(0, 0, 0));
+        AFND2_TextFieldEstados1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        AFND2_TextFieldEstados1.setText("[q0,q1]");
+
+        AFND2_TextFieldEstadoInicial1.setBackground(new java.awt.Color(255, 255, 255));
+        AFND2_TextFieldEstadoInicial1.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        AFND2_TextFieldEstadoInicial1.setForeground(new java.awt.Color(0, 0, 0));
+        AFND2_TextFieldEstadoInicial1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        AFND2_TextFieldEstadoInicial1.setText("q0");
+        AFND2_TextFieldEstadoInicial1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AFND2_TextFieldEstadoInicial1ActionPerformed(evt);
+            }
+        });
+
+        AFND2_TextFieldEstadosFinais1.setBackground(new java.awt.Color(255, 255, 255));
+        AFND2_TextFieldEstadosFinais1.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        AFND2_TextFieldEstadosFinais1.setForeground(new java.awt.Color(0, 0, 0));
+        AFND2_TextFieldEstadosFinais1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        AFND2_TextFieldEstadosFinais1.setText("q1");
+        AFND2_TextFieldEstadosFinais1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AFND2_TextFieldEstadosFinais1ActionPerformed(evt);
+            }
+        });
+
+        AFND2_JButtonSalvarAutomato1.setText("Salvar autômato");
+        AFND2_JButtonSalvarAutomato1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AFND2_JButtonSalvarAutomato1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout AFND2_InternalPanel1Layout = new javax.swing.GroupLayout(AFND2_InternalPanel1);
+        AFND2_InternalPanel1.setLayout(AFND2_InternalPanel1Layout);
+        AFND2_InternalPanel1Layout.setHorizontalGroup(
+            AFND2_InternalPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AFND2_InternalPanel1Layout.createSequentialGroup()
+                .addGap(35, 35, 35)
+                .addGroup(AFND2_InternalPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AFND2_InternalPanel1Layout.createSequentialGroup()
+                        .addGroup(AFND2_InternalPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(AFND2_LabelTabelaTransicao1)
+                            .addGroup(AFND2_InternalPanel1Layout.createSequentialGroup()
+                                .addComponent(AFND2_LabelAlfabeto1)
+                                .addGap(155, 155, 155)
+                                .addComponent(AFND2_TextFieldAlfabeto1))
+                            .addGroup(AFND2_InternalPanel1Layout.createSequentialGroup()
+                                .addComponent(AFND2_LabelEstadosFinais1)
+                                .addGap(77, 77, 77)
+                                .addComponent(AFND2_TextFieldEstadosFinais1))
+                            .addGroup(AFND2_InternalPanel1Layout.createSequentialGroup()
+                                .addGroup(AFND2_InternalPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(AFND2_LabelEstadoInicial1)
+                                    .addComponent(AFND2_LabelEstados1))
+                                .addGap(90, 90, 90)
+                                .addGroup(AFND2_InternalPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(AFND2_TextFieldEstados1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(AFND2_TextFieldEstadoInicial1, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap(64, Short.MAX_VALUE))
+                    .addGroup(AFND2_InternalPanel1Layout.createSequentialGroup()
+                        .addComponent(AFND2_jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 254, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(AFND2_JButtonSalvarAutomato1, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(31, 31, 31))))
+        );
+        AFND2_InternalPanel1Layout.setVerticalGroup(
+            AFND2_InternalPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AFND2_InternalPanel1Layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(AFND2_InternalPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AFND2_LabelAlfabeto1)
+                    .addComponent(AFND2_TextFieldAlfabeto1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(AFND2_InternalPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AFND2_InternalPanel1Layout.createSequentialGroup()
+                        .addGap(5, 5, 5)
+                        .addComponent(AFND2_LabelEstadosFinais1))
+                    .addComponent(AFND2_TextFieldEstadosFinais1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9)
+                .addGroup(AFND2_InternalPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(AFND2_LabelEstadoInicial1)
+                    .addComponent(AFND2_TextFieldEstadoInicial1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(AFND2_InternalPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(AFND2_LabelEstados1)
+                    .addComponent(AFND2_TextFieldEstados1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(AFND2_InternalPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(AFND2_InternalPanel1Layout.createSequentialGroup()
+                        .addComponent(AFND2_LabelTabelaTransicao1)
+                        .addGap(18, 18, 18)
+                        .addComponent(AFND2_jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(AFND2_JButtonSalvarAutomato1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(17, Short.MAX_VALUE))
+        );
+
+        AFND2_Titulo2.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
+        AFND2_Titulo2.setForeground(new java.awt.Color(255, 255, 255));
+        AFND2_Titulo2.setText("<html><p style=\"padding-bottom: 16px;\">Autômato FD</p></html>");
+        AFND2_Titulo2.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
+
+        AFND2_Titulo3.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        AFND2_Titulo3.setForeground(new java.awt.Color(255, 255, 255));
+        AFND2_Titulo3.setText("Configuração");
+
+        AFND2_LabelProcessarAutomato1.setBackground(new java.awt.Color(0, 0, 0));
+        AFND2_LabelProcessarAutomato1.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        AFND2_LabelProcessarAutomato1.setForeground(new java.awt.Color(255, 255, 255));
+        AFND2_LabelProcessarAutomato1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        AFND2_LabelProcessarAutomato1.setText("Processar autômato");
+        AFND2_LabelProcessarAutomato1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        AFND2_LabelProcessarAutomato1.setOpaque(true);
+        AFND2_LabelProcessarAutomato1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AFND2_LabelProcessarAutomato1MouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout fdConfigLayout = new javax.swing.GroupLayout(fdConfig);
+        fdConfig.setLayout(fdConfigLayout);
+        fdConfigLayout.setHorizontalGroup(
+            fdConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(fdConfigLayout.createSequentialGroup()
+                .addContainerGap(75, Short.MAX_VALUE)
+                .addGroup(fdConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(AFND2_InternalPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(AFND2_LabelProcessarAutomato1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(74, Short.MAX_VALUE))
+            .addGroup(fdConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(fdConfigLayout.createSequentialGroup()
+                    .addGap(44, 44, 44)
+                    .addGroup(fdConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(AFND2_Titulo3)
+                        .addComponent(AFND2_Titulo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addContainerGap(355, Short.MAX_VALUE)))
+        );
+        fdConfigLayout.setVerticalGroup(
+            fdConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fdConfigLayout.createSequentialGroup()
+                .addContainerGap(211, Short.MAX_VALUE)
+                .addComponent(AFND2_InternalPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(AFND2_LabelProcessarAutomato1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(110, 110, 110))
+            .addGroup(fdConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(fdConfigLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(AFND2_Titulo2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(57, 57, 57)
+                    .addComponent(AFND2_Titulo3, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(547, Short.MAX_VALUE)))
+        );
+
+        JanelaExecucao.add(fdConfig, "fdConfig");
 
         Menu.setBackground(new java.awt.Color(27, 28, 29));
         Menu.setForeground(new java.awt.Color(255, 255, 255));
@@ -787,124 +1243,134 @@ public class LFStudio extends javax.swing.JFrame {
         Menu.setPreferredSize(new java.awt.Dimension(400, 560));
         Menu.setLayout(new javax.swing.BoxLayout(Menu, javax.swing.BoxLayout.LINE_AXIS));
 
-        jScrollPane1.setBackground(new java.awt.Color(27, 28, 29));
-        jScrollPane1.setBorder(null);
-        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane1.setMaximumSize(null);
-        jScrollPane1.setName(""); // NOI18N
-        jScrollPane1.setPreferredSize(new java.awt.Dimension(400, 560));
+        menuScroll.setBackground(new java.awt.Color(27, 28, 29));
+        menuScroll.setBorder(null);
+        menuScroll.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        menuScroll.setMaximumSize(null);
+        menuScroll.setName(""); // NOI18N
+        menuScroll.setPreferredSize(new java.awt.Dimension(400, 560));
 
-        jPanel3.setBackground(new java.awt.Color(70, 71, 74));
-        jPanel3.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel3.setMaximumSize(new java.awt.Dimension(344, 539));
-        jPanel3.setPreferredSize(new java.awt.Dimension(400, 560));
+        menuPanel.setBackground(new java.awt.Color(70, 71, 74));
+        menuPanel.setForeground(new java.awt.Color(255, 255, 255));
+        menuPanel.setMaximumSize(new java.awt.Dimension(344, 539));
+        menuPanel.setPreferredSize(new java.awt.Dimension(400, 560));
 
-        jLabel7.setBackground(new java.awt.Color(70, 71, 74));
-        jLabel7.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel7.setText("    Gramáticas LC");
-        jLabel7.setMaximumSize(new java.awt.Dimension(344, 539));
+        menuGLC.setBackground(new java.awt.Color(70, 71, 74));
+        menuGLC.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        menuGLC.setForeground(new java.awt.Color(255, 255, 255));
+        menuGLC.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        menuGLC.setText("    Gramáticas LC");
+        menuGLC.setMaximumSize(new java.awt.Dimension(344, 539));
 
-        jLabel3.setBackground(new java.awt.Color(70, 71, 74));
-        jLabel3.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel3.setText("    Automato Pilha");
-        jLabel3.setMaximumSize(new java.awt.Dimension(344, 539));
-
-        jLabel6.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel6.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel6.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel6.setText("    Expressões Regulares");
-        jLabel6.setMaximumSize(new java.awt.Dimension(344, 539));
-        jLabel6.setOpaque(true);
-
-        jLabel8.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel8.setText("    Máquinas de Turing");
-        jLabel8.setMaximumSize(new java.awt.Dimension(344, 539));
-
-        jLabel4.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel4.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel4.setText("    Automato AFD");
-        jLabel4.setMaximumSize(new java.awt.Dimension(344, 539));
-        jLabel4.setOpaque(true);
-
-        jLabel2.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel2.setFont(new java.awt.Font("Comic Sans MS", 0, 48)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel2.setText("  LF Studio");
-        jLabel2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jLabel2.setMaximumSize(new java.awt.Dimension(344, 539));
-        jLabel2.setOpaque(true);
-
-        jLabel5.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel5.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel5.setText("    Gramáticas Regulares");
-        jLabel5.setMaximumSize(new java.awt.Dimension(344, 539));
-        jLabel5.setOpaque(true);
-
-        jLabel1.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        jLabel1.setText("    Automato AFND");
-        jLabel1.setMaximumSize(new java.awt.Dimension(344, 539));
-        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+        menuPilha.setBackground(new java.awt.Color(70, 71, 74));
+        menuPilha.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        menuPilha.setForeground(new java.awt.Color(255, 255, 255));
+        menuPilha.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        menuPilha.setText("    Automato Pilha");
+        menuPilha.setMaximumSize(new java.awt.Dimension(344, 539));
+        menuPilha.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel1MouseClicked(evt);
+                menuPilhaMouseClicked(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        menuRegX.setBackground(new java.awt.Color(0, 0, 0));
+        menuRegX.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        menuRegX.setForeground(new java.awt.Color(255, 255, 255));
+        menuRegX.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        menuRegX.setText("    Expressões Regulares");
+        menuRegX.setMaximumSize(new java.awt.Dimension(344, 539));
+        menuRegX.setOpaque(true);
+
+        menuTuring.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        menuTuring.setForeground(new java.awt.Color(255, 255, 255));
+        menuTuring.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        menuTuring.setText("    Máquinas de Turing");
+        menuTuring.setMaximumSize(new java.awt.Dimension(344, 539));
+
+        menuAfd.setBackground(new java.awt.Color(0, 0, 0));
+        menuAfd.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        menuAfd.setForeground(new java.awt.Color(255, 255, 255));
+        menuAfd.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        menuAfd.setText("    Automato FD");
+        menuAfd.setMaximumSize(new java.awt.Dimension(344, 539));
+        menuAfd.setOpaque(true);
+        menuAfd.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuAfdMouseClicked(evt);
+            }
+        });
+
+        titleLFStudio.setBackground(new java.awt.Color(0, 0, 0));
+        titleLFStudio.setFont(new java.awt.Font("Comic Sans MS", 0, 48)); // NOI18N
+        titleLFStudio.setForeground(new java.awt.Color(255, 255, 255));
+        titleLFStudio.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        titleLFStudio.setText("  LF Studio");
+        titleLFStudio.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        titleLFStudio.setMaximumSize(new java.awt.Dimension(344, 539));
+        titleLFStudio.setOpaque(true);
+
+        menuGramaticaReg.setBackground(new java.awt.Color(0, 0, 0));
+        menuGramaticaReg.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        menuGramaticaReg.setForeground(new java.awt.Color(255, 255, 255));
+        menuGramaticaReg.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        menuGramaticaReg.setText("    Gramáticas Regulares");
+        menuGramaticaReg.setMaximumSize(new java.awt.Dimension(344, 539));
+        menuGramaticaReg.setOpaque(true);
+
+        menuAFND.setFont(new java.awt.Font("Comic Sans MS", 0, 24)); // NOI18N
+        menuAFND.setForeground(new java.awt.Color(255, 255, 255));
+        menuAFND.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        menuAFND.setText("    Automato FND");
+        menuAFND.setMaximumSize(new java.awt.Dimension(344, 539));
+        menuAFND.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuAFNDMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout menuPanelLayout = new javax.swing.GroupLayout(menuPanel);
+        menuPanel.setLayout(menuPanelLayout);
+        menuPanelLayout.setHorizontalGroup(
+            menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(titleLFStudio, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
+                    .addComponent(menuAFND, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(menuAfd, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(menuPilha, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(menuRegX, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 341, Short.MAX_VALUE)
+                    .addComponent(menuGLC, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(menuGramaticaReg, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(menuTuring, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(53, Short.MAX_VALUE))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        menuPanelLayout.setVerticalGroup(
+            menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(menuPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(titleLFStudio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(menuAFND, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(menuAfd, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(menuPilha, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(menuRegX, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(menuGLC, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(menuGramaticaReg, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(menuTuring, javax.swing.GroupLayout.PREFERRED_SIZE, 58, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        jScrollPane1.setViewportView(jPanel3);
+        menuScroll.setViewportView(menuPanel);
 
-        Menu.add(jScrollPane1);
+        Menu.add(menuScroll);
 
         javax.swing.GroupLayout JanelaVisivelLayout = new javax.swing.GroupLayout(JanelaVisivel.getContentPane());
         JanelaVisivel.getContentPane().setLayout(JanelaVisivelLayout);
@@ -967,16 +1433,16 @@ public class LFStudio extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_AFND3_TextFieldEntrada1ActionPerformed
 
-    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
-        cl.show(JanelaExecucao, "card4");
-    }//GEN-LAST:event_jLabel1MouseClicked
+    private void menuAFNDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAFNDMouseClicked
+        cl.show(JanelaExecucao, "afndInicio");
+    }//GEN-LAST:event_menuAFNDMouseClicked
 
     private void AFND1_LabelNovoAutomatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AFND1_LabelNovoAutomatoMouseClicked
-        cl.show(JanelaExecucao,"Config AFND");
+        cl.show(JanelaExecucao,"afndConfig");
     }//GEN-LAST:event_AFND1_LabelNovoAutomatoMouseClicked
 
     private void AFND2_LabelProcessarAutomatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AFND2_LabelProcessarAutomatoMouseClicked
-        cl.show(JanelaExecucao,"Result_AFND");
+        cl.show(JanelaExecucao,"afndProcessamento");
     }//GEN-LAST:event_AFND2_LabelProcessarAutomatoMouseClicked
 
     private void AFND2_TextFieldAlfabetoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AFND2_TextFieldAlfabetoKeyReleased
@@ -993,17 +1459,86 @@ public class LFStudio extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_validar_palavraActionPerformed
 
-    private void ajuda2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ajuda2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ajuda2ActionPerformed
-
-    private void validar_palavra1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_validar_palavra1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_validar_palavra1ActionPerformed
-
     private void LabelNovoAutomatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelNovoAutomatoMouseClicked
-        // TODO add your handling code here:
+        cl.show(JanelaExecucao, "pilhaConfig");               
     }//GEN-LAST:event_LabelNovoAutomatoMouseClicked
+
+    private void menuAfdMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAfdMouseClicked
+        cl.show(JanelaExecucao, "fdInicio");               // TODO add your handling code here:
+    }//GEN-LAST:event_menuAfdMouseClicked
+
+    private void LabelImportarPilhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelImportarPilhaMouseClicked
+//        c1.show(JanelaExecucao, "pilhaImportar")        // TODO add your handling code here:
+    }//GEN-LAST:event_LabelImportarPilhaMouseClicked
+
+    private void menuPilhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPilhaMouseClicked
+        // TODO add your handling code here:
+        cl.show(JanelaExecucao, "pilhaInicio"); 
+    }//GEN-LAST:event_menuPilhaMouseClicked
+
+    private void r_eiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_eiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_r_eiActionPerformed
+
+    private void r_aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_aActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_r_aActionPerformed
+
+    private void r_apActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_apActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_r_apActionPerformed
+
+    private void r_eaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_eaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_r_eaActionPerformed
+
+    private void r_sipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_sipActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_r_sipActionPerformed
+
+    private void processar_automatoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_processar_automatoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_processar_automatoActionPerformed
+
+    private void ajudaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ajudaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ajudaActionPerformed
+
+    private void processar_automatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_processar_automatoMouseClicked
+        cl.show(JanelaExecucao, "pilhaProcessamento");        // TODO add your handling code here:
+    }//GEN-LAST:event_processar_automatoMouseClicked
+
+    private void LabelImportarFDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelImportarFDMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_LabelImportarFDMouseClicked
+
+    private void LabelNovoAutomatoFDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelNovoAutomatoFDMouseClicked
+        cl.show(JanelaExecucao, "fdConfig");        // TODO add your handling code here:
+    }//GEN-LAST:event_LabelNovoAutomatoFDMouseClicked
+
+    private void AFND2_TextFieldAlfabeto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AFND2_TextFieldAlfabeto1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AFND2_TextFieldAlfabeto1ActionPerformed
+
+    private void AFND2_TextFieldAlfabeto1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AFND2_TextFieldAlfabeto1KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AFND2_TextFieldAlfabeto1KeyReleased
+
+    private void AFND2_TextFieldEstadoInicial1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AFND2_TextFieldEstadoInicial1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AFND2_TextFieldEstadoInicial1ActionPerformed
+
+    private void AFND2_TextFieldEstadosFinais1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AFND2_TextFieldEstadosFinais1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AFND2_TextFieldEstadosFinais1ActionPerformed
+
+    private void AFND2_JButtonSalvarAutomato1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AFND2_JButtonSalvarAutomato1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AFND2_JButtonSalvarAutomato1ActionPerformed
+
+    private void AFND2_LabelProcessarAutomato1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AFND2_LabelProcessarAutomato1MouseClicked
+        cl.show(JanelaExecucao, "fdProcessamento");        // TODO add your handling code here:
+    }//GEN-LAST:event_AFND2_LabelProcessarAutomato1MouseClicked
 
     private ArrayList<String> recebeTexto(){
         
@@ -1065,21 +1600,37 @@ public class LFStudio extends javax.swing.JFrame {
     private javax.swing.JLabel AFND1_LabelImportarAutomato;
     private javax.swing.JLabel AFND1_LabelNovoAutomato;
     private javax.swing.JPanel AFND2_InternalPanel;
+    private javax.swing.JPanel AFND2_InternalPanel1;
     private javax.swing.JButton AFND2_JButtonSalvarAutomato;
+    private javax.swing.JButton AFND2_JButtonSalvarAutomato1;
     private javax.swing.JLabel AFND2_LabelAlfabeto;
+    private javax.swing.JLabel AFND2_LabelAlfabeto1;
     private javax.swing.JLabel AFND2_LabelEstadoInicial;
+    private javax.swing.JLabel AFND2_LabelEstadoInicial1;
     private javax.swing.JLabel AFND2_LabelEstados;
+    private javax.swing.JLabel AFND2_LabelEstados1;
     private javax.swing.JLabel AFND2_LabelEstadosFinais;
+    private javax.swing.JLabel AFND2_LabelEstadosFinais1;
     private javax.swing.JLabel AFND2_LabelProcessarAutomato;
+    private javax.swing.JLabel AFND2_LabelProcessarAutomato1;
     private javax.swing.JLabel AFND2_LabelTabelaTransicao;
+    private javax.swing.JLabel AFND2_LabelTabelaTransicao1;
     private javax.swing.JTextField AFND2_TextFieldAlfabeto;
+    private javax.swing.JTextField AFND2_TextFieldAlfabeto1;
     private javax.swing.JTextField AFND2_TextFieldEstadoInicial;
+    private javax.swing.JTextField AFND2_TextFieldEstadoInicial1;
     private javax.swing.JTextField AFND2_TextFieldEstados;
+    private javax.swing.JTextField AFND2_TextFieldEstados1;
     private javax.swing.JTextField AFND2_TextFieldEstadosFinais;
+    private javax.swing.JTextField AFND2_TextFieldEstadosFinais1;
     private javax.swing.JLabel AFND2_Titulo;
     private javax.swing.JLabel AFND2_Titulo1;
+    private javax.swing.JLabel AFND2_Titulo2;
+    private javax.swing.JLabel AFND2_Titulo3;
     private javax.swing.JScrollPane AFND2_jScrollPane2;
+    private javax.swing.JScrollPane AFND2_jScrollPane3;
     private javax.swing.JTable AFND2_jTable1;
+    private javax.swing.JTable AFND2_jTable2;
     private javax.swing.JLabel AFND3_JLabelProcessarAutomato;
     private javax.swing.JTextField AFND3_TextFieldEntrada1;
     private javax.swing.JLabel AFND3_Titulo4;
@@ -1090,46 +1641,59 @@ public class LFStudio extends javax.swing.JFrame {
     private javax.swing.JPanel JanelaExecucao;
     private javax.swing.JPanel JanelaPrincipal;
     private javax.swing.JInternalFrame JanelaVisivel;
+    private javax.swing.JLabel LabelAutomatoFD;
     private javax.swing.JLabel LabelAutomatoPilha;
+    private javax.swing.JLabel LabelImportarFD;
     private javax.swing.JLabel LabelImportarPilha;
     private javax.swing.JLabel LabelNovoAutomato;
+    private javax.swing.JLabel LabelNovoAutomatoFD;
     private javax.swing.JPanel Menu;
     private javax.swing.JPanel afndConfig;
     private javax.swing.JPanel afndInicio;
     private javax.swing.JPanel afndResultado;
     private javax.swing.JButton ajuda;
     private javax.swing.JButton ajuda1;
-    private javax.swing.JButton ajuda2;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
+    private javax.swing.JPanel fdConfig;
+    private javax.swing.JPanel fdInicio;
+    private javax.swing.JPanel fdTitle;
     private javax.swing.JList<String> jList2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel menuAFND;
+    private javax.swing.JLabel menuAfd;
+    private javax.swing.JLabel menuGLC;
+    private javax.swing.JLabel menuGramaticaReg;
+    private javax.swing.JPanel menuPanel;
+    private javax.swing.JLabel menuPilha;
+    private javax.swing.JLabel menuRegX;
+    private javax.swing.JScrollPane menuScroll;
+    private javax.swing.JLabel menuTuring;
     private javax.swing.JPanel painel;
     private javax.swing.JPanel pilhaConfig;
     private javax.swing.JPanel pilhaInicio;
     private javax.swing.JPanel pilhaProcessamento;
     private javax.swing.JPanel pilhaTitle;
-    private javax.swing.JPanel processamento;
     private javax.swing.JPanel processamento1;
-    private javax.swing.JPanel processamento2;
+    private javax.swing.JButton processar_automato;
+    private javax.swing.JTextField r_a;
+    private javax.swing.JTextField r_ap;
     private javax.swing.JTextField r_e;
-    private javax.swing.JTextField r_e1;
-    private javax.swing.JScrollPane scroll;
+    private javax.swing.JTextField r_ea;
+    private javax.swing.JTextField r_ei;
+    private javax.swing.JTextField r_sip;
+    private javax.swing.JButton salvar_automato;
+    private javax.swing.JLabel t_a;
+    private javax.swing.JLabel t_ap;
     private javax.swing.JLabel t_auto;
-    private javax.swing.JLabel t_auto1;
+    private javax.swing.JLabel t_auto2;
+    private javax.swing.JLabel t_config;
     private javax.swing.JLabel t_e;
-    private javax.swing.JLabel t_e1;
-    private javax.swing.JLabel t_proces;
+    private javax.swing.JLabel t_ea;
+    private javax.swing.JLabel t_ei;
     private javax.swing.JLabel t_proces1;
-    private javax.swing.JLabel t_proces2;
+    private javax.swing.JLabel t_sa;
+    private javax.swing.JLabel t_sip;
+    private javax.swing.JLabel t_tra;
+    private javax.swing.JLabel titleLFStudio;
+    private javax.swing.JPanel transicoes;
     private javax.swing.JButton validar_palavra;
-    private javax.swing.JButton validar_palavra1;
     // End of variables declaration//GEN-END:variables
 }
