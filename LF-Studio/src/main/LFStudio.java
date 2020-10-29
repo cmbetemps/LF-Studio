@@ -61,11 +61,6 @@ public class LFStudio extends javax.swing.JFrame {
         AFND2_Titulo = new javax.swing.JLabel();
         AFND2_Titulo1 = new javax.swing.JLabel();
         AFND2_LabelProcessarAutomato = new javax.swing.JLabel();
-        afndInicio = new javax.swing.JPanel();
-        InicioAFND_1 = new javax.swing.JPanel();
-        AFND1_LabelAutomatoFND = new javax.swing.JLabel();
-        AFND1_LabelImportarAutomato = new javax.swing.JLabel();
-        AFND1_LabelNovoAutomato = new javax.swing.JLabel();
         afndResultado = new javax.swing.JPanel();
         AFND3_Titulo4 = new javax.swing.JLabel();
         AFND3_Titulo5 = new javax.swing.JLabel();
@@ -85,8 +80,8 @@ public class LFStudio extends javax.swing.JFrame {
         pilhaInicio = new javax.swing.JPanel();
         pilhaTitle = new javax.swing.JPanel();
         LabelAutomatoPilha = new javax.swing.JLabel();
-        LabelImportarPilha = new javax.swing.JLabel();
         LabelNovoAutomato = new javax.swing.JLabel();
+        LabelImportarPilha = new javax.swing.JLabel();
         pilhaConfig = new javax.swing.JPanel();
         painel = new javax.swing.JPanel();
         t_tra = new javax.swing.JLabel();
@@ -129,6 +124,10 @@ public class LFStudio extends javax.swing.JFrame {
         AFND2_Titulo2 = new javax.swing.JLabel();
         AFND2_Titulo3 = new javax.swing.JLabel();
         AFND2_LabelProcessarAutomato1 = new javax.swing.JLabel();
+        afndInicio = new javax.swing.JPanel();
+        AFND1_LabelAutomatoFND = new javax.swing.JLabel();
+        AFND1_LabelImportarAutomato = new javax.swing.JLabel();
+        AFND1_LabelNovoAutomato = new javax.swing.JLabel();
         Menu = new javax.swing.JPanel();
         menuScroll = new javax.swing.JScrollPane();
         menuPanel = new javax.swing.JPanel();
@@ -156,6 +155,7 @@ public class LFStudio extends javax.swing.JFrame {
         JanelaExecucao.setLayout(new java.awt.CardLayout());
 
         afndConfig.setBackground(new java.awt.Color(70, 71, 74));
+        afndConfig.setPreferredSize(new java.awt.Dimension(680, 568));
 
         AFND2_LabelAlfabeto.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         AFND2_LabelAlfabeto.setForeground(new java.awt.Color(255, 255, 255));
@@ -332,116 +332,34 @@ public class LFStudio extends javax.swing.JFrame {
         afndConfigLayout.setHorizontalGroup(
             afndConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(afndConfigLayout.createSequentialGroup()
-                .addContainerGap(81, Short.MAX_VALUE)
-                .addGroup(afndConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(AFND2_InternalPanel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(AFND2_LabelProcessarAutomato, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(81, Short.MAX_VALUE))
-            .addGroup(afndConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(afndConfigLayout.createSequentialGroup()
-                    .addGap(44, 44, 44)
+                .addGroup(afndConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(AFND2_LabelProcessarAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(afndConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(AFND2_Titulo1)
-                        .addComponent(AFND2_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(338, Short.MAX_VALUE)))
+                        .addGroup(afndConfigLayout.createSequentialGroup()
+                            .addGap(75, 75, 75)
+                            .addComponent(AFND2_InternalPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(afndConfigLayout.createSequentialGroup()
+                            .addGap(21, 21, 21)
+                            .addGroup(afndConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(AFND2_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(AFND2_Titulo1)))))
+                .addContainerGap(87, Short.MAX_VALUE))
         );
         afndConfigLayout.setVerticalGroup(
             afndConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, afndConfigLayout.createSequentialGroup()
-                .addContainerGap(211, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(AFND2_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(AFND2_Titulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(AFND2_InternalPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addComponent(AFND2_LabelProcessarAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(110, 110, 110))
-            .addGroup(afndConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(afndConfigLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(AFND2_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(57, 57, 57)
-                    .addComponent(AFND2_Titulo1, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(547, Short.MAX_VALUE)))
+                .addGap(17, 17, 17))
         );
 
         JanelaExecucao.add(afndConfig, "afndConfig");
-
-        afndInicio.setBackground(new java.awt.Color(70, 71, 74));
-
-        InicioAFND_1.setBackground(new java.awt.Color(70, 71, 74));
-
-        AFND1_LabelAutomatoFND.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
-        AFND1_LabelAutomatoFND.setForeground(new java.awt.Color(255, 255, 255));
-        AFND1_LabelAutomatoFND.setText("<html><p style=\"padding-bottom: 16px;\">Autômato FND</p></html>");
-        AFND1_LabelAutomatoFND.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
-
-        AFND1_LabelImportarAutomato.setBackground(new java.awt.Color(0, 0, 0));
-        AFND1_LabelImportarAutomato.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        AFND1_LabelImportarAutomato.setForeground(new java.awt.Color(255, 255, 255));
-        AFND1_LabelImportarAutomato.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        AFND1_LabelImportarAutomato.setText("Importar autômato");
-        AFND1_LabelImportarAutomato.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-
-        AFND1_LabelNovoAutomato.setBackground(new java.awt.Color(0, 0, 0));
-        AFND1_LabelNovoAutomato.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        AFND1_LabelNovoAutomato.setForeground(new java.awt.Color(255, 255, 255));
-        AFND1_LabelNovoAutomato.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        AFND1_LabelNovoAutomato.setText("Novo autômato");
-        AFND1_LabelNovoAutomato.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        AFND1_LabelNovoAutomato.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                AFND1_LabelNovoAutomatoMouseClicked(evt);
-            }
-        });
-
-        javax.swing.GroupLayout InicioAFND_1Layout = new javax.swing.GroupLayout(InicioAFND_1);
-        InicioAFND_1.setLayout(InicioAFND_1Layout);
-        InicioAFND_1Layout.setHorizontalGroup(
-            InicioAFND_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(InicioAFND_1Layout.createSequentialGroup()
-                .addGroup(InicioAFND_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(InicioAFND_1Layout.createSequentialGroup()
-                        .addGap(126, 126, 126)
-                        .addComponent(AFND1_LabelAutomatoFND, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(InicioAFND_1Layout.createSequentialGroup()
-                        .addGap(151, 151, 151)
-                        .addGroup(InicioAFND_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(AFND1_LabelNovoAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(AFND1_LabelImportarAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(165, Short.MAX_VALUE))
-        );
-        InicioAFND_1Layout.setVerticalGroup(
-            InicioAFND_1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, InicioAFND_1Layout.createSequentialGroup()
-                .addGap(85, 85, 85)
-                .addComponent(AFND1_LabelAutomatoFND, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(143, 143, 143)
-                .addComponent(AFND1_LabelNovoAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(AFND1_LabelImportarAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(132, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout afndInicioLayout = new javax.swing.GroupLayout(afndInicio);
-        afndInicio.setLayout(afndInicioLayout);
-        afndInicioLayout.setHorizontalGroup(
-            afndInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 680, Short.MAX_VALUE)
-            .addGroup(afndInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(afndInicioLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(InicioAFND_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-        afndInicioLayout.setVerticalGroup(
-            afndInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 731, Short.MAX_VALUE)
-            .addGroup(afndInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(afndInicioLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(InicioAFND_1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
-        );
-
-        JanelaExecucao.add(afndInicio, "afndInicio");
 
         AFND3_Titulo4.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
         AFND3_Titulo4.setForeground(new java.awt.Color(255, 255, 255));
@@ -525,12 +443,12 @@ public class LFStudio extends javax.swing.JFrame {
                     .addComponent(AFND3_TextFieldEntrada1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(AFND3_JLabelProcessarAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(226, Short.MAX_VALUE))
+                .addContainerGap(193, Short.MAX_VALUE))
             .addGroup(afndResultadoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(afndResultadoLayout.createSequentialGroup()
                     .addGap(146, 146, 146)
                     .addComponent(AFND3_Titulo6, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(537, Short.MAX_VALUE)))
+                    .addContainerGap(504, Short.MAX_VALUE)))
         );
 
         JanelaExecucao.add(afndResultado, "afndProcessamento");
@@ -627,7 +545,7 @@ public class LFStudio extends javax.swing.JFrame {
                     .addComponent(r_e, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(validar_palavra)
-                .addContainerGap(207, Short.MAX_VALUE))
+                .addContainerGap(174, Short.MAX_VALUE))
         );
 
         JanelaExecucao.add(pilhaProcessamento, "pilhaProcessamento");
@@ -639,19 +557,8 @@ public class LFStudio extends javax.swing.JFrame {
         LabelAutomatoPilha.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
         LabelAutomatoPilha.setForeground(new java.awt.Color(255, 255, 255));
         LabelAutomatoPilha.setText("<html><p style=\"padding-bottom: 16px;\">Autômato de Pilha</p></html>");
+        LabelAutomatoPilha.setAlignmentX(5.0F);
         LabelAutomatoPilha.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
-
-        LabelImportarPilha.setBackground(new java.awt.Color(0, 0, 0));
-        LabelImportarPilha.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        LabelImportarPilha.setForeground(new java.awt.Color(255, 255, 255));
-        LabelImportarPilha.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        LabelImportarPilha.setText("Importar autômato");
-        LabelImportarPilha.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        LabelImportarPilha.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                LabelImportarPilhaMouseClicked(evt);
-            }
-        });
 
         LabelNovoAutomato.setBackground(new java.awt.Color(0, 0, 0));
         LabelNovoAutomato.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
@@ -665,53 +572,61 @@ public class LFStudio extends javax.swing.JFrame {
             }
         });
 
+        LabelImportarPilha.setBackground(new java.awt.Color(0, 0, 0));
+        LabelImportarPilha.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        LabelImportarPilha.setForeground(new java.awt.Color(255, 255, 255));
+        LabelImportarPilha.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        LabelImportarPilha.setText("Importar autômato");
+        LabelImportarPilha.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        LabelImportarPilha.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LabelImportarPilhaMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout pilhaTitleLayout = new javax.swing.GroupLayout(pilhaTitle);
         pilhaTitle.setLayout(pilhaTitleLayout);
         pilhaTitleLayout.setHorizontalGroup(
             pilhaTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pilhaTitleLayout.createSequentialGroup()
+                .addContainerGap(148, Short.MAX_VALUE)
                 .addGroup(pilhaTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(pilhaTitleLayout.createSequentialGroup()
-                        .addGap(95, 95, 95)
-                        .addComponent(LabelAutomatoPilha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pilhaTitleLayout.createSequentialGroup()
-                        .addGap(151, 151, 151)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pilhaTitleLayout.createSequentialGroup()
+                        .addComponent(LabelAutomatoPilha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(143, 143, 143))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pilhaTitleLayout.createSequentialGroup()
                         .addGroup(pilhaTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LabelImportarPilha, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(LabelNovoAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(196, Short.MAX_VALUE))
+                            .addComponent(LabelNovoAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 404, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(LabelImportarPilha, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(49, 49, 49))))
         );
         pilhaTitleLayout.setVerticalGroup(
             pilhaTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pilhaTitleLayout.createSequentialGroup()
-                .addGap(88, 88, 88)
+                .addContainerGap(89, Short.MAX_VALUE)
                 .addComponent(LabelAutomatoPilha, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(134, 134, 134)
-                .addComponent(LabelNovoAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(82, 82, 82)
                 .addComponent(LabelImportarPilha, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(132, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(LabelNovoAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(40, 40, 40))
         );
 
         javax.swing.GroupLayout pilhaInicioLayout = new javax.swing.GroupLayout(pilhaInicio);
         pilhaInicio.setLayout(pilhaInicioLayout);
         pilhaInicioLayout.setHorizontalGroup(
             pilhaInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 680, Short.MAX_VALUE)
-            .addGroup(pilhaInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pilhaInicioLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(pilhaTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pilhaInicioLayout.createSequentialGroup()
+                .addContainerGap(7, Short.MAX_VALUE)
+                .addComponent(pilhaTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         pilhaInicioLayout.setVerticalGroup(
             pilhaInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 731, Short.MAX_VALUE)
-            .addGroup(pilhaInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(pilhaInicioLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(pilhaTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+            .addGroup(pilhaInicioLayout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addComponent(pilhaTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10))
         );
 
         JanelaExecucao.add(pilhaInicio, "pilhaInicio");
@@ -928,7 +843,7 @@ public class LFStudio extends javax.swing.JFrame {
         pilhaConfigLayout.setVerticalGroup(
             pilhaConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pilhaConfigLayout.createSequentialGroup()
-                .addContainerGap(38, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(pilhaConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(t_auto2)
                     .addComponent(ajuda, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -981,27 +896,26 @@ public class LFStudio extends javax.swing.JFrame {
         fdTitleLayout.setHorizontalGroup(
             fdTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(fdTitleLayout.createSequentialGroup()
+                .addGap(208, 208, 208)
                 .addGroup(fdTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(fdTitleLayout.createSequentialGroup()
-                        .addGap(95, 95, 95)
-                        .addComponent(LabelAutomatoFD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(fdTitleLayout.createSequentialGroup()
-                        .addGap(151, 151, 151)
-                        .addGroup(fdTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(LabelImportarFD, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(LabelNovoAutomatoFD, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(196, Short.MAX_VALUE))
+                    .addComponent(LabelImportarFD, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(LabelNovoAutomatoFD, javax.swing.GroupLayout.PREFERRED_SIZE, 185, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(139, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fdTitleLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(LabelAutomatoFD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(160, 160, 160))
         );
         fdTitleLayout.setVerticalGroup(
             fdTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fdTitleLayout.createSequentialGroup()
-                .addGap(88, 88, 88)
+                .addGap(40, 40, 40)
                 .addComponent(LabelAutomatoFD, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(134, 134, 134)
+                .addGap(72, 72, 72)
                 .addComponent(LabelNovoAutomatoFD, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(LabelImportarFD, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(132, Short.MAX_VALUE))
+                .addContainerGap(242, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout fdInicioLayout = new javax.swing.GroupLayout(fdInicio);
@@ -1011,18 +925,18 @@ public class LFStudio extends javax.swing.JFrame {
             .addGap(0, 680, Short.MAX_VALUE)
             .addGroup(fdInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(fdInicioLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGap(0, 45, Short.MAX_VALUE)
                     .addComponent(fdTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(0, 46, Short.MAX_VALUE)))
         );
         fdInicioLayout.setVerticalGroup(
             fdInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 731, Short.MAX_VALUE)
+            .addGap(0, 698, Short.MAX_VALUE)
             .addGroup(fdInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(fdInicioLayout.createSequentialGroup()
-                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addGap(0, 97, Short.MAX_VALUE)
                     .addComponent(fdTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(0, 0, Short.MAX_VALUE)))
+                    .addGap(0, 98, Short.MAX_VALUE)))
         );
 
         JanelaExecucao.add(fdInicio, "fdInicio");
@@ -1204,23 +1118,23 @@ public class LFStudio extends javax.swing.JFrame {
         fdConfigLayout.setHorizontalGroup(
             fdConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(fdConfigLayout.createSequentialGroup()
-                .addContainerGap(75, Short.MAX_VALUE)
+                .addContainerGap(81, Short.MAX_VALUE)
                 .addGroup(fdConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(AFND2_InternalPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AFND2_LabelProcessarAutomato1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(74, Short.MAX_VALUE))
+                .addContainerGap(81, Short.MAX_VALUE))
             .addGroup(fdConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(fdConfigLayout.createSequentialGroup()
                     .addGap(44, 44, 44)
                     .addGroup(fdConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(AFND2_Titulo3)
                         .addComponent(AFND2_Titulo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(355, Short.MAX_VALUE)))
+                    .addContainerGap(368, Short.MAX_VALUE)))
         );
         fdConfigLayout.setVerticalGroup(
             fdConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fdConfigLayout.createSequentialGroup()
-                .addContainerGap(211, Short.MAX_VALUE)
+                .addContainerGap(178, Short.MAX_VALUE)
                 .addComponent(AFND2_InternalPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(AFND2_LabelProcessarAutomato1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1231,10 +1145,69 @@ public class LFStudio extends javax.swing.JFrame {
                     .addComponent(AFND2_Titulo2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGap(57, 57, 57)
                     .addComponent(AFND2_Titulo3, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(547, Short.MAX_VALUE)))
+                    .addContainerGap(514, Short.MAX_VALUE)))
         );
 
         JanelaExecucao.add(fdConfig, "fdConfig");
+
+        afndInicio.setBackground(new java.awt.Color(70, 71, 74));
+
+        AFND1_LabelAutomatoFND.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
+        AFND1_LabelAutomatoFND.setForeground(new java.awt.Color(255, 255, 255));
+        AFND1_LabelAutomatoFND.setText("<html><p style=\"padding-bottom: 16px;\">Autômato FND</p></html>");
+        AFND1_LabelAutomatoFND.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
+
+        AFND1_LabelImportarAutomato.setBackground(new java.awt.Color(0, 0, 0));
+        AFND1_LabelImportarAutomato.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        AFND1_LabelImportarAutomato.setForeground(new java.awt.Color(255, 255, 255));
+        AFND1_LabelImportarAutomato.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        AFND1_LabelImportarAutomato.setText("Importar autômato");
+        AFND1_LabelImportarAutomato.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+
+        AFND1_LabelNovoAutomato.setBackground(new java.awt.Color(0, 0, 0));
+        AFND1_LabelNovoAutomato.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        AFND1_LabelNovoAutomato.setForeground(new java.awt.Color(255, 255, 255));
+        AFND1_LabelNovoAutomato.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        AFND1_LabelNovoAutomato.setText("Novo autômato");
+        AFND1_LabelNovoAutomato.setAlignmentX(5.0F);
+        AFND1_LabelNovoAutomato.setAlignmentY(5.0F);
+        AFND1_LabelNovoAutomato.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        AFND1_LabelNovoAutomato.setPreferredSize(new java.awt.Dimension(150, 22));
+        AFND1_LabelNovoAutomato.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AFND1_LabelNovoAutomatoMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout afndInicioLayout = new javax.swing.GroupLayout(afndInicio);
+        afndInicio.setLayout(afndInicioLayout);
+        afndInicioLayout.setHorizontalGroup(
+            afndInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, afndInicioLayout.createSequentialGroup()
+                .addContainerGap(206, Short.MAX_VALUE)
+                .addGroup(afndInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, afndInicioLayout.createSequentialGroup()
+                        .addComponent(AFND1_LabelAutomatoFND, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(176, 176, 176))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, afndInicioLayout.createSequentialGroup()
+                        .addGroup(afndInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(AFND1_LabelImportarAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(AFND1_LabelNovoAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(193, 193, 193))))
+        );
+        afndInicioLayout.setVerticalGroup(
+            afndInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, afndInicioLayout.createSequentialGroup()
+                .addGap(132, 132, 132)
+                .addComponent(AFND1_LabelAutomatoFND, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(71, 71, 71)
+                .addComponent(AFND1_LabelNovoAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(AFND1_LabelImportarAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(355, Short.MAX_VALUE))
+        );
+
+        JanelaExecucao.add(afndInicio, "afndInicio");
 
         Menu.setBackground(new java.awt.Color(27, 28, 29));
         Menu.setForeground(new java.awt.Color(255, 255, 255));
@@ -1637,7 +1610,6 @@ public class LFStudio extends javax.swing.JFrame {
     private javax.swing.JLabel AFND3_Titulo5;
     private javax.swing.JLabel AFND3_Titulo6;
     private javax.swing.JScrollPane AFND3_jScrollPane3;
-    private javax.swing.JPanel InicioAFND_1;
     private javax.swing.JPanel JanelaExecucao;
     private javax.swing.JPanel JanelaPrincipal;
     private javax.swing.JInternalFrame JanelaVisivel;
