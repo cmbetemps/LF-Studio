@@ -5,22 +5,27 @@
  */
 package main;
 
-
-
 import java.awt.CardLayout;
 import java.awt.Color;
-import java.awt.font.TextAttribute; 
+import java.awt.font.TextAttribute;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Map;
 import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JTextField;
+import main.modulos.AutomatoFinitoNaoDeterministico.domain.models.NaoDeterministico;
+
 /**
  *
  * @author thiag
  */
 public class LFStudio extends javax.swing.JFrame {
+
     public CardLayout cl;
-   
+    private NaoDeterministico AFNDatual;
+
     public LFStudio() {
         super("LFPrototipo");
         initComponents();
@@ -216,7 +221,7 @@ public class LFStudio extends javax.swing.JFrame {
         AFND2_TextFieldEstadoInicial.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         AFND2_TextFieldEstadoInicial.setForeground(new java.awt.Color(0, 0, 0));
         AFND2_TextFieldEstadoInicial.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        AFND2_TextFieldEstadoInicial.setText("q0");
+        AFND2_TextFieldEstadoInicial.setText("0");
         AFND2_TextFieldEstadoInicial.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AFND2_TextFieldEstadoInicialActionPerformed(evt);
@@ -227,7 +232,7 @@ public class LFStudio extends javax.swing.JFrame {
         AFND2_TextFieldEstadosFinais.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         AFND2_TextFieldEstadosFinais.setForeground(new java.awt.Color(0, 0, 0));
         AFND2_TextFieldEstadosFinais.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        AFND2_TextFieldEstadosFinais.setText("q1");
+        AFND2_TextFieldEstadosFinais.setText("3");
         AFND2_TextFieldEstadosFinais.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 AFND2_TextFieldEstadosFinaisActionPerformed(evt);
@@ -1384,7 +1389,6 @@ public class LFStudio extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-
     private void AFND2_TextFieldAlfabetoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AFND2_TextFieldAlfabetoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_AFND2_TextFieldAlfabetoActionPerformed
@@ -1401,7 +1405,6 @@ public class LFStudio extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_AFND2_JButtonSalvarAutomatoActionPerformed
 
-  
     private void AFND3_TextFieldEntrada1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AFND3_TextFieldEntrada1ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_AFND3_TextFieldEntrada1ActionPerformed
@@ -1411,17 +1414,79 @@ public class LFStudio extends javax.swing.JFrame {
     }//GEN-LAST:event_menuAFNDMouseClicked
 
     private void AFND1_LabelNovoAutomatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AFND1_LabelNovoAutomatoMouseClicked
-        cl.show(JanelaExecucao,"afndConfig");
+        cl.show(JanelaExecucao, "afndConfig");
     }//GEN-LAST:event_AFND1_LabelNovoAutomatoMouseClicked
 
     private void AFND2_LabelProcessarAutomatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AFND2_LabelProcessarAutomatoMouseClicked
-        cl.show(JanelaExecucao,"afndProcessamento");
-    }//GEN-LAST:event_AFND2_LabelProcessarAutomatoMouseClicked
-
-    private void AFND2_TextFieldAlfabetoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AFND2_TextFieldAlfabetoKeyReleased
-        recebeTexto();
-        AFND2_jTable1.setEditingColumn(0);
+       
         
+        // aceitacao char[] | estado inicial char | matriz 3D transicao char[][][] | String alfabeto
+        //    int [][][]  teste = {
+        //      0      1
+        //*q0*/{{0,1},{0,2}},
+        //*q1*/{{3},  {0}},
+        //*q2*/{{0},  {3}},
+        //*q3*/{{3},  {3}}};
+        //String aux = AFND2_TextFieldAlfabeto.getText();
+        
+        //ArrayList<Integer> estadosFinais;
+        //ArrayList<Integer> estadosIniciais;
+        //ArrayList<Integer> estadosDigitados = new ArrayList<>();
+        //String alfabetoDigitado = "";
+        //int [] estadosFinaisFormatados;
+        
+       /* 
+        ArrayList<String> estadosFinais = recebeTexto(AFND2_TextFieldEstadosFinais.getText());
+        ArrayList<String> estadoInicial = recebeTexto(AFND2_TextFieldEstadoInicial.getText());
+        ArrayList<String> estadosDigitados = recebeTexto(AFND2_TextFieldEstados.getText());
+        ArrayList<String> AlfabetoDigitado = recebeTexto(AFND2_TextFieldAlfabeto.getText());
+        
+        for(String s : recebeTexto(AFND2_TextFieldEstadosFinais.getText())){
+        estados.add(Integer.valueOf(s));
+        }
+        */
+        //estadosFinais = AFND_Converte(AFND2_TextFieldEstadosFinais);
+        //estadosIniciais = AFND_Converte(AFND2_TextFieldEstadoInicial);
+        //estadosDigitados = AFND_Converte(AFND2_TextFieldEstados);
+        //alfabetoDigitado = recebeTextoString(AFND2_TextFieldAlfabeto.getText());
+        //estadosFinaisFormatados = converteInteger(estadosFinais);
+        
+        //AFNDatual = new NaoDeterministico(estadosFinaisFormatados,estadosIniciais.get(0),teste,alfabetoDigitado);
+        
+        //if (AFNDatual != null) {
+            cl.show(JanelaExecucao, "afndProcessamento");
+        //}else{
+        //    JOptionPane.showMessageDialog(null, "Autômato inválido,cheque as opções de ajuda em caso de dúvida na inserção");
+        //}
+    }//GEN-LAST:event_AFND2_LabelProcessarAutomatoMouseClicked
+    
+    // Recebe um TextField e devolve um Array de Integers
+    private ArrayList<Integer> AFND_Converte(JTextField atual){
+        
+        ArrayList<Integer> retorno = new ArrayList<>();
+        
+        for(String s : recebeTexto(atual.getText())){
+        retorno.add(Integer.valueOf(s));
+        }
+        
+        return retorno;
+        
+    }
+    
+    //Converte um array list de "Integers" em um vetor de int
+    
+    private int[] converteInteger(ArrayList<Integer> atual){
+        
+        int[] retorno = new int[atual.size()];
+        for (int i = 0; i < retorno.length; i++) {
+            retorno[i] = atual.get(i);
+        }
+        return retorno;
+    }
+    
+    private void AFND2_TextFieldAlfabetoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AFND2_TextFieldAlfabetoKeyReleased
+
+        AFND2_jTable1.setEditingColumn(0);
     }//GEN-LAST:event_AFND2_TextFieldAlfabetoKeyReleased
 
     private void ajuda1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ajuda1ActionPerformed
@@ -1433,7 +1498,7 @@ public class LFStudio extends javax.swing.JFrame {
     }//GEN-LAST:event_validar_palavraActionPerformed
 
     private void LabelNovoAutomatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelNovoAutomatoMouseClicked
-        cl.show(JanelaExecucao, "pilhaConfig");               
+        cl.show(JanelaExecucao, "pilhaConfig");
     }//GEN-LAST:event_LabelNovoAutomatoMouseClicked
 
     private void menuAfdMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAfdMouseClicked
@@ -1446,7 +1511,7 @@ public class LFStudio extends javax.swing.JFrame {
 
     private void menuPilhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPilhaMouseClicked
         // TODO add your handling code here:
-        cl.show(JanelaExecucao, "pilhaInicio"); 
+        cl.show(JanelaExecucao, "pilhaInicio");
     }//GEN-LAST:event_menuPilhaMouseClicked
 
     private void r_eiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_eiActionPerformed
@@ -1478,7 +1543,7 @@ public class LFStudio extends javax.swing.JFrame {
     }//GEN-LAST:event_ajudaActionPerformed
 
     private void processar_automatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_processar_automatoMouseClicked
-        cl.show(JanelaExecucao, "pilhaProcessamento");        // TODO add your handling code here:
+        cl.show(JanelaExecucao, "pilhaProcessamento");        // TODO add your handling code here:        
     }//GEN-LAST:event_processar_automatoMouseClicked
 
     private void LabelImportarFDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LabelImportarFDMouseClicked
@@ -1494,7 +1559,7 @@ public class LFStudio extends javax.swing.JFrame {
     }//GEN-LAST:event_AFND2_TextFieldAlfabeto1ActionPerformed
 
     private void AFND2_TextFieldAlfabeto1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AFND2_TextFieldAlfabeto1KeyReleased
-        // TODO add your handling code here:
+
     }//GEN-LAST:event_AFND2_TextFieldAlfabeto1KeyReleased
 
     private void AFND2_TextFieldEstadoInicial1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AFND2_TextFieldEstadoInicial1ActionPerformed
@@ -1512,23 +1577,35 @@ public class LFStudio extends javax.swing.JFrame {
     private void AFND2_LabelProcessarAutomato1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AFND2_LabelProcessarAutomato1MouseClicked
         cl.show(JanelaExecucao, "fdProcessamento");        // TODO add your handling code here:
     }//GEN-LAST:event_AFND2_LabelProcessarAutomato1MouseClicked
-
-    private ArrayList<String> recebeTexto(){
-        
-        String testa = AFND2_TextFieldAlfabeto.getText();
+    // Formata o texto recebido para que ele não contenha espaços e nem virgulas e esteja ordenado em uma lista "ListaFormatada'
+    private ArrayList<String> recebeTexto(String textoAtual) {
         String aux = "";
-        ArrayList<String> possivelAlfabeto = new ArrayList<>();
-        for (int i = 0; i < testa.length(); i++) {
-            if(!String.valueOf(testa.charAt(i)).equals(",")){
-            aux += testa.charAt(i);
-            }else{
-                possivelAlfabeto.add(aux);
+        ArrayList<String> listaFormatada = new ArrayList<>();
+        for (int i = 0; i < textoAtual.length(); i++) {
+            if (!String.valueOf(textoAtual.charAt(i)).equals(",")) {
+                aux += textoAtual.charAt(i);
+            } else {
+                listaFormatada.add(aux);
                 aux = "";
             }
         }
-        return possivelAlfabeto;
+        return listaFormatada;
     }
-    
+      // Realiza o mesmo procedimento que a função "recebeTexto", porém retorna uma string
+    private String recebeTextoString(String textoAtual){
+        String aux = "";
+        String listaFormatada = "";
+        for (int i = 0; i < textoAtual.length(); i++) {
+            if (!String.valueOf(textoAtual.charAt(i)).equals(",")) {
+                aux += textoAtual.charAt(i);
+            } else {
+                listaFormatada += aux;
+                aux = "";
+            }
+        }
+        return listaFormatada;
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -1557,7 +1634,7 @@ public class LFStudio extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(LFStudio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        
+
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new LFStudio().setVisible(true);
