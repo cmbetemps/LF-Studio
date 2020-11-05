@@ -5,16 +5,19 @@
  */
 package main.modulos.AutomatoFinitoPilha.screens;
 
+import main.LFStudio;
+
 /**
  *
  * @author michel
  */
 public class PilhaInicioPanel extends javax.swing.JPanel {
-
+    javax.swing.JPanel JanelaExecucao;
     /**
      * Creates new form test1
      */
-    public PilhaInicioPanel() {
+    public PilhaInicioPanel(javax.swing.JPanel janela) {
+        this.JanelaExecucao = janela;
         initComponents();
     }
 
@@ -110,7 +113,7 @@ public class PilhaInicioPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void PILHA_LabelNovoAutomato4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PILHA_LabelNovoAutomato4MouseClicked
-//        cl.show(JanelaExecucao, "pilhaConfig");        // TODO add your handling code here:
+        LFStudio.cl.show(JanelaExecucao, "pilhaConfigPanel");        // TODO add your handling code here:
     }//GEN-LAST:event_PILHA_LabelNovoAutomato4MouseClicked
 
 

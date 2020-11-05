@@ -5,16 +5,21 @@
  */
 package main.modulos.AutomatoFinitoNaoDeterministico.screens;
 
+import main.LFStudio;
+import main.modulos.AutomatoFinitoNaoDeterministico.controllers.FndController;
+
 /**
  *
  * @author michel
  */
 public class FndInicioPanel extends javax.swing.JPanel {
-
+    javax.swing.JPanel JanelaExecucao;
+    FndController controller = new FndController();
     /**
      * Creates new form test1
      */
-    public FndInicioPanel() {
+    public FndInicioPanel(javax.swing.JPanel janela) {
+        JanelaExecucao = janela;
         initComponents();
     }
 
@@ -112,7 +117,7 @@ public class FndInicioPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void AFND1_LabelNovoAutomatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AFND1_LabelNovoAutomatoMouseClicked
-//        cl.show(JanelaExecucao,"afndConfig");
+        LFStudio.cl.show(JanelaExecucao,"fndConfigPanel");
     }//GEN-LAST:event_AFND1_LabelNovoAutomatoMouseClicked
 
 

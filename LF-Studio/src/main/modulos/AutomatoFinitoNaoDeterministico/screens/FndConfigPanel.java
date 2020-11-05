@@ -5,16 +5,21 @@
  */
 package main.modulos.AutomatoFinitoNaoDeterministico.screens;
 
+import main.LFStudio;
+import main.modulos.AutomatoFinitoNaoDeterministico.controllers.FndController;
+
 /**
  *
  * @author michel
  */
 public class FndConfigPanel extends javax.swing.JPanel {
-
+    FndController controller = new FndController();
+    javax.swing.JPanel JanelaExecucao;
     /**
      * Creates new form test1
      */
-    public FndConfigPanel() {
+    public FndConfigPanel( javax.swing.JPanel janela) {
+        JanelaExecucao = janela;
         initComponents();
     }
 
@@ -255,7 +260,7 @@ public class FndConfigPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_FND_TextFieldAlfabetoActionPerformed
 
     private void FND_TextFieldAlfabetoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FND_TextFieldAlfabetoKeyReleased
-//        recebeTexto();
+//        controller.recebeTexto();
         FND_jTable1.setEditingColumn(0);
 
     }//GEN-LAST:event_FND_TextFieldAlfabetoKeyReleased
@@ -273,7 +278,7 @@ public class FndConfigPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_FND_TextFieldEstadosFinaisActionPerformed
 
     private void FND_LabelProcessarAutomatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FND_LabelProcessarAutomatoMouseClicked
-//        cl.show(JanelaExecucao,"afndProcessamento");
+        LFStudio.cl.show(JanelaExecucao,"fndProcessamentoPanel");
     }//GEN-LAST:event_FND_LabelProcessarAutomatoMouseClicked
 
     private void FND_SalvarAutomatojlblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FND_SalvarAutomatojlblMouseClicked

@@ -5,18 +5,10 @@
  */
 package main;
 
-
-
 import java.awt.CardLayout;
 import java.awt.Color;
-import java.awt.font.TextAttribute; 
-import java.util.ArrayList;
-import java.util.Map;
 import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
-import main.modulos.AutomatoFinitoNaoDeterministico.domain.models.NaoDeterministico;
-import javax.swing.JOptionPane;
-import javax.swing.JTextField;
 import main.modulos.AutomatoFinitoDeterministico.screens.FdConfigPanel;
 import main.modulos.AutomatoFinitoDeterministico.screens.FdInicioPanel;
 import main.modulos.AutomatoFinitoDeterministico.screens.FdProcessamentoPanel;
@@ -31,7 +23,7 @@ import main.modulos.AutomatoFinitoPilha.screens.PilhaProcessamentoPanel;
  * @author thiag
  */
 public class LFStudio extends javax.swing.JFrame {
-    public CardLayout cl;
+    public static CardLayout cl;
     
     FdInicioPanel fdInicioPanel;
     FdProcessamentoPanel fdProcessamentoPanel;
@@ -44,28 +36,28 @@ public class LFStudio extends javax.swing.JFrame {
     PilhaConfigPanel pilhaConfigPanel;
     
     void setFndInicioPanel(){
-        fdInicioPanel =  new FdInicioPanel();
+        fdInicioPanel =  new FdInicioPanel(JanelaExecucao);
         fdInicioPanel.setBackground(new java.awt.Color(70, 71, 74));
         fdInicioPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
         JanelaExecucao.add(fdInicioPanel, "fdInicioPanel");
     }
     
     void setFdInicioPanel(){
-        fndInicioPanel =  new FndInicioPanel();
+        fndInicioPanel =  new FndInicioPanel(JanelaExecucao);
         fndInicioPanel.setBackground(new java.awt.Color(70, 71, 74));
         fndInicioPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
         JanelaExecucao.add(fndInicioPanel, "fndInicioPanel");
     }
     
     void setPilhaInicioPanel(){
-        pilhaInicioPanel =  new PilhaInicioPanel();
+        pilhaInicioPanel =  new PilhaInicioPanel(JanelaExecucao);
         pilhaInicioPanel.setBackground(new java.awt.Color(70, 71, 74));
         pilhaInicioPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
         JanelaExecucao.add(pilhaInicioPanel, "pilhaInicioPanel");
     }
     
     void setFndProcessamentoPanel(){
-        fndProcessamentoPanel =  new FndProcessamentoPanel();
+        fndProcessamentoPanel =  new FndProcessamentoPanel(JanelaExecucao);
         fndProcessamentoPanel.setBackground(new java.awt.Color(70, 71, 74));
         fndProcessamentoPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
         JanelaExecucao.add(fndProcessamentoPanel, "fndProcessamentoPanel");
@@ -73,39 +65,40 @@ public class LFStudio extends javax.swing.JFrame {
     }
     
     void setFdProcessamentoPanel(){
-        fdProcessamentoPanel =  new FdProcessamentoPanel();
+        fdProcessamentoPanel =  new FdProcessamentoPanel(JanelaExecucao);
         fdProcessamentoPanel.setBackground(new java.awt.Color(70, 71, 74));
         fdProcessamentoPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
         JanelaExecucao.add(fdProcessamentoPanel, "fdProcessamentoPanel");
     }
     
     void setPilhaProcessamentoPanel(){
-        pilhaProcessamentoPanel =  new PilhaProcessamentoPanel();
+        pilhaProcessamentoPanel =  new PilhaProcessamentoPanel(JanelaExecucao);
         pilhaProcessamentoPanel.setBackground(new java.awt.Color(70, 71, 74));
         pilhaProcessamentoPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
         JanelaExecucao.add(pilhaProcessamentoPanel, "pilhaProcessamentoPanel");
     }
     
     void setFndConfigPanel(){
-        fndConfigPanel =  new FndConfigPanel();
+        fndConfigPanel =  new FndConfigPanel(JanelaExecucao);
         fndConfigPanel.setBackground(new java.awt.Color(70, 71, 74));
         fndConfigPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
         JanelaExecucao.add(fndConfigPanel, "fndConfigPanel");
     }
+    
     void setFdConfigPanel(){
-        fdConfigPanel =  new FdConfigPanel();
+        fdConfigPanel =  new FdConfigPanel(JanelaExecucao);
         fdConfigPanel.setBackground(new java.awt.Color(70, 71, 74));
         fdConfigPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
         JanelaExecucao.add(fdConfigPanel, "fdConfigPanel");
     }
+    
     void setPilhaConfigPanel(){
-        pilhaConfigPanel =  new PilhaConfigPanel();
+        pilhaConfigPanel =  new PilhaConfigPanel(JanelaExecucao);
         pilhaConfigPanel.setBackground(new java.awt.Color(70, 71, 74));
         pilhaConfigPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
         JanelaExecucao.add(pilhaConfigPanel, "pilhaConfigPanel");
     }
-    
-    
+     
     void initPanels(){
         setFndInicioPanel();
         setFndProcessamentoPanel();
@@ -131,7 +124,6 @@ public class LFStudio extends javax.swing.JFrame {
         cl.show(JanelaExecucao, "home");
     
     }
-
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -375,14 +367,13 @@ public class LFStudio extends javax.swing.JFrame {
     }//GEN-LAST:event_menuAFNDMouseClicked
 
     private void menuAfdMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAfdMouseClicked
-        cl.show(JanelaExecucao, "fdInicioPanel");               // TODO add your handling code here:
+        cl.show(JanelaExecucao, "fdInicioPanel");              
     }//GEN-LAST:event_menuAfdMouseClicked
 
     private void menuPilhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPilhaMouseClicked
         cl.show(JanelaExecucao, "pilhaInicioPanel"); 
     }//GEN-LAST:event_menuPilhaMouseClicked
 
- 
     /**
      * @param args the command line arguments
      */

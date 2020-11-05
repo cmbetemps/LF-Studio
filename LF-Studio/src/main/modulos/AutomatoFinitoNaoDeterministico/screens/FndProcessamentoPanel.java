@@ -5,16 +5,20 @@
  */
 package main.modulos.AutomatoFinitoNaoDeterministico.screens;
 
+import main.modulos.AutomatoFinitoNaoDeterministico.controllers.FndController;
+
 /**
  *
  * @author michel
  */
 public class FndProcessamentoPanel extends javax.swing.JPanel {
-
+    javax.swing.JPanel JanelaExecucao;
+    FndController controller = new FndController();
     /**
      * Creates new form test1
      */
-    public FndProcessamentoPanel() {
+    public FndProcessamentoPanel(javax.swing.JPanel janela) {
+        JanelaExecucao = janela;
         initComponents();
     }
 

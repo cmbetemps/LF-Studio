@@ -5,16 +5,19 @@
  */
 package main.modulos.AutomatoFinitoDeterministico.screens;
 
+import main.LFStudio;
+
 /**
  *
  * @author michel
  */
 public class FdInicioPanel extends javax.swing.JPanel {
-
+    javax.swing.JPanel JanelaExecucao;
     /**
      * Creates new form test1
      */
-    public FdInicioPanel() {
+    public FdInicioPanel(    javax.swing.JPanel janela){
+        this.JanelaExecucao = janela;
         initComponents();
     }
 
@@ -112,7 +115,7 @@ public class FdInicioPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void FD_LabelNovoAutomatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FD_LabelNovoAutomatoMouseClicked
-//        cl.show(JanelaExecucao, "fdConfig");
+        LFStudio.cl.show(JanelaExecucao, "fdConfigPanel");
         // TODO add your handling code here:
     }//GEN-LAST:event_FD_LabelNovoAutomatoMouseClicked
 

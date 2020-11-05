@@ -5,13 +5,16 @@
  */
 package main.modulos.AutomatoFinitoPilha.screens;
 
+import main.LFStudio;
+
 /**
  *
  * @author michel
  */
 public class PilhaConfigPanel extends javax.swing.JPanel {
-
-    public PilhaConfigPanel() {
+    javax.swing.JPanel JanelaExecucao;
+    public PilhaConfigPanel( javax.swing.JPanel janela) {
+        JanelaExecucao = janela;
         initComponents();
     }
 
@@ -285,7 +288,7 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_Pilha_salvarPilhaBtnMouseClicked
 
     private void Pilha_processarPilhaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pilha_processarPilhaBtnMouseClicked
-//        cl.show(JanelaExecucao, "pilhaProcessamento");        // TODO add your handling code here:
+        LFStudio.cl.show(JanelaExecucao, "pilhaProcessamentoPanel");        // TODO add your handling code here:
     }//GEN-LAST:event_Pilha_processarPilhaBtnMouseClicked
 
 

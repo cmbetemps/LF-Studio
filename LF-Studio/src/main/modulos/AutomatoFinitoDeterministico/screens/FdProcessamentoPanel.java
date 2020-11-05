@@ -10,11 +10,13 @@ package main.modulos.AutomatoFinitoDeterministico.screens;
  * @author michel
  */
 public class FdProcessamentoPanel extends javax.swing.JPanel {
+    javax.swing.JPanel JanelaExecucao;
 
     /**
      * Creates new form test1
      */
-    public FdProcessamentoPanel() {
+    public FdProcessamentoPanel(javax.swing.JPanel janela) {
+        JanelaExecucao = janela;
         initComponents();
     }
 
