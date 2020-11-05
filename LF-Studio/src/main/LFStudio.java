@@ -137,14 +137,14 @@ public class LFStudio extends javax.swing.JFrame {
         Menu = new javax.swing.JPanel();
         menuScroll = new javax.swing.JScrollPane();
         menuPanel = new javax.swing.JPanel();
-        menuGLC = new javax.swing.JLabel();
         menuPilha = new javax.swing.JLabel();
         menuRegX = new javax.swing.JLabel();
-        menuTuring = new javax.swing.JLabel();
         menuAfd = new javax.swing.JLabel();
-        menuGramaticaReg = new javax.swing.JLabel();
         menuAFND = new javax.swing.JLabel();
         titleLFStudio = new javax.swing.JLabel();
+        menuGLC = new javax.swing.JLabel();
+        ExpressoesRegulares = new javax.swing.JLabel();
+        menuTuring = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setResizable(false);
@@ -168,7 +168,7 @@ public class LFStudio extends javax.swing.JFrame {
         AFND3_Titulo4.setText("<html><p style=\"padding-bottom: 16px;\">Autômato FND</p></html>");
         AFND3_Titulo4.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
 
-        AFND3_Titulo5.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        AFND3_Titulo5.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         AFND3_Titulo5.setForeground(new java.awt.Color(255, 255, 255));
         AFND3_Titulo5.setText("Entrada");
 
@@ -217,7 +217,7 @@ public class LFStudio extends javax.swing.JFrame {
         afndProcessamentoLayout.setHorizontalGroup(
             afndProcessamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(afndProcessamentoLayout.createSequentialGroup()
-                .addGap(89, 89, 89)
+                .addGap(90, 90, 90)
                 .addGroup(afndProcessamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(afndProcessamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(AFND3_Titulo6)
@@ -273,7 +273,7 @@ public class LFStudio extends javax.swing.JFrame {
         );
 
         t_e.setBackground(new java.awt.Color(70, 71, 74));
-        t_e.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        t_e.setFont(new java.awt.Font("Calibri Light", 1, 16)); // NOI18N
         t_e.setForeground(new java.awt.Color(255, 255, 255));
         t_e.setText("Entrada");
 
@@ -313,7 +313,7 @@ public class LFStudio extends javax.swing.JFrame {
                         .addComponent(processamento1, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(t_proces1)
                         .addComponent(AFND3_Titulo7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(248, Short.MAX_VALUE))
+                .addContainerGap(252, Short.MAX_VALUE))
         );
         pilhaProcessamentoLayout.setVerticalGroup(
             pilhaProcessamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -358,7 +358,7 @@ public class LFStudio extends javax.swing.JFrame {
         );
 
         FD_labelEntrada.setBackground(new java.awt.Color(70, 71, 74));
-        FD_labelEntrada.setFont(new java.awt.Font("Calibri Light", 0, 18)); // NOI18N
+        FD_labelEntrada.setFont(new java.awt.Font("Calibri Light", 1, 16)); // NOI18N
         FD_labelEntrada.setForeground(new java.awt.Color(255, 255, 255));
         FD_labelEntrada.setText("Entrada");
 
@@ -398,7 +398,7 @@ public class LFStudio extends javax.swing.JFrame {
                         .addComponent(FD_BodyProcessamento, javax.swing.GroupLayout.PREFERRED_SIZE, 420, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(FD_SubtituloProcessamento)
                         .addComponent(FD_TituloProcessamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(248, Short.MAX_VALUE))
+                .addContainerGap(252, Short.MAX_VALUE))
         );
         fdProcessamentoLayout.setVerticalGroup(
             fdProcessamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -457,7 +457,7 @@ public class LFStudio extends javax.swing.JFrame {
         fndTitleLayout.setHorizontalGroup(
             fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fndTitleLayout.createSequentialGroup()
-                .addContainerGap(64, Short.MAX_VALUE)
+                .addContainerGap(65, Short.MAX_VALUE)
                 .addGroup(fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(AFND1_LabelImportarAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AFND1_LabelNovoAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -489,12 +489,12 @@ public class LFStudio extends javax.swing.JFrame {
             .addGroup(fndInicioLayout.createSequentialGroup()
                 .addGap(179, 179, 179)
                 .addComponent(fndTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(232, Short.MAX_VALUE))
+                .addContainerGap(235, Short.MAX_VALUE))
         );
         fndInicioLayout.setVerticalGroup(
             fndInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(fndInicioLayout.createSequentialGroup()
-                .addGap(190, 190, 190)
+                .addGap(193, 193, 193)
                 .addComponent(fndTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(191, 191, 191))
         );
@@ -538,7 +538,7 @@ public class LFStudio extends javax.swing.JFrame {
         pilhaTitle2Layout.setHorizontalGroup(
             pilhaTitle2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pilhaTitle2Layout.createSequentialGroup()
-                .addContainerGap(106, Short.MAX_VALUE)
+                .addGap(104, 104, 104)
                 .addGroup(pilhaTitle2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(AFND1_LabelImportarAutomato4, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AFND1_LabelNovoAutomato4, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -619,7 +619,7 @@ public class LFStudio extends javax.swing.JFrame {
         fdTitle1Layout.setHorizontalGroup(
             fdTitle1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fdTitle1Layout.createSequentialGroup()
-                .addContainerGap(64, Short.MAX_VALUE)
+                .addGap(65, 65, 65)
                 .addGroup(fdTitle1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(AFND1_LabelImportarAutomato3, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AFND1_LabelNovoAutomato3, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -649,14 +649,14 @@ public class LFStudio extends javax.swing.JFrame {
         fdInicioLayout.setHorizontalGroup(
             fdInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(fdInicioLayout.createSequentialGroup()
-                .addGap(178, 178, 178)
+                .addGap(179, 179, 179)
                 .addComponent(fdTitle1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(233, Short.MAX_VALUE))
+                .addContainerGap(235, Short.MAX_VALUE))
         );
         fdInicioLayout.setVerticalGroup(
             fdInicioLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(fdInicioLayout.createSequentialGroup()
-                .addGap(190, 190, 190)
+                .addGap(193, 193, 193)
                 .addComponent(fdTitle1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(190, 190, 190))
         );
@@ -671,23 +671,23 @@ public class LFStudio extends javax.swing.JFrame {
         FND_BodyConfig.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.darkGray, java.awt.Color.darkGray, java.awt.Color.darkGray));
         FND_BodyConfig.setForeground(new java.awt.Color(51, 51, 51));
 
-        FND_LabelAlfabeto.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        FND_LabelAlfabeto.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         FND_LabelAlfabeto.setForeground(new java.awt.Color(255, 255, 255));
         FND_LabelAlfabeto.setText("Alfabeto");
 
-        FND_LabelEstadosFinais.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        FND_LabelEstadosFinais.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         FND_LabelEstadosFinais.setForeground(new java.awt.Color(255, 255, 255));
         FND_LabelEstadosFinais.setText("Estados Finais");
 
-        FND_LabelEstados.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        FND_LabelEstados.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         FND_LabelEstados.setForeground(new java.awt.Color(255, 255, 255));
         FND_LabelEstados.setText("Estados");
 
-        FND_LabelEstadoInicial.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        FND_LabelEstadoInicial.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         FND_LabelEstadoInicial.setForeground(new java.awt.Color(255, 255, 255));
         FND_LabelEstadoInicial.setText("Estado Inicial");
 
-        FND_LabelTabelaTransicao.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        FND_LabelTabelaTransicao.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         FND_LabelTabelaTransicao.setForeground(new java.awt.Color(255, 255, 255));
         FND_LabelTabelaTransicao.setText("Tabela de Transições");
 
@@ -852,7 +852,7 @@ public class LFStudio extends javax.swing.JFrame {
                         .addComponent(FND_BodyConfig, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(FND_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(FND_SubTitulo)))
-                .addContainerGap(240, Short.MAX_VALUE))
+                .addContainerGap(244, Short.MAX_VALUE))
         );
         fndConfigLayout.setVerticalGroup(
             fndConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -867,7 +867,7 @@ public class LFStudio extends javax.swing.JFrame {
                 .addComponent(FND_SalvarAutomatojlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
                 .addComponent(FND_LabelProcessarAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(66, Short.MAX_VALUE))
+                .addContainerGap(69, Short.MAX_VALUE))
         );
 
         JanelaExecucao.add(fndConfig, "afndConfig");
@@ -880,27 +880,27 @@ public class LFStudio extends javax.swing.JFrame {
         Pilha_BodyConfig.setForeground(new java.awt.Color(51, 51, 51));
 
         t_tra.setBackground(new java.awt.Color(51, 51, 51));
-        t_tra.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        t_tra.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         t_tra.setForeground(new java.awt.Color(255, 255, 255));
         t_tra.setText("Tabela de Transições");
 
         t_ea.setBackground(new java.awt.Color(51, 51, 51));
-        t_ea.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        t_ea.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         t_ea.setForeground(new java.awt.Color(255, 255, 255));
         t_ea.setText("Estados de Aceitação");
 
         t_ei.setBackground(new java.awt.Color(51, 51, 51));
-        t_ei.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        t_ei.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         t_ei.setForeground(new java.awt.Color(255, 255, 255));
         t_ei.setText("Estado Inicial");
 
         t_ap.setBackground(new java.awt.Color(51, 51, 51));
-        t_ap.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        t_ap.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         t_ap.setForeground(new java.awt.Color(255, 255, 255));
         t_ap.setText("Alfabeto da Pilha");
 
         t_a.setBackground(new java.awt.Color(51, 51, 51));
-        t_a.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        t_a.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         t_a.setForeground(new java.awt.Color(255, 255, 255));
         t_a.setText("Alfabeto");
 
@@ -940,7 +940,7 @@ public class LFStudio extends javax.swing.JFrame {
         });
 
         t_sip.setBackground(new java.awt.Color(51, 51, 51));
-        t_sip.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        t_sip.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         t_sip.setForeground(new java.awt.Color(255, 255, 255));
         t_sip.setText("Simbolos Iniciais");
 
@@ -968,7 +968,7 @@ public class LFStudio extends javax.swing.JFrame {
             .addGroup(Pilha_BodyConfigLayout.createSequentialGroup()
                 .addGap(35, 35, 35)
                 .addGroup(Pilha_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(AFND2_jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 422, Short.MAX_VALUE)
+                    .addComponent(AFND2_jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE)
                     .addGroup(Pilha_BodyConfigLayout.createSequentialGroup()
                         .addGroup(Pilha_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(t_ap, javax.swing.GroupLayout.Alignment.LEADING)
@@ -1098,23 +1098,23 @@ public class LFStudio extends javax.swing.JFrame {
         FD_BodyConfig.setBackground(new java.awt.Color(51, 51, 51));
         FD_BodyConfig.setForeground(new java.awt.Color(51, 51, 51));
 
-        FD_LabelAlfabeto.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        FD_LabelAlfabeto.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         FD_LabelAlfabeto.setForeground(new java.awt.Color(255, 255, 255));
         FD_LabelAlfabeto.setText("Alfabeto");
 
-        FD_LabelEstadosFinais.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        FD_LabelEstadosFinais.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         FD_LabelEstadosFinais.setForeground(new java.awt.Color(255, 255, 255));
         FD_LabelEstadosFinais.setText("Estados Finais");
 
-        FD_LabelEstados.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        FD_LabelEstados.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         FD_LabelEstados.setForeground(new java.awt.Color(255, 255, 255));
         FD_LabelEstados.setText("Estados");
 
-        FD_LabelEstadoInicial1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        FD_LabelEstadoInicial1.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         FD_LabelEstadoInicial1.setForeground(new java.awt.Color(255, 255, 255));
         FD_LabelEstadoInicial1.setText("Estado Inicial");
 
-        FD_LabelTabelaTransicao1.setFont(new java.awt.Font("Comic Sans MS", 0, 18)); // NOI18N
+        FD_LabelTabelaTransicao1.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         FD_LabelTabelaTransicao1.setForeground(new java.awt.Color(255, 255, 255));
         FD_LabelTabelaTransicao1.setText("Tabela de Transições");
 
@@ -1271,7 +1271,7 @@ public class LFStudio extends javax.swing.JFrame {
                         .addComponent(FD_BodyConfig, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(FD_ConfigSubTitulo)
                         .addComponent(FD_ConfigTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(211, Short.MAX_VALUE))
+                .addContainerGap(214, Short.MAX_VALUE))
         );
         fdConfigLayout.setVerticalGroup(
             fdConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1286,7 +1286,7 @@ public class LFStudio extends javax.swing.JFrame {
                 .addComponent(FD_salvarAutomatoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(FD_processarAutomatoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(67, Short.MAX_VALUE))
+                .addContainerGap(70, Short.MAX_VALUE))
         );
 
         JanelaExecucao.add(fdConfig, "fdConfig");
@@ -1310,41 +1310,29 @@ public class LFStudio extends javax.swing.JFrame {
         menuPanel.setMaximumSize(new java.awt.Dimension(344, 539));
         menuPanel.setPreferredSize(new java.awt.Dimension(250, 560));
 
-        menuGLC.setBackground(new java.awt.Color(70, 71, 74));
-        menuGLC.setFont(new java.awt.Font("Comic Sans MS", 0, 20)); // NOI18N
-        menuGLC.setForeground(new java.awt.Color(255, 255, 255));
-        menuGLC.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        menuGLC.setText("  Gramáticas LC");
-        menuGLC.setMaximumSize(new java.awt.Dimension(344, 539));
-
-        menuPilha.setBackground(new java.awt.Color(70, 71, 74));
-        menuPilha.setFont(new java.awt.Font("Comic Sans MS", 0, 20)); // NOI18N
+        menuPilha.setBackground(new java.awt.Color(37, 37, 37));
+        menuPilha.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuPilha.setForeground(new java.awt.Color(255, 255, 255));
         menuPilha.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         menuPilha.setText("  Automato Pilha");
         menuPilha.setMaximumSize(new java.awt.Dimension(344, 539));
+        menuPilha.setOpaque(true);
         menuPilha.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 menuPilhaMouseClicked(evt);
             }
         });
 
-        menuRegX.setBackground(new java.awt.Color(51, 51, 51));
-        menuRegX.setFont(new java.awt.Font("Comic Sans MS", 0, 20)); // NOI18N
+        menuRegX.setBackground(new java.awt.Color(50, 50, 50));
+        menuRegX.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuRegX.setForeground(new java.awt.Color(255, 255, 255));
         menuRegX.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         menuRegX.setText("  Expressões Regulares");
         menuRegX.setMaximumSize(new java.awt.Dimension(344, 539));
         menuRegX.setOpaque(true);
 
-        menuTuring.setFont(new java.awt.Font("Comic Sans MS", 0, 20)); // NOI18N
-        menuTuring.setForeground(new java.awt.Color(255, 255, 255));
-        menuTuring.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        menuTuring.setText("  Máquinas de Turing");
-        menuTuring.setMaximumSize(new java.awt.Dimension(344, 539));
-
-        menuAfd.setBackground(new java.awt.Color(51, 51, 51));
-        menuAfd.setFont(new java.awt.Font("Comic Sans MS", 0, 20)); // NOI18N
+        menuAfd.setBackground(new java.awt.Color(37, 37, 37));
+        menuAfd.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuAfd.setForeground(new java.awt.Color(255, 255, 255));
         menuAfd.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         menuAfd.setText("  Automato FD");
@@ -1356,26 +1344,20 @@ public class LFStudio extends javax.swing.JFrame {
             }
         });
 
-        menuGramaticaReg.setBackground(new java.awt.Color(51, 51, 51));
-        menuGramaticaReg.setFont(new java.awt.Font("Comic Sans MS", 0, 20)); // NOI18N
-        menuGramaticaReg.setForeground(new java.awt.Color(255, 255, 255));
-        menuGramaticaReg.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        menuGramaticaReg.setText("  Gramáticas Regulares");
-        menuGramaticaReg.setMaximumSize(new java.awt.Dimension(344, 539));
-        menuGramaticaReg.setOpaque(true);
-
-        menuAFND.setFont(new java.awt.Font("Comic Sans MS", 0, 20)); // NOI18N
+        menuAFND.setBackground(new java.awt.Color(37, 37, 37));
+        menuAFND.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuAFND.setForeground(new java.awt.Color(255, 255, 255));
         menuAFND.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         menuAFND.setText("  Automato FND");
         menuAFND.setMaximumSize(new java.awt.Dimension(344, 539));
+        menuAFND.setOpaque(true);
         menuAFND.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 menuAFNDMouseClicked(evt);
             }
         });
 
-        titleLFStudio.setBackground(new java.awt.Color(51, 51, 51));
+        titleLFStudio.setBackground(new java.awt.Color(27, 27, 27));
         titleLFStudio.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
         titleLFStudio.setForeground(new java.awt.Color(255, 255, 255));
         titleLFStudio.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -1384,21 +1366,47 @@ public class LFStudio extends javax.swing.JFrame {
         titleLFStudio.setMaximumSize(new java.awt.Dimension(344, 539));
         titleLFStudio.setOpaque(true);
 
+        menuGLC.setBackground(new java.awt.Color(63, 64, 66));
+        menuGLC.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
+        menuGLC.setForeground(new java.awt.Color(255, 255, 255));
+        menuGLC.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        menuGLC.setText("  Gramáticas LC");
+        menuGLC.setMaximumSize(new java.awt.Dimension(344, 539));
+        menuGLC.setOpaque(true);
+
+        ExpressoesRegulares.setBackground(new java.awt.Color(63, 64, 66));
+        ExpressoesRegulares.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
+        ExpressoesRegulares.setForeground(new java.awt.Color(255, 255, 255));
+        ExpressoesRegulares.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        ExpressoesRegulares.setText("  Gramáticas Regulares");
+        ExpressoesRegulares.setMaximumSize(new java.awt.Dimension(344, 539));
+        ExpressoesRegulares.setOpaque(true);
+
+        menuTuring.setBackground(new java.awt.Color(70, 71, 74));
+        menuTuring.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
+        menuTuring.setForeground(new java.awt.Color(255, 255, 255));
+        menuTuring.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        menuTuring.setText("  Máquinas de Turing");
+        menuTuring.setMaximumSize(new java.awt.Dimension(344, 539));
+        menuTuring.setOpaque(true);
+
         javax.swing.GroupLayout menuPanelLayout = new javax.swing.GroupLayout(menuPanel);
         menuPanel.setLayout(menuPanelLayout);
         menuPanelLayout.setHorizontalGroup(
             menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuPanelLayout.createSequentialGroup()
-                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(menuGLC, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(menuGramaticaReg, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(menuTuring, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(menuPilha, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(menuAfd, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(menuAFND, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(titleLFStudio, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(menuRegX, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, 0))
+                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(menuPilha, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                    .addComponent(menuAfd, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                    .addComponent(menuAFND, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                    .addComponent(titleLFStudio, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                    .addComponent(menuRegX, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                    .addComponent(ExpressoesRegulares, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(menuGLC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(menuPanelLayout.createSequentialGroup()
+                .addComponent(menuTuring, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         menuPanelLayout.setVerticalGroup(
             menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1413,9 +1421,9 @@ public class LFStudio extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(menuRegX, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(menuGLC, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(ExpressoesRegulares, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(menuGramaticaReg, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(menuGLC, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(menuTuring, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(235, Short.MAX_VALUE))
@@ -1662,6 +1670,7 @@ public class LFStudio extends javax.swing.JFrame {
     private javax.swing.JLabel AFND3_Titulo5;
     private javax.swing.JLabel AFND3_Titulo6;
     private javax.swing.JLabel AFND3_Titulo7;
+    private javax.swing.JLabel ExpressoesRegulares;
     private javax.swing.JPanel FD_BodyConfig;
     private javax.swing.JPanel FD_BodyProcessamento;
     private javax.swing.JLabel FD_ConfigSubTitulo;
@@ -1717,15 +1726,16 @@ public class LFStudio extends javax.swing.JFrame {
     private javax.swing.JPanel fndConfig;
     private javax.swing.JPanel fndInicio;
     private javax.swing.JPanel fndTitle;
+    private javax.swing.JPanel maquinasTuringMenu1;
     private javax.swing.JLabel menuAFND;
     private javax.swing.JLabel menuAfd;
     private javax.swing.JLabel menuGLC;
-    private javax.swing.JLabel menuGramaticaReg;
     private javax.swing.JPanel menuPanel;
     private javax.swing.JLabel menuPilha;
     private javax.swing.JLabel menuRegX;
     private javax.swing.JScrollPane menuScroll;
     private javax.swing.JLabel menuTuring;
+    private javax.swing.JLabel menuTuring1;
     private javax.swing.JPanel pilhaConfig;
     private javax.swing.JPanel pilhaInicio;
     private javax.swing.JPanel pilhaProcessamento;
