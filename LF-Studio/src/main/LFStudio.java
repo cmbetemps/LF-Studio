@@ -9,6 +9,7 @@ import java.awt.CardLayout;
 import java.awt.Color;
 import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
+import javax.swing.JLabel;
 import main.modulos.AutomatoFinitoDeterministico.screens.FdConfigPanel;
 import main.modulos.AutomatoFinitoDeterministico.screens.FdInicioPanel;
 import main.modulos.AutomatoFinitoDeterministico.screens.FdProcessamentoPanel;
@@ -119,7 +120,6 @@ public class LFStudio extends javax.swing.JFrame {
         this.JanelaVisivel.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
         JanelaVisivel.setSize(1200, 700);
         JanelaVisivel.setLocation(100, 160);
-        this.menuAFND.setBackground(Color.BLACK);
         cl = (CardLayout) JanelaExecucao.getLayout();
         cl.show(JanelaExecucao, "home");
     
@@ -210,6 +210,18 @@ public class LFStudio extends javax.swing.JFrame {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 menuPilhaMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuPilhaMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuPilhaMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                menuPilhaMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                menuPilhaMouseReleased(evt);
+            }
         });
 
         menuRegX.setBackground(new java.awt.Color(50, 50, 50));
@@ -219,6 +231,20 @@ public class LFStudio extends javax.swing.JFrame {
         menuRegX.setText("  Expressões Regulares");
         menuRegX.setMaximumSize(new java.awt.Dimension(344, 539));
         menuRegX.setOpaque(true);
+        menuRegX.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuRegXMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuRegXMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                menuRegXMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                menuRegXMouseReleased(evt);
+            }
+        });
 
         menuAfd.setBackground(new java.awt.Color(37, 37, 37));
         menuAfd.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
@@ -230,6 +256,18 @@ public class LFStudio extends javax.swing.JFrame {
         menuAfd.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 menuAfdMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuAfdMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuAfdMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                menuAfdMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                menuAfdMouseReleased(evt);
             }
         });
 
@@ -243,6 +281,18 @@ public class LFStudio extends javax.swing.JFrame {
         menuAFND.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 menuAFNDMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuAFNDMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuAFNDMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                menuAFNDMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                menuAFNDMouseReleased(evt);
             }
         });
 
@@ -262,6 +312,20 @@ public class LFStudio extends javax.swing.JFrame {
         menuGLC.setText("  Gramáticas LC");
         menuGLC.setMaximumSize(new java.awt.Dimension(344, 539));
         menuGLC.setOpaque(true);
+        menuGLC.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuGLCMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuGLCMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                menuGLCMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                menuGLCMouseReleased(evt);
+            }
+        });
 
         ExpressoesRegulares.setBackground(new java.awt.Color(63, 64, 66));
         ExpressoesRegulares.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
@@ -270,6 +334,20 @@ public class LFStudio extends javax.swing.JFrame {
         ExpressoesRegulares.setText("  Gramáticas Regulares");
         ExpressoesRegulares.setMaximumSize(new java.awt.Dimension(344, 539));
         ExpressoesRegulares.setOpaque(true);
+        ExpressoesRegulares.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                ExpressoesRegularesMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                ExpressoesRegularesMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                ExpressoesRegularesMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                ExpressoesRegularesMouseReleased(evt);
+            }
+        });
 
         menuTuring.setBackground(new java.awt.Color(70, 71, 74));
         menuTuring.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
@@ -278,6 +356,20 @@ public class LFStudio extends javax.swing.JFrame {
         menuTuring.setText("  Máquinas de Turing");
         menuTuring.setMaximumSize(new java.awt.Dimension(344, 539));
         menuTuring.setOpaque(true);
+        menuTuring.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                menuTuringMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                menuTuringMouseExited(evt);
+            }
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                menuTuringMousePressed(evt);
+            }
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                menuTuringMouseReleased(evt);
+            }
+        });
 
         javax.swing.GroupLayout menuPanelLayout = new javax.swing.GroupLayout(menuPanel);
         menuPanel.setLayout(menuPanelLayout);
@@ -293,9 +385,7 @@ public class LFStudio extends javax.swing.JFrame {
                     .addComponent(ExpressoesRegulares, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addComponent(menuGLC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(menuPanelLayout.createSequentialGroup()
-                .addComponent(menuTuring, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(menuTuring, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         menuPanelLayout.setVerticalGroup(
             menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -374,6 +464,118 @@ public class LFStudio extends javax.swing.JFrame {
         cl.show(JanelaExecucao, "pilhaInicioPanel"); 
     }//GEN-LAST:event_menuPilhaMouseClicked
 
+    private void menuAFNDMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAFNDMousePressed
+        clickEffect(menuAFND);
+    }//GEN-LAST:event_menuAFNDMousePressed
+
+    private void menuAFNDMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAFNDMouseReleased
+        clickEffect(menuAFND);
+    }//GEN-LAST:event_menuAFNDMouseReleased
+
+    private void menuAfdMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAfdMousePressed
+        clickEffect(menuAfd);
+    }//GEN-LAST:event_menuAfdMousePressed
+
+    private void menuAfdMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAfdMouseReleased
+        clickEffect(menuAfd);
+    }//GEN-LAST:event_menuAfdMouseReleased
+
+    private void menuPilhaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPilhaMousePressed
+        clickEffect(menuPilha);
+    }//GEN-LAST:event_menuPilhaMousePressed
+
+    private void menuPilhaMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPilhaMouseReleased
+        clickEffect(menuPilha);
+    }//GEN-LAST:event_menuPilhaMouseReleased
+
+    private void menuRegXMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuRegXMousePressed
+        clickEffect(menuRegX);
+    }//GEN-LAST:event_menuRegXMousePressed
+
+    private void menuRegXMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuRegXMouseReleased
+        clickEffect(menuRegX);
+    }//GEN-LAST:event_menuRegXMouseReleased
+
+    private void ExpressoesRegularesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExpressoesRegularesMousePressed
+        clickEffect(ExpressoesRegulares);
+    }//GEN-LAST:event_ExpressoesRegularesMousePressed
+
+    private void ExpressoesRegularesMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExpressoesRegularesMouseReleased
+        clickEffect(ExpressoesRegulares);
+    }//GEN-LAST:event_ExpressoesRegularesMouseReleased
+
+    private void menuGLCMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGLCMousePressed
+        clickEffect(menuGLC);
+    }//GEN-LAST:event_menuGLCMousePressed
+
+    private void menuGLCMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGLCMouseReleased
+        clickEffect(menuGLC);
+    }//GEN-LAST:event_menuGLCMouseReleased
+
+    private void menuTuringMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTuringMousePressed
+        clickEffect(menuTuring);
+    }//GEN-LAST:event_menuTuringMousePressed
+
+    private void menuTuringMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTuringMouseReleased
+        clickEffect(menuTuring);
+    }//GEN-LAST:event_menuTuringMouseReleased
+
+    private void menuAFNDMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAFNDMouseEntered
+        menuAFND.setBackground(menuAFND.getBackground().brighter().brighter());
+    }//GEN-LAST:event_menuAFNDMouseEntered
+
+    private void menuAFNDMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAFNDMouseExited
+        menuAFND.setBackground(menuAFND.getBackground().darker().darker());
+    }//GEN-LAST:event_menuAFNDMouseExited
+
+    private void menuAfdMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAfdMouseEntered
+        menuAfd.setBackground(menuAfd.getBackground().brighter().brighter());
+    }//GEN-LAST:event_menuAfdMouseEntered
+
+    private void menuAfdMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAfdMouseExited
+        menuAfd.setBackground(menuAfd.getBackground().darker().darker());
+    }//GEN-LAST:event_menuAfdMouseExited
+
+    private void menuPilhaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPilhaMouseEntered
+        menuPilha.setBackground(menuPilha.getBackground().brighter().brighter());
+    }//GEN-LAST:event_menuPilhaMouseEntered
+
+    private void menuPilhaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPilhaMouseExited
+        menuPilha.setBackground(menuPilha.getBackground().darker().darker());
+    }//GEN-LAST:event_menuPilhaMouseExited
+
+    private void menuRegXMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuRegXMouseEntered
+        menuRegX.setBackground(menuRegX.getBackground().brighter().brighter());
+    }//GEN-LAST:event_menuRegXMouseEntered
+
+    private void menuRegXMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuRegXMouseExited
+        menuRegX.setBackground(menuRegX.getBackground().darker().darker());
+    }//GEN-LAST:event_menuRegXMouseExited
+
+    private void ExpressoesRegularesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExpressoesRegularesMouseEntered
+        ExpressoesRegulares.setBackground(ExpressoesRegulares.getBackground().brighter().brighter());
+    }//GEN-LAST:event_ExpressoesRegularesMouseEntered
+
+    private void ExpressoesRegularesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExpressoesRegularesMouseExited
+        ExpressoesRegulares.setBackground(ExpressoesRegulares.getBackground().darker().darker());
+    }//GEN-LAST:event_ExpressoesRegularesMouseExited
+
+    private void menuGLCMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGLCMouseEntered
+        menuGLC.setBackground(menuGLC.getBackground().brighter().brighter());
+    }//GEN-LAST:event_menuGLCMouseEntered
+
+    private void menuGLCMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGLCMouseExited
+        menuGLC.setBackground(menuGLC.getBackground().darker().darker());
+    }//GEN-LAST:event_menuGLCMouseExited
+
+    private void menuTuringMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTuringMouseEntered
+        menuTuring.setBackground(menuTuring.getBackground().brighter().brighter());
+    }//GEN-LAST:event_menuTuringMouseEntered
+
+    private void menuTuringMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTuringMouseExited
+        menuTuring.setBackground(menuTuring.getBackground().darker().darker());
+    }//GEN-LAST:event_menuTuringMouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -410,6 +612,12 @@ public class LFStudio extends javax.swing.JFrame {
         });
     }
 
+    private void clickEffect(JLabel button){
+        Color temp = button.getForeground();
+        button.setForeground(button.getBackground());
+        button.setBackground(temp);
+    }
+    
     public JInternalFrame getjInternalFrame1() {
         return JanelaVisivel;
     }
