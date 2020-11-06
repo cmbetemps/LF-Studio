@@ -5,6 +5,9 @@
  */
 package main.modulos.AutomatoFinitoNaoDeterministico.screens;
 
+import java.util.ArrayList;
+import java.util.Vector;
+import javax.swing.table.DefaultTableModel;
 import main.LFStudio;
 import main.modulos.AutomatoFinitoNaoDeterministico.controllers.FndController;
 
@@ -13,12 +16,14 @@ import main.modulos.AutomatoFinitoNaoDeterministico.controllers.FndController;
  * @author michel
  */
 public class FndConfigPanel extends javax.swing.JPanel {
+
     FndController controller = new FndController();
     javax.swing.JPanel JanelaExecucao;
+
     /**
      * Creates new form test1
      */
-    public FndConfigPanel( javax.swing.JPanel janela) {
+    public FndConfigPanel(javax.swing.JPanel janela) {
         JanelaExecucao = janela;
         initComponents();
     }
@@ -110,6 +115,11 @@ public class FndConfigPanel extends javax.swing.JPanel {
         FND_TextFieldEstados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FND_TextFieldEstadosActionPerformed(evt);
+            }
+        });
+        FND_TextFieldEstados.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FND_TextFieldEstadosKeyReleased(evt);
             }
         });
 
@@ -278,12 +288,23 @@ public class FndConfigPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_FND_TextFieldEstadosFinaisActionPerformed
 
     private void FND_LabelProcessarAutomatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FND_LabelProcessarAutomatoMouseClicked
-        LFStudio.cl.show(JanelaExecucao,"fndProcessamentoPanel");
+        LFStudio.cl.show(JanelaExecucao, "fndProcessamentoPanel");
     }//GEN-LAST:event_FND_LabelProcessarAutomatoMouseClicked
 
     private void FND_SalvarAutomatojlblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FND_SalvarAutomatojlblMouseClicked
-        // TODO add your handling code here:
+        
     }//GEN-LAST:event_FND_SalvarAutomatojlblMouseClicked
+
+    private void FND_TextFieldEstadosKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FND_TextFieldEstadosKeyReleased
+        String[] estados = FND_TextFieldEstados.getText().split(",");
+        Vector vector = null;
+        DefaultTableModel tableModel = new DefaultTableModel();
+        for (String columnName : estados) {
+            tableModel.addColumn(columnName);
+            tableModel.insertRow(0,vector);
+        }
+        FND_jTable1.setModel(tableModel);
+    }//GEN-LAST:event_FND_TextFieldEstadosKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

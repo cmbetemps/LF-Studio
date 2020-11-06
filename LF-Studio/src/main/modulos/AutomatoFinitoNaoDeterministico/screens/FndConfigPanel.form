@@ -255,6 +255,7 @@
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FND_TextFieldEstadosActionPerformed"/>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FND_TextFieldEstadosKeyReleased"/>
           </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="FND_TextFieldEstadoInicial">
