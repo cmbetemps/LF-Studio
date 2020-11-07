@@ -270,12 +270,12 @@ public class FndConfigPanel extends javax.swing.JPanel {
         Vector<String> vector = null;
         CustomTable tableModel = new CustomTable();
         tableModel.addColumn("Estados");
-        for (String rowName : alfabeto) {
+        for (String rowName : estados) {
             vector = new Vector<String>();
             vector.add(rowName);
             tableModel.insertRow(0,vector);
         }
-        for (String columnName : estados) {
+        for (String columnName : alfabeto) {
             tableModel.addColumn(columnName);
         }
         FND_jTable1.setModel(tableModel);
@@ -291,12 +291,12 @@ public class FndConfigPanel extends javax.swing.JPanel {
         Vector<String> vector = null;
         CustomTable tableModel = new CustomTable();
         tableModel.addColumn("Estados");
-        for (String rowName : alfabeto) {
+        for (String rowName : estados) {
             vector = new Vector<String>();
             vector.add(rowName);
             tableModel.insertRow(0,vector);
         }
-        for (String columnName : estados) {
+        for (String columnName : alfabeto) {
             tableModel.addColumn(columnName);
         }
         FND_jTable1.setModel(tableModel);
