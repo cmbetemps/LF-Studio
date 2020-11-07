@@ -5,6 +5,8 @@
  */
 package main.modulos.AutomatoFinitoNaoDeterministico.screens;
 
+import java.awt.Font;
+import javax.swing.JLabel;
 import main.LFStudio;
 import main.modulos.AutomatoFinitoNaoDeterministico.controllers.FndController;
 
@@ -54,6 +56,12 @@ public class FndInicioPanel extends javax.swing.JPanel {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 AFND1_LabelNovoAutomatoMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                AFND1_LabelNovoAutomatoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                AFND1_LabelNovoAutomatoMouseExited(evt);
+            }
         });
 
         AFND1_LabelImportarAutomato.setBackground(new java.awt.Color(0, 0, 0));
@@ -62,6 +70,14 @@ public class FndInicioPanel extends javax.swing.JPanel {
         AFND1_LabelImportarAutomato.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         AFND1_LabelImportarAutomato.setText("Importar autômato");
         AFND1_LabelImportarAutomato.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        AFND1_LabelImportarAutomato.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                AFND1_LabelImportarAutomatoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                AFND1_LabelImportarAutomatoMouseExited(evt);
+            }
+        });
 
         AFND1_LabelAutomatoFND.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
         AFND1_LabelAutomatoFND.setForeground(new java.awt.Color(255, 255, 255));
@@ -119,6 +135,30 @@ public class FndInicioPanel extends javax.swing.JPanel {
     private void AFND1_LabelNovoAutomatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AFND1_LabelNovoAutomatoMouseClicked
         LFStudio.cl.show(JanelaExecucao,"fndConfigPanel");
     }//GEN-LAST:event_AFND1_LabelNovoAutomatoMouseClicked
+
+    private void AFND1_LabelNovoAutomatoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AFND1_LabelNovoAutomatoMouseEntered
+        Font f = AFND1_LabelNovoAutomato.getFont();
+        AFND1_LabelNovoAutomato.setFont(f.deriveFont(f.getStyle(), f.getSize2D()+4));
+        //AFND1_LabelNovoAutomato.setForeground(AFND1_LabelNovoAutomato.getForeground().darker());
+    }//GEN-LAST:event_AFND1_LabelNovoAutomatoMouseEntered
+
+    private void AFND1_LabelNovoAutomatoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AFND1_LabelNovoAutomatoMouseExited
+        Font f = AFND1_LabelNovoAutomato.getFont();
+        AFND1_LabelNovoAutomato.setFont(f.deriveFont(f.getStyle(), f.getSize2D()-4));
+        //AFND1_LabelNovoAutomato.setForeground(AFND1_LabelNovoAutomato.getForeground().brighter());
+    }//GEN-LAST:event_AFND1_LabelNovoAutomatoMouseExited
+
+    private void AFND1_LabelImportarAutomatoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AFND1_LabelImportarAutomatoMouseEntered
+        Font f = AFND1_LabelImportarAutomato.getFont();
+        AFND1_LabelImportarAutomato.setFont(f.deriveFont(f.getStyle(), f.getSize2D()+4));
+        //AFND1_LabelImportarAutomato.setForeground(AFND1_LabelNovoAutomato.getForeground().darker());
+    }//GEN-LAST:event_AFND1_LabelImportarAutomatoMouseEntered
+
+    private void AFND1_LabelImportarAutomatoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AFND1_LabelImportarAutomatoMouseExited
+        Font f = AFND1_LabelImportarAutomato.getFont();
+        AFND1_LabelImportarAutomato.setFont(f.deriveFont(f.getStyle(), f.getSize2D()-4));
+        //AFND1_LabelImportarAutomato.setForeground(AFND1_LabelNovoAutomato.getForeground().brighter());
+    }//GEN-LAST:event_AFND1_LabelImportarAutomatoMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

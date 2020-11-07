@@ -9,7 +9,9 @@ import java.util.ArrayList;
 import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
 import main.LFStudio;
+import main.assets.CustomTable;
 import main.modulos.AutomatoFinitoNaoDeterministico.controllers.FndController;
+import main.modulos.AutomatoFinitoNaoDeterministico.domain.models.Automato;
 
 /**
  *
@@ -84,11 +86,6 @@ public class FndConfigPanel extends javax.swing.JPanel {
         FND_TextFieldAlfabeto.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         FND_TextFieldAlfabeto.setForeground(new java.awt.Color(0, 0, 0));
         FND_TextFieldAlfabeto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        FND_TextFieldAlfabeto.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FND_TextFieldAlfabetoActionPerformed(evt);
-            }
-        });
         FND_TextFieldAlfabeto.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 FND_TextFieldAlfabetoKeyReleased(evt);
@@ -97,26 +94,29 @@ public class FndConfigPanel extends javax.swing.JPanel {
 
         FND_jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null},
+                {null},
+                {null},
+                {null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Estados"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         FND_jScrollPane2.setViewportView(FND_jTable1);
 
         FND_TextFieldEstados.setBackground(new java.awt.Color(255, 255, 255));
         FND_TextFieldEstados.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         FND_TextFieldEstados.setForeground(new java.awt.Color(0, 0, 0));
         FND_TextFieldEstados.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        FND_TextFieldEstados.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FND_TextFieldEstadosActionPerformed(evt);
-            }
-        });
         FND_TextFieldEstados.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 FND_TextFieldEstadosKeyReleased(evt);
@@ -127,21 +127,11 @@ public class FndConfigPanel extends javax.swing.JPanel {
         FND_TextFieldEstadoInicial.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         FND_TextFieldEstadoInicial.setForeground(new java.awt.Color(0, 0, 0));
         FND_TextFieldEstadoInicial.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        FND_TextFieldEstadoInicial.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FND_TextFieldEstadoInicialActionPerformed(evt);
-            }
-        });
 
         FND_TextFieldEstadosFinais.setBackground(new java.awt.Color(255, 255, 255));
         FND_TextFieldEstadosFinais.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         FND_TextFieldEstadosFinais.setForeground(new java.awt.Color(0, 0, 0));
         FND_TextFieldEstadosFinais.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        FND_TextFieldEstadosFinais.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FND_TextFieldEstadosFinaisActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout FND_BodyConfigLayout = new javax.swing.GroupLayout(FND_BodyConfig);
         FND_BodyConfig.setLayout(FND_BodyConfigLayout);
@@ -214,6 +204,12 @@ public class FndConfigPanel extends javax.swing.JPanel {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 FND_LabelProcessarAutomatoMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                FND_LabelProcessarAutomatoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                FND_LabelProcessarAutomatoMouseExited(evt);
+            }
         });
 
         FND_SalvarAutomatojlbl.setBackground(new java.awt.Color(51, 51, 51));
@@ -224,8 +220,11 @@ public class FndConfigPanel extends javax.swing.JPanel {
         FND_SalvarAutomatojlbl.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         FND_SalvarAutomatojlbl.setOpaque(true);
         FND_SalvarAutomatojlbl.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                FND_SalvarAutomatojlblMouseClicked(evt);
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                FND_SalvarAutomatojlblMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                FND_SalvarAutomatojlblMouseExited(evt);
             }
         });
 
@@ -265,48 +264,64 @@ public class FndConfigPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void FND_TextFieldAlfabetoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FND_TextFieldAlfabetoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FND_TextFieldAlfabetoActionPerformed
-
     private void FND_TextFieldAlfabetoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FND_TextFieldAlfabetoKeyReleased
-//        controller.recebeTexto();
-        FND_jTable1.setEditingColumn(0);
-
+        String[] estados = FND_TextFieldEstados.getText().split(",");
+        String[] alfabeto = FND_TextFieldAlfabeto.getText().split(",");
+        Vector<String> vector = null;
+        CustomTable tableModel = new CustomTable();
+        tableModel.addColumn("Estados");
+        for (String rowName : alfabeto) {
+            vector = new Vector<String>();
+            vector.add(rowName);
+            tableModel.insertRow(0,vector);
+        }
+        for (String columnName : estados) {
+            tableModel.addColumn(columnName);
+        }
+        FND_jTable1.setModel(tableModel);
     }//GEN-LAST:event_FND_TextFieldAlfabetoKeyReleased
-
-    private void FND_TextFieldEstadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FND_TextFieldEstadosActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FND_TextFieldEstadosActionPerformed
-
-    private void FND_TextFieldEstadoInicialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FND_TextFieldEstadoInicialActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FND_TextFieldEstadoInicialActionPerformed
-
-    private void FND_TextFieldEstadosFinaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FND_TextFieldEstadosFinaisActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_FND_TextFieldEstadosFinaisActionPerformed
 
     private void FND_LabelProcessarAutomatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FND_LabelProcessarAutomatoMouseClicked
         LFStudio.cl.show(JanelaExecucao, "fndProcessamentoPanel");
     }//GEN-LAST:event_FND_LabelProcessarAutomatoMouseClicked
 
-    private void FND_SalvarAutomatojlblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FND_SalvarAutomatojlblMouseClicked
-        
-    }//GEN-LAST:event_FND_SalvarAutomatojlblMouseClicked
-
     private void FND_TextFieldEstadosKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FND_TextFieldEstadosKeyReleased
         String[] estados = FND_TextFieldEstados.getText().split(",");
-        Vector vector = null;
-        DefaultTableModel tableModel = new DefaultTableModel();
+        String[] alfabeto = FND_TextFieldAlfabeto.getText().split(",");
+        Vector<String> vector = null;
+        CustomTable tableModel = new CustomTable();
+        tableModel.addColumn("Estados");
+        for (String rowName : alfabeto) {
+            vector = new Vector<String>();
+            vector.add(rowName);
+            tableModel.insertRow(0,vector);
+        }
         for (String columnName : estados) {
             tableModel.addColumn(columnName);
-            tableModel.insertRow(0,vector);
         }
         FND_jTable1.setModel(tableModel);
     }//GEN-LAST:event_FND_TextFieldEstadosKeyReleased
 
+    private void FND_SalvarAutomatojlblMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FND_SalvarAutomatojlblMouseEntered
+        FND_SalvarAutomatojlbl.setBackground(FND_SalvarAutomatojlbl.getBackground().brighter().brighter());
+    }//GEN-LAST:event_FND_SalvarAutomatojlblMouseEntered
 
+    private void FND_SalvarAutomatojlblMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FND_SalvarAutomatojlblMouseExited
+        FND_SalvarAutomatojlbl.setBackground(FND_SalvarAutomatojlbl.getBackground().darker().darker());
+    }//GEN-LAST:event_FND_SalvarAutomatojlblMouseExited
+
+    private void FND_LabelProcessarAutomatoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FND_LabelProcessarAutomatoMouseEntered
+        FND_LabelProcessarAutomato.setBackground(FND_LabelProcessarAutomato.getBackground().brighter().brighter());
+    }//GEN-LAST:event_FND_LabelProcessarAutomatoMouseEntered
+
+    private void FND_LabelProcessarAutomatoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FND_LabelProcessarAutomatoMouseExited
+        FND_LabelProcessarAutomato.setBackground(FND_LabelProcessarAutomato.getBackground().darker().darker());
+    }//GEN-LAST:event_FND_LabelProcessarAutomatoMouseExited
+
+    private Automato gerarAutomato(){
+        return null;
+    } 
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel FND_BodyConfig;
     private javax.swing.JLabel FND_LabelAlfabeto;

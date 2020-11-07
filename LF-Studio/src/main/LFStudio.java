@@ -10,6 +10,7 @@ import java.awt.Color;
 import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
+import javax.swing.table.DefaultTableModel;
 import main.modulos.AutomatoFinitoDeterministico.screens.FdConfigPanel;
 import main.modulos.AutomatoFinitoDeterministico.screens.FdInicioPanel;
 import main.modulos.AutomatoFinitoDeterministico.screens.FdProcessamentoPanel;
@@ -122,7 +123,6 @@ public class LFStudio extends javax.swing.JFrame {
         JanelaVisivel.setLocation(100, 160);
         cl = (CardLayout) JanelaExecucao.getLayout();
         cl.show(JanelaExecucao, "home");
-    
     }
 
     /**
@@ -171,7 +171,7 @@ public class LFStudio extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 659, Short.MAX_VALUE)
+            .addGap(0, 674, Short.MAX_VALUE)
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -224,7 +224,7 @@ public class LFStudio extends javax.swing.JFrame {
             }
         });
 
-        menuRegX.setBackground(new java.awt.Color(50, 50, 50));
+        menuRegX.setBackground(new java.awt.Color(47, 47, 47));
         menuRegX.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuRegX.setForeground(new java.awt.Color(255, 255, 255));
         menuRegX.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -246,7 +246,7 @@ public class LFStudio extends javax.swing.JFrame {
             }
         });
 
-        menuAfd.setBackground(new java.awt.Color(37, 37, 37));
+        menuAfd.setBackground(new java.awt.Color(27, 27, 27));
         menuAfd.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuAfd.setForeground(new java.awt.Color(255, 255, 255));
         menuAfd.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -271,7 +271,7 @@ public class LFStudio extends javax.swing.JFrame {
             }
         });
 
-        menuAFND.setBackground(new java.awt.Color(37, 37, 37));
+        menuAFND.setBackground(new java.awt.Color(17, 17, 17));
         menuAFND.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuAFND.setForeground(new java.awt.Color(255, 255, 255));
         menuAFND.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -304,8 +304,13 @@ public class LFStudio extends javax.swing.JFrame {
         titleLFStudio.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         titleLFStudio.setMaximumSize(new java.awt.Dimension(344, 539));
         titleLFStudio.setOpaque(true);
+        titleLFStudio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                titleLFStudioMouseClicked(evt);
+            }
+        });
 
-        menuGLC.setBackground(new java.awt.Color(63, 64, 66));
+        menuGLC.setBackground(new java.awt.Color(67, 67, 67));
         menuGLC.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuGLC.setForeground(new java.awt.Color(255, 255, 255));
         menuGLC.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -327,7 +332,7 @@ public class LFStudio extends javax.swing.JFrame {
             }
         });
 
-        ExpressoesRegulares.setBackground(new java.awt.Color(63, 64, 66));
+        ExpressoesRegulares.setBackground(new java.awt.Color(57, 57, 57));
         ExpressoesRegulares.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         ExpressoesRegulares.setForeground(new java.awt.Color(255, 255, 255));
         ExpressoesRegulares.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -349,7 +354,7 @@ public class LFStudio extends javax.swing.JFrame {
             }
         });
 
-        menuTuring.setBackground(new java.awt.Color(70, 71, 74));
+        menuTuring.setBackground(new java.awt.Color(77, 77, 77));
         menuTuring.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuTuring.setForeground(new java.awt.Color(255, 255, 255));
         menuTuring.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -436,9 +441,7 @@ public class LFStudio extends javax.swing.JFrame {
         JanelaPrincipal.setLayout(JanelaPrincipalLayout);
         JanelaPrincipalLayout.setHorizontalGroup(
             JanelaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JanelaPrincipalLayout.createSequentialGroup()
-                .addComponent(JanelaVisivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 49, Short.MAX_VALUE))
+            .addComponent(JanelaVisivel)
         );
         JanelaPrincipalLayout.setVerticalGroup(
             JanelaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -450,14 +453,16 @@ public class LFStudio extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-
+    private void funçãoTeste(){
+        
+    }
   
     private void menuAFNDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAFNDMouseClicked
         cl.show(JanelaExecucao, "fndInicioPanel");
     }//GEN-LAST:event_menuAFNDMouseClicked
 
     private void menuAfdMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAfdMouseClicked
-        cl.show(JanelaExecucao, "fdInicioPanel");              
+        cl.show(JanelaExecucao, "fdInicioPanel");    
     }//GEN-LAST:event_menuAfdMouseClicked
 
     private void menuPilhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPilhaMouseClicked
@@ -575,6 +580,10 @@ public class LFStudio extends javax.swing.JFrame {
     private void menuTuringMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTuringMouseExited
         menuTuring.setBackground(menuTuring.getBackground().darker().darker());
     }//GEN-LAST:event_menuTuringMouseExited
+
+    private void titleLFStudioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_titleLFStudioMouseClicked
+        funçãoTeste();
+    }//GEN-LAST:event_titleLFStudioMouseClicked
 
     /**
      * @param args the command line arguments

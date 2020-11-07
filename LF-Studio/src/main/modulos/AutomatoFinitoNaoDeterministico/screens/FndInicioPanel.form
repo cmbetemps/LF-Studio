@@ -107,6 +107,8 @@
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="AFND1_LabelNovoAutomatoMouseClicked"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="AFND1_LabelNovoAutomatoMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="AFND1_LabelNovoAutomatoMouseExited"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="AFND1_LabelImportarAutomato">
@@ -124,6 +126,10 @@
             <Property name="text" type="java.lang.String" value="Importar aut&#xf4;mato"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="AFND1_LabelImportarAutomatoMouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="AFND1_LabelImportarAutomatoMouseExited"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="AFND1_LabelAutomatoFND">
           <Properties>

@@ -76,8 +76,11 @@ public class FndProcessamentoPanel extends javax.swing.JPanel {
         validarPalavraFND.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         validarPalavraFND.setOpaque(true);
         validarPalavraFND.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                validarPalavraFNDMouseClicked(evt);
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                validarPalavraFNDMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                validarPalavraFNDMouseExited(evt);
             }
         });
 
@@ -130,9 +133,13 @@ public class FndProcessamentoPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_AFND3_TextFieldEntrada1ActionPerformed
 
-    private void validarPalavraFNDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_validarPalavraFNDMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_validarPalavraFNDMouseClicked
+    private void validarPalavraFNDMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_validarPalavraFNDMouseEntered
+        validarPalavraFND.setBackground(validarPalavraFND.getBackground().brighter().brighter());
+    }//GEN-LAST:event_validarPalavraFNDMouseEntered
+
+    private void validarPalavraFNDMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_validarPalavraFNDMouseExited
+        validarPalavraFND.setBackground(validarPalavraFND.getBackground().darker().darker());
+    }//GEN-LAST:event_validarPalavraFNDMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
