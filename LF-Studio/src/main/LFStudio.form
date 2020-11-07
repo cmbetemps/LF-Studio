@@ -224,7 +224,7 @@
                         <Component class="javax.swing.JLabel" name="menuPilha">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="25" green="25" red="25" type="rgb"/>
+                              <Color blue="3c" green="3c" red="3c" type="rgb"/>
                             </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Comic Sans MS" size="16" style="1"/>
@@ -250,7 +250,7 @@
                         <Component class="javax.swing.JLabel" name="menuRegX">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="2f" green="2f" red="2f" type="rgb"/>
+                              <Color blue="14" green="14" red="14" type="rgb"/>
                             </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Comic Sans MS" size="16" style="1"/>
@@ -275,7 +275,7 @@
                         <Component class="javax.swing.JLabel" name="menuAfd">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="1b" green="1b" red="1b" type="rgb"/>
+                              <Color blue="14" green="14" red="14" type="rgb"/>
                             </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Comic Sans MS" size="16" style="1"/>
@@ -301,7 +301,7 @@
                         <Component class="javax.swing.JLabel" name="menuAFND">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="11" green="11" red="11" type="rgb"/>
+                              <Color blue="3c" green="3c" red="3c" type="rgb"/>
                             </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Comic Sans MS" size="16" style="1"/>
@@ -350,7 +350,7 @@
                         <Component class="javax.swing.JLabel" name="menuGLC">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="43" green="43" red="43" type="rgb"/>
+                              <Color blue="14" green="14" red="14" type="rgb"/>
                             </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Comic Sans MS" size="16" style="1"/>
@@ -375,7 +375,7 @@
                         <Component class="javax.swing.JLabel" name="ExpressoesRegulares">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="39" green="39" red="39" type="rgb"/>
+                              <Color blue="3c" green="3c" red="3c" type="rgb"/>
                             </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Comic Sans MS" size="16" style="1"/>
@@ -400,7 +400,7 @@
                         <Component class="javax.swing.JLabel" name="menuTuring">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="4d" green="4d" red="4d" type="rgb"/>
+                              <Color blue="3c" green="3c" red="3c" type="rgb"/>
                             </Property>
                             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                               <Font name="Comic Sans MS" size="16" style="1"/>

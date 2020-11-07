@@ -199,7 +199,7 @@ public class LFStudio extends javax.swing.JFrame {
         menuPanel.setMaximumSize(new java.awt.Dimension(344, 539));
         menuPanel.setPreferredSize(new java.awt.Dimension(250, 560));
 
-        menuPilha.setBackground(new java.awt.Color(37, 37, 37));
+        menuPilha.setBackground(new java.awt.Color(60, 60, 60));
         menuPilha.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuPilha.setForeground(new java.awt.Color(255, 255, 255));
         menuPilha.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -224,7 +224,7 @@ public class LFStudio extends javax.swing.JFrame {
             }
         });
 
-        menuRegX.setBackground(new java.awt.Color(47, 47, 47));
+        menuRegX.setBackground(new java.awt.Color(20, 20, 20));
         menuRegX.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuRegX.setForeground(new java.awt.Color(255, 255, 255));
         menuRegX.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -246,7 +246,7 @@ public class LFStudio extends javax.swing.JFrame {
             }
         });
 
-        menuAfd.setBackground(new java.awt.Color(27, 27, 27));
+        menuAfd.setBackground(new java.awt.Color(20, 20, 20));
         menuAfd.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuAfd.setForeground(new java.awt.Color(255, 255, 255));
         menuAfd.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -271,7 +271,7 @@ public class LFStudio extends javax.swing.JFrame {
             }
         });
 
-        menuAFND.setBackground(new java.awt.Color(17, 17, 17));
+        menuAFND.setBackground(new java.awt.Color(60, 60, 60));
         menuAFND.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuAFND.setForeground(new java.awt.Color(255, 255, 255));
         menuAFND.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -310,7 +310,7 @@ public class LFStudio extends javax.swing.JFrame {
             }
         });
 
-        menuGLC.setBackground(new java.awt.Color(67, 67, 67));
+        menuGLC.setBackground(new java.awt.Color(20, 20, 20));
         menuGLC.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuGLC.setForeground(new java.awt.Color(255, 255, 255));
         menuGLC.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -332,7 +332,7 @@ public class LFStudio extends javax.swing.JFrame {
             }
         });
 
-        ExpressoesRegulares.setBackground(new java.awt.Color(57, 57, 57));
+        ExpressoesRegulares.setBackground(new java.awt.Color(60, 60, 60));
         ExpressoesRegulares.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         ExpressoesRegulares.setForeground(new java.awt.Color(255, 255, 255));
         ExpressoesRegulares.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -354,7 +354,7 @@ public class LFStudio extends javax.swing.JFrame {
             }
         });
 
-        menuTuring.setBackground(new java.awt.Color(77, 77, 77));
+        menuTuring.setBackground(new java.awt.Color(60, 60, 60));
         menuTuring.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuTuring.setForeground(new java.awt.Color(255, 255, 255));
         menuTuring.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
