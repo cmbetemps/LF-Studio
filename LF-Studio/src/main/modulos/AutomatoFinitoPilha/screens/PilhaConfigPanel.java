@@ -33,97 +33,114 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        Pilha_BodyConfig = new javax.swing.JPanel();
-        t_tra = new javax.swing.JLabel();
-        t_ea = new javax.swing.JLabel();
-        t_ei = new javax.swing.JLabel();
-        t_ap = new javax.swing.JLabel();
-        t_a = new javax.swing.JLabel();
-        r_ei = new javax.swing.JTextField();
-        r_a = new javax.swing.JTextField();
-        r_ap = new javax.swing.JTextField();
-        r_ea = new javax.swing.JTextField();
-        r_sip = new javax.swing.JTextField();
-        t_sip = new javax.swing.JLabel();
-        AFND2_jScrollPane3 = new javax.swing.JScrollPane();
-        AFND2_jTable3 = new javax.swing.JTable();
+        jPanel1 = new javax.swing.JPanel();
+        Pilha_BodyConfig1 = new javax.swing.JPanel();
+        t_tra1 = new javax.swing.JLabel();
+        t_ea1 = new javax.swing.JLabel();
+        t_ei1 = new javax.swing.JLabel();
+        t_ap1 = new javax.swing.JLabel();
+        t_a1 = new javax.swing.JLabel();
+        r_ei1 = new javax.swing.JTextField();
+        r_a1 = new javax.swing.JTextField();
+        r_ap1 = new javax.swing.JTextField();
+        r_ea1 = new javax.swing.JTextField();
+        r_sip1 = new javax.swing.JTextField();
+        t_sip1 = new javax.swing.JLabel();
+        AFND2_jScrollPane4 = new javax.swing.JScrollPane();
+        AFND2_jTable4 = new javax.swing.JTable();
         Pilha_tituloPilha = new javax.swing.JLabel();
         Pilha_salvarPilhaBtn = new javax.swing.JLabel();
         Pilha_subTitulo = new javax.swing.JLabel();
         Pilha_ConfigTitulo1 = new javax.swing.JLabel();
         Pilha_processarPilhaBtn = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(70, 71, 74));
+        setBackground(new java.awt.Color(28, 28, 28));
+        setPreferredSize(new java.awt.Dimension(574, 646));
 
-        Pilha_BodyConfig.setBackground(new java.awt.Color(51, 51, 51));
-        Pilha_BodyConfig.setForeground(new java.awt.Color(51, 51, 51));
+        jPanel1.setBackground(new java.awt.Color(28, 28, 28));
+        jPanel1.setMinimumSize(new java.awt.Dimension(0, 0));
+        jPanel1.setPreferredSize(new java.awt.Dimension(574, 646));
 
-        t_tra.setBackground(new java.awt.Color(51, 51, 51));
-        t_tra.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
-        t_tra.setForeground(new java.awt.Color(255, 255, 255));
-        t_tra.setText("Tabela de Transições");
+        Pilha_BodyConfig1.setBackground(new java.awt.Color(28, 28, 28));
+        Pilha_BodyConfig1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.darkGray, java.awt.Color.darkGray, java.awt.Color.darkGray));
+        Pilha_BodyConfig1.setForeground(new java.awt.Color(51, 51, 51));
 
-        t_ea.setBackground(new java.awt.Color(51, 51, 51));
-        t_ea.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
-        t_ea.setForeground(new java.awt.Color(255, 255, 255));
-        t_ea.setText("Estados de Aceitação");
+        t_tra1.setBackground(new java.awt.Color(51, 51, 51));
+        t_tra1.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
+        t_tra1.setForeground(new java.awt.Color(255, 255, 255));
+        t_tra1.setText("Tabela de Transições");
 
-        t_ei.setBackground(new java.awt.Color(51, 51, 51));
-        t_ei.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
-        t_ei.setForeground(new java.awt.Color(255, 255, 255));
-        t_ei.setText("Estado Inicial");
+        t_ea1.setBackground(new java.awt.Color(51, 51, 51));
+        t_ea1.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
+        t_ea1.setForeground(new java.awt.Color(255, 255, 255));
+        t_ea1.setText("Estados Finais");
 
-        t_ap.setBackground(new java.awt.Color(51, 51, 51));
-        t_ap.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
-        t_ap.setForeground(new java.awt.Color(255, 255, 255));
-        t_ap.setText("Alfabeto da Pilha");
+        t_ei1.setBackground(new java.awt.Color(51, 51, 51));
+        t_ei1.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
+        t_ei1.setForeground(new java.awt.Color(255, 255, 255));
+        t_ei1.setText("Estado Inicial");
 
-        t_a.setBackground(new java.awt.Color(51, 51, 51));
-        t_a.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
-        t_a.setForeground(new java.awt.Color(255, 255, 255));
-        t_a.setText("Alfabeto");
+        t_ap1.setBackground(new java.awt.Color(51, 51, 51));
+        t_ap1.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
+        t_ap1.setForeground(new java.awt.Color(255, 255, 255));
+        t_ap1.setText("Alfabeto da Pilha");
 
-        r_ei.setBackground(new java.awt.Color(255, 255, 255));
-        r_ei.addActionListener(new java.awt.event.ActionListener() {
+        t_a1.setBackground(new java.awt.Color(51, 51, 51));
+        t_a1.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
+        t_a1.setForeground(new java.awt.Color(255, 255, 255));
+        t_a1.setText("Alfabeto");
+
+        r_ei1.setBackground(new java.awt.Color(255, 255, 255));
+        r_ei1.setPreferredSize(new java.awt.Dimension(15, 32));
+        r_ei1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r_eiActionPerformed(evt);
             }
         });
 
-        r_a.setBackground(new java.awt.Color(255, 255, 255));
-        r_a.addActionListener(new java.awt.event.ActionListener() {
+        r_a1.setBackground(new java.awt.Color(255, 255, 255));
+        r_a1.setPreferredSize(new java.awt.Dimension(15, 32));
+        r_a1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r_aActionPerformed(evt);
             }
         });
+        r_a1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                r_a1KeyReleased(evt);
+            }
+        });
 
-        r_ap.setBackground(new java.awt.Color(255, 255, 255));
-        r_ap.addActionListener(new java.awt.event.ActionListener() {
+        r_ap1.setBackground(new java.awt.Color(255, 255, 255));
+        r_ap1.setPreferredSize(new java.awt.Dimension(15, 32));
+        r_ap1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r_apActionPerformed(evt);
             }
         });
 
-        r_ea.setBackground(new java.awt.Color(255, 255, 255));
-        r_ea.addActionListener(new java.awt.event.ActionListener() {
+        r_ea1.setBackground(new java.awt.Color(255, 255, 255));
+        r_ea1.setPreferredSize(new java.awt.Dimension(15, 32));
+        r_ea1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r_eaActionPerformed(evt);
             }
         });
 
-        r_sip.setBackground(new java.awt.Color(255, 255, 255));
-        r_sip.addActionListener(new java.awt.event.ActionListener() {
+        r_sip1.setBackground(new java.awt.Color(255, 255, 255));
+        r_sip1.setPreferredSize(new java.awt.Dimension(15, 32));
+        r_sip1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r_sipActionPerformed(evt);
             }
         });
 
-        t_sip.setBackground(new java.awt.Color(51, 51, 51));
-        t_sip.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
-        t_sip.setForeground(new java.awt.Color(255, 255, 255));
-        t_sip.setText("Simbolos Iniciais");
+        t_sip1.setBackground(new java.awt.Color(51, 51, 51));
+        t_sip1.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
+        t_sip1.setForeground(new java.awt.Color(255, 255, 255));
+        t_sip1.setText("Simbolos Iniciais");
 
-        AFND2_jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        AFND2_jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -134,63 +151,64 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        AFND2_jScrollPane3.setViewportView(AFND2_jTable3);
+        AFND2_jScrollPane4.setViewportView(AFND2_jTable4);
 
-        javax.swing.GroupLayout Pilha_BodyConfigLayout = new javax.swing.GroupLayout(Pilha_BodyConfig);
-        Pilha_BodyConfig.setLayout(Pilha_BodyConfigLayout);
-        Pilha_BodyConfigLayout.setHorizontalGroup(
-            Pilha_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pilha_BodyConfigLayout.createSequentialGroup()
-                .addContainerGap(160, Short.MAX_VALUE)
-                .addComponent(t_tra)
-                .addGap(144, 144, 144))
-            .addGroup(Pilha_BodyConfigLayout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addGroup(Pilha_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(AFND2_jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 428, Short.MAX_VALUE)
-                    .addGroup(Pilha_BodyConfigLayout.createSequentialGroup()
-                        .addGroup(Pilha_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(t_ap, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(t_a, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(t_ea, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(t_ei, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(t_sip, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(80, 80, 80)
-                        .addGroup(Pilha_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(r_ap, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 158, Short.MAX_VALUE)
-                            .addComponent(r_ea, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(r_ei, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(r_sip, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(r_a))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        javax.swing.GroupLayout Pilha_BodyConfig1Layout = new javax.swing.GroupLayout(Pilha_BodyConfig1);
+        Pilha_BodyConfig1.setLayout(Pilha_BodyConfig1Layout);
+        Pilha_BodyConfig1Layout.setHorizontalGroup(
+            Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Pilha_BodyConfig1Layout.createSequentialGroup()
+                .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Pilha_BodyConfig1Layout.createSequentialGroup()
+                        .addGap(136, 136, 136)
+                        .addComponent(t_tra1))
+                    .addGroup(Pilha_BodyConfig1Layout.createSequentialGroup()
+                        .addGap(18, 18, 18)
+                        .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(AFND2_jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(Pilha_BodyConfig1Layout.createSequentialGroup()
+                                .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(t_ap1, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(t_a1, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(t_ea1, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(t_ei1, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(t_sip1, javax.swing.GroupLayout.Alignment.LEADING))
+                                .addGap(59, 59, 59)
+                                .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(r_ap1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(r_a1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(r_ea1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(r_ei1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(r_sip1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
-        Pilha_BodyConfigLayout.setVerticalGroup(
-            Pilha_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Pilha_BodyConfigLayout.createSequentialGroup()
+        Pilha_BodyConfig1Layout.setVerticalGroup(
+            Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Pilha_BodyConfig1Layout.createSequentialGroup()
                 .addGap(0, 20, Short.MAX_VALUE)
-                .addGroup(Pilha_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(t_a)
-                    .addComponent(r_a, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(t_a1)
+                    .addComponent(r_a1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10)
-                .addGroup(Pilha_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(t_ap)
-                    .addComponent(r_ap, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(t_ap1)
+                    .addComponent(r_ap1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10)
-                .addGroup(Pilha_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(t_ea)
-                    .addComponent(r_ea, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(t_ea1)
+                    .addComponent(r_ea1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10)
-                .addGroup(Pilha_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(t_ei)
-                    .addComponent(r_ei, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(t_ei1)
+                    .addComponent(r_ei1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10)
-                .addGroup(Pilha_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(r_sip, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(t_sip))
-                .addGap(12, 12, 12)
-                .addComponent(t_tra)
+                .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(r_sip1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(t_sip1))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(t_tra1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(AFND2_jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(AFND2_jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
@@ -199,10 +217,10 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
         Pilha_tituloPilha.setForeground(new java.awt.Color(255, 255, 255));
 
         Pilha_salvarPilhaBtn.setBackground(new java.awt.Color(51, 51, 51));
-        Pilha_salvarPilhaBtn.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        Pilha_salvarPilhaBtn.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
         Pilha_salvarPilhaBtn.setForeground(new java.awt.Color(255, 255, 255));
         Pilha_salvarPilhaBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Pilha_salvarPilhaBtn.setText("Salvar Automato");
+        Pilha_salvarPilhaBtn.setText("Salvar Autômato");
         Pilha_salvarPilhaBtn.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Pilha_salvarPilhaBtn.setOpaque(true);
         Pilha_salvarPilhaBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -217,21 +235,20 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
             }
         });
 
-        Pilha_subTitulo.setBackground(new java.awt.Color(70, 71, 74));
-        Pilha_subTitulo.setFont(new java.awt.Font("Comic Sans MS", 1, 20)); // NOI18N
+        Pilha_subTitulo.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
         Pilha_subTitulo.setForeground(new java.awt.Color(255, 255, 255));
         Pilha_subTitulo.setText("Configuração");
 
-        Pilha_ConfigTitulo1.setFont(new java.awt.Font("Comic Sans MS", 1, 30)); // NOI18N
+        Pilha_ConfigTitulo1.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 36)); // NOI18N
         Pilha_ConfigTitulo1.setForeground(new java.awt.Color(255, 255, 255));
         Pilha_ConfigTitulo1.setText("<html><p style=\"padding-bottom: 16px;\">Autômato de Pilha</p></html>");
         Pilha_ConfigTitulo1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
 
         Pilha_processarPilhaBtn.setBackground(new java.awt.Color(51, 51, 51));
-        Pilha_processarPilhaBtn.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        Pilha_processarPilhaBtn.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
         Pilha_processarPilhaBtn.setForeground(new java.awt.Color(255, 255, 255));
         Pilha_processarPilhaBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        Pilha_processarPilhaBtn.setText("Processar Automato");
+        Pilha_processarPilhaBtn.setText("Processar Autômato");
         Pilha_processarPilhaBtn.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         Pilha_processarPilhaBtn.setOpaque(true);
         Pilha_processarPilhaBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -246,105 +263,155 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
             }
         });
 
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(52, 52, 52)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Pilha_tituloPilha)
+                            .addComponent(Pilha_subTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(Pilha_processarPilhaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(Pilha_salvarPilhaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGap(97, 97, 97)
+                                    .addComponent(Pilha_ConfigTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(91, 91, 91)))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(69, 69, 69)
+                        .addComponent(Pilha_BodyConfig1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(81, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(33, Short.MAX_VALUE)
+                .addComponent(Pilha_ConfigTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Pilha_tituloPilha)
+                    .addComponent(Pilha_subTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Pilha_BodyConfig1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(Pilha_salvarPilhaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Pilha_processarPilhaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(Pilha_processarPilhaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Pilha_salvarPilhaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(Pilha_BodyConfig, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Pilha_subTitulo)
-                        .addComponent(Pilha_tituloPilha)
-                        .addComponent(Pilha_ConfigTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap())
+            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(Pilha_ConfigTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(Pilha_tituloPilha)
-                .addGap(0, 0, 0)
-                .addComponent(Pilha_subTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(Pilha_BodyConfig, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Pilha_salvarPilhaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Pilha_processarPilhaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(40, 40, 40))
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void r_eiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_eiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_r_eiActionPerformed
-
-    private void r_aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_aActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_r_aActionPerformed
-
-    private void r_apActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_apActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_r_apActionPerformed
-
-    private void r_eaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_eaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_r_eaActionPerformed
-
-    private void r_sipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_sipActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_r_sipActionPerformed
-
-    private void Pilha_salvarPilhaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pilha_salvarPilhaBtnMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Pilha_salvarPilhaBtnMouseClicked
-
-    private void Pilha_processarPilhaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pilha_processarPilhaBtnMouseClicked
-        LFStudio.cl.show(JanelaExecucao, "pilhaProcessamentoPanel");        // TODO add your handling code here:
-    }//GEN-LAST:event_Pilha_processarPilhaBtnMouseClicked
-
-    private void Pilha_salvarPilhaBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pilha_salvarPilhaBtnMouseEntered
-        Pilha_salvarPilhaBtn.setBackground(Pilha_salvarPilhaBtn.getBackground().brighter().brighter());
-    }//GEN-LAST:event_Pilha_salvarPilhaBtnMouseEntered
 
     private void Pilha_salvarPilhaBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pilha_salvarPilhaBtnMouseExited
         Pilha_salvarPilhaBtn.setBackground(Pilha_salvarPilhaBtn.getBackground().darker().darker());
     }//GEN-LAST:event_Pilha_salvarPilhaBtnMouseExited
 
-    private void Pilha_processarPilhaBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pilha_processarPilhaBtnMouseEntered
-         Pilha_processarPilhaBtn.setBackground(Pilha_processarPilhaBtn.getBackground().brighter().brighter());
-    }//GEN-LAST:event_Pilha_processarPilhaBtnMouseEntered
+    private void Pilha_salvarPilhaBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pilha_salvarPilhaBtnMouseEntered
+        Pilha_salvarPilhaBtn.setBackground(Pilha_salvarPilhaBtn.getBackground().brighter().brighter());
+    }//GEN-LAST:event_Pilha_salvarPilhaBtnMouseEntered
+
+    private void Pilha_salvarPilhaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pilha_salvarPilhaBtnMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Pilha_salvarPilhaBtnMouseClicked
+
+    private void r_sipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_sipActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_r_sipActionPerformed
+
+    private void r_eaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_eaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_r_eaActionPerformed
+
+    private void r_apActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_apActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_r_apActionPerformed
+
+    private void r_aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_aActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_r_aActionPerformed
+
+    private void r_eiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_eiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_r_eiActionPerformed
 
     private void Pilha_processarPilhaBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pilha_processarPilhaBtnMouseExited
         Pilha_processarPilhaBtn.setBackground(Pilha_processarPilhaBtn.getBackground().darker().darker());
     }//GEN-LAST:event_Pilha_processarPilhaBtnMouseExited
 
+    private void Pilha_processarPilhaBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pilha_processarPilhaBtnMouseEntered
+        Pilha_processarPilhaBtn.setBackground(Pilha_processarPilhaBtn.getBackground().brighter().brighter());
+    }//GEN-LAST:event_Pilha_processarPilhaBtnMouseEntered
+
+    private void Pilha_processarPilhaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pilha_processarPilhaBtnMouseClicked
+        LFStudio.cl.show(JanelaExecucao, "pilhaProcessamentoPanel");        // TODO add your handling code here:
+    }//GEN-LAST:event_Pilha_processarPilhaBtnMouseClicked
+
+    private void r_a1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r_a1KeyReleased
+      String[] estados = r_a1.getText().split(",");
+        String[] alfabeto = r_a1.getText().split(",");
+        Vector<String> vector = null;
+        CustomTable tableModel = new CustomTable();
+        tableModel.addColumn("Estados");
+        for (String rowName : estados) {
+            vector = new Vector<String>();
+            vector.add(rowName);
+            tableModel.insertRow(0,vector);
+        }
+        for (String columnName : alfabeto) {
+            tableModel.addColumn(columnName);
+        }
+        AFND2_jTable4.setModel(tableModel);  
+    }//GEN-LAST:event_r_a1KeyReleased
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane AFND2_jScrollPane3;
+    private javax.swing.JScrollPane AFND2_jScrollPane4;
     private javax.swing.JTable AFND2_jTable3;
+    private javax.swing.JTable AFND2_jTable4;
     private javax.swing.JPanel Pilha_BodyConfig;
+    private javax.swing.JPanel Pilha_BodyConfig1;
     private javax.swing.JLabel Pilha_ConfigTitulo1;
     private javax.swing.JLabel Pilha_processarPilhaBtn;
     private javax.swing.JLabel Pilha_salvarPilhaBtn;
     private javax.swing.JLabel Pilha_subTitulo;
     private javax.swing.JLabel Pilha_tituloPilha;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JTextField r_a;
+    private javax.swing.JTextField r_a1;
     private javax.swing.JTextField r_ap;
+    private javax.swing.JTextField r_ap1;
     private javax.swing.JTextField r_ea;
+    private javax.swing.JTextField r_ea1;
     private javax.swing.JTextField r_ei;
+    private javax.swing.JTextField r_ei1;
     private javax.swing.JTextField r_sip;
+    private javax.swing.JTextField r_sip1;
     private javax.swing.JLabel t_a;
+    private javax.swing.JLabel t_a1;
     private javax.swing.JLabel t_ap;
+    private javax.swing.JLabel t_ap1;
     private javax.swing.JLabel t_ea;
+    private javax.swing.JLabel t_ea1;
     private javax.swing.JLabel t_ei;
+    private javax.swing.JLabel t_ei1;
     private javax.swing.JLabel t_sip;
+    private javax.swing.JLabel t_sip1;
     private javax.swing.JLabel t_tra;
+    private javax.swing.JLabel t_tra1;
     // End of variables declaration//GEN-END:variables
 }

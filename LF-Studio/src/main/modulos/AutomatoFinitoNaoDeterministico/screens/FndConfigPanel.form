@@ -71,6 +71,7 @@
                   <Component id="FND_Titulo" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
                   <Component id="FND_SubTitulo" min="-2" pref="36" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                   <Component id="FND_BodyConfig" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                   <Component id="FND_SalvarAutomatojlbl" min="-2" pref="42" max="-2" attributes="0"/>
@@ -352,7 +353,7 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value=" Processar aut&#xf4;mato "/>
+            <Property name="text" type="java.lang.String" value=" Processar Aut&#xf4;mato "/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
             <Property name="opaque" type="boolean" value="true"/>
           </Properties>

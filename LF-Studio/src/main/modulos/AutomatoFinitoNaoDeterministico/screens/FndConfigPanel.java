@@ -204,7 +204,7 @@ public class FndConfigPanel extends javax.swing.JPanel {
         FND_LabelProcessarAutomato.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
         FND_LabelProcessarAutomato.setForeground(new java.awt.Color(255, 255, 255));
         FND_LabelProcessarAutomato.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        FND_LabelProcessarAutomato.setText(" Processar autômato ");
+        FND_LabelProcessarAutomato.setText(" Processar Autômato ");
         FND_LabelProcessarAutomato.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         FND_LabelProcessarAutomato.setOpaque(true);
         FND_LabelProcessarAutomato.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -264,6 +264,7 @@ public class FndConfigPanel extends javax.swing.JPanel {
                 .addComponent(FND_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(4, 4, 4)
                 .addComponent(FND_SubTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
                 .addComponent(FND_BodyConfig, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21)
                 .addComponent(FND_SalvarAutomatojlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
