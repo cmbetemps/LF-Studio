@@ -7,6 +7,12 @@ package main;
 
 import java.awt.CardLayout;
 import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.GraphicsConfiguration;
+import java.awt.GraphicsDevice;
+import java.awt.GraphicsEnvironment;
+import java.awt.Image;
+import java.awt.image.BufferedImage;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -119,7 +125,8 @@ public class LFStudio extends javax.swing.JFrame {
     
     public LFStudio() {
         super("LFPrototipo");
-        
+        ImageIcon image = new ImageIcon(LFStudio.class.getResource("taskbarIcon.png"));
+        super.setIconImage(image.getImage());
         initComponents();
         initPanels();
         this.JanelaVisivel.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
@@ -128,6 +135,7 @@ public class LFStudio extends javax.swing.JFrame {
         cl = (CardLayout) JanelaExecucao.getLayout();
         cl.show(JanelaExecucao, "HomePage");
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -154,6 +162,7 @@ public class LFStudio extends javax.swing.JFrame {
         menuGLC = new javax.swing.JLabel();
         ExpressoesRegulares = new javax.swing.JLabel();
         menuTuring = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(28, 28, 28));
@@ -219,8 +228,7 @@ public class LFStudio extends javax.swing.JFrame {
         menuPilha.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuPilha.setForeground(new java.awt.Color(255, 255, 255));
         menuPilha.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        menuPilha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/assets/menu/AutPilhaBlack.png"))); // NOI18N
-        menuPilha.setText("  Automato Pilha");
+        menuPilha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/AutPilhaBlack.png"))); // NOI18N
         menuPilha.setMaximumSize(new java.awt.Dimension(344, 539));
         menuPilha.setOpaque(true);
         menuPilha.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -245,8 +253,7 @@ public class LFStudio extends javax.swing.JFrame {
         menuRegX.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuRegX.setForeground(new java.awt.Color(255, 255, 255));
         menuRegX.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        menuRegX.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/assets/menu/ExpRegBlack.png"))); // NOI18N
-        menuRegX.setText("  Expressões Regulares");
+        menuRegX.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/GramRegBlack.png"))); // NOI18N
         menuRegX.setMaximumSize(new java.awt.Dimension(344, 539));
         menuRegX.setOpaque(true);
         menuRegX.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -268,7 +275,7 @@ public class LFStudio extends javax.swing.JFrame {
         menuAfd.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuAfd.setForeground(new java.awt.Color(255, 255, 255));
         menuAfd.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        menuAfd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/assets/menu/AutFdBlack.png"))); // NOI18N
+        menuAfd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/AutFdBlack.png"))); // NOI18N
         menuAfd.setMaximumSize(new java.awt.Dimension(344, 539));
         menuAfd.setOpaque(true);
         menuAfd.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -293,8 +300,7 @@ public class LFStudio extends javax.swing.JFrame {
         menuAFND.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuAFND.setForeground(new java.awt.Color(255, 255, 255));
         menuAFND.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        menuAFND.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/assets/menu/AutFndBlack.png"))); // NOI18N
-        menuAFND.setText("  Automato FND");
+        menuAFND.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/AutFndBlack.png"))); // NOI18N
         menuAFND.setMaximumSize(new java.awt.Dimension(344, 539));
         menuAFND.setOpaque(true);
         menuAFND.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -333,8 +339,7 @@ public class LFStudio extends javax.swing.JFrame {
         menuGLC.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuGLC.setForeground(new java.awt.Color(255, 255, 255));
         menuGLC.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        menuGLC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/assets/menu/GramLDCBlack.png"))); // NOI18N
-        menuGLC.setText("  Gramáticas LC");
+        menuGLC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/GramLDCBlack.png"))); // NOI18N
         menuGLC.setMaximumSize(new java.awt.Dimension(344, 539));
         menuGLC.setOpaque(true);
         menuGLC.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -356,8 +361,7 @@ public class LFStudio extends javax.swing.JFrame {
         ExpressoesRegulares.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         ExpressoesRegulares.setForeground(new java.awt.Color(255, 255, 255));
         ExpressoesRegulares.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        ExpressoesRegulares.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/assets/menu/GramRegBlack.png"))); // NOI18N
-        ExpressoesRegulares.setText("  Gramáticas Regulares");
+        ExpressoesRegulares.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/ExpRegBlack.png"))); // NOI18N
         ExpressoesRegulares.setMaximumSize(new java.awt.Dimension(344, 539));
         ExpressoesRegulares.setOpaque(true);
         ExpressoesRegulares.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -379,8 +383,7 @@ public class LFStudio extends javax.swing.JFrame {
         menuTuring.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuTuring.setForeground(new java.awt.Color(255, 255, 255));
         menuTuring.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        menuTuring.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/assets/menu/MaqTuringBlack.png"))); // NOI18N
-        menuTuring.setText("  Máquinas de Turing");
+        menuTuring.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/MaqTuringBlack.png"))); // NOI18N
         menuTuring.setMaximumSize(new java.awt.Dimension(344, 539));
         menuTuring.setOpaque(true);
         menuTuring.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -398,21 +401,25 @@ public class LFStudio extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/peenchimento.png"))); // NOI18N
+
         javax.swing.GroupLayout menuPanelLayout = new javax.swing.GroupLayout(menuPanel);
         menuPanel.setLayout(menuPanelLayout);
         menuPanelLayout.setHorizontalGroup(
             menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(menuPanelLayout.createSequentialGroup()
-                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(menuPilha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(menuAfd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(menuAFND, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(titleLFStudio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(menuRegX, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ExpressoesRegulares, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addComponent(menuGLC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(menuTuring, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(menuPanelLayout.createSequentialGroup()
+                .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(menuGLC, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ExpressoesRegulares, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(titleLFStudio, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(menuRegX, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(menuPilha, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(menuAfd, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(menuAFND, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         menuPanelLayout.setVerticalGroup(
             menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -432,7 +439,9 @@ public class LFStudio extends javax.swing.JFrame {
                 .addComponent(menuGLC, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(menuTuring, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(235, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         menuScroll.setViewportView(menuPanel);
@@ -494,7 +503,6 @@ public class LFStudio extends javax.swing.JFrame {
     private void menuAFNDMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAFNDMousePressed
         Icon ico = new ImageIcon(LFStudio.class.getResource("AutFndWhite.png"));
         menuAFND.setIcon(ico);
-        System.out.println(JanelaExecucao.size());
     }//GEN-LAST:event_menuAFNDMousePressed
 
     private void menuAFNDMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAFNDMouseReleased
@@ -683,6 +691,7 @@ public class LFStudio extends javax.swing.JFrame {
     private javax.swing.JInternalFrame JanelaVisivel;
     private javax.swing.JPanel Menu;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel menuAFND;
     private javax.swing.JLabel menuAfd;
     private javax.swing.JLabel menuGLC;
