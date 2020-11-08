@@ -5,7 +5,13 @@
  */
 package main.modulos.AutomatoFinitoPilha.screens;
 
+import java.util.ArrayList;
+import java.util.Vector;
+import javax.swing.table.DefaultTableModel;
 import main.LFStudio;
+import main.assets.CustomTable;
+import main.modulos.AutomatoFinitoNaoDeterministico.controllers.FndController;
+import main.modulos.AutomatoFinitoNaoDeterministico.domain.models.Automato;
 
 /**
  *
@@ -135,7 +141,7 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
         Pilha_BodyConfigLayout.setHorizontalGroup(
             Pilha_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pilha_BodyConfigLayout.createSequentialGroup()
-                .addContainerGap(151, Short.MAX_VALUE)
+                .addContainerGap(160, Short.MAX_VALUE)
                 .addComponent(t_tra)
                 .addGap(144, 144, 144))
             .addGroup(Pilha_BodyConfigLayout.createSequentialGroup()
@@ -203,6 +209,12 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Pilha_salvarPilhaBtnMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Pilha_salvarPilhaBtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Pilha_salvarPilhaBtnMouseExited(evt);
+            }
         });
 
         Pilha_subTitulo.setBackground(new java.awt.Color(70, 71, 74));
@@ -225,6 +237,12 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
         Pilha_processarPilhaBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 Pilha_processarPilhaBtnMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                Pilha_processarPilhaBtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                Pilha_processarPilhaBtnMouseExited(evt);
             }
         });
 
@@ -290,6 +308,22 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
     private void Pilha_processarPilhaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pilha_processarPilhaBtnMouseClicked
         LFStudio.cl.show(JanelaExecucao, "pilhaProcessamentoPanel");        // TODO add your handling code here:
     }//GEN-LAST:event_Pilha_processarPilhaBtnMouseClicked
+
+    private void Pilha_salvarPilhaBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pilha_salvarPilhaBtnMouseEntered
+        Pilha_salvarPilhaBtn.setBackground(Pilha_salvarPilhaBtn.getBackground().brighter().brighter());
+    }//GEN-LAST:event_Pilha_salvarPilhaBtnMouseEntered
+
+    private void Pilha_salvarPilhaBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pilha_salvarPilhaBtnMouseExited
+        Pilha_salvarPilhaBtn.setBackground(Pilha_salvarPilhaBtn.getBackground().darker().darker());
+    }//GEN-LAST:event_Pilha_salvarPilhaBtnMouseExited
+
+    private void Pilha_processarPilhaBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pilha_processarPilhaBtnMouseEntered
+         Pilha_processarPilhaBtn.setBackground(Pilha_processarPilhaBtn.getBackground().brighter().brighter());
+    }//GEN-LAST:event_Pilha_processarPilhaBtnMouseEntered
+
+    private void Pilha_processarPilhaBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pilha_processarPilhaBtnMouseExited
+        Pilha_processarPilhaBtn.setBackground(Pilha_processarPilhaBtn.getBackground().darker().darker());
+    }//GEN-LAST:event_Pilha_processarPilhaBtnMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
