@@ -140,6 +140,7 @@ public class LFStudio extends javax.swing.JFrame {
         JanelaVisivel = new javax.swing.JInternalFrame();
         JanelaExecucao = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         Menu = new javax.swing.JPanel();
         menuScroll = new javax.swing.JScrollPane();
         menuPanel = new javax.swing.JPanel();
@@ -169,15 +170,24 @@ public class LFStudio extends javax.swing.JFrame {
         jPanel1.setBackground(new java.awt.Color(70, 71, 74));
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/assets/icons/Media Bolinha.png"))); // NOI18N
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 674, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 567, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(19, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 646, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 634, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         JanelaExecucao.add(jPanel1, "home");
@@ -298,11 +308,11 @@ public class LFStudio extends javax.swing.JFrame {
             }
         });
 
-        titleLFStudio.setBackground(new java.awt.Color(0, 0, 0));
+        titleLFStudio.setBackground(new java.awt.Color(51, 51, 51));
         titleLFStudio.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
         titleLFStudio.setForeground(new java.awt.Color(255, 255, 255));
         titleLFStudio.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        titleLFStudio.setText(" LF Studio");
+        titleLFStudio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/assets/icons/Webp.net-resizeimage.png"))); // NOI18N
         titleLFStudio.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         titleLFStudio.setMaximumSize(new java.awt.Dimension(344, 539));
         titleLFStudio.setOpaque(true);
@@ -660,6 +670,7 @@ public class LFStudio extends javax.swing.JFrame {
     private javax.swing.JPanel JanelaPrincipal;
     private javax.swing.JInternalFrame JanelaVisivel;
     private javax.swing.JPanel Menu;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel menuAFND;
     private javax.swing.JLabel menuAfd;
