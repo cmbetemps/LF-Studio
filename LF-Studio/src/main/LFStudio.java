@@ -7,6 +7,8 @@ package main;
 
 import java.awt.CardLayout;
 import java.awt.Color;
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
 import javax.swing.JLabel;
@@ -124,7 +126,7 @@ public class LFStudio extends javax.swing.JFrame {
         JanelaVisivel.setSize(1200, 700);
         JanelaVisivel.setLocation(100, 160);
         cl = (CardLayout) JanelaExecucao.getLayout();
-        cl.show(JanelaExecucao, "home");
+        cl.show(JanelaExecucao, "HomePage");
     }
 
     /**
@@ -139,7 +141,7 @@ public class LFStudio extends javax.swing.JFrame {
         JanelaPrincipal = new javax.swing.JPanel();
         JanelaVisivel = new javax.swing.JInternalFrame();
         JanelaExecucao = new javax.swing.JPanel();
-        jPanel1 = new javax.swing.JPanel();
+        HomePage = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         Menu = new javax.swing.JPanel();
         menuScroll = new javax.swing.JScrollPane();
@@ -154,45 +156,47 @@ public class LFStudio extends javax.swing.JFrame {
         menuTuring = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(28, 28, 28));
         setResizable(false);
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.LINE_AXIS));
 
-        JanelaPrincipal.setBackground(new java.awt.Color(70, 71, 74));
-        JanelaPrincipal.setForeground(new java.awt.Color(70, 71, 74));
+        JanelaPrincipal.setBackground(new java.awt.Color(28, 28, 28));
+        JanelaPrincipal.setForeground(new java.awt.Color(28, 28, 28));
 
-        JanelaVisivel.setBackground(new java.awt.Color(1, 2, 3));
+        JanelaVisivel.setBackground(new java.awt.Color(28, 28, 28));
+        JanelaVisivel.setForeground(new java.awt.Color(28, 28, 28));
         JanelaVisivel.setVisible(true);
 
-        JanelaExecucao.setBackground(new java.awt.Color(70, 71, 74));
+        JanelaExecucao.setBackground(new java.awt.Color(28, 28, 28));
         JanelaExecucao.setForeground(new java.awt.Color(255, 255, 255));
         JanelaExecucao.setLayout(new java.awt.CardLayout());
 
-        jPanel1.setBackground(new java.awt.Color(70, 71, 74));
-        jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        HomePage.setBackground(new java.awt.Color(28, 28, 28));
 
+        jLabel1.setBackground(new java.awt.Color(28, 28, 28));
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/assets/icons/Media Bolinha.png"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/assets/icons/Grande Bolinha.png"))); // NOI18N
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout HomePageLayout = new javax.swing.GroupLayout(HomePage);
+        HomePage.setLayout(HomePageLayout);
+        HomePageLayout.setHorizontalGroup(
+            HomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(HomePageLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 567, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        HomePageLayout.setVerticalGroup(
+            HomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(HomePageLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 634, Short.MAX_VALUE)
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 636, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        JanelaExecucao.add(jPanel1, "home");
+        JanelaExecucao.add(HomePage, "home");
 
-        Menu.setBackground(new java.awt.Color(27, 28, 29));
+        Menu.setBackground(new java.awt.Color(28, 28, 28));
         Menu.setForeground(new java.awt.Color(255, 255, 255));
         Menu.setMaximumSize(new java.awt.Dimension(400, 560));
         Menu.setName(""); // NOI18N
@@ -206,7 +210,7 @@ public class LFStudio extends javax.swing.JFrame {
         menuScroll.setName(""); // NOI18N
         menuScroll.setPreferredSize(new java.awt.Dimension(400, 560));
 
-        menuPanel.setBackground(new java.awt.Color(70, 71, 74));
+        menuPanel.setBackground(new java.awt.Color(28, 28, 28));
         menuPanel.setForeground(new java.awt.Color(255, 255, 255));
         menuPanel.setMaximumSize(new java.awt.Dimension(344, 539));
         menuPanel.setPreferredSize(new java.awt.Dimension(250, 560));
@@ -215,6 +219,7 @@ public class LFStudio extends javax.swing.JFrame {
         menuPilha.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuPilha.setForeground(new java.awt.Color(255, 255, 255));
         menuPilha.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        menuPilha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/assets/menu/AutPilhaBlack.png"))); // NOI18N
         menuPilha.setText("  Automato Pilha");
         menuPilha.setMaximumSize(new java.awt.Dimension(344, 539));
         menuPilha.setOpaque(true);
@@ -240,6 +245,7 @@ public class LFStudio extends javax.swing.JFrame {
         menuRegX.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuRegX.setForeground(new java.awt.Color(255, 255, 255));
         menuRegX.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        menuRegX.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/assets/menu/ExpRegBlack.png"))); // NOI18N
         menuRegX.setText("  Expressões Regulares");
         menuRegX.setMaximumSize(new java.awt.Dimension(344, 539));
         menuRegX.setOpaque(true);
@@ -262,7 +268,7 @@ public class LFStudio extends javax.swing.JFrame {
         menuAfd.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuAfd.setForeground(new java.awt.Color(255, 255, 255));
         menuAfd.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        menuAfd.setText("  Automato FD");
+        menuAfd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/assets/menu/AutFdBlack.png"))); // NOI18N
         menuAfd.setMaximumSize(new java.awt.Dimension(344, 539));
         menuAfd.setOpaque(true);
         menuAfd.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -287,6 +293,7 @@ public class LFStudio extends javax.swing.JFrame {
         menuAFND.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuAFND.setForeground(new java.awt.Color(255, 255, 255));
         menuAFND.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        menuAFND.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/assets/menu/AutFndBlack.png"))); // NOI18N
         menuAFND.setText("  Automato FND");
         menuAFND.setMaximumSize(new java.awt.Dimension(344, 539));
         menuAFND.setOpaque(true);
@@ -326,6 +333,7 @@ public class LFStudio extends javax.swing.JFrame {
         menuGLC.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuGLC.setForeground(new java.awt.Color(255, 255, 255));
         menuGLC.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        menuGLC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/assets/menu/GramLDCBlack.png"))); // NOI18N
         menuGLC.setText("  Gramáticas LC");
         menuGLC.setMaximumSize(new java.awt.Dimension(344, 539));
         menuGLC.setOpaque(true);
@@ -348,6 +356,7 @@ public class LFStudio extends javax.swing.JFrame {
         ExpressoesRegulares.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         ExpressoesRegulares.setForeground(new java.awt.Color(255, 255, 255));
         ExpressoesRegulares.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        ExpressoesRegulares.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/assets/menu/GramRegBlack.png"))); // NOI18N
         ExpressoesRegulares.setText("  Gramáticas Regulares");
         ExpressoesRegulares.setMaximumSize(new java.awt.Dimension(344, 539));
         ExpressoesRegulares.setOpaque(true);
@@ -370,6 +379,7 @@ public class LFStudio extends javax.swing.JFrame {
         menuTuring.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuTuring.setForeground(new java.awt.Color(255, 255, 255));
         menuTuring.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        menuTuring.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/assets/menu/MaqTuringBlack.png"))); // NOI18N
         menuTuring.setText("  Máquinas de Turing");
         menuTuring.setMaximumSize(new java.awt.Dimension(344, 539));
         menuTuring.setOpaque(true);
@@ -394,11 +404,11 @@ public class LFStudio extends javax.swing.JFrame {
             menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(menuPanelLayout.createSequentialGroup()
                 .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(menuPilha, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                    .addComponent(menuAfd, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                    .addComponent(menuAFND, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                    .addComponent(titleLFStudio, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
-                    .addComponent(menuRegX, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE)
+                    .addComponent(menuPilha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(menuAfd, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(menuAFND, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(titleLFStudio, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(menuRegX, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(ExpressoesRegulares, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 0, Short.MAX_VALUE))
             .addComponent(menuGLC, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -482,147 +492,148 @@ public class LFStudio extends javax.swing.JFrame {
     }//GEN-LAST:event_menuPilhaMouseClicked
 
     private void menuAFNDMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAFNDMousePressed
-        menuAFND.setBackground(Color.white);
-        menuAFND.setForeground(Color.black);
+        Icon ico = new ImageIcon(LFStudio.class.getResource("AutFndWhite.png"));
+        menuAFND.setIcon(ico);
+        System.out.println(JanelaExecucao.size());
     }//GEN-LAST:event_menuAFNDMousePressed
 
     private void menuAFNDMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAFNDMouseReleased
-        menuAFND.setBackground(new Color(60,60,60));
-        menuAFND.setForeground(Color.white);
+        Icon ico = new ImageIcon(LFStudio.class.getResource("AutFndBlack.png"));
+        menuAFND.setIcon(ico);
     }//GEN-LAST:event_menuAFNDMouseReleased
 
     private void menuAfdMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAfdMousePressed
-        menuAfd.setBackground(Color.white);
-        menuAfd.setForeground(Color.black);
+        Icon ico = new ImageIcon(LFStudio.class.getResource("AutFdWhite.png"));
+        menuAfd.setIcon(ico);
     }//GEN-LAST:event_menuAfdMousePressed
 
     private void menuAfdMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAfdMouseReleased
-        menuAfd.setBackground(new Color(20,20,20));
-        menuAfd.setForeground(Color.white);
+        Icon ico = new ImageIcon(LFStudio.class.getResource("AutFdBlack.png"));
+        menuAfd.setIcon(ico);
     }//GEN-LAST:event_menuAfdMouseReleased
 
     private void menuPilhaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPilhaMousePressed
-        menuPilha.setBackground(Color.white);
-        menuPilha.setForeground(Color.black);
+       Icon ico = new ImageIcon(LFStudio.class.getResource("AutPilhaWhite.png"));
+        menuPilha.setIcon(ico);
     }//GEN-LAST:event_menuPilhaMousePressed
 
     private void menuPilhaMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPilhaMouseReleased
-        menuPilha.setBackground(new Color(60,60,60));
-        menuPilha.setForeground(Color.white);
+        Icon ico = new ImageIcon(LFStudio.class.getResource("AutPilhaBlack.png"));
+        menuPilha.setIcon(ico);
     }//GEN-LAST:event_menuPilhaMouseReleased
 
     private void menuRegXMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuRegXMousePressed
-        menuRegX.setBackground(Color.white);
-        menuRegX.setForeground(Color.black);
+        Icon ico = new ImageIcon(LFStudio.class.getResource("GramRegWhite.png"));
+        menuRegX.setIcon(ico);
     }//GEN-LAST:event_menuRegXMousePressed
 
     private void menuRegXMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuRegXMouseReleased
-        menuRegX.setBackground(new Color(20,20,20));
-        menuRegX.setForeground(Color.white);
+        Icon ico = new ImageIcon(LFStudio.class.getResource("GramRegBlack.png"));
+        menuRegX.setIcon(ico);
     }//GEN-LAST:event_menuRegXMouseReleased
 
     private void ExpressoesRegularesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExpressoesRegularesMousePressed
-        ExpressoesRegulares.setBackground(Color.white);
-        ExpressoesRegulares.setForeground(Color.black);
+        Icon ico = new ImageIcon(LFStudio.class.getResource("ExpRegWhite.png"));
+        ExpressoesRegulares.setIcon(ico);
     }//GEN-LAST:event_ExpressoesRegularesMousePressed
 
     private void ExpressoesRegularesMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExpressoesRegularesMouseReleased
-        ExpressoesRegulares.setBackground(new Color(60,60,60));
-        ExpressoesRegulares.setForeground(Color.white);
+        Icon ico = new ImageIcon(LFStudio.class.getResource("ExpRegBlack.png"));
+        ExpressoesRegulares.setIcon(ico);
     }//GEN-LAST:event_ExpressoesRegularesMouseReleased
 
     private void menuGLCMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGLCMousePressed
-        menuGLC.setBackground(Color.white);
-        menuGLC.setForeground(Color.black);
+        Icon ico = new ImageIcon(LFStudio.class.getResource("GramLDCWhite.png"));
+        menuGLC.setIcon(ico);
     }//GEN-LAST:event_menuGLCMousePressed
 
     private void menuGLCMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGLCMouseReleased
-        menuGLC.setBackground(new Color(20,20,20));
-        menuGLC.setForeground(Color.white);
+        Icon ico = new ImageIcon(LFStudio.class.getResource("GramLDCBlack.png"));
+        menuGLC.setIcon(ico);
     }//GEN-LAST:event_menuGLCMouseReleased
 
     private void menuTuringMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTuringMousePressed
-        menuTuring.setBackground(Color.white);
-        menuTuring.setForeground(Color.black);
+        Icon ico = new ImageIcon(LFStudio.class.getResource("MaqTuringWhite.png"));
+        menuTuring.setIcon(ico);
     }//GEN-LAST:event_menuTuringMousePressed
 
     private void menuTuringMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTuringMouseReleased
-        menuTuring.setBackground(new Color(60,60,60));
-        menuTuring.setForeground(Color.white);
+        Icon ico = new ImageIcon(LFStudio.class.getResource("MaqTuringBlack.png"));
+        menuTuring.setIcon(ico);
     }//GEN-LAST:event_menuTuringMouseReleased
 
     private void menuAFNDMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAFNDMouseEntered
-        defaultColor = menuAFND.getBackground();
-        menuAFND.setBackground(menuAFND.getBackground().brighter().brighter());
+        Icon ico = new ImageIcon(LFStudio.class.getResource("AutFndGray.png"));
+        menuAFND.setIcon(ico);
     }//GEN-LAST:event_menuAFNDMouseEntered
 
     private void menuAFNDMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAFNDMouseExited
-        menuAFND.setBackground(defaultColor);
-        menuAFND.setForeground(Color.white);
+        Icon ico = new ImageIcon(LFStudio.class.getResource("AutFndBlack.png"));
+        menuAFND.setIcon(ico);
     }//GEN-LAST:event_menuAFNDMouseExited
 
     private void menuAfdMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAfdMouseEntered
-        defaultColor = menuAfd.getBackground();
-        menuAfd.setBackground(menuAfd.getBackground().brighter().brighter());
+        Icon ico = new ImageIcon(LFStudio.class.getResource("AutFdGray.png"));
+        menuAfd.setIcon(ico);
     }//GEN-LAST:event_menuAfdMouseEntered
 
     private void menuAfdMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAfdMouseExited
-        menuAfd.setBackground(defaultColor);
-        menuAfd.setForeground(Color.white);
+        Icon ico = new ImageIcon(LFStudio.class.getResource("AutFdBlack.png"));
+        menuAfd.setIcon(ico);
     }//GEN-LAST:event_menuAfdMouseExited
 
     private void menuPilhaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPilhaMouseEntered
-        defaultColor = menuPilha.getBackground();
-        menuPilha.setBackground(menuPilha.getBackground().brighter().brighter());
+        Icon ico = new ImageIcon(LFStudio.class.getResource("AutPilhaGray.png"));
+        menuPilha.setIcon(ico);
     }//GEN-LAST:event_menuPilhaMouseEntered
 
     private void menuPilhaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPilhaMouseExited
-        menuPilha.setBackground(defaultColor);
-        menuPilha.setForeground(Color.white);
+        Icon ico = new ImageIcon(LFStudio.class.getResource("AutPilhaBlack.png"));
+        menuPilha.setIcon(ico);
     }//GEN-LAST:event_menuPilhaMouseExited
 
     private void menuRegXMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuRegXMouseEntered
-        defaultColor = menuRegX.getBackground();
-        menuRegX.setBackground(menuRegX.getBackground().brighter().brighter());
+        Icon ico = new ImageIcon(LFStudio.class.getResource("GramRegGray.png"));
+        menuRegX.setIcon(ico);
     }//GEN-LAST:event_menuRegXMouseEntered
 
     private void menuRegXMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuRegXMouseExited
-        menuRegX.setBackground(defaultColor);
-        menuRegX.setForeground(Color.white);
+        Icon ico = new ImageIcon(LFStudio.class.getResource("GramRegBlack.png"));
+        menuRegX.setIcon(ico);
     }//GEN-LAST:event_menuRegXMouseExited
 
     private void ExpressoesRegularesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExpressoesRegularesMouseEntered
-        defaultColor = ExpressoesRegulares.getBackground();
-        ExpressoesRegulares.setBackground(ExpressoesRegulares.getBackground().brighter().brighter());
+        Icon ico = new ImageIcon(LFStudio.class.getResource("ExpRegGray.png"));
+        ExpressoesRegulares.setIcon(ico);
     }//GEN-LAST:event_ExpressoesRegularesMouseEntered
 
     private void ExpressoesRegularesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExpressoesRegularesMouseExited
-        ExpressoesRegulares.setBackground(defaultColor);
-        ExpressoesRegulares.setForeground(Color.white);
+        Icon ico = new ImageIcon(LFStudio.class.getResource("ExpRegBlack.png"));
+        ExpressoesRegulares.setIcon(ico);
     }//GEN-LAST:event_ExpressoesRegularesMouseExited
 
     private void menuGLCMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGLCMouseEntered
-        defaultColor = menuGLC.getBackground();
-        menuGLC.setBackground(menuGLC.getBackground().brighter().brighter());
+        Icon ico = new ImageIcon(LFStudio.class.getResource("GramLDCGray.png"));
+        menuGLC.setIcon(ico);
     }//GEN-LAST:event_menuGLCMouseEntered
 
     private void menuGLCMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGLCMouseExited
-        menuGLC.setBackground(defaultColor);
-        menuGLC.setForeground(Color.white);
+        Icon ico = new ImageIcon(LFStudio.class.getResource("GramLDCBlack.png"));
+        menuGLC.setIcon(ico);
     }//GEN-LAST:event_menuGLCMouseExited
 
     private void menuTuringMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTuringMouseEntered
-        defaultColor = menuTuring.getBackground();
-        menuTuring.setBackground(menuTuring.getBackground().brighter().brighter());
+        Icon ico = new ImageIcon(LFStudio.class.getResource("MaqTuringGray.png"));
+        menuTuring.setIcon(ico);
     }//GEN-LAST:event_menuTuringMouseEntered
 
     private void menuTuringMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTuringMouseExited
-        menuTuring.setBackground(defaultColor);
-        menuTuring.setForeground(Color.white);
+        Icon ico = new ImageIcon(LFStudio.class.getResource("MaqTuringBlack.png"));
+        menuTuring.setIcon(ico);
     }//GEN-LAST:event_menuTuringMouseExited
 
     private void titleLFStudioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_titleLFStudioMouseClicked
-        funçãoTeste();
+        cl.show(JanelaExecucao, "home");
     }//GEN-LAST:event_titleLFStudioMouseClicked
 
     /**
@@ -666,12 +677,12 @@ public class LFStudio extends javax.swing.JFrame {
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel ExpressoesRegulares;
+    private javax.swing.JPanel HomePage;
     private javax.swing.JPanel JanelaExecucao;
     private javax.swing.JPanel JanelaPrincipal;
     private javax.swing.JInternalFrame JanelaVisivel;
     private javax.swing.JPanel Menu;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel menuAFND;
     private javax.swing.JLabel menuAfd;
     private javax.swing.JLabel menuGLC;

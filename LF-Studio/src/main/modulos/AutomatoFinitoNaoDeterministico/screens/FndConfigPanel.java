@@ -5,8 +5,10 @@
  */
 package main.modulos.AutomatoFinitoNaoDeterministico.screens;
 
+import java.awt.Color;
 import java.util.ArrayList;
 import java.util.Vector;
+import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import main.LFStudio;
 import main.assets.CustomTable;
@@ -28,6 +30,7 @@ public class FndConfigPanel extends javax.swing.JPanel {
     public FndConfigPanel(javax.swing.JPanel janela) {
         JanelaExecucao = janela;
         initComponents();
+        
     }
 
     /**
@@ -39,6 +42,7 @@ public class FndConfigPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         FND_BodyConfig = new javax.swing.JPanel();
         FND_LabelAlfabeto = new javax.swing.JLabel();
         FND_LabelEstadosFinais = new javax.swing.JLabel();
@@ -56,29 +60,32 @@ public class FndConfigPanel extends javax.swing.JPanel {
         FND_SalvarAutomatojlbl = new javax.swing.JLabel();
         FND_SubTitulo = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(70, 71, 74));
+        setBackground(new java.awt.Color(255, 51, 51));
+        setForeground(new java.awt.Color(28, 28, 28));
 
-        FND_BodyConfig.setBackground(new java.awt.Color(51, 51, 51));
+        jPanel1.setBackground(new java.awt.Color(28, 28, 28));
+
+        FND_BodyConfig.setBackground(new java.awt.Color(28, 28, 28));
         FND_BodyConfig.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.darkGray, java.awt.Color.darkGray, java.awt.Color.darkGray));
-        FND_BodyConfig.setForeground(new java.awt.Color(51, 51, 51));
+        FND_BodyConfig.setForeground(new java.awt.Color(28, 28, 28));
 
-        FND_LabelAlfabeto.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
+        FND_LabelAlfabeto.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
         FND_LabelAlfabeto.setForeground(new java.awt.Color(255, 255, 255));
         FND_LabelAlfabeto.setText("Alfabeto");
 
-        FND_LabelEstadosFinais.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
+        FND_LabelEstadosFinais.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
         FND_LabelEstadosFinais.setForeground(new java.awt.Color(255, 255, 255));
         FND_LabelEstadosFinais.setText("Estados Finais");
 
-        FND_LabelEstados.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
+        FND_LabelEstados.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
         FND_LabelEstados.setForeground(new java.awt.Color(255, 255, 255));
         FND_LabelEstados.setText("Estados");
 
-        FND_LabelEstadoInicial.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
+        FND_LabelEstadoInicial.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
         FND_LabelEstadoInicial.setForeground(new java.awt.Color(255, 255, 255));
         FND_LabelEstadoInicial.setText("Estado Inicial");
 
-        FND_LabelTabelaTransicao.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
+        FND_LabelTabelaTransicao.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
         FND_LabelTabelaTransicao.setForeground(new java.awt.Color(255, 255, 255));
         FND_LabelTabelaTransicao.setText("Tabela de Transições");
 
@@ -188,13 +195,13 @@ public class FndConfigPanel extends javax.swing.JPanel {
                 .addContainerGap(10, Short.MAX_VALUE))
         );
 
-        FND_Titulo.setFont(new java.awt.Font("Comic Sans MS", 1, 30)); // NOI18N
+        FND_Titulo.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 36)); // NOI18N
         FND_Titulo.setForeground(new java.awt.Color(255, 255, 255));
         FND_Titulo.setText("<html><p style=\"padding-bottom: 16px;\">Autômato FND</p></html>");
         FND_Titulo.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
 
         FND_LabelProcessarAutomato.setBackground(new java.awt.Color(51, 51, 51));
-        FND_LabelProcessarAutomato.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        FND_LabelProcessarAutomato.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
         FND_LabelProcessarAutomato.setForeground(new java.awt.Color(255, 255, 255));
         FND_LabelProcessarAutomato.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         FND_LabelProcessarAutomato.setText(" Processar autômato ");
@@ -213,10 +220,10 @@ public class FndConfigPanel extends javax.swing.JPanel {
         });
 
         FND_SalvarAutomatojlbl.setBackground(new java.awt.Color(51, 51, 51));
-        FND_SalvarAutomatojlbl.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        FND_SalvarAutomatojlbl.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
         FND_SalvarAutomatojlbl.setForeground(new java.awt.Color(255, 255, 255));
         FND_SalvarAutomatojlbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        FND_SalvarAutomatojlbl.setText("Salvar Automato");
+        FND_SalvarAutomatojlbl.setText("Salvar Autômato");
         FND_SalvarAutomatojlbl.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         FND_SalvarAutomatojlbl.setOpaque(true);
         FND_SalvarAutomatojlbl.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -228,39 +235,52 @@ public class FndConfigPanel extends javax.swing.JPanel {
             }
         });
 
-        FND_SubTitulo.setFont(new java.awt.Font("Comic Sans MS", 1, 20)); // NOI18N
+        FND_SubTitulo.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
         FND_SubTitulo.setForeground(new java.awt.Color(255, 255, 255));
         FND_SubTitulo.setText("Configuração");
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(64, 64, 64)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addComponent(FND_LabelProcessarAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(FND_SalvarAutomatojlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(FND_BodyConfig, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(FND_SubTitulo)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(131, 131, 131)
+                        .addComponent(FND_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(85, Short.MAX_VALUE))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(41, 41, 41)
+                .addComponent(FND_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(4, 4, 4)
+                .addComponent(FND_SubTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(FND_BodyConfig, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(21, 21, 21)
+                .addComponent(FND_SalvarAutomatojlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(10, 10, 10)
+                .addComponent(FND_LabelProcessarAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(48, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(FND_LabelProcessarAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FND_SalvarAutomatojlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(FND_BodyConfig, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FND_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FND_SubTitulo)))
-                .addContainerGap(36, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(30, 30, 30)
-                .addComponent(FND_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(FND_SubTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(FND_BodyConfig, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(FND_SalvarAutomatojlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addComponent(FND_LabelProcessarAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(71, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -339,5 +359,6 @@ public class FndConfigPanel extends javax.swing.JPanel {
     private javax.swing.JLabel FND_Titulo;
     private javax.swing.JScrollPane FND_jScrollPane2;
     private javax.swing.JTable FND_jTable1;
+    private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
 }

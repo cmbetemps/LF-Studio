@@ -31,6 +31,7 @@ public class FndProcessamentoPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel1 = new javax.swing.JPanel();
         AFND3_Titulo4 = new javax.swing.JLabel();
         AFND3_TextFieldEntrada1 = new javax.swing.JTextField();
         processamento2 = new javax.swing.JPanel();
@@ -38,9 +39,11 @@ public class FndProcessamentoPanel extends javax.swing.JPanel {
         AFND3_Titulo5 = new javax.swing.JLabel();
         AFND3_Titulo6 = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(70, 71, 74));
+        setBackground(new java.awt.Color(28, 28, 28));
 
-        AFND3_Titulo4.setFont(new java.awt.Font("Comic Sans MS", 1, 30)); // NOI18N
+        jPanel1.setBackground(new java.awt.Color(28, 28, 28));
+
+        AFND3_Titulo4.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 36)); // NOI18N
         AFND3_Titulo4.setForeground(new java.awt.Color(255, 255, 255));
         AFND3_Titulo4.setText("<html><p style=\"padding-bottom: 16px;\">Autômato FND</p></html>");
         AFND3_Titulo4.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
@@ -69,7 +72,7 @@ public class FndProcessamentoPanel extends javax.swing.JPanel {
         );
 
         validarPalavraFND.setBackground(new java.awt.Color(51, 51, 51));
-        validarPalavraFND.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        validarPalavraFND.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 20)); // NOI18N
         validarPalavraFND.setForeground(new java.awt.Color(255, 255, 255));
         validarPalavraFND.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         validarPalavraFND.setText("Validar Palavra");
@@ -84,48 +87,59 @@ public class FndProcessamentoPanel extends javax.swing.JPanel {
             }
         });
 
-        AFND3_Titulo5.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
+        AFND3_Titulo5.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
         AFND3_Titulo5.setForeground(new java.awt.Color(255, 255, 255));
         AFND3_Titulo5.setText("Entrada");
 
-        AFND3_Titulo6.setFont(new java.awt.Font("Comic Sans MS", 1, 20)); // NOI18N
+        AFND3_Titulo6.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
         AFND3_Titulo6.setForeground(new java.awt.Color(255, 255, 255));
         AFND3_Titulo6.setText("Processamento");
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(90, 90, 90)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(57, 57, 57)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(AFND3_Titulo6)
                         .addComponent(AFND3_Titulo4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(processamento2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(AFND3_Titulo5)
-                        .addGap(67, 67, 67)
-                        .addComponent(AFND3_TextFieldEntrada1, javax.swing.GroupLayout.PREFERRED_SIZE, 125, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(AFND3_TextFieldEntrada1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(validarPalavraFND, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(201, 201, 201))
+                .addContainerGap(99, Short.MAX_VALUE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(15, 15, 15)
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(35, Short.MAX_VALUE)
                 .addComponent(AFND3_Titulo4, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(AFND3_Titulo6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(12, 12, 12)
                 .addComponent(processamento2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(8, 8, 8)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AFND3_TextFieldEntrada1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AFND3_Titulo5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(25, 25, 25)
                 .addComponent(validarPalavraFND, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(55, Short.MAX_VALUE))
+                .addGap(34, 34, 34))
+        );
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -147,6 +161,7 @@ public class FndProcessamentoPanel extends javax.swing.JPanel {
     private javax.swing.JLabel AFND3_Titulo4;
     private javax.swing.JLabel AFND3_Titulo5;
     private javax.swing.JLabel AFND3_Titulo6;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel processamento2;
     private javax.swing.JLabel validarPalavraFND;
     // End of variables declaration//GEN-END:variables
