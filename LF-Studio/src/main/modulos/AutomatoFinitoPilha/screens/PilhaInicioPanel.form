@@ -102,6 +102,8 @@
           </Properties>
           <Events>
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="PILHA_LabelNovoAutomato4MouseClicked"/>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="PILHA_LabelNovoAutomato4MouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="PILHA_LabelNovoAutomato4MouseExited"/>
           </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="PILHA_LabelImportarAutomato4">
@@ -119,6 +121,10 @@
             <Property name="text" type="java.lang.String" value="Importar aut&#xf4;mato"/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="PILHA_LabelImportarAutomato4MouseEntered"/>
+            <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="PILHA_LabelImportarAutomato4MouseExited"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="PILHA_LabelAutomatoFND4">
           <Properties>

@@ -75,6 +75,12 @@ public class PilhaProcessamentoPanel extends javax.swing.JPanel {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 validarPalavraPilha1MouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                validarPalavraPilha1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                validarPalavraPilha1MouseExited(evt);
+            }
         });
 
         t_e.setBackground(new java.awt.Color(70, 71, 74));
@@ -122,6 +128,14 @@ public class PilhaProcessamentoPanel extends javax.swing.JPanel {
     private void validarPalavraPilha1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_validarPalavraPilha1MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_validarPalavraPilha1MouseClicked
+
+    private void validarPalavraPilha1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_validarPalavraPilha1MouseEntered
+         validarPalavraPilha1.setBackground(validarPalavraPilha1.getBackground().brighter().brighter());
+    }//GEN-LAST:event_validarPalavraPilha1MouseEntered
+
+    private void validarPalavraPilha1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_validarPalavraPilha1MouseExited
+        validarPalavraPilha1.setBackground(validarPalavraPilha1.getBackground().darker().darker());
+    }//GEN-LAST:event_validarPalavraPilha1MouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
