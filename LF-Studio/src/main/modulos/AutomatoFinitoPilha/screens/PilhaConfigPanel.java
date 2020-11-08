@@ -142,13 +142,13 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
 
         AFND2_jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
         AFND2_jScrollPane4.setViewportView(AFND2_jTable4);
@@ -362,7 +362,7 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
 
     private void r_a1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r_a1KeyReleased
       String[] estados = r_a1.getText().split(",");
-        String[] alfabeto = r_a1.getText().split(",");
+        String[] alfabeto = r_ei1.getText().split(",");
         Vector<String> vector = null;
         CustomTable tableModel = new CustomTable();
         tableModel.addColumn("Estados");
