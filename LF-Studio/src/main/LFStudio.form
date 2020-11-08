@@ -22,7 +22,7 @@
     <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
     <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
-    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,-98,0,0,3,65"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,2,-98,0,0,3,63"/>
   </AuxValues>
 
   <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBoxLayout"/>
@@ -204,19 +204,22 @@
                       <Layout>
                         <DimensionLayout dim="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="menuPilha" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="menuAfd" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="menuAFND" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="titleLFStudio" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="menuRegX" alignment="0" max="32767" attributes="0"/>
+                              <Component id="menuTuring" alignment="0" max="32767" attributes="0"/>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                      <Component id="menuGLC" alignment="0" max="32767" attributes="0"/>
                                       <Component id="ExpressoesRegulares" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="titleLFStudio" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="jLabel3" alignment="0" max="32767" attributes="0"/>
+                                      <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                                          <Component id="menuRegX" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="menuPilha" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="menuAfd" alignment="0" max="32767" attributes="0"/>
+                                          <Component id="menuAFND" alignment="0" max="32767" attributes="0"/>
+                                      </Group>
                                   </Group>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="menuGLC" max="32767" attributes="0"/>
-                              <Component id="menuTuring" alignment="0" max="32767" attributes="0"/>
                           </Group>
                         </DimensionLayout>
                         <DimensionLayout dim="1">
@@ -237,7 +240,9 @@
                                   <Component id="menuGLC" min="-2" pref="50" max="-2" attributes="0"/>
                                   <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                                   <Component id="menuTuring" min="-2" pref="50" max="-2" attributes="0"/>
-                                  <EmptySpace pref="235" max="32767" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="jLabel3" min="-2" pref="230" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
                               </Group>
                           </Group>
                         </DimensionLayout>
@@ -256,9 +261,8 @@
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/main/assets/menu/AutPilhaBlack.png"/>
+                              <Image iconType="3" name="/main/AutPilhaBlack.png"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="  Automato Pilha"/>
                             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                               <Dimension value="[344, 539]"/>
                             </Property>
@@ -285,9 +289,8 @@
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/main/assets/menu/ExpRegBlack.png"/>
+                              <Image iconType="3" name="/main/GramRegBlack.png"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="  Express&#xf5;es Regulares"/>
                             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                               <Dimension value="[344, 539]"/>
                             </Property>
@@ -313,7 +316,7 @@
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/main/assets/menu/AutFdBlack.png"/>
+                              <Image iconType="3" name="/main/AutFdBlack.png"/>
                             </Property>
                             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                               <Dimension value="[344, 539]"/>
@@ -341,9 +344,8 @@
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/main/assets/menu/AutFndBlack.png"/>
+                              <Image iconType="3" name="/main/AutFndBlack.png"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="  Automato FND"/>
                             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                               <Dimension value="[344, 539]"/>
                             </Property>
@@ -395,9 +397,8 @@
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/main/assets/menu/GramLDCBlack.png"/>
+                              <Image iconType="3" name="/main/GramLDCBlack.png"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="  Gram&#xe1;ticas LC"/>
                             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                               <Dimension value="[344, 539]"/>
                             </Property>
@@ -423,9 +424,8 @@
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/main/assets/menu/GramRegBlack.png"/>
+                              <Image iconType="3" name="/main/ExpRegBlack.png"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="  Gram&#xe1;ticas Regulares"/>
                             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                               <Dimension value="[344, 539]"/>
                             </Property>
@@ -451,9 +451,8 @@
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/main/assets/menu/MaqTuringBlack.png"/>
+                              <Image iconType="3" name="/main/MaqTuringBlack.png"/>
                             </Property>
-                            <Property name="text" type="java.lang.String" value="  M&#xe1;quinas de Turing"/>
                             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                               <Dimension value="[344, 539]"/>
                             </Property>
@@ -465,6 +464,13 @@
                             <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuTuringMousePressed"/>
                             <EventHandler event="mouseReleased" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="menuTuringMouseReleased"/>
                           </Events>
+                        </Component>
+                        <Component class="javax.swing.JLabel" name="jLabel3">
+                          <Properties>
+                            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                              <Image iconType="3" name="/main/peenchimento.png"/>
+                            </Property>
+                          </Properties>
                         </Component>
                       </SubComponents>
                     </Container>
