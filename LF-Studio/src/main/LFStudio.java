@@ -37,6 +37,8 @@ public class LFStudio extends javax.swing.JFrame {
     PilhaProcessamentoPanel pilhaProcessamentoPanel;
     PilhaConfigPanel pilhaConfigPanel;
     
+    Color defaultColor = null;
+    
     void setFndInicioPanel(){
         fdInicioPanel =  new FdInicioPanel(JanelaExecucao);
         fdInicioPanel.setBackground(new java.awt.Color(70, 71, 74));
@@ -470,115 +472,143 @@ public class LFStudio extends javax.swing.JFrame {
     }//GEN-LAST:event_menuPilhaMouseClicked
 
     private void menuAFNDMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAFNDMousePressed
-        clickEffect(menuAFND);
+        menuAFND.setBackground(Color.white);
+        menuAFND.setForeground(Color.black);
     }//GEN-LAST:event_menuAFNDMousePressed
 
     private void menuAFNDMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAFNDMouseReleased
-        clickEffect(menuAFND);
+        menuAFND.setBackground(new Color(60,60,60));
+        menuAFND.setForeground(Color.white);
     }//GEN-LAST:event_menuAFNDMouseReleased
 
     private void menuAfdMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAfdMousePressed
-        clickEffect(menuAfd);
+        menuAfd.setBackground(Color.white);
+        menuAfd.setForeground(Color.black);
     }//GEN-LAST:event_menuAfdMousePressed
 
     private void menuAfdMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAfdMouseReleased
-        clickEffect(menuAfd);
+        menuAfd.setBackground(new Color(20,20,20));
+        menuAfd.setForeground(Color.white);
     }//GEN-LAST:event_menuAfdMouseReleased
 
     private void menuPilhaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPilhaMousePressed
-        clickEffect(menuPilha);
+        menuPilha.setBackground(Color.white);
+        menuPilha.setForeground(Color.black);
     }//GEN-LAST:event_menuPilhaMousePressed
 
     private void menuPilhaMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPilhaMouseReleased
-        clickEffect(menuPilha);
+        menuPilha.setBackground(new Color(60,60,60));
+        menuPilha.setForeground(Color.white);
     }//GEN-LAST:event_menuPilhaMouseReleased
 
     private void menuRegXMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuRegXMousePressed
-        clickEffect(menuRegX);
+        menuRegX.setBackground(Color.white);
+        menuRegX.setForeground(Color.black);
     }//GEN-LAST:event_menuRegXMousePressed
 
     private void menuRegXMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuRegXMouseReleased
-        clickEffect(menuRegX);
+        menuRegX.setBackground(new Color(20,20,20));
+        menuRegX.setForeground(Color.white);
     }//GEN-LAST:event_menuRegXMouseReleased
 
     private void ExpressoesRegularesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExpressoesRegularesMousePressed
-        clickEffect(ExpressoesRegulares);
+        ExpressoesRegulares.setBackground(Color.white);
+        ExpressoesRegulares.setForeground(Color.black);
     }//GEN-LAST:event_ExpressoesRegularesMousePressed
 
     private void ExpressoesRegularesMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExpressoesRegularesMouseReleased
-        clickEffect(ExpressoesRegulares);
+        ExpressoesRegulares.setBackground(new Color(60,60,60));
+        ExpressoesRegulares.setForeground(Color.white);
     }//GEN-LAST:event_ExpressoesRegularesMouseReleased
 
     private void menuGLCMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGLCMousePressed
-        clickEffect(menuGLC);
+        menuGLC.setBackground(Color.white);
+        menuGLC.setForeground(Color.black);
     }//GEN-LAST:event_menuGLCMousePressed
 
     private void menuGLCMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGLCMouseReleased
-        clickEffect(menuGLC);
+        menuGLC.setBackground(new Color(20,20,20));
+        menuGLC.setForeground(Color.white);
     }//GEN-LAST:event_menuGLCMouseReleased
 
     private void menuTuringMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTuringMousePressed
-        clickEffect(menuTuring);
+        menuTuring.setBackground(Color.white);
+        menuTuring.setForeground(Color.black);
     }//GEN-LAST:event_menuTuringMousePressed
 
     private void menuTuringMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTuringMouseReleased
-        clickEffect(menuTuring);
+        menuTuring.setBackground(new Color(60,60,60));
+        menuTuring.setForeground(Color.white);
     }//GEN-LAST:event_menuTuringMouseReleased
 
     private void menuAFNDMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAFNDMouseEntered
+        defaultColor = menuAFND.getBackground();
         menuAFND.setBackground(menuAFND.getBackground().brighter().brighter());
     }//GEN-LAST:event_menuAFNDMouseEntered
 
     private void menuAFNDMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAFNDMouseExited
-        menuAFND.setBackground(menuAFND.getBackground().darker().darker());
+        menuAFND.setBackground(defaultColor);
+        menuAFND.setForeground(Color.white);
     }//GEN-LAST:event_menuAFNDMouseExited
 
     private void menuAfdMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAfdMouseEntered
+        defaultColor = menuAfd.getBackground();
         menuAfd.setBackground(menuAfd.getBackground().brighter().brighter());
     }//GEN-LAST:event_menuAfdMouseEntered
 
     private void menuAfdMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAfdMouseExited
-        menuAfd.setBackground(menuAfd.getBackground().darker().darker());
+        menuAfd.setBackground(defaultColor);
+        menuAfd.setForeground(Color.white);
     }//GEN-LAST:event_menuAfdMouseExited
 
     private void menuPilhaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPilhaMouseEntered
+        defaultColor = menuPilha.getBackground();
         menuPilha.setBackground(menuPilha.getBackground().brighter().brighter());
     }//GEN-LAST:event_menuPilhaMouseEntered
 
     private void menuPilhaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPilhaMouseExited
-        menuPilha.setBackground(menuPilha.getBackground().darker().darker());
+        menuPilha.setBackground(defaultColor);
+        menuPilha.setForeground(Color.white);
     }//GEN-LAST:event_menuPilhaMouseExited
 
     private void menuRegXMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuRegXMouseEntered
+        defaultColor = menuRegX.getBackground();
         menuRegX.setBackground(menuRegX.getBackground().brighter().brighter());
     }//GEN-LAST:event_menuRegXMouseEntered
 
     private void menuRegXMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuRegXMouseExited
-        menuRegX.setBackground(menuRegX.getBackground().darker().darker());
+        menuRegX.setBackground(defaultColor);
+        menuRegX.setForeground(Color.white);
     }//GEN-LAST:event_menuRegXMouseExited
 
     private void ExpressoesRegularesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExpressoesRegularesMouseEntered
+        defaultColor = ExpressoesRegulares.getBackground();
         ExpressoesRegulares.setBackground(ExpressoesRegulares.getBackground().brighter().brighter());
     }//GEN-LAST:event_ExpressoesRegularesMouseEntered
 
     private void ExpressoesRegularesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExpressoesRegularesMouseExited
-        ExpressoesRegulares.setBackground(ExpressoesRegulares.getBackground().darker().darker());
+        ExpressoesRegulares.setBackground(defaultColor);
+        ExpressoesRegulares.setForeground(Color.white);
     }//GEN-LAST:event_ExpressoesRegularesMouseExited
 
     private void menuGLCMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGLCMouseEntered
+        defaultColor = menuGLC.getBackground();
         menuGLC.setBackground(menuGLC.getBackground().brighter().brighter());
     }//GEN-LAST:event_menuGLCMouseEntered
 
     private void menuGLCMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGLCMouseExited
-        menuGLC.setBackground(menuGLC.getBackground().darker().darker());
+        menuGLC.setBackground(defaultColor);
+        menuGLC.setForeground(Color.white);
     }//GEN-LAST:event_menuGLCMouseExited
 
     private void menuTuringMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTuringMouseEntered
+        defaultColor = menuTuring.getBackground();
         menuTuring.setBackground(menuTuring.getBackground().brighter().brighter());
     }//GEN-LAST:event_menuTuringMouseEntered
 
     private void menuTuringMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTuringMouseExited
-        menuTuring.setBackground(menuTuring.getBackground().darker().darker());
+        menuTuring.setBackground(defaultColor);
+        menuTuring.setForeground(Color.white);
     }//GEN-LAST:event_menuTuringMouseExited
 
     private void titleLFStudioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_titleLFStudioMouseClicked
@@ -619,12 +649,6 @@ public class LFStudio extends javax.swing.JFrame {
                 new LFStudio().setVisible(true);
             }
         });
-    }
-
-    private void clickEffect(JLabel button){
-        Color temp = button.getForeground();
-        button.setForeground(button.getBackground());
-        button.setBackground(temp);
     }
     
     public JInternalFrame getjInternalFrame1() {
