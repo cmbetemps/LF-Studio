@@ -8,7 +8,7 @@ package main.modulos.AutomatoFinitoDeterministico.screens;
 import java.util.Vector;
 import main.LFStudio;
 import main.modulos.AutomatoFinitoDeterministico.controllers.AutomatoFinitoController;
-import main.modulos.CustomTable;
+import main.layout.CustomTable;
 
 /**
  *

@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.Vector;
 import javax.swing.table.DefaultTableModel;
 import main.LFStudio;
-import main.modulos.CustomTable;
+import main.layout.CustomTable;
 import main.modulos.AutomatoFinitoNaoDeterministico.controllers.FndController;
 import main.modulos.AutomatoFinitoNaoDeterministico.domain.models.Automato;
 

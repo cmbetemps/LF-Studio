@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Vector;
 import main.LFStudio;
-import main.modulos.CustomTable;
+import main.layout.CustomTable;
 import main.modulos.AutomatoFinitoNaoDeterministico.controllers.FndController;
 import main.modulos.AutomatoFinitoNaoDeterministico.domain.models.NaoDeterministico;
 
