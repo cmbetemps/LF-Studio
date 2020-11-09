@@ -5,15 +5,14 @@
  */
 package main.modulos.AutomatoFinitoNaoDeterministico.screens;
 
-import java.awt.Color;
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Vector;
-import javax.swing.JPanel;
-import javax.swing.table.DefaultTableModel;
 import main.LFStudio;
 import main.assets.CustomTable;
 import main.modulos.AutomatoFinitoNaoDeterministico.controllers.FndController;
-import main.modulos.AutomatoFinitoNaoDeterministico.domain.models.Automato;
+import main.modulos.AutomatoFinitoNaoDeterministico.domain.models.NaoDeterministico;
 
 /**
  *
@@ -30,7 +29,7 @@ public class FndConfigPanel extends javax.swing.JPanel {
     public FndConfigPanel(javax.swing.JPanel janela) {
         JanelaExecucao = janela;
         initComponents();
-        
+
     }
 
     /**
@@ -93,6 +92,13 @@ public class FndConfigPanel extends javax.swing.JPanel {
         FND_TextFieldAlfabeto.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         FND_TextFieldAlfabeto.setForeground(new java.awt.Color(0, 0, 0));
         FND_TextFieldAlfabeto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        FND_TextFieldAlfabeto.setText("0,1");
+        FND_TextFieldAlfabeto.setToolTipText("");
+        FND_TextFieldAlfabeto.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FND_TextFieldAlfabetoActionPerformed(evt);
+            }
+        });
         FND_TextFieldAlfabeto.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 FND_TextFieldAlfabetoKeyReleased(evt);
@@ -101,17 +107,17 @@ public class FndConfigPanel extends javax.swing.JPanel {
 
         FND_jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null},
-                {null},
-                {null},
-                {null}
+                {"q0", "q0,q1", "q0,q2"},
+                {"q1", "q3", null},
+                {"q2", null, "q3"},
+                {"q3", "q3", null}
             },
             new String [] {
-                "Estados"
+                "Estados", "0", "1"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false
+                false, true, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -124,6 +130,7 @@ public class FndConfigPanel extends javax.swing.JPanel {
         FND_TextFieldEstados.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         FND_TextFieldEstados.setForeground(new java.awt.Color(0, 0, 0));
         FND_TextFieldEstados.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        FND_TextFieldEstados.setText("q0,q1,q2,q3");
         FND_TextFieldEstados.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 FND_TextFieldEstadosKeyReleased(evt);
@@ -134,11 +141,14 @@ public class FndConfigPanel extends javax.swing.JPanel {
         FND_TextFieldEstadoInicial.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         FND_TextFieldEstadoInicial.setForeground(new java.awt.Color(0, 0, 0));
         FND_TextFieldEstadoInicial.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        FND_TextFieldEstadoInicial.setText("q0");
 
         FND_TextFieldEstadosFinais.setBackground(new java.awt.Color(255, 255, 255));
         FND_TextFieldEstadosFinais.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         FND_TextFieldEstadosFinais.setForeground(new java.awt.Color(0, 0, 0));
         FND_TextFieldEstadosFinais.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        FND_TextFieldEstadosFinais.setText("q3");
+        FND_TextFieldEstadosFinais.setToolTipText("");
 
         javax.swing.GroupLayout FND_BodyConfigLayout = new javax.swing.GroupLayout(FND_BodyConfig);
         FND_BodyConfig.setLayout(FND_BodyConfigLayout);
@@ -294,7 +304,7 @@ public class FndConfigPanel extends javax.swing.JPanel {
         for (String rowName : estados) {
             vector = new Vector<String>();
             vector.add(rowName);
-            tableModel.insertRow(0,vector);
+            tableModel.insertRow(0, vector);
         }
         for (String columnName : alfabeto) {
             tableModel.addColumn(columnName);
@@ -303,6 +313,7 @@ public class FndConfigPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_FND_TextFieldAlfabetoKeyReleased
 
     private void FND_LabelProcessarAutomatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FND_LabelProcessarAutomatoMouseClicked
+        NaoDeterministico atual = gerarAutomato();
         LFStudio.cl.show(JanelaExecucao, "fndProcessamentoPanel");
     }//GEN-LAST:event_FND_LabelProcessarAutomatoMouseClicked
 
@@ -315,7 +326,7 @@ public class FndConfigPanel extends javax.swing.JPanel {
         for (String rowName : estados) {
             vector = new Vector<String>();
             vector.add(rowName);
-            tableModel.insertRow(0,vector);
+            tableModel.insertRow(0, vector);
         }
         for (String columnName : alfabeto) {
             tableModel.addColumn(columnName);
@@ -339,10 +350,93 @@ public class FndConfigPanel extends javax.swing.JPanel {
         FND_LabelProcessarAutomato.setBackground(FND_LabelProcessarAutomato.getBackground().darker().darker());
     }//GEN-LAST:event_FND_LabelProcessarAutomatoMouseExited
 
-    private Automato gerarAutomato(){
+    private void FND_TextFieldAlfabetoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FND_TextFieldAlfabetoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FND_TextFieldAlfabetoActionPerformed
+
+    /**
+     * @author Michel Silva Construtor com conversão de matriz int para char
+     * para um automato nao deterministico com transição espontanea
+     * @param aceitacao | char[]
+     * @param estadoInicial | char
+     * @param transicao | char [][][]
+     * @param alfabeto | String
+     */
+    private NaoDeterministico gerarAutomato() {
+        // mandar direto
+        String alfabetoInserido = FND_TextFieldAlfabeto.getText();
+
+        String estadoInicial = FND_TextFieldEstadoInicial.getText();
+
+        String estados = FND_TextFieldEstados.getText();
+        String estadosFinais = FND_TextFieldEstadosFinais.getText();
+
+        // Parte da tabela de transição
+        String teste[][] = new String[FND_jTable1.getRowCount()][FND_jTable1.getColumnCount()];
+
+        /// pos0 = string abc
+        Map<Integer, String> mapaTransicao = new HashMap<>();
+        Map<String, Integer> mapaTransInverso = new HashMap<>();
+
+        for (int i = 0; i < FND_jTable1.getRowCount(); i++) {
+            mapaTransicao.put(i, (String) FND_jTable1.getValueAt(i, 0));
+            mapaTransInverso.put((String) FND_jTable1.getValueAt(i, 0), i);
+            for (int j = 1; j < FND_jTable1.getColumnCount(); j++) {
+                teste[i][j] = (String) FND_jTable1.getValueAt(i, j);
+            }
+        }
+
+        // Parte estado inicial
+        int chaveEstado = mapaTransInverso.get(estadoInicial);
+
+        // Parte de estados finais
+        int chaveEstadosFinais[] = new int[estadosFinais.split(",").length];
+
+        String[] comparaEstadosFinais = estadosFinais.split(",");
+
+        int contaEstadosFinais = 0;
+
+        while (contaEstadosFinais < chaveEstadosFinais.length) {
+            chaveEstadosFinais[contaEstadosFinais] = mapaTransInverso.get(comparaEstadosFinais[contaEstadosFinais]);
+            contaEstadosFinais++;
+        }
+        
+        int [][][] matrizConversao = new int [FND_jTable1.getRowCount()][FND_jTable1.getColumnCount()-1][];
+        for (int i = 0; i < FND_jTable1.getRowCount(); i++) {
+            for (int j = 0; j < FND_jTable1.getColumnCount(); j++) {
+                matrizConversao[i][j] = new int[teste[i][j+1].split(",").length];
+                for (int k = 0; k < teste[i][j+1].split(",").length; k++) {
+                    matrizConversao[i][j][k] = mapaTransInverso.get(teste[i][j+1].split(",")[k]);
+                }
+            }
+        }
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        // matriz de vetores
+        for (int i = 0; i < 10; i++) {
+            
+            for (int j = 0; j < 10; j++) {
+                //vetorqualquer = blblala;
+                //matriz[i][j] = vetorqulquer[0]
+               
+            }
+        }
+        
+
         return null;
-    } 
-    
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel FND_BodyConfig;
     private javax.swing.JLabel FND_LabelAlfabeto;
