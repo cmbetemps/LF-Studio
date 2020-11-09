@@ -5,6 +5,7 @@
  */
 package main.modulos.AutomatoFinitoDeterministico.screens;
 
+import java.awt.Font;
 import main.LFStudio;
 
 /**
@@ -30,19 +31,22 @@ public class FdInicioPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        fdTitle1 = new javax.swing.JPanel();
+        FD_LabelAutomatoFND = new javax.swing.JLabel();
         FD_LabelNovoAutomato = new javax.swing.JLabel();
-        FD_LabelImportarAutomato3 = new javax.swing.JLabel();
-        FD_LabelAutoma = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        FD_LabelImportarAutomato = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(70, 71, 74));
+        setBackground(new java.awt.Color(28, 28, 28));
 
-        fdTitle1.setBackground(new java.awt.Color(70, 71, 74));
+        FD_LabelAutomatoFND.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 48)); // NOI18N
+        FD_LabelAutomatoFND.setForeground(new java.awt.Color(255, 255, 255));
+        FD_LabelAutomatoFND.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        FD_LabelAutomatoFND.setText("<html><p style=\"padding-bottom: 16px;\">Autômato FD</p></html>");
 
         FD_LabelNovoAutomato.setBackground(new java.awt.Color(0, 0, 0));
-        FD_LabelNovoAutomato.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        FD_LabelNovoAutomato.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 28)); // NOI18N
         FD_LabelNovoAutomato.setForeground(new java.awt.Color(255, 255, 255));
-        FD_LabelNovoAutomato.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        FD_LabelNovoAutomato.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         FD_LabelNovoAutomato.setText("Novo autômato");
         FD_LabelNovoAutomato.setAlignmentX(5.0F);
         FD_LabelNovoAutomato.setAlignmentY(5.0F);
@@ -52,78 +56,95 @@ public class FdInicioPanel extends javax.swing.JPanel {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 FD_LabelNovoAutomatoMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                FD_LabelNovoAutomatoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                FD_LabelNovoAutomatoMouseExited(evt);
+            }
         });
 
-        FD_LabelImportarAutomato3.setBackground(new java.awt.Color(0, 0, 0));
-        FD_LabelImportarAutomato3.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        FD_LabelImportarAutomato3.setForeground(new java.awt.Color(255, 255, 255));
-        FD_LabelImportarAutomato3.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        FD_LabelImportarAutomato3.setText("Importar autômato");
-        FD_LabelImportarAutomato3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jSeparator1.setBackground(new java.awt.Color(28, 28, 28));
+        jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
 
-        FD_LabelAutoma.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
-        FD_LabelAutoma.setForeground(new java.awt.Color(255, 255, 255));
-        FD_LabelAutoma.setText("<html><p style=\"padding-bottom: 16px;\">Autômato FD</p></html>");
-        FD_LabelAutoma.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
-
-        javax.swing.GroupLayout fdTitle1Layout = new javax.swing.GroupLayout(fdTitle1);
-        fdTitle1.setLayout(fdTitle1Layout);
-        fdTitle1Layout.setHorizontalGroup(
-            fdTitle1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fdTitle1Layout.createSequentialGroup()
-                .addGap(65, 65, 65)
-                .addGroup(fdTitle1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(FD_LabelImportarAutomato3, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FD_LabelNovoAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40))
-            .addGroup(fdTitle1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(fdTitle1Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(FD_LabelAutoma, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(42, Short.MAX_VALUE)))
-        );
-        fdTitle1Layout.setVerticalGroup(
-            fdTitle1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fdTitle1Layout.createSequentialGroup()
-                .addContainerGap(189, Short.MAX_VALUE)
-                .addComponent(FD_LabelNovoAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(FD_LabelImportarAutomato3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(fdTitle1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(fdTitle1Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(FD_LabelAutoma, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(189, Short.MAX_VALUE)))
-        );
+        FD_LabelImportarAutomato.setBackground(new java.awt.Color(0, 0, 0));
+        FD_LabelImportarAutomato.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 28)); // NOI18N
+        FD_LabelImportarAutomato.setForeground(new java.awt.Color(255, 255, 255));
+        FD_LabelImportarAutomato.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        FD_LabelImportarAutomato.setText("Importar autômato");
+        FD_LabelImportarAutomato.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        FD_LabelImportarAutomato.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                FD_LabelImportarAutomatoMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                FD_LabelImportarAutomatoMouseExited(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(179, 179, 179)
-                .addComponent(fdTitle1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(27, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(FD_LabelNovoAutomato, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(FD_LabelImportarAutomato, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(FD_LabelAutomatoFND, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
+            .addGroup(layout.createSequentialGroup()
+                .addGap(139, 139, 139)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(130, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(193, 193, 193)
-                .addComponent(fdTitle1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(190, 190, 190))
+                .addGap(191, 191, 191)
+                .addComponent(FD_LabelAutomatoFND, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(57, 57, 57)
+                .addComponent(FD_LabelNovoAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(FD_LabelImportarAutomato)
+                .addContainerGap(234, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
     private void FD_LabelNovoAutomatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FD_LabelNovoAutomatoMouseClicked
-        LFStudio.cl.show(JanelaExecucao, "fdConfigPanel");
-        // TODO add your handling code here:
+        LFStudio.cl.show(JanelaExecucao,"fdConfigPanel");
     }//GEN-LAST:event_FD_LabelNovoAutomatoMouseClicked
+
+    private void FD_LabelNovoAutomatoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FD_LabelNovoAutomatoMouseEntered
+        Font f = FD_LabelNovoAutomato.getFont();
+        FD_LabelNovoAutomato.setFont(f.deriveFont(f.getStyle(), f.getSize2D()+4));
+        //AFND1_LabelNovoAutomato.setForeground(AFND1_LabelNovoAutomato.getForeground().darker());
+    }//GEN-LAST:event_FD_LabelNovoAutomatoMouseEntered
+
+    private void FD_LabelNovoAutomatoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FD_LabelNovoAutomatoMouseExited
+        Font f = FD_LabelNovoAutomato.getFont();
+        FD_LabelNovoAutomato.setFont(f.deriveFont(f.getStyle(), f.getSize2D()-4));
+        //AFND1_LabelNovoAutomato.setForeground(AFND1_LabelNovoAutomato.getForeground().brighter());
+    }//GEN-LAST:event_FD_LabelNovoAutomatoMouseExited
+
+    private void FD_LabelImportarAutomatoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FD_LabelImportarAutomatoMouseEntered
+        Font f = FD_LabelImportarAutomato.getFont();
+        FD_LabelImportarAutomato.setFont(f.deriveFont(f.getStyle(), f.getSize2D()+4));
+        //AFND1_LabelImportarAutomato.setForeground(AFND1_LabelNovoAutomato.getForeground().darker());
+    }//GEN-LAST:event_FD_LabelImportarAutomatoMouseEntered
+
+    private void FD_LabelImportarAutomatoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FD_LabelImportarAutomatoMouseExited
+        Font f = FD_LabelImportarAutomato.getFont();
+        FD_LabelImportarAutomato.setFont(f.deriveFont(f.getStyle(), f.getSize2D()-4));
+        //AFND1_LabelImportarAutomato.setForeground(AFND1_LabelNovoAutomato.getForeground().brighter());
+    }//GEN-LAST:event_FD_LabelImportarAutomatoMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel FD_LabelAutoma;
-    private javax.swing.JLabel FD_LabelImportarAutomato3;
+    private javax.swing.JLabel FD_LabelAutomatoFND;
+    private javax.swing.JLabel FD_LabelImportarAutomato;
     private javax.swing.JLabel FD_LabelNovoAutomato;
-    private javax.swing.JPanel fdTitle1;
+    private javax.swing.JSeparator jSeparator1;
     // End of variables declaration//GEN-END:variables
 }

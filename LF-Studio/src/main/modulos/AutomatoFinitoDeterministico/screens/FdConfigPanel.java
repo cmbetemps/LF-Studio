@@ -6,6 +6,7 @@
 package main.modulos.AutomatoFinitoDeterministico.screens;
 
 import main.LFStudio;
+import main.modulos.AutomatoFinitoDeterministico.controllers.AutomatoFinitoController;
 
 /**
  *
@@ -13,7 +14,7 @@ import main.LFStudio;
  */
 public class FdConfigPanel extends javax.swing.JPanel {
     javax.swing.JPanel JanelaExecucao;
-
+    AutomatoFinitoController controller = new AutomatoFinitoController();
     /**
      * Creates new form test1
      */
@@ -48,28 +49,29 @@ public class FdConfigPanel extends javax.swing.JPanel {
         FD_ConfigSubTitulo = new javax.swing.JLabel();
         FD_processarAutomatoBtn = new javax.swing.JLabel();
 
-        setBackground(new java.awt.Color(70, 71, 74));
+        setBackground(new java.awt.Color(28, 28, 28));
 
-        FD_BodyConfig.setBackground(new java.awt.Color(51, 51, 51));
+        FD_BodyConfig.setBackground(new java.awt.Color(28, 28, 28));
+        FD_BodyConfig.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         FD_BodyConfig.setForeground(new java.awt.Color(51, 51, 51));
 
-        FD_LabelAlfabeto.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
+        FD_LabelAlfabeto.setFont(new java.awt.Font("Comic Sans MS", 1, 22)); // NOI18N
         FD_LabelAlfabeto.setForeground(new java.awt.Color(255, 255, 255));
         FD_LabelAlfabeto.setText("Alfabeto");
 
-        FD_LabelEstadosFinais.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
+        FD_LabelEstadosFinais.setFont(new java.awt.Font("Comic Sans MS", 1, 22)); // NOI18N
         FD_LabelEstadosFinais.setForeground(new java.awt.Color(255, 255, 255));
         FD_LabelEstadosFinais.setText("Estados Finais");
 
-        FD_LabelEstados.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
+        FD_LabelEstados.setFont(new java.awt.Font("Comic Sans MS", 1, 22)); // NOI18N
         FD_LabelEstados.setForeground(new java.awt.Color(255, 255, 255));
         FD_LabelEstados.setText("Estados");
 
-        FD_LabelEstadoInicial1.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
+        FD_LabelEstadoInicial1.setFont(new java.awt.Font("Comic Sans MS", 1, 22)); // NOI18N
         FD_LabelEstadoInicial1.setForeground(new java.awt.Color(255, 255, 255));
         FD_LabelEstadoInicial1.setText("Estado Inicial");
 
-        FD_LabelTabelaTransicao1.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
+        FD_LabelTabelaTransicao1.setFont(new java.awt.Font("Comic Sans MS", 1, 22)); // NOI18N
         FD_LabelTabelaTransicao1.setForeground(new java.awt.Color(255, 255, 255));
         FD_LabelTabelaTransicao1.setText("Tabela de Transições");
 
@@ -158,7 +160,7 @@ public class FdConfigPanel extends javax.swing.JPanel {
                 .addGap(20, 20, 20)
                 .addGroup(FD_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(FD_LabelAlfabeto)
-                    .addComponent(FD_TextFieldAlfabeto1, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE))
+                    .addComponent(FD_TextFieldAlfabeto1))
                 .addGap(10, 10, 10)
                 .addGroup(FD_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(FD_LabelEstadosFinais)
@@ -178,13 +180,13 @@ public class FdConfigPanel extends javax.swing.JPanel {
                 .addGap(14, 14, 14))
         );
 
-        FD_ConfigTitulo.setFont(new java.awt.Font("Comic Sans MS", 1, 30)); // NOI18N
+        FD_ConfigTitulo.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
         FD_ConfigTitulo.setForeground(new java.awt.Color(255, 255, 255));
         FD_ConfigTitulo.setText("<html><p style=\"padding-bottom: 16px;\">Autômato FD</p></html>");
         FD_ConfigTitulo.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
 
         FD_salvarAutomatoBtn.setBackground(new java.awt.Color(51, 51, 51));
-        FD_salvarAutomatoBtn.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        FD_salvarAutomatoBtn.setFont(new java.awt.Font("SansSerif", 1, 22)); // NOI18N
         FD_salvarAutomatoBtn.setForeground(new java.awt.Color(255, 255, 255));
         FD_salvarAutomatoBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         FD_salvarAutomatoBtn.setText("Salvar Automato");
@@ -194,14 +196,20 @@ public class FdConfigPanel extends javax.swing.JPanel {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 FD_salvarAutomatoBtnMouseClicked(evt);
             }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                FD_salvarAutomatoBtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                FD_salvarAutomatoBtnMouseExited(evt);
+            }
         });
 
-        FD_ConfigSubTitulo.setFont(new java.awt.Font("Comic Sans MS", 1, 20)); // NOI18N
+        FD_ConfigSubTitulo.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
         FD_ConfigSubTitulo.setForeground(new java.awt.Color(255, 255, 255));
         FD_ConfigSubTitulo.setText("Configuração");
 
         FD_processarAutomatoBtn.setBackground(new java.awt.Color(51, 51, 51));
-        FD_processarAutomatoBtn.setFont(new java.awt.Font("SansSerif", 1, 14)); // NOI18N
+        FD_processarAutomatoBtn.setFont(new java.awt.Font("SansSerif", 1, 22)); // NOI18N
         FD_processarAutomatoBtn.setForeground(new java.awt.Color(255, 255, 255));
         FD_processarAutomatoBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         FD_processarAutomatoBtn.setText("Processar Automato");
@@ -210,6 +218,12 @@ public class FdConfigPanel extends javax.swing.JPanel {
         FD_processarAutomatoBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 FD_processarAutomatoBtnMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                FD_processarAutomatoBtnMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                FD_processarAutomatoBtnMouseExited(evt);
             }
         });
 
@@ -225,23 +239,25 @@ public class FdConfigPanel extends javax.swing.JPanel {
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(FD_BodyConfig, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(FD_ConfigSubTitulo)
-                        .addComponent(FD_ConfigTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(48, Short.MAX_VALUE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                            .addComponent(FD_ConfigTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(123, 123, 123))))
+                .addContainerGap(44, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(51, 51, 51)
+                .addGap(49, 49, 49)
                 .addComponent(FD_ConfigTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
+                .addGap(18, 18, 18)
                 .addComponent(FD_ConfigSubTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(FD_BodyConfig, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(FD_salvarAutomatoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(FD_processarAutomatoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(51, Short.MAX_VALUE))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -250,6 +266,8 @@ public class FdConfigPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_FD_TextFieldAlfabeto1ActionPerformed
 
     private void FD_TextFieldAlfabeto1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FD_TextFieldAlfabeto1KeyReleased
+
+
         // TODO add your handling code here:
     }//GEN-LAST:event_FD_TextFieldAlfabeto1KeyReleased
 
@@ -268,6 +286,21 @@ public class FdConfigPanel extends javax.swing.JPanel {
     private void FD_processarAutomatoBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FD_processarAutomatoBtnMouseClicked
         LFStudio.cl.show(JanelaExecucao, "fdProcessamentoPanel");        // TODO add your handling code here:
     }//GEN-LAST:event_FD_processarAutomatoBtnMouseClicked
+
+    private void FD_salvarAutomatoBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FD_salvarAutomatoBtnMouseEntered
+        FD_salvarAutomatoBtn.setBackground(FD_salvarAutomatoBtn.getBackground().brighter().brighter());
+    }//GEN-LAST:event_FD_salvarAutomatoBtnMouseEntered
+
+    private void FD_salvarAutomatoBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FD_salvarAutomatoBtnMouseExited
+        FD_salvarAutomatoBtn.setBackground(FD_salvarAutomatoBtn.getBackground().darker().darker());
+    }//GEN-LAST:event_FD_salvarAutomatoBtnMouseExited
+
+    private void FD_processarAutomatoBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FD_processarAutomatoBtnMouseEntered
+        FD_processarAutomatoBtn.setBackground(FD_processarAutomatoBtn.getBackground().brighter().brighter());    }//GEN-LAST:event_FD_processarAutomatoBtnMouseEntered
+
+    private void FD_processarAutomatoBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FD_processarAutomatoBtnMouseExited
+        FD_processarAutomatoBtn.setBackground(FD_processarAutomatoBtn.getBackground().darker().darker());
+    }//GEN-LAST:event_FD_processarAutomatoBtnMouseExited
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
