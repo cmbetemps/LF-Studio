@@ -5,8 +5,10 @@
  */
 package main.modulos.AutomatoFinitoDeterministico.screens;
 
+import java.util.Vector;
 import main.LFStudio;
 import main.modulos.AutomatoFinitoDeterministico.controllers.AutomatoFinitoController;
+import main.modulos.CustomTable;
 
 /**
  *
@@ -38,9 +40,9 @@ public class FdConfigPanel extends javax.swing.JPanel {
         FD_LabelEstados = new javax.swing.JLabel();
         FD_LabelEstadoInicial1 = new javax.swing.JLabel();
         FD_LabelTabelaTransicao1 = new javax.swing.JLabel();
-        FD_TextFieldAlfabeto1 = new javax.swing.JTextField();
+        FD_TextFieldAlfabeto = new javax.swing.JTextField();
         FD_jScrollPane = new javax.swing.JScrollPane();
-        AFND2_jTable2 = new javax.swing.JTable();
+        FD_jTable = new javax.swing.JTable();
         FD_TextFieldEstados = new javax.swing.JTextField();
         FD_TextFieldEstadoInicial1 = new javax.swing.JTextField();
         FD_TextFieldEstadosFinais1 = new javax.swing.JTextField();
@@ -75,22 +77,22 @@ public class FdConfigPanel extends javax.swing.JPanel {
         FD_LabelTabelaTransicao1.setForeground(new java.awt.Color(255, 255, 255));
         FD_LabelTabelaTransicao1.setText("Tabela de Transições");
 
-        FD_TextFieldAlfabeto1.setBackground(new java.awt.Color(255, 255, 255));
-        FD_TextFieldAlfabeto1.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
-        FD_TextFieldAlfabeto1.setForeground(new java.awt.Color(0, 0, 0));
-        FD_TextFieldAlfabeto1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        FD_TextFieldAlfabeto1.addActionListener(new java.awt.event.ActionListener() {
+        FD_TextFieldAlfabeto.setBackground(new java.awt.Color(255, 255, 255));
+        FD_TextFieldAlfabeto.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        FD_TextFieldAlfabeto.setForeground(new java.awt.Color(0, 0, 0));
+        FD_TextFieldAlfabeto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        FD_TextFieldAlfabeto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FD_TextFieldAlfabeto1ActionPerformed(evt);
+                FD_TextFieldAlfabetoActionPerformed(evt);
             }
         });
-        FD_TextFieldAlfabeto1.addKeyListener(new java.awt.event.KeyAdapter() {
+        FD_TextFieldAlfabeto.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                FD_TextFieldAlfabeto1KeyReleased(evt);
+                FD_TextFieldAlfabetoKeyReleased(evt);
             }
         });
 
-        AFND2_jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        FD_jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -101,7 +103,7 @@ public class FdConfigPanel extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        FD_jScrollPane.setViewportView(AFND2_jTable2);
+        FD_jScrollPane.setViewportView(FD_jTable);
 
         FD_TextFieldEstados.setBackground(new java.awt.Color(255, 255, 255));
         FD_TextFieldEstados.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
@@ -147,7 +149,7 @@ public class FdConfigPanel extends javax.swing.JPanel {
                             .addComponent(FD_TextFieldEstadosFinais1)
                             .addComponent(FD_TextFieldEstados)
                             .addComponent(FD_TextFieldEstadoInicial1)
-                            .addComponent(FD_TextFieldAlfabeto1))))
+                            .addComponent(FD_TextFieldAlfabeto))))
                 .addGap(18, 18, 18))
             .addGroup(FD_BodyConfigLayout.createSequentialGroup()
                 .addGap(114, 114, 114)
@@ -160,7 +162,7 @@ public class FdConfigPanel extends javax.swing.JPanel {
                 .addGap(20, 20, 20)
                 .addGroup(FD_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(FD_LabelAlfabeto)
-                    .addComponent(FD_TextFieldAlfabeto1))
+                    .addComponent(FD_TextFieldAlfabeto))
                 .addGap(10, 10, 10)
                 .addGroup(FD_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(FD_LabelEstadosFinais)
@@ -261,15 +263,27 @@ public class FdConfigPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void FD_TextFieldAlfabeto1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FD_TextFieldAlfabeto1ActionPerformed
+    private void FD_TextFieldAlfabetoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FD_TextFieldAlfabetoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_FD_TextFieldAlfabeto1ActionPerformed
+    }//GEN-LAST:event_FD_TextFieldAlfabetoActionPerformed
 
-    private void FD_TextFieldAlfabeto1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FD_TextFieldAlfabeto1KeyReleased
-
-
+    private void FD_TextFieldAlfabetoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FD_TextFieldAlfabetoKeyReleased
+      String[] estados = FD_TextFieldEstados.getText().split(",");
+        String[] alfabeto = FD_TextFieldAlfabeto.getText().split(",");
+        Vector<String> vector = null;
+        CustomTable tableModel = new CustomTable();
+        tableModel.addColumn("Estados");
+        for (String rowName : estados) {
+            vector = new Vector<String>();
+            vector.add(rowName);
+            tableModel.insertRow(0,vector);
+        }
+        for (String columnName : alfabeto) {
+            tableModel.addColumn(columnName);
+        }
+        FD_jTable.setModel(tableModel);
         // TODO add your handling code here:
-    }//GEN-LAST:event_FD_TextFieldAlfabeto1KeyReleased
+    }//GEN-LAST:event_FD_TextFieldAlfabetoKeyReleased
 
     private void FD_TextFieldEstadoInicial1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FD_TextFieldEstadoInicial1ActionPerformed
         // TODO add your handling code here:
@@ -304,7 +318,6 @@ public class FdConfigPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable AFND2_jTable2;
     private javax.swing.JPanel FD_BodyConfig;
     private javax.swing.JLabel FD_ConfigSubTitulo;
     private javax.swing.JLabel FD_ConfigTitulo;
@@ -313,11 +326,12 @@ public class FdConfigPanel extends javax.swing.JPanel {
     private javax.swing.JLabel FD_LabelEstados;
     private javax.swing.JLabel FD_LabelEstadosFinais;
     private javax.swing.JLabel FD_LabelTabelaTransicao1;
-    private javax.swing.JTextField FD_TextFieldAlfabeto1;
+    private javax.swing.JTextField FD_TextFieldAlfabeto;
     private javax.swing.JTextField FD_TextFieldEstadoInicial1;
     private javax.swing.JTextField FD_TextFieldEstados;
     private javax.swing.JTextField FD_TextFieldEstadosFinais1;
     private javax.swing.JScrollPane FD_jScrollPane;
+    private javax.swing.JTable FD_jTable;
     private javax.swing.JLabel FD_processarAutomatoBtn;
     private javax.swing.JLabel FD_salvarAutomatoBtn;
     // End of variables declaration//GEN-END:variables

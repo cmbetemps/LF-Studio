@@ -92,7 +92,7 @@
                               <Component id="FD_TextFieldEstadosFinais1" alignment="0" max="32767" attributes="0"/>
                               <Component id="FD_TextFieldEstados" alignment="0" max="32767" attributes="0"/>
                               <Component id="FD_TextFieldEstadoInicial1" alignment="0" max="32767" attributes="0"/>
-                              <Component id="FD_TextFieldAlfabeto1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="FD_TextFieldAlfabeto" alignment="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -111,7 +111,7 @@
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="FD_LabelAlfabeto" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="FD_TextFieldAlfabeto1" alignment="3" max="32767" attributes="0"/>
+                      <Component id="FD_TextFieldAlfabeto" alignment="3" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -193,7 +193,7 @@
             <Property name="text" type="java.lang.String" value="Tabela de Transi&#xe7;&#xf5;es"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="FD_TextFieldAlfabeto1">
+        <Component class="javax.swing.JTextField" name="FD_TextFieldAlfabeto">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -207,8 +207,8 @@
             <Property name="horizontalAlignment" type="int" value="0"/>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FD_TextFieldAlfabeto1ActionPerformed"/>
-            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FD_TextFieldAlfabeto1KeyReleased"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FD_TextFieldAlfabetoActionPerformed"/>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FD_TextFieldAlfabetoKeyReleased"/>
           </Events>
         </Component>
         <Container class="javax.swing.JScrollPane" name="FD_jScrollPane">
@@ -218,7 +218,7 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="AFND2_jTable2">
+            <Component class="javax.swing.JTable" name="FD_jTable">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="4" rowCount="4">
