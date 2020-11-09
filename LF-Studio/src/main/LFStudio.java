@@ -13,6 +13,10 @@ import java.awt.GraphicsDevice;
 import java.awt.GraphicsEnvironment;
 import java.awt.Image;
 import java.awt.image.BufferedImage;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
@@ -125,7 +129,7 @@ public class LFStudio extends javax.swing.JFrame {
     
     public LFStudio() {
         super("LFPrototipo");
-        ImageIcon image = new ImageIcon(LFStudio.class.getResource("taskbarIcon.png"));
+        ImageIcon image = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/taskbarIcon.png"));
         super.setIconImage(image.getImage());
         initComponents();
         initPanels();
@@ -150,7 +154,7 @@ public class LFStudio extends javax.swing.JFrame {
         JanelaVisivel = new javax.swing.JInternalFrame();
         JanelaExecucao = new javax.swing.JPanel();
         HomePage = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        logo = new javax.swing.JLabel();
         Menu = new javax.swing.JPanel();
         menuScroll = new javax.swing.JScrollPane();
         menuPanel = new javax.swing.JPanel();
@@ -160,7 +164,7 @@ public class LFStudio extends javax.swing.JFrame {
         menuAFND = new javax.swing.JLabel();
         titleLFStudio = new javax.swing.JLabel();
         menuGLC = new javax.swing.JLabel();
-        ExpressoesRegulares = new javax.swing.JLabel();
+        menuGramaticasRegulares = new javax.swing.JLabel();
         menuTuring = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
@@ -182,9 +186,9 @@ public class LFStudio extends javax.swing.JFrame {
 
         HomePage.setBackground(new java.awt.Color(28, 28, 28));
 
-        jLabel1.setBackground(new java.awt.Color(28, 28, 28));
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/assets/icons/Grande Bolinha.png"))); // NOI18N
+        logo.setBackground(new java.awt.Color(28, 28, 28));
+        logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/assets/icons/logo.png"))); // NOI18N
 
         javax.swing.GroupLayout HomePageLayout = new javax.swing.GroupLayout(HomePage);
         HomePage.setLayout(HomePageLayout);
@@ -192,14 +196,14 @@ public class LFStudio extends javax.swing.JFrame {
             HomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HomePageLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 567, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 567, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         HomePageLayout.setVerticalGroup(
             HomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HomePageLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 636, Short.MAX_VALUE)
+                .addComponent(logo, javax.swing.GroupLayout.DEFAULT_SIZE, 636, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -228,7 +232,7 @@ public class LFStudio extends javax.swing.JFrame {
         menuPilha.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuPilha.setForeground(new java.awt.Color(255, 255, 255));
         menuPilha.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        menuPilha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/AutPilhaBlack.png"))); // NOI18N
+        menuPilha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/assets/layout/AutPilhaBlack.png"))); // NOI18N
         menuPilha.setMaximumSize(new java.awt.Dimension(344, 539));
         menuPilha.setOpaque(true);
         menuPilha.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -253,7 +257,7 @@ public class LFStudio extends javax.swing.JFrame {
         menuRegX.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuRegX.setForeground(new java.awt.Color(255, 255, 255));
         menuRegX.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        menuRegX.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/GramRegBlack.png"))); // NOI18N
+        menuRegX.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/assets/layout/ExpRegBlack.png"))); // NOI18N
         menuRegX.setMaximumSize(new java.awt.Dimension(344, 539));
         menuRegX.setOpaque(true);
         menuRegX.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -275,7 +279,7 @@ public class LFStudio extends javax.swing.JFrame {
         menuAfd.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuAfd.setForeground(new java.awt.Color(255, 255, 255));
         menuAfd.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        menuAfd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/AutFdBlack.png"))); // NOI18N
+        menuAfd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/assets/layout/AutFdBlack.png"))); // NOI18N
         menuAfd.setMaximumSize(new java.awt.Dimension(344, 539));
         menuAfd.setOpaque(true);
         menuAfd.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -300,7 +304,7 @@ public class LFStudio extends javax.swing.JFrame {
         menuAFND.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuAFND.setForeground(new java.awt.Color(255, 255, 255));
         menuAFND.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        menuAFND.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/AutFndBlack.png"))); // NOI18N
+        menuAFND.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/assets/layout/AutFndBlack.png"))); // NOI18N
         menuAFND.setMaximumSize(new java.awt.Dimension(344, 539));
         menuAFND.setOpaque(true);
         menuAFND.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -339,7 +343,7 @@ public class LFStudio extends javax.swing.JFrame {
         menuGLC.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuGLC.setForeground(new java.awt.Color(255, 255, 255));
         menuGLC.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        menuGLC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/GramLDCBlack.png"))); // NOI18N
+        menuGLC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/assets/layout/GramLDCBlack.png"))); // NOI18N
         menuGLC.setMaximumSize(new java.awt.Dimension(344, 539));
         menuGLC.setOpaque(true);
         menuGLC.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -357,25 +361,25 @@ public class LFStudio extends javax.swing.JFrame {
             }
         });
 
-        ExpressoesRegulares.setBackground(new java.awt.Color(60, 60, 60));
-        ExpressoesRegulares.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
-        ExpressoesRegulares.setForeground(new java.awt.Color(255, 255, 255));
-        ExpressoesRegulares.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        ExpressoesRegulares.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/ExpRegBlack.png"))); // NOI18N
-        ExpressoesRegulares.setMaximumSize(new java.awt.Dimension(344, 539));
-        ExpressoesRegulares.setOpaque(true);
-        ExpressoesRegulares.addMouseListener(new java.awt.event.MouseAdapter() {
+        menuGramaticasRegulares.setBackground(new java.awt.Color(60, 60, 60));
+        menuGramaticasRegulares.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
+        menuGramaticasRegulares.setForeground(new java.awt.Color(255, 255, 255));
+        menuGramaticasRegulares.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
+        menuGramaticasRegulares.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/assets/layout/GramRegBlack.png"))); // NOI18N
+        menuGramaticasRegulares.setMaximumSize(new java.awt.Dimension(344, 539));
+        menuGramaticasRegulares.setOpaque(true);
+        menuGramaticasRegulares.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                ExpressoesRegularesMouseEntered(evt);
+                menuGramaticasRegularesMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                ExpressoesRegularesMouseExited(evt);
+                menuGramaticasRegularesMouseExited(evt);
             }
             public void mousePressed(java.awt.event.MouseEvent evt) {
-                ExpressoesRegularesMousePressed(evt);
+                menuGramaticasRegularesMousePressed(evt);
             }
             public void mouseReleased(java.awt.event.MouseEvent evt) {
-                ExpressoesRegularesMouseReleased(evt);
+                menuGramaticasRegularesMouseReleased(evt);
             }
         });
 
@@ -383,7 +387,7 @@ public class LFStudio extends javax.swing.JFrame {
         menuTuring.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuTuring.setForeground(new java.awt.Color(255, 255, 255));
         menuTuring.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        menuTuring.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/MaqTuringBlack.png"))); // NOI18N
+        menuTuring.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/assets/layout/MaqTuringBlack.png"))); // NOI18N
         menuTuring.setMaximumSize(new java.awt.Dimension(344, 539));
         menuTuring.setOpaque(true);
         menuTuring.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -401,7 +405,7 @@ public class LFStudio extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/peenchimento.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/assets/layout/peenchimento.png"))); // NOI18N
 
         javax.swing.GroupLayout menuPanelLayout = new javax.swing.GroupLayout(menuPanel);
         menuPanel.setLayout(menuPanelLayout);
@@ -411,7 +415,7 @@ public class LFStudio extends javax.swing.JFrame {
             .addGroup(menuPanelLayout.createSequentialGroup()
                 .addGroup(menuPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(menuGLC, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ExpressoesRegulares, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(menuGramaticasRegulares, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(titleLFStudio, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jLabel3, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(menuRegX, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -433,7 +437,7 @@ public class LFStudio extends javax.swing.JFrame {
                 .addGap(0, 0, 0)
                 .addComponent(menuRegX, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(ExpressoesRegulares, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(menuGramaticasRegulares, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(menuGLC, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
@@ -498,142 +502,142 @@ public class LFStudio extends javax.swing.JFrame {
     }//GEN-LAST:event_menuPilhaMouseClicked
 
     private void menuAFNDMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAFNDMousePressed
-        Icon ico = new ImageIcon(LFStudio.class.getResource("AutFndWhite.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/AutFndWhite.png"));
         menuAFND.setIcon(ico);
     }//GEN-LAST:event_menuAFNDMousePressed
 
     private void menuAFNDMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAFNDMouseReleased
-        Icon ico = new ImageIcon(LFStudio.class.getResource("AutFndBlack.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/AutFndBlack.png"));
         menuAFND.setIcon(ico);
     }//GEN-LAST:event_menuAFNDMouseReleased
 
     private void menuAfdMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAfdMousePressed
-        Icon ico = new ImageIcon(LFStudio.class.getResource("AutFdWhite.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/AutFdWhite.png"));
         menuAfd.setIcon(ico);
     }//GEN-LAST:event_menuAfdMousePressed
 
     private void menuAfdMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAfdMouseReleased
-        Icon ico = new ImageIcon(LFStudio.class.getResource("AutFdBlack.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/AutFdBlack.png"));
         menuAfd.setIcon(ico);
     }//GEN-LAST:event_menuAfdMouseReleased
 
     private void menuPilhaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPilhaMousePressed
-       Icon ico = new ImageIcon(LFStudio.class.getResource("AutPilhaWhite.png"));
+       Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/AutPilhaWhite.png"));
         menuPilha.setIcon(ico);
     }//GEN-LAST:event_menuPilhaMousePressed
 
     private void menuPilhaMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPilhaMouseReleased
-        Icon ico = new ImageIcon(LFStudio.class.getResource("AutPilhaBlack.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/AutPilhaBlack.png"));
         menuPilha.setIcon(ico);
     }//GEN-LAST:event_menuPilhaMouseReleased
 
     private void menuRegXMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuRegXMousePressed
-        Icon ico = new ImageIcon(LFStudio.class.getResource("GramRegWhite.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/GramRegWhite.png"));
         menuRegX.setIcon(ico);
     }//GEN-LAST:event_menuRegXMousePressed
 
     private void menuRegXMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuRegXMouseReleased
-        Icon ico = new ImageIcon(LFStudio.class.getResource("GramRegBlack.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/GramRegBlack.png"));
         menuRegX.setIcon(ico);
     }//GEN-LAST:event_menuRegXMouseReleased
 
-    private void ExpressoesRegularesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExpressoesRegularesMousePressed
-        Icon ico = new ImageIcon(LFStudio.class.getResource("ExpRegWhite.png"));
-        ExpressoesRegulares.setIcon(ico);
-    }//GEN-LAST:event_ExpressoesRegularesMousePressed
+    private void menuGramaticasRegularesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGramaticasRegularesMousePressed
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/ExpRegWhite.png"));
+        menuGramaticasRegulares.setIcon(ico);
+    }//GEN-LAST:event_menuGramaticasRegularesMousePressed
 
-    private void ExpressoesRegularesMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExpressoesRegularesMouseReleased
-        Icon ico = new ImageIcon(LFStudio.class.getResource("ExpRegBlack.png"));
-        ExpressoesRegulares.setIcon(ico);
-    }//GEN-LAST:event_ExpressoesRegularesMouseReleased
+    private void menuGramaticasRegularesMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGramaticasRegularesMouseReleased
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/ExpRegBlack.png"));
+        menuGramaticasRegulares.setIcon(ico);      
+    }//GEN-LAST:event_menuGramaticasRegularesMouseReleased
 
     private void menuGLCMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGLCMousePressed
-        Icon ico = new ImageIcon(LFStudio.class.getResource("GramLDCWhite.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/GramLDCWhite.png"));
         menuGLC.setIcon(ico);
     }//GEN-LAST:event_menuGLCMousePressed
 
     private void menuGLCMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGLCMouseReleased
-        Icon ico = new ImageIcon(LFStudio.class.getResource("GramLDCBlack.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/GramLDCBlack.png"));
         menuGLC.setIcon(ico);
     }//GEN-LAST:event_menuGLCMouseReleased
 
     private void menuTuringMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTuringMousePressed
-        Icon ico = new ImageIcon(LFStudio.class.getResource("MaqTuringWhite.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/MaqTuringWhite.png"));
         menuTuring.setIcon(ico);
     }//GEN-LAST:event_menuTuringMousePressed
 
     private void menuTuringMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTuringMouseReleased
-        Icon ico = new ImageIcon(LFStudio.class.getResource("MaqTuringBlack.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/MaqTuringBlack.png"));
         menuTuring.setIcon(ico);
     }//GEN-LAST:event_menuTuringMouseReleased
 
     private void menuAFNDMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAFNDMouseEntered
-        Icon ico = new ImageIcon(LFStudio.class.getResource("AutFndGray.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/AutFndGray.png"));
         menuAFND.setIcon(ico);
     }//GEN-LAST:event_menuAFNDMouseEntered
 
     private void menuAFNDMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAFNDMouseExited
-        Icon ico = new ImageIcon(LFStudio.class.getResource("AutFndBlack.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/AutFndBlack.png"));
         menuAFND.setIcon(ico);
     }//GEN-LAST:event_menuAFNDMouseExited
 
     private void menuAfdMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAfdMouseEntered
-        Icon ico = new ImageIcon(LFStudio.class.getResource("AutFdGray.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/AutFdGray.png"));
         menuAfd.setIcon(ico);
     }//GEN-LAST:event_menuAfdMouseEntered
 
     private void menuAfdMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAfdMouseExited
-        Icon ico = new ImageIcon(LFStudio.class.getResource("AutFdBlack.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/AutFdBlack.png"));
         menuAfd.setIcon(ico);
     }//GEN-LAST:event_menuAfdMouseExited
 
     private void menuPilhaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPilhaMouseEntered
-        Icon ico = new ImageIcon(LFStudio.class.getResource("AutPilhaGray.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/AutPilhaGray.png"));
         menuPilha.setIcon(ico);
     }//GEN-LAST:event_menuPilhaMouseEntered
 
     private void menuPilhaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPilhaMouseExited
-        Icon ico = new ImageIcon(LFStudio.class.getResource("AutPilhaBlack.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/AutPilhaBlack.png"));
         menuPilha.setIcon(ico);
     }//GEN-LAST:event_menuPilhaMouseExited
 
     private void menuRegXMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuRegXMouseEntered
-        Icon ico = new ImageIcon(LFStudio.class.getResource("GramRegGray.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/GramRegGray.png"));
         menuRegX.setIcon(ico);
     }//GEN-LAST:event_menuRegXMouseEntered
 
     private void menuRegXMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuRegXMouseExited
-        Icon ico = new ImageIcon(LFStudio.class.getResource("GramRegBlack.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/GramRegBlack.png"));
         menuRegX.setIcon(ico);
     }//GEN-LAST:event_menuRegXMouseExited
 
-    private void ExpressoesRegularesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExpressoesRegularesMouseEntered
-        Icon ico = new ImageIcon(LFStudio.class.getResource("ExpRegGray.png"));
-        ExpressoesRegulares.setIcon(ico);
-    }//GEN-LAST:event_ExpressoesRegularesMouseEntered
+    private void menuGramaticasRegularesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGramaticasRegularesMouseEntered
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/ExpRegGray.png"));
+        menuGramaticasRegulares.setIcon(ico);
+    }//GEN-LAST:event_menuGramaticasRegularesMouseEntered
 
-    private void ExpressoesRegularesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ExpressoesRegularesMouseExited
-        Icon ico = new ImageIcon(LFStudio.class.getResource("ExpRegBlack.png"));
-        ExpressoesRegulares.setIcon(ico);
-    }//GEN-LAST:event_ExpressoesRegularesMouseExited
+    private void menuGramaticasRegularesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGramaticasRegularesMouseExited
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/ExpRegBlack.png"));
+        menuGramaticasRegulares.setIcon(ico);
+    }//GEN-LAST:event_menuGramaticasRegularesMouseExited
 
     private void menuGLCMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGLCMouseEntered
-        Icon ico = new ImageIcon(LFStudio.class.getResource("GramLDCGray.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/GramLDCGray.png"));
         menuGLC.setIcon(ico);
     }//GEN-LAST:event_menuGLCMouseEntered
 
     private void menuGLCMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGLCMouseExited
-        Icon ico = new ImageIcon(LFStudio.class.getResource("GramLDCBlack.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/GramLDCBlack.png"));
         menuGLC.setIcon(ico);
     }//GEN-LAST:event_menuGLCMouseExited
 
     private void menuTuringMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTuringMouseEntered
-        Icon ico = new ImageIcon(LFStudio.class.getResource("MaqTuringGray.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/MaqTuringGray.png"));
         menuTuring.setIcon(ico);
     }//GEN-LAST:event_menuTuringMouseEntered
 
     private void menuTuringMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTuringMouseExited
-        Icon ico = new ImageIcon(LFStudio.class.getResource("MaqTuringBlack.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/MaqTuringBlack.png"));
         menuTuring.setIcon(ico);
     }//GEN-LAST:event_menuTuringMouseExited
 
@@ -681,17 +685,17 @@ public class LFStudio extends javax.swing.JFrame {
         return JanelaVisivel;
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel ExpressoesRegulares;
     private javax.swing.JPanel HomePage;
     private javax.swing.JPanel JanelaExecucao;
     private javax.swing.JPanel JanelaPrincipal;
     private javax.swing.JInternalFrame JanelaVisivel;
     private javax.swing.JPanel Menu;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel logo;
     private javax.swing.JLabel menuAFND;
     private javax.swing.JLabel menuAfd;
     private javax.swing.JLabel menuGLC;
+    private javax.swing.JLabel menuGramaticasRegulares;
     private javax.swing.JPanel menuPanel;
     private javax.swing.JLabel menuPilha;
     private javax.swing.JLabel menuRegX;
