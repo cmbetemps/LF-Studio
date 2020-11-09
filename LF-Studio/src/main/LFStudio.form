@@ -138,7 +138,7 @@
                         </Property>
                         <Property name="horizontalAlignment" type="int" value="0"/>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/main/assets/icons/logo.png"/>
+                          <Image iconType="3" name="/main/layout/icons/logo.png"/>
                         </Property>
                       </Properties>
                     </Component>
@@ -259,7 +259,7 @@
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/main/assets/layout/AutPilhaBlack.png"/>
+                              <Image iconType="3" name="/main/layout/images/AutPilhaBlack.png"/>
                             </Property>
                             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                               <Dimension value="[344, 539]"/>
@@ -287,7 +287,7 @@
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/main/assets/layout/ExpRegBlack.png"/>
+                              <Image iconType="3" name="/main/layout/images/ExpRegBlack.png"/>
                             </Property>
                             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                               <Dimension value="[344, 539]"/>
@@ -314,7 +314,7 @@
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/main/assets/layout/AutFdBlack.png"/>
+                              <Image iconType="3" name="/main/layout/images/AutFdBlack.png"/>
                             </Property>
                             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                               <Dimension value="[344, 539]"/>
@@ -342,7 +342,7 @@
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/main/assets/layout/AutFndBlack.png"/>
+                              <Image iconType="3" name="/main/layout/images/AutFndBlack.png"/>
                             </Property>
                             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                               <Dimension value="[344, 539]"/>
@@ -370,7 +370,7 @@
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/main/assets/icons/Webp.net-resizeimage.png"/>
+                              <Image iconType="3" name="/main/layout/icons/Webp.net-resizeimage.png"/>
                             </Property>
                             <Property name="horizontalTextPosition" type="int" value="0"/>
                             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
@@ -395,7 +395,7 @@
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/main/assets/layout/GramLDCBlack.png"/>
+                              <Image iconType="3" name="/main/layout/images/GramLDCBlack.png"/>
                             </Property>
                             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                               <Dimension value="[344, 539]"/>
@@ -422,7 +422,7 @@
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/main/assets/layout/GramRegBlack.png"/>
+                              <Image iconType="3" name="/main/layout/images/GramRegBlack.png"/>
                             </Property>
                             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                               <Dimension value="[344, 539]"/>
@@ -449,7 +449,7 @@
                             </Property>
                             <Property name="horizontalAlignment" type="int" value="2"/>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/main/assets/layout/MaqTuringBlack.png"/>
+                              <Image iconType="3" name="/main/layout/images/MaqTuringBlack.png"/>
                             </Property>
                             <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                               <Dimension value="[344, 539]"/>
@@ -466,7 +466,7 @@
                         <Component class="javax.swing.JLabel" name="jLabel3">
                           <Properties>
                             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                              <Image iconType="3" name="/main/assets/layout/peenchimento.png"/>
+                              <Image iconType="3" name="/main/layout/images/peenchimento.png"/>
                             </Property>
                           </Properties>
                         </Component>

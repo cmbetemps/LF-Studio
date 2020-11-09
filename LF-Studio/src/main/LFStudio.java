@@ -186,7 +186,7 @@ public class LFStudio extends javax.swing.JFrame {
 
         logo.setBackground(new java.awt.Color(28, 28, 28));
         logo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/assets/icons/logo.png"))); // NOI18N
+        logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/layout/icons/logo.png"))); // NOI18N
 
         javax.swing.GroupLayout HomePageLayout = new javax.swing.GroupLayout(HomePage);
         HomePage.setLayout(HomePageLayout);
@@ -230,7 +230,7 @@ public class LFStudio extends javax.swing.JFrame {
         menuPilha.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuPilha.setForeground(new java.awt.Color(255, 255, 255));
         menuPilha.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        menuPilha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/assets/layout/AutPilhaBlack.png"))); // NOI18N
+        menuPilha.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/layout/images/AutPilhaBlack.png"))); // NOI18N
         menuPilha.setMaximumSize(new java.awt.Dimension(344, 539));
         menuPilha.setOpaque(true);
         menuPilha.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -255,7 +255,7 @@ public class LFStudio extends javax.swing.JFrame {
         menuRegX.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuRegX.setForeground(new java.awt.Color(255, 255, 255));
         menuRegX.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        menuRegX.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/assets/layout/ExpRegBlack.png"))); // NOI18N
+        menuRegX.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/layout/images/ExpRegBlack.png"))); // NOI18N
         menuRegX.setMaximumSize(new java.awt.Dimension(344, 539));
         menuRegX.setOpaque(true);
         menuRegX.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -277,7 +277,7 @@ public class LFStudio extends javax.swing.JFrame {
         menuAfd.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuAfd.setForeground(new java.awt.Color(255, 255, 255));
         menuAfd.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        menuAfd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/assets/layout/AutFdBlack.png"))); // NOI18N
+        menuAfd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/layout/images/AutFdBlack.png"))); // NOI18N
         menuAfd.setMaximumSize(new java.awt.Dimension(344, 539));
         menuAfd.setOpaque(true);
         menuAfd.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -302,7 +302,7 @@ public class LFStudio extends javax.swing.JFrame {
         menuAFND.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuAFND.setForeground(new java.awt.Color(255, 255, 255));
         menuAFND.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        menuAFND.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/assets/layout/AutFndBlack.png"))); // NOI18N
+        menuAFND.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/layout/images/AutFndBlack.png"))); // NOI18N
         menuAFND.setMaximumSize(new java.awt.Dimension(344, 539));
         menuAFND.setOpaque(true);
         menuAFND.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -327,7 +327,7 @@ public class LFStudio extends javax.swing.JFrame {
         titleLFStudio.setFont(new java.awt.Font("Comic Sans MS", 0, 36)); // NOI18N
         titleLFStudio.setForeground(new java.awt.Color(255, 255, 255));
         titleLFStudio.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        titleLFStudio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/assets/icons/Webp.net-resizeimage.png"))); // NOI18N
+        titleLFStudio.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/layout/icons/Webp.net-resizeimage.png"))); // NOI18N
         titleLFStudio.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         titleLFStudio.setMaximumSize(new java.awt.Dimension(344, 539));
         titleLFStudio.setOpaque(true);
@@ -341,7 +341,7 @@ public class LFStudio extends javax.swing.JFrame {
         menuGLC.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuGLC.setForeground(new java.awt.Color(255, 255, 255));
         menuGLC.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        menuGLC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/assets/layout/GramLDCBlack.png"))); // NOI18N
+        menuGLC.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/layout/images/GramLDCBlack.png"))); // NOI18N
         menuGLC.setMaximumSize(new java.awt.Dimension(344, 539));
         menuGLC.setOpaque(true);
         menuGLC.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -363,7 +363,7 @@ public class LFStudio extends javax.swing.JFrame {
         menuGramaticasRegulares.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuGramaticasRegulares.setForeground(new java.awt.Color(255, 255, 255));
         menuGramaticasRegulares.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        menuGramaticasRegulares.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/assets/layout/GramRegBlack.png"))); // NOI18N
+        menuGramaticasRegulares.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/layout/images/GramRegBlack.png"))); // NOI18N
         menuGramaticasRegulares.setMaximumSize(new java.awt.Dimension(344, 539));
         menuGramaticasRegulares.setOpaque(true);
         menuGramaticasRegulares.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -385,7 +385,7 @@ public class LFStudio extends javax.swing.JFrame {
         menuTuring.setFont(new java.awt.Font("Comic Sans MS", 1, 16)); // NOI18N
         menuTuring.setForeground(new java.awt.Color(255, 255, 255));
         menuTuring.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        menuTuring.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/assets/layout/MaqTuringBlack.png"))); // NOI18N
+        menuTuring.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/layout/images/MaqTuringBlack.png"))); // NOI18N
         menuTuring.setMaximumSize(new java.awt.Dimension(344, 539));
         menuTuring.setOpaque(true);
         menuTuring.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -403,7 +403,7 @@ public class LFStudio extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/assets/layout/peenchimento.png"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/main/layout/images/peenchimento.png"))); // NOI18N
 
         javax.swing.GroupLayout menuPanelLayout = new javax.swing.GroupLayout(menuPanel);
         menuPanel.setLayout(menuPanelLayout);
@@ -500,142 +500,142 @@ public class LFStudio extends javax.swing.JFrame {
     }//GEN-LAST:event_menuPilhaMouseClicked
 
     private void menuAFNDMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAFNDMousePressed
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/AutFndWhite.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/AutFndWhite.png"));
         menuAFND.setIcon(ico);
     }//GEN-LAST:event_menuAFNDMousePressed
 
     private void menuAFNDMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAFNDMouseReleased
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/AutFndBlack.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/AutFndBlack.png"));
         menuAFND.setIcon(ico);
     }//GEN-LAST:event_menuAFNDMouseReleased
 
     private void menuAfdMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAfdMousePressed
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/AutFdWhite.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/AutFdWhite.png"));
         menuAfd.setIcon(ico);
     }//GEN-LAST:event_menuAfdMousePressed
 
     private void menuAfdMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAfdMouseReleased
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/AutFdBlack.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/AutFdBlack.png"));
         menuAfd.setIcon(ico);
     }//GEN-LAST:event_menuAfdMouseReleased
 
     private void menuPilhaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPilhaMousePressed
-       Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/AutPilhaWhite.png"));
+       Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/AutPilhaWhite.png"));
         menuPilha.setIcon(ico);
     }//GEN-LAST:event_menuPilhaMousePressed
 
     private void menuPilhaMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPilhaMouseReleased
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/AutPilhaBlack.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/AutPilhaBlack.png"));
         menuPilha.setIcon(ico);
     }//GEN-LAST:event_menuPilhaMouseReleased
 
     private void menuRegXMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuRegXMousePressed
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/GramRegWhite.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/GramRegWhite.png"));
         menuRegX.setIcon(ico);
     }//GEN-LAST:event_menuRegXMousePressed
 
     private void menuRegXMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuRegXMouseReleased
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/GramRegBlack.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/GramRegBlack.png"));
         menuRegX.setIcon(ico);
     }//GEN-LAST:event_menuRegXMouseReleased
 
     private void menuGramaticasRegularesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGramaticasRegularesMousePressed
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/ExpRegWhite.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/ExpRegWhite.png"));
         menuGramaticasRegulares.setIcon(ico);
     }//GEN-LAST:event_menuGramaticasRegularesMousePressed
 
     private void menuGramaticasRegularesMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGramaticasRegularesMouseReleased
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/ExpRegBlack.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/ExpRegBlack.png"));
         menuGramaticasRegulares.setIcon(ico);      
     }//GEN-LAST:event_menuGramaticasRegularesMouseReleased
 
     private void menuGLCMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGLCMousePressed
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/GramLDCWhite.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/GramLDCWhite.png"));
         menuGLC.setIcon(ico);
     }//GEN-LAST:event_menuGLCMousePressed
 
     private void menuGLCMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGLCMouseReleased
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/GramLDCBlack.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/GramLDCBlack.png"));
         menuGLC.setIcon(ico);
     }//GEN-LAST:event_menuGLCMouseReleased
 
     private void menuTuringMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTuringMousePressed
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/MaqTuringWhite.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/MaqTuringWhite.png"));
         menuTuring.setIcon(ico);
     }//GEN-LAST:event_menuTuringMousePressed
 
     private void menuTuringMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTuringMouseReleased
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/MaqTuringBlack.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/MaqTuringBlack.png"));
         menuTuring.setIcon(ico);
     }//GEN-LAST:event_menuTuringMouseReleased
 
     private void menuAFNDMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAFNDMouseEntered
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/AutFndGray.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/AutFndGray.png"));
         menuAFND.setIcon(ico);
     }//GEN-LAST:event_menuAFNDMouseEntered
 
     private void menuAFNDMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAFNDMouseExited
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/AutFndBlack.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/AutFndBlack.png"));
         menuAFND.setIcon(ico);
     }//GEN-LAST:event_menuAFNDMouseExited
 
     private void menuAfdMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAfdMouseEntered
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/AutFdGray.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/AutFdGray.png"));
         menuAfd.setIcon(ico);
     }//GEN-LAST:event_menuAfdMouseEntered
 
     private void menuAfdMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAfdMouseExited
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/AutFdBlack.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/AutFdBlack.png"));
         menuAfd.setIcon(ico);
     }//GEN-LAST:event_menuAfdMouseExited
 
     private void menuPilhaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPilhaMouseEntered
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/AutPilhaGray.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/AutPilhaGray.png"));
         menuPilha.setIcon(ico);
     }//GEN-LAST:event_menuPilhaMouseEntered
 
     private void menuPilhaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPilhaMouseExited
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/AutPilhaBlack.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/AutPilhaBlack.png"));
         menuPilha.setIcon(ico);
     }//GEN-LAST:event_menuPilhaMouseExited
 
     private void menuRegXMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuRegXMouseEntered
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/GramRegGray.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/GramRegGray.png"));
         menuRegX.setIcon(ico);
     }//GEN-LAST:event_menuRegXMouseEntered
 
     private void menuRegXMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuRegXMouseExited
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/GramRegBlack.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/GramRegBlack.png"));
         menuRegX.setIcon(ico);
     }//GEN-LAST:event_menuRegXMouseExited
 
     private void menuGramaticasRegularesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGramaticasRegularesMouseEntered
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/ExpRegGray.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/ExpRegGray.png"));
         menuGramaticasRegulares.setIcon(ico);
     }//GEN-LAST:event_menuGramaticasRegularesMouseEntered
 
     private void menuGramaticasRegularesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGramaticasRegularesMouseExited
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/ExpRegBlack.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/ExpRegBlack.png"));
         menuGramaticasRegulares.setIcon(ico);
     }//GEN-LAST:event_menuGramaticasRegularesMouseExited
 
     private void menuGLCMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGLCMouseEntered
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/GramLDCGray.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/GramLDCGray.png"));
         menuGLC.setIcon(ico);
     }//GEN-LAST:event_menuGLCMouseEntered
 
     private void menuGLCMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGLCMouseExited
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/GramLDCBlack.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/GramLDCBlack.png"));
         menuGLC.setIcon(ico);
     }//GEN-LAST:event_menuGLCMouseExited
 
     private void menuTuringMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTuringMouseEntered
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/MaqTuringGray.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/MaqTuringGray.png"));
         menuTuring.setIcon(ico);
     }//GEN-LAST:event_menuTuringMouseEntered
 
     private void menuTuringMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTuringMouseExited
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/assets/layout/MaqTuringBlack.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/MaqTuringBlack.png"));
         menuTuring.setIcon(ico);
     }//GEN-LAST:event_menuTuringMouseExited
 
