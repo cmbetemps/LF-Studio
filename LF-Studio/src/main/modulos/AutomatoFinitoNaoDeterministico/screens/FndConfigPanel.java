@@ -401,6 +401,7 @@ public class FndConfigPanel extends javax.swing.JPanel {
             contaEstadosFinais++;
         }
         
+        
         int [][][] matrizConversao = new int [FND_jTable1.getRowCount()][FND_jTable1.getColumnCount()-1][];
         for (int i = 0; i < FND_jTable1.getRowCount(); i++) {
             for (int j = 0; j < FND_jTable1.getColumnCount(); j++) {
@@ -409,19 +410,7 @@ public class FndConfigPanel extends javax.swing.JPanel {
                     matrizConversao[i][j][k] = mapaTransInverso.get(teste[i][j+1].split(",")[k]);
                 }
             }
-        }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        }    
         
         // matriz de vetores
         for (int i = 0; i < 10; i++) {
