@@ -11,7 +11,7 @@ import java.util.Vector;
 import javax.swing.JPanel;
 import javax.swing.table.DefaultTableModel;
 import main.LFStudio;
-import main.assets.CustomTable;
+import main.modulos.CustomTable;
 import main.modulos.AutomatoFinitoNaoDeterministico.controllers.FndController;
 import main.modulos.AutomatoFinitoNaoDeterministico.domain.models.Automato;
 

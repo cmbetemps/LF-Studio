@@ -6,7 +6,6 @@
 package main.modulos.AutomatoFinitoNaoDeterministico.controllers;
 
 import java.util.ArrayList;
-import main.modulos.AutomatoFinitoNaoDeterministico.domain.models.NaoDeterministico;
 
 /**
  *
@@ -14,8 +13,7 @@ import main.modulos.AutomatoFinitoNaoDeterministico.domain.models.NaoDeterminist
  */
 public class FndController {
         
-        private NaoDeterministico AFNDatual;
-
+//
         private ArrayList<String> recebeTexto(javax.swing.JTextField FND_TextFieldAlfabeto ){
         
         String testa = FND_TextFieldAlfabeto.getText();
