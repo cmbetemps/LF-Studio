@@ -109,6 +109,11 @@ public class FdConfigPanel extends javax.swing.JPanel {
         FD_TextFieldEstados.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
         FD_TextFieldEstados.setForeground(new java.awt.Color(0, 0, 0));
         FD_TextFieldEstados.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        FD_TextFieldEstados.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FD_TextFieldEstadosKeyReleased(evt);
+            }
+        });
 
         FD_TextFieldEstadoInicial1.setBackground(new java.awt.Color(255, 255, 255));
         FD_TextFieldEstadoInicial1.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
@@ -315,6 +320,24 @@ public class FdConfigPanel extends javax.swing.JPanel {
     private void FD_processarAutomatoBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FD_processarAutomatoBtnMouseExited
         FD_processarAutomatoBtn.setBackground(FD_processarAutomatoBtn.getBackground().darker().darker());
     }//GEN-LAST:event_FD_processarAutomatoBtnMouseExited
+
+    private void FD_TextFieldEstadosKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FD_TextFieldEstadosKeyReleased
+        String[] estados = FD_TextFieldEstados.getText().split(",");
+        String[] alfabeto = FD_TextFieldAlfabeto.getText().split(",");
+        Vector<String> vector = null;
+        CustomTable tableModel = new CustomTable();
+        tableModel.addColumn("Estados");
+        for (String rowName : estados) {
+            vector = new Vector<String>();
+            vector.add(rowName);
+            tableModel.insertRow(0, vector);
+        }
+        for (String columnName : alfabeto) {
+            tableModel.addColumn(columnName);
+        }
+        FD_jTable.setModel(tableModel);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FD_TextFieldEstadosKeyReleased
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
