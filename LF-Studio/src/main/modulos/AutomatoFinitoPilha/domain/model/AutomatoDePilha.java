@@ -28,9 +28,30 @@ public class AutomatoDePilha {
         this.pilha = new Pilha(pilhaInicial);
         this.transições = new Transições(matrizTransições);
     }
-
+    
     // Exemplo de utilização
+    /*
     public static void main(String[] args) {
+        String estados;
+        String alfabetoFita;
+        String alfabetoPilha;
+        String estadoInicial;
+        String estadosFinais;
+        String pilhaInicial = "";
+
+        String [][] matrizTransições = new String[][]{
+                {"s", "a", "", "s", "a"},
+                {"s", "a", "", "s", "b"}, // Só para criar uma árvore
+                {"s", "b", "", "s", "b"},
+                {"s", "c", "", "f", ""},
+                {"f", "a", "a", "f", ""},
+                {"f", "b", "b", "f", ""},
+        };
+        String palavra = "abcba";
+        
+         
+        
+        /*
         // Linguagem das palavras com qualquer número de a's e b's, seguidos por c, seguido pelo inverso da primeira parte
         String estados = "s,f";
         String alfabetoFita = "abc";
@@ -47,9 +68,9 @@ public class AutomatoDePilha {
                 {"f", "a", "a", "f", ""},
                 {"f", "b", "b", "f", ""},
         };
-
+        
         String palavra = "abcba";
-
+*/
 //  Outro autômato
 //        // Linguagem das palavras que possuem um número de a's seguido pelo mesmo número de b's;
 //        String estados = "p,q";
@@ -67,7 +88,7 @@ public class AutomatoDePilha {
 //        };
 //
 //        palavra = "aaabbb";
-
+/*
         // Inicializa um autômato com os dados inseridos
         AutomatoDePilha AutomatoDePilha = new AutomatoDePilha(alfabetoFita, alfabetoPilha, estadoInicial, estadosFinais, pilhaInicial, matrizTransições);
 
@@ -89,9 +110,10 @@ public class AutomatoDePilha {
             System.out.println("A palavra '"+ palavra +"' pertence a linguagem.");
         } else {
             System.out.println("A palavra '"+ palavra +"' não pertence a linguagem.");
-        }
+        }*/
+    /*
     }
-
+     */
     /** Verifica se a palavra pertence ou não ao conjunto de palavras reconhecidas pelo autômato
      * @param palavra String cujos elementos devem pertencer ao alfabeto de entrada
      * @param configurações objeto onde serão salvas as configurações da computação realizada

@@ -138,7 +138,7 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
         t_sip1.setBackground(new java.awt.Color(51, 51, 51));
         t_sip1.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
         t_sip1.setForeground(new java.awt.Color(255, 255, 255));
-        t_sip1.setText("Simbolos Iniciais");
+        t_sip1.setText("Estados");
 
         AFND2_jTable4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -274,13 +274,14 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Pilha_tituloPilha)
                             .addComponent(Pilha_subTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(Pilha_processarPilhaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(Pilha_salvarPilhaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(jPanel1Layout.createSequentialGroup()
-                                    .addGap(97, 97, 97)
-                                    .addComponent(Pilha_ConfigTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGap(91, 91, 91)))))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(97, 97, 97)
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(Pilha_processarPilhaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Pilha_salvarPilhaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(jPanel1Layout.createSequentialGroup()
+                                        .addComponent(Pilha_ConfigTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(91, 91, 91))))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(69, 69, 69)
                         .addComponent(Pilha_BodyConfig1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
@@ -357,7 +358,22 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_Pilha_processarPilhaBtnMouseEntered
 
     private void Pilha_processarPilhaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pilha_processarPilhaBtnMouseClicked
-        LFStudio.cl.show(JanelaExecucao, "pilhaProcessamentoPanel");        // TODO add your handling code here:
+        String estados;
+        String alfabetoFita;
+        String alfabetoPilha;
+        String estadoInicial;
+        String estadosFinais;
+        String pilhaInicial = "";
+
+        String [][] matrizTransições = new String[][]{
+                {"s", "a", "", "s", "a"},
+                {"s", "a", "", "s", "b"}, // Só para criar uma árvore
+                {"s", "b", "", "s", "b"},
+                {"s", "c", "", "f", ""},
+                {"f", "a", "a", "f", ""},
+                {"f", "b", "b", "f", ""},
+        };
+        LFStudio.cl.show(JanelaExecucao, "pilhaProcessamentoPanel");        
     }//GEN-LAST:event_Pilha_processarPilhaBtnMouseClicked
 
     private void r_a1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r_a1KeyReleased
@@ -379,11 +395,8 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JScrollPane AFND2_jScrollPane3;
     private javax.swing.JScrollPane AFND2_jScrollPane4;
-    private javax.swing.JTable AFND2_jTable3;
     private javax.swing.JTable AFND2_jTable4;
-    private javax.swing.JPanel Pilha_BodyConfig;
     private javax.swing.JPanel Pilha_BodyConfig1;
     private javax.swing.JLabel Pilha_ConfigTitulo1;
     private javax.swing.JLabel Pilha_processarPilhaBtn;
@@ -391,27 +404,16 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
     private javax.swing.JLabel Pilha_subTitulo;
     private javax.swing.JLabel Pilha_tituloPilha;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField r_a;
     private javax.swing.JTextField r_a1;
-    private javax.swing.JTextField r_ap;
     private javax.swing.JTextField r_ap1;
-    private javax.swing.JTextField r_ea;
     private javax.swing.JTextField r_ea1;
-    private javax.swing.JTextField r_ei;
     private javax.swing.JTextField r_ei1;
-    private javax.swing.JTextField r_sip;
     private javax.swing.JTextField r_sip1;
-    private javax.swing.JLabel t_a;
     private javax.swing.JLabel t_a1;
-    private javax.swing.JLabel t_ap;
     private javax.swing.JLabel t_ap1;
-    private javax.swing.JLabel t_ea;
     private javax.swing.JLabel t_ea1;
-    private javax.swing.JLabel t_ei;
     private javax.swing.JLabel t_ei1;
-    private javax.swing.JLabel t_sip;
     private javax.swing.JLabel t_sip1;
-    private javax.swing.JLabel t_tra;
     private javax.swing.JLabel t_tra1;
     // End of variables declaration//GEN-END:variables
 }
