@@ -118,6 +118,8 @@ public class LFStudio extends javax.swing.JFrame {
     
     public LFStudio() {
         super("LFPrototipo");
+        ImageIcon image = new ImageIcon(LFStudio.class.getResource("/main/layout/images/taskbarIcon.png"));
+        super.setIconImage(image.getImage());
         initComponents();
         initPanels();
         this.JanelaVisivel.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
