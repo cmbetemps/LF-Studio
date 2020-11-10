@@ -1,5 +1,5 @@
 package main.grupo03.model;
 
-public class ER {
+public class ER extends AppModel{
     
 }

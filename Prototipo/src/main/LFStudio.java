@@ -12,14 +12,22 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
+import main.grupo03.view.er.ERForm;
+import main.grupo03.view.er.ERHome;
 import main.grupo03.view.glc.GLCForm;
 import main.grupo03.view.glc.GLCHome;
+import main.grupo03.view.gr.GRForm;
+import main.grupo03.view.gr.GRHome;
 
 public class LFStudio extends javax.swing.JFrame {
     public static CardLayout cl;
     
     GLCHome glcHome;
     GLCForm glcForm;
+    GRHome grHome;
+    GRForm grForm;
+    ERHome erHome;
+    ERForm erForm;
     
     Color defaultColor = null;
     
@@ -36,10 +44,42 @@ public class LFStudio extends javax.swing.JFrame {
         glcForm.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
         JanelaExecucao.add(glcForm, "glcForm");
     }
+    
+    void setGrHome(){
+        grHome =  new GRHome(JanelaExecucao);
+        grHome.setBackground(new java.awt.Color(70, 71, 74));
+        grHome.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        JanelaExecucao.add(grHome, "grHome");
+    }
+    
+    void setGrForm(){
+        grForm =  new GRForm(JanelaExecucao);
+        grForm.setBackground(new java.awt.Color(70, 71, 74));
+        grForm.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        JanelaExecucao.add(grForm, "grForm");
+    }
+    
+    void setErHome(){
+        erHome =  new ERHome(JanelaExecucao);
+        erHome.setBackground(new java.awt.Color(70, 71, 74));
+        erHome.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        JanelaExecucao.add(erHome, "erHome");
+    }
+    
+    void setErForm(){
+        erForm =  new ERForm(JanelaExecucao);
+        erForm.setBackground(new java.awt.Color(70, 71, 74));
+        erForm.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        JanelaExecucao.add(erForm, "erForm");
+    }
      
     void initPanels(){
         setGlcHome();
         setGlcForm();
+        setGrHome();
+        setGrForm();
+        setErHome();
+        setErForm();
     }
     
     public LFStudio() {
@@ -174,6 +214,9 @@ public class LFStudio extends javax.swing.JFrame {
         menuRegX.setMaximumSize(new java.awt.Dimension(344, 539));
         menuRegX.setOpaque(true);
         menuRegX.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuRegXMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 menuRegXMouseEntered(evt);
             }
@@ -285,6 +328,9 @@ public class LFStudio extends javax.swing.JFrame {
         menuGramaticasRegulares.setMaximumSize(new java.awt.Dimension(344, 539));
         menuGramaticasRegulares.setOpaque(true);
         menuGramaticasRegulares.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuGramaticasRegularesMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 menuGramaticasRegularesMouseEntered(evt);
             }
@@ -515,7 +561,11 @@ public class LFStudio extends javax.swing.JFrame {
     private void menuPilhaMouseExited(java.awt.event.MouseEvent evt) {                                      
         Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/AutPilhaBlack.png"));
         menuPilha.setIcon(ico);
-    }                                     
+    }                
+    
+    private void menuRegXMouseClicked(java.awt.event.MouseEvent evt) {
+        cl.show(JanelaExecucao, "erHome");
+    }
 
     private void menuRegXMouseEntered(java.awt.event.MouseEvent evt) {                                      
         Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/GramRegGray.png"));
@@ -525,7 +575,11 @@ public class LFStudio extends javax.swing.JFrame {
     private void menuRegXMouseExited(java.awt.event.MouseEvent evt) {                                     
         Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/GramRegBlack.png"));
         menuRegX.setIcon(ico);
-    }                                    
+    }                  
+    
+    private void menuGramaticasRegularesMouseClicked(java.awt.event.MouseEvent evt) {
+        cl.show(JanelaExecucao, "grHome");
+    }
 
     private void menuGramaticasRegularesMouseEntered(java.awt.event.MouseEvent evt) {                                                     
         Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/ExpRegGray.png"));
@@ -538,7 +592,6 @@ public class LFStudio extends javax.swing.JFrame {
     }                                                   
 
     private void menuGLCMouseClicked(java.awt.event.MouseEvent evt) {
-        System.out.println("ola");
         cl.show(JanelaExecucao, "glcHome");
     }
     

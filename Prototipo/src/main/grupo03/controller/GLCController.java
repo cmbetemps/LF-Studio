@@ -1,5 +1,9 @@
 package main.grupo03.controller;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import main.grupo03.model.GLC;
 
@@ -8,11 +12,70 @@ import main.grupo03.model.GLC;
  * @author Grupo-03
  */
 public class GLCController {
+    
+    private String variaveis;
+    private String terminais;
+    private String regras;
+    private char raiz;
+    private String derivar;
 
     public GLCController() {
     }
     
-    public String teste () {
+    public void gerarGLC() {
+        
+    }
+
+    public String getVariaveis() {
+        return variaveis;
+    }
+
+    public void setVariaveis(String variaveis) {
+        this.variaveis = variaveis;
+    }
+
+    public String getTerminais() {
+        return terminais;
+    }
+
+    public void setTerminais(String terminais) {
+        this.terminais = terminais;
+    }
+
+    public String getRegras() {
+        return regras;
+    }
+
+    public void setRegras(String regras) {
+        this.regras = regras;
+    }
+
+    public char getRaiz() {
+        return raiz;
+    }
+
+    public void setRaiz(char raiz) {
+        this.raiz = raiz;
+    }
+
+    public String getDerivar() {
+        return derivar;
+    }
+
+    public void setDerivar(String derivar) {
+        this.derivar = derivar;
+    }
+
+    @Override
+    public String toString() {
+        return "GLCController{" + "variaveis=" + variaveis + 
+                ", terminais=" + terminais + 
+                ", regras=" + regras + 
+                ", raiz=" + raiz + 
+                ", derivar=" + derivar + '}';
+    }
+    
+    public void teste () {
         ArrayList<Character> variaveis = new ArrayList();
         ArrayList<Character> terminais = new ArrayList();
         ArrayList<String> regras = new ArrayList();
@@ -50,12 +113,21 @@ public class GLCController {
         try {
             GLC testeGLC = new GLC(variaveis,terminais,regras,raiz);
             testeGLC.derivar("aa*a+c");
-            // System.out.println(testeGLC.exportar(null, null, testeGLC));
-            return "";
+            Gson json = new Gson();
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            String strJson = json.toJson(testeGLC, GLC.class);
+            try (FileWriter writer = new FileWriter("staff.json")) {
+                gson.toJson(testeGLC, writer);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            System.out.println(strJson);
+            System.out.println(testeGLC.toString());
+            
         } catch (Exception e) {
             System.out.println(e);
         }
-        return null;
+        
 
     }
     

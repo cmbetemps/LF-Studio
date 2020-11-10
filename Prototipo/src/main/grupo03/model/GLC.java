@@ -1,14 +1,11 @@
 package main.grupo03.model;
 
-import com.google.gson.Gson;
-import com.google.gson.GsonBuilder;
 import java.util.ArrayList;
 
 // Revisado por Thiago,Charles,Pedro, Kelvin e Ritiele - 27/09 | 20:00 - 20:45
 // Parcialmente comentado por Pedro - 04/10 - 15:30 - 19:20
 public class GLC extends AppModel {
     private final Tooltip tipo = Tooltip.GLC;
-    private Gson json;
 
     private ArrayList<Character> variaveis;   // "Variáveis" contêm terminais e variáveis | todas as variáveis e terminais que o usuário digitou
     private ArrayList<Character> terminais;   // "Terminais" contêm todos os simbolos terminais descritos pelo usuário | Todos os simbolos terminais digitados pelo usuário
@@ -16,7 +13,7 @@ public class GLC extends AppModel {
     private Character raiz;                   // "Raiz" é equivalente ao "Símbolo terminal", também enviado pelo usuário, o simbolo terminal é a "raiz" da gramática, podendo destrinchar em todos os terminais
     private String[][] regrasMatriz;          // Local que será utilizado para salvar as regras, basicamente uma formatação das regras recebidas pela lista de string em um formato utilizável
     private ArrayList<String> resultado;      // Resultado esperado após execução
-    private boolean statusOK = false;         // Se resultado obtido
+    private transient boolean statusOK = false;         // Se resultado obtido
 
 	/*
 	O construtor da Classe, é onde será recebida a gramática que o usuário inseriu e feito suas atribuições.
