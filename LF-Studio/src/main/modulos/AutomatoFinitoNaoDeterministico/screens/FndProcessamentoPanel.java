@@ -6,6 +6,7 @@
 package main.modulos.AutomatoFinitoNaoDeterministico.screens;
 
 import main.modulos.AutomatoFinitoNaoDeterministico.controllers.FndController;
+import main.modulos.AutomatoFinitoNaoDeterministico.controllers.Injection;
 
 /**
  *
@@ -35,6 +36,8 @@ public class FndProcessamentoPanel extends javax.swing.JPanel {
         AFND3_Titulo4 = new javax.swing.JLabel();
         AFND3_TextFieldEntrada1 = new javax.swing.JTextField();
         processamento2 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Retorno = new javax.swing.JTextArea();
         validarPalavraFND = new javax.swing.JLabel();
         AFND3_Titulo5 = new javax.swing.JLabel();
         AFND3_Titulo6 = new javax.swing.JLabel();
@@ -58,17 +61,28 @@ public class FndProcessamentoPanel extends javax.swing.JPanel {
             }
         });
 
-        processamento2.setBackground(new java.awt.Color(196, 196, 196));
+        processamento2.setBackground(new java.awt.Color(0, 0, 0));
+
+        Retorno.setBackground(new java.awt.Color(0, 0, 0));
+        Retorno.setColumns(20);
+        Retorno.setForeground(new java.awt.Color(255, 255, 255));
+        Retorno.setRows(5);
+        jScrollPane1.setViewportView(Retorno);
 
         javax.swing.GroupLayout processamento2Layout = new javax.swing.GroupLayout(processamento2);
         processamento2.setLayout(processamento2Layout);
         processamento2Layout.setHorizontalGroup(
             processamento2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 423, Short.MAX_VALUE)
+            .addGroup(processamento2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 411, Short.MAX_VALUE)
+                .addContainerGap())
         );
         processamento2Layout.setVerticalGroup(
             processamento2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 321, Short.MAX_VALUE)
+            .addGroup(processamento2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE))
         );
 
         validarPalavraFND.setBackground(new java.awt.Color(51, 51, 51));
@@ -79,6 +93,9 @@ public class FndProcessamentoPanel extends javax.swing.JPanel {
         validarPalavraFND.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         validarPalavraFND.setOpaque(true);
         validarPalavraFND.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                validarPalavraFNDMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 validarPalavraFNDMouseEntered(evt);
             }
@@ -155,13 +172,26 @@ public class FndProcessamentoPanel extends javax.swing.JPanel {
         validarPalavraFND.setBackground(validarPalavraFND.getBackground().darker().darker());
     }//GEN-LAST:event_validarPalavraFNDMouseExited
 
+    private void validarPalavraFNDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_validarPalavraFNDMouseClicked
+        Injection.getAutomato().config.clear();
+        Injection.getAutomato().reconhecer(AFND3_TextFieldEntrada1.getText());
+        StringBuilder text = new StringBuilder();
+        for(String x: Injection.getAutomato().config){
+            text.append(x);
+            text.append("\n");
+        }
+        Retorno.setText(text.toString());
+    }//GEN-LAST:event_validarPalavraFNDMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField AFND3_TextFieldEntrada1;
     private javax.swing.JLabel AFND3_Titulo4;
     private javax.swing.JLabel AFND3_Titulo5;
     private javax.swing.JLabel AFND3_Titulo6;
+    private javax.swing.JTextArea Retorno;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel processamento2;
     private javax.swing.JLabel validarPalavraFND;
     // End of variables declaration//GEN-END:variables

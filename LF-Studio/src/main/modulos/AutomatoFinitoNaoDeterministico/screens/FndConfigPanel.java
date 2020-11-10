@@ -12,6 +12,7 @@ import java.util.Vector;
 import main.LFStudio;
 import main.layout.CustomTable;
 import main.modulos.AutomatoFinitoNaoDeterministico.controllers.FndController;
+import main.modulos.AutomatoFinitoNaoDeterministico.controllers.Injection;
 import main.modulos.AutomatoFinitoNaoDeterministico.domain.models.NaoDeterministico;
 
 /**
@@ -131,6 +132,11 @@ public class FndConfigPanel extends javax.swing.JPanel {
         FND_TextFieldEstados.setForeground(new java.awt.Color(0, 0, 0));
         FND_TextFieldEstados.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         FND_TextFieldEstados.setText("q0,q1,q2,q3");
+        FND_TextFieldEstados.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FND_TextFieldEstadosActionPerformed(evt);
+            }
+        });
         FND_TextFieldEstados.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 FND_TextFieldEstadosKeyReleased(evt);
@@ -354,6 +360,10 @@ public class FndConfigPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_FND_TextFieldAlfabetoActionPerformed
 
+    private void FND_TextFieldEstadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FND_TextFieldEstadosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FND_TextFieldEstadosActionPerformed
+
     /**
      * @author Michel Silva Construtor com conversão de matriz int para char
      * para um automato nao deterministico com transição espontanea
@@ -404,26 +414,21 @@ public class FndConfigPanel extends javax.swing.JPanel {
         
         int [][][] matrizConversao = new int [FND_jTable1.getRowCount()][FND_jTable1.getColumnCount()-1][];
         for (int i = 0; i < FND_jTable1.getRowCount(); i++) {
-            for (int j = 0; j < FND_jTable1.getColumnCount(); j++) {
-                matrizConversao[i][j] = new int[teste[i][j+1].split(",").length];
-                for (int k = 0; k < teste[i][j+1].split(",").length; k++) {
+            for (int j = 0; j < FND_jTable1.getColumnCount() - 1; j++) {
+                if(teste[i][j+1] != null){
+                    matrizConversao[i][j] = new int[teste[i][j+1].split(",").length];
+                }else{
+                    matrizConversao[i][j] = new int[0];
+                }
+                for (int k = 0; k < matrizConversao[i][j].length; k++) {
                     matrizConversao[i][j][k] = mapaTransInverso.get(teste[i][j+1].split(",")[k]);
                 }
             }
         }    
         
-        // matriz de vetores
-        for (int i = 0; i < 10; i++) {
-            
-            for (int j = 0; j < 10; j++) {
-                //vetorqualquer = blblala;
-                //matriz[i][j] = vetorqulquer[0]
-               
-            }
-        }
-        
-
-        return null;
+        NaoDeterministico automato = new NaoDeterministico(chaveEstadosFinais, chaveEstado, matrizConversao, alfabetoInserido.replaceAll(",", "").trim());
+        Injection.setAutomato(chaveEstadosFinais, chaveEstado, matrizConversao, alfabetoInserido.replaceAll(",", "").trim());
+        return automato;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
