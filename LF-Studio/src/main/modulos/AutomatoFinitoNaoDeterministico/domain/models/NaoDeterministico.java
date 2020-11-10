@@ -1,10 +1,10 @@
 
 package main.modulos.AutomatoFinitoNaoDeterministico.domain.models;
-import main.modulos.AutomatoFinitoNaoDeterministico.domain.exceptions.IsNotBelongOnLanguage;
-import main.modulos.AutomatoFinitoNaoDeterministico.domain.utils.IOValidator;
 
 import java.util.ArrayList;
 import java.util.List;
+import main.modulos.AutomatoFinitoNaoDeterministico.domain.exceptions.IsNotBelongOnLanguage;
+import main.modulos.AutomatoFinitoNaoDeterministico.domain.utils.IOValidator;
 
 public class NaoDeterministico extends Automato {
      static IOValidator validator = new IOValidator();
@@ -41,12 +41,14 @@ public class NaoDeterministico extends Automato {
      * @param fitaDeEntrada
      * @return
      */
-    public boolean reconhecer(String fitaDeEntrada)   {
+     
+     //essa
+    public boolean reconhecer(String fitaDeEntrada){
         this.fitaDeEntrada = fitaDeEntrada;
         boolean aceita = false;
         try {
             aceita = controleFinito(fitaDeEntrada);
-        } catch (IsNotBelongOnLanguage isNotBelongOnLanguage) {
+        }catch(IsNotBelongOnLanguage isNotBelongOnLanguage){
             isNotBelongOnLanguage.printStackTrace();
         }
         return aceita;
@@ -78,13 +80,13 @@ public class NaoDeterministico extends Automato {
     private boolean controleFinito(String entrada) throws IsNotBelongOnLanguage {
         if(!isValidEntrada(entrada)) return false;
         estadoInicial  = 0;
-        int [] estados ={estadoInicial};
+        int [] estados = {estadoInicial};
         int [] estadosFinais = testa(entrada, estados, 0);
         if(aceita(estadosFinais)){
-            System.out.println("aceita");
+            config.add("Aceita");
             return true;
         }else {
-            System.out.println("rejeita");
+            config.add("Rejeitada");
             return false;
         }
     }
@@ -96,6 +98,7 @@ public class NaoDeterministico extends Automato {
      * @param posicao
      * @return
      */
+     //essa
     private int[] testa(String entrada, int[] estados, int posicao) {
         if(posicao == entrada.length()){  //chegou no final
             imprimeCI(entrada, estados[0], posicao);
@@ -103,12 +106,11 @@ public class NaoDeterministico extends Automato {
                 return estados;
             }
             config.add("<<backTrack>>Fim da cadeia");
-            System.out.println("<<backtrack>> Fim da cadeia");
             return null;
         }
         /**                                     Matriz de transição                                            0       1
          *                                      Cada linha é equivalente a um estado                    q0  (q0,q1)   (q0)
-         *                                      Cada coluna equivale a um possivel elemento de entrada  q1  (q0)      (q1)
+         *                                      Cada coluna equivale a um possivel elemento de entrada q1  (q0)      (q1)
          *                                      Os novos estados se darão na terceira dimensão da matriz transicao[0][0][0]  =q0    transicao[0][0][1] = q1
          */
         int elemento = Integer.parseInt(entrada.substring(posicao, posicao+1));
@@ -119,10 +121,9 @@ public class NaoDeterministico extends Automato {
             if(novosEstados.length == 0){
                 imprimeCI(entrada, i, posicao);
                 config.add("<<backTrack>> sem transicoes");
-                System.out.println("<<backTrack>> sem transicoes");
                 return null;
             }
-            System.out.println("Estado " + i);
+
             int[] transicoes = testa(entrada, novosEstados, posicao + 1);
             if(transicoes != null) return transicoes ;
         }
@@ -136,6 +137,7 @@ public class NaoDeterministico extends Automato {
      * @param estados
      * @return
      */
+     //essa
     private boolean aceita(int[] estados) {
         if(estados == null) return false;
         for (int i : estados){
@@ -154,9 +156,10 @@ public class NaoDeterministico extends Automato {
      * @param estado
      * @param posicao
      */
+     //essa
     private void imprimeCI(String entrada,int estado,  int posicao) {
-        config.add(entrada.substring(0, posicao) + "[q" +  estado+ "]" + entrada.substring(posicao) + "");
-        System.out.println(entrada.substring(0, posicao) + "[q" +  estado+ "]" + entrada.substring(posicao));
+        config.add(entrada.substring(0, posicao) + "[" +  estado+ "]" + entrada.substring(posicao) + "");
+
     }
 
 }

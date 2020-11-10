@@ -108,30 +108,22 @@ public class FndConfigPanel extends javax.swing.JPanel {
 
         FND_jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"q0", "q0,q1", "q0,q2"},
-                {"q1", "q3", null},
-                {"q2", null, "q3"},
-                {"q3", "q3", null}
+                {"coxinha", "coxinha,bacon", "coxinha,salada"},
+                {"bacon", "arroz", null},
+                {"salada", null, "arroz"},
+                {"arroz", "arroz", null}
             },
             new String [] {
                 "Estados", "0", "1"
             }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        ));
         FND_jScrollPane2.setViewportView(FND_jTable1);
 
         FND_TextFieldEstados.setBackground(new java.awt.Color(255, 255, 255));
         FND_TextFieldEstados.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         FND_TextFieldEstados.setForeground(new java.awt.Color(0, 0, 0));
         FND_TextFieldEstados.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        FND_TextFieldEstados.setText("q0,q1,q2,q3");
+        FND_TextFieldEstados.setText("coxinha,bacon,salada,arroz");
         FND_TextFieldEstados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FND_TextFieldEstadosActionPerformed(evt);
@@ -147,14 +139,19 @@ public class FndConfigPanel extends javax.swing.JPanel {
         FND_TextFieldEstadoInicial.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         FND_TextFieldEstadoInicial.setForeground(new java.awt.Color(0, 0, 0));
         FND_TextFieldEstadoInicial.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        FND_TextFieldEstadoInicial.setText("q0");
+        FND_TextFieldEstadoInicial.setText("coxinha");
 
         FND_TextFieldEstadosFinais.setBackground(new java.awt.Color(255, 255, 255));
         FND_TextFieldEstadosFinais.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         FND_TextFieldEstadosFinais.setForeground(new java.awt.Color(0, 0, 0));
         FND_TextFieldEstadosFinais.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        FND_TextFieldEstadosFinais.setText("q3");
+        FND_TextFieldEstadosFinais.setText("arroz");
         FND_TextFieldEstadosFinais.setToolTipText("");
+        FND_TextFieldEstadosFinais.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                FND_TextFieldEstadosFinaisActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout FND_BodyConfigLayout = new javax.swing.GroupLayout(FND_BodyConfig);
         FND_BodyConfig.setLayout(FND_BodyConfigLayout);
@@ -364,6 +361,10 @@ public class FndConfigPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_FND_TextFieldEstadosActionPerformed
 
+    private void FND_TextFieldEstadosFinaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FND_TextFieldEstadosFinaisActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FND_TextFieldEstadosFinaisActionPerformed
+
     /**
      * @author Michel Silva Construtor com conversão de matriz int para char
      * para um automato nao deterministico com transição espontanea
@@ -427,6 +428,7 @@ public class FndConfigPanel extends javax.swing.JPanel {
         }    
         
         NaoDeterministico automato = new NaoDeterministico(chaveEstadosFinais, chaveEstado, matrizConversao, alfabetoInserido.replaceAll(",", "").trim());
+        Injection.setMap((HashMap) mapaTransicao);
         Injection.setAutomato(chaveEstadosFinais, chaveEstado, matrizConversao, alfabetoInserido.replaceAll(",", "").trim());
         return automato;
     }

@@ -5,6 +5,7 @@
  */
 package main.modulos.AutomatoFinitoNaoDeterministico.screens;
 
+import java.util.HashMap;
 import main.modulos.AutomatoFinitoNaoDeterministico.controllers.FndController;
 import main.modulos.AutomatoFinitoNaoDeterministico.controllers.Injection;
 
@@ -13,8 +14,10 @@ import main.modulos.AutomatoFinitoNaoDeterministico.controllers.Injection;
  * @author michel
  */
 public class FndProcessamentoPanel extends javax.swing.JPanel {
+
     javax.swing.JPanel JanelaExecucao;
     FndController controller = new FndController();
+
     /**
      * Creates new form test1
      */
@@ -173,10 +176,16 @@ public class FndProcessamentoPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_validarPalavraFNDMouseExited
 
     private void validarPalavraFNDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_validarPalavraFNDMouseClicked
+        String temp = "";
+        HashMap map = Injection.getMap();
         Injection.getAutomato().config.clear();
         Injection.getAutomato().reconhecer(AFND3_TextFieldEntrada1.getText());
         StringBuilder text = new StringBuilder();
-        for(String x: Injection.getAutomato().config){
+        for (String x : Injection.getAutomato().config) {
+            if (x.indexOf("[") != -1) {
+                temp = x.substring(x.indexOf("["), x.indexOf("]") + 1).replace("[", "").replace("]", "");
+                x = x.replace("[" + temp + "]", "[" + Injection.getMap().get(Integer.valueOf(temp)) + "]");
+            }
             text.append(x);
             text.append("\n");
         }
