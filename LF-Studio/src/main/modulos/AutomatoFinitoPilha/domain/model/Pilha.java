@@ -3,47 +3,90 @@ package main.modulos.AutomatoFinitoPilha.domain.model;
 import java.util.Stack;
 
 public class Pilha {
-    Stack<String> pilha = new Stack<>();
-    
-    public Pilha(String simboloinicial) {                                       // recebo string como argumento e insiro
-        if(simboloinicial.isEmpty()){                                           // como primeiro elemento da pilha
+    Stack<String> pilha;
+
+    /**
+     * Construtor da Pilha
+     *
+     * @param simboloInicial simbolo que iniciará na pilha
+     **/
+    public Pilha(String simboloInicial) {
+        pilha = new Stack<>();
+        if (simboloInicial.isEmpty()) {
         } else {
-            pilha.add(simboloinicial);
+            pilha.add(simboloInicial);
         }
     }
-    
-    public boolean comparar(String pilhatransicaosimbolo) {                     // retorno "true" caso pilha e argumento
-        if(pilhatransicaosimbolo.isEmpty() && pilha.isEmpty()) {                // da matriz são vazios
-            return true;
-        } else {
-            return pilha.peek().equals(pilhatransicaosimbolo);                  // retorno "true" caso topo da pilha
-        }                                                                       // seja igual argumento da matriz
+
+    /**
+     * Construtor de cópia
+     *
+     * @param copia Pilha a ser copiada
+     * @return a cópia do objeto
+     **/
+    public Pilha(Pilha copia) {
+        this.pilha = (Stack<String>) copia.pilha.clone();
     }
-    
-    public void empilhar(String pilhaempilharsimbolo) {                         // recebo string da matriz e converto em
-        String[] auxiliar = pilhaempilharsimbolo.split("");                     // array, adiciono cada elemento
-        for(int x = 0; x < pilhaempilharsimbolo.length(); x++) {                // do array no topo da pilha
+
+    /**
+     * Verifica se o topo da pilha é igual a entrada da função de transição
+     *
+     * @param pilhaTransição entrada da função de transição
+     * @return true ou false para igual ou não
+     **/
+    public boolean comparar(String pilhaTransição) {
+        // Se não houver símbolo na função de transição, significa que não importa o que
+        // há na pilha
+        if (pilhaTransição.isEmpty()) {
+            return true;
+        } else if (!pilhaTransição.isEmpty() && pilha.isEmpty()) {
+            return false;
+        } else {
+            return pilha.peek().equals(pilhaTransição);
+        }
+    }
+
+    /**
+     * Empilha na pilha o que constar na função de transição
+     *
+     * @param pilhaEmpilhar entrada da função de transição a ser empilhada
+     **/
+    public void empilhar(String pilhaEmpilhar) {
+        String[] auxiliar = pilhaEmpilhar.split("");
+        for (int x = 0; x < pilhaEmpilhar.length(); x++) {
             pilha.add(auxiliar[x]);
         }
     }
-    
-    public void consumir() {                                                    // caso a pilha não seteja vazia, 
-        if(pilha.isEmpty()) {                                                   // consumo o elemento no topo da pilha
-        } else {
-            pilha.pop();
+
+    /**
+     * Consome da pilha
+     *
+     * @param pilhaConsumir entrada da função de transição que será consumida da
+     *                      pilha
+     **/
+    public void consumir(String pilhaConsumir) {
+        if (!pilha.isEmpty()) {
+            for (int x = 0; x < pilhaConsumir.length(); x++) {
+                pilha.pop();
+            }
         }
     }
-    
-    public boolean pertence() {                                                 // retorno "true" caso minha pilha
-        return pilha.isEmpty();                                                 // esteja vazia ao fim das transições
+
+    /**
+     * Verifica se a pilha está vazia - Requisito para estado final
+     *
+     * @return true ou false para vazio ou não
+     **/
+    public boolean pertence() {
+        return pilha.isEmpty();
     }
-    
-    @Override                                                                   // função override para receber conteúdo
-    public String toString() {                                                  // da minha pilha ao invés da localização
-        if(pilha.isEmpty()){
+
+    @Override
+    public String toString() {
+        if (pilha.isEmpty()) {
             return ("[]");
-        } else{
+        } else {
             return pilha.toString();
         }
-    } 
+    }
 }

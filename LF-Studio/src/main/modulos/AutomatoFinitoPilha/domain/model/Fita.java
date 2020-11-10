@@ -1,35 +1,63 @@
 package main.modulos.AutomatoFinitoPilha.domain.model;
 
-import java.util.LinkedList;
-import java.util.Queue;
-        
+import java.util.*;
+
 public class Fita {
     Queue<String> fita = new LinkedList<>();
-    
-    public Fita(String palavrainicial) {                                        // divido minha string da palavra para 
-        String[] auxiliar = palavrainicial.split("");                           // reconhecer em um array
-        for(int x = 0; x < palavrainicial.length(); x++) {                      // adiciono cada elemento do array numa
-            fita.add(auxiliar[x]);                                              // lista encadeada
+
+    /** Construtor da Fita
+     * @param palavra String que será inserida na fita
+     **/
+    public Fita(String palavra) {
+        String[] auxiliar = palavra.split("");
+        for(int x = 0; x < palavra.length(); x++) {
+            fita.add(auxiliar[x]);
         }
     }
-    
-    public boolean comparar(String fitatransicaosimbolo) {                      // retorno "true" se o primeiro elemento
-        return fita.peek().equals(fitatransicaosimbolo);                        // da lista é igual valor que vem como
-    }                                                                           // argumento da matriz transições
-    
-    public void consumir() {                                                    // caso a lista não esteja vazia, 
-        if(fita.isEmpty()) {                                                    // consumo o primeiro elemento da lista
+
+    /** Construtor cópia
+     * @param copia Fita a ser copiada
+     * @return a cópia do objeto
+     **/
+    public Fita(Fita copia) {
+        this.fita = new LinkedList<>(copia.fita);
+    }
+
+    /** Compara a fita com a entrada da função de transição
+     * @param fitaTransição entrada a ser comparada
+     * @return a cópia do objeto
+     **/
+    public boolean comparar(String fitaTransição) {
+        String fitaStr = String.join("", Arrays.asList(fita.toArray(new String[0])));
+
+        if(fita.isEmpty()){
+            return false;
         } else {
-            fita.remove();
+            return fitaStr.startsWith(fitaTransição);
         }
     }
-    
-    public boolean pertence() {                                                 // retorno "true" caso minha lista 
-        return fita.isEmpty();                                                  // esteja vazia ao fim das transições
+
+    /** Consome a fita
+     * @param fitaConsumir String lida na entrada
+     **/
+    public void consumir(String fitaConsumir) {
+        // Consome a quantidade de caracteres lidos na entrada
+        if(!fita.isEmpty()) {
+            for(int i = 0; i < fitaConsumir.length(); i++) {
+                fita.remove();
+            }
+        }
+    }
+
+    /** Verifica se a fita está vazia - Requisito para estado final
+     * @return true ou false para pertence ou não
+     **/
+    public boolean pertence() {
+        return fita.isEmpty();
     }
     
-    @Override                                                                   // função overridepra receber conteúdo
-    public String toString() {                                                  // da minha lista ao invés da localização
+    @Override
+    public String toString() {
         if(fita.isEmpty()){
             return ("[]");
         } else{
