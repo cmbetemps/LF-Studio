@@ -1,0 +1,14 @@
+Dimensões das Páginas
+ER - 851x625
+GR - 851x561
+GLC - 851x561
+
+Informações Gerais:
+
+Temas de Cores:
+Background - [54,54,54]
+Adicionais - [79,79,79]
+Textos - [240,240,240] / [0,0,0]
+
+Fonte: OCR A Extended
+Tamanhos: 18 e 36
