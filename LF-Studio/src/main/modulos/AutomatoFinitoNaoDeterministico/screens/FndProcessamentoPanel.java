@@ -48,6 +48,7 @@ public class FndProcessamentoPanel extends javax.swing.JPanel {
         setBackground(new java.awt.Color(28, 28, 28));
 
         jPanel1.setBackground(new java.awt.Color(28, 28, 28));
+        jPanel1.setPreferredSize(new java.awt.Dimension(553, 633));
 
         AFND3_Titulo4.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 36)); // NOI18N
         AFND3_Titulo4.setForeground(new java.awt.Color(255, 255, 255));
