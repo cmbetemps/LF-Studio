@@ -92,15 +92,16 @@ public class PilhaInicioPanel extends javax.swing.JPanel {
         pilhaTitle.setLayout(pilhaTitleLayout);
         pilhaTitleLayout.setHorizontalGroup(
             pilhaTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PILHA_LabelNovoAutomato4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(pilhaTitleLayout.createSequentialGroup()
                 .addGap(108, 108, 108)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(113, Short.MAX_VALUE))
             .addGroup(pilhaTitleLayout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(pilhaTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(PILHA_LabelAutomatoFND4)
+                    .addComponent(PILHA_LabelNovoAutomato4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(pilhaTitleLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(PILHA_LabelAutomatoFND4))
                     .addComponent(PILHA_LabelImportarAutomato4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
