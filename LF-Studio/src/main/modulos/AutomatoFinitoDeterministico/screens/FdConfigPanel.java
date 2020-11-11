@@ -34,6 +34,7 @@ public class FdConfigPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        FDAutomato = new javax.swing.JPanel();
         FD_BodyConfig = new javax.swing.JPanel();
         FD_LabelAlfabeto = new javax.swing.JLabel();
         FD_LabelEstadosFinais = new javax.swing.JLabel();
@@ -47,11 +48,13 @@ public class FdConfigPanel extends javax.swing.JPanel {
         FD_TextFieldEstadoInicial1 = new javax.swing.JTextField();
         FD_TextFieldEstadosFinais1 = new javax.swing.JTextField();
         FD_ConfigTitulo = new javax.swing.JLabel();
-        FD_salvarAutomatoBtn = new javax.swing.JLabel();
         FD_ConfigSubTitulo = new javax.swing.JLabel();
+        FD_salvarAutomatoBtn = new javax.swing.JLabel();
         FD_processarAutomatoBtn = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(28, 28, 28));
+
+        FDAutomato.setBackground(new java.awt.Color(28, 28, 28));
 
         FD_BodyConfig.setBackground(new java.awt.Color(28, 28, 28));
         FD_BodyConfig.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -94,13 +97,13 @@ public class FdConfigPanel extends javax.swing.JPanel {
 
         FD_jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {},
+                {},
+                {},
+                {}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+
             }
         ));
         FD_jScrollPane.setViewportView(FD_jTable);
@@ -176,7 +179,7 @@ public class FdConfigPanel extends javax.swing.JPanel {
                 .addGroup(FD_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(FD_TextFieldEstadoInicial1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(FD_LabelEstadoInicial1))
-                .addGap(10, 10, 10)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(FD_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(FD_LabelEstados)
                     .addComponent(FD_TextFieldEstados, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -191,6 +194,10 @@ public class FdConfigPanel extends javax.swing.JPanel {
         FD_ConfigTitulo.setForeground(new java.awt.Color(255, 255, 255));
         FD_ConfigTitulo.setText("<html><p style=\"padding-bottom: 16px;\">Autômato FD</p></html>");
         FD_ConfigTitulo.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
+
+        FD_ConfigSubTitulo.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        FD_ConfigSubTitulo.setForeground(new java.awt.Color(255, 255, 255));
+        FD_ConfigSubTitulo.setText("Configuração");
 
         FD_salvarAutomatoBtn.setBackground(new java.awt.Color(51, 51, 51));
         FD_salvarAutomatoBtn.setFont(new java.awt.Font("SansSerif", 1, 22)); // NOI18N
@@ -211,10 +218,6 @@ public class FdConfigPanel extends javax.swing.JPanel {
             }
         });
 
-        FD_ConfigSubTitulo.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
-        FD_ConfigSubTitulo.setForeground(new java.awt.Color(255, 255, 255));
-        FD_ConfigSubTitulo.setText("Configuração");
-
         FD_processarAutomatoBtn.setBackground(new java.awt.Color(51, 51, 51));
         FD_processarAutomatoBtn.setFont(new java.awt.Font("SansSerif", 1, 22)); // NOI18N
         FD_processarAutomatoBtn.setForeground(new java.awt.Color(255, 255, 255));
@@ -234,38 +237,56 @@ public class FdConfigPanel extends javax.swing.JPanel {
             }
         });
 
+        javax.swing.GroupLayout FDAutomatoLayout = new javax.swing.GroupLayout(FDAutomato);
+        FDAutomato.setLayout(FDAutomatoLayout);
+        FDAutomatoLayout.setHorizontalGroup(
+            FDAutomatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FDAutomatoLayout.createSequentialGroup()
+                .addGap(40, 40, 40)
+                .addGroup(FDAutomatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(FD_salvarAutomatoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FD_processarAutomatoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(FDAutomatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(FD_ConfigSubTitulo)
+                        .addComponent(FD_BodyConfig, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FDAutomatoLayout.createSequentialGroup()
+                .addContainerGap(179, Short.MAX_VALUE)
+                .addComponent(FD_ConfigTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(181, 181, 181))
+        );
+        FDAutomatoLayout.setVerticalGroup(
+            FDAutomatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(FDAutomatoLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(FD_ConfigTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(FD_ConfigSubTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(11, 11, 11)
+                .addComponent(FD_BodyConfig, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 22, Short.MAX_VALUE)
+                .addComponent(FD_salvarAutomatoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(FD_processarAutomatoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(56, 56, 56))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(FD_processarAutomatoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FD_salvarAutomatoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(FD_BodyConfig, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(FD_ConfigSubTitulo)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                            .addComponent(FD_ConfigTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(123, 123, 123))))
-                .addContainerGap(44, Short.MAX_VALUE))
+                .addGap(0, 0, 0)
+                .addComponent(FDAutomato, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(49, 49, 49)
-                .addComponent(FD_ConfigTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(FD_ConfigSubTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(FD_BodyConfig, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(FD_salvarAutomatoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(FD_processarAutomatoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(40, Short.MAX_VALUE))
+                .addGap(0, 0, 0)
+                .addComponent(FDAutomato, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        getAccessibleContext().setAccessibleParent(this);
     }// </editor-fold>//GEN-END:initComponents
 
     private void FD_TextFieldAlfabetoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FD_TextFieldAlfabetoActionPerformed
@@ -341,6 +362,7 @@ public class FdConfigPanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel FDAutomato;
     private javax.swing.JPanel FD_BodyConfig;
     private javax.swing.JLabel FD_ConfigSubTitulo;
     private javax.swing.JLabel FD_ConfigTitulo;
