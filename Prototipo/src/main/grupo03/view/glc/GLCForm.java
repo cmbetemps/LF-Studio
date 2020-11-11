@@ -1,15 +1,6 @@
 package main.grupo03.view.glc;
 
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import javax.swing.filechooser.FileFilter;
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
@@ -25,15 +16,16 @@ public class GLCForm extends javax.swing.JPanel {
     javax.swing.JPanel JanelaExecucao;
     
     GLCController glcNovo = new GLCController();
-
+    
     /**
-     * Creates new form ER
+     * Creates new form GLC
+     * @param janela
      */
     public GLCForm(javax.swing.JPanel janela) {
         this.JanelaExecucao = janela;
         initComponents();
         ER_Campo2.setDocument(new LimiteCaracteres(1));
-        ER_Campo2.setText("A");
+        limpaCampos();
     }
 
     /**
@@ -103,7 +95,7 @@ public class GLCForm extends javax.swing.JPanel {
         jLabel2.setName("Input"); // NOI18N
 
         ER_Campo1.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
-        ER_Campo1.setText("Ab,B,cX,D,t,...");
+        ER_Campo1.setText("E,I,a,b,c,+,*,(,)");
         ER_Campo1.setName("Campo_de_Texto"); // NOI18N
         ER_Campo1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -138,12 +130,12 @@ public class GLCForm extends javax.swing.JPanel {
 
         jLabel6.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel6.setText("Símbolo Terminal:");
+        jLabel6.setText("Símbolos Terminais:");
         jLabel6.setToolTipText("");
         jLabel6.setName("Input"); // NOI18N
 
         ER_Campo3.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
-        ER_Campo3.setText("Z");
+        ER_Campo3.setText("a,b,c,+,*,(,)");
         ER_Campo3.setName("Campo_de_Texto"); // NOI18N
         ER_Campo3.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -167,6 +159,7 @@ public class GLCForm extends javax.swing.JPanel {
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
+        jTextArea1.setText("E -> I|E*E,\nE -> E + E,\nE -> (E),\nE -> a,\nE -> c,\nI -> a,\nI -> b,\nI -> Ia,\nI -> Ib");
         jTextArea1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
                 jTextArea1FocusGained(evt);
@@ -187,7 +180,7 @@ public class GLCForm extends javax.swing.JPanel {
         jLabel9.setName("Input"); // NOI18N
 
         ER_Campo4.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
-        ER_Campo4.setText("AbbCaaOpP");
+        ER_Campo4.setText("aa*a+c");
         ER_Campo4.setName("Campo_de_Texto"); // NOI18N
         ER_Campo4.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -208,6 +201,11 @@ public class GLCForm extends javax.swing.JPanel {
 
         jTextArea2.setColumns(20);
         jTextArea2.setRows(5);
+        jTextArea2.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                jTextArea2FocusGained(evt);
+            }
+        });
         jScrollPane2.setViewportView(jTextArea2);
 
         ER_Enviar3.setBackground(new java.awt.Color(105, 105, 105));
@@ -238,33 +236,25 @@ public class GLCForm extends javax.swing.JPanel {
                             .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(18, 18, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                        .addGap(20, 20, 20)
-                                        .addComponent(jLabel10)))
-                                .addGap(195, 195, 195))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(ER_Enviar1)
-                                    .addComponent(ER_Enviar3))
-                                .addGap(254, 254, 254))))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel10)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(ER_Enviar3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(6, 6, 6)
-                        .addComponent(GLC_Titulo)
-                        .addContainerGap())))
+                        .addComponent(GLC_Titulo))
+                    .addComponent(ER_Enviar1, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(16, 16, 16)
                 .addComponent(GLC_Titulo)
-                .addGap(70, 70, 70)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(70, 70, 70)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(ER_Campo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -283,9 +273,9 @@ public class GLCForm extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(jLabel9))
                     .addGroup(layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(65, 65, 65)
                         .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -312,8 +302,7 @@ public class GLCForm extends javax.swing.JPanel {
     }//GEN-LAST:event_ER_Campo3ActionPerformed
 
     private void ER_Enviar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ER_Enviar1ActionPerformed
-        glcNovo.teste();
-        if (false) { // testeExport.isStatusOK()) {
+        if (glcNovo.isStatusOK()) {
             JFileChooser fileChooser = new JFileChooser();
             // fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
             fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
@@ -325,33 +314,24 @@ public class GLCForm extends javax.swing.JPanel {
             int result = fileChooser.showOpenDialog(this);
 
             if (result == JFileChooser.APPROVE_OPTION) {
-                // File selectedFile = fileChooser.getSelectedFile();
-                // String pathFile = selectedFile.getAbsolutePath().endsWith(".json");
                 String pathFile = fileChooser.getCurrentDirectory().toString() + "\\" + fileChooser.getSelectedFile().getName();
-                // FileWriter fileJson = new FileWriter( pathFile );
                 if (!fileChooser.getSelectedFile().getName().endsWith(".json")) {
                     pathFile += ".json";
                 }
-                System.out.println(pathFile);
-                try {
-                    FileWriter fileJson = new FileWriter( pathFile );
-                    BufferedWriter bw = new BufferedWriter( fileJson );
-                    bw.write("ola mundo");
-                    bw.newLine();
-                    bw.close();
-                    fileJson.close();
-                } catch (IOException ex) {
-                    Logger.getLogger(GLCForm.class.getName()).log(Level.SEVERE, null, ex);
-                }
+                // System.out.println(pathFile);
+                String export = glcNovo.exportarGLC(pathFile);
+                JOptionPane.showMessageDialog(this,
+                    export, //mensagem
+                    "Exportação", // titulo da janela 
+                    JOptionPane.INFORMATION_MESSAGE);
             }
-            if (result == JFileChooser.CANCEL_OPTION) {
-                System.out.println("You pressed cancel");
-            }
-            
+            // if (result == JFileChooser.CANCEL_OPTION) {
+                // System.out.println("You pressed cancel");
+            // }
         } else {
             JOptionPane.showMessageDialog(this,
                     "Houve um problema ao exportar o arquivo!", //mensagem
-                    "Erro de Exportação", // titulo da janela 
+                    "Exportação", // titulo da janela 
                     JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_ER_Enviar1ActionPerformed
@@ -362,7 +342,20 @@ public class GLCForm extends javax.swing.JPanel {
 
     private void ER_Enviar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ER_Enviar3ActionPerformed
         if (validaCampos()) {
-            
+            glcNovo.setVariaveis(ER_Campo1.getText().toString());
+            glcNovo.setSimboloInicial(ER_Campo2.getText().charAt(0));
+            glcNovo.setSimboloTerminal(ER_Campo3.getText().toString());
+            glcNovo.setRegras(jTextArea1.getText().toString());
+            glcNovo.setPalavra(ER_Campo4.getText().toString());
+            try {
+                glcNovo.gerarGLC();
+            } catch (Exception ex) {
+                JOptionPane.showMessageDialog(this,
+                    "Houve um problema ao verificar palavra! " + ex.getMessage(), //mensagem
+                    "Erro", // titulo da janela 
+                    JOptionPane.ERROR_MESSAGE);
+            }
+            jTextArea2.setText(glcNovo.getResultado().toString().replaceAll(",", ",\n"));
         }
     }//GEN-LAST:event_ER_Enviar3ActionPerformed
 
@@ -372,23 +365,24 @@ public class GLCForm extends javax.swing.JPanel {
     }//GEN-LAST:event_ER_Campo1FocusGained
 
     private void ER_Campo2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ER_Campo2FocusGained
-        // TODO add your handling code here:
         ER_Campo2.selectAll();
     }//GEN-LAST:event_ER_Campo2FocusGained
 
     private void ER_Campo3FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ER_Campo3FocusGained
-        // TODO add your handling code here:
         ER_Campo3.selectAll();
     }//GEN-LAST:event_ER_Campo3FocusGained
 
     private void jTextArea1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextArea1FocusGained
-        // TODO add your handling code here:
+        jTextArea1.selectAll();
     }//GEN-LAST:event_jTextArea1FocusGained
 
     private void ER_Campo4FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ER_Campo4FocusGained
-        // TODO add your handling code here:
         ER_Campo4.selectAll();
     }//GEN-LAST:event_ER_Campo4FocusGained
+
+    private void jTextArea2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextArea2FocusGained
+        jTextArea2.selectAll();
+    }//GEN-LAST:event_jTextArea2FocusGained
 
     public boolean validaCampos() {
         HashMap<String, String> valida = new HashMap<String, String>();
@@ -401,11 +395,11 @@ public class GLCForm extends javax.swing.JPanel {
         if (ER_Campo3.getText().toString().equals("")) {
             valida.put("erro", "Símbolo Terminal");
         }
-        if (ER_Campo4.getText().toString().equals("")) {
-            valida.put("erro", "Palavra");
-        }
         if (jTextArea1.getText().toString().equals("")) {
             valida.put("erro", "Regras");
+        }
+        if (ER_Campo4.getText().toString().equals("")) {
+            valida.put("erro", "Palavra");
         }
         for (String i : valida.keySet()) {
             if (i.equals("erro")) {
@@ -415,9 +409,27 @@ public class GLCForm extends javax.swing.JPanel {
                     JOptionPane.WARNING_MESSAGE);
                 return false;
             }
-            System.out.println(i);
+            // System.out.println(i);
         }
         return true;
+    }
+    
+    public void limpaCampos() {
+        ER_Campo1.setText("");
+        ER_Campo2.setText("");
+        ER_Campo3.setText("");
+        ER_Campo4.setText("");
+        jTextArea1.setText("");
+        jTextArea2.setText("");
+    }
+    
+    public void preencherCampos() {
+        ER_Campo1.setText(glcNovo.getVariaveis());
+        ER_Campo2.setText(glcNovo.getSimboloTerminal());
+        ER_Campo3.setText(String.valueOf(glcNovo.getSimboloInicial()));
+        ER_Campo4.setText(glcNovo.getPalavra());
+        jTextArea1.setText(glcNovo.getRegras());
+        jTextArea2.setText(glcNovo.getResultado());
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

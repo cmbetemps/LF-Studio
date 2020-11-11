@@ -14,6 +14,7 @@ public class GLC extends AppModel {
     private String[][] regrasMatriz;          // Local que será utilizado para salvar as regras, basicamente uma formatação das regras recebidas pela lista de string em um formato utilizável
     private ArrayList<String> resultado;      // Resultado esperado após execução
     private transient boolean statusOK = false;         // Se resultado obtido
+    private String palavra;
 
 	/*
 	O construtor da Classe, é onde será recebida a gramática que o usuário inseriu e feito suas atribuições.
@@ -159,6 +160,7 @@ public class GLC extends AppModel {
 
 	// Função que mostra o processo de derivação até a expressão/string digitada pelo usuário.
     public ArrayList derivar(String entrada) {
+        this.palavra = entrada;
         ArrayList<Integer> variacoes = new ArrayList<Integer>();
         ArrayList<String> retorno = new ArrayList<String>();
         retorno.add(entrada);
@@ -287,6 +289,10 @@ public class GLC extends AppModel {
     public boolean isStatusOK() {
         return statusOK;
     }
+    
+    public String getPalavra() {
+        return this.palavra;
+    }
 
     @Override
     public String toString() {
@@ -295,7 +301,8 @@ public class GLC extends AppModel {
                 "\nVariáveis: " + getVariaveis() + 
                 "\nSímbolo inicial: " + getRaiz() + 
                 "\nRegras: " + getRegras() +
-                "\nResultado: " + getResultado());
+                "\nResultado: " + getResultado() +
+                "\nPalavra: " + getPalavra());
     }
 
 }

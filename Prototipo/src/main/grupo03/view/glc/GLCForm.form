@@ -89,33 +89,20 @@
                           <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
                           <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="separate" max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="jScrollPane2" alignment="0" max="32767" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                                      <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace min="-2" pref="195" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="ER_Enviar1" min="-2" max="-2" attributes="0"/>
-                                  <Component id="ER_Enviar3" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="254" max="-2" attributes="0"/>
-                          </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
+                          <Component id="jScrollPane2" min="-2" pref="250" max="-2" attributes="0"/>
+                          <Component id="ER_Enviar3" alignment="1" min="-2" pref="250" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <Group type="102" attributes="0">
                       <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                       <Component id="GLC_Titulo" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
+                  <Component id="ER_Enviar1" alignment="1" min="-2" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -124,9 +111,9 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
               <Component id="GLC_Titulo" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
                       <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                       <Component id="ER_Campo1" min="-2" max="-2" attributes="0"/>
@@ -145,10 +132,10 @@
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="65" max="-2" attributes="0"/>
                       <Component id="jLabel10" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="jScrollPane2" min="-2" pref="322" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -199,7 +186,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="OCR A Extended" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Ab,B,cX,D,t,..."/>
+        <Property name="text" type="java.lang.String" value="E,I,a,b,c,+,*,(,)"/>
         <Property name="name" type="java.lang.String" value="Campo_de_Texto" noResource="true"/>
       </Properties>
       <Events>
@@ -241,7 +228,7 @@
         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="f0" green="f0" red="f0" type="rgb"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="S&#xed;mbolo Terminal:"/>
+        <Property name="text" type="java.lang.String" value="S&#xed;mbolos Terminais:"/>
         <Property name="toolTipText" type="java.lang.String" value=""/>
         <Property name="name" type="java.lang.String" value="Input" noResource="true"/>
       </Properties>
@@ -251,7 +238,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="OCR A Extended" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="Z"/>
+        <Property name="text" type="java.lang.String" value="a,b,c,+,*,(,)"/>
         <Property name="name" type="java.lang.String" value="Campo_de_Texto" noResource="true"/>
       </Properties>
       <Events>
@@ -284,6 +271,7 @@
           <Properties>
             <Property name="columns" type="int" value="20"/>
             <Property name="rows" type="int" value="5"/>
+            <Property name="text" type="java.lang.String" value="E -&gt; I|E*E,&#xa;E -&gt; E + E,&#xa;E -&gt; (E),&#xa;E -&gt; a,&#xa;E -&gt; c,&#xa;I -&gt; a,&#xa;I -&gt; b,&#xa;I -&gt; Ia,&#xa;I -&gt; Ib"/>
           </Properties>
           <Events>
             <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jTextArea1FocusGained"/>
@@ -322,7 +310,7 @@
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="OCR A Extended" size="18" style="0"/>
         </Property>
-        <Property name="text" type="java.lang.String" value="AbbCaaOpP"/>
+        <Property name="text" type="java.lang.String" value="aa*a+c"/>
         <Property name="name" type="java.lang.String" value="Campo_de_Texto" noResource="true"/>
       </Properties>
       <Events>
@@ -355,6 +343,9 @@
             <Property name="columns" type="int" value="20"/>
             <Property name="rows" type="int" value="5"/>
           </Properties>
+          <Events>
+            <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jTextArea2FocusGained"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

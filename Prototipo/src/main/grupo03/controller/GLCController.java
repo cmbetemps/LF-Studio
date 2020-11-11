@@ -11,19 +11,75 @@ import main.grupo03.model.GLC;
  *
  * @author Grupo-03
  */
-public class GLCController {
+public class GLCController extends AppController {
+    private final Tooltip tipo = Tooltip.GLC;
     
     private String variaveis;
-    private String terminais;
+    private String simboloTerminal;
     private String regras;
-    private char raiz;
-    private String derivar;
+    private char simboloInicial;
+    private String palavra;
+    private boolean statusOK;
+    
+    private GLC glc;
+    
+    private ArrayList<Character> variaveisGLC = new ArrayList();
+    private ArrayList<Character> terminaisGLC = new ArrayList();
+    private ArrayList<String> regrasGLC = new ArrayList();
+    private ArrayList<String> resultado;
 
     public GLCController() {
+        this.setStatusOK(false);
     }
     
-    public void gerarGLC() {
+    public void gerarGLC() throws Exception {
+        addArrayListCharacter(this.variaveis, this.variaveisGLC);
+        addArrayListCharacter(this.simboloTerminal, this.terminaisGLC);
+        addRegras(this.regras);
+        glc = new GLC(variaveisGLC, terminaisGLC, regrasGLC, this.simboloInicial);
+        glc.derivar(this.palavra);
+        resultado = glc.getResultado();
+        statusOK = glc.isStatusOK();
+    }
+    
+    public void gerarTexts() {
         
+    }
+    
+    private void addArrayListCharacter(String string, ArrayList<Character> lista) {
+        string = string.replaceAll(" ", "");
+        String[] split = string.split(",");
+        for (int i = 0; i < split.length; i++) {
+            if (!split[i].equals(" ")) {
+                lista.add(split[i].charAt(0));
+            }
+        }
+    }
+    
+    private void addRegras(String rules) {
+        rules = rules.replaceAll("\n", " ");
+        String[] split = rules.split(",");
+        for (int i = 0; i < split.length; i++) {
+            regrasGLC.add(split[i].replace(",", ""));
+        }
+    }
+    
+    public String exportarGLC(String diretorio) {
+        try {
+            Gson json = new Gson();
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            String strJson = json.toJson(glc, GLC.class);
+            try (FileWriter writer = new FileWriter(diretorio)) {
+                gson.toJson(glc, writer);
+            } catch (IOException e) {
+                return "Erro ao exportar arquivo, falha ao criá-lo!";
+            }
+            // System.out.println(strJson);
+            // System.out.println(glc.toString());
+        } catch (Exception e) {
+            return "Erro ao exportar arquivo!";
+        }
+        return "Arquivo exportado com sucesso!";
     }
 
     public String getVariaveis() {
@@ -34,14 +90,6 @@ public class GLCController {
         this.variaveis = variaveis;
     }
 
-    public String getTerminais() {
-        return terminais;
-    }
-
-    public void setTerminais(String terminais) {
-        this.terminais = terminais;
-    }
-
     public String getRegras() {
         return regras;
     }
@@ -50,85 +98,53 @@ public class GLCController {
         this.regras = regras;
     }
 
-    public char getRaiz() {
-        return raiz;
+    public String getPalavra() {
+        return palavra;
     }
 
-    public void setRaiz(char raiz) {
-        this.raiz = raiz;
+    public void setPalavra(String palavra) {
+        this.palavra = palavra;
     }
 
-    public String getDerivar() {
-        return derivar;
+    public String getSimboloTerminal() {
+        return simboloTerminal;
     }
 
-    public void setDerivar(String derivar) {
-        this.derivar = derivar;
+    public void setSimboloTerminal(String simboloTerminal) {
+        this.simboloTerminal = simboloTerminal;
     }
 
+    public char getSimboloInicial() {
+        return simboloInicial;
+    }
+
+    public void setSimboloInicial(char simboloInicial) {
+        this.simboloInicial = simboloInicial;
+    }
+    
+    public boolean isStatusOK() {
+        return statusOK;
+    }
+
+    public void setStatusOK(boolean status) {
+        this.statusOK = status;
+    }
+
+    public String getResultado() {
+        String retorno = "";
+        for(String result : resultado) {
+            retorno += result + "\n";
+        }
+        return retorno;
+    }
+    
     @Override
     public String toString() {
         return "GLCController{" + "variaveis=" + variaveis + 
-                ", terminais=" + terminais + 
+                ", terminais=" + simboloTerminal + 
                 ", regras=" + regras + 
-                ", raiz=" + raiz + 
-                ", derivar=" + derivar + '}';
-    }
-    
-    public void teste () {
-        ArrayList<Character> variaveis = new ArrayList();
-        ArrayList<Character> terminais = new ArrayList();
-        ArrayList<String> regras = new ArrayList();
-        char raiz = 'E';
-
-        variaveis.add('E');
-        variaveis.add('I');
-        variaveis.add('a');
-        variaveis.add('b');
-        variaveis.add('c');
-        variaveis.add('+');
-        variaveis.add('*');
-        variaveis.add('(');
-        variaveis.add(')');
-
-        terminais.add('a');
-        terminais.add('b');
-        terminais.add('c');
-        terminais.add('+');
-        terminais.add('*');
-        terminais.add('(');
-        terminais.add(')');
-
-        regras.add("E -> I|E*E");
-        regras.add("E -> E + E");
-        regras.add("E -> (E)");
-        regras.add("E -> a");
-        regras.add("E -> c");
-        regras.add("I -> a");
-        regras.add("I -> b");
-        regras.add("I -> Ia");
-        regras.add("I -> Ib");
-
-        
-        try {
-            GLC testeGLC = new GLC(variaveis,terminais,regras,raiz);
-            testeGLC.derivar("aa*a+c");
-            Gson json = new Gson();
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            String strJson = json.toJson(testeGLC, GLC.class);
-            try (FileWriter writer = new FileWriter("staff.json")) {
-                gson.toJson(testeGLC, writer);
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            System.out.println(strJson);
-            System.out.println(testeGLC.toString());
-            
-        } catch (Exception e) {
-            System.out.println(e);
-        }
-        
-
+                ", raiz=" + simboloInicial + 
+                ", derivar=" + palavra + '}';
     }
     
 }

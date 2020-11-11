@@ -14,7 +14,7 @@ public class GRForm extends javax.swing.JPanel {
     javax.swing.JPanel JanelaExecucao;
 
     /**
-     * Creates new form ER
+     * Creates new form GR
      * @param janela
      */
     public GRForm(javax.swing.JPanel janela) {

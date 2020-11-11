@@ -2,7 +2,6 @@ package main.grupo03.view.glc;
 
 import com.google.gson.Gson;
 import java.awt.Font;
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -11,6 +10,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import main.LFStudio;
+import main.grupo03.controller.GLCController;
 import main.grupo03.model.GLC;
 
 /**
@@ -20,7 +20,9 @@ import main.grupo03.model.GLC;
 public class GLCHome extends javax.swing.JPanel {
 
     javax.swing.JPanel JanelaExecucao;
-
+    
+    GLCController glcNovo = new GLCController();
+    
     /**
      * Creates new form GLCHome
      * @param janela
@@ -173,7 +175,7 @@ public class GLCHome extends javax.swing.JPanel {
             if (!fileChooser.getSelectedFile().getName().endsWith(".json") || !arquivoJson.exists()) {
                 JOptionPane.showMessageDialog(this,
                     "Arquivo Inválido para importar!", //mensagem
-                    "Erro de Importação", // titulo da janela 
+                    "Importação", // titulo da janela 
                     JOptionPane.WARNING_MESSAGE);
             } else {
                 Gson json = new Gson();
@@ -184,30 +186,30 @@ public class GLCHome extends javax.swing.JPanel {
                         if (!glc.getTipo().equals(GLC.Tooltip.GLC)) {
                             JOptionPane.showMessageDialog(this,
                                 "Tipo de Linguagem Inválido!", //mensagem
-                                "Erro de Importação", // titulo da janela 
+                                "Importação", // titulo da janela 
                                 JOptionPane.WARNING_MESSAGE);
                         } else {
-                            System.out.println(glc.toString());
+                            // System.out.println(glc.toString());
                             LFStudio.cl.show(JanelaExecucao, "glcForm");
                         }
                     } catch (Exception e) {
                         JOptionPane.showMessageDialog(this,
                             "Tipo de Linguagem Inválido!", //mensagem
-                            "Erro de Importação", // titulo da janela 
+                            "Importação", // titulo da janela 
                             JOptionPane.WARNING_MESSAGE);
                     }
                     fileJson.close();
                 } catch (IOException ex) {
                     JOptionPane.showMessageDialog(this,
                         "Erro ao abrir o arquivo!", //mensagem
-                        "Erro de Importação", // titulo da janela 
+                        "Importação", // titulo da janela 
                         JOptionPane.WARNING_MESSAGE);
                 }
             }
         }
-        if (result == JFileChooser.CANCEL_OPTION) {
-            System.out.println("You pressed cancel");
-        }
+        // if (result == JFileChooser.CANCEL_OPTION) {
+            // System.out.println("You pressed cancel");
+        // }
     }//GEN-LAST:event_labelImportarGLCMouseClicked
     
     
