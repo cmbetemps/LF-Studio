@@ -5,6 +5,12 @@
  */
 package main.modulos.AutomatoFinitoPilha.screens;
 
+import java.util.ArrayList;
+import main.modulos.AutomatoFinitoNaoDeterministico.controllers.Injection;
+import main.modulos.AutomatoFinitoPilha.controllers.AFP_Injection;
+import main.modulos.AutomatoFinitoPilha.domain.model.Arvore;
+import main.modulos.AutomatoFinitoPilha.domain.model.AutomatoDePilha;
+
 /**
  *
  * @author michel
@@ -31,6 +37,8 @@ public class PilhaProcessamentoPanel extends javax.swing.JPanel {
 
         jPanel1 = new javax.swing.JPanel();
         processamento1 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        AFP_Retorno = new javax.swing.JTextArea();
         validarPalavraPilha1 = new javax.swing.JLabel();
         t_e = new javax.swing.JLabel();
         t_proces1 = new javax.swing.JLabel();
@@ -43,18 +51,30 @@ public class PilhaProcessamentoPanel extends javax.swing.JPanel {
         jPanel1.setBackground(new java.awt.Color(28, 28, 28));
         jPanel1.setPreferredSize(new java.awt.Dimension(579, 648));
 
-        processamento1.setBackground(new java.awt.Color(196, 196, 196));
+        processamento1.setBackground(new java.awt.Color(0, 0, 0));
         processamento1.setPreferredSize(new java.awt.Dimension(360, 321));
+
+        AFP_Retorno.setBackground(new java.awt.Color(0, 0, 0));
+        AFP_Retorno.setColumns(20);
+        AFP_Retorno.setForeground(new java.awt.Color(255, 255, 255));
+        AFP_Retorno.setRows(5);
+        jScrollPane1.setViewportView(AFP_Retorno);
 
         javax.swing.GroupLayout processamento1Layout = new javax.swing.GroupLayout(processamento1);
         processamento1.setLayout(processamento1Layout);
         processamento1Layout.setHorizontalGroup(
             processamento1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 420, Short.MAX_VALUE)
+            .addGroup(processamento1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+                .addContainerGap())
         );
         processamento1Layout.setVerticalGroup(
             processamento1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 321, Short.MAX_VALUE)
+            .addGroup(processamento1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 299, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         validarPalavraPilha1.setBackground(new java.awt.Color(51, 51, 51));
@@ -85,8 +105,6 @@ public class PilhaProcessamentoPanel extends javax.swing.JPanel {
         t_proces1.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
         t_proces1.setForeground(new java.awt.Color(255, 255, 255));
         t_proces1.setText("Processamento");
-
-        r_e.setBackground(new java.awt.Color(255, 255, 255));
 
         AFND3_Titulo7.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 36)); // NOI18N
         AFND3_Titulo7.setForeground(new java.awt.Color(255, 255, 255));
@@ -147,7 +165,27 @@ public class PilhaProcessamentoPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void validarPalavraPilha1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_validarPalavraPilha1MouseClicked
-        // TODO add your handling code here:
+       String palavra = r_e.getText();
+       AutomatoDePilha teste = AFP_Injection.getAutomato();
+       Arvore configurações = new Arvore();
+       boolean resposta = teste.Reconhecer(palavra, configurações);
+       ArrayList <String>  retorno = new ArrayList ();
+       retorno.add(AFP_Injection.getAviso());
+       if(AFP_Injection.isConfirm() == true)
+       {
+       retorno.addAll(teste.printArvore(configurações));
+       if(resposta){
+            retorno.add("A palavra '"+ palavra +"' pertence a linguagem.");
+        } else {
+            retorno.add("A palavra '"+ palavra +"' não pertence a linguagem.");
+       }
+       }
+       StringBuilder text = new StringBuilder();
+        for (String x : retorno) {
+            text.append(x);
+            text.append("\n");
+        }
+        AFP_Retorno.setText(text.toString());
     }//GEN-LAST:event_validarPalavraPilha1MouseClicked
 
     private void validarPalavraPilha1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_validarPalavraPilha1MouseEntered
@@ -161,7 +199,9 @@ public class PilhaProcessamentoPanel extends javax.swing.JPanel {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel AFND3_Titulo7;
+    private javax.swing.JTextArea AFP_Retorno;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel processamento1;
     private javax.swing.JTextField r_e;
     private javax.swing.JLabel t_e;

@@ -2,6 +2,7 @@ package main.modulos.AutomatoFinitoPilha.domain.model;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import main.modulos.AutomatoFinitoPilha.controllers.AFP_Injection;
 
 public class Estado {
     String estadoInicial;
@@ -77,19 +78,19 @@ public class Estado {
         auxiliar = new ArrayList<>(Arrays.asList(estados.trim().split("\\s*,\\s*")));
 
         if (!auxiliar.contains(estadoInicial)) {
-            System.out.println("Erro - O estado inicial não pertence ao conjunto de estados.");
+            //System.out.println("Erro - O estado inicial não pertence ao conjunto de estados.");
             flagValido = false;
         } else {
             System.out.println("Ok - O estado inicial pertence ao conjunto de estados.");
         }
 
         if (!auxiliar.containsAll(estadosFinais)) {
-            System.out.println("Erro - Algum estado final não pertence ao conjunto de estados.");
+            //System.out.println("Erro - Algum estado final não pertence ao conjunto de estados.");
             flagValido = false;
         } else {
-            System.out.println("Ok - Todos os estados finais pertencem ao conjunto de estados.");
+            //System.out.println("Ok - Todos os estados finais pertencem ao conjunto de estados.");
         }
-
+        AFP_Injection.setConfirm(flagValido);
         return flagValido;
     }
 

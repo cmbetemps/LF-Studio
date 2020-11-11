@@ -2,6 +2,7 @@ package main.modulos.AutomatoFinitoPilha.domain.model;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import main.modulos.AutomatoFinitoPilha.controllers.AFP_Injection;
 
 public class Transições {
     String[][] matrizTransições;
@@ -84,20 +85,20 @@ public class Transições {
         auxiliar.addAll(Arrays.asList(alfabetoFita.trim().split("")));
 
         if(!auxiliar.containsAll(matrizFita)){
-            System.out.println("Erro - Alguma entrada das transições não pertencem ao conjunto de símbolos de entrada.");
+            //System.out.println("Erro - Alguma entrada das transições não pertencem ao conjunto de símbolos de entrada.");
             flagValido = false;
         } else {
-            System.out.println("Ok - As entradas das transições pertencem ao conjunto de símbolos de entrada.");
+            //System.out.println("Ok - As entradas das transições pertencem ao conjunto de símbolos de entrada.");
         }
 
         auxiliar = new ArrayList<>();
         auxiliar.addAll(Arrays.asList(estados.trim().split("\\s*,\\s*")));
 
         if(!auxiliar.containsAll(matrizEstados)){
-            System.out.println("Erro - Algum estado das transições não pertence ao conjunto de estados.");
+            //System.out.println("Erro - Algum estado das transições não pertence ao conjunto de estados.");
             flagValido = false;
         } else {
-            System.out.println("Ok - Os estados das transições pertencem ao conjunto de estados.");
+            //System.out.println("Ok - Os estados das transições pertencem ao conjunto de estados.");
         }
 
         auxiliar = new ArrayList<>();
@@ -110,7 +111,7 @@ public class Transições {
         } else {
             System.out.println("Ok - Os símbolos de pilha das transições pertencem ao conjunto de símbolos da pilha.");
         }
-
+        AFP_Injection.setConfirm(flagValido);
         return flagValido;
     }
 }

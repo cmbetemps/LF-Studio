@@ -1,5 +1,7 @@
 package main.modulos.AutomatoFinitoPilha.domain.model;
 
+import java.util.ArrayList;
+
 
 
 public class AutomatoDePilha {
@@ -7,7 +9,7 @@ public class AutomatoDePilha {
     Estado estados;
     Pilha pilha;
     Transições transições;
-
+    String palavra;
     /** Construtor do autômato
      * @param alfabetoFita - Alfabeto de símbolos da fita
      * @param alfabetoPilha - Alfabeto de símbolos da pilha
@@ -28,6 +30,7 @@ public class AutomatoDePilha {
         this.pilha = new Pilha(pilhaInicial);
         this.transições = new Transições(matrizTransições);
     }
+    
     
     // Exemplo de utilização
     /*
@@ -137,7 +140,8 @@ public class AutomatoDePilha {
     /** Imprime árvore de configurações
      * @param configurações objeto contendo a computação que será impressa
      */
-    public void printArvore(Arvore configurações) {
+    public ArrayList <String> printArvore(Arvore configurações) {
+        ArrayList <String>  retorno = new ArrayList ();
         Arvore raiz = configurações.encontrarRaiz();
         int level = -1;
 
@@ -145,21 +149,29 @@ public class AutomatoDePilha {
             // Se o nível do nó for diferente do contador, aumenta o nível e imprime
             if(level != nó.getLevel()){
                 level = nó.getLevel();
-                System.out.println("-----------\n--Nível "+ (level+1)+"--\n-----------");
+                retorno.add("-----------\n--Nível "+ (level+1)+"--\n-----------");
+                //System.out.println("-----------\n--Nível "+ (level+1)+"--\n-----------");
             }
 
             if(nó.pai != null) {
-                System.out.println("Estado anterior: " + nó.pai.configuração.estado);
-                System.out.println("Fita anterior: " + nó.pai.configuração.fita);
-                System.out.println("Pilha anterior: " + nó.pai.configuração.pilha);
+                retorno.add("Estado anterior: " + nó.pai.configuração.estado);
+                retorno.add("Fita anterior: " + nó.pai.configuração.fita);
+                retorno.add("Pilha anterior: " + nó.pai.configuração.pilha);
+                //System.out.println("Estado anterior: " + nó.pai.configuração.estado);
+                //System.out.println("Fita anterior: " + nó.pai.configuração.fita);
+                //System.out.println("Pilha anterior: " + nó.pai.configuração.pilha);
 
                 String[] trans = nó.configuração.transição;
-                System.out.println("-> Transição: "+"(('"+trans[0]+"','"+ trans[1]+"','"+trans[2]+"'), ('"+trans[3]+"','"+trans[4]+ "'))");
+                retorno.add("-> Transição: "+"(('"+trans[0]+"','"+ trans[1]+"','"+trans[2]+"'), ('"+trans[3]+"','"+trans[4]+ "'))");
+                //System.out.println("-> Transição: "+"(('"+trans[0]+"','"+ trans[1]+"','"+trans[2]+"'), ('"+trans[3]+"','"+trans[4]+ "'))");
             }
-
-            System.out.println("Estado atual: " + nó.configuração.estado);
-            System.out.println("Fita atual: " + nó.configuração.fita);
-            System.out.println("Pilha atual: " + nó.configuração.pilha);
+            retorno.add("Estado atual: " + nó.configuração.estado);
+            retorno.add("Fita atual: " + nó.configuração.fita);
+            retorno.add("Pilha atual: " + nó.configuração.pilha);
+            //System.out.println("Estado atual: " + nó.configuração.estado);
+            //System.out.println("Fita atual: " + nó.configuração.fita);
+            //System.out.println("Pilha atual: " + nó.configuração.pilha);
         }
+         return retorno;
     }
 }

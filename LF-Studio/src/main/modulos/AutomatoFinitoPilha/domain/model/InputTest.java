@@ -1,7 +1,5 @@
 package main.modulos.AutomatoFinitoPilha.domain.model;
 
-import main.modulos.AutomatoFinitoPilha.domain.model.Arvore;
-import main.modulos.AutomatoFinitoPilha.domain.model.AutomatoDePilha;
 import org.junit.Before;
 import static org.junit.Assert.assertEquals;
 import org.junit.Test;
