@@ -1,4 +1,4 @@
-package main.grupo03.controller;
+package main.grupo03.util;
 
 import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;

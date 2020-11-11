@@ -14,7 +14,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import main.grupo03.controller.GLCController;
-import main.grupo03.controller.LimiteCaracteres;
+import main.grupo03.util.LimiteCaracteres;
 
 /**
  *
