@@ -71,7 +71,6 @@ public class AutomatoFinitoTest {
     @Test
     public void insertAutomato() throws Exception {
         AFD automato = controller.gerarAutomato(alfabeto, FD_jTable, estadoInicial, estadosFinais);
-        automato.reconhecer("1000".toCharArray());
         assertNotNull( "Deve retornar uma instancia de Automato",  automato);
 
     }
