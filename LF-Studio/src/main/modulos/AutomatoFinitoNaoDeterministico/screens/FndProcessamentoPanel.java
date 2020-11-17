@@ -7,7 +7,7 @@ package main.modulos.AutomatoFinitoNaoDeterministico.screens;
 
 import java.util.HashMap;
 import main.modulos.AutomatoFinitoNaoDeterministico.controllers.FndController;
-import main.modulos.AutomatoFinitoNaoDeterministico.controllers.Injection;
+import main.modulos.AutomatoFinitoNaoDeterministico.controllers.AFND_Injection;
 
 /**
  *
@@ -178,17 +178,35 @@ public class FndProcessamentoPanel extends javax.swing.JPanel {
 
     private void validarPalavraFNDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_validarPalavraFNDMouseClicked
         String temp = "";
-        HashMap map = Injection.getMap();
-        Injection.getAutomato().config.clear();
-        Injection.getAutomato().reconhecer(AFND3_TextFieldEntrada1.getText());
+        HashMap map = AFND_Injection.getMap();
+        HashMap mapAlfabeto = AFND_Injection.getMapAlfabeto();
+        for (String x: AFND3_TextFieldEntrada1.getText().split("")) {
+            temp = temp.concat(AFND_Injection.getMapAlfabetoInverso().get(x).toString());
+        }
+        AFND_Injection.getAutomato().config.clear();
+        AFND_Injection.getAutomato().reconhecer(temp);
         StringBuilder text = new StringBuilder();
-        for (String x : Injection.getAutomato().config) {
+        StringBuilder substitutoAlfabeto = new StringBuilder();
+        for (String x : AFND_Injection.getAutomato().config) {
             if (x.indexOf("[") != -1) {
                 temp = x.substring(x.indexOf("["), x.indexOf("]") + 1).replace("[", "").replace("]", "");
-                x = x.replace("[" + temp + "]", "[" + Injection.getMap().get(Integer.valueOf(temp)) + "]");
+                x = x.replace("[" + temp + "]", "[" + AFND_Injection.getMap().get(Integer.valueOf(temp)) + "]");
             }
-            text.append(x);
+            if (x.contains("<<backTrack>>") || x.equals("Rejeitada") || x.equals("Aceita")) {
+                substitutoAlfabeto.append(x);
+            } else {
+                for (int i = 0; i < x.length(); i++) {
+                    if (x.charAt(i) == '[') {
+                        substitutoAlfabeto.append(x.substring(i, x.indexOf("]", i) + 1));
+                        i = x.indexOf("]", i);
+                    } else {
+                        substitutoAlfabeto.append(mapAlfabeto.get(Integer.valueOf(String.valueOf(x.charAt(i)))));
+                    }
+                }
+            }
+            text.append(substitutoAlfabeto);
             text.append("\n");
+            substitutoAlfabeto = new StringBuilder();
         }
         Retorno.setText(text.toString());
     }//GEN-LAST:event_validarPalavraFNDMouseClicked

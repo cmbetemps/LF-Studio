@@ -12,7 +12,7 @@ import java.util.Vector;
 import main.LFStudio;
 import main.layout.CustomTable;
 import main.modulos.AutomatoFinitoNaoDeterministico.controllers.FndController;
-import main.modulos.AutomatoFinitoNaoDeterministico.controllers.Injection;
+import main.modulos.AutomatoFinitoNaoDeterministico.controllers.AFND_Injection;
 import main.modulos.AutomatoFinitoNaoDeterministico.domain.models.NaoDeterministico;
 
 /**
@@ -93,7 +93,7 @@ public class FndConfigPanel extends javax.swing.JPanel {
         FND_TextFieldAlfabeto.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         FND_TextFieldAlfabeto.setForeground(new java.awt.Color(0, 0, 0));
         FND_TextFieldAlfabeto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        FND_TextFieldAlfabeto.setText("0,1");
+        FND_TextFieldAlfabeto.setText("4,8,2,3");
         FND_TextFieldAlfabeto.setToolTipText("");
         FND_TextFieldAlfabeto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,13 +108,13 @@ public class FndConfigPanel extends javax.swing.JPanel {
 
         FND_jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"coxinha", "coxinha,bacon", "coxinha,salada"},
-                {"bacon", "arroz", null},
-                {"salada", null, "arroz"},
-                {"arroz", "arroz", null}
+                {"coxinha", null, "coxinha,bacon", "coxinha,salada", null},
+                {"bacon", "arroz", "arroz", null, null},
+                {"salada", null, null, "arroz", null},
+                {"arroz", null, "arroz", null, "arroz"}
             },
             new String [] {
-                "Estados", "0", "1"
+                "Estados", "4", "8", "2", "3"
             }
         ));
         FND_jScrollPane2.setViewportView(FND_jTable1);
@@ -376,6 +376,7 @@ public class FndConfigPanel extends javax.swing.JPanel {
     private NaoDeterministico gerarAutomato() {
         // mandar direto
         String alfabetoInserido = FND_TextFieldAlfabeto.getText();
+        StringBuilder alfabetoFormatado = new StringBuilder();
 
         String estadoInicial = FND_TextFieldEstadoInicial.getText();
 
@@ -388,6 +389,9 @@ public class FndConfigPanel extends javax.swing.JPanel {
         /// pos0 = string abc
         Map<Integer, String> mapaTransicao = new HashMap<>();
         Map<String, Integer> mapaTransInverso = new HashMap<>();
+
+        Map<Integer, String> mapaTransicaoAlfabeto = new HashMap<>();
+        Map<String, Integer> mapaTransInversoAlfabeto = new HashMap<>();
 
         for (int i = 0; i < FND_jTable1.getRowCount(); i++) {
             mapaTransicao.put(i, (String) FND_jTable1.getValueAt(i, 0));
@@ -411,25 +415,33 @@ public class FndConfigPanel extends javax.swing.JPanel {
             chaveEstadosFinais[contaEstadosFinais] = mapaTransInverso.get(comparaEstadosFinais[contaEstadosFinais]);
             contaEstadosFinais++;
         }
-        
-        
-        int [][][] matrizConversao = new int [FND_jTable1.getRowCount()][FND_jTable1.getColumnCount()-1][];
+
+        int[][][] matrizConversao = new int[FND_jTable1.getRowCount()][FND_jTable1.getColumnCount() - 1][];
         for (int i = 0; i < FND_jTable1.getRowCount(); i++) {
             for (int j = 0; j < FND_jTable1.getColumnCount() - 1; j++) {
-                if(teste[i][j+1] != null){
-                    matrizConversao[i][j] = new int[teste[i][j+1].split(",").length];
-                }else{
+                if (teste[i][j + 1] != null) {
+                    matrizConversao[i][j] = new int[teste[i][j + 1].split(",").length];
+                } else {
                     matrizConversao[i][j] = new int[0];
                 }
                 for (int k = 0; k < matrizConversao[i][j].length; k++) {
-                    matrizConversao[i][j][k] = mapaTransInverso.get(teste[i][j+1].split(",")[k]);
+                    matrizConversao[i][j][k] = mapaTransInverso.get(teste[i][j + 1].split(",")[k]);
                 }
             }
-        }    
+        }
         
-        NaoDeterministico automato = new NaoDeterministico(chaveEstadosFinais, chaveEstado, matrizConversao, alfabetoInserido.replaceAll(",", "").trim());
-        Injection.setMap((HashMap) mapaTransicao);
-        Injection.setAutomato(chaveEstadosFinais, chaveEstado, matrizConversao, alfabetoInserido.replaceAll(",", "").trim());
+        for (int i = 0; i < alfabetoInserido.split(",").length; i++) {
+            mapaTransicaoAlfabeto.put(i, (String) alfabetoInserido.split(",")[i]);
+            mapaTransInversoAlfabeto.put((String) alfabetoInserido.split(",")[i], i);
+            alfabetoFormatado.append(String.valueOf(i));
+        }
+        
+        AFND_Injection.setMapAlfabeto((HashMap<Integer, String>) mapaTransicaoAlfabeto);
+        AFND_Injection.setMapAlfabetoInverso((HashMap<String, Integer>) mapaTransInversoAlfabeto);
+        
+        NaoDeterministico automato = new NaoDeterministico(chaveEstadosFinais, chaveEstado, matrizConversao, alfabetoFormatado.toString());
+        AFND_Injection.setMap((HashMap) mapaTransicao);
+        AFND_Injection.setAutomato(chaveEstadosFinais, chaveEstado, matrizConversao, alfabetoFormatado.toString());
         return automato;
     }
 
