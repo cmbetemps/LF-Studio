@@ -21,12 +21,12 @@ import main.modulos.AutomatoFinitoNaoDeterministico.screens.FndProcessamentoPane
 import main.modulos.AutomatoFinitoPilha.screens.PilhaConfigPanel;
 import main.modulos.AutomatoFinitoPilha.screens.PilhaInicioPanel;
 import main.modulos.AutomatoFinitoPilha.screens.PilhaProcessamentoPanel;
-import main.grupo03.view.er.ERForm;
-import main.grupo03.view.er.ERHome;
-import main.grupo03.view.glc.GLCForm;
-import main.grupo03.view.glc.GLCHome;
-import main.grupo03.view.gr.GRForm;
-import main.grupo03.view.gr.GRHome;
+import main.modulos.ExpressoesRegulares.screens.ERForm;
+import main.modulos.ExpressoesRegulares.screens.ERHome;
+import main.modulos.GramaticasLivreDeContexto.screens.GLCForm;
+import main.modulos.GramaticasLivreDeContexto.screens.GLCHome;
+import main.modulos.GramaticasRegulares.screens.GRForm;
+import main.modulos.GramaticasRegulares.screens.GRHome;
     
 /**
  *

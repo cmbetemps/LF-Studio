@@ -1,4 +1,6 @@
-package main.grupo03.controller;
+package main.modulos.GramaticasRegulares.controllers;
+
+import main.grupo03.AppController;
 
 /**
  *

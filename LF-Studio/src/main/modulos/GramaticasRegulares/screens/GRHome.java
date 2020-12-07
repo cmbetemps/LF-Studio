@@ -1,7 +1,8 @@
-package main.grupo03.view.glc;
+package main.modulos.GramaticasRegulares.screens;
 
 import com.google.gson.Gson;
 import java.awt.Font;
+import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -10,24 +11,21 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import main.LFStudio;
-import main.grupo03.controller.GLCController;
-import main.grupo03.model.GLC;
+import main.modulos.GramaticasRegulares.domain.models.GR;
 
 /**
  *
  * @author Grupo-03
  */
-public class GLCHome extends javax.swing.JPanel {
+public class GRHome extends javax.swing.JPanel {
 
     javax.swing.JPanel JanelaExecucao;
-    
-    GLCController glcNovo = new GLCController();
-    
+
     /**
-     * Creates new form GLCHome
+     * Creates new form GRHome
      * @param janela
      */
-    public GLCHome(javax.swing.JPanel janela) {
+    public GRHome(javax.swing.JPanel janela) {
         this.JanelaExecucao = janela;
         initComponents();
     }
@@ -43,15 +41,15 @@ public class GLCHome extends javax.swing.JPanel {
 
         labelTituloGLC = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        labelNovaGLC = new javax.swing.JLabel();
-        labelImportarGLC = new javax.swing.JLabel();
+        labelNovaGR = new javax.swing.JLabel();
+        labelImportarGR = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(28, 28, 28));
 
         labelTituloGLC.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 48)); // NOI18N
         labelTituloGLC.setForeground(new java.awt.Color(255, 255, 255));
         labelTituloGLC.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelTituloGLC.setText("<html><p style=\"padding-bottom: 16px; font-size:30px;\">Gramática Livre de Contexto</p></html>");
+        labelTituloGLC.setText("<html><p style=\"padding-bottom: 16px; font-size:30px;\">Gramática Regular</p></html>");
         labelTituloGLC.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 labelTituloGLCMouseEntered(evt);
@@ -61,42 +59,42 @@ public class GLCHome extends javax.swing.JPanel {
         jSeparator1.setBackground(new java.awt.Color(28, 28, 28));
         jSeparator1.setForeground(new java.awt.Color(255, 255, 255));
 
-        labelNovaGLC.setBackground(new java.awt.Color(0, 0, 0));
-        labelNovaGLC.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 28)); // NOI18N
-        labelNovaGLC.setForeground(new java.awt.Color(255, 255, 255));
-        labelNovaGLC.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelNovaGLC.setText("Nova GLC");
-        labelNovaGLC.setAlignmentX(5.0F);
-        labelNovaGLC.setAlignmentY(5.0F);
-        labelNovaGLC.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        labelNovaGLC.setPreferredSize(new java.awt.Dimension(150, 22));
-        labelNovaGLC.addMouseListener(new java.awt.event.MouseAdapter() {
+        labelNovaGR.setBackground(new java.awt.Color(0, 0, 0));
+        labelNovaGR.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 28)); // NOI18N
+        labelNovaGR.setForeground(new java.awt.Color(255, 255, 255));
+        labelNovaGR.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelNovaGR.setText("Nova GR");
+        labelNovaGR.setAlignmentX(5.0F);
+        labelNovaGR.setAlignmentY(5.0F);
+        labelNovaGR.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        labelNovaGR.setPreferredSize(new java.awt.Dimension(150, 22));
+        labelNovaGR.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                labelNovaGLCMouseClicked(evt);
+                labelNovaGRMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                labelNovaGLCMouseEntered(evt);
+                labelNovaGRMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                labelNovaGLCMouseExited(evt);
+                labelNovaGRMouseExited(evt);
             }
         });
 
-        labelImportarGLC.setBackground(new java.awt.Color(0, 0, 0));
-        labelImportarGLC.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 28)); // NOI18N
-        labelImportarGLC.setForeground(new java.awt.Color(255, 255, 255));
-        labelImportarGLC.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelImportarGLC.setText("Importar GLC");
-        labelImportarGLC.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        labelImportarGLC.addMouseListener(new java.awt.event.MouseAdapter() {
+        labelImportarGR.setBackground(new java.awt.Color(0, 0, 0));
+        labelImportarGR.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 28)); // NOI18N
+        labelImportarGR.setForeground(new java.awt.Color(255, 255, 255));
+        labelImportarGR.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelImportarGR.setText("Importar GR");
+        labelImportarGR.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        labelImportarGR.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                labelImportarGLCMouseClicked(evt);
+                labelImportarGRMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                labelImportarGLCMouseEntered(evt);
+                labelImportarGRMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                labelImportarGLCMouseExited(evt);
+                labelImportarGRMouseExited(evt);
             }
         });
 
@@ -111,8 +109,8 @@ public class GLCHome extends javax.swing.JPanel {
                         .addGap(93, 93, 93)
                         .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(labelImportarGLC, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 459, Short.MAX_VALUE)
-                        .addComponent(labelNovaGLC, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(labelImportarGR, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 459, Short.MAX_VALUE)
+                        .addComponent(labelNovaGR, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(53, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -123,41 +121,41 @@ public class GLCHome extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(57, 57, 57)
-                .addComponent(labelNovaGLC, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(labelNovaGR, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelImportarGLC)
+                .addComponent(labelImportarGR)
                 .addContainerGap(244, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void labelNovaGLCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelNovaGLCMouseClicked
-        LFStudio.cl.show(JanelaExecucao, "glcForm");
-    }//GEN-LAST:event_labelNovaGLCMouseClicked
+    private void labelNovaGRMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelNovaGRMouseClicked
+        LFStudio.cl.show(JanelaExecucao, "grForm");
+    }//GEN-LAST:event_labelNovaGRMouseClicked
 
-    private void labelNovaGLCMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelNovaGLCMouseEntered
-        Font f = labelNovaGLC.getFont();
-        labelNovaGLC.setFont(f.deriveFont(f.getStyle(), f.getSize2D()+4));
-    }//GEN-LAST:event_labelNovaGLCMouseEntered
+    private void labelNovaGRMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelNovaGRMouseEntered
+        Font f = labelNovaGR.getFont();
+        labelNovaGR.setFont(f.deriveFont(f.getStyle(), f.getSize2D()+4));
+    }//GEN-LAST:event_labelNovaGRMouseEntered
 
-    private void labelNovaGLCMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelNovaGLCMouseExited
-        Font f = labelNovaGLC.getFont();
-        labelNovaGLC.setFont(f.deriveFont(f.getStyle(), f.getSize2D()-4));
-    }//GEN-LAST:event_labelNovaGLCMouseExited
+    private void labelNovaGRMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelNovaGRMouseExited
+        Font f = labelNovaGR.getFont();
+        labelNovaGR.setFont(f.deriveFont(f.getStyle(), f.getSize2D()-4));
+    }//GEN-LAST:event_labelNovaGRMouseExited
 
-    private void labelImportarGLCMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelImportarGLCMouseEntered
-        Font f = labelImportarGLC.getFont();
-        labelImportarGLC.setFont(f.deriveFont(f.getStyle(), f.getSize2D()+4));
-    }//GEN-LAST:event_labelImportarGLCMouseEntered
+    private void labelImportarGRMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelImportarGRMouseEntered
+        Font f = labelImportarGR.getFont();
+        labelImportarGR.setFont(f.deriveFont(f.getStyle(), f.getSize2D()+4));
+    }//GEN-LAST:event_labelImportarGRMouseEntered
 
-    private void labelImportarGLCMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelImportarGLCMouseExited
-        Font f = labelImportarGLC.getFont();
-        labelImportarGLC.setFont(f.deriveFont(f.getStyle(), f.getSize2D()-4));
-    }//GEN-LAST:event_labelImportarGLCMouseExited
+    private void labelImportarGRMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelImportarGRMouseExited
+        Font f = labelImportarGR.getFont();
+        labelImportarGR.setFont(f.deriveFont(f.getStyle(), f.getSize2D()-4));
+    }//GEN-LAST:event_labelImportarGRMouseExited
 
     private void labelTituloGLCMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelTituloGLCMouseEntered
     }//GEN-LAST:event_labelTituloGLCMouseEntered
 
-    private void labelImportarGLCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelImportarGLCMouseClicked
+    private void labelImportarGRMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelImportarGRMouseClicked
         JFileChooser fileChooser = new JFileChooser();
         // fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
         fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
@@ -175,48 +173,48 @@ public class GLCHome extends javax.swing.JPanel {
             if (!fileChooser.getSelectedFile().getName().endsWith(".json") || !arquivoJson.exists()) {
                 JOptionPane.showMessageDialog(this,
                     "Arquivo Inválido para importar!", //mensagem
-                    "Importação", // titulo da janela 
+                    "Erro de Importação", // titulo da janela 
                     JOptionPane.WARNING_MESSAGE);
             } else {
                 Gson json = new Gson();
                 try {
                     Reader fileJson = new FileReader( arquivoJson );
                     try {
-                        GLC glc = json.fromJson(fileJson, GLC.class);
-                        if (!glc.getTipo().equals(GLC.Tooltip.GLC)) {
+                        GR gr = json.fromJson(fileJson, GR.class);
+                        if (true) { // !gr.getTipo().equals(GR.Tooltip.GR)) {
                             JOptionPane.showMessageDialog(this,
                                 "Tipo de Linguagem Inválido!", //mensagem
-                                "Importação", // titulo da janela 
+                                "Erro de Importação", // titulo da janela 
                                 JOptionPane.WARNING_MESSAGE);
                         } else {
-                            // System.out.println(glc.toString());
-                            LFStudio.cl.show(JanelaExecucao, "glcForm");
+                            System.out.println(gr.toString());
+                            LFStudio.cl.show(JanelaExecucao, "grForm");
                         }
                     } catch (Exception e) {
                         JOptionPane.showMessageDialog(this,
                             "Tipo de Linguagem Inválido!", //mensagem
-                            "Importação", // titulo da janela 
+                            "Erro de Importação", // titulo da janela 
                             JOptionPane.WARNING_MESSAGE);
                     }
                     fileJson.close();
                 } catch (IOException ex) {
                     JOptionPane.showMessageDialog(this,
                         "Erro ao abrir o arquivo!", //mensagem
-                        "Importação", // titulo da janela 
+                        "Erro de Importação", // titulo da janela 
                         JOptionPane.WARNING_MESSAGE);
                 }
             }
         }
-        // if (result == JFileChooser.CANCEL_OPTION) {
-            // System.out.println("You pressed cancel");
-        // }
-    }//GEN-LAST:event_labelImportarGLCMouseClicked
+        if (result == JFileChooser.CANCEL_OPTION) {
+            System.out.println("You pressed cancel");
+        }
+    }//GEN-LAST:event_labelImportarGRMouseClicked
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JLabel labelImportarGLC;
-    private javax.swing.JLabel labelNovaGLC;
+    private javax.swing.JLabel labelImportarGR;
+    private javax.swing.JLabel labelNovaGR;
     private javax.swing.JLabel labelTituloGLC;
     // End of variables declaration//GEN-END:variables
 }

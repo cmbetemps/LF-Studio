@@ -1,4 +1,4 @@
-package main.grupo03.view.er;
+package main.modulos.ExpressoesRegulares.screens;
 
 import com.google.gson.Gson;
 import java.awt.Font;
@@ -11,7 +11,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import main.LFStudio;
-import main.grupo03.model.ER;
+import main.modulos.ExpressoesRegulares.domain.models.ER;
 
 /**
  *

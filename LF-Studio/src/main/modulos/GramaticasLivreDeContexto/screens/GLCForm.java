@@ -1,11 +1,11 @@
-package main.grupo03.view.glc;
+package main.modulos.GramaticasLivreDeContexto.screens;
 
 import java.util.HashMap;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
-import main.grupo03.controller.GLCController;
-import main.grupo03.util.LimiteCaracteres;
+import main.modulos.GramaticasLivreDeContexto.controllers.GLCController;
+import main.modulos.GramaticasLivreDeContexto.domain.utils.LimiteCaracteres;
 
 /**
  *

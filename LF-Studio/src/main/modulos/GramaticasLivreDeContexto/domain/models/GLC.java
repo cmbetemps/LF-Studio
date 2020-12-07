@@ -1,6 +1,7 @@
-package main.grupo03.model;
+package main.modulos.GramaticasLivreDeContexto.domain.models;
 
 import java.util.ArrayList;
+import main.grupo03.AppModel;
 
 // Revisado por Thiago,Charles,Pedro, Kelvin e Ritiele - 27/09 | 20:00 - 20:45
 // Parcialmente comentado por Pedro - 04/10 - 15:30 - 19:20

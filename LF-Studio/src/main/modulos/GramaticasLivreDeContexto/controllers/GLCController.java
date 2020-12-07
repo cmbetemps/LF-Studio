@@ -1,11 +1,12 @@
-package main.grupo03.controller;
+package main.modulos.GramaticasLivreDeContexto.controllers;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
-import main.grupo03.model.GLC;
+import main.grupo03.AppController;
+import main.modulos.GramaticasLivreDeContexto.domain.models.GLC;
 
 /**
  *

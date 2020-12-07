@@ -1,4 +1,4 @@
-package main.grupo03.util;
+package main.modulos.GramaticasLivreDeContexto.domain.utils;
 
 import javax.swing.text.AttributeSet;
 import javax.swing.text.BadLocationException;
