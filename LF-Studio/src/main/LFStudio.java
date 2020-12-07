@@ -12,16 +12,38 @@ import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
+import main.modulos.AutomatoFinitoDeterministico.screens.FdConfigPanel;
+import main.modulos.AutomatoFinitoDeterministico.screens.FdInicioPanel;
+import main.modulos.AutomatoFinitoDeterministico.screens.FdProcessamentoPanel;
+import main.modulos.AutomatoFinitoNaoDeterministico.screens.FndConfigPanel;
+import main.modulos.AutomatoFinitoNaoDeterministico.screens.FndInicioPanel;
+import main.modulos.AutomatoFinitoNaoDeterministico.screens.FndProcessamentoPanel;
+import main.modulos.AutomatoFinitoPilha.screens.PilhaConfigPanel;
+import main.modulos.AutomatoFinitoPilha.screens.PilhaInicioPanel;
+import main.modulos.AutomatoFinitoPilha.screens.PilhaProcessamentoPanel;
 import main.grupo03.view.er.ERForm;
 import main.grupo03.view.er.ERHome;
 import main.grupo03.view.glc.GLCForm;
 import main.grupo03.view.glc.GLCHome;
 import main.grupo03.view.gr.GRForm;
 import main.grupo03.view.gr.GRHome;
-
+    
+/**
+ *
+ * @author thiag
+ */
 public class LFStudio extends javax.swing.JFrame {
     public static CardLayout cl;
     
+    FdInicioPanel fdInicioPanel;
+    FdProcessamentoPanel fdProcessamentoPanel;
+    FdConfigPanel fdConfigPanel;
+    FndInicioPanel fndInicioPanel;
+    FndProcessamentoPanel fndProcessamentoPanel;
+    FndConfigPanel fndConfigPanel;
+    PilhaInicioPanel pilhaInicioPanel;
+    PilhaProcessamentoPanel pilhaProcessamentoPanel;
+    PilhaConfigPanel pilhaConfigPanel;
     GLCHome glcHome;
     GLCForm glcForm;
     GRHome grHome;
@@ -31,6 +53,70 @@ public class LFStudio extends javax.swing.JFrame {
     
     Color defaultColor = null;
     
+    void setFndInicioPanel(){
+        fdInicioPanel =  new FdInicioPanel(JanelaExecucao);
+        fdInicioPanel.setBackground(new java.awt.Color(70, 71, 74));
+        fdInicioPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        JanelaExecucao.add(fdInicioPanel, "fdInicioPanel");
+    }
+    
+    void setFdInicioPanel(){
+        fndInicioPanel =  new FndInicioPanel(JanelaExecucao);
+        fndInicioPanel.setBackground(new java.awt.Color(70, 71, 74));
+        fndInicioPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        JanelaExecucao.add(fndInicioPanel, "fndInicioPanel");
+    }
+    
+    void setPilhaInicioPanel(){
+        pilhaInicioPanel =  new PilhaInicioPanel(JanelaExecucao);
+        pilhaInicioPanel.setBackground(new java.awt.Color(70, 71, 74));
+        pilhaInicioPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        JanelaExecucao.add(pilhaInicioPanel, "pilhaInicioPanel");
+    }
+    
+    void setFndProcessamentoPanel(){
+        fndProcessamentoPanel =  new FndProcessamentoPanel(JanelaExecucao);
+        fndProcessamentoPanel.setBackground(new java.awt.Color(70, 71, 74));
+        fndProcessamentoPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        JanelaExecucao.add(fndProcessamentoPanel, "fndProcessamentoPanel");
+  
+    }
+    
+    void setFdProcessamentoPanel(){
+        fdProcessamentoPanel =  new FdProcessamentoPanel(JanelaExecucao);
+        fdProcessamentoPanel.setBackground(new java.awt.Color(70, 71, 74));
+        fdProcessamentoPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        JanelaExecucao.add(fdProcessamentoPanel, "fdProcessamentoPanel");
+    }
+    
+    void setPilhaProcessamentoPanel(){
+        pilhaProcessamentoPanel =  new PilhaProcessamentoPanel(JanelaExecucao);
+        pilhaProcessamentoPanel.setBackground(new java.awt.Color(70, 71, 74));
+        pilhaProcessamentoPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        JanelaExecucao.add(pilhaProcessamentoPanel, "pilhaProcessamentoPanel");
+    }
+    
+    void setFndConfigPanel(){
+        fndConfigPanel =  new FndConfigPanel(JanelaExecucao);
+        fndConfigPanel.setBackground(new java.awt.Color(70, 71, 74));
+        fndConfigPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        JanelaExecucao.add(fndConfigPanel, "fndConfigPanel");
+    }
+    
+    void setFdConfigPanel(){
+        fdConfigPanel =  new FdConfigPanel(JanelaExecucao);
+        fdConfigPanel.setBackground(new java.awt.Color(70, 71, 74));
+        fdConfigPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        JanelaExecucao.add(fdConfigPanel, "fdConfigPanel");
+    }
+    
+    void setPilhaConfigPanel(){
+        pilhaConfigPanel =  new PilhaConfigPanel(JanelaExecucao);
+        pilhaConfigPanel.setBackground(new java.awt.Color(70, 71, 74));
+        pilhaConfigPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        JanelaExecucao.add(pilhaConfigPanel, "pilhaConfigPanel");
+    }
+
     void setGlcHome(){
         glcHome =  new GLCHome(JanelaExecucao);
         glcHome.setBackground(new java.awt.Color(70, 71, 74));
@@ -74,6 +160,15 @@ public class LFStudio extends javax.swing.JFrame {
     }
      
     void initPanels(){
+        setFndInicioPanel();
+        setFndProcessamentoPanel();
+        setFndConfigPanel();
+        setFdConfigPanel();
+        setFdInicioPanel();
+        setFdProcessamentoPanel();
+        setPilhaProcessamentoPanel();
+        setPilhaConfigPanel();
+        setPilhaInicioPanel();
         setGlcHome();
         setGlcForm();
         setGrHome();
@@ -84,6 +179,8 @@ public class LFStudio extends javax.swing.JFrame {
     
     public LFStudio() {
         super("LFPrototipo");
+        ImageIcon image = new ImageIcon(LFStudio.class.getResource("/main/layout/images/taskbarIcon.png"));
+        super.setIconImage(image.getImage());
         initComponents();
         initPanels();
         this.JanelaVisivel.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
@@ -100,7 +197,7 @@ public class LFStudio extends javax.swing.JFrame {
      * regenerated by the Form Editor.
      */
     @SuppressWarnings("unchecked")
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">                          
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         JanelaPrincipal = new javax.swing.JPanel();
@@ -447,190 +544,181 @@ public class LFStudio extends javax.swing.JFrame {
         getContentPane().add(JanelaPrincipal);
 
         pack();
-    }// </editor-fold>                        
-
-
+    }// </editor-fold>//GEN-END:initComponents
   
-    private void menuAFNDMouseClicked(java.awt.event.MouseEvent evt) {                                      
+    private void menuAFNDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAFNDMouseClicked
         cl.show(JanelaExecucao, "fndInicioPanel");
-    }                                     
+    }//GEN-LAST:event_menuAFNDMouseClicked
 
-    private void menuAfdMouseClicked(java.awt.event.MouseEvent evt) {                                     
+    private void menuAfdMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAfdMouseClicked
         cl.show(JanelaExecucao, "fdInicioPanel");    
-    }                                    
+    }//GEN-LAST:event_menuAfdMouseClicked
 
-    private void menuPilhaMouseClicked(java.awt.event.MouseEvent evt) {                                       
+    private void menuPilhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPilhaMouseClicked
         cl.show(JanelaExecucao, "pilhaInicioPanel"); 
-    }                                      
+    }//GEN-LAST:event_menuPilhaMouseClicked
 
-    private void menuAFNDMousePressed(java.awt.event.MouseEvent evt) {                                      
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/AutFndWhite.png"));
-        menuAFND.setIcon(ico);
-    }                                     
-
-    private void menuAFNDMouseReleased(java.awt.event.MouseEvent evt) {                                       
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/AutFndBlack.png"));
-        menuAFND.setIcon(ico);
-    }                                      
-
-    private void menuAfdMousePressed(java.awt.event.MouseEvent evt) {                                     
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/AutFdWhite.png"));
-        menuAfd.setIcon(ico);
-    }                                    
-
-    private void menuAfdMouseReleased(java.awt.event.MouseEvent evt) {                                      
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/AutFdBlack.png"));
-        menuAfd.setIcon(ico);
-    }                                     
-
-    private void menuPilhaMousePressed(java.awt.event.MouseEvent evt) {                                       
-       Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/AutPilhaWhite.png"));
-        menuPilha.setIcon(ico);
-    }                                      
-
-    private void menuPilhaMouseReleased(java.awt.event.MouseEvent evt) {                                        
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/AutPilhaBlack.png"));
-        menuPilha.setIcon(ico);
-    }                                       
-
-    private void menuRegXMousePressed(java.awt.event.MouseEvent evt) {                                      
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/GramRegWhite.png"));
-        menuRegX.setIcon(ico);
-    }                                     
-
-    private void menuRegXMouseReleased(java.awt.event.MouseEvent evt) {                                       
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/GramRegBlack.png"));
-        menuRegX.setIcon(ico);
-    }                                      
-
-    private void menuGramaticasRegularesMousePressed(java.awt.event.MouseEvent evt) {                                                     
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/ExpRegWhite.png"));
-        menuGramaticasRegulares.setIcon(ico);
-    }                                                    
-
-    private void menuGramaticasRegularesMouseReleased(java.awt.event.MouseEvent evt) {                                                      
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/ExpRegBlack.png"));
-        menuGramaticasRegulares.setIcon(ico);      
-    }                                                     
-
-    private void menuGLCMousePressed(java.awt.event.MouseEvent evt) {                                     
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/GramLDCWhite.png"));
-        menuGLC.setIcon(ico);
-    }                                    
-
-    private void menuGLCMouseReleased(java.awt.event.MouseEvent evt) {                                      
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/GramLDCBlack.png"));
-        menuGLC.setIcon(ico);
-    }                                     
-
-    private void menuTuringMousePressed(java.awt.event.MouseEvent evt) {                                        
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/MaqTuringWhite.png"));
-        menuTuring.setIcon(ico);
-    }                                       
-
-    private void menuTuringMouseReleased(java.awt.event.MouseEvent evt) {                                         
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/MaqTuringBlack.png"));
-        menuTuring.setIcon(ico);
-    }                                        
-
-    private void menuAFNDMouseEntered(java.awt.event.MouseEvent evt) {                                      
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/AutFndGray.png"));
-        menuAFND.setIcon(ico);
-    }                                     
-
-    private void menuAFNDMouseExited(java.awt.event.MouseEvent evt) {                                     
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/AutFndBlack.png"));
-        menuAFND.setIcon(ico);
-    }                                    
-
-    private void menuAfdMouseEntered(java.awt.event.MouseEvent evt) {                                     
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/AutFdGray.png"));
-        menuAfd.setIcon(ico);
-    }                                    
-
-    private void menuAfdMouseExited(java.awt.event.MouseEvent evt) {                                    
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/AutFdBlack.png"));
-        menuAfd.setIcon(ico);
-    }                                   
-
-    private void menuPilhaMouseEntered(java.awt.event.MouseEvent evt) {                                       
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/AutPilhaGray.png"));
-        menuPilha.setIcon(ico);
-    }                                      
-
-    private void menuPilhaMouseExited(java.awt.event.MouseEvent evt) {                                      
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/AutPilhaBlack.png"));
-        menuPilha.setIcon(ico);
-    }                
-    
     private void menuRegXMouseClicked(java.awt.event.MouseEvent evt) {
         cl.show(JanelaExecucao, "erHome");
     }
 
-    private void menuRegXMouseEntered(java.awt.event.MouseEvent evt) {                                      
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/GramRegGray.png"));
-        menuRegX.setIcon(ico);
-    }                                     
-
-    private void menuRegXMouseExited(java.awt.event.MouseEvent evt) {                                     
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/GramRegBlack.png"));
-        menuRegX.setIcon(ico);
-    }                  
-    
     private void menuGramaticasRegularesMouseClicked(java.awt.event.MouseEvent evt) {
         cl.show(JanelaExecucao, "grHome");
     }
 
-    private void menuGramaticasRegularesMouseEntered(java.awt.event.MouseEvent evt) {                                                     
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/ExpRegGray.png"));
-        menuGramaticasRegulares.setIcon(ico);
-    }                                                    
-
-    private void menuGramaticasRegularesMouseExited(java.awt.event.MouseEvent evt) {                                                    
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/ExpRegBlack.png"));
-        menuGramaticasRegulares.setIcon(ico);
-    }                                                   
-
     private void menuGLCMouseClicked(java.awt.event.MouseEvent evt) {
         cl.show(JanelaExecucao, "glcHome");
     }
-    
-    private void menuGLCMouseEntered(java.awt.event.MouseEvent evt) {                                     
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/GramLDCGray.png"));
-        menuGLC.setIcon(ico);
-    }                                    
 
-    private void menuGLCMouseExited(java.awt.event.MouseEvent evt) {                                    
+    private void menuAFNDMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAFNDMousePressed
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/AutFndWhite.png"));
+        menuAFND.setIcon(ico);
+    }//GEN-LAST:event_menuAFNDMousePressed
+
+    private void menuAFNDMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAFNDMouseReleased
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/AutFndBlack.png"));
+        menuAFND.setIcon(ico);
+    }//GEN-LAST:event_menuAFNDMouseReleased
+
+    private void menuAfdMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAfdMousePressed
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/AutFdWhite.png"));
+        menuAfd.setIcon(ico);
+    }//GEN-LAST:event_menuAfdMousePressed
+
+    private void menuAfdMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAfdMouseReleased
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/AutFdBlack.png"));
+        menuAfd.setIcon(ico);
+    }//GEN-LAST:event_menuAfdMouseReleased
+
+    private void menuPilhaMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPilhaMousePressed
+       Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/AutPilhaWhite.png"));
+        menuPilha.setIcon(ico);
+    }//GEN-LAST:event_menuPilhaMousePressed
+
+    private void menuPilhaMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPilhaMouseReleased
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/AutPilhaBlack.png"));
+        menuPilha.setIcon(ico);
+    }//GEN-LAST:event_menuPilhaMouseReleased
+
+    private void menuRegXMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuRegXMousePressed
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/GramRegWhite.png"));
+        menuRegX.setIcon(ico);
+    }//GEN-LAST:event_menuRegXMousePressed
+
+    private void menuRegXMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuRegXMouseReleased
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/GramRegBlack.png"));
+        menuRegX.setIcon(ico);
+    }//GEN-LAST:event_menuRegXMouseReleased
+
+    private void menuGramaticasRegularesMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGramaticasRegularesMousePressed
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/ExpRegWhite.png"));
+        menuGramaticasRegulares.setIcon(ico);
+    }//GEN-LAST:event_menuGramaticasRegularesMousePressed
+
+    private void menuGramaticasRegularesMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGramaticasRegularesMouseReleased
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/ExpRegBlack.png"));
+        menuGramaticasRegulares.setIcon(ico);      
+    }//GEN-LAST:event_menuGramaticasRegularesMouseReleased
+
+    private void menuGLCMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGLCMousePressed
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/GramLDCWhite.png"));
+        menuGLC.setIcon(ico);
+    }//GEN-LAST:event_menuGLCMousePressed
+
+    private void menuGLCMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGLCMouseReleased
         Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/GramLDCBlack.png"));
         menuGLC.setIcon(ico);
-    }                                   
+    }//GEN-LAST:event_menuGLCMouseReleased
 
-    private void menuTuringMouseEntered(java.awt.event.MouseEvent evt) {                                        
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/MaqTuringGray.png"));
+    private void menuTuringMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTuringMousePressed
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/MaqTuringWhite.png"));
         menuTuring.setIcon(ico);
-    }                                       
+    }//GEN-LAST:event_menuTuringMousePressed
 
-    private void menuTuringMouseExited(java.awt.event.MouseEvent evt) {                                       
+    private void menuTuringMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTuringMouseReleased
         Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/MaqTuringBlack.png"));
         menuTuring.setIcon(ico);
-    }                                      
+    }//GEN-LAST:event_menuTuringMouseReleased
 
-    private void titleLFStudioMouseClicked(java.awt.event.MouseEvent evt) {                                           
+    private void menuAFNDMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAFNDMouseEntered
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/AutFndGray.png"));
+        menuAFND.setIcon(ico);
+    }//GEN-LAST:event_menuAFNDMouseEntered
+
+    private void menuAFNDMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAFNDMouseExited
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/AutFndBlack.png"));
+        menuAFND.setIcon(ico);
+    }//GEN-LAST:event_menuAFNDMouseExited
+
+    private void menuAfdMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAfdMouseEntered
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/AutFdGray.png"));
+        menuAfd.setIcon(ico);
+    }//GEN-LAST:event_menuAfdMouseEntered
+
+    private void menuAfdMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAfdMouseExited
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/AutFdBlack.png"));
+        menuAfd.setIcon(ico);
+    }//GEN-LAST:event_menuAfdMouseExited
+
+    private void menuPilhaMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPilhaMouseEntered
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/AutPilhaGray.png"));
+        menuPilha.setIcon(ico);
+    }//GEN-LAST:event_menuPilhaMouseEntered
+
+    private void menuPilhaMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPilhaMouseExited
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/AutPilhaBlack.png"));
+        menuPilha.setIcon(ico);
+    }//GEN-LAST:event_menuPilhaMouseExited
+
+    private void menuRegXMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuRegXMouseEntered
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/GramRegGray.png"));
+        menuRegX.setIcon(ico);
+    }//GEN-LAST:event_menuRegXMouseEntered
+
+    private void menuRegXMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuRegXMouseExited
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/GramRegBlack.png"));
+        menuRegX.setIcon(ico);
+    }//GEN-LAST:event_menuRegXMouseExited
+
+    private void menuGramaticasRegularesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGramaticasRegularesMouseEntered
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/ExpRegGray.png"));
+        menuGramaticasRegulares.setIcon(ico);
+    }//GEN-LAST:event_menuGramaticasRegularesMouseEntered
+
+    private void menuGramaticasRegularesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGramaticasRegularesMouseExited
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/ExpRegBlack.png"));
+        menuGramaticasRegulares.setIcon(ico);
+    }//GEN-LAST:event_menuGramaticasRegularesMouseExited
+
+    private void menuGLCMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGLCMouseEntered
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/GramLDCGray.png"));
+        menuGLC.setIcon(ico);
+    }//GEN-LAST:event_menuGLCMouseEntered
+
+    private void menuGLCMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGLCMouseExited
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/GramLDCBlack.png"));
+        menuGLC.setIcon(ico);
+    }//GEN-LAST:event_menuGLCMouseExited
+
+    private void menuTuringMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTuringMouseEntered
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/MaqTuringGray.png"));
+        menuTuring.setIcon(ico);
+    }//GEN-LAST:event_menuTuringMouseEntered
+
+    private void menuTuringMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTuringMouseExited
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/MaqTuringBlack.png"));
+        menuTuring.setIcon(ico);
+    }//GEN-LAST:event_menuTuringMouseExited
+
+    private void titleLFStudioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_titleLFStudioMouseClicked
         cl.show(JanelaExecucao, "home");
-    }                                          
+    }//GEN-LAST:event_titleLFStudioMouseClicked
 
     /**
      * @param args the command line arguments
      */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        //</editor-fold>
-        //</editor-fold>
-        /* Create and display the form */
+    
+   public static void main(String args[]) {
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -647,7 +735,6 @@ public class LFStudio extends javax.swing.JFrame {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(LFStudio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new LFStudio().setVisible(true);
@@ -658,7 +745,7 @@ public class LFStudio extends javax.swing.JFrame {
     public JInternalFrame getjInternalFrame1() {
         return JanelaVisivel;
     }
-    // Variables declaration - do not modify                     
+    // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel HomePage;
     private javax.swing.JPanel JanelaExecucao;
     private javax.swing.JPanel JanelaPrincipal;
@@ -676,5 +763,5 @@ public class LFStudio extends javax.swing.JFrame {
     private javax.swing.JScrollPane menuScroll;
     private javax.swing.JLabel menuTuring;
     private javax.swing.JLabel titleLFStudio;
-    // End of variables declaration                   
+    // End of variables declaration//GEN-END:variables
 }
