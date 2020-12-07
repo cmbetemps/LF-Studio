@@ -2,7 +2,6 @@ package main.modulos.ExpressoesRegulares.screens;
 
 import com.google.gson.Gson;
 import java.awt.Font;
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
@@ -39,20 +38,24 @@ public class ERHome extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        labelTituloGLC = new javax.swing.JLabel();
+        fndTitle = new javax.swing.JPanel();
+        labelTituloER = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
         labelNovaER = new javax.swing.JLabel();
         labelImportarER = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(28, 28, 28));
 
-        labelTituloGLC.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 48)); // NOI18N
-        labelTituloGLC.setForeground(new java.awt.Color(255, 255, 255));
-        labelTituloGLC.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        labelTituloGLC.setText("<html><p style=\"padding-bottom: 16px; font-size:30px;\">Expressão Regular</p></html>");
-        labelTituloGLC.addMouseListener(new java.awt.event.MouseAdapter() {
+        fndTitle.setBackground(new java.awt.Color(28, 28, 28));
+        fndTitle.setPreferredSize(new java.awt.Dimension(579, 648));
+
+        labelTituloER.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 48)); // NOI18N
+        labelTituloER.setForeground(new java.awt.Color(255, 255, 255));
+        labelTituloER.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        labelTituloER.setText("<html><p style=\"padding-bottom: 16px; font-size:30px;\">Expressão Regular</p></html>");
+        labelTituloER.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                labelTituloGLCMouseEntered(evt);
+                labelTituloERMouseEntered(evt);
             }
         });
 
@@ -98,33 +101,43 @@ public class ERHome extends javax.swing.JPanel {
             }
         });
 
+        javax.swing.GroupLayout fndTitleLayout = new javax.swing.GroupLayout(fndTitle);
+        fndTitle.setLayout(fndTitleLayout);
+        fndTitleLayout.setHorizontalGroup(
+            fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(labelTituloER)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fndTitleLayout.createSequentialGroup()
+                .addContainerGap(128, Short.MAX_VALUE)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(121, 121, 121))
+            .addComponent(labelNovaER, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(labelImportarER, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        fndTitleLayout.setVerticalGroup(
+            fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(fndTitleLayout.createSequentialGroup()
+                .addGap(191, 191, 191)
+                .addComponent(labelTituloER, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(57, 57, 57)
+                .addComponent(labelNovaER, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(labelImportarER)
+                .addContainerGap(249, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(labelTituloGLC, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(93, 93, 93)
-                        .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(labelImportarER, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 459, Short.MAX_VALUE)
-                        .addComponent(labelNovaER, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(53, Short.MAX_VALUE))
+                .addComponent(fndTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 20, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(191, 191, 191)
-                .addComponent(labelTituloGLC, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(57, 57, 57)
-                .addComponent(labelNovaER, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelImportarER)
-                .addContainerGap(244, Short.MAX_VALUE))
+            .addComponent(fndTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -152,8 +165,8 @@ public class ERHome extends javax.swing.JPanel {
         labelImportarER.setFont(f.deriveFont(f.getStyle(), f.getSize2D()-4));
     }//GEN-LAST:event_labelImportarERMouseExited
 
-    private void labelTituloGLCMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelTituloGLCMouseEntered
-    }//GEN-LAST:event_labelTituloGLCMouseEntered
+    private void labelTituloERMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelTituloERMouseEntered
+    }//GEN-LAST:event_labelTituloERMouseEntered
 
     private void labelImportarERMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelImportarERMouseClicked
         JFileChooser fileChooser = new JFileChooser();
@@ -181,7 +194,7 @@ public class ERHome extends javax.swing.JPanel {
                     Reader fileJson = new FileReader( arquivoJson );
                     try {
                         ER er = json.fromJson(fileJson, ER.class);
-                        if (true) { // !er.getTipo().equals(ER.Tooltip.ER)) {
+                        if (!er.getTipo().equals(ER.Tooltip.ER)) {
                             JOptionPane.showMessageDialog(this,
                                 "Tipo de Linguagem Inválido!", //mensagem
                                 "Erro de Importação", // titulo da janela 
@@ -212,9 +225,10 @@ public class ERHome extends javax.swing.JPanel {
     
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JPanel fndTitle;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel labelImportarER;
     private javax.swing.JLabel labelNovaER;
-    private javax.swing.JLabel labelTituloGLC;
+    private javax.swing.JLabel labelTituloER;
     // End of variables declaration//GEN-END:variables
 }

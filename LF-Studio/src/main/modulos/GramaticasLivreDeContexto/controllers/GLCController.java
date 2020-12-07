@@ -37,10 +37,10 @@ public class GLCController extends AppController {
         addArrayListCharacter(this.variaveis, this.variaveisGLC);
         addArrayListCharacter(this.simboloTerminal, this.terminaisGLC);
         addRegras(this.regras);
-        glc = new GLC(variaveisGLC, terminaisGLC, regrasGLC, this.simboloInicial);
-        glc.derivar(this.palavra);
-        resultado = glc.getResultado();
-        statusOK = glc.isStatusOK();
+        // glc = new GLC(variaveisGLC, terminaisGLC, regrasGLC, this.simboloInicial);
+        // glc.derivar(this.palavra);
+        // resultado = glc.getResultado();
+        // statusOK = glc.isStatusOK();
     }
     
     public void gerarTexts() {
