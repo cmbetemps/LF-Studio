@@ -200,7 +200,9 @@ public class ERHome extends javax.swing.JPanel {
                                 "Erro de Importação", // titulo da janela 
                                 JOptionPane.WARNING_MESSAGE);
                         } else {
-                            System.out.println(er.toString());
+                            // System.out.println(er.toString());
+                            ERForm.setFromImport(true);
+                            ERForm.setNovoERP(er);
                             LFStudio.cl.show(JanelaExecucao, "erForm");
                         }
                     } catch (Exception e) {

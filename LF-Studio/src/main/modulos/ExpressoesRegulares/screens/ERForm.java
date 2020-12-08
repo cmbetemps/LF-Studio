@@ -5,6 +5,14 @@
  */
 package main.modulos.ExpressoesRegulares.screens;
 
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
+import java.util.HashMap;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import main.modulos.ExpressoesRegulares.domain.models.ER;
+
 /**
  *
  * @author IGSF
@@ -12,13 +20,50 @@ package main.modulos.ExpressoesRegulares.screens;
 public class ERForm extends javax.swing.JPanel {
     
     javax.swing.JPanel JanelaExecucao;
+    
+    ER novoER = new ER();
+    static ER novoERP;
+    static boolean fromImport = false;
 
+    public static ER getNovoERP() {
+        return novoERP;
+    }
+
+    public static void setNovoERP(ER novoER) {
+        ERForm.novoERP = novoER;
+    }
+
+    public static boolean isFromImport() {
+        return fromImport;
+    }
+
+    public static void setFromImport(boolean fromImport) {
+        ERForm.fromImport = fromImport;
+    }
+    
     /**
      * Creates new form ER
      * @param janela
      */
     public ERForm(javax.swing.JPanel janela) {
         this.JanelaExecucao = janela;
+        addComponentListener(new ComponentAdapter() {
+            @Override
+            public void componentHidden(ComponentEvent evt) {
+                // stop();
+                limpaCampos();
+            }
+            @Override
+            public void componentShown(ComponentEvent evt) {
+                // start();
+                limpaCampos();
+                if (isFromImport()) {
+                    setFromImport(false);
+                    novoER = getNovoERP();
+                    preencherCampos(false);
+                }
+            }
+        });
         initComponents();
     }
 
@@ -35,14 +80,16 @@ public class ERForm extends javax.swing.JPanel {
         jMenu1 = new javax.swing.JMenu();
         jMenu2 = new javax.swing.JMenu();
         jLabel3 = new javax.swing.JLabel();
+        fndTitle = new javax.swing.JPanel();
+        btnTeste = new javax.swing.JLabel();
+        btnExportar = new javax.swing.JLabel();
         ER_Titulo = new javax.swing.JLabel();
         ER_Input = new javax.swing.JLabel();
         ER_Campo = new javax.swing.JTextField();
-        ER_Enviar = new javax.swing.JButton();
         ER_Info_Saida = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         ER_Saida = new javax.swing.JTextArea();
-        ER_Enviar1 = new javax.swing.JButton();
+        btnExecutar = new javax.swing.JLabel();
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -56,35 +103,77 @@ public class ERForm extends javax.swing.JPanel {
         jLabel3.setToolTipText("");
         jLabel3.setName("Input"); // NOI18N
 
-        setBackground(new java.awt.Color(54, 54, 54));
+        setBackground(new java.awt.Color(28, 28, 28));
 
-        ER_Titulo.setFont(new java.awt.Font("OCR A Extended", 0, 36)); // NOI18N
+        fndTitle.setBackground(new java.awt.Color(28, 28, 28));
+        fndTitle.setPreferredSize(new java.awt.Dimension(579, 648));
+
+        btnTeste.setBackground(new java.awt.Color(51, 51, 51));
+        btnTeste.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
+        btnTeste.setForeground(new java.awt.Color(255, 255, 255));
+        btnTeste.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnTeste.setText("Teste");
+        btnTeste.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnTeste.setOpaque(true);
+        btnTeste.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnTesteMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnTesteMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnTesteMouseExited(evt);
+            }
+        });
+
+        btnExportar.setBackground(new java.awt.Color(51, 51, 51));
+        btnExportar.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
+        btnExportar.setForeground(new java.awt.Color(255, 255, 255));
+        btnExportar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnExportar.setText("Exportar");
+        btnExportar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnExportar.setOpaque(true);
+        btnExportar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnExportarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnExportarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnExportarMouseExited(evt);
+            }
+        });
+
+        ER_Titulo.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 36)); // NOI18N
         ER_Titulo.setForeground(new java.awt.Color(255, 255, 255));
         ER_Titulo.setText("Expressões Regulares");
         ER_Titulo.setToolTipText("");
         ER_Titulo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         ER_Titulo.setName("Titulo"); // NOI18N
 
-        ER_Input.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
+        ER_Input.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
         ER_Input.setForeground(new java.awt.Color(240, 240, 240));
         ER_Input.setText("Input / Regex:");
         ER_Input.setToolTipText("");
         ER_Input.setName("Input"); // NOI18N
 
-        ER_Campo.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
+        ER_Campo.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
         ER_Campo.setText("Digite aqui a Expressão Regular...");
         ER_Campo.setName("Campo_de_Texto"); // NOI18N
-
-        ER_Enviar.setBackground(new java.awt.Color(105, 105, 105));
-        ER_Enviar.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
-        ER_Enviar.setText("Enviar");
-        ER_Enviar.addActionListener(new java.awt.event.ActionListener() {
+        ER_Campo.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                ER_CampoFocusGained(evt);
+            }
+        });
+        ER_Campo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ER_EnviarActionPerformed(evt);
+                ER_CampoActionPerformed(evt);
             }
         });
 
-        ER_Info_Saida.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
+        ER_Info_Saida.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
         ER_Info_Saida.setForeground(new java.awt.Color(240, 240, 240));
         ER_Info_Saida.setText("Saída do Programa:");
         ER_Info_Saida.setToolTipText("");
@@ -92,78 +181,237 @@ public class ERForm extends javax.swing.JPanel {
 
         ER_Saida.setColumns(20);
         ER_Saida.setRows(5);
-        jScrollPane1.setViewportView(ER_Saida);
-
-        ER_Enviar1.setBackground(new java.awt.Color(105, 105, 105));
-        ER_Enviar1.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
-        ER_Enviar1.setText("Retornar");
-        ER_Enviar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ER_Enviar1ActionPerformed(evt);
+        ER_Saida.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                ER_SaidaFocusGained(evt);
             }
         });
+        jScrollPane1.setViewportView(ER_Saida);
+
+        btnExecutar.setBackground(new java.awt.Color(51, 51, 51));
+        btnExecutar.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
+        btnExecutar.setForeground(new java.awt.Color(255, 255, 255));
+        btnExecutar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnExecutar.setText("Executar");
+        btnExecutar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnExecutar.setOpaque(true);
+        btnExecutar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnExecutarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnExecutarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnExecutarMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout fndTitleLayout = new javax.swing.GroupLayout(fndTitle);
+        fndTitle.setLayout(fndTitleLayout);
+        fndTitleLayout.setHorizontalGroup(
+            fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fndTitleLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ER_Titulo)
+                .addGap(126, 126, 126))
+            .addGroup(fndTitleLayout.createSequentialGroup()
+                .addGap(50, 50, 50)
+                .addGroup(fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addGroup(fndTitleLayout.createSequentialGroup()
+                        .addComponent(btnTeste, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnExecutar, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(btnExportar, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(ER_Info_Saida)
+                        .addComponent(ER_Campo, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 480, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(ER_Input)))
+                .addContainerGap(49, Short.MAX_VALUE))
+        );
+        fndTitleLayout.setVerticalGroup(
+            fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fndTitleLayout.createSequentialGroup()
+                .addGap(18, 18, 18)
+                .addComponent(ER_Titulo)
+                .addGap(18, 18, 18)
+                .addComponent(ER_Input)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(ER_Campo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addComponent(ER_Info_Saida)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 343, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30)
+                .addGroup(fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnExportar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnTeste, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnExecutar, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(44, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(166, 166, 166)
-                        .addComponent(ER_Titulo))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(ER_Campo, javax.swing.GroupLayout.PREFERRED_SIZE, 660, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(ER_Enviar, javax.swing.GroupLayout.PREFERRED_SIZE, 103, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(ER_Info_Saida)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 783, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ER_Input))
-                .addContainerGap(34, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(ER_Enviar1)
-                .addContainerGap())
+                .addComponent(fndTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(ER_Titulo)
-                .addGap(23, 23, 23)
-                .addComponent(ER_Input)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ER_Campo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ER_Enviar))
-                .addGap(18, 18, 18)
-                .addComponent(ER_Info_Saida)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
-                .addComponent(ER_Enviar1)
-                .addContainerGap())
+            .addComponent(fndTitle, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 654, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ER_EnviarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ER_EnviarActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ER_EnviarActionPerformed
+    private void btnExportarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExportarMouseEntered
+        btnExportar.setBackground(btnExportar.getBackground().brighter().brighter());
+    }//GEN-LAST:event_btnExportarMouseEntered
 
-    private void ER_Enviar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ER_Enviar1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ER_Enviar1ActionPerformed
+    private void btnExportarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExportarMouseExited
+        btnExportar.setBackground(btnExportar.getBackground().darker().darker());
+    }//GEN-LAST:event_btnExportarMouseExited
 
+    private void btnTesteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTesteMouseEntered
+        btnTeste.setBackground(btnTeste.getBackground().brighter().brighter());
+    }//GEN-LAST:event_btnTesteMouseEntered
+
+    private void btnTesteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTesteMouseExited
+        btnTeste.setBackground(btnTeste.getBackground().darker().darker());
+    }//GEN-LAST:event_btnTesteMouseExited
+
+    private void ER_CampoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ER_CampoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_ER_CampoActionPerformed
+
+    private void btnExportarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExportarMouseClicked
+        if (true){ // novoER.isStatusOK()) {
+            JFileChooser fileChooser = new JFileChooser();
+            // fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+            fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+ 
+            fileChooser.addChoosableFileFilter(new FileNameExtensionFilter("Json File", "json"));
+
+            fileChooser.setAcceptAllFileFilterUsed(false);
+
+            int result = fileChooser.showOpenDialog(this);
+
+            if (result == JFileChooser.APPROVE_OPTION) {
+                String pathFile = fileChooser.getCurrentDirectory().toString() + "\\" + fileChooser.getSelectedFile().getName();
+                if (!fileChooser.getSelectedFile().getName().endsWith(".json")) {
+                    pathFile += ".json";
+                }
+                // System.out.println(pathFile);
+                String export = novoER.exportar(pathFile);
+                JOptionPane.showMessageDialog(this,
+                    export, //mensagem
+                    "Exportação", // titulo da janela 
+                    JOptionPane.INFORMATION_MESSAGE);
+            }
+            // if (result == JFileChooser.CANCEL_OPTION) {
+                // System.out.println("You pressed cancel");
+            // }
+        } else {
+            JOptionPane.showMessageDialog(this,
+                    "Houve um problema ao exportar o arquivo!", //mensagem
+                    "Exportação", // titulo da janela 
+                    JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_btnExportarMouseClicked
+
+    private void btnTesteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTesteMouseClicked
+        limpaCampos();
+        preencherCampos(true);
+    }//GEN-LAST:event_btnTesteMouseClicked
+
+    private void ER_CampoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ER_CampoFocusGained
+        ER_Campo.selectAll();
+    }//GEN-LAST:event_ER_CampoFocusGained
+
+    private void ER_SaidaFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ER_SaidaFocusGained
+        ER_Saida.selectAll();
+    }//GEN-LAST:event_ER_SaidaFocusGained
+
+    private void btnExecutarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExecutarMouseClicked
+        if (validaCampos()) {
+            ER localER = new ER();
+            
+            localER.setInput(ER_Campo.getText().toString());
+            
+            try {
+                localER.setOutput(ER.testCalc(localER.getInput()));
+            } catch (Exception ex) {
+                // System.out.println(ex);
+                JOptionPane.showMessageDialog(this,
+                    "Houve um problema ao executar! " + ex.getMessage(), //mensagem
+                    "Erro", // titulo da janela 
+                    JOptionPane.ERROR_MESSAGE);
+            }
+            ER_Saida.setText("\u03A3 = " + localER.getOutputInString());
+            novoER = localER;
+        }
+    }//GEN-LAST:event_btnExecutarMouseClicked
+
+    private void btnExecutarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExecutarMouseEntered
+        btnExecutar.setBackground(btnExecutar.getBackground().brighter().brighter());
+    }//GEN-LAST:event_btnExecutarMouseEntered
+
+    private void btnExecutarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExecutarMouseExited
+        btnExecutar.setBackground(btnExecutar.getBackground().darker().darker());
+    }//GEN-LAST:event_btnExecutarMouseExited
+
+    public boolean validaCampos() {
+        HashMap<String, String> valida = new HashMap<String, String>();
+        if (ER_Campo.getText().toString().equals("")) {
+            valida.put("erro", "Input");
+        }
+        for (String i : valida.keySet()) {
+            if (i.equals("erro")) {
+                JOptionPane.showMessageDialog(this,
+                    "Campo "+ valida.get(i) +" Inválido!", //mensagem
+                    "Erro ao Verificar", // titulo da janela 
+                    JOptionPane.WARNING_MESSAGE);
+                return false;
+            }
+            // System.out.println(i);
+        }
+        return true;
+    }
+    
+    public void limpaCampos() {
+        ER_Campo.setText("");
+        ER_Saida.setText("");
+    }
+    
+    public void preencherCampos(boolean teste) {
+        if (teste) {
+            ER_Campo.setText("(0|1*).(0|1)*");
+        } else {
+            ER_Campo.setText(novoER.getInput());
+            ER_Saida.setText("\u03A3 = " + novoER.getOutputInString());
+        }
+    }
+
+    public void start() {
+        System.out.println("er started");
+    }
+
+    public void stop() {
+        System.out.println("er stopped");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField ER_Campo;
-    private javax.swing.JButton ER_Enviar;
-    private javax.swing.JButton ER_Enviar1;
     private javax.swing.JLabel ER_Info_Saida;
     private javax.swing.JLabel ER_Input;
     private javax.swing.JTextArea ER_Saida;
     private javax.swing.JLabel ER_Titulo;
+    private javax.swing.JLabel btnExecutar;
+    private javax.swing.JLabel btnExportar;
+    private javax.swing.JLabel btnTeste;
+    private javax.swing.JPanel fndTitle;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
