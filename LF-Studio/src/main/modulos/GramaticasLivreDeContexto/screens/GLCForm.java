@@ -8,6 +8,7 @@ import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import main.modulos.GramaticasLivreDeContexto.controllers.GLCController;
 import main.modulos.GramaticasLivreDeContexto.domain.models.GLC;
+import main.modulos.GramaticasLivreDeContexto.domain.utils.JsonFormatter;
 import main.modulos.GramaticasLivreDeContexto.domain.utils.LimiteCaracteres;
 
 /**
@@ -442,6 +443,7 @@ public class GLCForm extends javax.swing.JPanel {
                     localGLC.gerarPalavras(localGLCC.getQtdPalavras());
                     
                     txtResultado.setText(localGLC.getPalavrasGeradas());
+                    novoGLC = localGLC;
                 } else {
                     JOptionPane.showMessageDialog(this,
                         "Houve um problema ao executar! ", //mensagem
@@ -484,7 +486,9 @@ public class GLCForm extends javax.swing.JPanel {
                     pathFile += ".json";
                 }
                 // System.out.println(pathFile);
-                String export = novoGLC.exportar(pathFile);
+                // String export = novoGLC.exportar(pathFile);
+                JsonFormatter json = new JsonFormatter();
+                String export = json.writeObject(novoGLC, pathFile);
                 JOptionPane.showMessageDialog(this,
                     export, //mensagem
                     "Exportação", // titulo da janela 
