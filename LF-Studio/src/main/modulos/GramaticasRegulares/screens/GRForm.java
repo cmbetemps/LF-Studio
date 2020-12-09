@@ -22,16 +22,16 @@ public class GRForm extends javax.swing.JPanel {
     
     javax.swing.JPanel JanelaExecucao;
     
-    GRController novoGR = new GRController();
-    GR gr = new GR();
-    static GRController novoGRP;
+    GRController novoGRC = new GRController();
+    GR novoGR = new GR();
+    static GR novoGRP;
     static boolean fromImport = false;
 
-    public static GRController getNovoGRP() {
+    public static GR getNovoGRP() {
         return novoGRP;
     }
 
-    public static void setNovoGRP(GRController novoGR) {
+    public static void setNovoGRP(GR novoGR) {
         GRForm.novoGRP = novoGR;
     }
 
@@ -482,8 +482,8 @@ public class GRForm extends javax.swing.JPanel {
                 localGR = new GRController(Integer.parseInt(txtNPalavras.getText()), txtNaoTerminais.getText(), 
                             txtTerminais.getText(), txtRegras.getText(), txtRaizes.getText());
                 localGR.execute();
-                gr = GRController.getG_R();
-                novoGR = localGR;
+                novoGR = GRController.getG_R();
+                novoGRC = localGR;
             } catch (Exception ex) {
                 // System.out.println(ex);
                 JOptionPane.showMessageDialog(this,
@@ -520,7 +520,7 @@ public class GRForm extends javax.swing.JPanel {
                     pathFile += ".json";
                 }
                 // System.out.println(pathFile);
-                String export = gr.exportar(pathFile);
+                String export = novoGR.exportar(pathFile);
                 JOptionPane.showMessageDialog(this,
                     export, //mensagem
                     "Exportação", // titulo da janela 
@@ -616,7 +616,12 @@ public class GRForm extends javax.swing.JPanel {
         if (teste) {
             
         } else {
-            
+            txtNPalavras.setText(""+novoGR.getQtdPalavras());
+            txtRaizes.setText(novoGR.getRaizes());
+            txtNaoTerminais.setText(novoGR.nao_terminais.toString());
+            txtTerminais.setText(novoGR.terminais.toString());
+            txtRegras.setText(novoGR.conj_regras.toString());
+            txtResultado.setText(novoGR.getResultado());
         }
     }
     

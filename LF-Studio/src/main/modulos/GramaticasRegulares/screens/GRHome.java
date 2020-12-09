@@ -184,8 +184,8 @@ public class GRHome extends javax.swing.JPanel {
                 try {
                     Reader fileJson = new FileReader( arquivoJson );
                     try {
-                        GRController gr = json.fromJson(fileJson, GRController.class);
-                        if (!gr.getTipo().equals(GRController.Tooltip.GR)) {
+                        GR gr = json.fromJson(fileJson, GR.class);
+                        if (!gr.getTipo().equals(GR.Tooltip.GR)) {
                             JOptionPane.showMessageDialog(this,
                                 "Tipo de Linguagem Inválido!", //mensagem
                                 "Importação", // titulo da janela
