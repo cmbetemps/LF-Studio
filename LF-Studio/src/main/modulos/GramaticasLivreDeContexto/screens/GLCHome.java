@@ -12,6 +12,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import main.LFStudio;
 import main.modulos.GramaticasLivreDeContexto.controllers.GLCController;
 import main.modulos.GramaticasLivreDeContexto.domain.models.GLC;
+import main.modulos.GramaticasLivreDeContexto.domain.utils.JsonFormatter;
 
 /**
  *
@@ -179,11 +180,15 @@ public class GLCHome extends javax.swing.JPanel {
                     "Importação", // titulo da janela
                     JOptionPane.WARNING_MESSAGE);
             } else {
-                Gson json = new Gson();
+                // Gson json = new Gson();
                 try {
-                    Reader fileJson = new FileReader( arquivoJson );
+                    // Reader fileJson = new FileReader( arquivoJson );
+                    JsonFormatter jsonGLC = new JsonFormatter();
+                    
                     try {
-                        GLC glc = json.fromJson(fileJson, GLC.class);
+                        // GLC glc = json.fromJson(fileJson, GLC.class);
+                        GLC glc = jsonGLC.readJson(pathFile, false);
+                        
                         if (!glc.getTipo().equals(GLC.Tooltip.GLC)) {
                             JOptionPane.showMessageDialog(this,
                                 "Tipo de Linguagem Inválido!", //mensagem
@@ -201,8 +206,8 @@ public class GLCHome extends javax.swing.JPanel {
                             "Importação", // titulo da janela
                             JOptionPane.WARNING_MESSAGE);
                     }
-                    fileJson.close();
-                } catch (IOException ex) {
+                    // fileJson.close();
+                } catch (Exception ex) {
                     JOptionPane.showMessageDialog(this,
                         "Erro ao abrir o arquivo!", //mensagem
                         "Importação", // titulo da janela

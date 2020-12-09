@@ -191,23 +191,29 @@ public final class GLC extends AppModel{
         }
         return retorno;
     }
-    
-    public String exportar(String diretorio) {
-        try {
-            Gson json = new Gson();
-            Gson gson = new GsonBuilder().setPrettyPrinting().create();
-            // String strJson = json.toJson(this, ER.class);
-            try (FileWriter writer = new FileWriter(diretorio)) {
-                gson.toJson(this, writer);
-            } catch (IOException e) {
-                return "Erro ao exportar arquivo, falha ao cria-lo!";
-            }
-            // System.out.println(strJson);
-            // System.out.println(toString());
-        } catch (Exception e) {
-            return "Erro ao exportar arquivo!";
-        }
-        return "Arquivo exportado com sucesso!";
+
+    public int getQuantidade() {
+        return quantidade;
+    }
+
+    public String getSimboloInicial() {
+        return simboloInicial;
+    }
+
+    public Alfabeto getAlfabeto() {
+        return alfabeto;
+    }
+
+    public String[][] getPalavras() {
+        return _palavras;
+    }
+
+    public Regras getRegras() {
+        return regras;
+    }
+
+    public boolean isGramaticaValida() {
+        return gramaticaValida;
     }
     
 }

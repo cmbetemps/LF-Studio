@@ -50,4 +50,24 @@ public class Alfabeto {
         }
         return str;
     }
+    
+    public String getTerminais() {
+        String retorno = "";
+        for (int i = 0; i < terminais.length; i++) {
+            for (int j = 0; j < terminais[i].length(); j++) {
+                retorno += terminais[i] + ",";
+            }
+        }
+        return retorno;
+    }
+    
+    public String getNaoTerminais() {
+        String retorno = "";
+        for (int i = 0; i < naoTerminais.length; i++) {
+            for (int j = 0; j < naoTerminais[i].length(); j++) {
+                retorno += naoTerminais[i] + ",";
+            }
+        }
+        return retorno;
+    }
 }

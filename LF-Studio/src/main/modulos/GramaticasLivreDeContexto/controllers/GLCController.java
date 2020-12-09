@@ -47,10 +47,6 @@ public class GLCController extends AppController {
         return glc;
     }
     
-    public void gerarTexts() {
-        
-    }
-    
     private String addArrayListCharacter(String string) {
         String retorno = "";
         string = string.replaceAll(" ", "");
@@ -133,8 +129,6 @@ public class GLCController extends AppController {
     public void setGlc(GLC glc) {
         this.glc = glc;
     }
-    
-    
 
     public boolean isStatusOK() {
         return statusOK;

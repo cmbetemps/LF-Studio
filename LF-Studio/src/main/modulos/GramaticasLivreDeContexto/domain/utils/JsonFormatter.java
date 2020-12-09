@@ -43,10 +43,12 @@ public class JsonFormatter {
     });
 
     Gson gson = gsonBuilder.setPrettyPrinting().create();
+    // try (FileWriter writer = new FileWriter(userDirectory + nomeDoArquivo)) {
     try (FileWriter writer = new FileWriter(nomeDoArquivo)) {
       gson.toJson(gramatica, writer);
       if(gramatica.is_gramaticaValida()) 
           return ("Arquivo criado com sucesso no diretorio:" + nomeDoArquivo);
+          // return ("Arquivo criado com sucesso no diretorio:" + userDirectory + nomeDoArquivo);
       else 
           return "Erro ao exportar arquivo, falha ao cria-lo!";
     } catch (IOException e) {
@@ -66,7 +68,8 @@ public class JsonFormatter {
   public GLC readJson(String nome, boolean diretorioAtual) throws FileNotFoundException {
     String userDirectory= System.getProperty("user.dir") + "/";
     String nomeDoArquivo=nome;
-    String pathAbsoluto = userDirectory + nomeDoArquivo;
+    // String pathAbsoluto = userDirectory + nomeDoArquivo;
+    String pathAbsoluto = nomeDoArquivo;
     if(!diretorioAtual){
       pathAbsoluto = nome;
     }

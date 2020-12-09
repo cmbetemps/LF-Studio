@@ -590,12 +590,12 @@ public class GLCForm extends javax.swing.JPanel {
             txtRegras.setText("A,a,A,b,A,aAa,A,c");
             txtResultado.setText("");
         } else {
-            txtNPalavras.setText(""+novoGLC.quantidade);
-            txtSimboloInicial.setText("");
-            txtTerminais.setText("");
-            txtNaoTerminais.setText("");
-            txtRegras.setText("");
-            txtResultado.setText("");
+            txtNPalavras.setText(""+novoGLC.getQuantidade());
+            txtSimboloInicial.setText(novoGLC.getSimboloInicial());
+            txtTerminais.setText(novoGLC.getAlfabeto().getTerminais());
+            txtNaoTerminais.setText(novoGLC.getAlfabeto().getNaoTerminais());
+            txtRegras.setText(novoGLC.getRegras().getRegrasToString());
+            txtResultado.setText(novoGLC.getPalavrasGeradas());
         }
     }
     
