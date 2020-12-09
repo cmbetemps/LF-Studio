@@ -1,8 +1,13 @@
 package main.modulos.GramaticasLivreDeContexto.domain.models;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
 import java.util.TreeMap;
 import main.grupo03.AppModel;
 
@@ -175,6 +180,34 @@ public final class GLC extends AppModel{
 
     public Tooltip getTipo() {
         return tipo;
+    }
+    
+    public String getPalavrasGeradas() {
+        String retorno = "";
+        for(Map.Entry<Integer, String> entry : palavrasGeradas.entrySet()) {
+            Integer key = entry.getKey();
+            String value = entry.getValue();
+            retorno += (key + " => " + value + "\n");
+        }
+        return retorno;
+    }
+    
+    public String exportar(String diretorio) {
+        try {
+            Gson json = new Gson();
+            Gson gson = new GsonBuilder().setPrettyPrinting().create();
+            // String strJson = json.toJson(this, ER.class);
+            try (FileWriter writer = new FileWriter(diretorio)) {
+                gson.toJson(this, writer);
+            } catch (IOException e) {
+                return "Erro ao exportar arquivo, falha ao cria-lo!";
+            }
+            // System.out.println(strJson);
+            // System.out.println(toString());
+        } catch (Exception e) {
+            return "Erro ao exportar arquivo!";
+        }
+        return "Arquivo exportado com sucesso!";
     }
     
 }

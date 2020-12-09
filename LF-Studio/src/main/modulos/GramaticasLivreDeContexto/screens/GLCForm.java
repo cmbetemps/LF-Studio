@@ -18,8 +18,7 @@ public class GLCForm extends javax.swing.JPanel {
     
     javax.swing.JPanel JanelaExecucao;
     
-    GLCController glcNovo = new GLCController();
-    
+    GLCController novoGLCC = new GLCController();
     GLC novoGLC = new GLC();
     static GLC novoGLCP;
     static boolean fromImport = false;
@@ -39,15 +38,14 @@ public class GLCForm extends javax.swing.JPanel {
     public static void setFromImport(boolean fromImport) {
         GLCForm.fromImport = fromImport;
     }
-    
+
     /**
-     * Creates new form GLC
+     * Creates new form GR
      * @param janela
      */
     public GLCForm(javax.swing.JPanel janela) {
         this.JanelaExecucao = janela;
-        initComponents();
-        ER_Campo2.setDocument(new LimiteCaracteres(1));
+        // txtSimboloInicial.setDocument(new LimiteCaracteres(1));
         addComponentListener(new ComponentAdapter() {
             @Override
             public void componentHidden(ComponentEvent evt) {
@@ -65,7 +63,7 @@ public class GLCForm extends javax.swing.JPanel {
                 }
             }
         });
-        limpaCampos();
+        initComponents();
     }
 
     /**
@@ -82,23 +80,24 @@ public class GLCForm extends javax.swing.JPanel {
         jMenu2 = new javax.swing.JMenu();
         jLabel3 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        fndTitle = new javax.swing.JPanel();
         GLC_Titulo = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        ER_Campo1 = new javax.swing.JTextField();
+        txtNPalavras = new javax.swing.JTextField();
+        txtSimboloInicial = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        ER_Campo2 = new javax.swing.JTextField();
+        txtTerminais = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        ER_Campo3 = new javax.swing.JTextField();
-        ER_Enviar1 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtNaoTerminais = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        ER_Campo4 = new javax.swing.JTextField();
+        btnExportar = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
-        ER_Enviar3 = new javax.swing.JButton();
+        txtResultado = new javax.swing.JTextArea();
+        txtRegras = new javax.swing.JTextField();
+        btnTeste = new javax.swing.JLabel();
+        btnExecutar = new javax.swing.JLabel();
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -118,231 +117,357 @@ public class GLCForm extends javax.swing.JPanel {
         jLabel8.setToolTipText("");
         jLabel8.setName("Input"); // NOI18N
 
-        setBackground(new java.awt.Color(54, 54, 54));
-        setPreferredSize(new java.awt.Dimension(579, 649));
+        setBackground(new java.awt.Color(28, 28, 28));
 
-        GLC_Titulo.setFont(new java.awt.Font("OCR A Extended", 0, 24)); // NOI18N
+        fndTitle.setBackground(new java.awt.Color(28, 28, 28));
+        fndTitle.setPreferredSize(new java.awt.Dimension(579, 648));
+
+        GLC_Titulo.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 36)); // NOI18N
         GLC_Titulo.setForeground(new java.awt.Color(255, 255, 255));
-        GLC_Titulo.setText("Gramáticas Livres de Contexto");
+        GLC_Titulo.setText("Gramáticas Livre de Contexto");
         GLC_Titulo.setToolTipText("");
         GLC_Titulo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         GLC_Titulo.setName("Titulo"); // NOI18N
 
-        jLabel2.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel4.setText("Quantidade de Palavras:");
+        jLabel4.setToolTipText("");
+        jLabel4.setName("Input"); // NOI18N
+
+        jLabel2.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel2.setText("Variáveis:");
+        jLabel2.setText("Símbolo Inicial:");
         jLabel2.setToolTipText("");
         jLabel2.setName("Input"); // NOI18N
 
-        ER_Campo1.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
-        ER_Campo1.setText("E,I,a,b,c,+,*,(,)");
-        ER_Campo1.setName("Campo_de_Texto"); // NOI18N
-        ER_Campo1.addFocusListener(new java.awt.event.FocusAdapter() {
+        txtNPalavras.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
+        txtNPalavras.setText("Nº de palavras");
+        txtNPalavras.setName("Campo_de_Texto"); // NOI18N
+        txtNPalavras.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                ER_Campo1FocusGained(evt);
+                txtNPalavrasFocusGained(evt);
             }
         });
-        ER_Campo1.addActionListener(new java.awt.event.ActionListener() {
+        txtNPalavras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ER_Campo1ActionPerformed(evt);
+                txtNPalavrasActionPerformed(evt);
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
+        txtSimboloInicial.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
+        txtSimboloInicial.setText("A");
+        txtSimboloInicial.setName("Campo_de_Texto"); // NOI18N
+        txtSimboloInicial.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtSimboloInicialFocusGained(evt);
+            }
+        });
+        txtSimboloInicial.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSimboloInicialActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel5.setText("Símbolo Inicial:");
+        jLabel5.setText("Variáveis terminais:");
         jLabel5.setToolTipText("");
         jLabel5.setName("Input"); // NOI18N
 
-        ER_Campo2.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
-        ER_Campo2.setText("A");
-        ER_Campo2.setName("Campo_de_Texto"); // NOI18N
-        ER_Campo2.addFocusListener(new java.awt.event.FocusAdapter() {
+        txtTerminais.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
+        txtTerminais.setText("A");
+        txtTerminais.setName("Campo_de_Texto"); // NOI18N
+        txtTerminais.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                ER_Campo2FocusGained(evt);
+                txtTerminaisFocusGained(evt);
             }
         });
-        ER_Campo2.addActionListener(new java.awt.event.ActionListener() {
+        txtTerminais.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ER_Campo2ActionPerformed(evt);
+                txtTerminaisActionPerformed(evt);
             }
         });
 
-        jLabel6.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel6.setText("Símbolos Terminais:");
+        jLabel6.setText("Variáveis não-terminais:");
         jLabel6.setToolTipText("");
         jLabel6.setName("Input"); // NOI18N
 
-        ER_Campo3.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
-        ER_Campo3.setText("a,b,c,+,*,(,)");
-        ER_Campo3.setName("Campo_de_Texto"); // NOI18N
-        ER_Campo3.addFocusListener(new java.awt.event.FocusAdapter() {
+        txtNaoTerminais.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
+        txtNaoTerminais.setText("A");
+        txtNaoTerminais.setName("Campo_de_Texto"); // NOI18N
+        txtNaoTerminais.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                ER_Campo3FocusGained(evt);
+                txtNaoTerminaisFocusGained(evt);
             }
         });
-        ER_Campo3.addActionListener(new java.awt.event.ActionListener() {
+        txtNaoTerminais.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ER_Campo3ActionPerformed(evt);
+                txtNaoTerminaisActionPerformed(evt);
             }
         });
 
-        ER_Enviar1.setBackground(new java.awt.Color(105, 105, 105));
-        ER_Enviar1.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
-        ER_Enviar1.setText("Exportar");
-        ER_Enviar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ER_Enviar1ActionPerformed(evt);
-            }
-        });
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jTextArea1.setText("E -> I|E*E,\nE -> E + E,\nE -> (E),\nE -> a,\nE -> c,\nI -> a,\nI -> b,\nI -> Ia,\nI -> Ib");
-        jTextArea1.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                jTextArea1FocusGained(evt);
-            }
-        });
-        jScrollPane1.setViewportView(jTextArea1);
-
-        jLabel7.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(240, 240, 240));
         jLabel7.setText("Regras:");
         jLabel7.setToolTipText("");
         jLabel7.setName("Input"); // NOI18N
 
-        jLabel9.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
-        jLabel9.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel9.setText("Palavra:");
-        jLabel9.setToolTipText("");
-        jLabel9.setName("Input"); // NOI18N
-
-        ER_Campo4.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
-        ER_Campo4.setText("aa*a+c");
-        ER_Campo4.setName("Campo_de_Texto"); // NOI18N
-        ER_Campo4.addFocusListener(new java.awt.event.FocusAdapter() {
-            public void focusGained(java.awt.event.FocusEvent evt) {
-                ER_Campo4FocusGained(evt);
+        btnExportar.setBackground(new java.awt.Color(51, 51, 51));
+        btnExportar.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
+        btnExportar.setForeground(new java.awt.Color(255, 255, 255));
+        btnExportar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnExportar.setText("Exportar");
+        btnExportar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnExportar.setOpaque(true);
+        btnExportar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnExportarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnExportarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnExportarMouseExited(evt);
             }
         });
-        ER_Campo4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ER_Campo4ActionPerformed(evt);
-            }
-        });
 
-        jLabel10.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
+        jLabel10.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(240, 240, 240));
         jLabel10.setText("Saída do Programa:");
         jLabel10.setToolTipText("");
         jLabel10.setName("Input"); // NOI18N
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jTextArea2.addFocusListener(new java.awt.event.FocusAdapter() {
+        txtResultado.setColumns(20);
+        txtResultado.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
+        txtResultado.setRows(5);
+        txtResultado.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
-                jTextArea2FocusGained(evt);
+                txtResultadoFocusGained(evt);
             }
         });
-        jScrollPane2.setViewportView(jTextArea2);
+        jScrollPane2.setViewportView(txtResultado);
 
-        ER_Enviar3.setBackground(new java.awt.Color(105, 105, 105));
-        ER_Enviar3.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
-        ER_Enviar3.setText("Verificar Palavra");
-        ER_Enviar3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ER_Enviar3ActionPerformed(evt);
+        txtRegras.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
+        txtRegras.setText("A");
+        txtRegras.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtRegras.setName("Campo_de_Texto"); // NOI18N
+        txtRegras.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtRegrasFocusGained(evt);
             }
         });
+        txtRegras.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtRegrasActionPerformed(evt);
+            }
+        });
+
+        btnTeste.setBackground(new java.awt.Color(51, 51, 51));
+        btnTeste.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
+        btnTeste.setForeground(new java.awt.Color(255, 255, 255));
+        btnTeste.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnTeste.setText("Teste");
+        btnTeste.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnTeste.setOpaque(true);
+        btnTeste.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnTesteMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnTesteMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnTesteMouseExited(evt);
+            }
+        });
+
+        btnExecutar.setBackground(new java.awt.Color(51, 51, 51));
+        btnExecutar.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
+        btnExecutar.setForeground(new java.awt.Color(255, 255, 255));
+        btnExecutar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnExecutar.setText("Executar");
+        btnExecutar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnExecutar.setOpaque(true);
+        btnExecutar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnExecutarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnExecutarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnExecutarMouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout fndTitleLayout = new javax.swing.GroupLayout(fndTitle);
+        fndTitle.setLayout(fndTitleLayout);
+        fndTitleLayout.setHorizontalGroup(
+            fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(fndTitleLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addGroup(fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(txtNaoTerminais, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtTerminais, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtSimboloInicial, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtNPalavras, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnTeste, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtRegras))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addGroup(fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(fndTitleLayout.createSequentialGroup()
+                        .addComponent(btnExecutar, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(btnExportar, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addContainerGap())
+                    .addGroup(fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fndTitleLayout.createSequentialGroup()
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addContainerGap())
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fndTitleLayout.createSequentialGroup()
+                            .addComponent(jLabel10)
+                            .addGap(48, 48, 48)))))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fndTitleLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(GLC_Titulo)
+                .addGap(66, 66, 66))
+        );
+        fndTitleLayout.setVerticalGroup(
+            fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(fndTitleLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(GLC_Titulo)
+                .addGap(18, 18, 18)
+                .addGroup(fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel10))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(fndTitleLayout.createSequentialGroup()
+                        .addComponent(txtNPalavras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(17, 17, 17)
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtSimboloInicial, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtTerminais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtNaoTerminais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtRegras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 424, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(btnExecutar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnExportar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnTeste, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(64, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(ER_Campo4, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ER_Campo1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ER_Campo2, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ER_Campo3, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10)
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(ER_Enviar3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(6, 6, 6)
-                        .addComponent(GLC_Titulo))
-                    .addComponent(ER_Enviar1, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap())
+                .addComponent(fndTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 20, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(GLC_Titulo)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(70, 70, 70)
-                        .addComponent(jLabel2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ER_Campo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ER_Campo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ER_Campo3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel9))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(65, 65, 65)
-                        .addComponent(jLabel10)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ER_Campo4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(ER_Enviar3))
-                .addGap(18, 18, 18)
-                .addComponent(ER_Enviar1)
-                .addContainerGap(85, Short.MAX_VALUE))
+            .addComponent(fndTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
-
-        getAccessibleContext().setAccessibleName("");
     }// </editor-fold>//GEN-END:initComponents
 
-    private void ER_Campo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ER_Campo1ActionPerformed
+    private void txtRegrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRegrasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ER_Campo1ActionPerformed
+    }//GEN-LAST:event_txtRegrasActionPerformed
 
-    private void ER_Campo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ER_Campo2ActionPerformed
+    private void txtNaoTerminaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNaoTerminaisActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ER_Campo2ActionPerformed
+    }//GEN-LAST:event_txtNaoTerminaisActionPerformed
 
-    private void ER_Campo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ER_Campo3ActionPerformed
+    private void txtTerminaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTerminaisActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ER_Campo3ActionPerformed
+    }//GEN-LAST:event_txtTerminaisActionPerformed
 
-    private void ER_Enviar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ER_Enviar1ActionPerformed
-        if (glcNovo.isStatusOK()) {
+    private void txtSimboloInicialActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSimboloInicialActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSimboloInicialActionPerformed
+
+    private void txtNPalavrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNPalavrasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNPalavrasActionPerformed
+
+    private void txtNPalavrasFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNPalavrasFocusGained
+        txtNPalavras.selectAll();
+    }//GEN-LAST:event_txtNPalavrasFocusGained
+
+    private void btnTesteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTesteMouseClicked
+        preencherCampos(true);
+    }//GEN-LAST:event_btnTesteMouseClicked
+
+    private void btnTesteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTesteMouseEntered
+        btnTeste.setBackground(btnTeste.getBackground().brighter().brighter());
+    }//GEN-LAST:event_btnTesteMouseEntered
+
+    private void btnTesteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTesteMouseExited
+        btnTeste.setBackground(btnTeste.getBackground().darker().darker());
+    }//GEN-LAST:event_btnTesteMouseExited
+
+    private void btnExecutarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExecutarMouseClicked
+        // System.out.println("btnExecutarMouseClicked");
+        if (validaCampos()) {
+            GLCController localGLCC = new GLCController(Integer.parseInt(txtNPalavras.getText()), 
+                    txtTerminais.getText(), txtNaoTerminais.getText(), 
+                    txtRegras.getText(), txtSimboloInicial.getText());
+            
+            GLC localGLC = localGLCC.gerarGLC();
+            
+            try {
+                if (localGLC.is_gramaticaValida()) {
+                    localGLC.gerarPalavras(localGLCC.getQtdPalavras());
+                    
+                    txtResultado.setText(localGLC.getPalavrasGeradas());
+                } else {
+                    JOptionPane.showMessageDialog(this,
+                        "Houve um problema ao executar! ", //mensagem
+                        "Erro", // titulo da janela 
+                        JOptionPane.ERROR_MESSAGE);
+                }
+            } catch (Exception ex) {
+                // System.out.println(ex);
+                JOptionPane.showMessageDialog(this,
+                    "Houve um problema ao executar! " + ex.getMessage(), //mensagem
+                    "Erro", // titulo da janela 
+                    JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_btnExecutarMouseClicked
+
+    private void btnExecutarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExecutarMouseEntered
+        btnExecutar.setBackground(btnExecutar.getBackground().brighter().brighter());
+    }//GEN-LAST:event_btnExecutarMouseEntered
+
+    private void btnExecutarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExecutarMouseExited
+        btnExecutar.setBackground(btnExecutar.getBackground().darker().darker());
+    }//GEN-LAST:event_btnExecutarMouseExited
+
+    private void btnExportarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExportarMouseClicked
+        if (true){ // gr.isStatusOK()) {
             JFileChooser fileChooser = new JFileChooser();
             // fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
             fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
@@ -359,7 +484,7 @@ public class GLCForm extends javax.swing.JPanel {
                     pathFile += ".json";
                 }
                 // System.out.println(pathFile);
-                String export = glcNovo.exportarGLC(pathFile);
+                String export = novoGLC.exportar(pathFile);
                 JOptionPane.showMessageDialog(this,
                     export, //mensagem
                     "Exportação", // titulo da janela 
@@ -374,73 +499,62 @@ public class GLCForm extends javax.swing.JPanel {
                     "Exportação", // titulo da janela 
                     JOptionPane.WARNING_MESSAGE);
         }
-    }//GEN-LAST:event_ER_Enviar1ActionPerformed
+    }//GEN-LAST:event_btnExportarMouseClicked
 
-    private void ER_Campo4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ER_Campo4ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ER_Campo4ActionPerformed
+    private void btnExportarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExportarMouseEntered
+        btnExportar.setBackground(btnExportar.getBackground().brighter().brighter());
+    }//GEN-LAST:event_btnExportarMouseEntered
 
-    private void ER_Enviar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ER_Enviar3ActionPerformed
-        if (validaCampos()) {
-            glcNovo.setVariaveis(ER_Campo1.getText().toString());
-            glcNovo.setSimboloInicial(ER_Campo2.getText().charAt(0));
-            glcNovo.setSimboloTerminal(ER_Campo3.getText().toString());
-            glcNovo.setRegras(jTextArea1.getText().toString());
-            glcNovo.setPalavra(ER_Campo4.getText().toString());
-            try {
-                glcNovo.gerarGLC();
-            } catch (Exception ex) {
-                JOptionPane.showMessageDialog(this,
-                    "Houve um problema ao verificar palavra! " + ex.getMessage(), //mensagem
-                    "Erro", // titulo da janela 
-                    JOptionPane.ERROR_MESSAGE);
-            }
-            jTextArea2.setText(glcNovo.getResultado().toString().replaceAll(",", ",\n"));
-        }
-    }//GEN-LAST:event_ER_Enviar3ActionPerformed
+    private void btnExportarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExportarMouseExited
+        btnExportar.setBackground(btnExportar.getBackground().darker().darker());
+    }//GEN-LAST:event_btnExportarMouseExited
 
-    private void ER_Campo1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ER_Campo1FocusGained
-        // TODO add your handling code here:
-        ER_Campo1.selectAll();
-    }//GEN-LAST:event_ER_Campo1FocusGained
+    private void txtSimboloInicialFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtSimboloInicialFocusGained
+        txtSimboloInicial.selectAll();
+    }//GEN-LAST:event_txtSimboloInicialFocusGained
 
-    private void ER_Campo2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ER_Campo2FocusGained
-        ER_Campo2.selectAll();
-    }//GEN-LAST:event_ER_Campo2FocusGained
+    private void txtTerminaisFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTerminaisFocusGained
+        txtTerminais.selectAll();
+    }//GEN-LAST:event_txtTerminaisFocusGained
 
-    private void ER_Campo3FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ER_Campo3FocusGained
-        ER_Campo3.selectAll();
-    }//GEN-LAST:event_ER_Campo3FocusGained
+    private void txtNaoTerminaisFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNaoTerminaisFocusGained
+        txtNaoTerminais.selectAll();
+    }//GEN-LAST:event_txtNaoTerminaisFocusGained
 
-    private void jTextArea1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextArea1FocusGained
-        jTextArea1.selectAll();
-    }//GEN-LAST:event_jTextArea1FocusGained
+    private void txtRegrasFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtRegrasFocusGained
+        txtRegras.selectAll();
+    }//GEN-LAST:event_txtRegrasFocusGained
 
-    private void ER_Campo4FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_ER_Campo4FocusGained
-        ER_Campo4.selectAll();
-    }//GEN-LAST:event_ER_Campo4FocusGained
-
-    private void jTextArea2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_jTextArea2FocusGained
-        jTextArea2.selectAll();
-    }//GEN-LAST:event_jTextArea2FocusGained
+    private void txtResultadoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtResultadoFocusGained
+        txtResultado.selectAll();
+    }//GEN-LAST:event_txtResultadoFocusGained
 
     public boolean validaCampos() {
         HashMap<String, String> valida = new HashMap<String, String>();
-        if (ER_Campo1.getText().toString().equals("")) {
-            valida.put("erro", "Variáveis");
+        if (txtNPalavras.getText().toString().equals("")) {
+            valida.put("erro", "Número de Palavras");
         }
-        if (ER_Campo2.getText().toString().equals("")) {
+        try {
+            Integer.parseInt(txtNPalavras.getText());
+        } catch (NumberFormatException e) {
+            valida.put("erro", "Número (inteiro) de Palavras");
+        }
+        if (txtSimboloInicial.getText().toString().equals("")) {
             valida.put("erro", "Símbolo Inicial");
         }
-        if (ER_Campo3.getText().toString().equals("")) {
-            valida.put("erro", "Símbolo Terminal");
+        if (txtTerminais.getText().toString().equals("")) {
+            valida.put("erro", "Não-Terminais");
         }
-        if (jTextArea1.getText().toString().equals("")) {
+        if (txtNaoTerminais.getText().toString().equals("")) {
+            valida.put("erro", "Terminais");
+        }
+        if (validaRegras(txtRegras.getText())) {
+            valida.put("erro", "Regras (par)");
+        }
+        if (txtRegras.getText().toString().equals("")) {
             valida.put("erro", "Regras");
         }
-        if (ER_Campo4.getText().toString().equals("")) {
-            valida.put("erro", "Palavra");
-        }
+        
         for (String i : valida.keySet()) {
             if (i.equals("erro")) {
                 JOptionPane.showMessageDialog(this,
@@ -455,49 +569,63 @@ public class GLCForm extends javax.swing.JPanel {
     }
     
     public void limpaCampos() {
-        ER_Campo1.setText("");
-        ER_Campo2.setText("");
-        ER_Campo3.setText("");
-        ER_Campo4.setText("");
-        jTextArea1.setText("");
-        jTextArea2.setText("");
+        txtNPalavras.setText("");
+        txtSimboloInicial.setText("");
+        txtTerminais.setText("");
+        txtNaoTerminais.setText("");
+        txtRegras.setText("");
+        txtResultado.setText("");
     }
     
     public void preencherCampos(boolean teste) {
         if (teste) {
-            
+            txtNPalavras.setText("10");
+            txtSimboloInicial.setText("A");
+            txtTerminais.setText("a, b, c");
+            txtNaoTerminais.setText("A");
+            txtRegras.setText("A,a,A,b,A,aAa,A,c");
+            txtResultado.setText("");
         } else {
-            ER_Campo1.setText(glcNovo.getVariaveis());
-            ER_Campo2.setText(glcNovo.getSimboloTerminal());
-            ER_Campo3.setText(String.valueOf(glcNovo.getSimboloInicial()));
-            ER_Campo4.setText(glcNovo.getPalavra());
-            jTextArea1.setText(glcNovo.getRegras());
-            jTextArea2.setText(glcNovo.getResultado());
+            txtNPalavras.setText(""+novoGLC.quantidade);
+            txtSimboloInicial.setText("");
+            txtTerminais.setText("");
+            txtNaoTerminais.setText("");
+            txtRegras.setText("");
+            txtResultado.setText("");
         }
     }
-
+    
+    private boolean validaRegras(String regras) {
+        String[] split = regras.split(",");
+        if (split.length % 2 != 0) {
+            return true;
+        }
+        return false;
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField ER_Campo1;
-    private javax.swing.JTextField ER_Campo2;
-    private javax.swing.JTextField ER_Campo3;
-    private javax.swing.JTextField ER_Campo4;
-    private javax.swing.JButton ER_Enviar1;
-    private javax.swing.JButton ER_Enviar3;
     private javax.swing.JLabel GLC_Titulo;
+    private javax.swing.JLabel btnExecutar;
+    private javax.swing.JLabel btnExportar;
+    private javax.swing.JLabel btnTeste;
+    private javax.swing.JPanel fndTitle;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextField txtNPalavras;
+    private javax.swing.JTextField txtNaoTerminais;
+    private javax.swing.JTextField txtRegras;
+    private javax.swing.JTextArea txtResultado;
+    private javax.swing.JTextField txtSimboloInicial;
+    private javax.swing.JTextField txtTerminais;
     // End of variables declaration//GEN-END:variables
 }
