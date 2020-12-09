@@ -1,10 +1,13 @@
 package main.modulos.GramaticasLivreDeContexto.screens;
 
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
 import java.util.HashMap;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import main.modulos.GramaticasLivreDeContexto.controllers.GLCController;
+import main.modulos.GramaticasLivreDeContexto.domain.models.GLC;
 import main.modulos.GramaticasLivreDeContexto.domain.utils.LimiteCaracteres;
 
 /**
@@ -17,6 +20,26 @@ public class GLCForm extends javax.swing.JPanel {
     
     GLCController glcNovo = new GLCController();
     
+    GLC novoGLC = new GLC();
+    static GLC novoGLCP;
+    static boolean fromImport = false;
+
+    public static GLC getNovoGLCP() {
+        return novoGLCP;
+    }
+
+    public static void setNovoGLCP(GLC novoGLCP) {
+        GLCForm.novoGLCP = novoGLCP;
+    }
+
+    public static boolean isFromImport() {
+        return fromImport;
+    }
+
+    public static void setFromImport(boolean fromImport) {
+        GLCForm.fromImport = fromImport;
+    }
+    
     /**
      * Creates new form GLC
      * @param janela
@@ -25,6 +48,23 @@ public class GLCForm extends javax.swing.JPanel {
         this.JanelaExecucao = janela;
         initComponents();
         ER_Campo2.setDocument(new LimiteCaracteres(1));
+        addComponentListener(new ComponentAdapter() {
+            @Override
+            public void componentHidden(ComponentEvent evt) {
+                // stop();
+                limpaCampos();
+            }
+            @Override
+            public void componentShown(ComponentEvent evt) {
+                // start();
+                limpaCampos();
+                if (isFromImport()) {
+                    setFromImport(false);
+                    novoGLC = getNovoGLCP();
+                    preencherCampos(false);
+                }
+            }
+        });
         limpaCampos();
     }
 
@@ -423,13 +463,17 @@ public class GLCForm extends javax.swing.JPanel {
         jTextArea2.setText("");
     }
     
-    public void preencherCampos() {
-        ER_Campo1.setText(glcNovo.getVariaveis());
-        ER_Campo2.setText(glcNovo.getSimboloTerminal());
-        ER_Campo3.setText(String.valueOf(glcNovo.getSimboloInicial()));
-        ER_Campo4.setText(glcNovo.getPalavra());
-        jTextArea1.setText(glcNovo.getRegras());
-        jTextArea2.setText(glcNovo.getResultado());
+    public void preencherCampos(boolean teste) {
+        if (teste) {
+            
+        } else {
+            ER_Campo1.setText(glcNovo.getVariaveis());
+            ER_Campo2.setText(glcNovo.getSimboloTerminal());
+            ER_Campo3.setText(String.valueOf(glcNovo.getSimboloInicial()));
+            ER_Campo4.setText(glcNovo.getPalavra());
+            jTextArea1.setText(glcNovo.getRegras());
+            jTextArea2.setText(glcNovo.getResultado());
+        }
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

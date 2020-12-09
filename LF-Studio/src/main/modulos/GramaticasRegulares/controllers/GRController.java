@@ -320,6 +320,19 @@ public class GRController extends AppController {
         }
         return true;
     }
+    
+    public String validacaoShow() {
+        String retorno = "";
+        for (String erro : validacao.keySet()) {
+            if (erro.equals("erroNaoTerminal") 
+                    || erro.equals("erroTerminal") 
+                        || erro.equals("erroRegra")
+                            || erro.equals("erroRaiz")) {
+                retorno += "\n" + validacao.get(erro);
+            }
+        }
+        return retorno;
+    }
 
     public static GR getG_R() {
         return G_R;

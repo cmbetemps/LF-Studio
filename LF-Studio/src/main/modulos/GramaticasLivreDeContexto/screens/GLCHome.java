@@ -191,6 +191,8 @@ public class GLCHome extends javax.swing.JPanel {
                                 JOptionPane.WARNING_MESSAGE);
                         } else {
                             // System.out.println(glc.toString());
+                            GLCForm.setFromImport(true);
+                            GLCForm.setNovoGLCP(glc);
                             LFStudio.cl.show(JanelaExecucao, "glcForm");
                         }
                     } catch (Exception e) {

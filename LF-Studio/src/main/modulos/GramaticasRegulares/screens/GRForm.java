@@ -481,9 +481,16 @@ public class GRForm extends javax.swing.JPanel {
             try {
                 localGR = new GRController(Integer.parseInt(txtNPalavras.getText()), txtNaoTerminais.getText(), 
                             txtTerminais.getText(), txtRegras.getText(), txtRaizes.getText());
-                localGR.execute();
-                novoGR = GRController.getG_R();
-                novoGRC = localGR;
+                if (localGR.validacaoStatus()) {
+                    localGR.execute();
+                    novoGR = GRController.getG_R();
+                    novoGRC = localGR;
+                } else {
+                    JOptionPane.showMessageDialog(this,
+                        localGR.validacaoShow(), //mensagem
+                        "Erro de validação", // titulo da janela 
+                        JOptionPane.ERROR_MESSAGE);
+                }
             } catch (Exception ex) {
                 // System.out.println(ex);
                 JOptionPane.showMessageDialog(this,

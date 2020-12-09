@@ -17,6 +17,9 @@ public final class GLC extends AppModel{
     private Regras regras;
     private boolean gramaticaValida = false;
 
+    public GLC() {
+    }
+
     /**
      * @Author Yann Silva
      * Construtor
