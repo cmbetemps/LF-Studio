@@ -10,6 +10,7 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import main.LFStudio;
+import main.modulos.GramaticasRegulares.screens.GRForm;
 import main.modulos.GramaticasRegulares.controllers.GRController;
 import main.modulos.GramaticasRegulares.domain.models.GR;
 
@@ -183,15 +184,17 @@ public class GRHome extends javax.swing.JPanel {
                 try {
                     Reader fileJson = new FileReader( arquivoJson );
                     try {
-                        GR gr = json.fromJson(fileJson, GR.class);
-                        if (!gr.getTipo().equals(GR.Tooltip.GR)) {
+                        GRController gr = json.fromJson(fileJson, GRController.class);
+                        if (!gr.getTipo().equals(GRController.Tooltip.GR)) {
                             JOptionPane.showMessageDialog(this,
                                 "Tipo de Linguagem Inválido!", //mensagem
                                 "Importação", // titulo da janela
                                 JOptionPane.WARNING_MESSAGE);
                         } else {
-                            // System.out.println(glc.toString());
-                            LFStudio.cl.show(JanelaExecucao, "glcForm");
+                            // System.out.println(gr.toString());
+                            GRForm.setFromImport(true);
+                            GRForm.setNovoGRP(gr);
+                            LFStudio.cl.show(JanelaExecucao, "grForm");
                         }
                     } catch (Exception e) {
                         JOptionPane.showMessageDialog(this,
@@ -224,7 +227,7 @@ public class GRHome extends javax.swing.JPanel {
     }//GEN-LAST:event_labelNovaGRMouseEntered
 
     private void labelNovaGRMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelNovaGRMouseClicked
-        LFStudio.cl.show(JanelaExecucao, "glcForm");
+        LFStudio.cl.show(JanelaExecucao, "grForm");
     }//GEN-LAST:event_labelNovaGRMouseClicked
 
     private void labelTituloGRMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_labelTituloGRMouseEntered

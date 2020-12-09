@@ -5,6 +5,15 @@
  */
 package main.modulos.GramaticasRegulares.screens;
 
+import java.awt.event.ComponentAdapter;
+import java.awt.event.ComponentEvent;
+import java.util.HashMap;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import main.modulos.GramaticasRegulares.controllers.GRController;
+import main.modulos.GramaticasRegulares.domain.models.GR;
+
 /**
  *
  * @author IGSF
@@ -12,6 +21,27 @@ package main.modulos.GramaticasRegulares.screens;
 public class GRForm extends javax.swing.JPanel {
     
     javax.swing.JPanel JanelaExecucao;
+    
+    GRController novoGR = new GRController();
+    GR gr = new GR();
+    static GRController novoGRP;
+    static boolean fromImport = false;
+
+    public static GRController getNovoGRP() {
+        return novoGRP;
+    }
+
+    public static void setNovoGRP(GRController novoGR) {
+        GRForm.novoGRP = novoGR;
+    }
+
+    public static boolean isFromImport() {
+        return fromImport;
+    }
+
+    public static void setFromImport(boolean fromImport) {
+        GRForm.fromImport = fromImport;
+    }
 
     /**
      * Creates new form GR
@@ -19,6 +49,23 @@ public class GRForm extends javax.swing.JPanel {
      */
     public GRForm(javax.swing.JPanel janela) {
         this.JanelaExecucao = janela;
+        addComponentListener(new ComponentAdapter() {
+            @Override
+            public void componentHidden(ComponentEvent evt) {
+                // stop();
+                limpaCampos();
+            }
+            @Override
+            public void componentShown(ComponentEvent evt) {
+                // start();
+                limpaCampos();
+                if (isFromImport()) {
+                    setFromImport(false);
+                    novoGR = getNovoGRP();
+                    preencherCampos(false);
+                }
+            }
+        });
         initComponents();
     }
 
@@ -36,25 +83,27 @@ public class GRForm extends javax.swing.JPanel {
         jMenu2 = new javax.swing.JMenu();
         jLabel3 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        fndTitle = new javax.swing.JPanel();
         GLC_Titulo = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        ER_Campo = new javax.swing.JTextField();
         jLabel4 = new javax.swing.JLabel();
-        ER_Campo1 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        txtNPalavras = new javax.swing.JTextField();
+        txtRaizes = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
-        ER_Campo2 = new javax.swing.JTextField();
+        txtNaoTerminais = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        ER_Campo3 = new javax.swing.JTextField();
-        ER_Enviar1 = new javax.swing.JButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        txtTerminais = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
+        btnExportar = new javax.swing.JLabel();
+        checkBoxRaizRandom = new javax.swing.JCheckBox();
+        jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea2 = new javax.swing.JTextArea();
-        ER_Enviar2 = new javax.swing.JButton();
-        ER_Enviar3 = new javax.swing.JButton();
+        txtResultado = new javax.swing.JTextArea();
+        txtRegras = new javax.swing.JTextField();
+        btnTeste = new javax.swing.JLabel();
+        btnExecutar = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
 
         jMenu1.setText("File");
         jMenuBar1.add(jMenu1);
@@ -74,255 +123,512 @@ public class GRForm extends javax.swing.JPanel {
         jLabel8.setToolTipText("");
         jLabel8.setName("Input"); // NOI18N
 
-        setBackground(new java.awt.Color(54, 54, 54));
+        setBackground(new java.awt.Color(28, 28, 28));
 
-        GLC_Titulo.setFont(new java.awt.Font("OCR A Extended", 0, 36)); // NOI18N
+        fndTitle.setBackground(new java.awt.Color(28, 28, 28));
+        fndTitle.setPreferredSize(new java.awt.Dimension(579, 648));
+
+        GLC_Titulo.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 36)); // NOI18N
         GLC_Titulo.setForeground(new java.awt.Color(255, 255, 255));
         GLC_Titulo.setText("Gramáticas Regulares");
         GLC_Titulo.setToolTipText("");
         GLC_Titulo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         GLC_Titulo.setName("Titulo"); // NOI18N
 
-        jLabel2.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel2.setText("Variáveis:");
-        jLabel2.setToolTipText("");
-        jLabel2.setName("Input"); // NOI18N
-
-        jButton1.setBackground(new java.awt.Color(105, 105, 105));
-        jButton1.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
-        jButton1.setText("Executar");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-
-        ER_Campo.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
-        ER_Campo.setText("Digite aqui a Gramática para rodar por Linha de Comando...");
-        ER_Campo.setName("Campo_de_Texto"); // NOI18N
-        ER_Campo.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ER_CampoActionPerformed(evt);
-            }
-        });
-
-        jLabel4.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel4.setText("Linha de Comando:");
+        jLabel4.setText("Quantidade de Palavras:");
         jLabel4.setToolTipText("");
         jLabel4.setName("Input"); // NOI18N
 
-        ER_Campo1.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
-        ER_Campo1.setText("Ab,B,cX,D,t,...");
-        ER_Campo1.setName("Campo_de_Texto"); // NOI18N
-        ER_Campo1.addActionListener(new java.awt.event.ActionListener() {
+        jLabel2.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel2.setText("Raizes:");
+        jLabel2.setToolTipText("");
+        jLabel2.setName("Input"); // NOI18N
+
+        txtNPalavras.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
+        txtNPalavras.setText("Nº de palavras");
+        txtNPalavras.setName("Campo_de_Texto"); // NOI18N
+        txtNPalavras.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtNPalavrasFocusGained(evt);
+            }
+        });
+        txtNPalavras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ER_Campo1ActionPerformed(evt);
+                txtNPalavrasActionPerformed(evt);
             }
         });
 
-        jLabel5.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
+        txtRaizes.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
+        txtRaizes.setText("A");
+        txtRaizes.setName("Campo_de_Texto"); // NOI18N
+        txtRaizes.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtRaizesFocusGained(evt);
+            }
+        });
+        txtRaizes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtRaizesActionPerformed(evt);
+            }
+        });
+
+        jLabel5.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel5.setText("Símbolo Inicial:");
+        jLabel5.setText("Variáveis não-terminais:");
         jLabel5.setToolTipText("");
         jLabel5.setName("Input"); // NOI18N
 
-        ER_Campo2.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
-        ER_Campo2.setText("A");
-        ER_Campo2.setName("Campo_de_Texto"); // NOI18N
-        ER_Campo2.addActionListener(new java.awt.event.ActionListener() {
+        txtNaoTerminais.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
+        txtNaoTerminais.setText("A");
+        txtNaoTerminais.setName("Campo_de_Texto"); // NOI18N
+        txtNaoTerminais.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtNaoTerminaisFocusGained(evt);
+            }
+        });
+        txtNaoTerminais.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ER_Campo2ActionPerformed(evt);
+                txtNaoTerminaisActionPerformed(evt);
             }
         });
 
-        jLabel6.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel6.setText("Terminais:");
+        jLabel6.setText("Variáveis terminais:");
         jLabel6.setToolTipText("");
         jLabel6.setName("Input"); // NOI18N
 
-        ER_Campo3.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
-        ER_Campo3.setText("Z,a,B");
-        ER_Campo3.setName("Campo_de_Texto"); // NOI18N
-        ER_Campo3.addActionListener(new java.awt.event.ActionListener() {
+        txtTerminais.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
+        txtTerminais.setText("A");
+        txtTerminais.setName("Campo_de_Texto"); // NOI18N
+        txtTerminais.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtTerminaisFocusGained(evt);
+            }
+        });
+        txtTerminais.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ER_Campo3ActionPerformed(evt);
+                txtTerminaisActionPerformed(evt);
             }
         });
 
-        ER_Enviar1.setBackground(new java.awt.Color(105, 105, 105));
-        ER_Enviar1.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
-        ER_Enviar1.setText("Retornar");
-        ER_Enviar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ER_Enviar1ActionPerformed(evt);
-            }
-        });
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
-
-        jLabel7.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
+        jLabel7.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(240, 240, 240));
-        jLabel7.setText("Regras:");
+        jLabel7.setText("<html>Regras p/ variáveis <br> não-terminais:</html>");
         jLabel7.setToolTipText("");
         jLabel7.setName("Input"); // NOI18N
 
-        jLabel10.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
+        btnExportar.setBackground(new java.awt.Color(51, 51, 51));
+        btnExportar.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
+        btnExportar.setForeground(new java.awt.Color(255, 255, 255));
+        btnExportar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnExportar.setText("Exportar");
+        btnExportar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnExportar.setOpaque(true);
+        btnExportar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnExportarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnExportarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnExportarMouseExited(evt);
+            }
+        });
+
+        checkBoxRaizRandom.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                checkBoxRaizRandomItemStateChanged(evt);
+            }
+        });
+
+        jLabel9.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel9.setText("<html><p>A gramatica regular deve ser linear a esquerda ou a direita. Para usar o vazio utilize o simbolo '&'.</p></html>");
+        jLabel9.setToolTipText("");
+        jLabel9.setName("Input"); // NOI18N
+
+        jLabel10.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(240, 240, 240));
         jLabel10.setText("Saída do Programa:");
         jLabel10.setToolTipText("");
         jLabel10.setName("Input"); // NOI18N
 
-        jTextArea2.setColumns(20);
-        jTextArea2.setRows(5);
-        jScrollPane2.setViewportView(jTextArea2);
+        txtResultado.setColumns(20);
+        txtResultado.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
+        txtResultado.setRows(5);
+        txtResultado.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtResultadoFocusGained(evt);
+            }
+        });
+        jScrollPane2.setViewportView(txtResultado);
 
-        ER_Enviar2.setBackground(new java.awt.Color(105, 105, 105));
-        ER_Enviar2.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
-        ER_Enviar2.setText("Executar");
-        ER_Enviar2.addActionListener(new java.awt.event.ActionListener() {
+        txtRegras.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
+        txtRegras.setText("A");
+        txtRegras.setName("Campo_de_Texto"); // NOI18N
+        txtRegras.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusGained(java.awt.event.FocusEvent evt) {
+                txtRegrasFocusGained(evt);
+            }
+        });
+        txtRegras.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ER_Enviar2ActionPerformed(evt);
+                txtRegrasActionPerformed(evt);
             }
         });
 
-        ER_Enviar3.setBackground(new java.awt.Color(105, 105, 105));
-        ER_Enviar3.setFont(new java.awt.Font("OCR A Extended", 0, 18)); // NOI18N
-        ER_Enviar3.setText("Gerar Palavra Aleatória");
-        ER_Enviar3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ER_Enviar3ActionPerformed(evt);
+        btnTeste.setBackground(new java.awt.Color(51, 51, 51));
+        btnTeste.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
+        btnTeste.setForeground(new java.awt.Color(255, 255, 255));
+        btnTeste.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnTeste.setText("Teste");
+        btnTeste.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnTeste.setOpaque(true);
+        btnTeste.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnTesteMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnTesteMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnTesteMouseExited(evt);
             }
         });
+
+        btnExecutar.setBackground(new java.awt.Color(51, 51, 51));
+        btnExecutar.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
+        btnExecutar.setForeground(new java.awt.Color(255, 255, 255));
+        btnExecutar.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        btnExecutar.setText("Executar");
+        btnExecutar.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btnExecutar.setOpaque(true);
+        btnExecutar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnExecutarMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                btnExecutarMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                btnExecutarMouseExited(evt);
+            }
+        });
+
+        jLabel11.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(240, 240, 240));
+        jLabel11.setText("Gerar Aleatórias:");
+        jLabel11.setToolTipText("");
+        jLabel11.setName("Input"); // NOI18N
+
+        javax.swing.GroupLayout fndTitleLayout = new javax.swing.GroupLayout(fndTitle);
+        fndTitle.setLayout(fndTitleLayout);
+        fndTitleLayout.setHorizontalGroup(
+            fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(fndTitleLayout.createSequentialGroup()
+                .addGroup(fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(fndTitleLayout.createSequentialGroup()
+                        .addGap(130, 130, 130)
+                        .addComponent(GLC_Titulo))
+                    .addGroup(fndTitleLayout.createSequentialGroup()
+                        .addGap(20, 20, 20)
+                        .addGroup(fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtRegras, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtTerminais, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtNaoTerminais, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtRaizes, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtNPalavras)
+                            .addGroup(fndTitleLayout.createSequentialGroup()
+                                .addGroup(fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel5)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel4)
+                                    .addComponent(btnTeste, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(fndTitleLayout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabel11)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                                .addComponent(checkBoxRaizRandom)))
+                        .addGap(18, 18, 18)
+                        .addGroup(fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(fndTitleLayout.createSequentialGroup()
+                                .addComponent(btnExecutar, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnExportar, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel10)
+                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        fndTitleLayout.setVerticalGroup(
+            fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(fndTitleLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(GLC_Titulo)
+                .addGap(18, 18, 18)
+                .addGroup(fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(jLabel10))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(fndTitleLayout.createSequentialGroup()
+                        .addComponent(txtNPalavras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(17, 17, 17)
+                        .addGroup(fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(checkBoxRaizRandom, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtRaizes, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtNaoTerminais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtTerminais, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtRegras, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane2))
+                .addGap(18, 18, 18)
+                .addGroup(fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(btnExecutar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(btnExportar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnTeste, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(39, Short.MAX_VALUE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(ER_Campo, javax.swing.GroupLayout.DEFAULT_SIZE, 700, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jButton1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ER_Campo1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 260, Short.MAX_VALUE)
-                            .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ER_Campo2, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(ER_Campo3, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel10)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(ER_Enviar3)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(ER_Enviar2)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addComponent(ER_Enviar1)))
-                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 547, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(GLC_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 448, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(201, 201, 201))
+                .addComponent(fndTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 20, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(GLC_Titulo)
-                .addGap(23, 23, 23)
-                .addComponent(jLabel4)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(ER_Campo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(15, 15, 15)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
-                    .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(ER_Campo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ER_Campo2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(ER_Campo3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel7)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(31, 31, 31)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(ER_Enviar1)
-                    .addComponent(ER_Enviar2)
-                    .addComponent(ER_Enviar3))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addComponent(fndTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void txtRegrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRegrasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_txtRegrasActionPerformed
 
-    private void ER_CampoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ER_CampoActionPerformed
+    private void checkBoxRaizRandomItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_checkBoxRaizRandomItemStateChanged
+        if (checkBoxRaizRandom.isSelected()) {
+            txtRaizes.setText("");
+            txtRaizes.setEditable(false);
+        } else {
+            txtRaizes.setEditable(true);
+        }
+    }//GEN-LAST:event_checkBoxRaizRandomItemStateChanged
+
+    private void txtTerminaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTerminaisActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ER_CampoActionPerformed
+    }//GEN-LAST:event_txtTerminaisActionPerformed
 
-    private void ER_Campo1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ER_Campo1ActionPerformed
+    private void txtNaoTerminaisActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNaoTerminaisActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ER_Campo1ActionPerformed
+    }//GEN-LAST:event_txtNaoTerminaisActionPerformed
 
-    private void ER_Campo2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ER_Campo2ActionPerformed
+    private void txtRaizesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtRaizesActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ER_Campo2ActionPerformed
+    }//GEN-LAST:event_txtRaizesActionPerformed
 
-    private void ER_Campo3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ER_Campo3ActionPerformed
+    private void txtNPalavrasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNPalavrasActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_ER_Campo3ActionPerformed
+    }//GEN-LAST:event_txtNPalavrasActionPerformed
 
-    private void ER_Enviar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ER_Enviar1ActionPerformed
+    private void txtNPalavrasFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNPalavrasFocusGained
+        txtNPalavras.selectAll();
+    }//GEN-LAST:event_txtNPalavrasFocusGained
+
+    private void btnTesteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTesteMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_ER_Enviar1ActionPerformed
+    }//GEN-LAST:event_btnTesteMouseClicked
 
-    private void ER_Enviar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ER_Enviar2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ER_Enviar2ActionPerformed
+    private void btnTesteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTesteMouseEntered
+        btnTeste.setBackground(btnTeste.getBackground().brighter().brighter());
+    }//GEN-LAST:event_btnTesteMouseEntered
 
-    private void ER_Enviar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ER_Enviar3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_ER_Enviar3ActionPerformed
+    private void btnTesteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnTesteMouseExited
+        btnTeste.setBackground(btnTeste.getBackground().darker().darker());
+    }//GEN-LAST:event_btnTesteMouseExited
 
+    private void btnExecutarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExecutarMouseClicked
+        // System.out.println("btnExecutarMouseClicked");
+        if (validaCampos()) {
+            GRController localGR;
+            
+            try {
+                localGR = new GRController(Integer.parseInt(txtNPalavras.getText()), txtNaoTerminais.getText(), 
+                            txtTerminais.getText(), txtRegras.getText(), txtRaizes.getText());
+                localGR.execute();
+                gr = GRController.getG_R();
+                novoGR = localGR;
+            } catch (Exception ex) {
+                // System.out.println(ex);
+                JOptionPane.showMessageDialog(this,
+                    "Houve um problema ao executar! " + ex.getMessage(), //mensagem
+                    "Erro", // titulo da janela 
+                    JOptionPane.ERROR_MESSAGE);
+            }
+        }
+    }//GEN-LAST:event_btnExecutarMouseClicked
 
+    private void btnExecutarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExecutarMouseEntered
+        btnExecutar.setBackground(btnExecutar.getBackground().brighter().brighter());
+    }//GEN-LAST:event_btnExecutarMouseEntered
+
+    private void btnExecutarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExecutarMouseExited
+        btnExecutar.setBackground(btnExecutar.getBackground().darker().darker());
+    }//GEN-LAST:event_btnExecutarMouseExited
+
+    private void btnExportarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExportarMouseClicked
+        if (true){ // gr.isStatusOK()) {
+            JFileChooser fileChooser = new JFileChooser();
+            // fileChooser.setCurrentDirectory(new File(System.getProperty("user.home")));
+            fileChooser.setFileSelectionMode(JFileChooser.FILES_ONLY);
+ 
+            fileChooser.addChoosableFileFilter(new FileNameExtensionFilter("Json File", "json"));
+
+            fileChooser.setAcceptAllFileFilterUsed(false);
+
+            int result = fileChooser.showOpenDialog(this);
+
+            if (result == JFileChooser.APPROVE_OPTION) {
+                String pathFile = fileChooser.getCurrentDirectory().toString() + "\\" + fileChooser.getSelectedFile().getName();
+                if (!fileChooser.getSelectedFile().getName().endsWith(".json")) {
+                    pathFile += ".json";
+                }
+                // System.out.println(pathFile);
+                String export = gr.exportar(pathFile);
+                JOptionPane.showMessageDialog(this,
+                    export, //mensagem
+                    "Exportação", // titulo da janela 
+                    JOptionPane.INFORMATION_MESSAGE);
+            }
+            // if (result == JFileChooser.CANCEL_OPTION) {
+                // System.out.println("You pressed cancel");
+            // }
+        } else {
+            JOptionPane.showMessageDialog(this,
+                    "Houve um problema ao exportar o arquivo!", //mensagem
+                    "Exportação", // titulo da janela 
+                    JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_btnExportarMouseClicked
+
+    private void btnExportarMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExportarMouseEntered
+        btnExportar.setBackground(btnExportar.getBackground().brighter().brighter());
+    }//GEN-LAST:event_btnExportarMouseEntered
+
+    private void btnExportarMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnExportarMouseExited
+        btnExportar.setBackground(btnExportar.getBackground().darker().darker());
+    }//GEN-LAST:event_btnExportarMouseExited
+
+    private void txtRaizesFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtRaizesFocusGained
+        txtRaizes.selectAll();
+    }//GEN-LAST:event_txtRaizesFocusGained
+
+    private void txtNaoTerminaisFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtNaoTerminaisFocusGained
+        txtNaoTerminais.selectAll();
+    }//GEN-LAST:event_txtNaoTerminaisFocusGained
+
+    private void txtTerminaisFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtTerminaisFocusGained
+        txtTerminais.selectAll();
+    }//GEN-LAST:event_txtTerminaisFocusGained
+
+    private void txtRegrasFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtRegrasFocusGained
+        txtRegras.selectAll();
+    }//GEN-LAST:event_txtRegrasFocusGained
+
+    private void txtResultadoFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtResultadoFocusGained
+        txtResultado.selectAll();
+    }//GEN-LAST:event_txtResultadoFocusGained
+
+    public boolean validaCampos() {
+        HashMap<String, String> valida = new HashMap<String, String>();
+        if (txtNPalavras.getText().toString().equals("")) {
+            valida.put("erro", "Número de Palavras");
+        }
+        try {
+            Integer.parseInt(txtNPalavras.getText());
+        } catch (NumberFormatException e) {
+            valida.put("erro", "Número (inteiro) de Palavras");
+        }
+        if (!checkBoxRaizRandom.isSelected()) {
+            if (txtRaizes.getText().toString().equals("")) {
+                valida.put("erro", "Raízes");
+            }
+        }
+        if (txtNaoTerminais.getText().toString().equals("")) {
+            valida.put("erro", "Não-Terminais");
+        }
+        if (txtTerminais.getText().toString().equals("")) {
+            valida.put("erro", "Terminais");
+        }
+        if (txtRegras.getText().toString().equals("")) {
+            valida.put("erro", "Regras");
+        }
+        
+        for (String i : valida.keySet()) {
+            if (i.equals("erro")) {
+                JOptionPane.showMessageDialog(this,
+                    "Campo "+ valida.get(i) +" Inválido!", //mensagem
+                    "Erro ao Verificar", // titulo da janela 
+                    JOptionPane.WARNING_MESSAGE);
+                return false;
+            }
+            // System.out.println(i);
+        }
+        return true;
+    }
+    
+    public void limpaCampos() {
+        txtNPalavras.setText("");
+        txtRaizes.setText("");
+        txtNaoTerminais.setText("");
+        txtTerminais.setText("");
+        txtRegras.setText("");
+        txtResultado.setText("");
+    }
+    
+    public void preencherCampos(boolean teste) {
+        if (teste) {
+            
+        } else {
+            
+        }
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField ER_Campo;
-    private javax.swing.JTextField ER_Campo1;
-    private javax.swing.JTextField ER_Campo2;
-    private javax.swing.JTextField ER_Campo3;
-    private javax.swing.JButton ER_Enviar1;
-    private javax.swing.JButton ER_Enviar2;
-    private javax.swing.JButton ER_Enviar3;
     private javax.swing.JLabel GLC_Titulo;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JLabel btnExecutar;
+    private javax.swing.JLabel btnExportar;
+    private javax.swing.JLabel btnTeste;
+    private javax.swing.JCheckBox checkBoxRaizRandom;
+    private javax.swing.JPanel fndTitle;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -330,12 +636,16 @@ public class GRForm extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextArea jTextArea2;
+    private javax.swing.JTextField txtNPalavras;
+    private javax.swing.JTextField txtNaoTerminais;
+    private javax.swing.JTextField txtRaizes;
+    private javax.swing.JTextField txtRegras;
+    private javax.swing.JTextArea txtResultado;
+    private javax.swing.JTextField txtTerminais;
     // End of variables declaration//GEN-END:variables
 }

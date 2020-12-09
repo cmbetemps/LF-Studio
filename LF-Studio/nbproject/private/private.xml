@@ -4,8 +4,11 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/orm/Documents/NetBeansProjects/LF-Studio/LF-Studio/src/main/modulos/ExpressoesRegulares/domain/utils/Operators.java</file>
+            <file>file:/C:/Users/orm/Documents/NetBeansProjects/LF-Studio/LF-Studio/src/main/modulos/GramaticasRegulares/screens/GRForm.java</file>
+            <file>file:/C:/Users/orm/Documents/NetBeansProjects/LF-Studio/LF-Studio/src/main/modulos/GramaticasRegulares/domain/utils/Gerador.java</file>
             <file>file:/C:/Users/orm/Documents/NetBeansProjects/LF-Studio/LF-Studio/src/main/modulos/ExpressoesRegulares/domain/models/ER.java</file>
             <file>file:/C:/Users/orm/Documents/NetBeansProjects/LF-Studio/LF-Studio/src/main/modulos/ExpressoesRegulares/screens/ERForm.java</file>
+            <file>file:/C:/Users/orm/Documents/NetBeansProjects/LF-Studio/LF-Studio/src/main/modulos/GramaticasRegulares/controllers/GRController.java</file>
         </group>
     </open-files>
 </project-private>
