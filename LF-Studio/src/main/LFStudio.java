@@ -558,18 +558,6 @@ public class LFStudio extends javax.swing.JFrame {
         cl.show(JanelaExecucao, "pilhaInicioPanel"); 
     }//GEN-LAST:event_menuPilhaMouseClicked
 
-    private void menuRegXMouseClicked(java.awt.event.MouseEvent evt) {
-        cl.show(JanelaExecucao, "erHome");
-    }
-
-    private void menuGramaticasRegularesMouseClicked(java.awt.event.MouseEvent evt) {
-        cl.show(JanelaExecucao, "grHome");
-    }
-
-    private void menuGLCMouseClicked(java.awt.event.MouseEvent evt) {
-        cl.show(JanelaExecucao, "glcHome");
-    }
-
     private void menuAFNDMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuAFNDMousePressed
         Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/AutFndWhite.png"));
         menuAFND.setIcon(ico);
@@ -713,6 +701,18 @@ public class LFStudio extends javax.swing.JFrame {
     private void titleLFStudioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_titleLFStudioMouseClicked
         cl.show(JanelaExecucao, "home");
     }//GEN-LAST:event_titleLFStudioMouseClicked
+
+    private void menuGLCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGLCMouseClicked
+        cl.show(JanelaExecucao, "glcHome");
+    }//GEN-LAST:event_menuGLCMouseClicked
+
+    private void menuGramaticasRegularesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGramaticasRegularesMouseClicked
+        cl.show(JanelaExecucao, "grHome");
+    }//GEN-LAST:event_menuGramaticasRegularesMouseClicked
+
+    private void menuRegXMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuRegXMouseClicked
+        cl.show(JanelaExecucao, "erHome");
+    }//GEN-LAST:event_menuRegXMouseClicked
 
     /**
      * @param args the command line arguments
