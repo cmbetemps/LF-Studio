@@ -180,6 +180,7 @@ public class ERForm extends javax.swing.JPanel {
         ER_Info_Saida.setName("Input"); // NOI18N
 
         ER_Saida.setColumns(20);
+        ER_Saida.setFont(new java.awt.Font("Microsoft Yi Baiti", 0, 18)); // NOI18N
         ER_Saida.setRows(5);
         ER_Saida.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {

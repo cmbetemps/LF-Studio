@@ -259,7 +259,7 @@ public class GRForm extends javax.swing.JPanel {
         jLabel10.setName("Input"); // NOI18N
 
         txtResultado.setColumns(20);
-        txtResultado.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
+        txtResultado.setFont(new java.awt.Font("Microsoft Yi Baiti", 0, 18)); // NOI18N
         txtResultado.setRows(5);
         txtResultado.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
