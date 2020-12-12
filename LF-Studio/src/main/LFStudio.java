@@ -164,13 +164,20 @@ public class LFStudio extends javax.swing.JFrame {
 
         JanelaPrincipal.setBackground(new java.awt.Color(28, 28, 28));
         JanelaPrincipal.setForeground(new java.awt.Color(28, 28, 28));
+        JanelaPrincipal.setMinimumSize(new java.awt.Dimension(1280, 700));
+        JanelaPrincipal.setPreferredSize(new java.awt.Dimension(1280, 700));
 
         JanelaVisivel.setBackground(new java.awt.Color(28, 28, 28));
         JanelaVisivel.setForeground(new java.awt.Color(28, 28, 28));
+        JanelaVisivel.setMinimumSize(new java.awt.Dimension(1280, 700));
+        JanelaVisivel.setPreferredSize(new java.awt.Dimension(1280, 700));
         JanelaVisivel.setVisible(true);
 
         JanelaExecucao.setBackground(new java.awt.Color(28, 28, 28));
         JanelaExecucao.setForeground(new java.awt.Color(255, 255, 255));
+        JanelaExecucao.setMaximumSize(new java.awt.Dimension(1028, 700));
+        JanelaExecucao.setMinimumSize(new java.awt.Dimension(1028, 700));
+        JanelaExecucao.setPreferredSize(new java.awt.Dimension(1028, 700));
         JanelaExecucao.setLayout(new java.awt.CardLayout());
 
         HomePage.setBackground(new java.awt.Color(28, 28, 28));
@@ -185,14 +192,14 @@ public class LFStudio extends javax.swing.JFrame {
             HomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HomePageLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 567, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(logo, javax.swing.GroupLayout.DEFAULT_SIZE, 1016, Short.MAX_VALUE)
+                .addContainerGap())
         );
         HomePageLayout.setVerticalGroup(
             HomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HomePageLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(logo, javax.swing.GroupLayout.DEFAULT_SIZE, 636, Short.MAX_VALUE)
+                .addComponent(logo, javax.swing.GroupLayout.DEFAULT_SIZE, 729, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -431,9 +438,8 @@ public class LFStudio extends javax.swing.JFrame {
                 .addComponent(menuGLC, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(menuTuring, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
+                .addComponent(jLabel3))
         );
 
         menuScroll.setViewportView(menuPanel);
@@ -452,23 +458,24 @@ public class LFStudio extends javax.swing.JFrame {
         );
         JanelaVisivelLayout.setVerticalGroup(
             JanelaVisivelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JanelaVisivelLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JanelaVisivelLayout.createSequentialGroup()
                 .addGap(0, 0, 0)
-                .addGroup(JanelaVisivelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(JanelaExecucao, javax.swing.GroupLayout.PREFERRED_SIZE, 648, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(Menu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(0, 0, 0))
+                .addGroup(JanelaVisivelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(JanelaVisivelLayout.createSequentialGroup()
+                        .addComponent(JanelaExecucao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addComponent(Menu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout JanelaPrincipalLayout = new javax.swing.GroupLayout(JanelaPrincipal);
         JanelaPrincipal.setLayout(JanelaPrincipalLayout);
         JanelaPrincipalLayout.setHorizontalGroup(
             JanelaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JanelaVisivel)
+            .addComponent(JanelaVisivel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         JanelaPrincipalLayout.setVerticalGroup(
             JanelaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JanelaVisivel, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(JanelaVisivel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 769, Short.MAX_VALUE)
         );
 
         getContentPane().add(JanelaPrincipal);
