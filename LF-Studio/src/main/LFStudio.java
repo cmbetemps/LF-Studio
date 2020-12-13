@@ -117,12 +117,12 @@ public class LFStudio extends javax.swing.JFrame {
     }
     
     public LFStudio() {
-        super("LFPrototipo");
+        super("LF-Studio");
         ImageIcon image = new ImageIcon(LFStudio.class.getResource("/main/layout/images/taskbarIcon.png"));
         super.setIconImage(image.getImage());
         initComponents();
         initPanels();
-        this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         JanelaPrincipal.setSize(1200, 700);
         JanelaPrincipal.setLocation(100, 160);
         cl = (CardLayout) JanelaExecucao.getLayout();

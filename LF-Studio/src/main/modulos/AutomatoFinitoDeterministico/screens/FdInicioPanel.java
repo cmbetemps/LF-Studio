@@ -35,13 +35,13 @@ public class FdInicioPanel extends javax.swing.JPanel {
         fndBody.setBackground(new java.awt.Color(28, 28, 28));
         fndBody.setPreferredSize(new java.awt.Dimension(579, 648));
 
-        FD_LabelAutomato.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 48)); // NOI18N
+        FD_LabelAutomato.setFont(new java.awt.Font("Noto Sans", 0, 44)); // NOI18N
         FD_LabelAutomato.setForeground(new java.awt.Color(255, 255, 255));
         FD_LabelAutomato.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         FD_LabelAutomato.setText("<html><p style=\"padding-bottom: 16px;\">Autômato Finito Determinístico</p></html>");
 
         FD_LabelNovoAutomato.setBackground(new java.awt.Color(0, 0, 0));
-        FD_LabelNovoAutomato.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 28)); // NOI18N
+        FD_LabelNovoAutomato.setFont(new java.awt.Font("Noto Sans", 0, 24)); // NOI18N
         FD_LabelNovoAutomato.setForeground(new java.awt.Color(255, 255, 255));
         FD_LabelNovoAutomato.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         FD_LabelNovoAutomato.setText("Novo autômato");
@@ -62,7 +62,7 @@ public class FdInicioPanel extends javax.swing.JPanel {
         });
 
         FD_LabelImportarAutomato.setBackground(new java.awt.Color(0, 0, 0));
-        FD_LabelImportarAutomato.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 28)); // NOI18N
+        FD_LabelImportarAutomato.setFont(new java.awt.Font("Noto Sans", 0, 24)); // NOI18N
         FD_LabelImportarAutomato.setForeground(new java.awt.Color(255, 255, 255));
         FD_LabelImportarAutomato.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         FD_LabelImportarAutomato.setText("Importar autômato");
@@ -105,7 +105,7 @@ public class FdInicioPanel extends javax.swing.JPanel {
                 .addComponent(FD_LabelNovoAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(FD_LabelImportarAutomato)
-                .addContainerGap(314, Short.MAX_VALUE))
+                .addContainerGap(301, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

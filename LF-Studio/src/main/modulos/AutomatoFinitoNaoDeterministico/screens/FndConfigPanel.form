@@ -181,16 +181,18 @@
                               <Component id="FND_SalvarAutomatojlbl" alignment="1" min="-2" pref="234" max="-2" attributes="0"/>
                           </Group>
                       </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="192" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="FND_SubTitulo" min="-2" max="-2" attributes="0"/>
-                              <Component id="FND_BodyConfig" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" alignment="0" groupAlignment="1" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="FND_Titulo" min="-2" pref="558" max="-2" attributes="0"/>
                           </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="241" max="-2" attributes="0"/>
-                          <Component id="FND_Titulo" min="-2" pref="531" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="192" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="FND_SubTitulo" min="-2" max="-2" attributes="0"/>
+                                  <Component id="FND_BodyConfig" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
                       </Group>
                   </Group>
                   <EmptySpace pref="474" max="32767" attributes="0"/>
@@ -210,7 +212,7 @@
                   <Component id="FND_SalvarAutomatojlbl" min="-2" pref="42" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                   <Component id="FND_LabelProcessarAutomato" min="-2" pref="40" max="-2" attributes="0"/>
-                  <EmptySpace pref="90" max="32767" attributes="0"/>
+                  <EmptySpace pref="86" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -308,58 +310,62 @@
             <Component class="javax.swing.JLabel" name="FND_LabelAlfabeto">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Microsoft Yi Baiti" size="22" style="1"/>
+                  <Font name="Noto Sans" size="18" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Alfabeto"/>
-                <Property name="toolTipText" type="java.lang.String" value=""/>
+                <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#xa;Elementos que constituem o alfabeto do aut&#xf4;mato, s&#xe3;o utilizados como &quot;meio&quot; de transi&#xe7;&#xe3;o para uma transi&#xe7;&#xe3;o qualquer&#xa;&lt;br&gt;&#xa;Exemplo de input: &quot;0,1,a,b,c,&quot; (Uma v&#xed;rgula por elemento)&#xa;&lt;/html&gt;"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="FND_LabelEstadosFinais">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Microsoft Yi Baiti" size="22" style="1"/>
+                  <Font name="Noto Sans" size="18" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Estados Finais"/>
+                <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#xa;Estados que levam ao reconhecimento de dada String de entrada, pode existir mais de um estado final&#xa;&lt;br&gt;&#xa;Exemplo de input: &quot;l,m&quot; (Uma v&#xed;rgula por elemento)&#xa;&lt;/html&gt;"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="FND_LabelEstados">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Microsoft Yi Baiti" size="22" style="1"/>
+                  <Font name="Noto Sans" size="18" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Estados"/>
+                <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#xa;Estados que constitutem o aut&#xf4;mato, estado inicial e estados finais devem estar contidos&#xa;&lt;br&gt;&#xa;Exemplo de input: &quot;l,m,s,t,p&quot;&#xa;&lt;/html&gt;"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="FND_LabelEstadoInicial">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Microsoft Yi Baiti" size="22" style="1"/>
+                  <Font name="Noto Sans" size="18" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Estado Inicial"/>
+                <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#xa;Ponto de partida do referido aut&#xf4;mato, s&#xf3; um estado inicial pode existir&#xa;&lt;br&gt;&#xa;Exemplo de input: &quot;s&quot; (apenas um elemento)&#xa;&lt;/html&gt;"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="FND_LabelTabelaTransicao">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Microsoft Yi Baiti" size="26" style="1"/>
+                  <Font name="Noto Sans" size="22" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="Tabela de Transi&#xe7;&#xf5;es"/>
+                <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#xa;Tabela utilizada para expressar todas as transi&#xe7;&#xf5;es existentes, as transi&#xe7;&#xf5;es&#xa;seguem o seguinte modelo: &#xa;&lt;br&gt;   | Estados (linhas da coluna 0) x Alfabeto (colunas) = estado para o qual ir&#xe1; (apenas um estado, visto que &#xe9; um AFD) |&#xa;&lt;br&gt;&#xa;Exemplo de Input: (linha) (&apos;l&apos;) (coluna) (&apos;0&apos;) = &apos;l&apos; |  Existe uma transi&#xe7;&#xe3;o saindo do estado &apos;l&apos;, utilizando &apos;0&apos; como alfabeto para transi&#xe7;&#xe3;o, vai para o estado &apos;l&apos;&#xa;&lt;/html&gt;"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="FND_LabelTabelaTransicaoMouseClicked"/>
@@ -379,7 +385,6 @@
                   <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="4,8,2,3"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
               <Events>
@@ -397,61 +402,13 @@
                 <Component class="javax.swing.JTable" name="FND_jTable1">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="5" rowCount="4">
-                        <Column editable="true" title="Estados" type="java.lang.Object">
-                          <Data value="coxinha"/>
-                          <Data value="bacon"/>
-                          <Data value="salada"/>
-                          <Data value="arroz"/>
-                        </Column>
-                        <Column editable="true" title="4" type="java.lang.Object">
-                          <Data value="null"/>
-                          <Data value="arroz"/>
-                          <Data value="null"/>
-                          <Data value="null"/>
-                        </Column>
-                        <Column editable="true" title="8" type="java.lang.Object">
-                          <Data value="coxinha,bacon"/>
-                          <Data value="arroz"/>
-                          <Data value="null"/>
-                          <Data value="arroz"/>
-                        </Column>
-                        <Column editable="true" title="2" type="java.lang.Object">
-                          <Data value="coxinha,salada"/>
-                          <Data value="null"/>
-                          <Data value="arroz"/>
-                          <Data value="null"/>
-                        </Column>
-                        <Column editable="true" title="3" type="java.lang.Object">
-                          <Data value="null"/>
-                          <Data value="null"/>
-                          <Data value="null"/>
-                          <Data value="arroz"/>
-                        </Column>
+                      <Table columnCount="1" rowCount="0">
+                        <Column editable="false" title="Estados" type="java.lang.Object"/>
                       </Table>
                     </Property>
+                    <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#xa;Tabela utilizada para expressar todas as transi&#xe7;&#xf5;es existentes, as transi&#xe7;&#xf5;es&#xa;seguem o seguinte modelo: &#xa;&lt;br&gt;   | Estados (linhas da coluna 0) x Alfabeto (colunas) = estado para o qual ir&#xe1; (apenas um estado, visto que &#xe9; um AFD) |&#xa;&lt;br&gt;&#xa;Exemplo de Input: (linha) (&apos;l&apos;) (coluna) (&apos;0&apos;) = &apos;l&apos; |  Existe uma transi&#xe7;&#xe3;o saindo do estado &apos;l&apos;, utilizando &apos;0&apos; como alfabeto para transi&#xe7;&#xe3;o, vai para o estado &apos;l&apos;&#xa;&lt;/html&gt;"/>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                       <TableColumnModel selectionModel="0">
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                          <Title/>
-                          <Editor/>
-                          <Renderer/>
-                        </Column>
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                          <Title/>
-                          <Editor/>
-                          <Renderer/>
-                        </Column>
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                          <Title/>
-                          <Editor/>
-                          <Renderer/>
-                        </Column>
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                          <Title/>
-                          <Editor/>
-                          <Renderer/>
-                        </Column>
                         <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                           <Title/>
                           <Editor/>
@@ -478,7 +435,6 @@
                   <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="coxinha,bacon,salada,arroz"/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="FND_TextFieldEstadosActionPerformed"/>
@@ -497,7 +453,6 @@
                   <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="coxinha"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JTextField" name="FND_TextFieldEstadosFinais">
@@ -512,7 +467,6 @@
                   <Color blue="0" green="0" red="0" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="text" type="java.lang.String" value="arroz"/>
                 <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
               <Events>
@@ -524,7 +478,7 @@
         <Component class="javax.swing.JLabel" name="FND_Titulo">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Microsoft Yi Baiti" size="36" style="1"/>
+              <Font name="Noto Sans" size="32" style="0"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -546,7 +500,7 @@
               <Color blue="33" green="33" red="33" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Microsoft Yi Baiti" size="22" style="1"/>
+              <Font name="Noto Sans" size="18" style="0"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -568,7 +522,7 @@
               <Color blue="33" green="33" red="33" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Microsoft Yi Baiti" size="22" style="1"/>
+              <Font name="Noto Sans" size="18" style="0"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -586,7 +540,7 @@
         <Component class="javax.swing.JLabel" name="FND_SubTitulo">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Microsoft Yi Baiti" size="26" style="1"/>
+              <Font name="Noto Sans" size="22" style="0"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>

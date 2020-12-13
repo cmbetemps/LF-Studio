@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
-<Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+<Form version="1.8" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
   <NonVisualComponents>
     <Container class="javax.swing.JDialog" name="JdialogTabelaExternaAFD">
       <Properties>
@@ -211,7 +211,7 @@
                   <Component id="FD_salvarAutomatoBtn" min="-2" pref="42" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="FD_processarAutomatoBtn" min="-2" pref="42" max="-2" attributes="0"/>
-                  <EmptySpace pref="90" max="32767" attributes="0"/>
+                  <EmptySpace pref="100" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -300,56 +300,61 @@
             <Component class="javax.swing.JLabel" name="FD_LabelAlfabeto">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Comic Sans MS" size="22" style="1"/>
+                  <Font name="Noto Sans" size="18" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Alfabeto"/>
+                <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#xa;Elementos que constituem o alfabeto do aut&#xf4;mato, s&#xe3;o utilizados como &quot;meio&quot; de transi&#xe7;&#xe3;o para uma transi&#xe7;&#xe3;o qualquer&#xa;&lt;br&gt;&#xa;Exemplo de input: &quot;0,1,a,b,c,&quot; (Uma v&#xed;rgula por elemento)&#xa;&lt;/html&gt;"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="FD_LabelEstadosFinais">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Comic Sans MS" size="22" style="1"/>
+                  <Font name="Noto Sans" size="18" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Estados Finais"/>
+                <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#xa;Estados que levam ao reconhecimento de dada String de entrada, pode existir mais de um estado final&#xa;&lt;br&gt;&#xa;Exemplo de input: &quot;l,m&quot; (Uma v&#xed;rgula por elemento)&#xa;&lt;/html&gt;"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="FD_LabelEstados">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Comic Sans MS" size="22" style="1"/>
+                  <Font name="Noto Sans" size="18" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Estados"/>
+                <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#xa;Estados que constitutem o aut&#xf4;mato, estado inicial e estados finais devem estar contidos&#xa;&lt;br&gt;&#xa;Exemplo de input: &quot;l,m,s,t,p&quot;&#xa;&lt;/html&gt;"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="FD_LabelEstadoInicial1">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Comic Sans MS" size="22" style="1"/>
+                  <Font name="Noto Sans" size="18" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Estado Inicial"/>
+                <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#xa;Ponto de partida do referido aut&#xf4;mato, s&#xf3; um estado inicial pode existir&#xa;&lt;br&gt;&#xa;Exemplo de input: &quot;s&quot; (apenas um elemento)&#xa;&lt;/html&gt;"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="FD_LabelTabelaTransicao1">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Comic Sans MS" size="18" style="1"/>
+                  <Font name="Noto Sans" size="20" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Tabela de Transi&#xe7;&#xf5;es"/>
+                <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#xa;Tabela utilizada para expressar todas as transi&#xe7;&#xf5;es existentes, as transi&#xe7;&#xf5;es&#xa;seguem o seguinte modelo:&lt;br&gt;   | Estados (linhas da coluna 0) x Alfabeto (colunas) = estados para o qual pode ir, para dado alfabeto |&#xa;&lt;br&gt;&#xa;Exemplo de Input: (linha) (&apos;l&apos;) (coluna) (&apos;0&apos;) = &apos;l&apos; |  Existe uma transi&#xe7;&#xe3;o saindo do estado &apos;l&apos;, utilizando &apos;0&apos; como alfabeto para transi&#xe7;&#xe3;o, vai para o estado &apos;l&apos;&#xa;&lt;/html&gt;"/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="FD_LabelTabelaTransicao1MouseClicked"/>
@@ -397,6 +402,7 @@
                         </Column>
                       </Table>
                     </Property>
+                    <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#xa;Tabela utilizada para expressar todas as transi&#xe7;&#xf5;es existentes, as transi&#xe7;&#xf5;es&#xa;seguem o seguinte modelo:&lt;br&gt;   | Estados (linhas da coluna 0) x Alfabeto (colunas) = estados para o qual pode ir, para dado alfabeto |&#xa;&lt;br&gt;&#xa;Exemplo de Input: (linha) (&apos;l&apos;) (coluna) (&apos;0&apos;) = &apos;l&apos; |  Existe uma transi&#xe7;&#xe3;o saindo do estado &apos;l&apos;, utilizando &apos;0&apos; como alfabeto para transi&#xe7;&#xe3;o, vai para o estado &apos;l&apos;&#xa;&lt;/html&gt;"/>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                       <TableColumnModel selectionModel="0">
                         <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
@@ -463,7 +469,7 @@
         <Component class="javax.swing.JLabel" name="FD_ConfigTitulo">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Comic Sans MS" size="36" style="1"/>
+              <Font name="Noto Sans" size="32" style="0"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -481,7 +487,7 @@
         <Component class="javax.swing.JLabel" name="FD_ConfigSubTitulo">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Comic Sans MS" size="24" style="1"/>
+              <Font name="Noto Sans" size="20" style="0"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -495,7 +501,7 @@
               <Color blue="33" green="33" red="33" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="SansSerif" size="22" style="1"/>
+              <Font name="Noto Sans" size="22" style="0"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -517,7 +523,7 @@
               <Color blue="33" green="33" red="33" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="SansSerif" size="22" style="1"/>
+              <Font name="Noto Sans" size="22" style="0"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>

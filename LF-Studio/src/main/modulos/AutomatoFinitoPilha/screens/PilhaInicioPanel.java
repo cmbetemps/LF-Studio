@@ -45,7 +45,7 @@ public class PilhaInicioPanel extends javax.swing.JPanel {
         pilhaTitle.setPreferredSize(new java.awt.Dimension(1280, 720));
 
         PILHA_LabelNovoAutomato4.setBackground(new java.awt.Color(0, 0, 0));
-        PILHA_LabelNovoAutomato4.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 28)); // NOI18N
+        PILHA_LabelNovoAutomato4.setFont(new java.awt.Font("Noto Sans", 0, 28)); // NOI18N
         PILHA_LabelNovoAutomato4.setForeground(new java.awt.Color(255, 255, 255));
         PILHA_LabelNovoAutomato4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         PILHA_LabelNovoAutomato4.setText("Novo autômato");
@@ -66,7 +66,7 @@ public class PilhaInicioPanel extends javax.swing.JPanel {
         });
 
         PILHA_LabelImportarAutomato4.setBackground(new java.awt.Color(0, 0, 0));
-        PILHA_LabelImportarAutomato4.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 28)); // NOI18N
+        PILHA_LabelImportarAutomato4.setFont(new java.awt.Font("Noto Sans", 0, 28)); // NOI18N
         PILHA_LabelImportarAutomato4.setForeground(new java.awt.Color(255, 255, 255));
         PILHA_LabelImportarAutomato4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         PILHA_LabelImportarAutomato4.setText("Importar autômato");
@@ -80,7 +80,7 @@ public class PilhaInicioPanel extends javax.swing.JPanel {
             }
         });
 
-        PILHA_LabelAutomatoFND4.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 48)); // NOI18N
+        PILHA_LabelAutomatoFND4.setFont(new java.awt.Font("Noto Sans", 1, 48)); // NOI18N
         PILHA_LabelAutomatoFND4.setForeground(new java.awt.Color(255, 255, 255));
         PILHA_LabelAutomatoFND4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         PILHA_LabelAutomatoFND4.setText("<html><p style=\"padding-bottom: 16px;\">Autômato de Pilha</p></html>");

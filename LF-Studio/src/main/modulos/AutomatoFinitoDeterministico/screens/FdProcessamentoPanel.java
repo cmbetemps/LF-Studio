@@ -39,11 +39,12 @@ public class FdProcessamentoPanel extends javax.swing.JPanel {
         bodyFd.setPreferredSize(new java.awt.Dimension(1280, 720));
 
         FD_SubtituloProcessamento.setBackground(new java.awt.Color(70, 71, 74));
-        FD_SubtituloProcessamento.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        FD_SubtituloProcessamento.setFont(new java.awt.Font("Noto Sans", 0, 20)); // NOI18N
         FD_SubtituloProcessamento.setForeground(new java.awt.Color(255, 255, 255));
         FD_SubtituloProcessamento.setText("Processamento");
 
-        FD_BodyProcessamento.setBackground(new java.awt.Color(196, 196, 196));
+        FD_BodyProcessamento.setBackground(new java.awt.Color(10, 10, 10));
+        FD_BodyProcessamento.setForeground(new java.awt.Color(204, 204, 204));
         FD_BodyProcessamento.setPreferredSize(new java.awt.Dimension(360, 321));
 
         javax.swing.GroupLayout FD_BodyProcessamentoLayout = new javax.swing.GroupLayout(FD_BodyProcessamento);
@@ -58,7 +59,7 @@ public class FdProcessamentoPanel extends javax.swing.JPanel {
         );
 
         FD_validarBtn.setBackground(new java.awt.Color(51, 51, 51));
-        FD_validarBtn.setFont(new java.awt.Font("SansSerif", 1, 22)); // NOI18N
+        FD_validarBtn.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
         FD_validarBtn.setForeground(new java.awt.Color(255, 255, 255));
         FD_validarBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         FD_validarBtn.setText("Validar Palavra");
@@ -79,11 +80,11 @@ public class FdProcessamentoPanel extends javax.swing.JPanel {
         FD_inputEntrada.setBackground(new java.awt.Color(255, 255, 255));
 
         FD_labelEntrada.setBackground(new java.awt.Color(70, 71, 74));
-        FD_labelEntrada.setFont(new java.awt.Font("Calibri Light", 1, 22)); // NOI18N
+        FD_labelEntrada.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
         FD_labelEntrada.setForeground(new java.awt.Color(255, 255, 255));
         FD_labelEntrada.setText("Entrada");
 
-        FD_TituloProcessamento.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
+        FD_TituloProcessamento.setFont(new java.awt.Font("Noto Sans", 0, 32)); // NOI18N
         FD_TituloProcessamento.setForeground(new java.awt.Color(255, 255, 255));
         FD_TituloProcessamento.setText("<html><p style=\"padding-bottom: 16px;\">Autômato Finito Determinístico</p></html>");
         FD_TituloProcessamento.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
@@ -96,7 +97,7 @@ public class FdProcessamentoPanel extends javax.swing.JPanel {
                 .addGap(77, 77, 77)
                 .addGroup(bodyFdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(FD_SubtituloProcessamento, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(FD_TituloProcessamento, javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(FD_TituloProcessamento, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 544, Short.MAX_VALUE)
                     .addComponent(FD_BodyProcessamento, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 544, Short.MAX_VALUE)
                     .addGroup(bodyFdLayout.createSequentialGroup()
                         .addComponent(FD_labelEntrada)
@@ -116,7 +117,7 @@ public class FdProcessamentoPanel extends javax.swing.JPanel {
                 .addComponent(FD_BodyProcessamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(14, 14, 14)
                 .addGroup(bodyFdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(FD_labelEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 24, Short.MAX_VALUE)
+                    .addComponent(FD_labelEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                     .addComponent(FD_inputEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(FD_validarBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -136,11 +137,11 @@ public class FdProcessamentoPanel extends javax.swing.JPanel {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 750, Short.MAX_VALUE)
+            .addGap(0, 749, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(12, 12, 12)
-                    .addComponent(bodyFd, javax.swing.GroupLayout.DEFAULT_SIZE, 725, Short.MAX_VALUE)
+                    .addComponent(bodyFd, javax.swing.GroupLayout.DEFAULT_SIZE, 724, Short.MAX_VALUE)
                     .addGap(13, 13, 13)))
         );
 

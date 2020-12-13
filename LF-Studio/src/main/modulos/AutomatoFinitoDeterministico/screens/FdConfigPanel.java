@@ -147,25 +147,30 @@ public class FdConfigPanel extends javax.swing.JPanel {
         FD_BodyConfig.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         FD_BodyConfig.setForeground(new java.awt.Color(51, 51, 51));
 
-        FD_LabelAlfabeto.setFont(new java.awt.Font("Comic Sans MS", 1, 22)); // NOI18N
+        FD_LabelAlfabeto.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
         FD_LabelAlfabeto.setForeground(new java.awt.Color(255, 255, 255));
         FD_LabelAlfabeto.setText("Alfabeto");
+        FD_LabelAlfabeto.setToolTipText("<html>\nElementos que constituem o alfabeto do autômato, são utilizados como \"meio\" de transição para uma transição qualquer\n<br>\nExemplo de input: \"0,1,a,b,c,\" (Uma vírgula por elemento)\n</html>");
 
-        FD_LabelEstadosFinais.setFont(new java.awt.Font("Comic Sans MS", 1, 22)); // NOI18N
+        FD_LabelEstadosFinais.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
         FD_LabelEstadosFinais.setForeground(new java.awt.Color(255, 255, 255));
         FD_LabelEstadosFinais.setText("Estados Finais");
+        FD_LabelEstadosFinais.setToolTipText("<html>\nEstados que levam ao reconhecimento de dada String de entrada, pode existir mais de um estado final\n<br>\nExemplo de input: \"l,m\" (Uma vírgula por elemento)\n</html>");
 
-        FD_LabelEstados.setFont(new java.awt.Font("Comic Sans MS", 1, 22)); // NOI18N
+        FD_LabelEstados.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
         FD_LabelEstados.setForeground(new java.awt.Color(255, 255, 255));
         FD_LabelEstados.setText("Estados");
+        FD_LabelEstados.setToolTipText("<html>\nEstados que constitutem o autômato, estado inicial e estados finais devem estar contidos\n<br>\nExemplo de input: \"l,m,s,t,p\"\n</html>");
 
-        FD_LabelEstadoInicial1.setFont(new java.awt.Font("Comic Sans MS", 1, 22)); // NOI18N
+        FD_LabelEstadoInicial1.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
         FD_LabelEstadoInicial1.setForeground(new java.awt.Color(255, 255, 255));
         FD_LabelEstadoInicial1.setText("Estado Inicial");
+        FD_LabelEstadoInicial1.setToolTipText("<html>\nPonto de partida do referido autômato, só um estado inicial pode existir\n<br>\nExemplo de input: \"s\" (apenas um elemento)\n</html>");
 
-        FD_LabelTabelaTransicao1.setFont(new java.awt.Font("Comic Sans MS", 1, 18)); // NOI18N
+        FD_LabelTabelaTransicao1.setFont(new java.awt.Font("Noto Sans", 0, 20)); // NOI18N
         FD_LabelTabelaTransicao1.setForeground(new java.awt.Color(255, 255, 255));
         FD_LabelTabelaTransicao1.setText("Tabela de Transições");
+        FD_LabelTabelaTransicao1.setToolTipText("<html>\nTabela utilizada para expressar todas as transições existentes, as transições\nseguem o seguinte modelo:<br>   | Estados (linhas da coluna 0) x Alfabeto (colunas) = estados para o qual pode ir, para dado alfabeto |\n<br>\nExemplo de Input: (linha) ('l') (coluna) ('0') = 'l' |  Existe uma transição saindo do estado 'l', utilizando '0' como alfabeto para transição, vai para o estado 'l'\n</html>");
         FD_LabelTabelaTransicao1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 FD_LabelTabelaTransicao1MouseClicked(evt);
@@ -201,6 +206,7 @@ public class FdConfigPanel extends javax.swing.JPanel {
                 "Estados", "0", "1"
             }
         ));
+        FD_jTable.setToolTipText("<html>\nTabela utilizada para expressar todas as transições existentes, as transições\nseguem o seguinte modelo:<br>   | Estados (linhas da coluna 0) x Alfabeto (colunas) = estados para o qual pode ir, para dado alfabeto |\n<br>\nExemplo de Input: (linha) ('l') (coluna) ('0') = 'l' |  Existe uma transição saindo do estado 'l', utilizando '0' como alfabeto para transição, vai para o estado 'l'\n</html>");
         FD_jScrollPane.setViewportView(FD_jTable);
 
         FD_TextFieldEstados.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
@@ -289,17 +295,17 @@ public class FdConfigPanel extends javax.swing.JPanel {
                 .addGap(14, 14, 14))
         );
 
-        FD_ConfigTitulo.setFont(new java.awt.Font("Comic Sans MS", 1, 36)); // NOI18N
+        FD_ConfigTitulo.setFont(new java.awt.Font("Noto Sans", 0, 32)); // NOI18N
         FD_ConfigTitulo.setForeground(new java.awt.Color(255, 255, 255));
         FD_ConfigTitulo.setText("<html><p style=\"padding-bottom: 16px;\">Autômato Finito Determinístico</p></html>");
         FD_ConfigTitulo.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
 
-        FD_ConfigSubTitulo.setFont(new java.awt.Font("Comic Sans MS", 1, 24)); // NOI18N
+        FD_ConfigSubTitulo.setFont(new java.awt.Font("Noto Sans", 0, 20)); // NOI18N
         FD_ConfigSubTitulo.setForeground(new java.awt.Color(255, 255, 255));
         FD_ConfigSubTitulo.setText("Configuração");
 
         FD_salvarAutomatoBtn.setBackground(new java.awt.Color(51, 51, 51));
-        FD_salvarAutomatoBtn.setFont(new java.awt.Font("SansSerif", 1, 22)); // NOI18N
+        FD_salvarAutomatoBtn.setFont(new java.awt.Font("Noto Sans", 0, 22)); // NOI18N
         FD_salvarAutomatoBtn.setForeground(new java.awt.Color(255, 255, 255));
         FD_salvarAutomatoBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         FD_salvarAutomatoBtn.setText("Salvar Automato");
@@ -318,7 +324,7 @@ public class FdConfigPanel extends javax.swing.JPanel {
         });
 
         FD_processarAutomatoBtn.setBackground(new java.awt.Color(51, 51, 51));
-        FD_processarAutomatoBtn.setFont(new java.awt.Font("SansSerif", 1, 22)); // NOI18N
+        FD_processarAutomatoBtn.setFont(new java.awt.Font("Noto Sans", 0, 22)); // NOI18N
         FD_processarAutomatoBtn.setForeground(new java.awt.Color(255, 255, 255));
         FD_processarAutomatoBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         FD_processarAutomatoBtn.setText("Processar Automato");
@@ -373,7 +379,7 @@ public class FdConfigPanel extends javax.swing.JPanel {
                 .addComponent(FD_salvarAutomatoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(FD_processarAutomatoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(90, Short.MAX_VALUE))
+                .addContainerGap(100, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

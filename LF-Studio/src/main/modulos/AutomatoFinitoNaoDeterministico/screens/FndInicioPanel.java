@@ -45,13 +45,13 @@ public class FndInicioPanel extends javax.swing.JPanel {
 
         fndTitle.setBackground(new java.awt.Color(28, 28, 28));
 
-        AFND1_LabelAutomatoFND.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 48)); // NOI18N
+        AFND1_LabelAutomatoFND.setFont(new java.awt.Font("Noto Sans", 0, 44)); // NOI18N
         AFND1_LabelAutomatoFND.setForeground(new java.awt.Color(255, 255, 255));
         AFND1_LabelAutomatoFND.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         AFND1_LabelAutomatoFND.setText("<html><p style=\"padding-bottom: 16px;\">Autômato Finito Não Determinístico</p></html>");
 
         AFND1_LabelNovoAutomato.setBackground(new java.awt.Color(0, 0, 0));
-        AFND1_LabelNovoAutomato.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 28)); // NOI18N
+        AFND1_LabelNovoAutomato.setFont(new java.awt.Font("Noto Sans", 0, 24)); // NOI18N
         AFND1_LabelNovoAutomato.setForeground(new java.awt.Color(255, 255, 255));
         AFND1_LabelNovoAutomato.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         AFND1_LabelNovoAutomato.setText("Novo autômato");
@@ -72,7 +72,7 @@ public class FndInicioPanel extends javax.swing.JPanel {
         });
 
         AFND1_LabelImportarAutomato.setBackground(new java.awt.Color(0, 0, 0));
-        AFND1_LabelImportarAutomato.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 28)); // NOI18N
+        AFND1_LabelImportarAutomato.setFont(new java.awt.Font("Noto Sans", 0, 24)); // NOI18N
         AFND1_LabelImportarAutomato.setForeground(new java.awt.Color(255, 255, 255));
         AFND1_LabelImportarAutomato.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         AFND1_LabelImportarAutomato.setText("Importar autômato");

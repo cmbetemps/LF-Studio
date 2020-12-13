@@ -163,27 +163,31 @@ public class FndConfigPanel extends javax.swing.JPanel {
         FND_BodyConfig.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.darkGray, java.awt.Color.darkGray, java.awt.Color.darkGray));
         FND_BodyConfig.setForeground(new java.awt.Color(28, 28, 28));
 
-        FND_LabelAlfabeto.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
+        FND_LabelAlfabeto.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
         FND_LabelAlfabeto.setForeground(new java.awt.Color(255, 255, 255));
         FND_LabelAlfabeto.setText("Alfabeto");
-        FND_LabelAlfabeto.setToolTipText("");
+        FND_LabelAlfabeto.setToolTipText("<html>\nElementos que constituem o alfabeto do autômato, são utilizados como \"meio\" de transição para uma transição qualquer\n<br>\nExemplo de input: \"0,1,a,b,c,\" (Uma vírgula por elemento)\n</html>");
 
-        FND_LabelEstadosFinais.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
+        FND_LabelEstadosFinais.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
         FND_LabelEstadosFinais.setForeground(new java.awt.Color(255, 255, 255));
         FND_LabelEstadosFinais.setText("Estados Finais");
+        FND_LabelEstadosFinais.setToolTipText("<html>\nEstados que levam ao reconhecimento de dada String de entrada, pode existir mais de um estado final\n<br>\nExemplo de input: \"l,m\" (Uma vírgula por elemento)\n</html>");
 
-        FND_LabelEstados.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
+        FND_LabelEstados.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
         FND_LabelEstados.setForeground(new java.awt.Color(255, 255, 255));
         FND_LabelEstados.setText("Estados");
+        FND_LabelEstados.setToolTipText("<html>\nEstados que constitutem o autômato, estado inicial e estados finais devem estar contidos\n<br>\nExemplo de input: \"l,m,s,t,p\"\n</html>");
 
-        FND_LabelEstadoInicial.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
+        FND_LabelEstadoInicial.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
         FND_LabelEstadoInicial.setForeground(new java.awt.Color(255, 255, 255));
         FND_LabelEstadoInicial.setText("Estado Inicial");
+        FND_LabelEstadoInicial.setToolTipText("<html>\nPonto de partida do referido autômato, só um estado inicial pode existir\n<br>\nExemplo de input: \"s\" (apenas um elemento)\n</html>");
 
-        FND_LabelTabelaTransicao.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 26)); // NOI18N
+        FND_LabelTabelaTransicao.setFont(new java.awt.Font("Noto Sans", 0, 22)); // NOI18N
         FND_LabelTabelaTransicao.setForeground(new java.awt.Color(255, 255, 255));
         FND_LabelTabelaTransicao.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         FND_LabelTabelaTransicao.setText("Tabela de Transições");
+        FND_LabelTabelaTransicao.setToolTipText("<html>\nTabela utilizada para expressar todas as transições existentes, as transições\nseguem o seguinte modelo: \n<br>   | Estados (linhas da coluna 0) x Alfabeto (colunas) = estado para o qual irá (apenas um estado, visto que é um AFD) |\n<br>\nExemplo de Input: (linha) ('l') (coluna) ('0') = 'l' |  Existe uma transição saindo do estado 'l', utilizando '0' como alfabeto para transição, vai para o estado 'l'\n</html>");
         FND_LabelTabelaTransicao.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 FND_LabelTabelaTransicaoMouseClicked(evt);
@@ -200,7 +204,6 @@ public class FndConfigPanel extends javax.swing.JPanel {
         FND_TextFieldAlfabeto.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         FND_TextFieldAlfabeto.setForeground(new java.awt.Color(0, 0, 0));
         FND_TextFieldAlfabeto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        FND_TextFieldAlfabeto.setText("4,8,2,3");
         FND_TextFieldAlfabeto.setToolTipText("");
         FND_TextFieldAlfabeto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -215,22 +218,27 @@ public class FndConfigPanel extends javax.swing.JPanel {
 
         FND_jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"coxinha", null, "coxinha,bacon", "coxinha,salada", null},
-                {"bacon", "arroz", "arroz", null, null},
-                {"salada", null, null, "arroz", null},
-                {"arroz", null, "arroz", null, "arroz"}
+
             },
             new String [] {
-                "Estados", "4", "8", "2", "3"
+                "Estados"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        FND_jTable1.setToolTipText("<html>\nTabela utilizada para expressar todas as transições existentes, as transições\nseguem o seguinte modelo: \n<br>   | Estados (linhas da coluna 0) x Alfabeto (colunas) = estado para o qual irá (apenas um estado, visto que é um AFD) |\n<br>\nExemplo de Input: (linha) ('l') (coluna) ('0') = 'l' |  Existe uma transição saindo do estado 'l', utilizando '0' como alfabeto para transição, vai para o estado 'l'\n</html>");
         FND_jScrollPane2.setViewportView(FND_jTable1);
 
         FND_TextFieldEstados.setBackground(new java.awt.Color(255, 255, 255));
         FND_TextFieldEstados.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         FND_TextFieldEstados.setForeground(new java.awt.Color(0, 0, 0));
         FND_TextFieldEstados.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        FND_TextFieldEstados.setText("coxinha,bacon,salada,arroz");
         FND_TextFieldEstados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 FND_TextFieldEstadosActionPerformed(evt);
@@ -246,13 +254,11 @@ public class FndConfigPanel extends javax.swing.JPanel {
         FND_TextFieldEstadoInicial.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         FND_TextFieldEstadoInicial.setForeground(new java.awt.Color(0, 0, 0));
         FND_TextFieldEstadoInicial.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        FND_TextFieldEstadoInicial.setText("coxinha");
 
         FND_TextFieldEstadosFinais.setBackground(new java.awt.Color(255, 255, 255));
         FND_TextFieldEstadosFinais.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         FND_TextFieldEstadosFinais.setForeground(new java.awt.Color(0, 0, 0));
         FND_TextFieldEstadosFinais.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        FND_TextFieldEstadosFinais.setText("arroz");
         FND_TextFieldEstadosFinais.setToolTipText("");
         FND_TextFieldEstadosFinais.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -314,14 +320,14 @@ public class FndConfigPanel extends javax.swing.JPanel {
                 .addContainerGap(27, Short.MAX_VALUE))
         );
 
-        FND_Titulo.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 36)); // NOI18N
+        FND_Titulo.setFont(new java.awt.Font("Noto Sans", 0, 32)); // NOI18N
         FND_Titulo.setForeground(new java.awt.Color(255, 255, 255));
         FND_Titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         FND_Titulo.setText("<html><p style=\"padding-bottom: 16px;\">Autômato Finito Não Determinístico</p></html>");
         FND_Titulo.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
 
         FND_LabelProcessarAutomato.setBackground(new java.awt.Color(51, 51, 51));
-        FND_LabelProcessarAutomato.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
+        FND_LabelProcessarAutomato.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
         FND_LabelProcessarAutomato.setForeground(new java.awt.Color(255, 255, 255));
         FND_LabelProcessarAutomato.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         FND_LabelProcessarAutomato.setText(" Processar Autômato ");
@@ -340,7 +346,7 @@ public class FndConfigPanel extends javax.swing.JPanel {
         });
 
         FND_SalvarAutomatojlbl.setBackground(new java.awt.Color(51, 51, 51));
-        FND_SalvarAutomatojlbl.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
+        FND_SalvarAutomatojlbl.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
         FND_SalvarAutomatojlbl.setForeground(new java.awt.Color(255, 255, 255));
         FND_SalvarAutomatojlbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         FND_SalvarAutomatojlbl.setText("Salvar Autômato");
@@ -355,7 +361,7 @@ public class FndConfigPanel extends javax.swing.JPanel {
             }
         });
 
-        FND_SubTitulo.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 26)); // NOI18N
+        FND_SubTitulo.setFont(new java.awt.Font("Noto Sans", 0, 22)); // NOI18N
         FND_SubTitulo.setForeground(new java.awt.Color(255, 255, 255));
         FND_SubTitulo.setText("Configuração");
 
@@ -370,14 +376,15 @@ public class FndConfigPanel extends javax.swing.JPanel {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(FND_LabelProcessarAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(FND_SalvarAutomatojlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(192, 192, 192)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(FND_SubTitulo)
-                            .addComponent(FND_BodyConfig, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(241, 241, 241)
-                        .addComponent(FND_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 531, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addContainerGap()
+                            .addComponent(FND_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 558, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                            .addGap(192, 192, 192)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(FND_SubTitulo)
+                                .addComponent(FND_BodyConfig, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addContainerGap(474, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -393,7 +400,7 @@ public class FndConfigPanel extends javax.swing.JPanel {
                 .addComponent(FND_SalvarAutomatojlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(10, 10, 10)
                 .addComponent(FND_LabelProcessarAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(90, Short.MAX_VALUE))
+                .addContainerGap(86, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);

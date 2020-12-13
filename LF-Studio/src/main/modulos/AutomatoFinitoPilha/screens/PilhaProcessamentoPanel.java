@@ -72,7 +72,7 @@ public class PilhaProcessamentoPanel extends javax.swing.JPanel {
         );
 
         validarPalavraPilha1.setBackground(new java.awt.Color(51, 51, 51));
-        validarPalavraPilha1.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 20)); // NOI18N
+        validarPalavraPilha1.setFont(new java.awt.Font("Noto Sans", 0, 20)); // NOI18N
         validarPalavraPilha1.setForeground(new java.awt.Color(255, 255, 255));
         validarPalavraPilha1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         validarPalavraPilha1.setText("Validar Palavra");
@@ -91,16 +91,16 @@ public class PilhaProcessamentoPanel extends javax.swing.JPanel {
         });
 
         t_e.setBackground(new java.awt.Color(70, 71, 74));
-        t_e.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
+        t_e.setFont(new java.awt.Font("Noto Sans", 0, 20)); // NOI18N
         t_e.setForeground(new java.awt.Color(255, 255, 255));
         t_e.setText("Entrada");
 
         t_proces1.setBackground(new java.awt.Color(70, 71, 74));
-        t_proces1.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
+        t_proces1.setFont(new java.awt.Font("Noto Sans", 0, 20)); // NOI18N
         t_proces1.setForeground(new java.awt.Color(255, 255, 255));
         t_proces1.setText("Processamento");
 
-        AFND3_Titulo7.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 36)); // NOI18N
+        AFND3_Titulo7.setFont(new java.awt.Font("Noto Sans", 0, 36)); // NOI18N
         AFND3_Titulo7.setForeground(new java.awt.Color(255, 255, 255));
         AFND3_Titulo7.setText("<html><p style=\"padding-bottom: 16px;\">Autômato Pilha</p></html>");
         AFND3_Titulo7.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
