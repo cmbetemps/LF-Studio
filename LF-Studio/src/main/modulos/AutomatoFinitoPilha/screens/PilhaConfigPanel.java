@@ -151,11 +151,14 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
         );
 
         setBackground(new java.awt.Color(28, 28, 28));
-        setPreferredSize(new java.awt.Dimension(1280, 720));
+        setMaximumSize(new java.awt.Dimension(1024, 720));
+        setMinimumSize(new java.awt.Dimension(1024, 720));
+        setPreferredSize(new java.awt.Dimension(1024, 720));
 
         jPanel1.setBackground(new java.awt.Color(28, 28, 28));
-        jPanel1.setMinimumSize(new java.awt.Dimension(0, 0));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1280, 720));
+        jPanel1.setMaximumSize(new java.awt.Dimension(1024, 720));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1024, 720));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1024, 720));
 
         Pilha_BodyConfig1.setBackground(new java.awt.Color(28, 28, 28));
         Pilha_BodyConfig1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.darkGray, java.awt.Color.darkGray, java.awt.Color.darkGray));
@@ -164,6 +167,7 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
         t_tra1.setBackground(new java.awt.Color(51, 51, 51));
         t_tra1.setFont(new java.awt.Font("Noto Sans", 0, 19)); // NOI18N
         t_tra1.setForeground(new java.awt.Color(255, 255, 255));
+        t_tra1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         t_tra1.setText("Tabela de Transições");
         t_tra1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -178,30 +182,30 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
         });
 
         t_ea1.setBackground(new java.awt.Color(51, 51, 51));
-        t_ea1.setFont(new java.awt.Font("Noto Sans", 0, 19)); // NOI18N
+        t_ea1.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
         t_ea1.setForeground(new java.awt.Color(255, 255, 255));
         t_ea1.setText("Estados Finais");
         t_ea1.setToolTipText("<html>\nEstados que levam ao reconhecimento de dada String de entrada, pode existir mais de um estado final\n<br>\nExemplo de Input: \"q\"\n</html>");
 
         t_ei1.setBackground(new java.awt.Color(51, 51, 51));
-        t_ei1.setFont(new java.awt.Font("Noto Sans", 0, 19)); // NOI18N
+        t_ei1.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
         t_ei1.setForeground(new java.awt.Color(255, 255, 255));
         t_ei1.setText("Estado Inicial");
         t_ei1.setToolTipText("<html>\nPonto de partida do referido autômato, só um estado inicial pode existir\n<br>\nExemplo de Input: \"p\"\n</html>");
 
         t_ap1.setBackground(new java.awt.Color(51, 51, 51));
-        t_ap1.setFont(new java.awt.Font("Noto Sans", 0, 19)); // NOI18N
+        t_ap1.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
         t_ap1.setForeground(new java.awt.Color(255, 255, 255));
         t_ap1.setText("Alfabeto da Pilha");
         t_ap1.setToolTipText("<html>\nElementos que constituem o alfabeto da pilha,podem ou não ser utilizados em uma transição (não pode estar vazio)\n<br>\nExemplo de Input: \"A\"\n</html>");
 
         t_a1.setBackground(new java.awt.Color(51, 51, 51));
-        t_a1.setFont(new java.awt.Font("Noto Sans", 0, 19)); // NOI18N
+        t_a1.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
         t_a1.setForeground(new java.awt.Color(255, 255, 255));
         t_a1.setText("Alfabeto");
         t_a1.setToolTipText("<html>\nElementos que constituem o alfabeto do autômato, são utilizados como \"meio\" de transição para uma transição qualquer\nem conjunto com o alfabeto da pilha\n<br>\nExemplo de Input: \"a,b\"\n</html>");
 
-        r_ei1.setText("p");
+        r_ei1.setFont(new java.awt.Font("Noto Sans", 0, 13)); // NOI18N
         r_ei1.setPreferredSize(new java.awt.Dimension(15, 32));
         r_ei1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -214,7 +218,7 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
             }
         });
 
-        r_a1.setText("ab");
+        r_a1.setFont(new java.awt.Font("Noto Sans", 0, 13)); // NOI18N
         r_a1.setPreferredSize(new java.awt.Dimension(15, 32));
         r_a1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -227,7 +231,7 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
             }
         });
 
-        r_ap1.setText("A");
+        r_ap1.setFont(new java.awt.Font("Noto Sans", 0, 13)); // NOI18N
         r_ap1.setPreferredSize(new java.awt.Dimension(15, 32));
         r_ap1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -240,7 +244,7 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
             }
         });
 
-        r_ea1.setText("q");
+        r_ea1.setFont(new java.awt.Font("Noto Sans", 0, 13)); // NOI18N
         r_ea1.setPreferredSize(new java.awt.Dimension(15, 32));
         r_ea1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -253,7 +257,7 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
             }
         });
 
-        r_sip1.setText("p,q");
+        r_sip1.setFont(new java.awt.Font("Noto Sans", 0, 13)); // NOI18N
         r_sip1.setPreferredSize(new java.awt.Dimension(15, 32));
         r_sip1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -267,17 +271,15 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
         });
 
         t_sip1.setBackground(new java.awt.Color(51, 51, 51));
-        t_sip1.setFont(new java.awt.Font("Noto Sans", 0, 19)); // NOI18N
+        t_sip1.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
         t_sip1.setForeground(new java.awt.Color(255, 255, 255));
         t_sip1.setText("Estados");
         t_sip1.setToolTipText("<html>\nEstados que constitutem o autômato, estado inicial e estados finais devem estar contidos\n<br>\nExemplo de Input: \"q,p\"\n</html>");
 
+        AFP_jTable.setFont(new java.awt.Font("Noto Sans", 0, 13)); // NOI18N
         AFP_jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"p", "a", " ", "p", "A"},
-                {"p", "b", "A", "q", " "},
-                {"p", "a", "A", "q", "AA"},
-                {"q", "b", "A", "q", " "}
+
             },
             new String [] {
                 "Title 1", "Title 2", "Title 3", "Title 4", "Title 5"
@@ -290,14 +292,16 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
         });
         AFND2_jScrollPane4.setViewportView(AFP_jTable);
 
-        afp_button_minus.setText("-");
+        afp_button_minus.setFont(new java.awt.Font("Noto Sans", 1, 18)); // NOI18N
+        afp_button_minus.setText(" - ");
         afp_button_minus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 afp_button_minusActionPerformed(evt);
             }
         });
 
-        afp_button_plus.setText("+");
+        afp_button_plus.setFont(new java.awt.Font("Noto Sans", 1, 18)); // NOI18N
+        afp_button_plus.setText(" + ");
         afp_button_plus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 afp_button_plusActionPerformed(evt);
@@ -308,36 +312,44 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
         Pilha_BodyConfig1.setLayout(Pilha_BodyConfig1Layout);
         Pilha_BodyConfig1Layout.setHorizontalGroup(
             Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Pilha_BodyConfig1Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(t_tra1)
-                    .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(AFND2_jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(Pilha_BodyConfig1Layout.createSequentialGroup()
-                            .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(t_ap1, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(t_a1, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(t_ea1, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(t_ei1, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(t_sip1, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addGap(59, 59, 59)
-                            .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(r_ap1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(r_a1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(r_ea1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(r_ei1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(r_sip1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pilha_BodyConfig1Layout.createSequentialGroup()
-                                    .addComponent(afp_button_minus)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(afp_button_plus))))))
-                .addContainerGap(22, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pilha_BodyConfig1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(Pilha_BodyConfig1Layout.createSequentialGroup()
+                        .addGap(0, 1, Short.MAX_VALUE)
+                        .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(AFND2_jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 593, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(r_sip1, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(r_ei1, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(r_ap1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 405, Short.MAX_VALUE)
+                                .addComponent(r_ea1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Pilha_BodyConfig1Layout.createSequentialGroup()
+                        .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(t_sip1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(t_ei1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(t_ea1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(t_ap1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
+                            .addComponent(t_a1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(Pilha_BodyConfig1Layout.createSequentialGroup()
+                                .addComponent(afp_button_minus, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(9, 9, 9)))
+                        .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Pilha_BodyConfig1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(r_a1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(Pilha_BodyConfig1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(t_tra1, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(afp_button_plus, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(103, 103, 103)))))
+                .addContainerGap())
         );
         Pilha_BodyConfig1Layout.setVerticalGroup(
             Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Pilha_BodyConfig1Layout.createSequentialGroup()
-                .addGap(0, 20, Short.MAX_VALUE)
+                .addGap(21, 21, 21)
                 .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(t_a1)
                     .addComponent(r_a1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -357,14 +369,13 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
                 .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(r_sip1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(t_sip1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGap(18, 18, 18)
+                .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(t_tra1)
-                    .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(afp_button_minus)
-                        .addComponent(afp_button_plus)))
+                    .addComponent(afp_button_plus)
+                    .addComponent(afp_button_minus))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(AFND2_jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(AFND2_jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -395,7 +406,7 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
         Pilha_subTitulo.setForeground(new java.awt.Color(255, 255, 255));
         Pilha_subTitulo.setText("Configuração");
 
-        Pilha_ConfigTitulo1.setFont(new java.awt.Font("Noto Sans", 0, 36)); // NOI18N
+        Pilha_ConfigTitulo1.setFont(new java.awt.Font("Noto Sans", 0, 32)); // NOI18N
         Pilha_ConfigTitulo1.setForeground(new java.awt.Color(255, 255, 255));
         Pilha_ConfigTitulo1.setText("<html><p style=\"padding-bottom: 16px;\">Autômato de Pilha</p></html>");
         Pilha_ConfigTitulo1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
@@ -424,46 +435,43 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(81, 81, 81)
-                .addComponent(Pilha_tituloPilha)
+                .addGap(46, 46, 46)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(241, 241, 241)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(Pilha_ConfigTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(74, 74, 74))
-                            .addComponent(Pilha_BodyConfig1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(Pilha_processarPilhaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Pilha_salvarPilhaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(94, 94, 94))))
+                        .addGap(314, 314, 314)
+                        .addComponent(Pilha_ConfigTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(216, 216, 216)
-                        .addComponent(Pilha_subTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(528, Short.MAX_VALUE))
+                        .addComponent(Pilha_tituloPilha)
+                        .addGap(156, 156, 156)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Pilha_subTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Pilha_BodyConfig1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(341, 341, 341)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Pilha_processarPilhaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Pilha_salvarPilhaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(212, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(40, 40, 40)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                .addContainerGap(24, Short.MAX_VALUE)
+                .addComponent(Pilha_ConfigTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(Pilha_tituloPilha)
-                        .addGap(476, 476, 476))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(Pilha_ConfigTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(28, 28, 28)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Pilha_tituloPilha))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(Pilha_subTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Pilha_BodyConfig1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(Pilha_salvarPilhaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(Pilha_processarPilhaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(47, Short.MAX_VALUE))
+                        .addComponent(Pilha_BodyConfig1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Pilha_salvarPilhaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Pilha_processarPilhaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(12, 12, 12))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -471,13 +479,14 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1274, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 714, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -493,26 +502,6 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
     private void Pilha_salvarPilhaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pilha_salvarPilhaBtnMouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_Pilha_salvarPilhaBtnMouseClicked
-
-    private void r_sipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_sipActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_r_sipActionPerformed
-
-    private void r_eaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_eaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_r_eaActionPerformed
-
-    private void r_apActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_apActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_r_apActionPerformed
-
-    private void r_aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_aActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_r_aActionPerformed
-
-    private void r_eiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_eiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_r_eiActionPerformed
 
     private void Pilha_processarPilhaBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pilha_processarPilhaBtnMouseExited
         Pilha_processarPilhaBtn.setBackground(Pilha_processarPilhaBtn.getBackground().darker().darker());
@@ -560,60 +549,6 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
         }        
     }//GEN-LAST:event_Pilha_processarPilhaBtnMouseClicked
 
-    private void r_a1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r_a1KeyReleased
-            if (r_a1.getText().charAt(r_a1.getText().length() - 1) != ',') {
-            if (evt.getKeyCode() != KeyEvent.VK_BACK_SPACE) {
-                r_a1.setText(r_a1.getText() + ",");
-            }
-        }    
-    }//GEN-LAST:event_r_a1KeyReleased
-
-    private void afp_button_plusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afp_button_plusActionPerformed
-        tableModel.addRow(new Object[]{});
-    }//GEN-LAST:event_afp_button_plusActionPerformed
-
-    private void afp_button_minusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afp_button_minusActionPerformed
-       if(tableModel.getRowCount() > 0)
-        tableModel.removeRow(tableModel.getRowCount()-1);
-    }//GEN-LAST:event_afp_button_minusActionPerformed
-
-    private void r_ap1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r_ap1KeyReleased
-            if (r_ap1.getText().charAt(r_ap1.getText().length() - 1) != ',') {
-            if (evt.getKeyCode() != KeyEvent.VK_BACK_SPACE) {
-                r_ap1.setText(r_ap1.getText() + ",");
-            }
-        } 
-    }//GEN-LAST:event_r_ap1KeyReleased
-
-    private void r_ea1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r_ea1KeyReleased
-            if (r_ea1.getText().charAt(r_ea1.getText().length() - 1) != ',') {
-            if (evt.getKeyCode() != KeyEvent.VK_BACK_SPACE) {
-                r_ea1.setText(r_ea1.getText() + ",");
-            }
-        } 
-    }//GEN-LAST:event_r_ea1KeyReleased
-
-    private void r_ei1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r_ei1KeyReleased
-                 if (r_ei1.getText().charAt(r_ei1.getText().length() - 1) != ',') {
-            if (evt.getKeyCode() != KeyEvent.VK_BACK_SPACE) {
-                r_ei1.setText(r_ei1.getText() + ",");
-            }
-        } 
-    }//GEN-LAST:event_r_ei1KeyReleased
-
-    private void r_sip1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r_sip1KeyReleased
-             if (r_sip1.getText().charAt(r_sip1.getText().length() - 1) != ',') {
-            if (evt.getKeyCode() != KeyEvent.VK_BACK_SPACE) {
-                r_sip1.setText(r_sip1.getText() + ",");
-            }
-        } 
-    }//GEN-LAST:event_r_sip1KeyReleased
-
-    private void t_tra1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_t_tra1MouseClicked
-     JdialogTabelaExternaPilha.setVisible(true);
-        jTable1.setModel(AFP_jTable.getModel());
-    }//GEN-LAST:event_t_tra1MouseClicked
-
     private void jTable1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTable1KeyReleased
         AFP_jTable.setModel(jTable1.getModel());
     }//GEN-LAST:event_jTable1KeyReleased
@@ -632,19 +567,93 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
         jLabel1.setFont(f.deriveFont(f.getStyle(), f.getSize2D() - 4));
     }//GEN-LAST:event_jLabel1MouseExited
 
+    private void afp_button_plusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afp_button_plusActionPerformed
+        tableModel.addRow(new Object[]{});
+    }//GEN-LAST:event_afp_button_plusActionPerformed
+
+    private void afp_button_minusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afp_button_minusActionPerformed
+        if(tableModel.getRowCount() > 0)
+        tableModel.removeRow(tableModel.getRowCount()-1);
+    }//GEN-LAST:event_afp_button_minusActionPerformed
+
     private void AFP_jTableKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AFP_jTableKeyReleased
         // TODO add your handling code here:
     }//GEN-LAST:event_AFP_jTableKeyReleased
 
+    private void r_sip1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r_sip1KeyReleased
+        if (r_sip1.getText().charAt(r_sip1.getText().length() - 1) != ',') {
+            if (evt.getKeyCode() != KeyEvent.VK_BACK_SPACE) {
+                r_sip1.setText(r_sip1.getText() + ",");
+            }
+        }
+    }//GEN-LAST:event_r_sip1KeyReleased
+
+    private void r_sipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_sipActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_r_sipActionPerformed
+
+    private void r_ea1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r_ea1KeyReleased
+        if (r_ea1.getText().charAt(r_ea1.getText().length() - 1) != ',') {
+            if (evt.getKeyCode() != KeyEvent.VK_BACK_SPACE) {
+                r_ea1.setText(r_ea1.getText() + ",");
+            }
+        }
+    }//GEN-LAST:event_r_ea1KeyReleased
+
+    private void r_eaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_eaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_r_eaActionPerformed
+
+    private void r_ap1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r_ap1KeyReleased
+        if (r_ap1.getText().charAt(r_ap1.getText().length() - 1) != ',') {
+            if (evt.getKeyCode() != KeyEvent.VK_BACK_SPACE) {
+                r_ap1.setText(r_ap1.getText() + ",");
+            }
+        }
+    }//GEN-LAST:event_r_ap1KeyReleased
+
+    private void r_apActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_apActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_r_apActionPerformed
+
+    private void r_a1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r_a1KeyReleased
+        if (r_a1.getText().charAt(r_a1.getText().length() - 1) != ',') {
+            if (evt.getKeyCode() != KeyEvent.VK_BACK_SPACE) {
+                r_a1.setText(r_a1.getText() + ",");
+            }
+        }
+    }//GEN-LAST:event_r_a1KeyReleased
+
+    private void r_aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_aActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_r_aActionPerformed
+
+    private void r_ei1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r_ei1KeyReleased
+        if (r_ei1.getText().charAt(r_ei1.getText().length() - 1) != ',') {
+            if (evt.getKeyCode() != KeyEvent.VK_BACK_SPACE) {
+                r_ei1.setText(r_ei1.getText() + ",");
+            }
+        }
+    }//GEN-LAST:event_r_ei1KeyReleased
+
+    private void r_eiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_eiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_r_eiActionPerformed
+
+    private void t_tra1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_t_tra1MouseExited
+        Font f = t_tra1.getFont();
+        t_tra1.setFont(f.deriveFont(f.getStyle(), f.getSize2D() - 4));
+    }//GEN-LAST:event_t_tra1MouseExited
+
     private void t_tra1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_t_tra1MouseEntered
-          Font f = t_tra1.getFont();
+        Font f = t_tra1.getFont();
         t_tra1.setFont(f.deriveFont(f.getStyle(), f.getSize2D() + 4));
     }//GEN-LAST:event_t_tra1MouseEntered
 
-    private void t_tra1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_t_tra1MouseExited
-          Font f = t_tra1.getFont();
-        t_tra1.setFont(f.deriveFont(f.getStyle(), f.getSize2D() - 4));
-    }//GEN-LAST:event_t_tra1MouseExited
+    private void t_tra1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_t_tra1MouseClicked
+        JdialogTabelaExternaPilha.setVisible(true);
+        jTable1.setModel(AFP_jTable.getModel());
+    }//GEN-LAST:event_t_tra1MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

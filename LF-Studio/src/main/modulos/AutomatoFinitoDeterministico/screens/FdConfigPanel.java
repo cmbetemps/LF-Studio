@@ -139,9 +139,14 @@ public class FdConfigPanel extends javax.swing.JPanel {
         );
 
         setBackground(new java.awt.Color(28, 28, 28));
+        setMaximumSize(new java.awt.Dimension(1024, 720));
+        setMinimumSize(new java.awt.Dimension(1024, 720));
+        setPreferredSize(new java.awt.Dimension(1024, 720));
 
         FDAutomato.setBackground(new java.awt.Color(28, 28, 28));
-        FDAutomato.setPreferredSize(new java.awt.Dimension(1280, 720));
+        FDAutomato.setMaximumSize(new java.awt.Dimension(1024, 720));
+        FDAutomato.setMinimumSize(new java.awt.Dimension(1024, 720));
+        FDAutomato.setPreferredSize(new java.awt.Dimension(1024, 720));
 
         FD_BodyConfig.setBackground(new java.awt.Color(28, 28, 28));
         FD_BodyConfig.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -169,6 +174,7 @@ public class FdConfigPanel extends javax.swing.JPanel {
 
         FD_LabelTabelaTransicao1.setFont(new java.awt.Font("Noto Sans", 0, 20)); // NOI18N
         FD_LabelTabelaTransicao1.setForeground(new java.awt.Color(255, 255, 255));
+        FD_LabelTabelaTransicao1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         FD_LabelTabelaTransicao1.setText("Tabela de Transições");
         FD_LabelTabelaTransicao1.setToolTipText("<html>\nTabela utilizada para expressar todas as transições existentes, as transições\nseguem o seguinte modelo:<br>   | Estados (linhas da coluna 0) x Alfabeto (colunas) = estados para o qual pode ir, para dado alfabeto |\n<br>\nExemplo de Input: (linha) ('l') (coluna) ('0') = 'l' |  Existe uma transição saindo do estado 'l', utilizando '0' como alfabeto para transição, vai para o estado 'l'\n</html>");
         FD_LabelTabelaTransicao1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -183,7 +189,7 @@ public class FdConfigPanel extends javax.swing.JPanel {
             }
         });
 
-        FD_TextFieldAlfabeto.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        FD_TextFieldAlfabeto.setFont(new java.awt.Font("Noto Sans", 0, 13)); // NOI18N
         FD_TextFieldAlfabeto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         FD_TextFieldAlfabeto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -196,20 +202,19 @@ public class FdConfigPanel extends javax.swing.JPanel {
             }
         });
 
+        FD_jTable.setFont(new java.awt.Font("Noto Sans", 0, 13)); // NOI18N
         FD_jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"q0", "q0", "q2"},
-                {"q1", "q1", "q1"},
-                {"q2", "q2", "q2"}
+
             },
             new String [] {
-                "Estados", "0", "1"
+                "Estados"
             }
         ));
         FD_jTable.setToolTipText("<html>\nTabela utilizada para expressar todas as transições existentes, as transições\nseguem o seguinte modelo:<br>   | Estados (linhas da coluna 0) x Alfabeto (colunas) = estados para o qual pode ir, para dado alfabeto |\n<br>\nExemplo de Input: (linha) ('l') (coluna) ('0') = 'l' |  Existe uma transição saindo do estado 'l', utilizando '0' como alfabeto para transição, vai para o estado 'l'\n</html>");
         FD_jScrollPane.setViewportView(FD_jTable);
 
-        FD_TextFieldEstados.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        FD_TextFieldEstados.setFont(new java.awt.Font("Noto Sans", 0, 13)); // NOI18N
         FD_TextFieldEstados.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         FD_TextFieldEstados.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -217,7 +222,7 @@ public class FdConfigPanel extends javax.swing.JPanel {
             }
         });
 
-        FD_TextFieldEstadoInicial1.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        FD_TextFieldEstadoInicial1.setFont(new java.awt.Font("Noto Sans", 0, 13)); // NOI18N
         FD_TextFieldEstadoInicial1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         FD_TextFieldEstadoInicial1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -230,7 +235,7 @@ public class FdConfigPanel extends javax.swing.JPanel {
             }
         });
 
-        FD_TextFieldEstadosFinais1.setFont(new java.awt.Font("SansSerif", 1, 18)); // NOI18N
+        FD_TextFieldEstadosFinais1.setFont(new java.awt.Font("Noto Sans", 0, 13)); // NOI18N
         FD_TextFieldEstadosFinais1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         FD_TextFieldEstadosFinais1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -247,27 +252,28 @@ public class FdConfigPanel extends javax.swing.JPanel {
         FD_BodyConfig.setLayout(FD_BodyConfigLayout);
         FD_BodyConfigLayout.setHorizontalGroup(
             FD_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FD_BodyConfigLayout.createSequentialGroup()
-                .addGap(35, 35, 35)
-                .addGroup(FD_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(FD_jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, FD_BodyConfigLayout.createSequentialGroup()
-                        .addGroup(FD_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(FD_LabelEstadoInicial1)
-                            .addComponent(FD_LabelEstados)
-                            .addComponent(FD_LabelEstadosFinais)
-                            .addComponent(FD_LabelAlfabeto))
-                        .addGap(88, 88, 88)
-                        .addGroup(FD_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(FD_TextFieldEstadosFinais1)
-                            .addComponent(FD_TextFieldEstados)
-                            .addComponent(FD_TextFieldEstadoInicial1)
-                            .addComponent(FD_TextFieldAlfabeto))))
-                .addGap(18, 18, 18))
             .addGroup(FD_BodyConfigLayout.createSequentialGroup()
-                .addGap(114, 114, 114)
-                .addComponent(FD_LabelTabelaTransicao1, javax.swing.GroupLayout.PREFERRED_SIZE, 266, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addContainerGap()
+                .addGroup(FD_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                    .addComponent(FD_jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 589, Short.MAX_VALUE)
+                    .addGroup(FD_BodyConfigLayout.createSequentialGroup()
+                        .addGroup(FD_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FD_BodyConfigLayout.createSequentialGroup()
+                                .addComponent(FD_LabelAlfabeto)
+                                .addGap(85, 85, 85))
+                            .addGroup(FD_BodyConfigLayout.createSequentialGroup()
+                                .addGroup(FD_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(FD_LabelEstadosFinais)
+                                    .addComponent(FD_LabelEstadoInicial1)
+                                    .addComponent(FD_LabelEstados))
+                                .addGap(36, 36, 36)))
+                        .addGroup(FD_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(FD_TextFieldAlfabeto, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 432, Short.MAX_VALUE)
+                            .addComponent(FD_TextFieldEstadosFinais1, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(FD_TextFieldEstadoInicial1, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(FD_TextFieldEstados, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addComponent(FD_LabelTabelaTransicao1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
         FD_BodyConfigLayout.setVerticalGroup(
             FD_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -275,11 +281,11 @@ public class FdConfigPanel extends javax.swing.JPanel {
                 .addGap(20, 20, 20)
                 .addGroup(FD_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(FD_LabelAlfabeto)
-                    .addComponent(FD_TextFieldAlfabeto))
+                    .addComponent(FD_TextFieldAlfabeto, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10)
-                .addGroup(FD_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(FD_LabelEstadosFinais)
-                    .addComponent(FD_TextFieldEstadosFinais1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(FD_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(FD_TextFieldEstadosFinais1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(FD_LabelEstadosFinais))
                 .addGap(10, 10, 10)
                 .addGroup(FD_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(FD_TextFieldEstadoInicial1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -291,9 +297,11 @@ public class FdConfigPanel extends javax.swing.JPanel {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(FD_LabelTabelaTransicao1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(FD_jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(14, 14, 14))
+                .addComponent(FD_jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
+
+        FD_BodyConfigLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {FD_TextFieldAlfabeto, FD_TextFieldEstadoInicial1, FD_TextFieldEstados, FD_TextFieldEstadosFinais1});
 
         FD_ConfigTitulo.setFont(new java.awt.Font("Noto Sans", 0, 32)); // NOI18N
         FD_ConfigTitulo.setForeground(new java.awt.Color(255, 255, 255));
@@ -305,7 +313,7 @@ public class FdConfigPanel extends javax.swing.JPanel {
         FD_ConfigSubTitulo.setText("Configuração");
 
         FD_salvarAutomatoBtn.setBackground(new java.awt.Color(51, 51, 51));
-        FD_salvarAutomatoBtn.setFont(new java.awt.Font("Noto Sans", 0, 22)); // NOI18N
+        FD_salvarAutomatoBtn.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
         FD_salvarAutomatoBtn.setForeground(new java.awt.Color(255, 255, 255));
         FD_salvarAutomatoBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         FD_salvarAutomatoBtn.setText("Salvar Automato");
@@ -324,7 +332,7 @@ public class FdConfigPanel extends javax.swing.JPanel {
         });
 
         FD_processarAutomatoBtn.setBackground(new java.awt.Color(51, 51, 51));
-        FD_processarAutomatoBtn.setFont(new java.awt.Font("Noto Sans", 0, 22)); // NOI18N
+        FD_processarAutomatoBtn.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
         FD_processarAutomatoBtn.setForeground(new java.awt.Color(255, 255, 255));
         FD_processarAutomatoBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         FD_processarAutomatoBtn.setText("Processar Automato");
@@ -347,39 +355,36 @@ public class FdConfigPanel extends javax.swing.JPanel {
         FDAutomatoLayout.setHorizontalGroup(
             FDAutomatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(FDAutomatoLayout.createSequentialGroup()
-                .addGap(276, 276, 276)
                 .addGroup(FDAutomatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(FDAutomatoLayout.createSequentialGroup()
-                        .addComponent(FD_ConfigSubTitulo)
-                        .addGap(0, 0, Short.MAX_VALUE))
+                        .addGap(276, 276, 276)
+                        .addComponent(FD_ConfigTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(FDAutomatoLayout.createSequentialGroup()
+                        .addGap(206, 206, 206)
                         .addGroup(FDAutomatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(FD_ConfigTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 553, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(FDAutomatoLayout.createSequentialGroup()
-                                .addGap(15, 15, 15)
-                                .addComponent(FD_BodyConfig, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(439, Short.MAX_VALUE))))
-            .addGroup(FDAutomatoLayout.createSequentialGroup()
-                .addGap(412, 412, 412)
-                .addGroup(FDAutomatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(FD_processarAutomatoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FD_salvarAutomatoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(0, 0, Short.MAX_VALUE))
+                                .addGap(205, 205, 205)
+                                .addGroup(FDAutomatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(FD_processarAutomatoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(FD_salvarAutomatoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(FD_ConfigSubTitulo)
+                            .addComponent(FD_BodyConfig, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(209, Short.MAX_VALUE))
         );
         FDAutomatoLayout.setVerticalGroup(
             FDAutomatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(FDAutomatoLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(27, 27, 27)
                 .addComponent(FD_ConfigTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(FD_ConfigSubTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(FD_BodyConfig, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(FD_BodyConfig, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(FD_salvarAutomatoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(FD_processarAutomatoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(100, Short.MAX_VALUE))
+                .addGap(15, 15, 15))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -388,8 +393,8 @@ public class FdConfigPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(FDAutomato, javax.swing.GroupLayout.DEFAULT_SIZE, 1268, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(FDAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

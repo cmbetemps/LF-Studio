@@ -121,6 +121,15 @@
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
       <Color blue="1c" green="1c" red="1c" type="rgb"/>
     </Property>
+    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[1024, 720]"/>
+    </Property>
+    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[1024, 720]"/>
+    </Property>
+    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[1024, 720]"/>
+    </Property>
   </Properties>
   <AccessibilityProperties>
     <Property name="AccessibleContext.accessibleParent" type="javax.accessibility.Accessible" editor="org.netbeans.modules.form.ComponentChooserEditor">
@@ -144,8 +153,8 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="FDAutomato" pref="1268" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <Component id="FDAutomato" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -161,57 +170,59 @@
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="1c" green="1c" red="1c" type="rgb"/>
         </Property>
+        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[1024, 720]"/>
+        </Property>
+        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[1024, 720]"/>
+        </Property>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[1280, 720]"/>
+          <Dimension value="[1024, 720]"/>
         </Property>
       </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="276" max="-2" attributes="0"/>
+              <Group type="102" attributes="0">
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="FD_ConfigSubTitulo" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="276" max="-2" attributes="0"/>
+                          <Component id="FD_ConfigTitulo" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="206" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="FD_ConfigTitulo" min="-2" pref="553" max="-2" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
-                                  <Component id="FD_BodyConfig" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="205" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Component id="FD_processarAutomatoBtn" min="-2" pref="234" max="-2" attributes="0"/>
+                                      <Component id="FD_salvarAutomatoBtn" min="-2" pref="234" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
+                              <Component id="FD_ConfigSubTitulo" min="-2" max="-2" attributes="0"/>
+                              <Component id="FD_BodyConfig" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace pref="439" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-              </Group>
-              <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace min="-2" pref="412" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="FD_processarAutomatoBtn" min="-2" pref="234" max="-2" attributes="0"/>
-                      <Component id="FD_salvarAutomatoBtn" min="-2" pref="234" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  <EmptySpace pref="209" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
                   <Component id="FD_ConfigTitulo" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="FD_ConfigSubTitulo" min="-2" pref="36" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Component id="FD_BodyConfig" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="FD_BodyConfig" max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="FD_salvarAutomatoBtn" min="-2" pref="42" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="FD_processarAutomatoBtn" min="-2" pref="42" max="-2" attributes="0"/>
-                  <EmptySpace pref="100" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="15" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -235,32 +246,35 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="FD_jScrollPane" alignment="1" pref="0" max="32767" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                          <Component id="FD_jScrollPane" pref="589" max="32767" attributes="0"/>
+                          <Group type="102" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="FD_LabelEstadoInicial1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="FD_LabelEstados" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="FD_LabelEstadosFinais" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  <Component id="FD_LabelAlfabeto" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="FD_LabelAlfabeto" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="85" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Group type="103" groupAlignment="0" attributes="0">
+                                          <Component id="FD_LabelEstadosFinais" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="FD_LabelEstadoInicial1" alignment="0" min="-2" max="-2" attributes="0"/>
+                                          <Component id="FD_LabelEstados" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                      <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
-                              <EmptySpace min="-2" pref="88" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="FD_TextFieldEstadosFinais1" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="FD_TextFieldEstados" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="FD_TextFieldEstadoInicial1" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="FD_TextFieldAlfabeto" alignment="0" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="FD_TextFieldAlfabeto" alignment="1" pref="432" max="32767" attributes="0"/>
+                                  <Component id="FD_TextFieldEstadosFinais1" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="FD_TextFieldEstadoInicial1" alignment="1" max="32767" attributes="0"/>
+                                  <Component id="FD_TextFieldEstados" alignment="1" max="32767" attributes="0"/>
                               </Group>
                           </Group>
+                          <Component id="FD_LabelTabelaTransicao1" max="32767" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="114" max="-2" attributes="0"/>
-                      <Component id="FD_LabelTabelaTransicao1" min="-2" pref="266" max="-2" attributes="0"/>
-                      <EmptySpace pref="80" max="32767" attributes="0"/>
+                      <EmptySpace pref="10" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -270,28 +284,28 @@
                       <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="FD_LabelAlfabeto" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="FD_TextFieldAlfabeto" alignment="3" max="32767" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="FD_LabelEstadosFinais" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="FD_TextFieldEstadosFinais1" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="FD_TextFieldAlfabeto" linkSize="1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="FD_TextFieldEstadoInicial1" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="FD_TextFieldEstadosFinais1" linkSize="1" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="FD_LabelEstadosFinais" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="FD_TextFieldEstadoInicial1" linkSize="1" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                           <Component id="FD_LabelEstadoInicial1" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="FD_LabelEstados" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="FD_TextFieldEstados" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="FD_TextFieldEstados" linkSize="1" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="FD_LabelTabelaTransicao1" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="FD_jScrollPane" min="-2" pref="87" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
+                      <Component id="FD_jScrollPane" min="-2" pref="213" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -353,6 +367,7 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="Tabela de Transi&#xe7;&#xf5;es"/>
                 <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#xa;Tabela utilizada para expressar todas as transi&#xe7;&#xf5;es existentes, as transi&#xe7;&#xf5;es&#xa;seguem o seguinte modelo:&lt;br&gt;   | Estados (linhas da coluna 0) x Alfabeto (colunas) = estados para o qual pode ir, para dado alfabeto |&#xa;&lt;br&gt;&#xa;Exemplo de Input: (linha) (&apos;l&apos;) (coluna) (&apos;0&apos;) = &apos;l&apos; |  Existe uma transi&#xe7;&#xe3;o saindo do estado &apos;l&apos;, utilizando &apos;0&apos; como alfabeto para transi&#xe7;&#xe3;o, vai para o estado &apos;l&apos;&#xa;&lt;/html&gt;"/>
               </Properties>
@@ -365,7 +380,7 @@
             <Component class="javax.swing.JTextField" name="FD_TextFieldAlfabeto">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="18" style="1"/>
+                  <Font name="Noto Sans" size="13" style="0"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
               </Properties>
@@ -383,38 +398,17 @@
               <SubComponents>
                 <Component class="javax.swing.JTable" name="FD_jTable">
                   <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Noto Sans" size="13" style="0"/>
+                    </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="3" rowCount="3">
-                        <Column editable="true" title="Estados" type="java.lang.Object">
-                          <Data value="q0"/>
-                          <Data value="q1"/>
-                          <Data value="q2"/>
-                        </Column>
-                        <Column editable="true" title="0" type="java.lang.Object">
-                          <Data value="q0"/>
-                          <Data value="q1"/>
-                          <Data value="q2"/>
-                        </Column>
-                        <Column editable="true" title="1" type="java.lang.Object">
-                          <Data value="q2"/>
-                          <Data value="q1"/>
-                          <Data value="q2"/>
-                        </Column>
+                      <Table columnCount="1" rowCount="0">
+                        <Column editable="true" title="Estados" type="java.lang.Object"/>
                       </Table>
                     </Property>
                     <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#xa;Tabela utilizada para expressar todas as transi&#xe7;&#xf5;es existentes, as transi&#xe7;&#xf5;es&#xa;seguem o seguinte modelo:&lt;br&gt;   | Estados (linhas da coluna 0) x Alfabeto (colunas) = estados para o qual pode ir, para dado alfabeto |&#xa;&lt;br&gt;&#xa;Exemplo de Input: (linha) (&apos;l&apos;) (coluna) (&apos;0&apos;) = &apos;l&apos; |  Existe uma transi&#xe7;&#xe3;o saindo do estado &apos;l&apos;, utilizando &apos;0&apos; como alfabeto para transi&#xe7;&#xe3;o, vai para o estado &apos;l&apos;&#xa;&lt;/html&gt;"/>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                       <TableColumnModel selectionModel="0">
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                          <Title/>
-                          <Editor/>
-                          <Renderer/>
-                        </Column>
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                          <Title/>
-                          <Editor/>
-                          <Renderer/>
-                        </Column>
                         <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                           <Title/>
                           <Editor/>
@@ -432,7 +426,7 @@
             <Component class="javax.swing.JTextField" name="FD_TextFieldEstados">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="18" style="1"/>
+                  <Font name="Noto Sans" size="13" style="0"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
               </Properties>
@@ -443,7 +437,7 @@
             <Component class="javax.swing.JTextField" name="FD_TextFieldEstadoInicial1">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="18" style="1"/>
+                  <Font name="Noto Sans" size="13" style="0"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
               </Properties>
@@ -455,7 +449,7 @@
             <Component class="javax.swing.JTextField" name="FD_TextFieldEstadosFinais1">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="SansSerif" size="18" style="1"/>
+                  <Font name="Noto Sans" size="13" style="0"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
               </Properties>
@@ -501,7 +495,7 @@
               <Color blue="33" green="33" red="33" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Noto Sans" size="22" style="0"/>
+              <Font name="Noto Sans" size="18" style="0"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -523,7 +517,7 @@
               <Color blue="33" green="33" red="33" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Noto Sans" size="22" style="0"/>
+              <Font name="Noto Sans" size="18" style="0"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
