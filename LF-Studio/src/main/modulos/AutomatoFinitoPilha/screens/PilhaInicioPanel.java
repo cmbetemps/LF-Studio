@@ -39,10 +39,10 @@ public class PilhaInicioPanel extends javax.swing.JPanel {
         PILHA_LabelAutomatoFND4 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
 
-        setPreferredSize(new java.awt.Dimension(579, 648));
+        setPreferredSize(new java.awt.Dimension(1280, 720));
 
         pilhaTitle.setBackground(new java.awt.Color(28, 28, 28));
-        pilhaTitle.setPreferredSize(new java.awt.Dimension(579, 648));
+        pilhaTitle.setPreferredSize(new java.awt.Dimension(1280, 720));
 
         PILHA_LabelNovoAutomato4.setBackground(new java.awt.Color(0, 0, 0));
         PILHA_LabelNovoAutomato4.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 28)); // NOI18N
@@ -93,17 +93,17 @@ public class PilhaInicioPanel extends javax.swing.JPanel {
         pilhaTitleLayout.setHorizontalGroup(
             pilhaTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pilhaTitleLayout.createSequentialGroup()
-                .addGap(108, 108, 108)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(113, Short.MAX_VALUE))
-            .addGroup(pilhaTitleLayout.createSequentialGroup()
                 .addGroup(pilhaTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(PILHA_LabelNovoAutomato4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(pilhaTitleLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(PILHA_LabelAutomatoFND4))
+                        .addComponent(PILHA_LabelAutomatoFND4, javax.swing.GroupLayout.DEFAULT_SIZE, 1268, Short.MAX_VALUE))
                     .addComponent(PILHA_LabelImportarAutomato4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
+            .addGroup(pilhaTitleLayout.createSequentialGroup()
+                .addGap(329, 329, 329)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pilhaTitleLayout.setVerticalGroup(
             pilhaTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -116,22 +116,18 @@ public class PilhaInicioPanel extends javax.swing.JPanel {
                 .addComponent(PILHA_LabelNovoAutomato4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PILHA_LabelImportarAutomato4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(241, Short.MAX_VALUE))
+                .addContainerGap(313, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(pilhaTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(pilhaTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(pilhaTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(pilhaTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 

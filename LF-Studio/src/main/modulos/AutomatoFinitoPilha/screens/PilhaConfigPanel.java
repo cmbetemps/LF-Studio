@@ -5,8 +5,14 @@
  */
 package main.modulos.AutomatoFinitoPilha.screens;
 
+import java.awt.Font;
+import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import main.LFStudio;
+import main.modulos.AutomatoFinitoNaoDeterministico.domain.models.NaoDeterministico;
 import main.modulos.AutomatoFinitoPilha.controllers.AFP_Injection;
 
 /**
@@ -37,6 +43,11 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        JdialogTabelaExternaPilha = new javax.swing.JDialog();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         Pilha_BodyConfig1 = new javax.swing.JPanel();
         t_tra1 = new javax.swing.JLabel();
@@ -60,12 +71,91 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
         Pilha_ConfigTitulo1 = new javax.swing.JLabel();
         Pilha_processarPilhaBtn = new javax.swing.JLabel();
 
+        JdialogTabelaExternaPilha.setAlwaysOnTop(true);
+        JdialogTabelaExternaPilha.setBackground(new java.awt.Color(28, 28, 28));
+        JdialogTabelaExternaPilha.setMinimumSize(new java.awt.Dimension(400, 300));
+
+        jPanel2.setBackground(new java.awt.Color(28, 28, 28));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jTable1.setSelectionBackground(new java.awt.Color(20, 20, 20));
+        jTable1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTable1KeyReleased(evt);
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
+
+        jLabel1.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Tabela de Transições");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel1MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE))
+                    .addContainerGap()))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jLabel1)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+
+        javax.swing.GroupLayout JdialogTabelaExternaPilhaLayout = new javax.swing.GroupLayout(JdialogTabelaExternaPilha.getContentPane());
+        JdialogTabelaExternaPilha.getContentPane().setLayout(JdialogTabelaExternaPilhaLayout);
+        JdialogTabelaExternaPilhaLayout.setHorizontalGroup(
+            JdialogTabelaExternaPilhaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JdialogTabelaExternaPilhaLayout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
+        );
+        JdialogTabelaExternaPilhaLayout.setVerticalGroup(
+            JdialogTabelaExternaPilhaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
         setBackground(new java.awt.Color(28, 28, 28));
-        setPreferredSize(new java.awt.Dimension(574, 646));
+        setPreferredSize(new java.awt.Dimension(1280, 720));
 
         jPanel1.setBackground(new java.awt.Color(28, 28, 28));
         jPanel1.setMinimumSize(new java.awt.Dimension(0, 0));
-        jPanel1.setPreferredSize(new java.awt.Dimension(574, 646));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1280, 720));
 
         Pilha_BodyConfig1.setBackground(new java.awt.Color(28, 28, 28));
         Pilha_BodyConfig1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.darkGray, java.awt.Color.darkGray, java.awt.Color.darkGray));
@@ -75,6 +165,17 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
         t_tra1.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
         t_tra1.setForeground(new java.awt.Color(255, 255, 255));
         t_tra1.setText("Tabela de Transições");
+        t_tra1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                t_tra1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                t_tra1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                t_tra1MouseExited(evt);
+            }
+        });
 
         t_ea1.setBackground(new java.awt.Color(51, 51, 51));
         t_ea1.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
@@ -103,6 +204,11 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
                 r_eiActionPerformed(evt);
             }
         });
+        r_ei1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                r_ei1KeyReleased(evt);
+            }
+        });
 
         r_a1.setText("ab");
         r_a1.setPreferredSize(new java.awt.Dimension(15, 32));
@@ -124,6 +230,11 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
                 r_apActionPerformed(evt);
             }
         });
+        r_ap1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                r_ap1KeyReleased(evt);
+            }
+        });
 
         r_ea1.setText("q");
         r_ea1.setPreferredSize(new java.awt.Dimension(15, 32));
@@ -132,12 +243,22 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
                 r_eaActionPerformed(evt);
             }
         });
+        r_ea1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                r_ea1KeyReleased(evt);
+            }
+        });
 
         r_sip1.setText("p,q");
         r_sip1.setPreferredSize(new java.awt.Dimension(15, 32));
         r_sip1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r_sipActionPerformed(evt);
+            }
+        });
+        r_sip1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                r_sip1KeyReleased(evt);
             }
         });
 
@@ -157,6 +278,11 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
                 "Title 1", "Title 2", "Title 3", "Title 4", "Title 5"
             }
         ));
+        AFP_jTable.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                AFP_jTableKeyReleased(evt);
+            }
+        });
         AFND2_jScrollPane4.setViewportView(AFP_jTable);
 
         afp_button_minus.setText("-");
@@ -293,52 +419,60 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(52, 52, 52)
+                .addComponent(Pilha_tituloPilha)
+                .addGap(216, 216, 216)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(52, 52, 52)
+                        .addComponent(Pilha_subTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGap(25, 25, 25)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Pilha_tituloPilha)
-                            .addComponent(Pilha_subTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(97, 97, 97)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(Pilha_ConfigTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(74, 74, 74))
+                            .addComponent(Pilha_BodyConfig1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(Pilha_processarPilhaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Pilha_salvarPilhaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(Pilha_ConfigTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(91, 91, 91))))))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(69, 69, 69)
-                        .addComponent(Pilha_BodyConfig1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(81, Short.MAX_VALUE))
+                                    .addComponent(Pilha_salvarPilhaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(94, 94, 94)))))
+                .addContainerGap(557, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(33, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Pilha_tituloPilha)
+                .addGap(553, 553, 553))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(26, 26, 26)
                 .addComponent(Pilha_ConfigTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Pilha_tituloPilha)
-                    .addComponent(Pilha_subTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(28, 28, 28)
+                .addComponent(Pilha_subTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Pilha_BodyConfig1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(Pilha_salvarPilhaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Pilha_processarPilhaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 1274, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 714, Short.MAX_VALUE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -383,7 +517,16 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_Pilha_processarPilhaBtnMouseEntered
 
     private void Pilha_processarPilhaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pilha_processarPilhaBtnMouseClicked
-        String estados = r_sip1.getText();
+                String[] estados = r_sip1.getText().split(",");
+        String inicial = r_ei1.getText();
+        String[] finais = r_ea1.getText().split(",");
+        List<String> estadosLista = new ArrayList<String>();
+        List<String> finaisLista = new ArrayList<String>();
+        Collections.addAll(estadosLista,estados);
+        Collections.addAll(finaisLista,finais);
+        if(estadosLista.containsAll(finaisLista)){
+            if(estadosLista.contains(inicial)){
+                 String estados2 = r_sip1.getText();
         String alfabetoFita = r_a1.getText();
         String alfabetoPilha = r_ap1.getText();
         String estadoInicial = r_ei1.getText();
@@ -406,11 +549,17 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
          }
         }
         AFP_Injection.setAutomato(alfabetoFita, alfabetoPilha, estadoInicial, estadosFinais, pilhaInicial, matrizTransições);
-        LFStudio.cl.show(JanelaExecucao, "pilhaProcessamentoPanel");        
+        LFStudio.cl.show(JanelaExecucao, "pilhaProcessamentoPanel");    
+            }
+        }        
     }//GEN-LAST:event_Pilha_processarPilhaBtnMouseClicked
 
     private void r_a1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r_a1KeyReleased
-    
+            if (r_a1.getText().charAt(r_a1.getText().length() - 1) != ',') {
+            if (evt.getKeyCode() != KeyEvent.VK_BACK_SPACE) {
+                r_a1.setText(r_a1.getText() + ",");
+            }
+        }    
     }//GEN-LAST:event_r_a1KeyReleased
 
     private void afp_button_plusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afp_button_plusActionPerformed
@@ -422,10 +571,80 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
         tableModel.removeRow(tableModel.getRowCount()-1);
     }//GEN-LAST:event_afp_button_minusActionPerformed
 
+    private void r_ap1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r_ap1KeyReleased
+            if (r_ap1.getText().charAt(r_ap1.getText().length() - 1) != ',') {
+            if (evt.getKeyCode() != KeyEvent.VK_BACK_SPACE) {
+                r_ap1.setText(r_ap1.getText() + ",");
+            }
+        } 
+    }//GEN-LAST:event_r_ap1KeyReleased
+
+    private void r_ea1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r_ea1KeyReleased
+            if (r_ea1.getText().charAt(r_ea1.getText().length() - 1) != ',') {
+            if (evt.getKeyCode() != KeyEvent.VK_BACK_SPACE) {
+                r_ea1.setText(r_ea1.getText() + ",");
+            }
+        } 
+    }//GEN-LAST:event_r_ea1KeyReleased
+
+    private void r_ei1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r_ei1KeyReleased
+                 if (r_ei1.getText().charAt(r_ei1.getText().length() - 1) != ',') {
+            if (evt.getKeyCode() != KeyEvent.VK_BACK_SPACE) {
+                r_ei1.setText(r_ei1.getText() + ",");
+            }
+        } 
+    }//GEN-LAST:event_r_ei1KeyReleased
+
+    private void r_sip1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r_sip1KeyReleased
+             if (r_sip1.getText().charAt(r_sip1.getText().length() - 1) != ',') {
+            if (evt.getKeyCode() != KeyEvent.VK_BACK_SPACE) {
+                r_sip1.setText(r_sip1.getText() + ",");
+            }
+        } 
+    }//GEN-LAST:event_r_sip1KeyReleased
+
+    private void t_tra1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_t_tra1MouseClicked
+     JdialogTabelaExternaPilha.setVisible(true);
+        jTable1.setModel(AFP_jTable.getModel());
+    }//GEN-LAST:event_t_tra1MouseClicked
+
+    private void jTable1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTable1KeyReleased
+        AFP_jTable.setModel(jTable1.getModel());
+    }//GEN-LAST:event_jTable1KeyReleased
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        JdialogTabelaExternaPilha.setVisible(false);
+    }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void jLabel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseEntered
+        Font f = jLabel1.getFont();
+        jLabel1.setFont(f.deriveFont(f.getStyle(), f.getSize2D() + 4));
+    }//GEN-LAST:event_jLabel1MouseEntered
+
+    private void jLabel1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseExited
+        Font f = jLabel1.getFont();
+        jLabel1.setFont(f.deriveFont(f.getStyle(), f.getSize2D() - 4));
+    }//GEN-LAST:event_jLabel1MouseExited
+
+    private void AFP_jTableKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AFP_jTableKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AFP_jTableKeyReleased
+
+    private void t_tra1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_t_tra1MouseEntered
+          Font f = t_tra1.getFont();
+        t_tra1.setFont(f.deriveFont(f.getStyle(), f.getSize2D() + 4));
+    }//GEN-LAST:event_t_tra1MouseEntered
+
+    private void t_tra1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_t_tra1MouseExited
+          Font f = t_tra1.getFont();
+        t_tra1.setFont(f.deriveFont(f.getStyle(), f.getSize2D() - 4));
+    }//GEN-LAST:event_t_tra1MouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane AFND2_jScrollPane4;
     private javax.swing.JTable AFP_jTable;
+    private javax.swing.JDialog JdialogTabelaExternaPilha;
     private javax.swing.JPanel Pilha_BodyConfig1;
     private javax.swing.JLabel Pilha_ConfigTitulo1;
     private javax.swing.JLabel Pilha_processarPilhaBtn;
@@ -434,7 +653,11 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
     private javax.swing.JLabel Pilha_tituloPilha;
     private javax.swing.JButton afp_button_minus;
     private javax.swing.JButton afp_button_plus;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField r_a1;
     private javax.swing.JTextField r_ap1;
     private javax.swing.JTextField r_ea1;
