@@ -122,9 +122,9 @@ public class LFStudio extends javax.swing.JFrame {
         super.setIconImage(image.getImage());
         initComponents();
         initPanels();
-        this.JanelaVisivel.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
-        JanelaVisivel.setSize(1200, 700);
-        JanelaVisivel.setLocation(100, 160);
+        this.setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        JanelaPrincipal.setSize(1200, 700);
+        JanelaPrincipal.setLocation(100, 160);
         cl = (CardLayout) JanelaExecucao.getLayout();
         cl.show(JanelaExecucao, "HomePage");
     }
@@ -140,7 +140,6 @@ public class LFStudio extends javax.swing.JFrame {
     private void initComponents() {
 
         JanelaPrincipal = new javax.swing.JPanel();
-        JanelaVisivel = new javax.swing.JInternalFrame();
         JanelaExecucao = new javax.swing.JPanel();
         HomePage = new javax.swing.JPanel();
         logo = new javax.swing.JLabel();
@@ -166,12 +165,6 @@ public class LFStudio extends javax.swing.JFrame {
         JanelaPrincipal.setForeground(new java.awt.Color(28, 28, 28));
         JanelaPrincipal.setMinimumSize(new java.awt.Dimension(1280, 700));
         JanelaPrincipal.setPreferredSize(new java.awt.Dimension(1280, 700));
-
-        JanelaVisivel.setBackground(new java.awt.Color(28, 28, 28));
-        JanelaVisivel.setForeground(new java.awt.Color(28, 28, 28));
-        JanelaVisivel.setMinimumSize(new java.awt.Dimension(1280, 700));
-        JanelaVisivel.setPreferredSize(new java.awt.Dimension(1280, 700));
-        JanelaVisivel.setVisible(true);
 
         JanelaExecucao.setBackground(new java.awt.Color(28, 28, 28));
         JanelaExecucao.setForeground(new java.awt.Color(255, 255, 255));
@@ -199,7 +192,7 @@ public class LFStudio extends javax.swing.JFrame {
             HomePageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(HomePageLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(logo, javax.swing.GroupLayout.DEFAULT_SIZE, 729, Short.MAX_VALUE)
+                .addComponent(logo, javax.swing.GroupLayout.DEFAULT_SIZE, 757, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -438,7 +431,7 @@ public class LFStudio extends javax.swing.JFrame {
                 .addComponent(menuGLC, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
                 .addComponent(menuTuring, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 104, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 126, Short.MAX_VALUE)
                 .addComponent(jLabel3))
         );
 
@@ -446,36 +439,21 @@ public class LFStudio extends javax.swing.JFrame {
 
         Menu.add(menuScroll);
 
-        javax.swing.GroupLayout JanelaVisivelLayout = new javax.swing.GroupLayout(JanelaVisivel.getContentPane());
-        JanelaVisivel.getContentPane().setLayout(JanelaVisivelLayout);
-        JanelaVisivelLayout.setHorizontalGroup(
-            JanelaVisivelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(JanelaVisivelLayout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(Menu, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(JanelaExecucao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        JanelaVisivelLayout.setVerticalGroup(
-            JanelaVisivelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JanelaVisivelLayout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addGroup(JanelaVisivelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(JanelaVisivelLayout.createSequentialGroup()
-                        .addComponent(JanelaExecucao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())
-                    .addComponent(Menu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-        );
-
         javax.swing.GroupLayout JanelaPrincipalLayout = new javax.swing.GroupLayout(JanelaPrincipal);
         JanelaPrincipal.setLayout(JanelaPrincipalLayout);
         JanelaPrincipalLayout.setHorizontalGroup(
             JanelaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JanelaVisivel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(JanelaPrincipalLayout.createSequentialGroup()
+                .addGap(1, 1, 1)
+                .addComponent(Menu, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(JanelaExecucao, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(1, 1, 1))
         );
         JanelaPrincipalLayout.setVerticalGroup(
             JanelaPrincipalLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(JanelaVisivel, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 769, Short.MAX_VALUE)
+            .addComponent(Menu, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(JanelaExecucao, javax.swing.GroupLayout.DEFAULT_SIZE, 769, Short.MAX_VALUE)
         );
 
         getContentPane().add(JanelaPrincipal);
@@ -670,14 +648,10 @@ public class LFStudio extends javax.swing.JFrame {
         });
     }
     
-    public JInternalFrame getjInternalFrame1() {
-        return JanelaVisivel;
-    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel HomePage;
     private javax.swing.JPanel JanelaExecucao;
     private javax.swing.JPanel JanelaPrincipal;
-    private javax.swing.JInternalFrame JanelaVisivel;
     private javax.swing.JPanel Menu;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel logo;
