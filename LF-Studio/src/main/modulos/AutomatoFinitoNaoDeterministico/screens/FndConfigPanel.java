@@ -295,7 +295,7 @@ public class FndConfigPanel extends javax.swing.JPanel {
             .addGroup(FND_BodyConfigLayout.createSequentialGroup()
                 .addGap(20, 20, 20)
                 .addGroup(FND_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(FND_TextFieldAlfabeto, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                    .addComponent(FND_TextFieldAlfabeto)
                     .addComponent(FND_LabelAlfabeto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(FND_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -353,6 +353,9 @@ public class FndConfigPanel extends javax.swing.JPanel {
         FND_SalvarAutomatojlbl.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         FND_SalvarAutomatojlbl.setOpaque(true);
         FND_SalvarAutomatojlbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FND_SalvarAutomatojlblMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 FND_SalvarAutomatojlblMouseEntered(evt);
             }
@@ -541,6 +544,14 @@ public class FndConfigPanel extends javax.swing.JPanel {
         Font f = FND_LabelTabelaTransicao.getFont();
         FND_LabelTabelaTransicao.setFont(f.deriveFont(f.getStyle(), f.getSize2D() - 4));
     }//GEN-LAST:event_FND_LabelTabelaTransicaoMouseExited
+
+    private void FND_SalvarAutomatojlblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FND_SalvarAutomatojlblMouseClicked
+       controller.gerarAutomato( FND_TextFieldAlfabeto,
+            FND_TextFieldEstadoInicial,FND_TextFieldEstados, 
+            FND_TextFieldEstadosFinais,FND_jTable1,
+            true);       
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FND_SalvarAutomatojlblMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

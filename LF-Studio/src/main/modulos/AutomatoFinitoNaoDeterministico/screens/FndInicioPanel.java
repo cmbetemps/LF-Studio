@@ -7,7 +7,9 @@ package main.modulos.AutomatoFinitoNaoDeterministico.screens;
 
 import java.awt.Font;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import main.LFStudio;
+import main.modulos.AutomatoFinitoNaoDeterministico.FNDInjection;
 import main.modulos.AutomatoFinitoNaoDeterministico.controllers.FndController;
 import main.modulos.AutomatoFinitoNaoDeterministico.domain.NaoDeterministico;
 import main.modulos.Commons.FileChooser;
@@ -86,6 +88,9 @@ public class FndInicioPanel extends javax.swing.JPanel {
         AFND1_LabelImportarAutomato.setText("Importar autômato");
         AFND1_LabelImportarAutomato.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         AFND1_LabelImportarAutomato.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AFND1_LabelImportarAutomatoMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 AFND1_LabelImportarAutomatoMouseEntered(evt);
             }
@@ -110,7 +115,7 @@ public class FndInicioPanel extends javax.swing.JPanel {
             .addGroup(fndTitleLayout.createSequentialGroup()
                 .addGap(128, 128, 128)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 762, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(134, Short.MAX_VALUE))
         );
         fndTitleLayout.setVerticalGroup(
             fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -167,6 +172,31 @@ public class FndInicioPanel extends javax.swing.JPanel {
         AFND1_LabelImportarAutomato.setFont(f.deriveFont(f.getStyle(), f.getSize2D()-4));
         //AFND1_LabelImportarAutomato.setForeground(AFND1_LabelNovoAutomato.getForeground().brighter());
     }//GEN-LAST:event_AFND1_LabelImportarAutomatoMouseExited
+
+    private void AFND1_LabelImportarAutomatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AFND1_LabelImportarAutomatoMouseClicked
+    String pathAbsolute = file.getPathAbsolute();
+     if(!pathAbsolute.contains(".json")){
+       JOptionPane.showMessageDialog(null, "Formato do Arquivo invalido");
+       return;
+    }
+
+    try {
+      NaoDeterministico automato  = controller.instanciationAutomato(pathAbsolute);
+      if(automato != null && pathAbsolute != null){
+          FNDInjection.setAutomato(automato);
+          this.fndConfig.carregar();
+            if(FNDInjection.getAutomato()!= null){
+                LFStudio.cl.show(JanelaExecucao,"fndConfigPanel");
+                JOptionPane.showMessageDialog(null, "Automato lido com sucesso!!!");
+            }
+      }
+    } catch (Exception ex){
+       JOptionPane.showMessageDialog(null, "Arquivo invalido ou erro na formatação do arquivo");
+       ex.printStackTrace();
+       return;
+    }
+  
+    }//GEN-LAST:event_AFND1_LabelImportarAutomatoMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

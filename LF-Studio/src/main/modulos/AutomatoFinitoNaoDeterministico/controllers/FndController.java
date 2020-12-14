@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.Map;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import main.modulos.AutomatoFinitoNaoDeterministico.FNDInjection;
 import main.modulos.AutomatoFinitoNaoDeterministico.domain.NaoDeterministico;
@@ -170,5 +171,41 @@ public class FndController {
       JOptionPane.showMessageDialog(null, "Arquivo Salvo em:" + path);
     }
   }
+
+    public void validarPalavra(JTextArea Retorno, JTextField entrada) {
+        String temp = "";
+        HashMap map = FNDInjection.getAutomato().auxiliarMap.getMap();
+        HashMap mapAlfabeto = FNDInjection.getAutomato().auxiliarMap.getMapAlfabeto();
+        for (String x: entrada.getText().split("")) {
+            temp = temp.concat(FNDInjection.getAutomato().auxiliarMap.getMapAlfabetoInverso().get(x).toString());
+        }
+        FNDInjection.getAutomato().config.clear();
+        FNDInjection.getAutomato().reconhecer(temp);
+        StringBuilder text = new StringBuilder();
+        StringBuilder substitutoAlfabeto = new StringBuilder();
+        for (String x : FNDInjection.getAutomato().config) {
+            if (x.indexOf("[") != -1) {
+                temp = x.substring(x.indexOf("["), x.indexOf("]") + 1).replace("[", "").replace("]", "");
+                x = x.replace("[" + temp + "]", "[" + FNDInjection.getAutomato().auxiliarMap.getMap().get(Integer.valueOf(temp)) + "]");
+            }
+            if (x.contains("<<backTrack>>") || x.equals("Rejeitada") || x.equals("Aceita")) {
+                substitutoAlfabeto.append(x);
+            } else {
+                for (int i = 0; i < x.length(); i++) {
+                    if (x.charAt(i) == '[') {
+                        substitutoAlfabeto.append(x.substring(i, x.indexOf("]", i) + 1));
+                        i = x.indexOf("]", i);
+                    } else {
+                        substitutoAlfabeto.append(mapAlfabeto.get(Integer.valueOf(String.valueOf(x.charAt(i)))));
+                    }
+                }
+            }
+            text.append(substitutoAlfabeto);
+            text.append("\n");
+            substitutoAlfabeto = new StringBuilder();
+        }
+        Retorno.setText(text.toString());
+    
+    }
 
 }
