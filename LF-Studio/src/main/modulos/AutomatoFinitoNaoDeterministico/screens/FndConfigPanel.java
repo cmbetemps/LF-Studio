@@ -8,27 +8,21 @@ package main.modulos.AutomatoFinitoNaoDeterministico.screens;
 import java.awt.Font;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 import java.util.Vector;
 import main.LFStudio;
 import main.modulos.AutomatoFinitoNaoDeterministico.controllers.FndController;
 import main.modulos.AutomatoFinitoNaoDeterministico.domain.NaoDeterministico;
 import main.layout.CustomTable;
 
-/**
- *
- * @author michel
- */
-public class FndConfigPanel extends javax.swing.JPanel {
 
+public class FndConfigPanel extends javax.swing.JPanel {
     FndController controller = new FndController();
     javax.swing.JPanel JanelaExecucao;
-
+    NaoDeterministico automato;
     /**
      * Creates new form test1
      */
@@ -37,7 +31,12 @@ public class FndConfigPanel extends javax.swing.JPanel {
         initComponents();
 
     }
-
+    
+    public void carregar(){
+        controller.setarCampos(FND_jTable1, FND_TextFieldAlfabeto, FND_TextFieldEstadosFinais, FND_TextFieldEstadoInicial, FND_TextFieldEstados);
+    }
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -439,11 +438,21 @@ public class FndConfigPanel extends javax.swing.JPanel {
         String[] finais = FND_TextFieldEstadosFinais.getText().split(",");
         List<String> estadosLista = new ArrayList<String>();
         List<String> finaisLista = new ArrayList<String>();
-        Collections.addAll(estadosLista,estados);
-        Collections.addAll(finaisLista,finais);
-        if(estadosLista.containsAll(finaisLista)){
-            if(estadosLista.contains(inicial)){
-                NaoDeterministico atual = gerarAutomato();
+        Collections.addAll(estadosLista, estados);
+        Collections.addAll(finaisLista, finais);
+
+
+        if (estadosLista.containsAll(finaisLista)) {
+            if (estadosLista.contains(inicial)) {
+//(JTextField alfabeto, JTextField estadoInicialJ, JTextField estadosJ, JTextField estadosFinaisJ , JTable table) {
+                NaoDeterministico atual = controller.gerarAutomato(
+                  FND_TextFieldAlfabeto,
+                  FND_TextFieldEstadoInicial,
+                  FND_TextFieldEstados,
+                  FND_TextFieldEstadosFinais,
+                  FND_jTable1,
+                  false
+                );
                 LFStudio.cl.show(JanelaExecucao, "fndProcessamentoPanel");
             }
         }
