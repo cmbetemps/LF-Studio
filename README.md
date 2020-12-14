@@ -17,12 +17,18 @@ A sua organização das pastas se dá da seguinte forma:
 * _*teste.txt*_: arquivo de teste da Máquina de Turing.
 
 #### Observação: 
-> Para executar a máquina de turing, o arquivo de texto deve seguir a seguinte estrutura
+> Para executar a máquina de turing, o arquivo de texto deve seguir a seguinte estrutura:
+
 estado inicial
+
 estado final
+
 simbolo final
+
 simbolo inicial
+
 conjunto de estados finitos
+
 alfabeto
 
 funções de transições
