@@ -26,28 +26,6 @@ public class AFDController {
 
     AFDValidator validator = new AFDValidator();
 
-    public CustomTable insertTabela(String[] estados, String[] alfabeto) {
-
-        CustomTable tableModel = new CustomTable();
-
-        if (estados != null && estados.length > 1) {
-            estados = validator.inverterEstados(estados);
-        }
-
-        tableModel.addColumn("estado");
-
-        for (String rowName : estados) {
-            Vector<String> vector = new Vector<String>();
-            vector.add(rowName);
-            tableModel.insertRow(0, vector);
-        }
-
-        for (String columnName : alfabeto) {
-            tableModel.addColumn(columnName);
-        }
-        return tableModel;
-    }
-
     public boolean processarAutomato(AFD automato) {
         if (automato != null) {
             return true;
@@ -87,8 +65,6 @@ public class AFDController {
     }
 
     public void setarCampos(JTable table, JTextField alfabeto, JTextField estadosFinais, JTextField estadoInicial, JTextField estados, DefaultTableModel model) {
-        table = new JTable();
-        model = new DefaultTableModel();
         if(FdInjection.getAutomato() != null){
             String alfabetoMap = FdInjection.getAutomato().getAlfabetoToString();
             String estadosFinaisMap = FdInjection.getAutomato().getEstadosFinaisToString();
@@ -99,9 +75,6 @@ public class AFDController {
             estadoInicial.setText(estadoInicialMap);
             estados.setText(estadosMap);
 
-            Object[][] transicoes= new Object[FdInjection.getAutomato().transicoes.length][3];
-            String[] titulo={"Estado Atual", "Simbolo", "Estado Destino"};
-
             for (int i = 0; i < FdInjection.getAutomato().transicoes.length; i++) {
                 Vector<String> test = new Vector<>();
                 for (int j = 0; j < FdInjection.getAutomato().transicoes[i].length; j++) {
@@ -109,8 +82,7 @@ public class AFDController {
                 }
                 model.addRow(test);
             }
-            table.setModel(model
-            );
+            table.setModel(model);
         }
     }
 
@@ -118,7 +90,6 @@ public class AFDController {
         AFD automato = null;
         String[][] transicoes = mapearTransicoes(table);
         if (isWrite) {
-
             automato = new AFD(estados, alfabeto, estadoIni, estadoFinalis, transicoes);
             saveDeterministico(automato);
         } else {

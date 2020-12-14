@@ -38,6 +38,11 @@ public class FdConfigPanel extends javax.swing.JPanel {
     }
 
     public void carregar() {
+        tableModel = new DefaultTableModel();
+        tableModel.addColumn("Estado Atual");
+        tableModel.addColumn("Simbolo ");
+        tableModel.addColumn("Estado Destino");
+        FDjTable.setModel(tableModel);
         controller.setarCampos(FDjTable, FD_TextFieldAlfabeto, FD_TextFieldEstadosFinais1, FD_TextFieldEstadoInicial1, FD_TextFieldEstados, tableModel);
     }
 
