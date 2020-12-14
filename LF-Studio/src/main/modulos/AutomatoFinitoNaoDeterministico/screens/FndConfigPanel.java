@@ -16,29 +16,32 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Vector;
 import main.LFStudio;
-import main.layout.CustomTable;
+import main.modulos.Layout.CustomTable;
 import main.modulos.AutomatoFinitoNaoDeterministico.controllers.FndController;
-import main.modulos.AutomatoFinitoNaoDeterministico.controllers.AFND_Injection;
-import main.modulos.AutomatoFinitoNaoDeterministico.domain.models.NaoDeterministico;
+import main.modulos.AutomatoFinitoNaoDeterministico.FNDInjection;
+import main.modulos.AutomatoFinitoNaoDeterministico.domain.NaoDeterministico;
+import main.modulos.AutomatoFinitoPilha.controllers.PilhaController;
+import main.modulos.Commons.FileChooser;
 
 /**
  *
  * @author michel
  */
 public class FndConfigPanel extends javax.swing.JPanel {
-
     FndController controller = new FndController();
     javax.swing.JPanel JanelaExecucao;
-
+    NaoDeterministico automato;
     /**
      * Creates new form test1
      */
     public FndConfigPanel(javax.swing.JPanel janela) {
         JanelaExecucao = janela;
         initComponents();
-
     }
 
+    public void carregar(){
+        controller.setarCampos(FND_jTable1, FND_TextFieldAlfabeto, FND_TextFieldEstadosFinais, FND_TextFieldEstadoInicial, FND_TextFieldEstados);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -78,15 +81,15 @@ public class FndConfigPanel extends javax.swing.JPanel {
         jPanel2.setBackground(new java.awt.Color(28, 28, 28));
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
+          new Object [][] {
+            {null, null, null, null},
+            {null, null, null, null},
+            {null, null, null, null},
+            {null, null, null, null}
+          },
+          new String [] {
+            "Title 1", "Title 2", "Title 3", "Title 4"
+          }
         ));
         jTable1.setSelectionBackground(new java.awt.Color(20, 20, 20));
         jTable1.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -115,81 +118,74 @@ public class FndConfigPanel extends javax.swing.JPanel {
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 400, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE))
-                    .addContainerGap()))
+              .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                  .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                  .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE))
+                .addContainerGap()))
         );
         jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 300, Short.MAX_VALUE)
             .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel2Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jLabel1)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE)
-                    .addContainerGap()))
+              .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE)
+                .addContainerGap()))
         );
 
         javax.swing.GroupLayout JdialogTabelaExternaLayout = new javax.swing.GroupLayout(JdialogTabelaExterna.getContentPane());
         JdialogTabelaExterna.getContentPane().setLayout(JdialogTabelaExternaLayout);
         JdialogTabelaExternaLayout.setHorizontalGroup(
-            JdialogTabelaExternaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          JdialogTabelaExternaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(JdialogTabelaExternaLayout.createSequentialGroup()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(0, 0, 0))
+              .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+              .addGap(0, 0, 0))
         );
         JdialogTabelaExternaLayout.setVerticalGroup(
-            JdialogTabelaExternaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          JdialogTabelaExternaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         setBackground(new java.awt.Color(255, 51, 51));
         setForeground(new java.awt.Color(28, 28, 28));
-        setMaximumSize(new java.awt.Dimension(1024, 720));
-        setMinimumSize(new java.awt.Dimension(1024, 720));
-        setPreferredSize(new java.awt.Dimension(1024, 720));
+        setMinimumSize(new java.awt.Dimension(1028, 700));
+        setPreferredSize(new java.awt.Dimension(1028, 700));
 
         jPanel1.setBackground(new java.awt.Color(28, 28, 28));
-        jPanel1.setMaximumSize(new java.awt.Dimension(1024, 720));
-        jPanel1.setMinimumSize(new java.awt.Dimension(1024, 720));
-        jPanel1.setPreferredSize(new java.awt.Dimension(1024, 720));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1028, 700));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1028, 700));
 
         FND_BodyConfig.setBackground(new java.awt.Color(28, 28, 28));
         FND_BodyConfig.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.darkGray, java.awt.Color.darkGray, java.awt.Color.darkGray));
         FND_BodyConfig.setForeground(new java.awt.Color(28, 28, 28));
 
-        FND_LabelAlfabeto.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
+        FND_LabelAlfabeto.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
         FND_LabelAlfabeto.setForeground(new java.awt.Color(255, 255, 255));
         FND_LabelAlfabeto.setText("Alfabeto");
-        FND_LabelAlfabeto.setToolTipText("<html>\nElementos que constituem o alfabeto do autômato, são utilizados como \"meio\" de transição para uma transição qualquer\n<br>\nExemplo de input: \"0,1,a,b,c,\" (Uma vírgula por elemento)\n</html>");
 
-        FND_LabelEstadosFinais.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
+        FND_LabelEstadosFinais.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
         FND_LabelEstadosFinais.setForeground(new java.awt.Color(255, 255, 255));
         FND_LabelEstadosFinais.setText("Estados Finais");
-        FND_LabelEstadosFinais.setToolTipText("<html>\nEstados que levam ao reconhecimento de dada String de entrada, pode existir mais de um estado final\n<br>\nExemplo de input: \"l,m\" (Uma vírgula por elemento)\n</html>");
 
-        FND_LabelEstados.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
+        FND_LabelEstados.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
         FND_LabelEstados.setForeground(new java.awt.Color(255, 255, 255));
         FND_LabelEstados.setText("Estados");
-        FND_LabelEstados.setToolTipText("<html>\nEstados que constitutem o autômato, estado inicial e estados finais devem estar contidos\n<br>\nExemplo de input: \"l,m,s,t,p\"\n</html>");
 
-        FND_LabelEstadoInicial.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
+        FND_LabelEstadoInicial.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
         FND_LabelEstadoInicial.setForeground(new java.awt.Color(255, 255, 255));
         FND_LabelEstadoInicial.setText("Estado Inicial");
-        FND_LabelEstadoInicial.setToolTipText("<html>\nPonto de partida do referido autômato, só um estado inicial pode existir\n<br>\nExemplo de input: \"s\" (apenas um elemento)\n</html>");
 
-        FND_LabelTabelaTransicao.setFont(new java.awt.Font("Noto Sans", 0, 20)); // NOI18N
+        FND_LabelTabelaTransicao.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 26)); // NOI18N
         FND_LabelTabelaTransicao.setForeground(new java.awt.Color(255, 255, 255));
         FND_LabelTabelaTransicao.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         FND_LabelTabelaTransicao.setText("Tabela de Transições");
-        FND_LabelTabelaTransicao.setToolTipText("<html>\nTabela utilizada para expressar todas as transições existentes, as transições\nseguem o seguinte modelo: \n<br>   | Estados (linhas da coluna 0) x Alfabeto (colunas) = estado para o qual irá (apenas um estado, visto que é um AFD) |\n<br>\nExemplo de Input: (linha) ('l') (coluna) ('0') = 'l' |  Existe uma transição saindo do estado 'l', utilizando '0' como alfabeto para transição, vai para o estado 'l'\n</html>");
         FND_LabelTabelaTransicao.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 FND_LabelTabelaTransicaoMouseClicked(evt);
@@ -202,7 +198,8 @@ public class FndConfigPanel extends javax.swing.JPanel {
             }
         });
 
-        FND_TextFieldAlfabeto.setFont(new java.awt.Font("Noto Sans", 0, 13)); // NOI18N
+        FND_TextFieldAlfabeto.setBackground(new java.awt.Color(255, 255, 255));
+        FND_TextFieldAlfabeto.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         FND_TextFieldAlfabeto.setForeground(new java.awt.Color(0, 0, 0));
         FND_TextFieldAlfabeto.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         FND_TextFieldAlfabeto.setToolTipText("");
@@ -217,27 +214,21 @@ public class FndConfigPanel extends javax.swing.JPanel {
             }
         });
 
-        FND_jTable1.setFont(new java.awt.Font("Noto Sans", 0, 13)); // NOI18N
         FND_jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+          new Object [][] {
 
-            },
-            new String [] {
-                "Estados"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        FND_jTable1.setToolTipText("<html>\nTabela utilizada para expressar todas as transições existentes, as transições\nseguem o seguinte modelo: \n<br>   | Estados (linhas da coluna 0) x Alfabeto (colunas) = estado para o qual irá (apenas um estado, visto que é um AFD) |\n<br>\nExemplo de Input: (linha) ('l') (coluna) ('0') = 'l' |  Existe uma transição saindo do estado 'l', utilizando '0' como alfabeto para transição, vai para o estado 'l'\n</html>");
+          },
+          new String [] {
+            "Estados"
+          }
+        ));
         FND_jScrollPane2.setViewportView(FND_jTable1);
+        if (FND_jTable1.getColumnModel().getColumnCount() > 0) {
+            FND_jTable1.getColumnModel().getColumn(0).setResizable(false);
+        }
 
-        FND_TextFieldEstados.setFont(new java.awt.Font("Noto Sans", 0, 13)); // NOI18N
+        FND_TextFieldEstados.setBackground(new java.awt.Color(255, 255, 255));
+        FND_TextFieldEstados.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         FND_TextFieldEstados.setForeground(new java.awt.Color(0, 0, 0));
         FND_TextFieldEstados.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         FND_TextFieldEstados.addActionListener(new java.awt.event.ActionListener() {
@@ -251,11 +242,13 @@ public class FndConfigPanel extends javax.swing.JPanel {
             }
         });
 
-        FND_TextFieldEstadoInicial.setFont(new java.awt.Font("Noto Sans", 0, 13)); // NOI18N
+        FND_TextFieldEstadoInicial.setBackground(new java.awt.Color(255, 255, 255));
+        FND_TextFieldEstadoInicial.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         FND_TextFieldEstadoInicial.setForeground(new java.awt.Color(0, 0, 0));
         FND_TextFieldEstadoInicial.setHorizontalAlignment(javax.swing.JTextField.CENTER);
 
-        FND_TextFieldEstadosFinais.setFont(new java.awt.Font("Noto Sans", 0, 13)); // NOI18N
+        FND_TextFieldEstadosFinais.setBackground(new java.awt.Color(255, 255, 255));
+        FND_TextFieldEstadosFinais.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
         FND_TextFieldEstadosFinais.setForeground(new java.awt.Color(0, 0, 0));
         FND_TextFieldEstadosFinais.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         FND_TextFieldEstadosFinais.setToolTipText("");
@@ -268,68 +261,65 @@ public class FndConfigPanel extends javax.swing.JPanel {
         javax.swing.GroupLayout FND_BodyConfigLayout = new javax.swing.GroupLayout(FND_BodyConfig);
         FND_BodyConfig.setLayout(FND_BodyConfigLayout);
         FND_BodyConfigLayout.setHorizontalGroup(
-            FND_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          FND_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(FND_BodyConfigLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(FND_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(FND_BodyConfigLayout.createSequentialGroup()
-                        .addGroup(FND_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(FND_LabelEstadosFinais)
-                            .addComponent(FND_LabelAlfabeto))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(FND_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(FND_TextFieldEstadosFinais, javax.swing.GroupLayout.DEFAULT_SIZE, 430, Short.MAX_VALUE)
-                            .addComponent(FND_TextFieldAlfabeto)))
-                    .addGroup(FND_BodyConfigLayout.createSequentialGroup()
-                        .addGroup(FND_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(FND_LabelEstadoInicial)
-                            .addComponent(FND_LabelEstados))
-                        .addGap(46, 46, 46)
-                        .addGroup(FND_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(FND_TextFieldEstadoInicial)
-                            .addComponent(FND_TextFieldEstados)))
-                    .addComponent(FND_LabelTabelaTransicao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(FND_jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 590, Short.MAX_VALUE))
-                .addContainerGap())
+              .addGap(35, 35, 35)
+              .addGroup(FND_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(FND_BodyConfigLayout.createSequentialGroup()
+                  .addGroup(FND_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(FND_LabelEstadosFinais)
+                    .addComponent(FND_LabelAlfabeto))
+                  .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 58, Short.MAX_VALUE)
+                  .addGroup(FND_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(FND_TextFieldEstadosFinais)
+                    .addComponent(FND_TextFieldAlfabeto, javax.swing.GroupLayout.DEFAULT_SIZE, 382, Short.MAX_VALUE))
+                  .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(FND_jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(FND_BodyConfigLayout.createSequentialGroup()
+                  .addGroup(FND_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(FND_LabelEstados)
+                    .addComponent(FND_LabelEstadoInicial))
+                  .addGap(67, 67, 67)
+                  .addGroup(FND_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(FND_TextFieldEstadoInicial)
+                    .addComponent(FND_TextFieldEstados)))
+                .addComponent(FND_LabelTabelaTransicao, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+              .addContainerGap())
         );
         FND_BodyConfigLayout.setVerticalGroup(
-            FND_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          FND_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(FND_BodyConfigLayout.createSequentialGroup()
-                .addGap(20, 20, 20)
-                .addGroup(FND_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(FND_TextFieldAlfabeto, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
-                    .addComponent(FND_LabelAlfabeto, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(FND_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(FND_TextFieldEstadosFinais, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(FND_LabelEstadosFinais, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(10, 10, 10)
-                .addGroup(FND_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(FND_TextFieldEstadoInicial, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(FND_BodyConfigLayout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(FND_LabelEstadoInicial, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(10, 10, 10)
-                .addGroup(FND_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(FND_TextFieldEstados, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(FND_BodyConfigLayout.createSequentialGroup()
-                        .addGap(2, 2, 2)
-                        .addComponent(FND_LabelEstados, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(FND_LabelTabelaTransicao)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(FND_jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 207, Short.MAX_VALUE)
-                .addContainerGap())
+              .addGap(20, 20, 20)
+              .addGroup(FND_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(FND_LabelAlfabeto)
+                .addComponent(FND_TextFieldAlfabeto, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addGap(10, 10, 10)
+              .addGroup(FND_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(FND_TextFieldEstadosFinais, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(FND_LabelEstadosFinais))
+              .addGap(10, 10, 10)
+              .addGroup(FND_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(FND_TextFieldEstadoInicial, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(FND_LabelEstadoInicial))
+              .addGap(10, 10, 10)
+              .addGroup(FND_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addComponent(FND_TextFieldEstados, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(FND_LabelEstados))
+              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+              .addComponent(FND_LabelTabelaTransicao)
+              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+              .addComponent(FND_jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addContainerGap(27, Short.MAX_VALUE))
         );
 
-        FND_Titulo.setFont(new java.awt.Font("Noto Sans", 0, 32)); // NOI18N
+        FND_Titulo.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 36)); // NOI18N
         FND_Titulo.setForeground(new java.awt.Color(255, 255, 255));
         FND_Titulo.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        FND_Titulo.setText("<html><p style=\"padding-bottom: 16px;\">Autômato Finito Não Determinístico</p></html>");
+        FND_Titulo.setText("<html><p style=\"padding-bottom: 16px;\">Autômato FND</p></html>");
         FND_Titulo.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
 
         FND_LabelProcessarAutomato.setBackground(new java.awt.Color(51, 51, 51));
-        FND_LabelProcessarAutomato.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
+        FND_LabelProcessarAutomato.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
         FND_LabelProcessarAutomato.setForeground(new java.awt.Color(255, 255, 255));
         FND_LabelProcessarAutomato.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         FND_LabelProcessarAutomato.setText(" Processar Autômato ");
@@ -348,13 +338,16 @@ public class FndConfigPanel extends javax.swing.JPanel {
         });
 
         FND_SalvarAutomatojlbl.setBackground(new java.awt.Color(51, 51, 51));
-        FND_SalvarAutomatojlbl.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
+        FND_SalvarAutomatojlbl.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
         FND_SalvarAutomatojlbl.setForeground(new java.awt.Color(255, 255, 255));
         FND_SalvarAutomatojlbl.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         FND_SalvarAutomatojlbl.setText("Salvar Autômato");
         FND_SalvarAutomatojlbl.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         FND_SalvarAutomatojlbl.setOpaque(true);
         FND_SalvarAutomatojlbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FND_SalvarAutomatojlblMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 FND_SalvarAutomatojlblMouseEntered(evt);
             }
@@ -363,57 +356,55 @@ public class FndConfigPanel extends javax.swing.JPanel {
             }
         });
 
-        FND_SubTitulo.setFont(new java.awt.Font("Noto Sans", 0, 22)); // NOI18N
+        FND_SubTitulo.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 26)); // NOI18N
         FND_SubTitulo.setForeground(new java.awt.Color(255, 255, 255));
         FND_SubTitulo.setText("Configuração");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(192, 210, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(FND_SubTitulo)
-                            .addComponent(FND_BodyConfig, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(208, 208, 208))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(FND_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 558, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(232, 232, 232))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                            .addComponent(FND_SalvarAutomatojlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addContainerGap())
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                            .addComponent(FND_LabelProcessarAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(325, 325, 325)))))
+              .addGap(572, 572, 572)
+              .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addComponent(FND_LabelProcessarAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(FND_SalvarAutomatojlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addContainerGap(222, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+              .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+              .addComponent(FND_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+              .addGap(183, 183, 183)
+              .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(FND_SubTitulo)
+                .addComponent(FND_BodyConfig, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+              .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(FND_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(FND_SubTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(FND_BodyConfig, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(FND_SalvarAutomatojlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(FND_LabelProcessarAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(29, 29, 29))
+              .addGap(20, 20, 20)
+              .addComponent(FND_Titulo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addGap(18, 18, 18)
+              .addComponent(FND_SubTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+              .addComponent(FND_BodyConfig, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+              .addComponent(FND_SalvarAutomatojlbl, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addGap(10, 10, 10)
+              .addComponent(FND_LabelProcessarAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+              .addContainerGap(60, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+          layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -442,9 +433,19 @@ public class FndConfigPanel extends javax.swing.JPanel {
         List<String> finaisLista = new ArrayList<String>();
         Collections.addAll(estadosLista,estados);
         Collections.addAll(finaisLista,finais);
+
+
         if(estadosLista.containsAll(finaisLista)){
             if(estadosLista.contains(inicial)){
-                NaoDeterministico atual = gerarAutomato();
+//(JTextField alfabeto, JTextField estadoInicialJ, JTextField estadosJ, JTextField estadosFinaisJ , JTable table) {
+                NaoDeterministico atual = controller.gerarAutomato(
+                  FND_TextFieldAlfabeto,
+                  FND_TextFieldEstadoInicial,
+                  FND_TextFieldEstados,
+                  FND_TextFieldEstadosFinais,
+                  FND_jTable1,
+                  false
+                );
                 LFStudio.cl.show(JanelaExecucao, "fndProcessamentoPanel");
             }
         }
@@ -534,85 +535,13 @@ public class FndConfigPanel extends javax.swing.JPanel {
         FND_LabelTabelaTransicao.setFont(f.deriveFont(f.getStyle(), f.getSize2D() - 4));
     }//GEN-LAST:event_FND_LabelTabelaTransicaoMouseExited
 
-    /**
-     * @author Michel Silva Construtor com conversão de matriz int para char
-     * para um automato nao deterministico com transição espontanea
-     * @param aceitacao | char[]
-     * @param estadoInicial | char
-     * @param transicao | char [][][]
-     * @param alfabeto | String
-     */
-    private NaoDeterministico gerarAutomato() {
-        // mandar direto
-        String alfabetoInserido = FND_TextFieldAlfabeto.getText();
-        StringBuilder alfabetoFormatado = new StringBuilder();
+    private void FND_SalvarAutomatojlblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FND_SalvarAutomatojlblMouseClicked
+        controller.gerarAutomato( FND_TextFieldAlfabeto,
+          FND_TextFieldEstadoInicial,FND_TextFieldEstados,
+          FND_TextFieldEstadosFinais,FND_jTable1,
+          true);        // TODO add your handling code here:
+    }//GEN-LAST:event_FND_SalvarAutomatojlblMouseClicked
 
-        String estadoInicial = FND_TextFieldEstadoInicial.getText();
-
-        String estados = FND_TextFieldEstados.getText();
-        String estadosFinais = FND_TextFieldEstadosFinais.getText();
-
-        // Parte da tabela de transição
-        String teste[][] = new String[FND_jTable1.getRowCount()][FND_jTable1.getColumnCount()];
-
-        /// pos0 = string abc
-        Map<Integer, String> mapaTransicao = new HashMap<>();
-        Map<String, Integer> mapaTransInverso = new HashMap<>();
-
-        Map<Integer, String> mapaTransicaoAlfabeto = new HashMap<>();
-        Map<String, Integer> mapaTransInversoAlfabeto = new HashMap<>();
-
-        for (int i = 0; i < FND_jTable1.getRowCount(); i++) {
-            mapaTransicao.put(i, (String) FND_jTable1.getValueAt(i, 0));
-            mapaTransInverso.put((String) FND_jTable1.getValueAt(i, 0), i);
-            for (int j = 1; j < FND_jTable1.getColumnCount(); j++) {
-                teste[i][j] = (String) FND_jTable1.getValueAt(i, j);
-            }
-        }
-
-        // Parte estado inicial
-        int chaveEstado = mapaTransInverso.get(estadoInicial);
-
-        // Parte de estados finais
-        int chaveEstadosFinais[] = new int[estadosFinais.split(",").length];
-
-        String[] comparaEstadosFinais = estadosFinais.split(",");
-
-        int contaEstadosFinais = 0;
-
-        while (contaEstadosFinais < chaveEstadosFinais.length) {
-            chaveEstadosFinais[contaEstadosFinais] = mapaTransInverso.get(comparaEstadosFinais[contaEstadosFinais]);
-            contaEstadosFinais++;
-        }
-
-        int[][][] matrizConversao = new int[FND_jTable1.getRowCount()][FND_jTable1.getColumnCount() - 1][];
-        for (int i = 0; i < FND_jTable1.getRowCount(); i++) {
-            for (int j = 0; j < FND_jTable1.getColumnCount() - 1; j++) {
-                if (teste[i][j + 1] != null) {
-                    matrizConversao[i][j] = new int[teste[i][j + 1].split(",").length];
-                } else {
-                    matrizConversao[i][j] = new int[0];
-                }
-                for (int k = 0; k < matrizConversao[i][j].length; k++) {
-                    matrizConversao[i][j][k] = mapaTransInverso.get(teste[i][j + 1].split(",")[k]);
-                }
-            }
-        }
-
-        for (int i = 0; i < alfabetoInserido.split(",").length; i++) {
-            mapaTransicaoAlfabeto.put(i, (String) alfabetoInserido.split(",")[i]);
-            mapaTransInversoAlfabeto.put((String) alfabetoInserido.split(",")[i], i);
-            alfabetoFormatado.append(String.valueOf(i));
-        }
-
-        AFND_Injection.setMapAlfabeto((HashMap<Integer, String>) mapaTransicaoAlfabeto);
-        AFND_Injection.setMapAlfabetoInverso((HashMap<String, Integer>) mapaTransInversoAlfabeto);
-
-        NaoDeterministico automato = new NaoDeterministico(chaveEstadosFinais, chaveEstado, matrizConversao, alfabetoFormatado.toString());
-        AFND_Injection.setMap((HashMap) mapaTransicao);
-        AFND_Injection.setAutomato(chaveEstadosFinais, chaveEstado, matrizConversao, alfabetoFormatado.toString());
-        return automato;
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel FND_BodyConfig;
