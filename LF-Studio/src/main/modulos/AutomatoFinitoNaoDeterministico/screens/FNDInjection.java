@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main.modulos.AutomatoFinitoNaoDeterministico;
+package main.modulos.AutomatoFinitoNaoDeterministico.screens;
 
 import main.modulos.AutomatoFinitoNaoDeterministico.domain.NaoDeterministico;
 

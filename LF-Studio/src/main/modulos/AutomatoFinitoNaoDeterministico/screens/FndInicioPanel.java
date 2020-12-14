@@ -8,7 +8,6 @@ package main.modulos.AutomatoFinitoNaoDeterministico.screens;
 import java.awt.Font;
 import javax.swing.JOptionPane;
 import main.LFStudio;
-import main.modulos.AutomatoFinitoNaoDeterministico.FNDInjection;
 import main.modulos.AutomatoFinitoNaoDeterministico.controllers.FndController;
 import main.modulos.AutomatoFinitoNaoDeterministico.domain.NaoDeterministico;
 import main.modulos.Commons.FileChooser;

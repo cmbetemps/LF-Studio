@@ -13,7 +13,7 @@ import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
-import main.modulos.AutomatoFinitoNaoDeterministico.FNDInjection;
+import main.modulos.AutomatoFinitoNaoDeterministico.screens.FNDInjection;
 import main.modulos.AutomatoFinitoNaoDeterministico.domain.NaoDeterministico;
 import main.modulos.Commons.FileChooser;
 import main.modulos.Commons.JsonFormatter;
@@ -138,9 +138,7 @@ public class FndController {
     return automato;
   }
 
-  public void carregarAutomato(){
 
-  }
 
   public void setarCampos(JTable table, JTextField alfabeto, JTextField estadosFinais, JTextField estadoInicial, JTextField estados){
     if(FNDInjection.getAutomato() != null){
@@ -172,13 +170,13 @@ public class FndController {
     }
   }
 
-    public void validarPalavra(JTextArea Retorno, JTextField entrada) {
-        String temp = "";
-        HashMap map = FNDInjection.getAutomato().auxiliarMap.getMap();
-        HashMap mapAlfabeto = FNDInjection.getAutomato().auxiliarMap.getMapAlfabeto();
-        for (String x: entrada.getText().split("")) {
+  public void validarPalavra(JTextArea Retorno, JTextField entrada) {
+    String temp = "";
+    HashMap map = FNDInjection.getAutomato().auxiliarMap.getMap();
+    HashMap mapAlfabeto = FNDInjection.getAutomato().auxiliarMap.getMapAlfabeto();
+    for (String x: entrada.getText().split("")) {
             temp = temp.concat(FNDInjection.getAutomato().auxiliarMap.getMapAlfabetoInverso().get(x).toString());
-        }
+    }
         FNDInjection.getAutomato().config.clear();
         FNDInjection.getAutomato().reconhecer(temp);
         StringBuilder text = new StringBuilder();

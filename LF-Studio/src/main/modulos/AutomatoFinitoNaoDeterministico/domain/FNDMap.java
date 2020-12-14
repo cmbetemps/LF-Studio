@@ -21,13 +21,15 @@ public class FNDMap {
     protected HashMap<Integer, String> mapAlfabeto;
     protected HashMap<String, Integer> mapAlfabetoInverso;
     public List<String> config = new ArrayList<String>();
-
+    
     String estadosFinais;
     String estadoInicial;
     String estados;
     String alfabeto;
+    
     private Object[][] transicoes;
     private String[] alfabetoTable;
+    
   public void setEstadosFinais(String estados) {
         this.estadosFinais = estados;
     }

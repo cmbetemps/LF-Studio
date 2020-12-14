@@ -1,8 +1,6 @@
 package main.modulos.AutomatoFinitoNaoDeterministico.domain;
 
 import java.util.Arrays;
-import java.util.HashMap;
-import main.modulos.AutomatoFinitoNaoDeterministico.FNDInjection;
 
 public class Automato {
   protected boolean debug = false;

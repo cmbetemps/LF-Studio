@@ -1,7 +1,7 @@
 package main.modulos.AutomatoFinitoNaoDeterministico.validators;
 
-import main.modulos.AutomatoFinitoNaoDeterministico.domain.exceptions.InvalidFormatException;
 
+import com.sun.media.sound.InvalidFormatException;
 
 public class IOValidator {
   private  boolean debug;
