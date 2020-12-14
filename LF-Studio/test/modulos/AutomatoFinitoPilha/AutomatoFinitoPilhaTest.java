@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 
 
-public class InputTest {
+public class AutomatoFinitoPilhaTest {
 
      // Linguagem das palavras com qualquer número de a's e b's, seguidos por c, seguido pelo inverso da primeira parte
     String estados = "s,f";
