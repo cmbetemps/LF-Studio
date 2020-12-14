@@ -205,7 +205,7 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="197" max="32767" attributes="0"/>
+                  <EmptySpace pref="205" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -278,9 +278,9 @@
                           <Group type="102" alignment="1" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="AFD_button_minus" min="-2" pref="54" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
-                              <Component id="FD_LabelTabelaTransicao1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+                              <Component id="FD_LabelTabelaTransicao1" min="-2" pref="253" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
                               <Component id="AFD_button_plus" min="-2" pref="57" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
                           </Group>
@@ -312,14 +312,14 @@
                           <Component id="FD_LabelEstados" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="FD_TextFieldEstados" linkSize="1" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="FD_LabelTabelaTransicao1" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="AFD_button_plus" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="AFD_button_minus" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="AFND2_jScrollPane4" pref="155" max="32767" attributes="0"/>
+                      <Component id="AFND2_jScrollPane4" pref="163" max="32767" attributes="0"/>
                       <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                   </Group>
               </Group>
@@ -384,7 +384,7 @@
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="Tabela de Transi&#xe7;&#xf5;es"/>
-                <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#xa;Tabela utilizada para expressar todas as transi&#xe7;&#xf5;es existentes, as transi&#xe7;&#xf5;es&#xa;seguem o seguinte modelo:&lt;br&gt;   | Estados (linhas da coluna 0) x Alfabeto (colunas) = estados para o qual pode ir, para dado alfabeto |&#xa;&lt;br&gt;&#xa;Exemplo de Input: (linha) (&apos;l&apos;) (coluna) (&apos;0&apos;) = &apos;l&apos; |  Existe uma transi&#xe7;&#xe3;o saindo do estado &apos;l&apos;, utilizando &apos;0&apos; como alfabeto para transi&#xe7;&#xe3;o, vai para o estado &apos;l&apos;&#xa;&lt;/html&gt;"/>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
               </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="FD_LabelTabelaTransicao1MouseClicked"/>

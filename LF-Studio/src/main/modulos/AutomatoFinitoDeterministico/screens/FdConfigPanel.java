@@ -193,7 +193,7 @@ public class FdConfigPanel extends javax.swing.JPanel {
         FD_LabelTabelaTransicao1.setForeground(new java.awt.Color(255, 255, 255));
         FD_LabelTabelaTransicao1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         FD_LabelTabelaTransicao1.setText("Tabela de Transições");
-        FD_LabelTabelaTransicao1.setToolTipText("<html>\nTabela utilizada para expressar todas as transições existentes, as transições\nseguem o seguinte modelo:<br>   | Estados (linhas da coluna 0) x Alfabeto (colunas) = estados para o qual pode ir, para dado alfabeto |\n<br>\nExemplo de Input: (linha) ('l') (coluna) ('0') = 'l' |  Existe uma transição saindo do estado 'l', utilizando '0' como alfabeto para transição, vai para o estado 'l'\n</html>");
+        FD_LabelTabelaTransicao1.setToolTipText("");
         FD_LabelTabelaTransicao1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 FD_LabelTabelaTransicao1MouseClicked(evt);
@@ -314,9 +314,9 @@ public class FdConfigPanel extends javax.swing.JPanel {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FD_BodyConfigLayout.createSequentialGroup()
                         .addContainerGap()
                         .addComponent(AFD_button_minus, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(80, 80, 80)
-                        .addComponent(FD_LabelTabelaTransicao1)
-                        .addGap(74, 74, 74)
+                        .addGap(54, 54, 54)
+                        .addComponent(FD_LabelTabelaTransicao1, javax.swing.GroupLayout.PREFERRED_SIZE, 253, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(41, 41, 41)
                         .addComponent(AFD_button_plus, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(66, 66, 66)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -340,13 +340,13 @@ public class FdConfigPanel extends javax.swing.JPanel {
                 .addGroup(FD_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(FD_LabelEstados)
                     .addComponent(FD_TextFieldEstados, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(41, 41, 41)
+                .addGap(35, 35, 35)
                 .addGroup(FD_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(FD_LabelTabelaTransicao1)
                     .addComponent(AFD_button_plus)
                     .addComponent(AFD_button_minus))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(AFND2_jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
+                .addComponent(AFND2_jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 163, Short.MAX_VALUE)
                 .addGap(21, 21, 21))
         );
 
@@ -418,7 +418,7 @@ public class FdConfigPanel extends javax.swing.JPanel {
                                     .addComponent(FD_salvarAutomatoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(FD_ConfigSubTitulo)
                             .addComponent(FD_BodyConfig, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(197, Short.MAX_VALUE))
+                .addContainerGap(205, Short.MAX_VALUE))
         );
         FDAutomatoLayout.setVerticalGroup(
             FDAutomatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
