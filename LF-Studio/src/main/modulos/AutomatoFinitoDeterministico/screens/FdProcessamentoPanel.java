@@ -5,6 +5,9 @@
  */
 package main.modulos.AutomatoFinitoDeterministico.screens;
 
+import main.modulos.AutomatoFinitoDeterministico.FdInjection;
+import main.modulos.AutomatoFinitoDeterministico.domain.Configuracoes;
+
 /**
  *
  * @author michel
@@ -24,6 +27,8 @@ public class FdProcessamentoPanel extends javax.swing.JPanel {
         bodyFd = new javax.swing.JPanel();
         FD_SubtituloProcessamento = new javax.swing.JLabel();
         FD_BodyProcessamento = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        Retorno = new javax.swing.JTextArea();
         FD_validarBtn = new javax.swing.JLabel();
         FD_inputEntrada = new javax.swing.JTextField();
         FD_TituloProcessamento = new javax.swing.JLabel();
@@ -48,15 +53,22 @@ public class FdProcessamentoPanel extends javax.swing.JPanel {
         FD_BodyProcessamento.setForeground(new java.awt.Color(255, 255, 255));
         FD_BodyProcessamento.setPreferredSize(new java.awt.Dimension(360, 321));
 
+        Retorno.setBackground(new java.awt.Color(0, 0, 0));
+        Retorno.setColumns(20);
+        Retorno.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
+        Retorno.setForeground(new java.awt.Color(255, 255, 255));
+        Retorno.setRows(5);
+        jScrollPane1.setViewportView(Retorno);
+
         javax.swing.GroupLayout FD_BodyProcessamentoLayout = new javax.swing.GroupLayout(FD_BodyProcessamento);
         FD_BodyProcessamento.setLayout(FD_BodyProcessamentoLayout);
         FD_BodyProcessamentoLayout.setHorizontalGroup(
             FD_BodyProcessamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1001, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1001, Short.MAX_VALUE)
         );
         FD_BodyProcessamentoLayout.setVerticalGroup(
             FD_BodyProcessamentoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 462, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 462, Short.MAX_VALUE)
         );
 
         FD_validarBtn.setBackground(new java.awt.Color(51, 51, 51));
@@ -159,6 +171,9 @@ public class FdProcessamentoPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
   private void FD_validarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FD_validarBtnMouseClicked
+      Configuracoes configuracoes = new Configuracoes();
+      FdInjection.getAutomato().Reconhecer(FD_inputEntrada.getText(), configuracoes);
+      Retorno.setText(configuracoes.getConfiguracoes());
 //    InjectionFd.getAutomato().reconhecer(FD_inputEntrada.getText().toCharArray());
   }//GEN-LAST:event_FD_validarBtnMouseClicked
 
@@ -177,6 +192,8 @@ public class FdProcessamentoPanel extends javax.swing.JPanel {
     private javax.swing.JTextField FD_inputEntrada;
     private javax.swing.JLabel FD_labelEntrada;
     private javax.swing.JLabel FD_validarBtn;
+    private javax.swing.JTextArea Retorno;
     private javax.swing.JPanel bodyFd;
+    private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

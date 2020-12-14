@@ -10,7 +10,7 @@ import java.util.List;
 
 public class Configuracoes {
 
-        List<String[]> configuracoes;
+        public List<String[]> configuracoes;
 
         public Configuracoes (){
             this.configuracoes = new LinkedList<String[]>();
@@ -31,6 +31,13 @@ public class Configuracoes {
                 System.out.println("(" + this.configuracoes.get(i)[0] + ", " + this.configuracoes.get(i)[1] + ")");
             }
         }
-    
+        
+        public String getConfiguracoes(){
+             StringBuilder retornar = new StringBuilder();
+             for(int i = 0; i < configuracoes.size(); i++) {
+                retornar.append("(" + configuracoes.get(i)[0] + ", " + this.configuracoes.get(i)[1] + ")\n");
+             }
+             return retornar.toString();
+        }
     
 }

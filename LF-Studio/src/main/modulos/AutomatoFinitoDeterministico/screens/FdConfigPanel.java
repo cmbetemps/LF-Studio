@@ -16,6 +16,7 @@ import main.modulos.AutomatoFinitoDeterministico.validators.AFDValidator;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import main.modulos.AutomatoFinitoDeterministico.FdInjection;
 import main.modulos.AutomatoFinitoDeterministico.domain.AFD;
 
 /*
@@ -489,10 +490,11 @@ public class FdConfigPanel extends javax.swing.JPanel {
       if (estadosLista.containsAll(finaisLista)) {
           if (estadosLista.contains(inicial)) {
               try {
-                  AFD automato = controller.gerarAutomato(
-                          FD_TextFieldAlfabeto.getText(), FDjTable, FD_LabelEstadoInicial1.getText(), FD_TextFieldEstadosFinais1.getText()
-                  );
-                  if (controller.processarAutomato(automato) == true) {
+                   controller.gerarAutomato(FD_TextFieldAlfabeto.getText().replaceAll(",", ""),
+                    FD_TextFieldEstadoInicial1.getText(), FD_TextFieldEstados.getText(),
+                    FD_TextFieldEstadosFinais1.getText(), FDjTable,
+                    false);
+                  if (controller.processarAutomato(FdInjection.getAutomato()) == true) {
                       LFStudio.cl.show(JanelaExecucao, "fdProcessamentoPanel");
                   }
               } catch (Exception e) {

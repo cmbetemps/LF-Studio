@@ -33,11 +33,7 @@ public class AFDController {
         return false;
     }
 
-    public AFD gerarAutomato(String alfabeto, javax.swing.JTable FD_jTable, String estadoInicial, String estadosFinais) throws Exception {
-        String[][] matrizTransicoes = validator.jTableToMatriz(FD_jTable, alfabeto);
-        String transicoesFormatadas = validator.formatarTransicoes(matrizTransicoes);
-        return null;
-    }
+  
 
     public AFD instanciationAutomato(String path) {
         JsonFormatter json = new JsonFormatter();
@@ -87,12 +83,12 @@ public class AFDController {
     }
 
     public void gerarAutomato(String alfabeto, String estadoIni, String estados, String estadoFinalis, JTable table, boolean isWrite) {
-        AFD automato = null;
         String[][] transicoes = mapearTransicoes(table);
         if (isWrite) {
-            automato = new AFD(estados, alfabeto, estadoIni, estadoFinalis, transicoes);
+            AFD automato = new AFD(estados, alfabeto, estadoIni, estadoFinalis, transicoes);
             saveDeterministico(automato);
         } else {
+            AFD automato = new AFD(estados, alfabeto, estadoIni, estadoFinalis, transicoes);
             FdInjection.setAutomato(automato);
         }
 
