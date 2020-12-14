@@ -14,10 +14,7 @@ import javax.swing.JFrame;
 import javax.swing.JInternalFrame;
 import main.modulos.AutomatoFinitoDeterministico.screens.FdConfigPanel;
 import main.modulos.AutomatoFinitoDeterministico.screens.FdInicioPanel;
-import main.modulos.AutomatoFinitoDeterministico.screens.FdProcessamentoPanel;
 import main.modulos.AutomatoFinitoNaoDeterministico.screens.FndConfigPanel;
-import main.modulos.AutomatoFinitoNaoDeterministico.screens.FndInicioPanel;
-import main.modulos.AutomatoFinitoNaoDeterministico.screens.FndProcessamentoPanel;
 import main.modulos.AutomatoFinitoPilha.screens.PilhaConfigPanel;
 import main.modulos.AutomatoFinitoPilha.screens.PilhaInicioPanel;
 import main.modulos.AutomatoFinitoPilha.screens.PilhaProcessamentoPanel;
@@ -41,7 +38,7 @@ public class LFStudio extends javax.swing.JFrame {
     Color defaultColor = null;
     
     void setFdInicioPanel(){
-        fdInicioPanel =  new FdInicioPanel(JanelaExecucao);
+        fdInicioPanel =  new FdInicioPanel(JanelaExecucao, fdConfigPanel);
         fdInicioPanel.setBackground(new java.awt.Color(70, 71, 74));
         fdInicioPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
         JanelaExecucao.add(fdInicioPanel, "fdInicioPanel");
@@ -55,7 +52,7 @@ public class LFStudio extends javax.swing.JFrame {
     }
     
     void setPilhaInicioPanel(){
-        pilhaInicioPanel =  new PilhaInicioPanel(JanelaExecucao);
+        pilhaInicioPanel =  new PilhaInicioPanel(JanelaExecucao, pilhaConfigPanel);
         pilhaInicioPanel.setBackground(new java.awt.Color(70, 71, 74));
         pilhaInicioPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
         JanelaExecucao.add(pilhaInicioPanel, "pilhaInicioPanel");
@@ -111,9 +108,9 @@ public class LFStudio extends javax.swing.JFrame {
         setFdConfigPanel();
         setFdInicioPanel();
         setFdProcessamentoPanel();
-        setPilhaProcessamentoPanel();
         setPilhaConfigPanel();
         setPilhaInicioPanel();
+        setPilhaProcessamentoPanel();
     }
     
     public LFStudio() {

@@ -3,12 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package main.modulos.AutomatoFinitoPilha.controllers;
+package main.modulos.AutomatoFinitoPilha.domain;
 
-import java.util.HashMap;
-import main.modulos.AutomatoFinitoPilha.domain.AutomatoDePilha;
-
-public class AFP_Injection {
+public class AFPInjection {
 
     static AutomatoDePilha automato ;
     static String aviso;
@@ -18,7 +15,7 @@ public class AFP_Injection {
     }
 
     public static void setConfirm(boolean confirm) {
-        AFP_Injection.confirm = confirm;
+        AFPInjection.confirm = confirm;
     }
     static boolean confirm;
 
@@ -27,15 +24,17 @@ public class AFP_Injection {
     }
 
     public static void setAviso(String aviso) {
-        AFP_Injection.aviso = aviso;
+        AFPInjection.aviso = aviso;
     }
     
-    public static void setAutomato(String alfabetoFita, String alfabetoPilha, String estadoInicial, String estadosFinais, String pilhaInicial, String[][] matrizTransições){
-        automato = new AutomatoDePilha(alfabetoFita, alfabetoPilha, estadoInicial, estadosFinais, pilhaInicial, matrizTransições);
+    public static void setAutomato(AutomatoDePilha automatoI){
+        automato =automatoI;
     }
     
     public static AutomatoDePilha getAutomato(){
         return automato;
     }
+
+
 
 }

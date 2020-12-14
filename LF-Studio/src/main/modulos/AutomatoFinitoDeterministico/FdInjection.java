@@ -1,8 +1,8 @@
 package main.modulos.AutomatoFinitoDeterministico;
 
-import main.modulos.AutomatoFinitoDeterministico.domain.AFD;
+import main.modulos.AutomatoFinitoDeterministico;
 
-public class InjectionFd {
+public class FdInjection {
   private static AFD automato;
 
   public static AFD getAutomato() {

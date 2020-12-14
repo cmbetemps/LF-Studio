@@ -4,6 +4,7 @@
  * and open the template in the editor.
  */
 package main.modulos.AutomatoFinitoNaoDeterministico;
+
 import main.modulos.AutomatoFinitoNaoDeterministico.domain.NaoDeterministico;
 
 public class FNDInjection {

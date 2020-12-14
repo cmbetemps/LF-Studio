@@ -6,9 +6,13 @@
 package main.modulos.AutomatoFinitoPilha.screens;
 
 import java.awt.Font;
-import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import main.LFStudio;
+import main.modulos.AutomatoFinitoNaoDeterministico.screens.FNDInjection;
 import main.modulos.AutomatoFinitoNaoDeterministico.controllers.FndController;
+import main.modulos.AutomatoFinitoNaoDeterministico.domain.NaoDeterministico;
+import main.modulos.Commons.FileChooser;
 
 /**
  *
@@ -16,11 +20,16 @@ import main.modulos.AutomatoFinitoNaoDeterministico.controllers.FndController;
  */
 public class PilhaInicioPanel extends javax.swing.JPanel {
     javax.swing.JPanel JanelaExecucao;
+    PilhaConfigPanel pilhaConfigPane;
+    FndController controller = new FndController();
+    FileChooser file = new FileChooser();
+    
     /**
      * Creates new form test1
      */
-    public PilhaInicioPanel(javax.swing.JPanel janela) {
-        this.JanelaExecucao = janela;
+    public PilhaInicioPanel(JPanel JanelaExecucao, PilhaConfigPanel pilhaConfigPane) {
+        this.JanelaExecucao = JanelaExecucao;
+        this.pilhaConfigPane = pilhaConfigPane;
         initComponents();
     }
 
@@ -76,6 +85,9 @@ public class PilhaInicioPanel extends javax.swing.JPanel {
         PILHA_LabelImportarAutomato4.setText("Importar autômato");
         PILHA_LabelImportarAutomato4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         PILHA_LabelImportarAutomato4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PILHA_LabelImportarAutomato4MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 PILHA_LabelImportarAutomato4MouseEntered(evt);
             }
@@ -107,7 +119,7 @@ public class PilhaInicioPanel extends javax.swing.JPanel {
             .addGroup(pilhaTitleLayout.createSequentialGroup()
                 .addGap(284, 284, 284)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(287, Short.MAX_VALUE))
         );
         pilhaTitleLayout.setVerticalGroup(
             pilhaTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -158,6 +170,30 @@ public class PilhaInicioPanel extends javax.swing.JPanel {
         Font f = PILHA_LabelImportarAutomato4.getFont();
         PILHA_LabelImportarAutomato4.setFont(f.deriveFont(f.getStyle(), f.getSize2D()-4));
     }//GEN-LAST:event_PILHA_LabelImportarAutomato4MouseExited
+
+    private void PILHA_LabelImportarAutomato4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PILHA_LabelImportarAutomato4MouseClicked
+        String pathAbsolute = file.getPathAbsolute();
+          if(!pathAbsolute.contains(".json")){
+            JOptionPane.showMessageDialog(null, "Formato do Arquivo invalido");
+            return;
+         }
+
+         try {
+           NaoDeterministico automato  = controller.instanciationAutomato(pathAbsolute);
+           if(automato != null && pathAbsolute != null){
+               FNDInjection.setAutomato(automato);
+               this.pilhaConfigPane.carregar();
+                 if(FNDInjection.getAutomato()!= null){
+                     LFStudio.cl.show(JanelaExecucao,"pilhaConfigPanel");
+                     JOptionPane.showMessageDialog(null, "Automato lido com sucesso!!!");
+                 }
+           }
+         } catch (Exception ex){
+            JOptionPane.showMessageDialog(null, "Arquivo invalido ou erro na formatação do arquivo");
+            ex.printStackTrace();
+            return;
+         }
+    }//GEN-LAST:event_PILHA_LabelImportarAutomato4MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

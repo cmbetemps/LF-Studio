@@ -2,32 +2,31 @@ package main.modulos.AutomatoFinitoPilha.domain;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import main.modulos.AutomatoFinitoPilha.controllers.AFP_Injection;
 
-public class Transições {
+public class Transicoes {
     String[][] matrizTransições;
 
 
     /** Construtor da Transições
      * @param matrizTransições matriz contendo todas a funções de transição do autômato
      **/
-    public Transições(String[][] matrizTransições) {
+    public Transicoes(String[][] matrizTransições) {
         this.matrizTransições = matrizTransições;
     }
 
     /** Realiza todas as transições possíveis
-     * @param configuração configuração do autômato onde serão testadas as transições
+     * @param configuracao configuração do autômato onde serão testadas as transições
      * @param configurações árvore onde é salva a computação
      **/
-    public void transição(Configuração configuração, Arvore configurações) {
+    public void transição(Configuracao configuracao, Arvore configurações) {
 
         // Loop pelas funções de transição
         for (int x = 0; x < matrizTransições.length; x++) {
             // Se satisfazer todas as condições, realiza a transição
-            if (configuração.estado.comparar(matrizTransições[x][0]) == true) {
-                if (configuração.fita.comparar(matrizTransições[x][1]) == true) {
-                    if (configuração.pilha.comparar(matrizTransições[x][2]) == true) {
-                        Configuração novoEstado = new Configuração(matrizTransições[x], configuração.estado, configuração.fita, configuração.pilha);
+            if (configuracao.estado.comparar(matrizTransições[x][0]) == true) {
+                if (configuracao.fita.comparar(matrizTransições[x][1]) == true) {
+                    if (configuracao.pilha.comparar(matrizTransições[x][2]) == true) {
+                        Configuracao novoEstado = new Configuracao(matrizTransições[x], configuracao.estado, configuracao.fita, configuracao.pilha);
 
                         novoEstado.estado.trocar(matrizTransições[x][3]);
                         novoEstado.fita.consumir(matrizTransições[x][1]);
@@ -49,12 +48,12 @@ public class Transições {
     }
 
     /** Verifica se o estado é um estado final
-     * @param configuração configuração do autômato para verificar se é estado final
+     * @param configuracao configuração do autômato para verificar se é estado final
      * @return true ou false para é estado final ou não
      **/
-    public boolean pertence(Configuração configuração) {
-        if (configuração.estado.pertence() && configuração.fita.pertence() && configuração.pilha.pertence()) {
-            configuração.reconhecido = true;
+    public boolean pertence(Configuracao configuracao) {
+        if (configuracao.estado.pertence() && configuracao.fita.pertence() && configuracao.pilha.pertence()) {
+            configuracao.reconhecido = true;
         }
         return false;
         }
@@ -111,7 +110,7 @@ public class Transições {
         } else {
             System.out.println("Ok - Os símbolos de pilha das transições pertencem ao conjunto de símbolos da pilha.");
         }
-        AFP_Injection.setConfirm(flagValido);
+        AFPInjection.setConfirm(flagValido);
         return flagValido;
     }
 }

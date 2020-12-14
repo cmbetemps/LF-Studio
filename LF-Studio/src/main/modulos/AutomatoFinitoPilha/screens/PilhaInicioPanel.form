@@ -70,7 +70,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="284" max="-2" attributes="0"/>
                   <Component id="jSeparator1" min="-2" pref="453" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace pref="287" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -133,6 +133,7 @@
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
           <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="PILHA_LabelImportarAutomato4MouseClicked"/>
             <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="PILHA_LabelImportarAutomato4MouseEntered"/>
             <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="PILHA_LabelImportarAutomato4MouseExited"/>
           </Events>

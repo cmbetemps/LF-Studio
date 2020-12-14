@@ -6,7 +6,6 @@
 package main.modulos.AutomatoFinitoNaoDeterministico.screens;
 
 import java.awt.Font;
-import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import main.LFStudio;
 import main.modulos.AutomatoFinitoNaoDeterministico.FNDInjection;

@@ -5,7 +5,7 @@ import java.util.LinkedList;
 import java.util.List;
 
 public class Arvore implements Iterable<Arvore> {
-    Configuração configuração;
+    public Configuracao configuracao;
     Arvore pai;
     List<Arvore> filho;
 
@@ -16,17 +16,17 @@ public class Arvore implements Iterable<Arvore> {
     public Arvore(){};
 
     /** Construtor da Arvore
-     * @param configuração configuração atual a ser salva na árvore
+     * @param configuracao configuração atual a ser salva na árvore
      **/
-    public Arvore(Configuração configuração){
-        iniciarArvore(configuração);
+    public Arvore(Configuracao configuracao){
+        iniciarArvore(configuracao);
     };
 
     /** Inicializa a árvore
-     * @param configuraçãoInicial configuração da raiz da árvore
+     * @param configuracaoInicial configuração da raiz da árvore
      **/
-    public void iniciarArvore(Configuração configuraçãoInicial){
-        this.configuração = configuraçãoInicial;
+    public void iniciarArvore(Configuracao configuracaoInicial){
+        this.configuracao = configuracaoInicial;
         this.filho = new LinkedList<Arvore>();
         this.elementsIndex = new LinkedList<Arvore>();
         this.elementsIndex.add(this);
@@ -36,7 +36,7 @@ public class Arvore implements Iterable<Arvore> {
      * @param nóFilho configuração do novo nó
      * @return o novo nó
      **/
-    public Arvore novoFilho(Configuração nóFilho) {
+    public Arvore novoFilho(Configuracao nóFilho) {
         Arvore filho = new Arvore(nóFilho);
         filho.pai = this;
         this.filho.add(filho);
@@ -82,7 +82,7 @@ public class Arvore implements Iterable<Arvore> {
      **/
     public Arvore encontrarEstadoValido() {
         for (Arvore element : this.elementsIndex) {
-            if (element.configuração.reconhecido)
+            if (element.configuracao.reconhecido)
                 return element;
         }
 

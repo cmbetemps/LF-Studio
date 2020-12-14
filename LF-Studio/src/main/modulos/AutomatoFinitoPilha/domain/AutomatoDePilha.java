@@ -2,21 +2,20 @@ package main.modulos.AutomatoFinitoPilha.domain;
 
 import java.util.ArrayList;
 
-
-
 public class AutomatoDePilha {
     Alfabeto alfabetos;
     Estado estados;
-    Pilha pilha;
-    Transições transições;
+    public Pilha pilha;
+    Transicoes transicoes;
     String palavra;
+
     /** Construtor do autômato
      * @param alfabetoFita - Alfabeto de símbolos da fita
      * @param alfabetoPilha - Alfabeto de símbolos da pilha
      * @param estadoInicial - Estado inicial
      * @param estadosFinais - Conjunto de estados finais separados por vírgula
      * @param pilhaInicial - Símbolo inicial da pilha;
-     * @param matrizTransições - Conjunto de relações de transições:
+     * @param matrizTransicoes - Conjunto de relações de transições:
      *  {"s", "a", "B", "f", "Y"}
      *      s - Estado atual
      *      a - Símbolo lido do início da fita de entrada
@@ -24,11 +23,11 @@ public class AutomatoDePilha {
      *      f - Próximo estado
      *      Y - Símbolo a ser empilhado
      **/
-    public AutomatoDePilha(String alfabetoFita, String alfabetoPilha, String estadoInicial, String estadosFinais, String pilhaInicial, String[][] matrizTransições){
+    public AutomatoDePilha(String alfabetoFita, String alfabetoPilha, String estadoInicial, String estadosFinais, String pilhaInicial, String[][] matrizTransicoes){
         this.alfabetos = new Alfabeto(alfabetoFita, alfabetoPilha);
         this.estados = new Estado(estadoInicial, estadosFinais);
         this.pilha = new Pilha(pilhaInicial);
-        this.transições = new Transições(matrizTransições);
+        this.transicoes = new Transicoes(matrizTransicoes);
     }
     
     
@@ -119,58 +118,58 @@ public class AutomatoDePilha {
      */
     /** Verifica se a palavra pertence ou não ao conjunto de palavras reconhecidas pelo autômato
      * @param palavra String cujos elementos devem pertencer ao alfabeto de entrada
-     * @param configurações objeto onde serão salvas as configurações da computação realizada
+     * @param configuracoes objeto onde serão salvas as configuracoes da computação realizada
      * @return true ou false para palavra reconhecida ou não
      */
-    public boolean Reconhecer(String palavra, Arvore configurações) {
+    public boolean Reconhecer(String palavra, Arvore configuracoes) {
         if(!this.alfabetos.validar(palavra)){
             return false;
         }
         Fita fita = new Fita(palavra);
 
-        Configuração configuraçãoInicial = new Configuração(null, estados, fita, pilha);
+        Configuracao configuracaoInicial = new Configuracao(null, estados, fita, pilha);
 
-        configurações.iniciarArvore(configuraçãoInicial);
+        configuracoes.iniciarArvore(configuracaoInicial);
 
-        transições.transição(configuraçãoInicial, configurações);
+        transicoes.transição(configuracaoInicial, configuracoes);
 
-        return configurações.encontrarEstadoValido() != null;
+        return configuracoes.encontrarEstadoValido() != null;
     }
 
-    /** Imprime árvore de configurações
-     * @param configurações objeto contendo a computação que será impressa
+    /** Imprime árvore de configuracoes
+     * @param configuracoes objeto contendo a computação que será impressa
      */
-    public ArrayList <String> printArvore(Arvore configurações) {
+    public ArrayList <String> printArvore(Arvore configuracoes) {
         ArrayList <String>  retorno = new ArrayList ();
-        Arvore raiz = configurações.encontrarRaiz();
+        Arvore raiz = configuracoes.encontrarRaiz();
         int level = -1;
 
-        for (Arvore nó : raiz) {
-            // Se o nível do nó for diferente do contador, aumenta o nível e imprime
-            if(level != nó.getLevel()){
-                level = nó.getLevel();
+        for (Arvore no : raiz) {
+            // Se o nível do no for diferente do contador, aumenta o nível e imprime
+            if(level != no.getLevel()){
+                level = no.getLevel();
                 retorno.add("-----------\n--Nível "+ (level+1)+"--\n-----------");
                 //System.out.println("-----------\n--Nível "+ (level+1)+"--\n-----------");
             }
 
-            if(nó.pai != null) {
-                retorno.add("Estado anterior: " + nó.pai.configuração.estado);
-                retorno.add("Fita anterior: " + nó.pai.configuração.fita);
-                retorno.add("Pilha anterior: " + nó.pai.configuração.pilha);
-                //System.out.println("Estado anterior: " + nó.pai.configuração.estado);
-                //System.out.println("Fita anterior: " + nó.pai.configuração.fita);
-                //System.out.println("Pilha anterior: " + nó.pai.configuração.pilha);
+            if(no.pai != null) {
+                retorno.add("Estado anterior: " + no.pai.configuracao.estado);
+                retorno.add("Fita anterior: " + no.pai.configuracao.fita);
+                retorno.add("Pilha anterior: " + no.pai.configuracao.pilha);
+                //System.out.println("Estado anterior: " + no.pai.configuração.estado);
+                //System.out.println("Fita anterior: " + no.pai.configuração.fita);
+                //System.out.println("Pilha anterior: " + no.pai.configuração.pilha);
 
-                String[] trans = nó.configuração.transição;
+                String[] trans = no.configuracao.transição;
                 retorno.add("-> Transição: "+"(('"+trans[0]+"','"+ trans[1]+"','"+trans[2]+"'), ('"+trans[3]+"','"+trans[4]+ "'))");
                 //System.out.println("-> Transição: "+"(('"+trans[0]+"','"+ trans[1]+"','"+trans[2]+"'), ('"+trans[3]+"','"+trans[4]+ "'))");
             }
-            retorno.add("Estado atual: " + nó.configuração.estado);
-            retorno.add("Fita atual: " + nó.configuração.fita);
-            retorno.add("Pilha atual: " + nó.configuração.pilha);
-            //System.out.println("Estado atual: " + nó.configuração.estado);
-            //System.out.println("Fita atual: " + nó.configuração.fita);
-            //System.out.println("Pilha atual: " + nó.configuração.pilha);
+            retorno.add("Estado atual: " + no.configuracao.estado);
+            retorno.add("Fita atual: " + no.configuracao.fita);
+            retorno.add("Pilha atual: " + no.configuracao.pilha);
+            //System.out.println("Estado atual: " + no.configuração.estado);
+            //System.out.println("Fita atual: " + no.configuração.fita);
+            //System.out.println("Pilha atual: " + no.configuração.pilha);
         }
          return retorno;
     }

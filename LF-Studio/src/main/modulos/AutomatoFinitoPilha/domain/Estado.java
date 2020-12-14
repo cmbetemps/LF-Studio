@@ -2,7 +2,6 @@ package main.modulos.AutomatoFinitoPilha.domain;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import main.modulos.AutomatoFinitoPilha.controllers.AFP_Injection;
 
 public class Estado {
     String estadoInicial;
@@ -90,7 +89,7 @@ public class Estado {
         } else {
             //System.out.println("Ok - Todos os estados finais pertencem ao conjunto de estados.");
         }
-        AFP_Injection.setConfirm(flagValido);
+        AFPInjection.setConfirm(flagValido);
         return flagValido;
     }
 

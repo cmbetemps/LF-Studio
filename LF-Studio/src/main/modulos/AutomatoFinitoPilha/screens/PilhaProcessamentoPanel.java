@@ -6,7 +6,7 @@
 package main.modulos.AutomatoFinitoPilha.screens;
 
 import java.util.ArrayList;
-import main.modulos.AutomatoFinitoPilha.controllers.AFP_Injection;
+import main.modulos.AutomatoFinitoPilha.domain.AFPInjection;
 import main.modulos.AutomatoFinitoPilha.domain.Arvore;
 import main.modulos.AutomatoFinitoPilha.domain.AutomatoDePilha;
 
@@ -170,12 +170,12 @@ public class PilhaProcessamentoPanel extends javax.swing.JPanel {
 
     private void validarPalavraPilha1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_validarPalavraPilha1MouseClicked
        String palavra = r_e.getText();
-       AutomatoDePilha teste = AFP_Injection.getAutomato();
+       AutomatoDePilha teste = AFPInjection.getAutomato();
        Arvore configurações = new Arvore();
        boolean resposta = teste.Reconhecer(palavra, configurações);
        ArrayList <String>  retorno = new ArrayList ();
-       retorno.add(AFP_Injection.getAviso());
-       if(AFP_Injection.isConfirm() == true)
+       retorno.add(AFPInjection.getAviso());
+       if(AFPInjection.isConfirm() == true)
        {
        retorno.addAll(teste.printArvore(configurações));
        if(resposta){

@@ -205,7 +205,7 @@
                           </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="201" max="32767" attributes="0"/>
+                  <EmptySpace pref="197" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -247,10 +247,13 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                          <Component id="FD_jScrollPane" pref="589" max="32767" attributes="0"/>
-                          <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="AFND2_jScrollPane4" min="-2" pref="593" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="FD_LabelAlfabeto" min="-2" max="-2" attributes="0"/>
@@ -272,7 +275,15 @@
                                   <Component id="FD_TextFieldEstados" alignment="1" max="32767" attributes="0"/>
                               </Group>
                           </Group>
-                          <Component id="FD_LabelTabelaTransicao1" max="32767" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="AFD_button_minus" min="-2" pref="54" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
+                              <Component id="FD_LabelTabelaTransicao1" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                              <Component id="AFD_button_plus" min="-2" pref="57" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
@@ -301,11 +312,15 @@
                           <Component id="FD_LabelEstados" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="FD_TextFieldEstados" linkSize="1" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                       </Group>
+                      <EmptySpace min="-2" pref="41" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="FD_LabelTabelaTransicao1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="AFD_button_plus" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="AFD_button_minus" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="FD_LabelTabelaTransicao1" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="FD_jScrollPane" min="-2" pref="213" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="AFND2_jScrollPane4" pref="155" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -389,40 +404,6 @@
                 <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FD_TextFieldAlfabetoKeyReleased"/>
               </Events>
             </Component>
-            <Container class="javax.swing.JScrollPane" name="FD_jScrollPane">
-              <AuxValues>
-                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
-              </AuxValues>
-
-              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
-              <SubComponents>
-                <Component class="javax.swing.JTable" name="FD_jTable">
-                  <Properties>
-                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                      <Font name="Noto Sans" size="13" style="0"/>
-                    </Property>
-                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="1" rowCount="0">
-                        <Column editable="true" title="Estados" type="java.lang.Object"/>
-                      </Table>
-                    </Property>
-                    <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#xa;Tabela utilizada para expressar todas as transi&#xe7;&#xf5;es existentes, as transi&#xe7;&#xf5;es&#xa;seguem o seguinte modelo:&lt;br&gt;   | Estados (linhas da coluna 0) x Alfabeto (colunas) = estados para o qual pode ir, para dado alfabeto |&#xa;&lt;br&gt;&#xa;Exemplo de Input: (linha) (&apos;l&apos;) (coluna) (&apos;0&apos;) = &apos;l&apos; |  Existe uma transi&#xe7;&#xe3;o saindo do estado &apos;l&apos;, utilizando &apos;0&apos; como alfabeto para transi&#xe7;&#xe3;o, vai para o estado &apos;l&apos;&#xa;&lt;/html&gt;"/>
-                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
-                      <TableColumnModel selectionModel="0">
-                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
-                          <Title/>
-                          <Editor/>
-                          <Renderer/>
-                        </Column>
-                      </TableColumnModel>
-                    </Property>
-                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
-                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
-                    </Property>
-                  </Properties>
-                </Component>
-              </SubComponents>
-            </Container>
             <Component class="javax.swing.JTextField" name="FD_TextFieldEstados">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -458,6 +439,76 @@
                 <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FD_TextFieldEstadosFinais1KeyReleased"/>
               </Events>
             </Component>
+            <Component class="javax.swing.JButton" name="AFD_button_minus">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Noto Sans" size="18" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value=" - "/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AFD_button_minusActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="AFD_button_plus">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Noto Sans" size="18" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value=" + "/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="AFD_button_plusActionPerformed"/>
+              </Events>
+            </Component>
+            <Container class="javax.swing.JScrollPane" name="AFND2_jScrollPane4">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="FDjTable">
+                  <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Noto Sans" size="13" style="0"/>
+                    </Property>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="3" rowCount="0">
+                        <Column editable="true" title="Estado Origem" type="java.lang.Object"/>
+                        <Column editable="true" title="Entrada" type="java.lang.Object"/>
+                        <Column editable="true" title="Estado Destino" type="java.lang.Object"/>
+                      </Table>
+                    </Property>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                      <TableColumnModel selectionModel="0">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                      </TableColumnModel>
+                    </Property>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="FDjTableKeyReleased"/>
+                  </Events>
+                </Component>
+              </SubComponents>
+            </Container>
           </SubComponents>
         </Container>
         <Component class="javax.swing.JLabel" name="FD_ConfigTitulo">

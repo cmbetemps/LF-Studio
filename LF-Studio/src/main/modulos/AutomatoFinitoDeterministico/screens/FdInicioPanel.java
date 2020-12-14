@@ -6,7 +6,13 @@
 package main.modulos.AutomatoFinitoDeterministico.screens;
 
 import java.awt.Font;
-import main.LFStudio;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import main.modulos.AutomatoFinitoDeterministico.FdInjection;
+import main.modulos.AutomatoFinitoDeterministico.controllers.AFDController;
+import main.modulos.AutomatoFinitoDeterministico.domain.AFD;
+import main.modulos.AutomatoFinitoNaoDeterministico.FNDInjection;
+import main.modulos.Commons.FileChooser;
 
 /**
  *
@@ -14,9 +20,14 @@ import main.LFStudio;
  */
 public class FdInicioPanel extends javax.swing.JPanel {
   javax.swing.JPanel JanelaExecucao;
+  FdConfigPanel fdConfigPanel;
+  AFDController controller = new AFDController();
+  FileChooser file = new FileChooser();
 
-  public FdInicioPanel(    javax.swing.JPanel janela){
-    this.JanelaExecucao = janela;
+
+  public FdInicioPanel(JPanel JanelaExecucao, FdConfigPanel fdConfigPanel) {
+   this.JanelaExecucao = JanelaExecucao;
+   this.fdConfigPanel = fdConfigPanel;
     initComponents();
   }
 
@@ -73,6 +84,9 @@ public class FdInicioPanel extends javax.swing.JPanel {
         FD_LabelImportarAutomato.setText("Importar autômato");
         FD_LabelImportarAutomato.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         FD_LabelImportarAutomato.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FD_LabelImportarAutomatoMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 FD_LabelImportarAutomatoMouseEntered(evt);
             }
@@ -148,6 +162,30 @@ public class FdInicioPanel extends javax.swing.JPanel {
     Font f = FD_LabelImportarAutomato.getFont();
     FD_LabelImportarAutomato.setFont(f.deriveFont(f.getStyle(), f.getSize2D()-4));
   }//GEN-LAST:event_FD_LabelImportarAutomatoMouseExited
+
+    private void FD_LabelImportarAutomatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FD_LabelImportarAutomatoMouseClicked
+        String pathAbsolute = file.getPathAbsolute();
+        if(!pathAbsolute.contains(".json")){
+          JOptionPane.showMessageDialog(null, "Formato do Arquivo invalido");
+          return;
+       }
+       try {
+         AFD automato  = controller.instanciationAutomato(pathAbsolute);
+         if(automato != null && pathAbsolute != null){
+             FdInjection.setAutomato(automato);
+             this.fdConfigPanel.carregar();
+               if(FNDInjection.getAutomato()!= null){
+                   LFStudio.cl.show(JanelaExecucao,"fdConfigPanel");
+                   JOptionPane.showMessageDialog(null, "Automato lido com sucesso!!!");
+               }
+         }
+       } catch (Exception ex){
+          JOptionPane.showMessageDialog(null, "Arquivo invalido ou erro na formatação do arquivo");
+          ex.printStackTrace();
+          return;
+       } 
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FD_LabelImportarAutomatoMouseClicked
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel FD_LabelAutomato;

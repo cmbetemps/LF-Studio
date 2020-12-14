@@ -9,9 +9,7 @@ import java.awt.Font;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.Vector;
 import main.LFStudio;
 import main.modulos.AutomatoFinitoNaoDeterministico.controllers.FndController;
@@ -447,7 +445,6 @@ public class FndConfigPanel extends javax.swing.JPanel {
 
         if (estadosLista.containsAll(finaisLista)) {
             if (estadosLista.contains(inicial)) {
-//(JTextField alfabeto, JTextField estadoInicialJ, JTextField estadosJ, JTextField estadosFinaisJ , JTable table) {
                 NaoDeterministico atual = controller.gerarAutomato(
                   FND_TextFieldAlfabeto,
                   FND_TextFieldEstadoInicial,
@@ -483,7 +480,6 @@ public class FndConfigPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_FND_TextFieldEstadosKeyReleased
 
     private void FND_TextFieldEstadosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FND_TextFieldEstadosActionPerformed
-        // TODO add your handling code here:
     }//GEN-LAST:event_FND_TextFieldEstadosActionPerformed
 
     private void FND_TextFieldAlfabetoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FND_TextFieldAlfabetoKeyReleased
@@ -550,7 +546,6 @@ public class FndConfigPanel extends javax.swing.JPanel {
             FND_TextFieldEstadoInicial,FND_TextFieldEstados, 
             FND_TextFieldEstadosFinais,FND_jTable1,
             true);       
-        // TODO add your handling code here:
     }//GEN-LAST:event_FND_SalvarAutomatojlblMouseClicked
 
 

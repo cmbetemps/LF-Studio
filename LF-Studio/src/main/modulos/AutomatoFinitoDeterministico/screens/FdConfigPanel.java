@@ -15,6 +15,7 @@ import main.modulos.AutomatoFinitoDeterministico.controllers.AFDController;
 import main.modulos.AutomatoFinitoDeterministico.validators.AFDValidator;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import main.modulos.AutomatoFinitoDeterministico.domain.AFD;
 import main.layout.CustomTable;
 
@@ -22,16 +23,25 @@ import main.layout.CustomTable;
  * @author michel
  */
 public class FdConfigPanel extends javax.swing.JPanel {
-  javax.swing.JPanel JanelaExecucao;
-  AFDController controller = new AFDController();
-  AFDValidator validator = new AFDValidator();
+    DefaultTableModel tableModel = new DefaultTableModel ();
 
-  public FdConfigPanel(javax.swing.JPanel janela) {
-    this.JanelaExecucao = janela;
-    initComponents();
-  }
+    javax.swing.JPanel JanelaExecucao;
+    AFDController controller = new AFDController();
+    AFDValidator validator = new AFDValidator();
+    public FdConfigPanel(javax.swing.JPanel janela) {
+        this.JanelaExecucao = janela;
+        initComponents();
+        tableModel.addColumn("Estado Atual");
+        tableModel.addColumn("Simbolo ");
+        tableModel.addColumn("Estado Destino");
+        FDjTable.setModel(tableModel); 
+    }
 
-  @SuppressWarnings("unchecked")
+    public void carregar() {
+        controller.setarCampos(FDjTable, FD_TextFieldAlfabeto, FD_TextFieldEstadosFinais1, FD_TextFieldEstadoInicial1, FD_TextFieldEstados);
+    }
+
+    @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -48,11 +58,13 @@ public class FdConfigPanel extends javax.swing.JPanel {
         FD_LabelEstadoInicial1 = new javax.swing.JLabel();
         FD_LabelTabelaTransicao1 = new javax.swing.JLabel();
         FD_TextFieldAlfabeto = new javax.swing.JTextField();
-        FD_jScrollPane = new javax.swing.JScrollPane();
-        FD_jTable = new javax.swing.JTable();
         FD_TextFieldEstados = new javax.swing.JTextField();
         FD_TextFieldEstadoInicial1 = new javax.swing.JTextField();
         FD_TextFieldEstadosFinais1 = new javax.swing.JTextField();
+        AFD_button_minus = new javax.swing.JButton();
+        AFD_button_plus = new javax.swing.JButton();
+        AFND2_jScrollPane4 = new javax.swing.JScrollPane();
+        FDjTable = new javax.swing.JTable();
         FD_ConfigTitulo = new javax.swing.JLabel();
         FD_ConfigSubTitulo = new javax.swing.JLabel();
         FD_salvarAutomatoBtn = new javax.swing.JLabel();
@@ -201,18 +213,6 @@ public class FdConfigPanel extends javax.swing.JPanel {
             }
         });
 
-        FD_jTable.setFont(new java.awt.Font("Noto Sans", 0, 13)); // NOI18N
-        FD_jTable.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Estados"
-            }
-        ));
-        FD_jTable.setToolTipText("<html>\nTabela utilizada para expressar todas as transições existentes, as transições\nseguem o seguinte modelo:<br>   | Estados (linhas da coluna 0) x Alfabeto (colunas) = estados para o qual pode ir, para dado alfabeto |\n<br>\nExemplo de Input: (linha) ('l') (coluna) ('0') = 'l' |  Existe uma transição saindo do estado 'l', utilizando '0' como alfabeto para transição, vai para o estado 'l'\n</html>");
-        FD_jScrollPane.setViewportView(FD_jTable);
-
         FD_TextFieldEstados.setFont(new java.awt.Font("Noto Sans", 0, 13)); // NOI18N
         FD_TextFieldEstados.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         FD_TextFieldEstados.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -247,15 +247,49 @@ public class FdConfigPanel extends javax.swing.JPanel {
             }
         });
 
+        AFD_button_minus.setFont(new java.awt.Font("Noto Sans", 1, 18)); // NOI18N
+        AFD_button_minus.setText(" - ");
+        AFD_button_minus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AFD_button_minusActionPerformed(evt);
+            }
+        });
+
+        AFD_button_plus.setFont(new java.awt.Font("Noto Sans", 1, 18)); // NOI18N
+        AFD_button_plus.setText(" + ");
+        AFD_button_plus.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AFD_button_plusActionPerformed(evt);
+            }
+        });
+
+        FDjTable.setFont(new java.awt.Font("Noto Sans", 0, 13)); // NOI18N
+        FDjTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Estado Origem", "Entrada", "Estado Destino"
+            }
+        ));
+        FDjTable.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                FDjTableKeyReleased(evt);
+            }
+        });
+        AFND2_jScrollPane4.setViewportView(FDjTable);
+
         javax.swing.GroupLayout FD_BodyConfigLayout = new javax.swing.GroupLayout(FD_BodyConfig);
         FD_BodyConfig.setLayout(FD_BodyConfigLayout);
         FD_BodyConfigLayout.setHorizontalGroup(
             FD_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(FD_BodyConfigLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(FD_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(FD_jScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 589, Short.MAX_VALUE)
+                .addGroup(FD_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(FD_BodyConfigLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(AFND2_jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 593, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(FD_BodyConfigLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
                         .addGroup(FD_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FD_BodyConfigLayout.createSequentialGroup()
                                 .addComponent(FD_LabelAlfabeto)
@@ -271,8 +305,15 @@ public class FdConfigPanel extends javax.swing.JPanel {
                             .addComponent(FD_TextFieldEstadosFinais1, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(FD_TextFieldEstadoInicial1, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(FD_TextFieldEstados, javax.swing.GroupLayout.Alignment.TRAILING)))
-                    .addComponent(FD_LabelTabelaTransicao1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(10, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, FD_BodyConfigLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(AFD_button_minus, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(80, 80, 80)
+                        .addComponent(FD_LabelTabelaTransicao1)
+                        .addGap(74, 74, 74)
+                        .addComponent(AFD_button_plus, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(66, 66, 66)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         FD_BodyConfigLayout.setVerticalGroup(
             FD_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -293,11 +334,14 @@ public class FdConfigPanel extends javax.swing.JPanel {
                 .addGroup(FD_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(FD_LabelEstados)
                     .addComponent(FD_TextFieldEstados, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(41, 41, 41)
+                .addGroup(FD_BodyConfigLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(FD_LabelTabelaTransicao1)
+                    .addComponent(AFD_button_plus)
+                    .addComponent(AFD_button_minus))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(FD_LabelTabelaTransicao1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(FD_jScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(AFND2_jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 155, Short.MAX_VALUE)
+                .addGap(21, 21, 21))
         );
 
         FD_BodyConfigLayout.linkSize(javax.swing.SwingConstants.VERTICAL, new java.awt.Component[] {FD_TextFieldAlfabeto, FD_TextFieldEstadoInicial1, FD_TextFieldEstados, FD_TextFieldEstadosFinais1});
@@ -368,7 +412,7 @@ public class FdConfigPanel extends javax.swing.JPanel {
                                     .addComponent(FD_salvarAutomatoBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addComponent(FD_ConfigSubTitulo)
                             .addComponent(FD_BodyConfig, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(209, Short.MAX_VALUE))
+                .addContainerGap(197, Short.MAX_VALUE))
         );
         FDAutomatoLayout.setVerticalGroup(
             FDAutomatoLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -407,13 +451,13 @@ public class FdConfigPanel extends javax.swing.JPanel {
   }//GEN-LAST:event_FD_TextFieldAlfabetoActionPerformed
 
   private void FD_TextFieldAlfabetoKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FD_TextFieldAlfabetoKeyReleased
-            if (FD_TextFieldAlfabeto.getText().charAt(FD_TextFieldAlfabeto.getText().length() - 1) != ',') {
-            if (evt.getKeyCode() != KeyEvent.VK_BACK_SPACE) {
-                FD_TextFieldAlfabeto.setText(FD_TextFieldAlfabeto.getText() + ",");
-            }
-        }
-      CustomTable tableModel = controller.insertTabela(validator.separarPorVirgula(FD_TextFieldEstados), validator.separarPorVirgula(FD_TextFieldAlfabeto));
-    FD_jTable.setModel(tableModel);
+      if (FD_TextFieldAlfabeto.getText().charAt(FD_TextFieldAlfabeto.getText().length() - 1) != ',') {
+          if (evt.getKeyCode() != KeyEvent.VK_BACK_SPACE) {
+              FD_TextFieldAlfabeto.setText(FD_TextFieldAlfabeto.getText() + ",");
+          }
+      }
+//      CustomTable tableModel = controller.insertTabela(validator.separarPorVirgula(FD_TextFieldEstados), validator.separarPorVirgula(FD_TextFieldAlfabeto));
+//      FDjTable.setModel(tableModel);
   }//GEN-LAST:event_FD_TextFieldAlfabetoKeyReleased
 
   private void FD_TextFieldEstadoInicial1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FD_TextFieldEstadoInicial1ActionPerformed
@@ -423,82 +467,72 @@ public class FdConfigPanel extends javax.swing.JPanel {
   }//GEN-LAST:event_FD_TextFieldEstadosFinais1ActionPerformed
 
   private void FD_salvarAutomatoBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FD_salvarAutomatoBtnMouseClicked
+      controller.gerarAutomato(FD_TextFieldAlfabeto.getText().replaceAll(",", ""),
+              FD_TextFieldEstadoInicial1.getText(), FD_TextFieldEstados.getText(),
+              FD_TextFieldEstadosFinais1.getText(), FDjTable,
+              true);
   }//GEN-LAST:event_FD_salvarAutomatoBtnMouseClicked
 
   private void FD_processarAutomatoBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FD_processarAutomatoBtnMouseClicked
-            String[] estados = FD_TextFieldEstados.getText().split(",");
-        String inicial = FD_TextFieldEstadoInicial1.getText();
-        String[] finais = FD_TextFieldEstadosFinais1.getText().split(",");
-        List<String> estadosLista = new ArrayList<String>();
-        List<String> finaisLista = new ArrayList<String>();
-        Collections.addAll(estadosLista,estados);
-        Collections.addAll(finaisLista,finais);
-        if(estadosLista.containsAll(finaisLista)){
-            if(estadosLista.contains(inicial)){
-      try{
-      AFD automato = controller.gerarAutomato(
-        FD_TextFieldAlfabeto.getText(), FD_jTable, FD_LabelEstadoInicial1.getText(), FD_TextFieldEstadosFinais1.getText()
-      );
-      if(controller.processarAutomato(automato) == true){
-        LFStudio.cl.show(JanelaExecucao, "fdProcessamentoPanel");
+      String[] estados = FD_TextFieldEstados.getText().split(",");
+      String inicial = FD_TextFieldEstadoInicial1.getText();
+      String[] finais = FD_TextFieldEstadosFinais1.getText().split(",");
+      List<String> estadosLista = new ArrayList<String>();
+      List<String> finaisLista = new ArrayList<String>();
+      Collections.addAll(estadosLista, estados);
+      Collections.addAll(finaisLista, finais);
+      if (estadosLista.containsAll(finaisLista)) {
+          if (estadosLista.contains(inicial)) {
+              try {
+                  AFD automato = controller.gerarAutomato(
+                          FD_TextFieldAlfabeto.getText(), FDjTable, FD_LabelEstadoInicial1.getText(), FD_TextFieldEstadosFinais1.getText()
+                  );
+                  if (controller.processarAutomato(automato) == true) {
+                      LFStudio.cl.show(JanelaExecucao, "fdProcessamentoPanel");
+                  }
+              } catch (Exception e) {
+                  JOptionPane.showMessageDialog(null, e.getMessage());
+              }
+          }
       }
-    } catch (Exception e){
-      JOptionPane.showMessageDialog(null, e.getMessage());
-    }
-                
-            }
-        } 
 
   }//GEN-LAST:event_FD_processarAutomatoBtnMouseClicked
 
   private void FD_salvarAutomatoBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FD_salvarAutomatoBtnMouseEntered
-    FD_salvarAutomatoBtn.setBackground(FD_salvarAutomatoBtn.getBackground().brighter().brighter());
+      FD_salvarAutomatoBtn.setBackground(FD_salvarAutomatoBtn.getBackground().brighter().brighter());
   }//GEN-LAST:event_FD_salvarAutomatoBtnMouseEntered
 
   private void FD_salvarAutomatoBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FD_salvarAutomatoBtnMouseExited
-    FD_salvarAutomatoBtn.setBackground(FD_salvarAutomatoBtn.getBackground().darker().darker());
+      FD_salvarAutomatoBtn.setBackground(FD_salvarAutomatoBtn.getBackground().darker().darker());
   }//GEN-LAST:event_FD_salvarAutomatoBtnMouseExited
 
   private void FD_processarAutomatoBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FD_processarAutomatoBtnMouseEntered
     FD_processarAutomatoBtn.setBackground(FD_processarAutomatoBtn.getBackground().brighter().brighter());    }//GEN-LAST:event_FD_processarAutomatoBtnMouseEntered
 
   private void FD_processarAutomatoBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FD_processarAutomatoBtnMouseExited
-    FD_processarAutomatoBtn.setBackground(FD_processarAutomatoBtn.getBackground().darker().darker());
+      FD_processarAutomatoBtn.setBackground(FD_processarAutomatoBtn.getBackground().darker().darker());
   }//GEN-LAST:event_FD_processarAutomatoBtnMouseExited
 
   private void FD_TextFieldEstadosKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FD_TextFieldEstadosKeyReleased
-                if (FD_TextFieldEstados.getText().charAt(FD_TextFieldEstados.getText().length() - 1) != ',') {
-            if (evt.getKeyCode() != KeyEvent.VK_BACK_SPACE) {
-                FD_TextFieldEstados.setText(FD_TextFieldEstados.getText() + ",");
-            }
-        }
-      CustomTable tableModel = controller.insertTabela(validator.separarPorVirgula( FD_TextFieldEstados), validator.separarPorVirgula( FD_TextFieldAlfabeto));
-    FD_jTable.setModel(tableModel);
+      
+//      FDjTable.setModel(tableModel);
   }//GEN-LAST:event_FD_TextFieldEstadosKeyReleased
 
     private void FD_TextFieldEstadosFinais1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FD_TextFieldEstadosFinais1KeyReleased
-                 if (FD_TextFieldEstadosFinais1.getText().charAt(FD_TextFieldEstadosFinais1.getText().length() - 1) != ',') {
-            if (evt.getKeyCode() != KeyEvent.VK_BACK_SPACE) {
-                FD_TextFieldEstadosFinais1.setText(FD_TextFieldEstadosFinais1.getText() + ",");
-            }
-        }
+
     }//GEN-LAST:event_FD_TextFieldEstadosFinais1KeyReleased
 
     private void FD_TextFieldEstadoInicial1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FD_TextFieldEstadoInicial1KeyReleased
-                if (FD_TextFieldEstadoInicial1.getText().charAt(FD_TextFieldEstadoInicial1.getText().length() - 1) != ',') {
-            if (evt.getKeyCode() != KeyEvent.VK_BACK_SPACE) {
-                FD_TextFieldEstadoInicial1.setText(FD_TextFieldEstadoInicial1.getText() + ",");
-            }
-        }
+
     }//GEN-LAST:event_FD_TextFieldEstadoInicial1KeyReleased
 
     private void FD_LabelTabelaTransicao1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FD_LabelTabelaTransicao1MouseClicked
-     JdialogTabelaExternaAFD.setVisible(true);
-        jTable1.setModel(FD_jTable.getModel());
+        JdialogTabelaExternaAFD.setVisible(true);
+        jTable1.setModel(FDjTable.getModel());
     }//GEN-LAST:event_FD_LabelTabelaTransicao1MouseClicked
 
     private void jTable1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTable1KeyReleased
-        FD_jTable.setModel(jTable1.getModel());
+        FDjTable.setModel(jTable1.getModel());
     }//GEN-LAST:event_jTable1KeyReleased
 
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
@@ -516,16 +550,33 @@ public class FdConfigPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_jLabel1MouseExited
 
     private void FD_LabelTabelaTransicao1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FD_LabelTabelaTransicao1MouseEntered
-          Font f = FD_LabelTabelaTransicao1.getFont();
+        Font f = FD_LabelTabelaTransicao1.getFont();
         FD_LabelTabelaTransicao1.setFont(f.deriveFont(f.getStyle(), f.getSize2D() + 4));
     }//GEN-LAST:event_FD_LabelTabelaTransicao1MouseEntered
 
     private void FD_LabelTabelaTransicao1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FD_LabelTabelaTransicao1MouseExited
-       Font f = FD_LabelTabelaTransicao1.getFont();
+        Font f = FD_LabelTabelaTransicao1.getFont();
         FD_LabelTabelaTransicao1.setFont(f.deriveFont(f.getStyle(), f.getSize2D() - 4));
     }//GEN-LAST:event_FD_LabelTabelaTransicao1MouseExited
 
+    private void AFD_button_minusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AFD_button_minusActionPerformed
+     if(tableModel.getRowCount() > 0)
+        tableModel.removeRow(tableModel.getRowCount()-1);
+    }//GEN-LAST:event_AFD_button_minusActionPerformed
+
+    private void AFD_button_plusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AFD_button_plusActionPerformed
+        tableModel.addRow(new Object[]{});
+        
+    }//GEN-LAST:event_AFD_button_plusActionPerformed
+
+    private void FDjTableKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FDjTableKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_FDjTableKeyReleased
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton AFD_button_minus;
+    private javax.swing.JButton AFD_button_plus;
+    private javax.swing.JScrollPane AFND2_jScrollPane4;
     private javax.swing.JPanel FDAutomato;
     private javax.swing.JPanel FD_BodyConfig;
     private javax.swing.JLabel FD_ConfigSubTitulo;
@@ -539,16 +590,14 @@ public class FdConfigPanel extends javax.swing.JPanel {
     private javax.swing.JTextField FD_TextFieldEstadoInicial1;
     private javax.swing.JTextField FD_TextFieldEstados;
     private javax.swing.JTextField FD_TextFieldEstadosFinais1;
-    private javax.swing.JScrollPane FD_jScrollPane;
-    private javax.swing.JTable FD_jTable;
     private javax.swing.JLabel FD_processarAutomatoBtn;
     private javax.swing.JLabel FD_salvarAutomatoBtn;
+    private javax.swing.JTable FDjTable;
     private javax.swing.JDialog JdialogTabelaExternaAFD;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
-
 
 }

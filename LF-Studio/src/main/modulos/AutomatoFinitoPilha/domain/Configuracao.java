@@ -1,6 +1,6 @@
 package main.modulos.AutomatoFinitoPilha.domain;
 
-public class Configuração {
+public class Configuracao {
     String[] transição;
     Estado estado;
     Fita fita;
@@ -13,7 +13,7 @@ public class Configuração {
      * @param fita fita atual
      * @param pilha pilha atual
      **/
-    public Configuração(String[] transição, Estado estado, Fita fita, Pilha pilha) {
+    public Configuracao(String[] transição, Estado estado, Fita fita, Pilha pilha) {
         this.transição = transição;
         this.estado = new Estado(estado);
         this.fita = new Fita(fita);
@@ -22,14 +22,14 @@ public class Configuração {
     }
 
     /** Construtor de cópia
-     * @param configuração objeto a ser copiado
+     * @param configuracao objeto a ser copiado
      * @return a cópia do objeto
      **/
-    public Configuração(Configuração configuração) {
-        this.estado = new Estado(configuração.estado);
-        this.fita = new Fita(configuração.fita);
-        this.pilha = new Pilha(configuração.pilha);
-        this.reconhecido = configuração.reconhecido;
+    public Configuracao(Configuracao configuracao) {
+        this.estado = new Estado(configuracao.estado);
+        this.fita = new Fita(configuracao.fita);
+        this.pilha = new Pilha(configuracao.pilha);
+        this.reconhecido = configuracao.reconhecido;
     }
 
     @Override

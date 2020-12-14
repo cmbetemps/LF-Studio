@@ -266,21 +266,21 @@
                               <EmptySpace min="0" pref="1" max="32767" attributes="0"/>
                               <Group type="103" groupAlignment="1" attributes="0">
                                   <Component id="AFND2_jScrollPane4" min="-2" pref="593" max="-2" attributes="0"/>
-                                  <Component id="r_sip1" min="-2" pref="405" max="-2" attributes="0"/>
-                                  <Component id="r_ei1" alignment="1" min="-2" pref="405" max="-2" attributes="0"/>
+                                  <Component id="EstadosJText" min="-2" pref="405" max="-2" attributes="0"/>
+                                  <Component id="EstadoInicialJText" alignment="1" min="-2" pref="405" max="-2" attributes="0"/>
                                   <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="r_ap1" alignment="1" pref="405" max="32767" attributes="0"/>
-                                      <Component id="r_ea1" alignment="1" max="32767" attributes="0"/>
+                                      <Component id="AlfabetoDaPilhaJText" alignment="1" pref="405" max="32767" attributes="0"/>
+                                      <Component id="EstadosFinaisJText" alignment="1" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                                  <Component id="t_sip1" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="t_ei1" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="t_ea1" alignment="0" max="32767" attributes="0"/>
-                                  <Component id="t_ap1" alignment="0" pref="169" max="32767" attributes="0"/>
-                                  <Component id="t_a1" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="label_estados" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="label_estadoInicial" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="label_estadosFinais" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="label_alfabetoDaPilha" alignment="0" pref="169" max="32767" attributes="0"/>
+                                  <Component id="label_alfabeto" alignment="0" max="32767" attributes="0"/>
                                   <Group type="102" alignment="1" attributes="0">
                                       <Component id="afp_button_minus" min="-2" pref="54" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
@@ -289,11 +289,11 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="r_a1" max="32767" attributes="0"/>
+                                      <Component id="AlfabetoJText" max="32767" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="t_tra1" min="-2" pref="247" max="-2" attributes="0"/>
+                                      <Component id="label_tabelaTransicoes" min="-2" pref="247" max="-2" attributes="0"/>
                                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                       <Component id="afp_button_plus" min="-2" pref="57" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
@@ -310,32 +310,32 @@
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="t_a1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="r_a1" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="label_alfabeto" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="AlfabetoJText" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="t_ap1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="r_ap1" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="label_alfabetoDaPilha" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="AlfabetoDaPilhaJText" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="t_ea1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="r_ea1" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="label_estadosFinais" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="EstadosFinaisJText" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="t_ei1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="r_ei1" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="label_estadoInicial" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="EstadoInicialJText" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="r_sip1" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                          <Component id="t_sip1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="EstadosJText" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="label_estados" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="t_tra1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="label_tabelaTransicoes" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="afp_button_plus" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="afp_button_minus" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -347,7 +347,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="t_tra1">
+            <Component class="javax.swing.JLabel" name="label_tabelaTransicoes">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="33" red="33" type="rgb"/>
@@ -362,12 +362,12 @@
                 <Property name="text" type="java.lang.String" value="Tabela de Transi&#xe7;&#xf5;es"/>
               </Properties>
               <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="t_tra1MouseClicked"/>
-                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="t_tra1MouseEntered"/>
-                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="t_tra1MouseExited"/>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="label_tabelaTransicoesMouseClicked"/>
+                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="label_tabelaTransicoesMouseEntered"/>
+                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="label_tabelaTransicoesMouseExited"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="t_ea1">
+            <Component class="javax.swing.JLabel" name="label_estadosFinais">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="33" red="33" type="rgb"/>
@@ -382,7 +382,7 @@
                 <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#xa;Estados que levam ao reconhecimento de dada String de entrada, pode existir mais de um estado final&#xa;&lt;br&gt;&#xa;Exemplo de Input: &quot;q&quot;&#xa;&lt;/html&gt;"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="t_ei1">
+            <Component class="javax.swing.JLabel" name="label_estadoInicial">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="33" red="33" type="rgb"/>
@@ -397,7 +397,7 @@
                 <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#xa;Ponto de partida do referido aut&#xf4;mato, s&#xf3; um estado inicial pode existir&#xa;&lt;br&gt;&#xa;Exemplo de Input: &quot;p&quot;&#xa;&lt;/html&gt;"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="t_ap1">
+            <Component class="javax.swing.JLabel" name="label_alfabetoDaPilha">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="33" red="33" type="rgb"/>
@@ -412,7 +412,7 @@
                 <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#xa;Elementos que constituem o alfabeto da pilha,podem ou n&#xe3;o ser utilizados em uma transi&#xe7;&#xe3;o (n&#xe3;o pode estar vazio)&#xa;&lt;br&gt;&#xa;Exemplo de Input: &quot;A&quot;&#xa;&lt;/html&gt;"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="t_a1">
+            <Component class="javax.swing.JLabel" name="label_alfabeto">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="33" red="33" type="rgb"/>
@@ -427,7 +427,7 @@
                 <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#xa;Elementos que constituem o alfabeto do aut&#xf4;mato, s&#xe3;o utilizados como &quot;meio&quot; de transi&#xe7;&#xe3;o para uma transi&#xe7;&#xe3;o qualquer&#xa;em conjunto com o alfabeto da pilha&#xa;&lt;br&gt;&#xa;Exemplo de Input: &quot;a,b&quot;&#xa;&lt;/html&gt;"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="r_ei1">
+            <Component class="javax.swing.JTextField" name="EstadoInicialJText">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Noto Sans" size="13" style="0"/>
@@ -438,10 +438,10 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="r_eiActionPerformed"/>
-                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="r_ei1KeyReleased"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="EstadoInicialJTextKeyReleased"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="r_a1">
+            <Component class="javax.swing.JTextField" name="AlfabetoJText">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Noto Sans" size="13" style="0"/>
@@ -452,10 +452,10 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="r_aActionPerformed"/>
-                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="r_a1KeyReleased"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="AlfabetoJTextKeyReleased"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="r_ap1">
+            <Component class="javax.swing.JTextField" name="AlfabetoDaPilhaJText">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Noto Sans" size="13" style="0"/>
@@ -466,10 +466,10 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="r_apActionPerformed"/>
-                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="r_ap1KeyReleased"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="AlfabetoDaPilhaJTextKeyReleased"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="r_ea1">
+            <Component class="javax.swing.JTextField" name="EstadosFinaisJText">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Noto Sans" size="13" style="0"/>
@@ -480,10 +480,10 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="r_eaActionPerformed"/>
-                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="r_ea1KeyReleased"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="EstadosFinaisJTextKeyReleased"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="r_sip1">
+            <Component class="javax.swing.JTextField" name="EstadosJText">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Noto Sans" size="13" style="0"/>
@@ -494,10 +494,10 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="r_sipActionPerformed"/>
-                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="r_sip1KeyReleased"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="EstadosJTextKeyReleased"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="t_sip1">
+            <Component class="javax.swing.JLabel" name="label_estados">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="33" red="33" type="rgb"/>

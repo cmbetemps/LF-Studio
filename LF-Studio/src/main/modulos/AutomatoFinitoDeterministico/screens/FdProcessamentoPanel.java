@@ -5,7 +5,7 @@
  */
 package main.modulos.AutomatoFinitoDeterministico.screens;
 
-import main.modulos.AutomatoFinitoDeterministico.InjectionFd;
+import main.modulos.AutomatoFinitoDeterministico.FdInjection;
 
 /**
  *
