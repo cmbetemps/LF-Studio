@@ -15,6 +15,7 @@ import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import main.modulos.AutomatoFinitoNaoDeterministico.screens.FNDInjection;
 import main.modulos.AutomatoFinitoNaoDeterministico.domain.NaoDeterministico;
+import main.modulos.AutomatoFinitoPilha.domain.AutomatoDePilha;
 import main.modulos.Commons.FileChooser;
 import main.modulos.Commons.JsonFormatter;
 

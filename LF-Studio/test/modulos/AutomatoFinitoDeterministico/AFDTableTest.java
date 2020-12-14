@@ -63,9 +63,5 @@ public class AFDTableTest {
         estadoInicial = null;
     }
 
-    @Test
-    public void insertAutomato() throws Exception {
-        AFD automato = controller.gerarAutomato(alfabeto, FD_jTable, estadoInicial, estadosFinais);
-        assertNotNull( "Deve retornar uma instancia de Automato",  automato);
-    }
+
 }
