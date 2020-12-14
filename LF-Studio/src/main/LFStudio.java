@@ -105,9 +105,9 @@ public class LFStudio extends javax.swing.JFrame {
     }
      
     void initPanels(){
+        setFndConfigPanel();
         setFndInicioPanel();
         setFndProcessamentoPanel();
-        setFndConfigPanel();
         setFdConfigPanel();
         setFdInicioPanel();
         setFdProcessamentoPanel();
