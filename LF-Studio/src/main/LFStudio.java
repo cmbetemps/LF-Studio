@@ -11,10 +11,13 @@ import java.awt.Color;
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
-import javax.swing.JInternalFrame;
+
 import main.modulos.AutomatoFinitoDeterministico.screens.FdConfigPanel;
 import main.modulos.AutomatoFinitoDeterministico.screens.FdInicioPanel;
+import main.modulos.AutomatoFinitoDeterministico.screens.FdProcessamentoPanel;
 import main.modulos.AutomatoFinitoNaoDeterministico.screens.FndConfigPanel;
+import main.modulos.AutomatoFinitoNaoDeterministico.screens.FndInicioPanel;
+import main.modulos.AutomatoFinitoNaoDeterministico.screens.FndProcessamentoPanel;
 import main.modulos.AutomatoFinitoPilha.screens.PilhaConfigPanel;
 import main.modulos.AutomatoFinitoPilha.screens.PilhaInicioPanel;
 import main.modulos.AutomatoFinitoPilha.screens.PilhaProcessamentoPanel;
