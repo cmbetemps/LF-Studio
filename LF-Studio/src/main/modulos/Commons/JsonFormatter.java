@@ -9,8 +9,6 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import java.io.FileNotFoundException;
 import main.modulos.AutomatoFinitoDeterministico.domain.AFD;
-import main.modulos.AutomatoFinitoNaoDeterministico.domain.Automato;
-import main.modulos.AutomatoFinitoNaoDeterministico.domain.FNDMap;
 import main.modulos.AutomatoFinitoNaoDeterministico.domain.NaoDeterministico;
 import main.modulos.AutomatoFinitoPilha.domain.AutomatoDePilha;
 
