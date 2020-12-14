@@ -5,9 +5,8 @@
  */
 package modulos.AutomatoFinitoDeterministico.controllers;
 
-import main.layout.CustomTable;
-import main.modulos.AutomatoFinitoDeterministico.controllers.AutomatoFinitoController;
-import main.modulos.AutomatoFinitoDeterministico.domain.model.AFD;
+import main.modulos.AutomatoFinitoDeterministico.controllers.AFDController;
+import main.modulos.AutomatoFinitoDeterministico.domain.AFD;
 import main.modulos.AutomatoFinitoDeterministico.validators.AFDValidator;
 import org.junit.After;
 import org.junit.Before;
@@ -27,13 +26,13 @@ public class AutomatoFinitoTest {
     javax.swing.JTable FD_jTable;
     String header [], estados [];
     String estadoInicial, alfabeto , estadosFinais;
-    AutomatoFinitoController controller;
+    AFDController controller;
 
     @Before
     public void setup() {
 
         validator  = new AFDValidator();
-        controller = new AutomatoFinitoController();
+        controller = new AFDController();
         FD_jTable  = new JTable();
 
         alfabeto ="0,1";
