@@ -5,11 +5,16 @@
  */
 package view;
 
+import java.io.BufferedWriter;
+import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -17,17 +22,30 @@ import javax.swing.table.DefaultTableModel;
  * @author andrelise
  */
 public class TelaConfiguracao extends javax.swing.JFrame {
-
+    
     /**
      * Creates new form TelaConfiguracao
      */
     public TelaConfiguracao() {
         initComponents();
-        model1 = (DefaultTableModel) jTable1.getModel();
-        setLocationRelativeTo(null); 
+        model1 = (DefaultTableModel) tabelaTrans.getModel();
+        setLocationRelativeTo(null);
+        //torna icones de erros invisíveis
+        //conj estados = erroConjFinais
+        erroConjFinais.setVisible(false);
+        //alfabeto = erroAlfabeto
+        erroAlfabeto.setVisible(false);
+        //estado inicial = erroEInicial
+        erroEInicial.setVisible(false);
+        //estado final = erroEFinal
+        erroEFinal.setVisible(false);
+        //tamanho da tabela e tabela vazia = erroFuncTrans
+        erroFuncTrans.setVisible(false);
+
     }
-    
+
     public DefaultTableModel model1;
+    public File pathFile;
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -55,12 +73,17 @@ public class TelaConfiguracao extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tabelaTrans = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jLabel22 = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         estadoFinal = new javax.swing.JTextField();
+        erroEInicial = new javax.swing.JLabel();
+        erroConjFinais = new javax.swing.JLabel();
+        erroFuncTrans = new javax.swing.JLabel();
+        erroAlfabeto = new javax.swing.JLabel();
+        erroEFinal = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(1024, 700));
@@ -91,6 +114,11 @@ public class TelaConfiguracao extends javax.swing.JFrame {
         btnSalvar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 btnSalvarMouseClicked(evt);
+            }
+        });
+        btnSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSalvarActionPerformed(evt);
             }
         });
 
@@ -161,7 +189,7 @@ public class TelaConfiguracao extends javax.swing.JFrame {
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel15.setText("Funções de transições");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tabelaTrans.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null}
             },
@@ -177,9 +205,9 @@ public class TelaConfiguracao extends javax.swing.JFrame {
                 return types [columnIndex];
             }
         });
-        jTable1.setAutoscrolls(false);
-        jTable1.setEditingRow(1);
-        jScrollPane1.setViewportView(jTable1);
+        tabelaTrans.setAutoscrolls(false);
+        tabelaTrans.setEditingRow(1);
+        jScrollPane1.setViewportView(tabelaTrans);
 
         jButton1.setText("+");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -221,6 +249,27 @@ public class TelaConfiguracao extends javax.swing.JFrame {
             }
         });
 
+        erroEInicial.setFont(new java.awt.Font("Open Sans Condensed", 0, 18)); // NOI18N
+        erroEInicial.setForeground(new java.awt.Color(255, 0, 0));
+        erroEInicial.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/erroY.png"))); // NOI18N
+
+        erroConjFinais.setFont(new java.awt.Font("Open Sans Condensed", 0, 18)); // NOI18N
+        erroConjFinais.setForeground(new java.awt.Color(255, 0, 0));
+        erroConjFinais.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/erroY.png"))); // NOI18N
+        erroConjFinais.setDisabledIcon(null);
+
+        erroFuncTrans.setFont(new java.awt.Font("Open Sans Condensed", 0, 18)); // NOI18N
+        erroFuncTrans.setForeground(new java.awt.Color(255, 0, 0));
+        erroFuncTrans.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/erroY.png"))); // NOI18N
+
+        erroAlfabeto.setFont(new java.awt.Font("Open Sans Condensed", 0, 18)); // NOI18N
+        erroAlfabeto.setForeground(new java.awt.Color(255, 0, 0));
+        erroAlfabeto.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/erroY.png"))); // NOI18N
+
+        erroEFinal.setFont(new java.awt.Font("Open Sans Condensed", 0, 18)); // NOI18N
+        erroEFinal.setForeground(new java.awt.Color(255, 0, 0));
+        erroEFinal.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/erroY.png"))); // NOI18N
+
         javax.swing.GroupLayout telaInternaPrincLayout = new javax.swing.GroupLayout(telaInternaPrinc);
         telaInternaPrinc.setLayout(telaInternaPrincLayout);
         telaInternaPrincLayout.setHorizontalGroup(
@@ -258,14 +307,22 @@ public class TelaConfiguracao extends javax.swing.JFrame {
                                     .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                             .addGroup(telaInternaPrincLayout.createSequentialGroup()
                                 .addComponent(estadoInicial, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(65, 65, 65)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(erroEInicial)
+                                .addGap(21, 21, 21)
                                 .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jLabel23, javax.swing.GroupLayout.DEFAULT_SIZE, 118, Short.MAX_VALUE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(estadoFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(alfabeto))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addGap(18, 18, 18)
+                        .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(erroConjFinais)
+                            .addComponent(erroAlfabeto)
+                            .addComponent(erroEFinal)
+                            .addComponent(erroFuncTrans))
+                        .addContainerGap(94, Short.MAX_VALUE))))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaInternaPrincLayout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnSalvar)
@@ -288,45 +345,60 @@ public class TelaConfiguracao extends javax.swing.JFrame {
                         .addComponent(jLabel3)
                         .addGap(27, 27, 27))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaInternaPrincLayout.createSequentialGroup()
-                        .addComponent(conjEstados, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(40, 40, 40)))
-                .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(telaInternaPrincLayout.createSequentialGroup()
-                        .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(alfabeto, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(40, 40, 40)
+                        .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(erroConjFinais)
+                            .addComponent(conjEstados, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(28, 28, 28)))
+                .addGap(20, 20, 20)
                 .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(erroAlfabeto)
                     .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(estadoInicial, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGroup(telaInternaPrincLayout.createSequentialGroup()
-                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jLabel13)))
-                    .addComponent(estadoFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(telaInternaPrincLayout.createSequentialGroup()
-                        .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel23)))
-                .addGap(40, 40, 40)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(alfabeto, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(telaInternaPrincLayout.createSequentialGroup()
+                        .addGap(42, 42, 42)
+                        .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(telaInternaPrincLayout.createSequentialGroup()
+                                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(jLabel13))
+                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(erroEInicial)
+                                    .addComponent(estadoInicial, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addGroup(telaInternaPrincLayout.createSequentialGroup()
+                                .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel23)))
+                        .addGap(40, 40, 40))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaInternaPrincLayout.createSequentialGroup()
+                        .addGap(22, 22, 22)
+                        .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(erroEFinal)
+                            .addComponent(estadoFinal, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(48, 48, 48)))
+                .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(telaInternaPrincLayout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton2))
                     .addGroup(telaInternaPrincLayout.createSequentialGroup()
                         .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(telaInternaPrincLayout.createSequentialGroup()
                                 .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabel15))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(erroFuncTrans))
                         .addGap(34, 34, 34)
                         .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnSalvar)
-                            .addComponent(btnExec)))
-                    .addGroup(telaInternaPrincLayout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2)))
-                .addGap(59, 59, 59))
+                            .addComponent(btnExec))))
+                .addContainerGap())
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -337,7 +409,9 @@ public class TelaConfiguracao extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(telaInternaPrinc, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(telaInternaPrinc, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -349,8 +423,8 @@ public class TelaConfiguracao extends javax.swing.JFrame {
 
     private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
         // TODO add your handling code here:
-        if(model1.getRowCount()-1 > 0){
-            model1.removeRow(model1.getRowCount()-1);
+        if (model1.getRowCount() - 1 > 0) {
+            model1.removeRow(model1.getRowCount() - 1);
         }
     }//GEN-LAST:event_jButton2MouseClicked
 
@@ -377,23 +451,69 @@ public class TelaConfiguracao extends javax.swing.JFrame {
 
     private void btnExecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExecActionPerformed
         // TODO add your handling code here:
-        new TelaExecucao().setVisible(true);
-        this.setVisible(false);
-    }//GEN-LAST:event_btnExecActionPerformed
 
-    private void btnSalvarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalvarMouseClicked
-        // TODO add your handling code here:
+        String conjuntoEstados = conjEstados.getText();
+        String simbAlfabeto = alfabeto.getText();
+        String eInicial = estadoInicial.getText();
+        String eFinal = estadoFinal.getText();
+        int tamTable = tabelaTrans.getRowCount();
+
+        System.out.println("Conjunto de estados: " + conjuntoEstados);
+        System.out.println("Alfabeto: " + simbAlfabeto);
+        System.out.println("Estado inicial: " + eInicial);
+        System.out.println("Estado final: " + eFinal);
+        
+        System.out.println("Tamanho da tabela é:" + tamTable);
+        System.out.println(tabelaTrans.getValueAt(0, 0));
+
+        //Colocar if em cada um dos casos de erro
+        //torna icones de erros visíveis        
+        if (conjuntoEstados.isEmpty() || simbAlfabeto.isEmpty() || eInicial.isEmpty() || eFinal.isEmpty()
+                || (tamTable > 0 && tabelaTrans.getValueAt(0, 0) == null)) {
+            System.out.println("Faltando entradas!");
+            if (conjuntoEstados.isEmpty()) {
+                erroConjFinais.setVisible(true);
+            }
+                        
+            if(simbAlfabeto.isEmpty()){
+                erroAlfabeto.setVisible(true);
+            }
+            
+            if(eInicial.isEmpty()){
+                erroEInicial.setVisible(true);
+            }
+            
+            if(eFinal.isEmpty()){
+                erroEFinal.setVisible(true);
+            }
+            
+            if(tamTable > 0 && tabelaTrans.getValueAt(0, 0) == null){
+                erroFuncTrans.setVisible(true);
+            }
+            
+        } else {
+            // TODO add your handling code here:
+        JFrame parentFrame = new JFrame();
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Specify a file to save");   
+
+        int userSelection = fileChooser.showSaveDialog(parentFrame);
+
+        if (userSelection == JFileChooser.APPROVE_OPTION) {
+            pathFile=fileChooser.getSelectedFile();
+           // System.out.println("Save as file: " + fileToSave.getAbsolutePath());
+        }
+        
         FileWriter arq;
         try {
-            arq = new FileWriter("linguagem.txt", true);
+            arq = new FileWriter(pathFile, true);
             PrintWriter gravarArq = new PrintWriter(arq);
             
             //System.out.println(estadoInicial.getText());
             //System.out.println(estadoFinal.getText());
             
             gravarArq.print(estadoInicial.getText() + "\n");
-            gravarArq.print(estadoFinal.getText() + "\n");
-            
+            gravarArq.print(estadoFinal.getText());
             
             gravarArq.print("\n_\n%\n\n");
             
@@ -408,6 +528,50 @@ public class TelaConfiguracao extends javax.swing.JFrame {
             Logger.getLogger(TelaConfiguracao.class.getName()).log(Level.SEVERE, null, ex);
         }
         
+        new TelaExecucao(pathFile.toString()).setVisible(true);
+        this.setVisible(false);
+        
+        }
+
+    }//GEN-LAST:event_btnExecActionPerformed
+
+    private void btnSalvarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnSalvarMouseClicked
+        // TODO add your handling code here:
+        JFrame parentFrame = new JFrame();
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Specify a file to save");   
+
+        int userSelection = fileChooser.showSaveDialog(parentFrame);
+
+        if (userSelection == JFileChooser.APPROVE_OPTION) {
+            pathFile=fileChooser.getSelectedFile();
+           // System.out.println("Save as file: " + fileToSave.getAbsolutePath());
+        }
+        
+        FileWriter arq;
+        try {
+            arq = new FileWriter(pathFile, true);
+            PrintWriter gravarArq = new PrintWriter(arq);
+
+            //System.out.println(estadoInicial.getText());
+            //System.out.println(estadoFinal.getText());
+            gravarArq.print(estadoInicial.getText() + "\n");
+           
+            gravarArq.print(estadoFinal.getText());
+            
+            gravarArq.print("\n_\n%\n\n");
+
+            for (int i = 0; i < model1.getRowCount(); i++) {
+                for (int j = 0; j < model1.getColumnCount(); j++) {
+                    gravarArq.print(model1.getValueAt(i, j).toString() + ",");
+                }
+                gravarArq.print("\n");
+            }
+            arq.close();
+        } catch (IOException ex) {
+            Logger.getLogger(TelaConfiguracao.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }//GEN-LAST:event_btnSalvarMouseClicked
 
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
@@ -419,6 +583,10 @@ public class TelaConfiguracao extends javax.swing.JFrame {
     private void estadoFinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estadoFinalActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_estadoFinalActionPerformed
+
+    private void btnSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalvarActionPerformed
+        
+    }//GEN-LAST:event_btnSalvarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -457,22 +625,19 @@ public class TelaConfiguracao extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField alfabeto;
-    private javax.swing.JTextField alfabeto1;
     private javax.swing.JButton btnExec;
-    private javax.swing.JButton btnExec1;
     private javax.swing.JButton btnSalvar;
-    private javax.swing.JButton btnSalvar1;
     private javax.swing.JButton btnVoltar;
-    private javax.swing.JButton btnVoltar1;
     private javax.swing.JTextField conjEstados;
-    private javax.swing.JTextField conjEstados1;
+    private javax.swing.JLabel erroAlfabeto;
+    private javax.swing.JLabel erroConjFinais;
+    private javax.swing.JLabel erroEFinal;
+    private javax.swing.JLabel erroEInicial;
+    private javax.swing.JLabel erroFuncTrans;
     private javax.swing.JTextField estadoFinal;
     private javax.swing.JTextField estadoInicial;
-    private javax.swing.JTextField estadoInicial1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -480,24 +645,12 @@ public class TelaConfiguracao extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable2;
+    private javax.swing.JTable tabelaTrans;
     private javax.swing.JPanel telaInternaPrinc;
-    private javax.swing.JPanel telaInternaPrinc1;
     // End of variables declaration//GEN-END:variables
 }

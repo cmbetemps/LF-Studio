@@ -7,6 +7,10 @@ package view;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 import maquina_turing.Reconhecer;
 
 /**
@@ -14,13 +18,23 @@ import maquina_turing.Reconhecer;
  * @author andrelise
  */
 public class TelaExecucao extends javax.swing.JFrame {
-
+    
+    public DefaultTableModel model1;
+    public int indexPassoApasso= 0;
+    public String pathFile;
+    
     /**
      * Creates new form TelaExecucao
      */
-    public TelaExecucao() {
+    public TelaExecucao(String pathFile) {
         initComponents();
+        this.pathFile = pathFile;
         setLocationRelativeTo(null); 
+        
+        palavraReconhecida.setVisible(false);
+        palavraNReconhecida.setVisible(false);
+        erroPalavra.setVisible(false);
+        
     }
 
     /**
@@ -36,27 +50,15 @@ public class TelaExecucao extends javax.swing.JFrame {
         btnVoltar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         inputPalavra = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
-        jTextField6 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jPanel1 = new javax.swing.JPanel();
-        estadoAtual = new javax.swing.JTextField();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        simboloLido = new javax.swing.JTextField();
-        novoEstado = new javax.swing.JTextField();
-        simboloEscrito = new javax.swing.JTextField();
-        movimento = new javax.swing.JTextField();
-        jToggleButton1 = new javax.swing.JToggleButton();
+        tabelaExec = new javax.swing.JTable();
+        carregaEntrada = new javax.swing.JToggleButton();
         jLabel13 = new javax.swing.JLabel();
-        jToggleButton2 = new javax.swing.JToggleButton();
+        executaPasso = new javax.swing.JToggleButton();
+        btnLimpar = new javax.swing.JToggleButton();
+        palavraReconhecida = new javax.swing.JLabel();
+        palavraNReconhecida = new javax.swing.JLabel();
+        erroPalavra = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1024, 700));
@@ -82,125 +84,63 @@ public class TelaExecucao extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(193, 193, 193));
         jLabel1.setText("EXECUÇÃO DA MÁQUINA DE TURING");
 
-        jLabel11.setFont(new java.awt.Font("Open Sans Condensed Light", 0, 18)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(193, 193, 193));
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("Entrada");
+        tabelaExec.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Estado atual", "Símbolo lido", "Novo estado", "Símbolo escrito", "Movimento"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
 
-        jPanel1.setFocusable(false);
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        tabelaExec.setAutoscrolls(false);
+        tabelaExec.setEditingRow(1);
+        jScrollPane1.setViewportView(tabelaExec);
 
-        estadoAtual.setPreferredSize(new java.awt.Dimension(80, 45));
-        estadoAtual.addActionListener(new java.awt.event.ActionListener() {
+        carregaEntrada.setText("EXECUTAR ");
+        carregaEntrada.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                estadoAtualActionPerformed(evt);
+                carregaEntradaActionPerformed(evt);
             }
         });
 
-        jLabel2.setText("Estado Atual");
-
-        jLabel3.setText("Símbolo Lido");
-
-        jLabel4.setText("Novo Estado");
-
-        jLabel5.setText("Símbolo Escrito");
-
-        jLabel6.setText("Movimento");
-
-        simboloLido.setPreferredSize(new java.awt.Dimension(80, 45));
-        simboloLido.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                simboloLidoActionPerformed(evt);
-            }
-        });
-
-        novoEstado.setPreferredSize(new java.awt.Dimension(80, 45));
-        novoEstado.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                novoEstadoActionPerformed(evt);
-            }
-        });
-
-        simboloEscrito.setPreferredSize(new java.awt.Dimension(80, 45));
-        simboloEscrito.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                simboloEscritoActionPerformed(evt);
-            }
-        });
-
-        movimento.setPreferredSize(new java.awt.Dimension(80, 45));
-        movimento.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                movimentoActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(48, 48, 48)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(estadoAtual, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(61, 61, 61)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(simboloLido, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel3))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 68, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(novoEstado, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(79, 79, 79)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(simboloEscrito, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(62, 62, 62)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(movimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(153, 153, 153))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5)
-                    .addComponent(jLabel6))
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(estadoAtual, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(simboloLido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(novoEstado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(simboloEscrito, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(movimento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(219, Short.MAX_VALUE))
-        );
-
-        jScrollPane1.setViewportView(jPanel1);
-
-        jToggleButton1.setText("CARREGAR ENTRADA");
-        jToggleButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton1ActionPerformed(evt);
-            }
-        });
-
-        jLabel13.setFont(new java.awt.Font("Open Sans Condensed Light", 0, 18)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Open Sans Condensed Light", 0, 24)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(193, 193, 193));
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setText("Palavra");
+        jLabel13.setText("Palavra de entrada");
 
-        jToggleButton2.setText("EXECUÇÃO PASSO A PASSO");
-        jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
+        executaPasso.setText("EXECUTAR PASSO A PASSO");
+        executaPasso.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton2ActionPerformed(evt);
+                executaPassoActionPerformed(evt);
             }
         });
+
+        btnLimpar.setText("LIMPAR");
+        btnLimpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimparActionPerformed(evt);
+            }
+        });
+
+        palavraReconhecida.setFont(new java.awt.Font("Open Sans Condensed Light", 0, 24)); // NOI18N
+        palavraReconhecida.setForeground(new java.awt.Color(0, 255, 0));
+        palavraReconhecida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/validado.png"))); // NOI18N
+        palavraReconhecida.setText("Palavra reconhecida pela Máquina de Turing");
+
+        palavraNReconhecida.setFont(new java.awt.Font("Open Sans Condensed Light", 0, 24)); // NOI18N
+        palavraNReconhecida.setForeground(new java.awt.Color(255, 0, 0));
+        palavraNReconhecida.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/rejeitado.png"))); // NOI18N
+        palavraNReconhecida.setText("Palavra não reconhecida pela Máquina de Turing");
+
+        erroPalavra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/erroY.png"))); // NOI18N
 
         javax.swing.GroupLayout telaInternaPrincLayout = new javax.swing.GroupLayout(telaInternaPrinc);
         telaInternaPrinc.setLayout(telaInternaPrincLayout);
@@ -209,32 +149,38 @@ public class TelaExecucao extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, telaInternaPrincLayout.createSequentialGroup()
                 .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(telaInternaPrincLayout.createSequentialGroup()
-                        .addGap(75, 75, 75)
-                        .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(telaInternaPrincLayout.createSequentialGroup()
-                                    .addGap(10, 10, 10)
-                                    .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addComponent(jTextField4, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(47, 47, 47)
-                        .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addComponent(jToggleButton1)
-                                .addComponent(inputPalavra)
-                                .addComponent(jScrollPane1))
-                            .addComponent(jToggleButton2)))
-                    .addGroup(telaInternaPrincLayout.createSequentialGroup()
                         .addGap(29, 29, 29)
                         .addComponent(btnVoltar)
                         .addGap(296, 296, 296)
-                        .addComponent(jLabel1)))
-                .addContainerGap(79, Short.MAX_VALUE))
+                        .addComponent(jLabel1))
+                    .addGroup(telaInternaPrincLayout.createSequentialGroup()
+                        .addGap(75, 75, 75)
+                        .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(telaInternaPrincLayout.createSequentialGroup()
+                                .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                    .addGroup(telaInternaPrincLayout.createSequentialGroup()
+                                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(inputPalavra, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 660, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(telaInternaPrincLayout.createSequentialGroup()
+                                        .addGap(18, 18, 18)
+                                        .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(carregaEntrada)
+                                            .addComponent(executaPasso)))
+                                    .addGroup(telaInternaPrincLayout.createSequentialGroup()
+                                        .addGap(9, 9, 9)
+                                        .addComponent(btnLimpar))
+                                    .addGroup(telaInternaPrincLayout.createSequentialGroup()
+                                        .addGap(29, 29, 29)
+                                        .addComponent(erroPalavra))))
+                            .addGroup(telaInternaPrincLayout.createSequentialGroup()
+                                .addGap(6, 6, 6)
+                                .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(palavraReconhecida)
+                                    .addComponent(palavraNReconhecida))))))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
         telaInternaPrincLayout.setVerticalGroup(
             telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -243,31 +189,29 @@ public class TelaExecucao extends javax.swing.JFrame {
                 .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnVoltar)
                     .addComponent(jLabel1))
-                .addGap(55, 55, 55)
-                .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(inputPalavra, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(41, 41, 41)
-                .addComponent(jToggleButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
                 .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(telaInternaPrincLayout.createSequentialGroup()
-                        .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(telaInternaPrincLayout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(60, 60, 60)
+                        .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(inputPalavra, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(erroPalavra))
+                        .addGap(44, 44, 44)
+                        .addGroup(telaInternaPrincLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(telaInternaPrincLayout.createSequentialGroup()
+                                .addComponent(carregaEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(executaPasso, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(btnLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 309, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(43, 43, 43)
+                        .addComponent(palavraReconhecida)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jToggleButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(66, Short.MAX_VALUE))
+                        .addComponent(palavraNReconhecida))
+                    .addGroup(telaInternaPrincLayout.createSequentialGroup()
+                        .addGap(63, 63, 63)
+                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -290,51 +234,123 @@ public class TelaExecucao extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void estadoAtualActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_estadoAtualActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_estadoAtualActionPerformed
-
     private void btnVoltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnVoltarActionPerformed
         // TODO add your handling code here:
-        new TelaConfiguracao().setVisible(true);
-        this.setVisible(false);
+        new TelaConfiguracao().setVisible(true);        
+        this.setVisible(false);      
+        
     }//GEN-LAST:event_btnVoltarActionPerformed
 
-    private void simboloLidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simboloLidoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_simboloLidoActionPerformed
-
-    private void novoEstadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_novoEstadoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_novoEstadoActionPerformed
-
-    private void simboloEscritoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_simboloEscritoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_simboloEscritoActionPerformed
-
-    private void movimentoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_movimentoActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_movimentoActionPerformed
-
-    private void jToggleButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton1ActionPerformed
-
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton2ActionPerformed
-        boolean leitura;
+    private void carregaEntradaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_carregaEntradaActionPerformed
+        boolean leitura=false,initPassoAPAsso=false;
         Reconhecer maquinadeTuring = new Reconhecer();
         ArrayList<String> config = new ArrayList<>();
         
         String palavra = inputPalavra.getText();
         
-        leitura = maquinadeTuring.reconhecer(palavra, config);
-
+        if(initPassoAPAsso == false){
+            leitura = maquinadeTuring.reconhecer(palavra, config,pathFile);
+            initPassoAPAsso=true;
+        }
+        
         if (leitura == true) {
             System.out.println("Palavra reconhecida");
+             palavraReconhecida.setVisible(true);
         } else {
             System.out.println("Palavra não reconhecida");
+            palavraNReconhecida.setVisible(true);
         }
-    }//GEN-LAST:event_jToggleButton2ActionPerformed
+        
+        model1 = (DefaultTableModel) tabelaExec.getModel();
+
+        for (int i = 0; i < config.size(); i++) {
+            String row[] = config.get(i).split(",");
+            model1.addRow(new Object[]{
+                row[0],
+                row[1],
+                row[4],
+                row[2],
+                row[3],
+            });
+        }
+      
+    }//GEN-LAST:event_carregaEntradaActionPerformed
+
+    private void btnLimparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimparActionPerformed
+        // TODO add your handling code here:
+        
+        //limpando a tabela da execução
+        model1 = (DefaultTableModel) tabelaExec.getModel();
+        model1.setNumRows(0);
+        
+        //limpando entrada da máquina de turing 
+        inputPalavra.setText("");
+        
+        //limpando valor de entrada reconhecida ou não
+        palavraReconhecida.setVisible(false);
+        palavraNReconhecida.setVisible(false);
+        
+    }//GEN-LAST:event_btnLimparActionPerformed
+
+    private void executaPassoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_executaPassoActionPerformed
+        
+        //limpar valores da tabela 
+        //limpando a tabela da execução
+        if(indexPassoApasso == 0){
+            model1 = (DefaultTableModel) tabelaExec.getModel();
+            model1.setNumRows(0);
+        
+            //limpando valor de entrada reconhecida ou não
+            palavraReconhecida.setVisible(false);
+            palavraNReconhecida.setVisible(false);
+        }
+        
+        int flagReconhece = -1;
+        
+        boolean leitura;
+        Reconhecer maquinadeTuring = new Reconhecer();
+        ArrayList<String> config = new ArrayList<>();
+
+        String palavra = inputPalavra.getText();
+        
+        if(palavra.isEmpty()){
+            //está vazio
+            erroPalavra.setVisible(true);
+        }else{
+            leitura = maquinadeTuring.reconhecer(palavra, config,pathFile);
+
+            if (leitura == true) {
+                System.out.println("Palavra reconhecida");
+                flagReconhece = 1;
+            } else {
+                System.out.println("Palavra não reconhecida");
+                flagReconhece = 0;
+                palavraNReconhecida.setVisible(true);
+            }
+
+            model1 = (DefaultTableModel) tabelaExec.getModel();
+            if(indexPassoApasso < config.size()){
+                String row[] = config.get(indexPassoApasso).split(",");
+                model1.addRow(new Object[]{
+                    row[0],
+                    row[1],
+                    row[4],
+                    row[2],
+                    row[3],
+                });
+                indexPassoApasso++;
+            }
+            else{
+                if(flagReconhece == 1){
+                    palavraReconhecida.setVisible(true);
+                }else if (flagReconhece == 0){
+                    palavraNReconhecida.setVisible(true);
+                }
+                JOptionPane.showMessageDialog (null, "A Máquina de Turing terminou a computação da palavra!", "Fim execução", JOptionPane.ERROR_MESSAGE);
+            }
+        }
+
+    }//GEN-LAST:event_executaPassoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -366,36 +382,24 @@ public class TelaExecucao extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new TelaExecucao().setVisible(true);
+                //new TelaExecucao(pathFile).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton btnLimpar;
     private javax.swing.JButton btnVoltar;
-    private javax.swing.JTextField estadoAtual;
+    private javax.swing.JToggleButton carregaEntrada;
+    private javax.swing.JLabel erroPalavra;
+    private javax.swing.JToggleButton executaPasso;
     private javax.swing.JTextField inputPalavra;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JTextField movimento;
-    private javax.swing.JTextField novoEstado;
-    private javax.swing.JTextField simboloEscrito;
-    private javax.swing.JTextField simboloLido;
+    private javax.swing.JLabel palavraNReconhecida;
+    private javax.swing.JLabel palavraReconhecida;
+    private javax.swing.JTable tabelaExec;
     private javax.swing.JPanel telaInternaPrinc;
     // End of variables declaration//GEN-END:variables
 }

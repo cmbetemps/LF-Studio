@@ -15,12 +15,6 @@ public class Main {
 
         palavra = teclado.nextLine();
         teclado.close();
-        leitura = maquinadeTuring.reconhecer(palavra, config);
 
-        if (leitura == true) {
-            System.out.println("Palavra reconhecida");
-        } else {
-            System.out.println("Palavra não reconhecida");
-        }
     }
 }
