@@ -55,7 +55,7 @@
                       <Component id="Turing_LabelNovaMaquina4" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="Turing_LabelAutomatoFND4" max="32767" attributes="0"/>
+                          <Component id="Turing_LabelAutomatoFND4" pref="555" max="32767" attributes="0"/>
                       </Group>
                       <Component id="Turing_LabelImportarMaquina4" max="32767" attributes="0"/>
                       <Group type="102" attributes="0">

@@ -44,12 +44,12 @@ public class TuringProcessamentoPanel extends javax.swing.JPanel {
         inputPalavra = new javax.swing.JTextField();
         carregaEntrada = new javax.swing.JToggleButton();
         executaPasso = new javax.swing.JToggleButton();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        tabelaExec = new javax.swing.JTable();
         btnLimpar = new javax.swing.JToggleButton();
         palavraReconhecida = new javax.swing.JLabel();
         palavraNReconhecida = new javax.swing.JLabel();
         erroPalavra = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabelaExec = new javax.swing.JTable();
 
         setBackground(new java.awt.Color(28, 28, 28));
         setPreferredSize(new java.awt.Dimension(553, 633));
@@ -93,26 +93,6 @@ public class TuringProcessamentoPanel extends javax.swing.JPanel {
             }
         });
 
-        tabelaExec.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Estado atual", "Símbolo lido", "Novo estado", "Símbolo escrito", "Movimento"
-            }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
-            }
-        });
-        tabelaExec.setAutoscrolls(false);
-        tabelaExec.setEditingRow(1);
-        jScrollPane1.setViewportView(tabelaExec);
-
         btnLimpar.setText("LIMPAR");
         btnLimpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -132,12 +112,33 @@ public class TuringProcessamentoPanel extends javax.swing.JPanel {
 
         erroPalavra.setIcon(new javax.swing.ImageIcon(getClass().getResource("/icons/erroY.png"))); // NOI18N
 
+        tabelaExec.setFont(new java.awt.Font("Ubuntu", 0, 10)); // NOI18N
+        tabelaExec.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null}
+            },
+            new String [] {
+                "Estado atual", "Símbolo lido", "Símbolo escrito", "Movimento", "Novo estado"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
+        tabelaExec.setAutoscrolls(false);
+        tabelaExec.setEditingRow(1);
+        jScrollPane1.setViewportView(tabelaExec);
+
         javax.swing.GroupLayout bodyFdLayout = new javax.swing.GroupLayout(bodyFd);
         bodyFd.setLayout(bodyFdLayout);
         bodyFdLayout.setHorizontalGroup(
             bodyFdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, bodyFdLayout.createSequentialGroup()
-                .addContainerGap(511, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(erroPalavra)
                 .addContainerGap())
             .addGroup(bodyFdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,12 +161,16 @@ public class TuringProcessamentoPanel extends javax.swing.JPanel {
                                 .addGroup(bodyFdLayout.createSequentialGroup()
                                     .addComponent(Pilha_subTitulo)
                                     .addGap(18, 18, 18)
-                                    .addComponent(inputPalavra, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jScrollPane1)))
+                                    .addComponent(inputPalavra, javax.swing.GroupLayout.PREFERRED_SIZE, 377, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGroup(bodyFdLayout.createSequentialGroup()
                             .addGap(5, 5, 5)
                             .addComponent(palavraNReconhecida)))
                     .addContainerGap(44, Short.MAX_VALUE)))
+            .addGroup(bodyFdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(bodyFdLayout.createSequentialGroup()
+                    .addGap(44, 44, 44)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 491, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(21, Short.MAX_VALUE)))
         );
         bodyFdLayout.setVerticalGroup(
             bodyFdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -185,15 +190,18 @@ public class TuringProcessamentoPanel extends javax.swing.JPanel {
                     .addGroup(bodyFdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(carregaEntrada, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(executaPasso, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGap(10, 10, 10)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 310, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGap(10, 10, 10)
+                    .addGap(330, 330, 330)
                     .addGroup(bodyFdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(btnLimpar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(palavraReconhecida))
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(palavraNReconhecida)
                     .addContainerGap(25, Short.MAX_VALUE)))
+            .addGroup(bodyFdLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(bodyFdLayout.createSequentialGroup()
+                    .addGap(212, 212, 212)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 320, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(101, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -204,7 +212,7 @@ public class TuringProcessamentoPanel extends javax.swing.JPanel {
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
-                    .addComponent(bodyFd, javax.swing.GroupLayout.DEFAULT_SIZE, 553, Short.MAX_VALUE)
+                    .addComponent(bodyFd, javax.swing.GroupLayout.PREFERRED_SIZE, 553, Short.MAX_VALUE)
                     .addGap(0, 0, Short.MAX_VALUE)))
         );
         layout.setVerticalGroup(
@@ -232,6 +240,13 @@ public class TuringProcessamentoPanel extends javax.swing.JPanel {
         palavraReconhecida.setVisible(false);
         palavraNReconhecida.setVisible(false);
         erroPalavra.setVisible(false);
+        
+        //limpar valores da tabela
+        //limpando a tabela da execução
+        if(indexPassoApasso != 0){
+            model1 = (DefaultTableModel) tabelaExec.getModel();
+            model1.setNumRows(0);
+        }
     
         boolean leitura=false,initPassoAPAsso=false;
         Reconhecer maquinadeTuring = new Reconhecer();
@@ -253,15 +268,15 @@ public class TuringProcessamentoPanel extends javax.swing.JPanel {
         }
 
         model1 = (DefaultTableModel) tabelaExec.getModel();
-
+        
         for (int i = 0; i < config.size(); i++) {
             String row[] = config.get(i).split(",");
             model1.addRow(new Object[]{
                 row[0],
                 row[1],
-                row[4],
                 row[2],
                 row[3],
+                row[4]
             });
         }
     }//GEN-LAST:event_carregaEntradaActionPerformed
@@ -308,9 +323,9 @@ public class TuringProcessamentoPanel extends javax.swing.JPanel {
                 model1.addRow(new Object[]{
                     row[0],
                     row[1],
-                    row[4],
                     row[2],
                     row[3],
+                    row[4]
                 });
                 indexPassoApasso++;
             }

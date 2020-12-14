@@ -46,6 +46,13 @@
           <Dimension value="[574, 646]"/>
         </Property>
       </Properties>
+      <Events>
+        <EventHandler event="ancestorAdded" listener="javax.swing.event.AncestorListener" parameters="javax.swing.event.AncestorEvent" handler="jPanel1AncestorAdded"/>
+        <EventHandler event="ancestorMoved" listener="javax.swing.event.AncestorListener" parameters="javax.swing.event.AncestorEvent" handler="jPanel1AncestorMoved"/>
+        <EventHandler event="ancestorRemoved" listener="javax.swing.event.AncestorListener" parameters="javax.swing.event.AncestorEvent" handler="jPanel1AncestorRemoved"/>
+        <EventHandler event="focusGained" listener="java.awt.event.FocusListener" parameters="java.awt.event.FocusEvent" handler="jPanel1FocusGained"/>
+        <EventHandler event="componentShown" listener="java.awt.event.ComponentListener" parameters="java.awt.event.ComponentEvent" handler="jPanel1ComponentShown"/>
+      </Events>
 
       <Layout>
         <DimensionLayout dim="0">
@@ -72,14 +79,14 @@
                           <Component id="Pilha_ConfigTitulo1" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="30" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="24" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
                   <Component id="Pilha_ConfigTitulo1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="Pilha_tituloPilha" min="-2" max="-2" attributes="0"/>
@@ -123,7 +130,7 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane1" alignment="0" pref="461" max="32767" attributes="0"/>
+                          <Component id="jScrollPane1" alignment="0" pref="467" max="32767" attributes="0"/>
                           <Group type="102" alignment="1" attributes="0">
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="102" attributes="0">
@@ -350,8 +357,8 @@
                       <Table columnCount="5" rowCount="1">
                         <Column editable="true" title="Estado atual" type="java.lang.String"/>
                         <Column editable="true" title="S&#xed;mbolo lido" type="java.lang.String"/>
-                        <Column editable="true" title="Novo estado" type="java.lang.String"/>
                         <Column editable="true" title="S&#xed;mbolo escrito" type="java.lang.String"/>
+                        <Column editable="true" title="Novo estado" type="java.lang.String"/>
                         <Column editable="true" title="Movimento" type="java.lang.String"/>
                       </Table>
                     </Property>

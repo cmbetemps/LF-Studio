@@ -20,7 +20,7 @@ public class Reconhecer {
 		maquinadeTuring.setIniFita(arquivo.get(3));
 		maquinadeTuring.setFimFita(arquivo.get(2));
 
-		int cont = 5; // arquivotransições começa depois do 5
+		int cont = 7; // arquivotransições começa depois do 5
 
 		// contagem do arquivo (separação por virgulas)
 		while (cont < arquivo.size()) {
