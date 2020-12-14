@@ -6,7 +6,6 @@
 package main.modulos.AutomatoFinitoDeterministico.screens;
 
 import main.modulos.AutomatoFinitoDeterministico.InjectionFd;
-import main.modulos.AutomatoFinitoNaoDeterministico.controllers.Injection;
 
 /**
  *
@@ -162,7 +161,7 @@ public class FdProcessamentoPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
   private void FD_validarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FD_validarBtnMouseClicked
-    InjectionFd.getAutomato().reconhecer(FD_inputEntrada.getText().toCharArray());
+//    InjectionFd.getAutomato().reconhecer(FD_inputEntrada.getText().toCharArray());
   }//GEN-LAST:event_FD_validarBtnMouseClicked
 
   private void FD_validarBtnMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FD_validarBtnMouseEntered

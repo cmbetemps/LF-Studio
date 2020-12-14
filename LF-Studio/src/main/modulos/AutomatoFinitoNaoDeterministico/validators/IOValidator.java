@@ -1,6 +1,7 @@
-package main.modulos.AutomatoFinitoNaoDeterministico.domain.utils;
+package main.modulos.AutomatoFinitoNaoDeterministico.validators;
 
 import main.modulos.AutomatoFinitoNaoDeterministico.domain.exceptions.InvalidFormatException;
+
 
 public class IOValidator {
   private  boolean debug;

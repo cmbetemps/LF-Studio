@@ -5,21 +5,14 @@
  */
 package main.modulos.AutomatoFinitoNaoDeterministico.screens;
 
-import com.google.gson.JsonSyntaxException;
 import java.awt.Font;
 import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
 import main.LFStudio;
-import main.modulos.AutomatoFinitoNaoDeterministico.FNDInjection;
 import main.modulos.AutomatoFinitoNaoDeterministico.controllers.FndController;
 import main.modulos.AutomatoFinitoNaoDeterministico.domain.NaoDeterministico;
 import main.modulos.Commons.FileChooser;
 
-/**
- *
- * @author michel
- */
+
 public class FndInicioPanel extends javax.swing.JPanel {
     javax.swing.JPanel JanelaExecucao;
     FndController controller = new FndController();
@@ -33,6 +26,7 @@ public class FndInicioPanel extends javax.swing.JPanel {
         this.fndConfig = fndConfig;
         initComponents();
     }
+
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -50,18 +44,22 @@ public class FndInicioPanel extends javax.swing.JPanel {
         jSeparator1 = new javax.swing.JSeparator();
 
         setBackground(new java.awt.Color(28, 28, 28));
-        setPreferredSize(new java.awt.Dimension(1028, 741));
+        setMaximumSize(new java.awt.Dimension(1024, 720));
+        setMinimumSize(new java.awt.Dimension(1024, 720));
+        setPreferredSize(new java.awt.Dimension(1024, 720));
 
         fndTitle.setBackground(new java.awt.Color(28, 28, 28));
-        fndTitle.setPreferredSize(new java.awt.Dimension(1028, 741));
+        fndTitle.setMaximumSize(new java.awt.Dimension(1024, 720));
+        fndTitle.setMinimumSize(new java.awt.Dimension(1024, 720));
+        fndTitle.setPreferredSize(new java.awt.Dimension(1024, 720));
 
-        AFND1_LabelAutomatoFND.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 48)); // NOI18N
+        AFND1_LabelAutomatoFND.setFont(new java.awt.Font("Noto Sans", 0, 44)); // NOI18N
         AFND1_LabelAutomatoFND.setForeground(new java.awt.Color(255, 255, 255));
         AFND1_LabelAutomatoFND.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        AFND1_LabelAutomatoFND.setText("<html><p style=\"padding-bottom: 16px;\">Autômato FND</p></html>");
+        AFND1_LabelAutomatoFND.setText("<html><p style=\"padding-bottom: 16px;\">Autômato Finito Não Determinístico</p></html>");
 
         AFND1_LabelNovoAutomato.setBackground(new java.awt.Color(0, 0, 0));
-        AFND1_LabelNovoAutomato.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 28)); // NOI18N
+        AFND1_LabelNovoAutomato.setFont(new java.awt.Font("Noto Sans", 0, 24)); // NOI18N
         AFND1_LabelNovoAutomato.setForeground(new java.awt.Color(255, 255, 255));
         AFND1_LabelNovoAutomato.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         AFND1_LabelNovoAutomato.setText("Novo autômato");
@@ -82,15 +80,12 @@ public class FndInicioPanel extends javax.swing.JPanel {
         });
 
         AFND1_LabelImportarAutomato.setBackground(new java.awt.Color(0, 0, 0));
-        AFND1_LabelImportarAutomato.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 28)); // NOI18N
+        AFND1_LabelImportarAutomato.setFont(new java.awt.Font("Noto Sans", 0, 24)); // NOI18N
         AFND1_LabelImportarAutomato.setForeground(new java.awt.Color(255, 255, 255));
         AFND1_LabelImportarAutomato.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         AFND1_LabelImportarAutomato.setText("Importar autômato");
         AFND1_LabelImportarAutomato.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         AFND1_LabelImportarAutomato.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                AFND1_LabelImportarAutomatoMouseClicked(evt);
-            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 AFND1_LabelImportarAutomatoMouseEntered(evt);
             }
@@ -105,43 +100,41 @@ public class FndInicioPanel extends javax.swing.JPanel {
         javax.swing.GroupLayout fndTitleLayout = new javax.swing.GroupLayout(fndTitle);
         fndTitle.setLayout(fndTitleLayout);
         fndTitleLayout.setHorizontalGroup(
-          fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(fndTitleLayout.createSequentialGroup()
-              .addGroup(fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addComponent(AFND1_LabelNovoAutomato, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(AFND1_LabelImportarAutomato, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(AFND1_LabelAutomatoFND, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 1022, Short.MAX_VALUE))
-              .addContainerGap())
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fndTitleLayout.createSequentialGroup()
-              .addGap(0, 373, Short.MAX_VALUE)
-              .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addGap(371, 371, 371))
+                .addGroup(fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(AFND1_LabelNovoAutomato, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(AFND1_LabelImportarAutomato, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(AFND1_LabelAutomatoFND, javax.swing.GroupLayout.DEFAULT_SIZE, 1018, Short.MAX_VALUE))
+                .addContainerGap())
+            .addGroup(fndTitleLayout.createSequentialGroup()
+                .addGap(128, 128, 128)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 762, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         fndTitleLayout.setVerticalGroup(
-          fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(fndTitleLayout.createSequentialGroup()
-              .addGap(191, 191, 191)
-              .addComponent(AFND1_LabelAutomatoFND, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-              .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addGap(57, 57, 57)
-              .addComponent(AFND1_LabelNovoAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-              .addComponent(AFND1_LabelImportarAutomato)
-              .addContainerGap(337, Short.MAX_VALUE))
+                .addGap(191, 191, 191)
+                .addComponent(AFND1_LabelAutomatoFND, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(57, 57, 57)
+                .addComponent(AFND1_LabelNovoAutomato, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(AFND1_LabelImportarAutomato)
+                .addContainerGap(311, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
-          layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-              .addComponent(fndTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-              .addGap(0, 0, Short.MAX_VALUE))
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(fndTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
-          layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(fndTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(fndTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         fndTitle.getAccessibleContext().setAccessibleName("");
@@ -174,27 +167,6 @@ public class FndInicioPanel extends javax.swing.JPanel {
         AFND1_LabelImportarAutomato.setFont(f.deriveFont(f.getStyle(), f.getSize2D()-4));
         //AFND1_LabelImportarAutomato.setForeground(AFND1_LabelNovoAutomato.getForeground().brighter());
     }//GEN-LAST:event_AFND1_LabelImportarAutomatoMouseExited
-
-    private void AFND1_LabelImportarAutomatoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AFND1_LabelImportarAutomatoMouseClicked
-        String pathAbsolute = file.getPathAbsolute();
-        try {
-            NaoDeterministico automato  = controller.instanciationAutomato(pathAbsolute);
-            if(automato != null){
-                FNDInjection.setAutomato(automato);
-                this.fndConfig.carregar();
-                LFStudio.cl.show(JanelaExecucao,"fndConfigPanel");
-            }
-        } catch (Exception ex){
-            JOptionPane.showMessageDialog(null, "Arquivo invalido ou erro na formatação do arquivo");
-            ex.printStackTrace();
-            return;
-        }
-
-        JOptionPane.showMessageDialog(null, "Automato lido com sucesso!!!");
-
-
-        // TODO add your handling code here:
-    }//GEN-LAST:event_AFND1_LabelImportarAutomatoMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

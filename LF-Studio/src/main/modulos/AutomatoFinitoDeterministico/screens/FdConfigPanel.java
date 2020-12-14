@@ -11,20 +11,19 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import main.LFStudio;
-import main.modulos.AutomatoFinitoDeterministico.controllers.AutomatoFinitoController;
-import main.layout.CustomTable;
-import main.modulos.AutomatoFinitoDeterministico.domain.model.AFD;
+import main.modulos.AutomatoFinitoDeterministico.controllers.AFDController;
 import main.modulos.AutomatoFinitoDeterministico.validators.AFDValidator;
 
 import javax.swing.*;
-import main.modulos.AutomatoFinitoNaoDeterministico.domain.models.NaoDeterministico;
+import main.modulos.AutomatoFinitoDeterministico.domain.AFD;
+import main.layout.CustomTable;
 
 /*
  * @author michel
  */
 public class FdConfigPanel extends javax.swing.JPanel {
   javax.swing.JPanel JanelaExecucao;
-  AutomatoFinitoController controller = new AutomatoFinitoController();
+  AFDController controller = new AFDController();
   AFDValidator validator = new AFDValidator();
 
   public FdConfigPanel(javax.swing.JPanel janela) {

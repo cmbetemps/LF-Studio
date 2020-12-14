@@ -40,15 +40,15 @@ public class LFStudio extends javax.swing.JFrame {
     
     Color defaultColor = null;
     
-    void setFndInicioPanel(){
+    void setFdInicioPanel(){
         fdInicioPanel =  new FdInicioPanel(JanelaExecucao);
         fdInicioPanel.setBackground(new java.awt.Color(70, 71, 74));
         fdInicioPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
         JanelaExecucao.add(fdInicioPanel, "fdInicioPanel");
     }
     
-    void setFdInicioPanel(){
-        fndInicioPanel =  new FndInicioPanel(JanelaExecucao);
+    void setFndInicioPanel(){
+        fndInicioPanel =  new FndInicioPanel(JanelaExecucao, fndConfigPanel);
         fndInicioPanel.setBackground(new java.awt.Color(70, 71, 74));
         fndInicioPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
         JanelaExecucao.add(fndInicioPanel, "fndInicioPanel");

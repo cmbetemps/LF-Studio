@@ -6,10 +6,9 @@
 package main.modulos.AutomatoFinitoPilha.screens;
 
 import java.util.ArrayList;
-import main.modulos.AutomatoFinitoNaoDeterministico.controllers.Injection;
 import main.modulos.AutomatoFinitoPilha.controllers.AFP_Injection;
-import main.modulos.AutomatoFinitoPilha.domain.model.Arvore;
-import main.modulos.AutomatoFinitoPilha.domain.model.AutomatoDePilha;
+import main.modulos.AutomatoFinitoPilha.domain.Arvore;
+import main.modulos.AutomatoFinitoPilha.domain.AutomatoDePilha;
 
 /**
  *

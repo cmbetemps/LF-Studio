@@ -63,7 +63,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="0" pref="367" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="361" max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" alignment="1" attributes="0">
                                   <Component id="validarPalavraPilha1" min="-2" pref="234" max="-2" attributes="0"/>
@@ -77,7 +77,7 @@
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="processamento1" pref="1012" max="32767" attributes="0"/>
+                              <Component id="processamento1" pref="1000" max="32767" attributes="0"/>
                               <Group type="102" attributes="0">
                                   <Component id="t_e" min="-2" pref="88" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -102,7 +102,7 @@
                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                   <Component id="t_proces1" min="-2" pref="50" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="processamento1" pref="471" max="32767" attributes="0"/>
+                  <Component id="processamento1" pref="465" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="r_e" alignment="1" min="-2" pref="35" max="-2" attributes="0"/>

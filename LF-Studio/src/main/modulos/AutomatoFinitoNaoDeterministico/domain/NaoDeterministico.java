@@ -1,15 +1,16 @@
 
-package main.modulos.AutomatoFinitoNaoDeterministico.domain.models;
+package main.modulos.AutomatoFinitoNaoDeterministico.domain;
 
 import java.util.ArrayList;
 import java.util.List;
-import main.modulos.AutomatoFinitoNaoDeterministico.domain.exceptions.IsNotBelongOnLanguage;
-import main.modulos.AutomatoFinitoNaoDeterministico.domain.utils.IOValidator;
+import main.modulos.AutomatoFinitoNaoDeterministico.validators.IOValidator;
 
 public class NaoDeterministico extends Automato {
      static IOValidator validator = new IOValidator();
-     public List<String> config = new ArrayList<String>();
      int count;
+     public FNDMap auxiliarMap = new FNDMap();
+     public List<String> config = new ArrayList<String>();
+
     /**
      * @author Michel Silva
      *  Construtor com conversão de matriz int para char para um automato nao deterministico com transição espontanea
@@ -162,4 +163,6 @@ public class NaoDeterministico extends Automato {
 
     }
 
+
+    
 }

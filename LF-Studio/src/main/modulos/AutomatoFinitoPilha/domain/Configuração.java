@@ -1,4 +1,4 @@
-package main.modulos.AutomatoFinitoPilha.domain.model;
+package main.modulos.AutomatoFinitoPilha.domain;
 
 public class Configuração {
     String[] transição;

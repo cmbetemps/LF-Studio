@@ -6,7 +6,7 @@
 package main.modulos.AutomatoFinitoPilha.controllers;
 
 import java.util.HashMap;
-import main.modulos.AutomatoFinitoPilha.domain.model.AutomatoDePilha;
+import main.modulos.AutomatoFinitoPilha.domain.AutomatoDePilha;
 
 public class AFP_Injection {
 

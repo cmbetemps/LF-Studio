@@ -3,7 +3,6 @@ package main.modulos.AutomatoFinitoDeterministico.validators;
 import java.util.HashMap;
 import java.util.Vector;
 import javax.swing.JTextField;
-import main.layout.CustomTable;
 import main.modulos.AutomatoFinitoNaoDeterministico.domain.exceptions.InvalidFormatException;
 
 /*

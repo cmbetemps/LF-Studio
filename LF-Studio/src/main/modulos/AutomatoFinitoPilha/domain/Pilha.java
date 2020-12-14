@@ -1,4 +1,4 @@
-package main.modulos.AutomatoFinitoPilha.domain.model;
+package main.modulos.AutomatoFinitoPilha.domain;
 
 import java.util.Stack;
 

@@ -12,7 +12,6 @@ import java.util.Collections;
 import java.util.List;
 import javax.swing.table.DefaultTableModel;
 import main.LFStudio;
-import main.modulos.AutomatoFinitoNaoDeterministico.domain.models.NaoDeterministico;
 import main.modulos.AutomatoFinitoPilha.controllers.AFP_Injection;
 
 /**

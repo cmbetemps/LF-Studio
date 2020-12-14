@@ -1,6 +1,8 @@
-package main.modulos.AutomatoFinitoNaoDeterministico.domain.models;
+package main.modulos.AutomatoFinitoNaoDeterministico.domain;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import main.modulos.AutomatoFinitoNaoDeterministico.FNDInjection;
 
 public class Automato {
   protected boolean debug = false;
@@ -9,7 +11,8 @@ public class Automato {
   protected int[][][] transicao;
   protected String alfabeto;
   protected String fitaDeEntrada;
-
+  
+  
   protected Automato(int[] aceitacao, int estadoInicial, int[][][] transicao, String alfabeto) {
     this.aceitacao = aceitacao;
     this.transicao = transicao;
@@ -87,4 +90,5 @@ public class Automato {
       "\n, fitaDeEntrada='" + fitaDeEntrada + '\'' +
       '}';
   }
+
 }
