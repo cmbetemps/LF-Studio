@@ -7,7 +7,8 @@ public class Estado {
     String estadoInicial;
     ArrayList<String> estadosFinais;
     String estadoAtual;
-
+    public String estados;
+    
     public String getEstadoInicial() {
         return estadoInicial;
     }

@@ -23,9 +23,10 @@ public class AutomatoDePilha {
      *      f - Próximo estado
      *      Y - Símbolo a ser empilhado
      **/
-    public AutomatoDePilha(String alfabetoFita, String alfabetoPilha, String estadoInicial, String estadosFinais, String pilhaInicial, String[][] matrizTransicoes){
+    public AutomatoDePilha(String alfabetoFita, String alfabetoPilha, String estadoInicial, String estadosFinais, String pilhaInicial, String[][] matrizTransicoes, String estadosInJ){
         this.alfabetos = new Alfabeto(alfabetoFita, alfabetoPilha);
         this.estados = new Estado(estadoInicial, estadosFinais);
+        this.estados.estados = estadosInJ;
         this.pilha = new Pilha(pilhaInicial);
         this.transicoes = new Transicoes(matrizTransicoes);
     }

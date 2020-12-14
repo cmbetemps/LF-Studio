@@ -14,19 +14,20 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import main.LFStudio;
 import main.modulos.AutomatoFinitoPilha.controllers.PilhaController;
+import main.modulos.AutomatoFinitoPilha.domain.AFPInjection;
 import main.modulos.AutomatoFinitoPilha.domain.AutomatoDePilha;
 
 /**
  *
  * @author michel
  */
-
 public class PilhaConfigPanel extends javax.swing.JPanel {
+
     javax.swing.JPanel JanelaExecucao;
-    DefaultTableModel tableModel = new DefaultTableModel ();
+    DefaultTableModel tableModel = new DefaultTableModel();
     PilhaController controller = new PilhaController();
-    
-    public PilhaConfigPanel( javax.swing.JPanel janela) {
+
+    public PilhaConfigPanel(javax.swing.JPanel janela) {
         JanelaExecucao = janela;
         initComponents();
         tableModel.addColumn("Estado Atual");
@@ -37,7 +38,7 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
         AFP_jTable.setModel(tableModel);
     }
 
-    public void carregar(){
+    public void carregar() {
         tableModel = new DefaultTableModel();
         tableModel.addColumn("Estado Atual");
         tableModel.addColumn("Simbolo Fita");
@@ -46,14 +47,16 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
         tableModel.addColumn("Simbolo Empilhado");
         AFP_jTable.setModel(tableModel);
         controller.setarCampos(
-          AlfabetoJText,
-          AlfabetoDaPilhaJText,
-          EstadoInicialJText,
-          EstadosFinaisJText,
-          "",
-          AFP_jTable,
-          tableModel);
+                EstadosJText,
+                AlfabetoJText,
+                AlfabetoDaPilhaJText,
+                EstadoInicialJText,
+                EstadosFinaisJText,
+                "",
+                AFP_jTable,
+                tableModel);
     }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -521,10 +524,11 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
 
     private void Pilha_salvarPilhaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pilha_salvarPilhaBtnMouseClicked
         String pilhaInicial = "";
-        controller.gerarAutomato( AlfabetoJText.getText(),
-        AlfabetoDaPilhaJText.getText(), EstadoInicialJText.getText(),
-        EstadosFinaisJText.getText(), pilhaInicial, AFP_jTable,
-        true
+        controller.gerarAutomato(AlfabetoJText.getText(),
+                AlfabetoDaPilhaJText.getText(), EstadoInicialJText.getText(),
+                EstadosFinaisJText.getText(), pilhaInicial, AFP_jTable,
+                true, 
+                EstadosJText
         );
 
         // TODO add your handling code here:
@@ -544,36 +548,32 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
         String[] finais = EstadosFinaisJText.getText().split(",");
         List<String> estadosLista = new ArrayList<String>();
         List<String> finaisLista = new ArrayList<String>();
-        Collections.addAll(estadosLista,estados);
-        Collections.addAll(finaisLista,finais);
-        if(estadosLista.containsAll(finaisLista)){
-            if(estadosLista.contains(inicial)){
-                 String estados2 = EstadosJText.getText();
-        String alfabetoFita = AlfabetoJText.getText();
-        String alfabetoPilha = AlfabetoDaPilhaJText.getText();
-        String estadoInicial = EstadoInicialJText.getText();
-        String estadosFinais = EstadosFinaisJText.getText();
-        String pilhaInicial = "";
+        Collections.addAll(estadosLista, estados);
+        Collections.addAll(finaisLista, finais);
+        if (estadosLista.containsAll(finaisLista)) {
+            if (estadosLista.contains(inicial)) {
+                String estados2 = EstadosJText.getText();
+                String alfabetoFita = AlfabetoJText.getText();
+                String alfabetoPilha = AlfabetoDaPilhaJText.getText();
+                String estadoInicial = EstadoInicialJText.getText();
+                String estadosFinais = EstadosFinaisJText.getText();
+                String pilhaInicial = "";
 
-        String [][] matrizTransições = new String[AFP_jTable.getRowCount()][AFP_jTable.getColumnCount()];
-        for(int x = 0; x < AFP_jTable.getRowCount(); x++)
-        {
-         for(int y = 0; y < AFP_jTable.getColumnCount(); y++)
-         {
-          if(AFP_jTable.getValueAt(x, y) == null || AFP_jTable.getValueAt(x, y) == " ")  
-          {
-           matrizTransições[x][y]= "";
-          }
-          else
-          {
-           matrizTransições[x][y]= (String) AFP_jTable.getValueAt(x, y);
-          }
-         }
-        }
-        AutomatoDePilha pilha = new AutomatoDePilha(alfabetoFita, alfabetoPilha, estadoInicial, estadosFinais, pilhaInicial, matrizTransições);
-        LFStudio.cl.show(JanelaExecucao, "pilhaProcessamentoPanel");    
+                String[][] matrizTransições = new String[AFP_jTable.getRowCount()][AFP_jTable.getColumnCount()];
+                for (int x = 0; x < AFP_jTable.getRowCount(); x++) {
+                    for (int y = 0; y < AFP_jTable.getColumnCount(); y++) {
+                        if (AFP_jTable.getValueAt(x, y) == null || AFP_jTable.getValueAt(x, y) == " ") {
+                            matrizTransições[x][y] = "";
+                        } else {
+                            matrizTransições[x][y] = (String) AFP_jTable.getValueAt(x, y);
+                        }
+                    }
+                }
+                AutomatoDePilha pilha = new AutomatoDePilha(alfabetoFita, alfabetoPilha, estadoInicial, estadosFinais, pilhaInicial, matrizTransições, estados2);
+                AFPInjection.setAutomato(pilha);
+                LFStudio.cl.show(JanelaExecucao, "pilhaProcessamentoPanel");
             }
-        }        
+        }
     }//GEN-LAST:event_Pilha_processarPilhaBtnMouseClicked
 
     private void jTable1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTable1KeyReleased
@@ -599,8 +599,8 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_afp_button_plusActionPerformed
 
     private void afp_button_minusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afp_button_minusActionPerformed
-        if(tableModel.getRowCount() > 0)
-        tableModel.removeRow(tableModel.getRowCount()-1);
+        if (tableModel.getRowCount() > 0)
+            tableModel.removeRow(tableModel.getRowCount() - 1);
     }//GEN-LAST:event_afp_button_minusActionPerformed
 
     private void AFP_jTableKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AFP_jTableKeyReleased
@@ -670,8 +670,7 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
         jTable1.setModel(AFP_jTable.getModel());
     }//GEN-LAST:event_label_tabelaTransicoesMouseClicked
 
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                     
     private javax.swing.JScrollPane AFND2_jScrollPane4;
     private javax.swing.JTable AFP_jTable;
     private javax.swing.JTextField AlfabetoDaPilhaJText;
@@ -699,6 +698,5 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
     private javax.swing.JLabel label_estados;
     private javax.swing.JLabel label_estadosFinais;
     private javax.swing.JLabel label_tabelaTransicoes;
-
 
 }
