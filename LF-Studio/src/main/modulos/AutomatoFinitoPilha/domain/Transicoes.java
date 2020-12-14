@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class Transicoes {
-    String[][] matrizTransições;
+    public String[][] matrizTransições;
 
 
     /** Construtor da Transições

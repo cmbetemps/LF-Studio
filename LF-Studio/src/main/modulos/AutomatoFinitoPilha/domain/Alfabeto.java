@@ -20,6 +20,22 @@ public class Alfabeto {
        this.alfabetoPilha.add(0, "");
     }
 
+    public String getAlfabetoFita(){
+        String alfabetoFitaMap = "";
+        for (int i = 0; i < alfabetoFita.size(); i++) {
+            alfabetoFitaMap = alfabetoFitaMap + alfabetoFita.get(i) + ",";
+        }
+        return alfabetoFitaMap;
+    }
+
+    public String getAlfabetoPilha(){
+        String alfabetoPilhaMap = "";
+        for (int i = 0; i < alfabetoPilha.size(); i++) {
+            alfabetoPilhaMap = alfabetoPilhaMap + alfabetoPilha.get(i) + ",";
+        }
+        return alfabetoPilhaMap;
+    }
+
     /** Verifica se os símbolos da palavra pertencem ao alfabeto de entrada
      * @param palavra palavra a ser verificada
      * @return true ou false para pertence ou não

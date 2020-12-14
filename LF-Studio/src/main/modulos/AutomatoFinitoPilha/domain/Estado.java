@@ -8,6 +8,34 @@ public class Estado {
     ArrayList<String> estadosFinais;
     String estadoAtual;
 
+    public String getEstadoInicial() {
+        return estadoInicial;
+    }
+
+    public void setEstadoInicial(String estadoInicial) {
+        this.estadoInicial = estadoInicial;
+    }
+
+    public String getEstadosFinais() {
+        String estadosFinaisMap = "";
+        for (int i = 0; i < estadosFinais.size(); i++) {
+            estadosFinaisMap = estadosFinaisMap + estadosFinais.get(i) + ",";
+        }
+        return estadosFinaisMap;
+    }
+
+    public void setEstadosFinais(ArrayList<String> estadosFinais) {
+        this.estadosFinais = estadosFinais;
+    }
+
+    public String getEstadoAtual() {
+        return estadoAtual;
+    }
+
+    public void setEstadoAtual(String estadoAtual) {
+        this.estadoAtual = estadoAtual;
+    }
+
     /**
      * Construtor do Estado
      *

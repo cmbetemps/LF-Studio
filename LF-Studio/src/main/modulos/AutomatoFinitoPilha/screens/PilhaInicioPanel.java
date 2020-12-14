@@ -12,6 +12,9 @@ import main.LFStudio;
 import main.modulos.AutomatoFinitoNaoDeterministico.screens.FNDInjection;
 import main.modulos.AutomatoFinitoNaoDeterministico.controllers.FndController;
 import main.modulos.AutomatoFinitoNaoDeterministico.domain.NaoDeterministico;
+import main.modulos.AutomatoFinitoPilha.controllers.PilhaController;
+import main.modulos.AutomatoFinitoPilha.domain.AFPInjection;
+import main.modulos.AutomatoFinitoPilha.domain.AutomatoDePilha;
 import main.modulos.Commons.FileChooser;
 
 /**
@@ -21,7 +24,7 @@ import main.modulos.Commons.FileChooser;
 public class PilhaInicioPanel extends javax.swing.JPanel {
     javax.swing.JPanel JanelaExecucao;
     PilhaConfigPanel pilhaConfigPane;
-    FndController controller = new FndController();
+    PilhaController controller = new PilhaController();
     FileChooser file = new FileChooser();
     
     /**
@@ -179,11 +182,11 @@ public class PilhaInicioPanel extends javax.swing.JPanel {
          }
 
          try {
-           NaoDeterministico automato  = controller.instanciationAutomato(pathAbsolute);
+           AutomatoDePilha automato  = controller.instanciationAutomato(pathAbsolute);
            if(automato != null && pathAbsolute != null){
-               FNDInjection.setAutomato(automato);
+               AFPInjection.setAutomato(automato);
                this.pilhaConfigPane.carregar();
-                 if(FNDInjection.getAutomato()!= null){
+                 if(AFPInjection.getAutomato()!= null){
                      LFStudio.cl.show(JanelaExecucao,"pilhaConfigPanel");
                      JOptionPane.showMessageDialog(null, "Automato lido com sucesso!!!");
                  }

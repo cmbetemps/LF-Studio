@@ -10,6 +10,7 @@ import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import main.LFStudio;
 import main.modulos.AutomatoFinitoPilha.controllers.PilhaController;
@@ -33,17 +34,26 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
         tableModel.addColumn("Simbolo Pilha");
         tableModel.addColumn("Proximo Estado");
         tableModel.addColumn("Simbolo Empilhado");
-         AFP_jTable.setModel(tableModel); 
+        AFP_jTable.setModel(tableModel);
     }
-   
-    
+
     public void carregar(){
-//        controller.setarCampos(FND_jTable1, FND_TextFieldAlfabeto, FND_TextFieldEstadosFinais, FND_TextFieldEstadoInicial, FND_TextFieldEstados);
+        tableModel = new DefaultTableModel();
+        tableModel.addColumn("Estado Atual");
+        tableModel.addColumn("Simbolo Fita");
+        tableModel.addColumn("Simbolo Pilha");
+        tableModel.addColumn("Proximo Estado");
+        tableModel.addColumn("Simbolo Empilhado");
+        AFP_jTable.setModel(tableModel);
+        controller.setarCampos(
+          AlfabetoJText,
+          AlfabetoDaPilhaJText,
+          EstadoInicialJText,
+          EstadosFinaisJText,
+          "",
+          AFP_jTable,
+          tableModel);
     }
-    
-    
-    
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -510,13 +520,13 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_Pilha_salvarPilhaBtnMouseEntered
 
     private void Pilha_salvarPilhaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pilha_salvarPilhaBtnMouseClicked
- 
         String pilhaInicial = "";
-        controller.gerarAutomato( AlfabetoJText,
-          AlfabetoDaPilhaJText, EstadoInicialJText, 
-          EstadosFinaisJText, pilhaInicial,AFP_jTable,
-          true);       
-        
+        controller.gerarAutomato( AlfabetoJText.getText(),
+        AlfabetoDaPilhaJText.getText(), EstadoInicialJText.getText(),
+        EstadosFinaisJText.getText(), pilhaInicial, AFP_jTable,
+        true
+        );
+
         // TODO add your handling code here:
     }//GEN-LAST:event_Pilha_salvarPilhaBtnMouseClicked
 
@@ -598,11 +608,7 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_AFP_jTableKeyReleased
 
     private void EstadosJTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EstadosJTextKeyReleased
-        if (EstadosJText.getText().charAt(EstadosJText.getText().length() - 1) != ',') {
-            if (evt.getKeyCode() != KeyEvent.VK_BACK_SPACE) {
-                EstadosJText.setText(EstadosJText.getText() + ",");
-            }
-        }
+
     }//GEN-LAST:event_EstadosJTextKeyReleased
 
     private void r_sipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_sipActionPerformed
@@ -610,11 +616,7 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_r_sipActionPerformed
 
     private void EstadosFinaisJTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EstadosFinaisJTextKeyReleased
-        if (EstadosFinaisJText.getText().charAt(EstadosFinaisJText.getText().length() - 1) != ',') {
-            if (evt.getKeyCode() != KeyEvent.VK_BACK_SPACE) {
-                EstadosFinaisJText.setText(EstadosFinaisJText.getText() + ",");
-            }
-        }
+
     }//GEN-LAST:event_EstadosFinaisJTextKeyReleased
 
     private void r_eaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_eaActionPerformed
@@ -646,11 +648,7 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_r_aActionPerformed
 
     private void EstadoInicialJTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EstadoInicialJTextKeyReleased
-        if (EstadoInicialJText.getText().charAt(EstadoInicialJText.getText().length() - 1) != ',') {
-            if (evt.getKeyCode() != KeyEvent.VK_BACK_SPACE) {
-                EstadoInicialJText.setText(EstadoInicialJText.getText() + ",");
-            }
-        }
+
     }//GEN-LAST:event_EstadoInicialJTextKeyReleased
 
     private void r_eiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_eiActionPerformed
@@ -701,5 +699,6 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
     private javax.swing.JLabel label_estados;
     private javax.swing.JLabel label_estadosFinais;
     private javax.swing.JLabel label_tabelaTransicoes;
-    // End of variables declaration//GEN-END:variables
+
+
 }

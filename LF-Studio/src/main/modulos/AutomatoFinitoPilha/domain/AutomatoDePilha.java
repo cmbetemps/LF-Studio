@@ -3,11 +3,11 @@ package main.modulos.AutomatoFinitoPilha.domain;
 import java.util.ArrayList;
 
 public class AutomatoDePilha {
-    Alfabeto alfabetos;
-    Estado estados;
+    public Alfabeto alfabetos;
+    public Estado estados;
     public Pilha pilha;
-    Transicoes transicoes;
-    String palavra;
+    public Transicoes transicoes;
+    public String palavra;
 
     /** Construtor do autômato
      * @param alfabetoFita - Alfabeto de símbolos da fita
