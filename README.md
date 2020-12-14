@@ -43,17 +43,29 @@ funções de transições
 
 *EXEMPLO DE UMA ESTRUTURA SUPORTADA COMO ENTRADA:*
 q0 
+
 q2 
+
 _
+
 %
+
 q0,q1,q2
+
 0,1
 
+
 q0,%,%,D,q0,
+
 q0,0,0,D,q0,
+
 q0,_,_,D,q2,
+
 q0,1,1,D,q1,
+
 q1,1,1,D,q1,
+
 q1,_,_,E,q2,
+
 
 ---------------------------------
