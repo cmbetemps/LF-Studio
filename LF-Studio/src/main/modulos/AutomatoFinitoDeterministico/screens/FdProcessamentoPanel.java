@@ -5,8 +5,6 @@
  */
 package main.modulos.AutomatoFinitoDeterministico.screens;
 
-import main.modulos.AutomatoFinitoDeterministico.FdInjection;
-
 /**
  *
  * @author michel

@@ -8,10 +8,11 @@ package main.modulos.AutomatoFinitoDeterministico.screens;
 import java.awt.Font;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+
+import main.LFStudio;
 import main.modulos.AutomatoFinitoDeterministico.FdInjection;
 import main.modulos.AutomatoFinitoDeterministico.controllers.AFDController;
 import main.modulos.AutomatoFinitoDeterministico.domain.AFD;
-import main.modulos.AutomatoFinitoNaoDeterministico.FNDInjection;
 import main.modulos.Commons.FileChooser;
 
 /**
@@ -174,7 +175,7 @@ public class FdInicioPanel extends javax.swing.JPanel {
          if(automato != null && pathAbsolute != null){
              FdInjection.setAutomato(automato);
              this.fdConfigPanel.carregar();
-               if(FNDInjection.getAutomato()!= null){
+               if(FdInjection.getAutomato()!= null){
                    LFStudio.cl.show(JanelaExecucao,"fdConfigPanel");
                    JOptionPane.showMessageDialog(null, "Automato lido com sucesso!!!");
                }

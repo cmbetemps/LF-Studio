@@ -17,7 +17,6 @@ import main.modulos.AutomatoFinitoDeterministico.validators.AFDValidator;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import main.modulos.AutomatoFinitoDeterministico.domain.AFD;
-import main.layout.CustomTable;
 
 /*
  * @author michel
@@ -28,6 +27,7 @@ public class FdConfigPanel extends javax.swing.JPanel {
     javax.swing.JPanel JanelaExecucao;
     AFDController controller = new AFDController();
     AFDValidator validator = new AFDValidator();
+
     public FdConfigPanel(javax.swing.JPanel janela) {
         this.JanelaExecucao = janela;
         initComponents();
@@ -38,7 +38,7 @@ public class FdConfigPanel extends javax.swing.JPanel {
     }
 
     public void carregar() {
-        controller.setarCampos(FDjTable, FD_TextFieldAlfabeto, FD_TextFieldEstadosFinais1, FD_TextFieldEstadoInicial1, FD_TextFieldEstados);
+        controller.setarCampos(FDjTable, FD_TextFieldAlfabeto, FD_TextFieldEstadosFinais1, FD_TextFieldEstadoInicial1, FD_TextFieldEstados, tableModel);
     }
 
     @SuppressWarnings("unchecked")

@@ -1,6 +1,9 @@
 package main.modulos.AutomatoFinitoDeterministico;
 
-import main.modulos.AutomatoFinitoDeterministico;
+
+import main.modulos.AutomatoFinitoDeterministico.domain.AFD;
+
+import java.util.HashMap;
 
 public class FdInjection {
   private static AFD automato;

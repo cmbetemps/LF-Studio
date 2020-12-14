@@ -1,5 +1,7 @@
 package main.modulos.AutomatoFinitoDeterministico.domain;
 
+import main.modulos.AutomatoFinitoPilha.domain.Alfabeto;
+
 import java.util.*;
 
 /** Autômato Finito Determinístico
@@ -10,12 +12,9 @@ public class AFD {
     public String estadoInicial;
     public ArrayList<String> estadosFinais;
     public String[][] transicoes;
-    public String novoEstadoInicial ;
-
-
+    public String novoEstadoInicial ; 
     /** Lista de configurações do autômato
      **/
-  
 
     /** Construtor do autômato
      * @param estados Conjunto de estados separados por vírgula
@@ -54,11 +53,6 @@ public class AFD {
         this.estadosFinais = estadosFinais;
         this.transicoes = transicoes;
     }
-
-    public AFD() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
 
     /** Verifica se a palavra pertence ou não ao conjunto de palavras reconhecidas pelo autômato
      * @param palavra Fita dos símbolos de entrada
@@ -305,5 +299,33 @@ public class AFD {
                 estadosAtingiveis(this.transicoes[i][2], estados);
             }
         }
+    }
+
+    public String getAlfabetoToString() {
+        String alfabetoString= "";
+        for (int i = 0; i < this.alfabeto.length ; i++) {
+            alfabetoString = alfabetoString + this.alfabeto[i] + ",";
+        }
+        return alfabetoString;
+    }
+
+    public String getEstadosFinaisToString() {
+        String estadosFinaisString = "";
+        for (int i = 0; i < this.estadosFinais.size() ; i++) {
+            estadosFinaisString = estadosFinaisString + this.estadosFinais.get(i) + ',';
+        }
+        return estadosFinaisString;
+    }
+
+    public String getEstadoInicial() {
+        return estadoInicial;
+    }
+
+    public String getEstadosToString() {
+        String estadosString = "";
+        for (int i = 0; i < this.estados.size() ; i++) {
+            estadosString = estadosString + this.estados.get(i) + ',';
+        }
+        return estadosString;
     }
 }

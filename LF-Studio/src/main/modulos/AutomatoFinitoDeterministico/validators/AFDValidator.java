@@ -1,9 +1,10 @@
 package main.modulos.AutomatoFinitoDeterministico.validators;
 
+import com.sun.media.sound.InvalidFormatException;
+
 import java.util.HashMap;
 import java.util.Vector;
 import javax.swing.JTextField;
-import main.modulos.AutomatoFinitoNaoDeterministico.domain.exceptions.InvalidFormatException;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
