@@ -1,0 +1,71 @@
+{
+  "alfabetos": {
+    "alfabetoFita": [
+      "a",
+      "b",
+      "c"
+    ],
+    "alfabetoPilha": [
+      "",
+      "a",
+      "b"
+    ]
+  },
+  "estados": {
+    "estadoInicial": "s",
+    "estadosFinais": [
+      "f"
+    ],
+    "estadoAtual": "s",
+    "estados": "s,f"
+  },
+  "pilha": {
+    "pilha": []
+  },
+  "transicoes": {
+    "matrizTransições": [
+      [
+        "s",
+        "a",
+        "",
+        "s",
+        "a"
+      ],
+      [
+        "s",
+        "a",
+        null,
+        "s",
+        "b"
+      ],
+      [
+        "s",
+        "b",
+        null,
+        "s",
+        "b"
+      ],
+      [
+        "s",
+        "c",
+        null,
+        "f",
+        null
+      ],
+      [
+        "f",
+        "a",
+        "a",
+        "f",
+        null
+      ],
+      [
+        "f",
+        "b",
+        "b",
+        "f",
+        null
+      ]
+    ]
+  }
+}
