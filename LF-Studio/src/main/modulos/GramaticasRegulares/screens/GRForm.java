@@ -124,9 +124,12 @@ public class GRForm extends javax.swing.JPanel {
         jLabel8.setName("Input"); // NOI18N
 
         setBackground(new java.awt.Color(28, 28, 28));
+        setMaximumSize(new java.awt.Dimension(1024, 720));
+        setMinimumSize(new java.awt.Dimension(1024, 720));
 
         fndTitle.setBackground(new java.awt.Color(28, 28, 28));
-        fndTitle.setPreferredSize(new java.awt.Dimension(579, 648));
+        fndTitle.setMaximumSize(new java.awt.Dimension(1024, 720));
+        fndTitle.setPreferredSize(new java.awt.Dimension(1024, 720));
 
         GLC_Titulo.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 36)); // NOI18N
         GLC_Titulo.setForeground(new java.awt.Color(255, 255, 255));
@@ -286,7 +289,7 @@ public class GRForm extends javax.swing.JPanel {
         btnTeste.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
         btnTeste.setForeground(new java.awt.Color(255, 255, 255));
         btnTeste.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        btnTeste.setText("Teste");
+        btnTeste.setText("Exemplo de Teste");
         btnTeste.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btnTeste.setOpaque(true);
         btnTeste.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -331,42 +334,41 @@ public class GRForm extends javax.swing.JPanel {
         fndTitleLayout.setHorizontalGroup(
             fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(fndTitleLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
                 .addGroup(fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(txtRegras, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtTerminais, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtNaoTerminais, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtRaizes, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(txtNPalavras)
                     .addGroup(fndTitleLayout.createSequentialGroup()
-                        .addGap(130, 130, 130)
-                        .addComponent(GLC_Titulo))
-                    .addGroup(fndTitleLayout.createSequentialGroup()
-                        .addGap(20, 20, 20)
                         .addGroup(fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtRegras, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtTerminais, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtNaoTerminais, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtRaizes, javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(txtNPalavras)
-                            .addGroup(fndTitleLayout.createSequentialGroup()
-                                .addGroup(fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel5)
-                                    .addComponent(jLabel6)
-                                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel4)
-                                    .addComponent(btnTeste, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(fndTitleLayout.createSequentialGroup()
-                                .addComponent(jLabel2)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel11)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
-                                .addComponent(checkBoxRaizRandom)))
-                        .addGap(18, 18, 18)
-                        .addGroup(fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(fndTitleLayout.createSequentialGroup()
-                                .addComponent(btnExecutar, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(btnExportar, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel10)
-                                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4)
+                            .addComponent(btnTeste, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(fndTitleLayout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel11)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 240, Short.MAX_VALUE)
+                        .addComponent(checkBoxRaizRandom)))
+                .addGap(18, 18, 18)
+                .addGroup(fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel10)
+                    .addGroup(fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, fndTitleLayout.createSequentialGroup()
+                            .addComponent(btnExecutar, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(btnExportar, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(22, Short.MAX_VALUE))
+            .addGroup(fndTitleLayout.createSequentialGroup()
+                .addGap(347, 347, 347)
+                .addComponent(GLC_Titulo)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         fndTitleLayout.setVerticalGroup(
@@ -411,16 +413,14 @@ public class GRForm extends javax.swing.JPanel {
                         .addComponent(btnExecutar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnExportar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(btnTeste, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(143, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(fndTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 20, Short.MAX_VALUE))
+            .addComponent(fndTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -49,10 +49,13 @@ public class GRHome extends javax.swing.JPanel {
         jSeparator1 = new javax.swing.JSeparator();
 
         setBackground(new java.awt.Color(28, 28, 28));
+        setMaximumSize(new java.awt.Dimension(1024, 720));
+        setMinimumSize(new java.awt.Dimension(1024, 720));
         setPreferredSize(new java.awt.Dimension(579, 648));
 
         fndTitle.setBackground(new java.awt.Color(28, 28, 28));
-        fndTitle.setPreferredSize(new java.awt.Dimension(579, 648));
+        fndTitle.setMaximumSize(new java.awt.Dimension(1024, 720));
+        fndTitle.setPreferredSize(new java.awt.Dimension(1024, 720));
 
         labelTituloGR.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 48)); // NOI18N
         labelTituloGR.setForeground(new java.awt.Color(255, 255, 255));
@@ -114,12 +117,12 @@ public class GRHome extends javax.swing.JPanel {
                 .addGroup(fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(labelImportarGR, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(labelNovaGR, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(labelTituloGR, javax.swing.GroupLayout.DEFAULT_SIZE, 569, Short.MAX_VALUE))
+                    .addComponent(labelTituloGR))
                 .addContainerGap())
             .addGroup(fndTitleLayout.createSequentialGroup()
-                .addGap(120, 120, 120)
+                .addGap(345, 345, 345)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(349, Short.MAX_VALUE))
         );
         fndTitleLayout.setVerticalGroup(
             fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -132,16 +135,14 @@ public class GRHome extends javax.swing.JPanel {
                 .addComponent(labelNovaGR, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(labelImportarGR)
-                .addContainerGap(246, Short.MAX_VALUE))
+                .addContainerGap(318, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(fndTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(fndTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

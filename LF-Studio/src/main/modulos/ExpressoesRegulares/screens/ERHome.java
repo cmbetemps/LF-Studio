@@ -45,9 +45,12 @@ public class ERHome extends javax.swing.JPanel {
         labelImportarER = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(28, 28, 28));
+        setMaximumSize(new java.awt.Dimension(1024, 720));
+        setMinimumSize(new java.awt.Dimension(1024, 720));
 
         fndTitle.setBackground(new java.awt.Color(28, 28, 28));
-        fndTitle.setPreferredSize(new java.awt.Dimension(579, 648));
+        fndTitle.setMaximumSize(new java.awt.Dimension(1024, 720));
+        fndTitle.setPreferredSize(new java.awt.Dimension(1024, 720));
 
         labelTituloER.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 48)); // NOI18N
         labelTituloER.setForeground(new java.awt.Color(255, 255, 255));
@@ -105,13 +108,13 @@ public class ERHome extends javax.swing.JPanel {
         fndTitle.setLayout(fndTitleLayout);
         fndTitleLayout.setHorizontalGroup(
             fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(labelTituloER)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, fndTitleLayout.createSequentialGroup()
-                .addContainerGap(128, Short.MAX_VALUE)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(121, 121, 121))
+            .addComponent(labelTituloER, javax.swing.GroupLayout.DEFAULT_SIZE, 1024, Short.MAX_VALUE)
             .addComponent(labelNovaER, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(labelImportarER, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(fndTitleLayout.createSequentialGroup()
+                .addGap(347, 347, 347)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         fndTitleLayout.setVerticalGroup(
             fndTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,7 +127,7 @@ public class ERHome extends javax.swing.JPanel {
                 .addComponent(labelNovaER, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(labelImportarER)
-                .addContainerGap(249, Short.MAX_VALUE))
+                .addContainerGap(321, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -133,7 +136,7 @@ public class ERHome extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(fndTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 20, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
