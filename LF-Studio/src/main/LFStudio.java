@@ -554,7 +554,7 @@ public class LFStudio extends javax.swing.JFrame {
     }//GEN-LAST:event_menuTuringMouseEntered
 
     private void menuGramaticasRegularesMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGramaticasRegularesMouseReleased
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/ExpRegBlack.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/GramRegBlack.png"));
         menuGramaticasRegulares.setIcon(ico);
     }//GEN-LAST:event_menuGramaticasRegularesMouseReleased
 
@@ -564,12 +564,12 @@ public class LFStudio extends javax.swing.JFrame {
     }//GEN-LAST:event_menuGramaticasRegularesMousePressed
 
     private void menuGramaticasRegularesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGramaticasRegularesMouseExited
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/ExpRegBlack.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/GramRegBlack.png"));
         menuGramaticasRegulares.setIcon(ico);
     }//GEN-LAST:event_menuGramaticasRegularesMouseExited
 
     private void menuGramaticasRegularesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGramaticasRegularesMouseEntered
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/ExpRegGray.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/GramRegGray.png"));
         menuGramaticasRegulares.setIcon(ico);
     }//GEN-LAST:event_menuGramaticasRegularesMouseEntered
 
@@ -646,12 +646,12 @@ public class LFStudio extends javax.swing.JFrame {
     }//GEN-LAST:event_menuAfdMouseClicked
 
     private void menuRegXMouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuRegXMouseReleased
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/GramRegBlack.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/ExpRegBlack.png"));
         menuRegX.setIcon(ico);
     }//GEN-LAST:event_menuRegXMouseReleased
 
     private void menuRegXMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuRegXMousePressed
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/GramRegWhite.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/ExpRegWhite.png"));
         menuRegX.setIcon(ico);
     }//GEN-LAST:event_menuRegXMousePressed
 
@@ -661,7 +661,7 @@ public class LFStudio extends javax.swing.JFrame {
     }//GEN-LAST:event_menuRegXMouseExited
 
     private void menuRegXMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuRegXMouseEntered
-        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/GramRegGray.png"));
+        Icon ico = new ImageIcon(LFStudio.class.getResource("/main/layout/images/ExpRegGray.png"));
         menuRegX.setIcon(ico);
     }//GEN-LAST:event_menuRegXMouseEntered
 
