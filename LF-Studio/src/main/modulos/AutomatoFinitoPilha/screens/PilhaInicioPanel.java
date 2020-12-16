@@ -6,9 +6,16 @@
 package main.modulos.AutomatoFinitoPilha.screens;
 
 import java.awt.Font;
-import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
 import main.LFStudio;
+import main.modulos.AutomatoFinitoNaoDeterministico.screens.FNDInjection;
 import main.modulos.AutomatoFinitoNaoDeterministico.controllers.FndController;
+import main.modulos.AutomatoFinitoNaoDeterministico.domain.NaoDeterministico;
+import main.modulos.AutomatoFinitoPilha.controllers.PilhaController;
+import main.modulos.AutomatoFinitoPilha.domain.AFPInjection;
+import main.modulos.AutomatoFinitoPilha.domain.AutomatoDePilha;
+import main.modulos.Commons.FileChooser;
 
 /**
  *
@@ -16,11 +23,16 @@ import main.modulos.AutomatoFinitoNaoDeterministico.controllers.FndController;
  */
 public class PilhaInicioPanel extends javax.swing.JPanel {
     javax.swing.JPanel JanelaExecucao;
+    PilhaConfigPanel pilhaConfigPane;
+    PilhaController controller = new PilhaController();
+    FileChooser file = new FileChooser();
+    
     /**
      * Creates new form test1
      */
-    public PilhaInicioPanel(javax.swing.JPanel janela) {
-        this.JanelaExecucao = janela;
+    public PilhaInicioPanel(JPanel JanelaExecucao, PilhaConfigPanel pilhaConfigPane) {
+        this.JanelaExecucao = JanelaExecucao;
+        this.pilhaConfigPane = pilhaConfigPane;
         initComponents();
     }
 
@@ -39,13 +51,17 @@ public class PilhaInicioPanel extends javax.swing.JPanel {
         PILHA_LabelAutomatoFND4 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
 
-        setPreferredSize(new java.awt.Dimension(579, 648));
+        setMaximumSize(new java.awt.Dimension(1024, 720));
+        setMinimumSize(new java.awt.Dimension(1024, 720));
+        setPreferredSize(new java.awt.Dimension(1024, 720));
 
         pilhaTitle.setBackground(new java.awt.Color(28, 28, 28));
-        pilhaTitle.setPreferredSize(new java.awt.Dimension(579, 648));
+        pilhaTitle.setMaximumSize(new java.awt.Dimension(1024, 720));
+        pilhaTitle.setMinimumSize(new java.awt.Dimension(1024, 720));
+        pilhaTitle.setPreferredSize(new java.awt.Dimension(1024, 720));
 
         PILHA_LabelNovoAutomato4.setBackground(new java.awt.Color(0, 0, 0));
-        PILHA_LabelNovoAutomato4.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 28)); // NOI18N
+        PILHA_LabelNovoAutomato4.setFont(new java.awt.Font("Noto Sans", 0, 24)); // NOI18N
         PILHA_LabelNovoAutomato4.setForeground(new java.awt.Color(255, 255, 255));
         PILHA_LabelNovoAutomato4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         PILHA_LabelNovoAutomato4.setText("Novo autômato");
@@ -66,12 +82,15 @@ public class PilhaInicioPanel extends javax.swing.JPanel {
         });
 
         PILHA_LabelImportarAutomato4.setBackground(new java.awt.Color(0, 0, 0));
-        PILHA_LabelImportarAutomato4.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 28)); // NOI18N
+        PILHA_LabelImportarAutomato4.setFont(new java.awt.Font("Noto Sans", 0, 24)); // NOI18N
         PILHA_LabelImportarAutomato4.setForeground(new java.awt.Color(255, 255, 255));
         PILHA_LabelImportarAutomato4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         PILHA_LabelImportarAutomato4.setText("Importar autômato");
         PILHA_LabelImportarAutomato4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         PILHA_LabelImportarAutomato4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PILHA_LabelImportarAutomato4MouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 PILHA_LabelImportarAutomato4MouseEntered(evt);
             }
@@ -80,7 +99,7 @@ public class PilhaInicioPanel extends javax.swing.JPanel {
             }
         });
 
-        PILHA_LabelAutomatoFND4.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 48)); // NOI18N
+        PILHA_LabelAutomatoFND4.setFont(new java.awt.Font("Noto Sans", 0, 44)); // NOI18N
         PILHA_LabelAutomatoFND4.setForeground(new java.awt.Color(255, 255, 255));
         PILHA_LabelAutomatoFND4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         PILHA_LabelAutomatoFND4.setText("<html><p style=\"padding-bottom: 16px;\">Autômato de Pilha</p></html>");
@@ -93,22 +112,22 @@ public class PilhaInicioPanel extends javax.swing.JPanel {
         pilhaTitleLayout.setHorizontalGroup(
             pilhaTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pilhaTitleLayout.createSequentialGroup()
-                .addGap(108, 108, 108)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 358, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(113, Short.MAX_VALUE))
-            .addGroup(pilhaTitleLayout.createSequentialGroup()
                 .addGroup(pilhaTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(PILHA_LabelNovoAutomato4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(pilhaTitleLayout.createSequentialGroup()
                         .addContainerGap()
-                        .addComponent(PILHA_LabelAutomatoFND4))
+                        .addComponent(PILHA_LabelAutomatoFND4, javax.swing.GroupLayout.DEFAULT_SIZE, 1012, Short.MAX_VALUE))
                     .addComponent(PILHA_LabelImportarAutomato4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
+            .addGroup(pilhaTitleLayout.createSequentialGroup()
+                .addGap(284, 284, 284)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(287, Short.MAX_VALUE))
         );
         pilhaTitleLayout.setVerticalGroup(
             pilhaTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pilhaTitleLayout.createSequentialGroup()
-                .addGap(194, 194, 194)
+                .addGap(191, 191, 191)
                 .addComponent(PILHA_LabelAutomatoFND4, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -116,22 +135,18 @@ public class PilhaInicioPanel extends javax.swing.JPanel {
                 .addComponent(PILHA_LabelNovoAutomato4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(PILHA_LabelImportarAutomato4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(241, Short.MAX_VALUE))
+                .addContainerGap(316, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(pilhaTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(pilhaTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(pilhaTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(pilhaTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -158,6 +173,30 @@ public class PilhaInicioPanel extends javax.swing.JPanel {
         Font f = PILHA_LabelImportarAutomato4.getFont();
         PILHA_LabelImportarAutomato4.setFont(f.deriveFont(f.getStyle(), f.getSize2D()-4));
     }//GEN-LAST:event_PILHA_LabelImportarAutomato4MouseExited
+
+    private void PILHA_LabelImportarAutomato4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PILHA_LabelImportarAutomato4MouseClicked
+        String pathAbsolute = file.getPathAbsolute();
+          if(!pathAbsolute.contains(".json")){
+            JOptionPane.showMessageDialog(null, "Formato do Arquivo invalido");
+            return;
+         }
+
+         try {
+           AutomatoDePilha automato  = controller.instanciationAutomato(pathAbsolute);
+           if(automato != null && pathAbsolute != null){
+               AFPInjection.setAutomato(automato);
+               this.pilhaConfigPane.carregar();
+                 if(AFPInjection.getAutomato()!= null){
+                     LFStudio.cl.show(JanelaExecucao,"pilhaConfigPanel");
+                     JOptionPane.showMessageDialog(null, "Automato lido com sucesso!!!");
+                 }
+           }
+         } catch (Exception ex){
+            JOptionPane.showMessageDialog(null, "Arquivo invalido ou erro na formatação do arquivo");
+            ex.printStackTrace();
+            return;
+         }
+    }//GEN-LAST:event_PILHA_LabelImportarAutomato4MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

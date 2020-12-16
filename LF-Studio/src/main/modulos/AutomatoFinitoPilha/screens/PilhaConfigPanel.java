@@ -5,19 +5,29 @@
  */
 package main.modulos.AutomatoFinitoPilha.screens;
 
+import java.awt.Font;
+import java.awt.event.KeyEvent;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import main.LFStudio;
-import main.modulos.AutomatoFinitoPilha.controllers.AFP_Injection;
+import main.modulos.AutomatoFinitoPilha.controllers.PilhaController;
+import main.modulos.AutomatoFinitoPilha.domain.AFPInjection;
+import main.modulos.AutomatoFinitoPilha.domain.AutomatoDePilha;
 
 /**
  *
  * @author michel
  */
-
 public class PilhaConfigPanel extends javax.swing.JPanel {
+
     javax.swing.JPanel JanelaExecucao;
-    DefaultTableModel tableModel = new DefaultTableModel ();
-    public PilhaConfigPanel( javax.swing.JPanel janela) {
+    DefaultTableModel tableModel = new DefaultTableModel();
+    PilhaController controller = new PilhaController();
+
+    public PilhaConfigPanel(javax.swing.JPanel janela) {
         JanelaExecucao = janela;
         initComponents();
         tableModel.addColumn("Estado Atual");
@@ -25,7 +35,26 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
         tableModel.addColumn("Simbolo Pilha");
         tableModel.addColumn("Proximo Estado");
         tableModel.addColumn("Simbolo Empilhado");
-         AFP_jTable.setModel(tableModel); 
+        AFP_jTable.setModel(tableModel);
+    }
+
+    public void carregar() {
+        tableModel = new DefaultTableModel();
+        tableModel.addColumn("Estado Atual");
+        tableModel.addColumn("Simbolo Fita");
+        tableModel.addColumn("Simbolo Pilha");
+        tableModel.addColumn("Proximo Estado");
+        tableModel.addColumn("Simbolo Empilhado");
+        AFP_jTable.setModel(tableModel);
+        controller.setarCampos(
+                EstadosJText,
+                AlfabetoJText,
+                AlfabetoDaPilhaJText,
+                EstadoInicialJText,
+                EstadosFinaisJText,
+                "",
+                AFP_jTable,
+                tableModel);
     }
 
     /**
@@ -37,19 +66,24 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        JdialogTabelaExternaPilha = new javax.swing.JDialog();
+        jPanel2 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
         jPanel1 = new javax.swing.JPanel();
         Pilha_BodyConfig1 = new javax.swing.JPanel();
-        t_tra1 = new javax.swing.JLabel();
-        t_ea1 = new javax.swing.JLabel();
-        t_ei1 = new javax.swing.JLabel();
-        t_ap1 = new javax.swing.JLabel();
-        t_a1 = new javax.swing.JLabel();
-        r_ei1 = new javax.swing.JTextField();
-        r_a1 = new javax.swing.JTextField();
-        r_ap1 = new javax.swing.JTextField();
-        r_ea1 = new javax.swing.JTextField();
-        r_sip1 = new javax.swing.JTextField();
-        t_sip1 = new javax.swing.JLabel();
+        label_tabelaTransicoes = new javax.swing.JLabel();
+        label_estadosFinais = new javax.swing.JLabel();
+        label_estadoInicial = new javax.swing.JLabel();
+        label_alfabetoDaPilha = new javax.swing.JLabel();
+        label_alfabeto = new javax.swing.JLabel();
+        EstadoInicialJText = new javax.swing.JTextField();
+        AlfabetoJText = new javax.swing.JTextField();
+        AlfabetoDaPilhaJText = new javax.swing.JTextField();
+        EstadosFinaisJText = new javax.swing.JTextField();
+        EstadosJText = new javax.swing.JTextField();
+        label_estados = new javax.swing.JLabel();
         AFND2_jScrollPane4 = new javax.swing.JScrollPane();
         AFP_jTable = new javax.swing.JTable();
         afp_button_minus = new javax.swing.JButton();
@@ -60,113 +94,237 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
         Pilha_ConfigTitulo1 = new javax.swing.JLabel();
         Pilha_processarPilhaBtn = new javax.swing.JLabel();
 
+        JdialogTabelaExternaPilha.setAlwaysOnTop(true);
+        JdialogTabelaExternaPilha.setBackground(new java.awt.Color(28, 28, 28));
+        JdialogTabelaExternaPilha.setMinimumSize(new java.awt.Dimension(400, 300));
+
+        jPanel2.setBackground(new java.awt.Color(28, 28, 28));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jTable1.setSelectionBackground(new java.awt.Color(20, 20, 20));
+        jTable1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                jTable1KeyReleased(evt);
+            }
+        });
+        jScrollPane1.setViewportView(jTable1);
+
+        jLabel1.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel1.setText("Tabela de Transições");
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                jLabel1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                jLabel1MouseExited(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 388, Short.MAX_VALUE))
+                    .addContainerGap()))
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel2Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(jLabel1)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 257, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+
+        javax.swing.GroupLayout JdialogTabelaExternaPilhaLayout = new javax.swing.GroupLayout(JdialogTabelaExternaPilha.getContentPane());
+        JdialogTabelaExternaPilha.getContentPane().setLayout(JdialogTabelaExternaPilhaLayout);
+        JdialogTabelaExternaPilhaLayout.setHorizontalGroup(
+            JdialogTabelaExternaPilhaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JdialogTabelaExternaPilhaLayout.createSequentialGroup()
+                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, 0))
+        );
+        JdialogTabelaExternaPilhaLayout.setVerticalGroup(
+            JdialogTabelaExternaPilhaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
         setBackground(new java.awt.Color(28, 28, 28));
-        setPreferredSize(new java.awt.Dimension(574, 646));
+        setMaximumSize(new java.awt.Dimension(1024, 720));
+        setMinimumSize(new java.awt.Dimension(1024, 720));
+        setPreferredSize(new java.awt.Dimension(1024, 720));
 
         jPanel1.setBackground(new java.awt.Color(28, 28, 28));
-        jPanel1.setMinimumSize(new java.awt.Dimension(0, 0));
-        jPanel1.setPreferredSize(new java.awt.Dimension(574, 646));
+        jPanel1.setMaximumSize(new java.awt.Dimension(1024, 720));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1024, 720));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1024, 720));
 
         Pilha_BodyConfig1.setBackground(new java.awt.Color(28, 28, 28));
         Pilha_BodyConfig1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED, java.awt.Color.darkGray, java.awt.Color.darkGray, java.awt.Color.darkGray, java.awt.Color.darkGray));
         Pilha_BodyConfig1.setForeground(new java.awt.Color(51, 51, 51));
 
-        t_tra1.setBackground(new java.awt.Color(51, 51, 51));
-        t_tra1.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
-        t_tra1.setForeground(new java.awt.Color(255, 255, 255));
-        t_tra1.setText("Tabela de Transições");
+        label_tabelaTransicoes.setBackground(new java.awt.Color(51, 51, 51));
+        label_tabelaTransicoes.setFont(new java.awt.Font("Noto Sans", 0, 19)); // NOI18N
+        label_tabelaTransicoes.setForeground(new java.awt.Color(255, 255, 255));
+        label_tabelaTransicoes.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        label_tabelaTransicoes.setText("Tabela de Transições");
+        label_tabelaTransicoes.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                label_tabelaTransicoesMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                label_tabelaTransicoesMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                label_tabelaTransicoesMouseExited(evt);
+            }
+        });
 
-        t_ea1.setBackground(new java.awt.Color(51, 51, 51));
-        t_ea1.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
-        t_ea1.setForeground(new java.awt.Color(255, 255, 255));
-        t_ea1.setText("Estados Finais");
+        label_estadosFinais.setBackground(new java.awt.Color(51, 51, 51));
+        label_estadosFinais.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
+        label_estadosFinais.setForeground(new java.awt.Color(255, 255, 255));
+        label_estadosFinais.setText("Estados Finais");
+        label_estadosFinais.setToolTipText("<html>\nEstados que levam ao reconhecimento de dada String de entrada, pode existir mais de um estado final\n<br>\nExemplo de Input: \"q\"\n</html>");
 
-        t_ei1.setBackground(new java.awt.Color(51, 51, 51));
-        t_ei1.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
-        t_ei1.setForeground(new java.awt.Color(255, 255, 255));
-        t_ei1.setText("Estado Inicial");
+        label_estadoInicial.setBackground(new java.awt.Color(51, 51, 51));
+        label_estadoInicial.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
+        label_estadoInicial.setForeground(new java.awt.Color(255, 255, 255));
+        label_estadoInicial.setText("Estado Inicial");
+        label_estadoInicial.setToolTipText("<html>\nPonto de partida do referido autômato, só um estado inicial pode existir\n<br>\nExemplo de Input: \"p\"\n</html>");
 
-        t_ap1.setBackground(new java.awt.Color(51, 51, 51));
-        t_ap1.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
-        t_ap1.setForeground(new java.awt.Color(255, 255, 255));
-        t_ap1.setText("Alfabeto da Pilha");
+        label_alfabetoDaPilha.setBackground(new java.awt.Color(51, 51, 51));
+        label_alfabetoDaPilha.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
+        label_alfabetoDaPilha.setForeground(new java.awt.Color(255, 255, 255));
+        label_alfabetoDaPilha.setText("Alfabeto da Pilha");
+        label_alfabetoDaPilha.setToolTipText("<html>\nElementos que constituem o alfabeto da pilha,podem ou não ser utilizados em uma transição (não pode estar vazio)\n<br>\nExemplo de Input: \"A\"\n</html>");
 
-        t_a1.setBackground(new java.awt.Color(51, 51, 51));
-        t_a1.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
-        t_a1.setForeground(new java.awt.Color(255, 255, 255));
-        t_a1.setText("Alfabeto");
+        label_alfabeto.setBackground(new java.awt.Color(51, 51, 51));
+        label_alfabeto.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
+        label_alfabeto.setForeground(new java.awt.Color(255, 255, 255));
+        label_alfabeto.setText("Alfabeto");
+        label_alfabeto.setToolTipText("<html>\nElementos que constituem o alfabeto do autômato, são utilizados como \"meio\" de transição para uma transição qualquer\nem conjunto com o alfabeto da pilha\n<br>\nExemplo de Input: \"a,b\"\n</html>");
 
-        r_ei1.setText("p");
-        r_ei1.setPreferredSize(new java.awt.Dimension(15, 32));
-        r_ei1.addActionListener(new java.awt.event.ActionListener() {
+        EstadoInicialJText.setFont(new java.awt.Font("Noto Sans", 0, 13)); // NOI18N
+        EstadoInicialJText.setPreferredSize(new java.awt.Dimension(15, 32));
+        EstadoInicialJText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r_eiActionPerformed(evt);
             }
         });
+        EstadoInicialJText.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                EstadoInicialJTextKeyReleased(evt);
+            }
+        });
 
-        r_a1.setText("ab");
-        r_a1.setPreferredSize(new java.awt.Dimension(15, 32));
-        r_a1.addActionListener(new java.awt.event.ActionListener() {
+        AlfabetoJText.setFont(new java.awt.Font("Noto Sans", 0, 13)); // NOI18N
+        AlfabetoJText.setPreferredSize(new java.awt.Dimension(15, 32));
+        AlfabetoJText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r_aActionPerformed(evt);
             }
         });
-        r_a1.addKeyListener(new java.awt.event.KeyAdapter() {
+        AlfabetoJText.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
-                r_a1KeyReleased(evt);
+                AlfabetoJTextKeyReleased(evt);
             }
         });
 
-        r_ap1.setText("A");
-        r_ap1.setPreferredSize(new java.awt.Dimension(15, 32));
-        r_ap1.addActionListener(new java.awt.event.ActionListener() {
+        AlfabetoDaPilhaJText.setFont(new java.awt.Font("Noto Sans", 0, 13)); // NOI18N
+        AlfabetoDaPilhaJText.setPreferredSize(new java.awt.Dimension(15, 32));
+        AlfabetoDaPilhaJText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r_apActionPerformed(evt);
             }
         });
+        AlfabetoDaPilhaJText.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                AlfabetoDaPilhaJTextKeyReleased(evt);
+            }
+        });
 
-        r_ea1.setText("q");
-        r_ea1.setPreferredSize(new java.awt.Dimension(15, 32));
-        r_ea1.addActionListener(new java.awt.event.ActionListener() {
+        EstadosFinaisJText.setFont(new java.awt.Font("Noto Sans", 0, 13)); // NOI18N
+        EstadosFinaisJText.setPreferredSize(new java.awt.Dimension(15, 32));
+        EstadosFinaisJText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r_eaActionPerformed(evt);
             }
         });
+        EstadosFinaisJText.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                EstadosFinaisJTextKeyReleased(evt);
+            }
+        });
 
-        r_sip1.setText("p,q");
-        r_sip1.setPreferredSize(new java.awt.Dimension(15, 32));
-        r_sip1.addActionListener(new java.awt.event.ActionListener() {
+        EstadosJText.setFont(new java.awt.Font("Noto Sans", 0, 13)); // NOI18N
+        EstadosJText.setPreferredSize(new java.awt.Dimension(15, 32));
+        EstadosJText.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 r_sipActionPerformed(evt);
             }
         });
+        EstadosJText.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                EstadosJTextKeyReleased(evt);
+            }
+        });
 
-        t_sip1.setBackground(new java.awt.Color(51, 51, 51));
-        t_sip1.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
-        t_sip1.setForeground(new java.awt.Color(255, 255, 255));
-        t_sip1.setText("Estados");
+        label_estados.setBackground(new java.awt.Color(51, 51, 51));
+        label_estados.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
+        label_estados.setForeground(new java.awt.Color(255, 255, 255));
+        label_estados.setText("Estados");
+        label_estados.setToolTipText("<html>\nEstados que constitutem o autômato, estado inicial e estados finais devem estar contidos\n<br>\nExemplo de Input: \"q,p\"\n</html>");
 
+        AFP_jTable.setFont(new java.awt.Font("Noto Sans", 0, 13)); // NOI18N
         AFP_jTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"p", "a", " ", "p", "A"},
-                {"p", "b", "A", "q", " "},
-                {"p", "a", "A", "q", "AA"},
-                {"q", "b", "A", "q", " "}
+
             },
             new String [] {
                 "Title 1", "Title 2", "Title 3", "Title 4", "Title 5"
             }
         ));
+        AFP_jTable.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                AFP_jTableKeyReleased(evt);
+            }
+        });
         AFND2_jScrollPane4.setViewportView(AFP_jTable);
 
-        afp_button_minus.setText("-");
+        afp_button_minus.setFont(new java.awt.Font("Noto Sans", 1, 18)); // NOI18N
+        afp_button_minus.setText(" - ");
         afp_button_minus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 afp_button_minusActionPerformed(evt);
             }
         });
 
-        afp_button_plus.setText("+");
+        afp_button_plus.setFont(new java.awt.Font("Noto Sans", 1, 18)); // NOI18N
+        afp_button_plus.setText(" + ");
         afp_button_plus.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 afp_button_plusActionPerformed(evt);
@@ -177,63 +335,70 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
         Pilha_BodyConfig1.setLayout(Pilha_BodyConfig1Layout);
         Pilha_BodyConfig1Layout.setHorizontalGroup(
             Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(Pilha_BodyConfig1Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
-                .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(t_tra1)
-                    .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                        .addComponent(AFND2_jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(Pilha_BodyConfig1Layout.createSequentialGroup()
-                            .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(t_ap1, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(t_a1, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(t_ea1, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(t_ei1, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(t_sip1, javax.swing.GroupLayout.Alignment.LEADING))
-                            .addGap(59, 59, 59)
-                            .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(r_ap1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(r_a1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(r_ea1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(r_ei1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(r_sip1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pilha_BodyConfig1Layout.createSequentialGroup()
-                                    .addComponent(afp_button_minus)
-                                    .addGap(18, 18, 18)
-                                    .addComponent(afp_button_plus))))))
-                .addContainerGap(22, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, Pilha_BodyConfig1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(Pilha_BodyConfig1Layout.createSequentialGroup()
+                        .addGap(0, 1, Short.MAX_VALUE)
+                        .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(AFND2_jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 593, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(EstadosJText, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(EstadoInicialJText, javax.swing.GroupLayout.PREFERRED_SIZE, 405, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(AlfabetoDaPilhaJText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 405, Short.MAX_VALUE)
+                                .addComponent(EstadosFinaisJText, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, Pilha_BodyConfig1Layout.createSequentialGroup()
+                        .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(label_estados, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(label_estadoInicial, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(label_estadosFinais, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(label_alfabetoDaPilha, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
+                            .addComponent(label_alfabeto, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(Pilha_BodyConfig1Layout.createSequentialGroup()
+                                .addComponent(afp_button_minus, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(9, 9, 9)))
+                        .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(Pilha_BodyConfig1Layout.createSequentialGroup()
+                                .addGap(18, 18, 18)
+                                .addComponent(AlfabetoJText, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(Pilha_BodyConfig1Layout.createSequentialGroup()
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(label_tabelaTransicoes, javax.swing.GroupLayout.PREFERRED_SIZE, 247, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(afp_button_plus, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(103, 103, 103)))))
+                .addContainerGap())
         );
         Pilha_BodyConfig1Layout.setVerticalGroup(
             Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(Pilha_BodyConfig1Layout.createSequentialGroup()
-                .addGap(0, 20, Short.MAX_VALUE)
+                .addGap(21, 21, 21)
                 .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(t_a1)
-                    .addComponent(r_a1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(label_alfabeto)
+                    .addComponent(AlfabetoJText, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10)
                 .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(t_ap1)
-                    .addComponent(r_ap1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(label_alfabetoDaPilha)
+                    .addComponent(AlfabetoDaPilhaJText, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10)
                 .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(t_ea1)
-                    .addComponent(r_ea1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(label_estadosFinais)
+                    .addComponent(EstadosFinaisJText, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10)
                 .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(t_ei1)
-                    .addComponent(r_ei1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(label_estadoInicial)
+                    .addComponent(EstadoInicialJText, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(10, 10, 10)
                 .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(r_sip1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(t_sip1))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(t_tra1)
-                    .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(afp_button_minus)
-                        .addComponent(afp_button_plus)))
+                    .addComponent(EstadosJText, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_estados))
+                .addGap(18, 18, 18)
+                .addGroup(Pilha_BodyConfig1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(label_tabelaTransicoes)
+                    .addComponent(afp_button_plus)
+                    .addComponent(afp_button_minus))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(AFND2_jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(AFND2_jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -242,7 +407,7 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
         Pilha_tituloPilha.setForeground(new java.awt.Color(255, 255, 255));
 
         Pilha_salvarPilhaBtn.setBackground(new java.awt.Color(51, 51, 51));
-        Pilha_salvarPilhaBtn.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
+        Pilha_salvarPilhaBtn.setFont(new java.awt.Font("Noto Sans", 0, 19)); // NOI18N
         Pilha_salvarPilhaBtn.setForeground(new java.awt.Color(255, 255, 255));
         Pilha_salvarPilhaBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Pilha_salvarPilhaBtn.setText("Salvar Autômato");
@@ -260,17 +425,17 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
             }
         });
 
-        Pilha_subTitulo.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
+        Pilha_subTitulo.setFont(new java.awt.Font("Noto Sans", 0, 24)); // NOI18N
         Pilha_subTitulo.setForeground(new java.awt.Color(255, 255, 255));
         Pilha_subTitulo.setText("Configuração");
 
-        Pilha_ConfigTitulo1.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 36)); // NOI18N
+        Pilha_ConfigTitulo1.setFont(new java.awt.Font("Noto Sans", 0, 32)); // NOI18N
         Pilha_ConfigTitulo1.setForeground(new java.awt.Color(255, 255, 255));
         Pilha_ConfigTitulo1.setText("<html><p style=\"padding-bottom: 16px;\">Autômato de Pilha</p></html>");
         Pilha_ConfigTitulo1.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
 
         Pilha_processarPilhaBtn.setBackground(new java.awt.Color(51, 51, 51));
-        Pilha_processarPilhaBtn.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
+        Pilha_processarPilhaBtn.setFont(new java.awt.Font("Noto Sans", 0, 19)); // NOI18N
         Pilha_processarPilhaBtn.setForeground(new java.awt.Color(255, 255, 255));
         Pilha_processarPilhaBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         Pilha_processarPilhaBtn.setText("Processar Autômato");
@@ -293,52 +458,59 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(46, 46, 46)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Pilha_tituloPilha)
-                            .addComponent(Pilha_subTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(97, 97, 97)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(Pilha_processarPilhaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Pilha_salvarPilhaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(Pilha_ConfigTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(91, 91, 91))))))
+                        .addGap(314, 314, 314)
+                        .addComponent(Pilha_ConfigTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(69, 69, 69)
-                        .addComponent(Pilha_BodyConfig1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(81, Short.MAX_VALUE))
+                        .addComponent(Pilha_tituloPilha)
+                        .addGap(156, 156, 156)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(Pilha_subTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Pilha_BodyConfig1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(341, 341, 341)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(Pilha_processarPilhaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Pilha_salvarPilhaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(200, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(33, Short.MAX_VALUE)
+                .addContainerGap(24, Short.MAX_VALUE)
                 .addComponent(Pilha_ConfigTitulo1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(10, 10, 10)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Pilha_tituloPilha)
-                    .addComponent(Pilha_subTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Pilha_BodyConfig1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Pilha_tituloPilha))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(Pilha_subTitulo, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(Pilha_BodyConfig1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Pilha_salvarPilhaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Pilha_processarPilhaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(21, 21, 21))
+                .addGap(12, 12, 12))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -351,28 +523,16 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_Pilha_salvarPilhaBtnMouseEntered
 
     private void Pilha_salvarPilhaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pilha_salvarPilhaBtnMouseClicked
+        String pilhaInicial = "";
+        controller.gerarAutomato(AlfabetoJText.getText(),
+                AlfabetoDaPilhaJText.getText(), EstadoInicialJText.getText(),
+                EstadosFinaisJText.getText(), pilhaInicial, AFP_jTable,
+                true, 
+                EstadosJText
+        );
+
         // TODO add your handling code here:
     }//GEN-LAST:event_Pilha_salvarPilhaBtnMouseClicked
-
-    private void r_sipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_sipActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_r_sipActionPerformed
-
-    private void r_eaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_eaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_r_eaActionPerformed
-
-    private void r_apActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_apActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_r_apActionPerformed
-
-    private void r_aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_aActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_r_aActionPerformed
-
-    private void r_eiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_eiActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_r_eiActionPerformed
 
     private void Pilha_processarPilhaBtnMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pilha_processarPilhaBtnMouseExited
         Pilha_processarPilhaBtn.setBackground(Pilha_processarPilhaBtn.getBackground().darker().darker());
@@ -383,49 +543,142 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_Pilha_processarPilhaBtnMouseEntered
 
     private void Pilha_processarPilhaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pilha_processarPilhaBtnMouseClicked
-        String estados = r_sip1.getText();
-        String alfabetoFita = r_a1.getText();
-        String alfabetoPilha = r_ap1.getText();
-        String estadoInicial = r_ei1.getText();
-        String estadosFinais = r_ea1.getText();
-        String pilhaInicial = "";
+        String[] estados = EstadosJText.getText().split(",");
+        String inicial = EstadoInicialJText.getText();
+        String[] finais = EstadosFinaisJText.getText().split(",");
+        List<String> estadosLista = new ArrayList<String>();
+        List<String> finaisLista = new ArrayList<String>();
+        Collections.addAll(estadosLista, estados);
+        Collections.addAll(finaisLista, finais);
+        if (estadosLista.containsAll(finaisLista)) {
+            if (estadosLista.contains(inicial)) {
+                String estados2 = EstadosJText.getText();
+                String alfabetoFita = AlfabetoJText.getText();
+                String alfabetoPilha = AlfabetoDaPilhaJText.getText();
+                String estadoInicial = EstadoInicialJText.getText();
+                String estadosFinais = EstadosFinaisJText.getText();
+                String pilhaInicial = "";
 
-        String [][] matrizTransições = new String[AFP_jTable.getRowCount()][AFP_jTable.getColumnCount()];
-        for(int x = 0; x < AFP_jTable.getRowCount(); x++)
-        {
-         for(int y = 0; y < AFP_jTable.getColumnCount(); y++)
-         {
-          if(AFP_jTable.getValueAt(x, y) == null || AFP_jTable.getValueAt(x, y) == " ")  
-          {
-           matrizTransições[x][y]= "";
-          }
-          else
-          {
-           matrizTransições[x][y]= (String) AFP_jTable.getValueAt(x, y);
-          }
-         }
+                String[][] matrizTransições = new String[AFP_jTable.getRowCount()][AFP_jTable.getColumnCount()];
+                for (int x = 0; x < AFP_jTable.getRowCount(); x++) {
+                    for (int y = 0; y < AFP_jTable.getColumnCount(); y++) {
+                        if (AFP_jTable.getValueAt(x, y) == null || AFP_jTable.getValueAt(x, y) == " ") {
+                            matrizTransições[x][y] = "";
+                        } else {
+                            matrizTransições[x][y] = (String) AFP_jTable.getValueAt(x, y);
+                        }
+                    }
+                }
+                AutomatoDePilha pilha = new AutomatoDePilha(alfabetoFita, alfabetoPilha, estadoInicial, estadosFinais, pilhaInicial, matrizTransições, estados2);
+                AFPInjection.setAutomato(pilha);
+                LFStudio.cl.show(JanelaExecucao, "pilhaProcessamentoPanel");
+            }
         }
-        AFP_Injection.setAutomato(alfabetoFita, alfabetoPilha, estadoInicial, estadosFinais, pilhaInicial, matrizTransições);
-        LFStudio.cl.show(JanelaExecucao, "pilhaProcessamentoPanel");        
     }//GEN-LAST:event_Pilha_processarPilhaBtnMouseClicked
 
-    private void r_a1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_r_a1KeyReleased
-    
-    }//GEN-LAST:event_r_a1KeyReleased
+    private void jTable1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTable1KeyReleased
+        AFP_jTable.setModel(jTable1.getModel());
+    }//GEN-LAST:event_jTable1KeyReleased
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        JdialogTabelaExternaPilha.setVisible(false);
+    }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void jLabel1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseEntered
+        Font f = jLabel1.getFont();
+        jLabel1.setFont(f.deriveFont(f.getStyle(), f.getSize2D() + 4));
+    }//GEN-LAST:event_jLabel1MouseEntered
+
+    private void jLabel1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseExited
+        Font f = jLabel1.getFont();
+        jLabel1.setFont(f.deriveFont(f.getStyle(), f.getSize2D() - 4));
+    }//GEN-LAST:event_jLabel1MouseExited
 
     private void afp_button_plusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afp_button_plusActionPerformed
         tableModel.addRow(new Object[]{});
     }//GEN-LAST:event_afp_button_plusActionPerformed
 
     private void afp_button_minusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_afp_button_minusActionPerformed
-       if(tableModel.getRowCount() > 0)
-        tableModel.removeRow(tableModel.getRowCount()-1);
+        if (tableModel.getRowCount() > 0)
+            tableModel.removeRow(tableModel.getRowCount() - 1);
     }//GEN-LAST:event_afp_button_minusActionPerformed
 
+    private void AFP_jTableKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AFP_jTableKeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AFP_jTableKeyReleased
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private void EstadosJTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EstadosJTextKeyReleased
+
+    }//GEN-LAST:event_EstadosJTextKeyReleased
+
+    private void r_sipActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_sipActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_r_sipActionPerformed
+
+    private void EstadosFinaisJTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EstadosFinaisJTextKeyReleased
+
+    }//GEN-LAST:event_EstadosFinaisJTextKeyReleased
+
+    private void r_eaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_eaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_r_eaActionPerformed
+
+    private void AlfabetoDaPilhaJTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AlfabetoDaPilhaJTextKeyReleased
+        if (AlfabetoDaPilhaJText.getText().charAt(AlfabetoDaPilhaJText.getText().length() - 1) != ',') {
+            if (evt.getKeyCode() != KeyEvent.VK_BACK_SPACE) {
+                AlfabetoDaPilhaJText.setText(AlfabetoDaPilhaJText.getText() + ",");
+            }
+        }
+    }//GEN-LAST:event_AlfabetoDaPilhaJTextKeyReleased
+
+    private void r_apActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_apActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_r_apActionPerformed
+
+    private void AlfabetoJTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_AlfabetoJTextKeyReleased
+        if (AlfabetoJText.getText().charAt(AlfabetoJText.getText().length() - 1) != ',') {
+            if (evt.getKeyCode() != KeyEvent.VK_BACK_SPACE) {
+                AlfabetoJText.setText(AlfabetoJText.getText() + ",");
+            }
+        }
+    }//GEN-LAST:event_AlfabetoJTextKeyReleased
+
+    private void r_aActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_aActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_r_aActionPerformed
+
+    private void EstadoInicialJTextKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_EstadoInicialJTextKeyReleased
+
+    }//GEN-LAST:event_EstadoInicialJTextKeyReleased
+
+    private void r_eiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_r_eiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_r_eiActionPerformed
+
+    private void label_tabelaTransicoesMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_tabelaTransicoesMouseExited
+        Font f = label_tabelaTransicoes.getFont();
+        label_tabelaTransicoes.setFont(f.deriveFont(f.getStyle(), f.getSize2D() - 4));
+    }//GEN-LAST:event_label_tabelaTransicoesMouseExited
+
+    private void label_tabelaTransicoesMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_tabelaTransicoesMouseEntered
+        Font f = label_tabelaTransicoes.getFont();
+        label_tabelaTransicoes.setFont(f.deriveFont(f.getStyle(), f.getSize2D() + 4));
+    }//GEN-LAST:event_label_tabelaTransicoesMouseEntered
+
+    private void label_tabelaTransicoesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_label_tabelaTransicoesMouseClicked
+        JdialogTabelaExternaPilha.setVisible(true);
+        jTable1.setModel(AFP_jTable.getModel());
+    }//GEN-LAST:event_label_tabelaTransicoesMouseClicked
+
+    // Variables declaration - do not modify                     
     private javax.swing.JScrollPane AFND2_jScrollPane4;
     private javax.swing.JTable AFP_jTable;
+    private javax.swing.JTextField AlfabetoDaPilhaJText;
+    private javax.swing.JTextField AlfabetoJText;
+    private javax.swing.JTextField EstadoInicialJText;
+    private javax.swing.JTextField EstadosFinaisJText;
+    private javax.swing.JTextField EstadosJText;
+    private javax.swing.JDialog JdialogTabelaExternaPilha;
     private javax.swing.JPanel Pilha_BodyConfig1;
     private javax.swing.JLabel Pilha_ConfigTitulo1;
     private javax.swing.JLabel Pilha_processarPilhaBtn;
@@ -434,17 +687,16 @@ public class PilhaConfigPanel extends javax.swing.JPanel {
     private javax.swing.JLabel Pilha_tituloPilha;
     private javax.swing.JButton afp_button_minus;
     private javax.swing.JButton afp_button_plus;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JTextField r_a1;
-    private javax.swing.JTextField r_ap1;
-    private javax.swing.JTextField r_ea1;
-    private javax.swing.JTextField r_ei1;
-    private javax.swing.JTextField r_sip1;
-    private javax.swing.JLabel t_a1;
-    private javax.swing.JLabel t_ap1;
-    private javax.swing.JLabel t_ea1;
-    private javax.swing.JLabel t_ei1;
-    private javax.swing.JLabel t_sip1;
-    private javax.swing.JLabel t_tra1;
-    // End of variables declaration//GEN-END:variables
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JLabel label_alfabeto;
+    private javax.swing.JLabel label_alfabetoDaPilha;
+    private javax.swing.JLabel label_estadoInicial;
+    private javax.swing.JLabel label_estados;
+    private javax.swing.JLabel label_estadosFinais;
+    private javax.swing.JLabel label_tabelaTransicoes;
+
 }

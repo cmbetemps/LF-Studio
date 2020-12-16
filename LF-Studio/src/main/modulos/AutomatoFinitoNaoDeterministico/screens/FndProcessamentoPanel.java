@@ -7,7 +7,6 @@ package main.modulos.AutomatoFinitoNaoDeterministico.screens;
 
 import java.util.HashMap;
 import main.modulos.AutomatoFinitoNaoDeterministico.controllers.FndController;
-import main.modulos.AutomatoFinitoNaoDeterministico.controllers.AFND_Injection;
 
 /**
  *
@@ -46,13 +45,19 @@ public class FndProcessamentoPanel extends javax.swing.JPanel {
         AFND3_Titulo6 = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(28, 28, 28));
+        setMaximumSize(new java.awt.Dimension(1024, 720));
+        setMinimumSize(new java.awt.Dimension(1024, 720));
+        setPreferredSize(new java.awt.Dimension(1024, 720));
 
         jPanel1.setBackground(new java.awt.Color(28, 28, 28));
-        jPanel1.setPreferredSize(new java.awt.Dimension(553, 633));
+        jPanel1.setMaximumSize(new java.awt.Dimension(1024, 720));
+        jPanel1.setMinimumSize(new java.awt.Dimension(1024, 720));
+        jPanel1.setPreferredSize(new java.awt.Dimension(1024, 720));
 
-        AFND3_Titulo4.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 36)); // NOI18N
+        AFND3_Titulo4.setFont(new java.awt.Font("Noto Sans", 0, 32)); // NOI18N
         AFND3_Titulo4.setForeground(new java.awt.Color(255, 255, 255));
-        AFND3_Titulo4.setText("<html><p style=\"padding-bottom: 16px;\">Autômato FND</p></html>");
+        AFND3_Titulo4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        AFND3_Titulo4.setText("<html><p style=\"padding-bottom: 6px;\">Autômato Finito Não Determinístico</p></html>");
         AFND3_Titulo4.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
 
         AFND3_TextFieldEntrada1.setBackground(new java.awt.Color(255, 255, 255));
@@ -69,6 +74,7 @@ public class FndProcessamentoPanel extends javax.swing.JPanel {
 
         Retorno.setBackground(new java.awt.Color(0, 0, 0));
         Retorno.setColumns(20);
+        Retorno.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
         Retorno.setForeground(new java.awt.Color(255, 255, 255));
         Retorno.setRows(5);
         jScrollPane1.setViewportView(Retorno);
@@ -77,20 +83,15 @@ public class FndProcessamentoPanel extends javax.swing.JPanel {
         processamento2.setLayout(processamento2Layout);
         processamento2Layout.setHorizontalGroup(
             processamento2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(processamento2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 411, Short.MAX_VALUE)
-                .addContainerGap())
+            .addComponent(jScrollPane1)
         );
         processamento2Layout.setVerticalGroup(
             processamento2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(processamento2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 315, Short.MAX_VALUE))
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 450, Short.MAX_VALUE)
         );
 
         validarPalavraFND.setBackground(new java.awt.Color(51, 51, 51));
-        validarPalavraFND.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 20)); // NOI18N
+        validarPalavraFND.setFont(new java.awt.Font("Noto Sans", 0, 16)); // NOI18N
         validarPalavraFND.setForeground(new java.awt.Color(255, 255, 255));
         validarPalavraFND.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         validarPalavraFND.setText("Validar Palavra");
@@ -108,55 +109,69 @@ public class FndProcessamentoPanel extends javax.swing.JPanel {
             }
         });
 
-        AFND3_Titulo5.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 22)); // NOI18N
+        AFND3_Titulo5.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
         AFND3_Titulo5.setForeground(new java.awt.Color(255, 255, 255));
-        AFND3_Titulo5.setText("Entrada");
+        AFND3_Titulo5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        AFND3_Titulo5.setText("Entrada:");
 
-        AFND3_Titulo6.setFont(new java.awt.Font("Microsoft Yi Baiti", 1, 24)); // NOI18N
+        AFND3_Titulo6.setFont(new java.awt.Font("Noto Sans", 0, 22)); // NOI18N
         AFND3_Titulo6.setForeground(new java.awt.Color(255, 255, 255));
-        AFND3_Titulo6.setText("Processamento");
+        AFND3_Titulo6.setText("Processamento:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(57, 57, 57)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(AFND3_Titulo6)
-                        .addComponent(AFND3_Titulo4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(processamento2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(241, 241, 241)
+                                .addComponent(AFND3_Titulo4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(375, 375, 375)
+                                .addComponent(validarPalavraFND, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 239, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(AFND3_Titulo5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(AFND3_TextFieldEntrada1, javax.swing.GroupLayout.PREFERRED_SIZE, 186, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(validarPalavraFND, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(99, Short.MAX_VALUE))
+                        .addContainerGap()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(processamento2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(AFND3_Titulo5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(AFND3_TextFieldEntrada1)))))
+                .addContainerGap())
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(AFND3_Titulo6)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(35, Short.MAX_VALUE)
+                .addGap(23, 23, 23)
                 .addComponent(AFND3_Titulo4, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(AFND3_Titulo6, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(processamento2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(8, 8, 8)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(AFND3_TextFieldEntrada1, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(AFND3_Titulo5, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(25, 25, 25)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(validarPalavraFND, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(34, 34, 34))
+                .addGap(14, 14, 14))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -177,38 +192,7 @@ public class FndProcessamentoPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_validarPalavraFNDMouseExited
 
     private void validarPalavraFNDMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_validarPalavraFNDMouseClicked
-        String temp = "";
-        HashMap map = AFND_Injection.getMap();
-        HashMap mapAlfabeto = AFND_Injection.getMapAlfabeto();
-        for (String x: AFND3_TextFieldEntrada1.getText().split("")) {
-            temp = temp.concat(AFND_Injection.getMapAlfabetoInverso().get(x).toString());
-        }
-        AFND_Injection.getAutomato().config.clear();
-        AFND_Injection.getAutomato().reconhecer(temp);
-        StringBuilder text = new StringBuilder();
-        StringBuilder substitutoAlfabeto = new StringBuilder();
-        for (String x : AFND_Injection.getAutomato().config) {
-            if (x.indexOf("[") != -1) {
-                temp = x.substring(x.indexOf("["), x.indexOf("]") + 1).replace("[", "").replace("]", "");
-                x = x.replace("[" + temp + "]", "[" + AFND_Injection.getMap().get(Integer.valueOf(temp)) + "]");
-            }
-            if (x.contains("<<backTrack>>") || x.equals("Rejeitada") || x.equals("Aceita")) {
-                substitutoAlfabeto.append(x);
-            } else {
-                for (int i = 0; i < x.length(); i++) {
-                    if (x.charAt(i) == '[') {
-                        substitutoAlfabeto.append(x.substring(i, x.indexOf("]", i) + 1));
-                        i = x.indexOf("]", i);
-                    } else {
-                        substitutoAlfabeto.append(mapAlfabeto.get(Integer.valueOf(String.valueOf(x.charAt(i)))));
-                    }
-                }
-            }
-            text.append(substitutoAlfabeto);
-            text.append("\n");
-            substitutoAlfabeto = new StringBuilder();
-        }
-        Retorno.setText(text.toString());
+        controller.validarPalavra(Retorno,AFND3_TextFieldEntrada1 );
     }//GEN-LAST:event_validarPalavraFNDMouseClicked
 
 

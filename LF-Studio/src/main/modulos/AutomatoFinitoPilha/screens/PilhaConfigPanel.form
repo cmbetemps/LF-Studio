@@ -1,12 +1,134 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <NonVisualComponents>
+    <Container class="javax.swing.JDialog" name="JdialogTabelaExternaPilha">
+      <Properties>
+        <Property name="alwaysOnTop" type="boolean" value="true"/>
+        <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+          <Color blue="1c" green="1c" red="1c" type="rgb"/>
+        </Property>
+        <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[400, 300]"/>
+        </Property>
+      </Properties>
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <Component id="jPanel2" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" pref="0" max="-2" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Component id="jPanel2" alignment="0" max="32767" attributes="0"/>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="jPanel2">
+          <Properties>
+            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="1c" green="1c" red="1c" type="rgb"/>
+            </Property>
+          </Properties>
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="400" max="32767" attributes="0"/>
+                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jScrollPane1" alignment="0" pref="388" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <EmptySpace min="0" pref="300" max="32767" attributes="0"/>
+                  <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" max="-2" attributes="0"/>
+                          <Component id="jScrollPane1" pref="257" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+              <AuxValues>
+                <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+              </AuxValues>
+
+              <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+              <SubComponents>
+                <Component class="javax.swing.JTable" name="jTable1">
+                  <Properties>
+                    <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                      <Table columnCount="4" rowCount="4">
+                        <Column editable="true" title="Title 1" type="java.lang.Object"/>
+                        <Column editable="true" title="Title 2" type="java.lang.Object"/>
+                        <Column editable="true" title="Title 3" type="java.lang.Object"/>
+                        <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                      </Table>
+                    </Property>
+                    <Property name="selectionBackground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                      <Color blue="14" green="14" red="14" type="rgb"/>
+                    </Property>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="jTable1KeyReleased"/>
+                  </Events>
+                </Component>
+              </SubComponents>
+            </Container>
+            <Component class="javax.swing.JLabel" name="jLabel1">
+              <Properties>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Microsoft Yi Baiti" size="24" style="1"/>
+                </Property>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
+                <Property name="text" type="java.lang.String" value="Tabela de Transi&#xe7;&#xf5;es"/>
+              </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel1MouseClicked"/>
+                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel1MouseEntered"/>
+                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel1MouseExited"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+  </NonVisualComponents>
   <Properties>
     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
       <Color blue="1c" green="1c" red="1c" type="rgb"/>
     </Property>
+    <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[1024, 720]"/>
+    </Property>
+    <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[1024, 720]"/>
+    </Property>
     <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-      <Dimension value="[574, 646]"/>
+      <Dimension value="[1024, 720]"/>
     </Property>
   </Properties>
   <AuxValues>
@@ -24,12 +146,19 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+          <Group type="102" alignment="1" attributes="0">
+              <EmptySpace max="32767" attributes="0"/>
+              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="jPanel1" alignment="1" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <Component id="jPanel1" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
@@ -39,63 +168,69 @@
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="1c" green="1c" red="1c" type="rgb"/>
         </Property>
+        <Property name="maximumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[1024, 720]"/>
+        </Property>
         <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[0, 0]"/>
+          <Dimension value="[1024, 720]"/>
         </Property>
         <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-          <Dimension value="[574, 646]"/>
+          <Dimension value="[1024, 720]"/>
         </Property>
       </Properties>
 
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="52" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="314" max="-2" attributes="0"/>
+                          <Component id="Pilha_ConfigTitulo1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="Pilha_tituloPilha" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="156" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="Pilha_tituloPilha" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="Pilha_subTitulo" alignment="0" min="-2" pref="149" max="-2" attributes="0"/>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="Pilha_processarPilhaBtn" alignment="1" min="-2" pref="234" max="-2" attributes="0"/>
-                                      <Component id="Pilha_salvarPilhaBtn" alignment="1" min="-2" pref="234" max="-2" attributes="0"/>
-                                      <Group type="102" attributes="0">
-                                          <Component id="Pilha_ConfigTitulo1" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                              </Group>
+                              <Component id="Pilha_subTitulo" min="-2" pref="171" max="-2" attributes="0"/>
+                              <Component id="Pilha_BodyConfig1" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="69" max="-2" attributes="0"/>
-                          <Component id="Pilha_BodyConfig1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="341" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Component id="Pilha_processarPilhaBtn" alignment="1" min="-2" pref="234" max="-2" attributes="0"/>
+                              <Component id="Pilha_salvarPilhaBtn" alignment="1" min="-2" pref="234" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
                   </Group>
-                  <EmptySpace pref="81" max="32767" attributes="0"/>
+                  <EmptySpace pref="200" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace pref="33" max="32767" attributes="0"/>
+                  <EmptySpace pref="24" max="32767" attributes="0"/>
                   <Component id="Pilha_ConfigTitulo1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="10" pref="10" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="Pilha_tituloPilha" min="-2" max="-2" attributes="0"/>
-                      <Component id="Pilha_subTitulo" min="-2" pref="36" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace pref="51" max="-2" attributes="0"/>
+                          <Component id="Pilha_tituloPilha" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="Pilha_subTitulo" min="-2" pref="36" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="Pilha_BodyConfig1" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="Pilha_BodyConfig1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Component id="Pilha_salvarPilhaBtn" min="-2" pref="42" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="Pilha_processarPilhaBtn" min="-2" pref="42" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -124,222 +259,257 @@
           <Layout>
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="t_tra1" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="1" attributes="0">
-                              <Component id="AFND2_jScrollPane4" min="-2" pref="380" max="-2" attributes="0"/>
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="t_ap1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="t_a1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="t_ea1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="t_ei1" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="t_sip1" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" alignment="1" attributes="0">
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="0" pref="1" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="AFND2_jScrollPane4" min="-2" pref="593" max="-2" attributes="0"/>
+                                  <Component id="EstadosJText" min="-2" pref="405" max="-2" attributes="0"/>
+                                  <Component id="EstadoInicialJText" alignment="1" min="-2" pref="405" max="-2" attributes="0"/>
+                                  <Group type="103" alignment="1" groupAlignment="0" max="-2" attributes="0">
+                                      <Component id="AlfabetoDaPilhaJText" alignment="1" pref="405" max="32767" attributes="0"/>
+                                      <Component id="EstadosFinaisJText" alignment="1" max="32767" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="59" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="r_ap1" min="-2" pref="158" max="-2" attributes="0"/>
-                                      <Component id="r_a1" min="-2" pref="158" max="-2" attributes="0"/>
-                                      <Component id="r_ea1" alignment="0" min="-2" pref="158" max="-2" attributes="0"/>
-                                      <Component id="r_ei1" alignment="0" min="-2" pref="158" max="-2" attributes="0"/>
-                                      <Component id="r_sip1" min="-2" pref="158" max="-2" attributes="0"/>
-                                      <Group type="102" alignment="1" attributes="0">
-                                          <Component id="afp_button_minus" min="-2" max="-2" attributes="0"/>
-                                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                                          <Component id="afp_button_plus" min="-2" max="-2" attributes="0"/>
-                                      </Group>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                  <Component id="label_estados" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="label_estadoInicial" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="label_estadosFinais" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="label_alfabetoDaPilha" alignment="0" pref="169" max="32767" attributes="0"/>
+                                  <Component id="label_alfabeto" alignment="0" max="32767" attributes="0"/>
+                                  <Group type="102" alignment="1" attributes="0">
+                                      <Component id="afp_button_minus" min="-2" pref="54" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="AlfabetoJText" max="32767" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace max="32767" attributes="0"/>
+                                      <Component id="label_tabelaTransicoes" min="-2" pref="247" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="afp_button_plus" min="-2" pref="57" max="-2" attributes="0"/>
+                                      <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
                       </Group>
-                      <EmptySpace pref="22" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="0" pref="20" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="t_a1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="r_a1" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="label_alfabeto" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="AlfabetoJText" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="t_ap1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="r_ap1" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="label_alfabetoDaPilha" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="AlfabetoDaPilhaJText" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="t_ea1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="r_ea1" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="label_estadosFinais" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="EstadosFinaisJText" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="t_ei1" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="r_ei1" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="label_estadoInicial" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="EstadoInicialJText" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="r_sip1" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
-                          <Component id="t_sip1" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="EstadosJText" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
+                          <Component id="label_estados" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="t_tra1" min="-2" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="afp_button_minus" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="afp_button_plus" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="label_tabelaTransicoes" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="afp_button_plus" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="afp_button_minus" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="AFND2_jScrollPane4" min="-2" pref="87" max="-2" attributes="0"/>
+                      <Component id="AFND2_jScrollPane4" pref="169" max="32767" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JLabel" name="t_tra1">
+            <Component class="javax.swing.JLabel" name="label_tabelaTransicoes">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="33" red="33" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Microsoft Yi Baiti" size="22" style="1"/>
+                  <Font name="Noto Sans" size="19" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
+                <Property name="horizontalAlignment" type="int" value="0"/>
                 <Property name="text" type="java.lang.String" value="Tabela de Transi&#xe7;&#xf5;es"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="label_tabelaTransicoesMouseClicked"/>
+                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="label_tabelaTransicoesMouseEntered"/>
+                <EventHandler event="mouseExited" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="label_tabelaTransicoesMouseExited"/>
+              </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="t_ea1">
+            <Component class="javax.swing.JLabel" name="label_estadosFinais">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="33" red="33" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Microsoft Yi Baiti" size="22" style="1"/>
+                  <Font name="Noto Sans" size="18" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Estados Finais"/>
+                <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#xa;Estados que levam ao reconhecimento de dada String de entrada, pode existir mais de um estado final&#xa;&lt;br&gt;&#xa;Exemplo de Input: &quot;q&quot;&#xa;&lt;/html&gt;"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="t_ei1">
+            <Component class="javax.swing.JLabel" name="label_estadoInicial">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="33" red="33" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Microsoft Yi Baiti" size="22" style="1"/>
+                  <Font name="Noto Sans" size="18" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Estado Inicial"/>
+                <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#xa;Ponto de partida do referido aut&#xf4;mato, s&#xf3; um estado inicial pode existir&#xa;&lt;br&gt;&#xa;Exemplo de Input: &quot;p&quot;&#xa;&lt;/html&gt;"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="t_ap1">
+            <Component class="javax.swing.JLabel" name="label_alfabetoDaPilha">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="33" red="33" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Microsoft Yi Baiti" size="22" style="1"/>
+                  <Font name="Noto Sans" size="18" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Alfabeto da Pilha"/>
+                <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#xa;Elementos que constituem o alfabeto da pilha,podem ou n&#xe3;o ser utilizados em uma transi&#xe7;&#xe3;o (n&#xe3;o pode estar vazio)&#xa;&lt;br&gt;&#xa;Exemplo de Input: &quot;A&quot;&#xa;&lt;/html&gt;"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="t_a1">
+            <Component class="javax.swing.JLabel" name="label_alfabeto">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="33" red="33" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Microsoft Yi Baiti" size="22" style="1"/>
+                  <Font name="Noto Sans" size="18" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Alfabeto"/>
+                <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#xa;Elementos que constituem o alfabeto do aut&#xf4;mato, s&#xe3;o utilizados como &quot;meio&quot; de transi&#xe7;&#xe3;o para uma transi&#xe7;&#xe3;o qualquer&#xa;em conjunto com o alfabeto da pilha&#xa;&lt;br&gt;&#xa;Exemplo de Input: &quot;a,b&quot;&#xa;&lt;/html&gt;"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="r_ei1">
+            <Component class="javax.swing.JTextField" name="EstadoInicialJText">
               <Properties>
-                <Property name="text" type="java.lang.String" value="p"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Noto Sans" size="13" style="0"/>
+                </Property>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[15, 32]"/>
                 </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="r_eiActionPerformed"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="EstadoInicialJTextKeyReleased"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="r_a1">
+            <Component class="javax.swing.JTextField" name="AlfabetoJText">
               <Properties>
-                <Property name="text" type="java.lang.String" value="ab"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Noto Sans" size="13" style="0"/>
+                </Property>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[15, 32]"/>
                 </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="r_aActionPerformed"/>
-                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="r_a1KeyReleased"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="AlfabetoJTextKeyReleased"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="r_ap1">
+            <Component class="javax.swing.JTextField" name="AlfabetoDaPilhaJText">
               <Properties>
-                <Property name="text" type="java.lang.String" value="A"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Noto Sans" size="13" style="0"/>
+                </Property>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[15, 32]"/>
                 </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="r_apActionPerformed"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="AlfabetoDaPilhaJTextKeyReleased"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="r_ea1">
+            <Component class="javax.swing.JTextField" name="EstadosFinaisJText">
               <Properties>
-                <Property name="text" type="java.lang.String" value="q"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Noto Sans" size="13" style="0"/>
+                </Property>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[15, 32]"/>
                 </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="r_eaActionPerformed"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="EstadosFinaisJTextKeyReleased"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="r_sip1">
+            <Component class="javax.swing.JTextField" name="EstadosJText">
               <Properties>
-                <Property name="text" type="java.lang.String" value="p,q"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Noto Sans" size="13" style="0"/>
+                </Property>
                 <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                   <Dimension value="[15, 32]"/>
                 </Property>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="r_sipActionPerformed"/>
+                <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="EstadosJTextKeyReleased"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JLabel" name="t_sip1">
+            <Component class="javax.swing.JLabel" name="label_estados">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="33" green="33" red="33" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-                  <Font name="Microsoft Yi Baiti" size="22" style="1"/>
+                  <Font name="Noto Sans" size="18" style="0"/>
                 </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Estados"/>
+                <Property name="toolTipText" type="java.lang.String" value="&lt;html&gt;&#xa;Estados que constitutem o aut&#xf4;mato, estado inicial e estados finais devem estar contidos&#xa;&lt;br&gt;&#xa;Exemplo de Input: &quot;q,p&quot;&#xa;&lt;/html&gt;"/>
               </Properties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="AFND2_jScrollPane4">
@@ -351,38 +521,16 @@
               <SubComponents>
                 <Component class="javax.swing.JTable" name="AFP_jTable">
                   <Properties>
+                    <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                      <Font name="Noto Sans" size="13" style="0"/>
+                    </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="5" rowCount="4">
-                        <Column editable="true" title="Title 1" type="java.lang.Object">
-                          <Data value="p"/>
-                          <Data value="p"/>
-                          <Data value="p"/>
-                          <Data value="q"/>
-                        </Column>
-                        <Column editable="true" title="Title 2" type="java.lang.Object">
-                          <Data value="a"/>
-                          <Data value="b"/>
-                          <Data value="a"/>
-                          <Data value="b"/>
-                        </Column>
-                        <Column editable="true" title="Title 3" type="java.lang.Object">
-                          <Data value=" "/>
-                          <Data value="A"/>
-                          <Data value="A"/>
-                          <Data value="A"/>
-                        </Column>
-                        <Column editable="true" title="Title 4" type="java.lang.Object">
-                          <Data value="p"/>
-                          <Data value="q"/>
-                          <Data value="q"/>
-                          <Data value="q"/>
-                        </Column>
-                        <Column editable="true" title="Title 5" type="java.lang.Object">
-                          <Data value="A"/>
-                          <Data value=" "/>
-                          <Data value="AA"/>
-                          <Data value=" "/>
-                        </Column>
+                      <Table columnCount="5" rowCount="0">
+                        <Column editable="true" title="Title 1" type="java.lang.Object"/>
+                        <Column editable="true" title="Title 2" type="java.lang.Object"/>
+                        <Column editable="true" title="Title 3" type="java.lang.Object"/>
+                        <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                        <Column editable="true" title="Title 5" type="java.lang.Object"/>
                       </Table>
                     </Property>
                     <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -418,12 +566,18 @@
                       <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                     </Property>
                   </Properties>
+                  <Events>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="AFP_jTableKeyReleased"/>
+                  </Events>
                 </Component>
               </SubComponents>
             </Container>
             <Component class="javax.swing.JButton" name="afp_button_minus">
               <Properties>
-                <Property name="text" type="java.lang.String" value="-"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Noto Sans" size="18" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value=" - "/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="afp_button_minusActionPerformed"/>
@@ -431,7 +585,10 @@
             </Component>
             <Component class="javax.swing.JButton" name="afp_button_plus">
               <Properties>
-                <Property name="text" type="java.lang.String" value="+"/>
+                <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+                  <Font name="Noto Sans" size="18" style="1"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value=" + "/>
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="afp_button_plusActionPerformed"/>
@@ -458,7 +615,7 @@
               <Color blue="33" green="33" red="33" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Microsoft Yi Baiti" size="22" style="1"/>
+              <Font name="Noto Sans" size="19" style="0"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -477,7 +634,7 @@
         <Component class="javax.swing.JLabel" name="Pilha_subTitulo">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Microsoft Yi Baiti" size="24" style="1"/>
+              <Font name="Noto Sans" size="24" style="0"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -488,7 +645,7 @@
         <Component class="javax.swing.JLabel" name="Pilha_ConfigTitulo1">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Microsoft Yi Baiti" size="36" style="1"/>
+              <Font name="Noto Sans" size="32" style="0"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
@@ -509,7 +666,7 @@
               <Color blue="33" green="33" red="33" type="rgb"/>
             </Property>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Microsoft Yi Baiti" size="22" style="1"/>
+              <Font name="Noto Sans" size="19" style="0"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="ff" green="ff" red="ff" type="rgb"/>

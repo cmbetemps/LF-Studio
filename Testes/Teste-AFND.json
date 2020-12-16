@@ -1,0 +1,90 @@
+{
+  "count": 0,
+  "auxiliarMap": {
+    "map": {
+      "0": "q3",
+      "1": "q2",
+      "2": "q1",
+      "3": "q0"
+    },
+    "mapAlfabeto": {
+      "0": "0",
+      "1": "1"
+    },
+    "mapAlfabetoInverso": {
+      "0": 0,
+      "1": 1
+    },
+    "config": [],
+    "estadosFinais": "q3",
+    "estadoInicial": "q0",
+    "estados": "q0,q1,q2,q3",
+    "alfabeto": "0,1,",
+    "transicoes": [
+      [
+        "q3",
+        "q0,q1",
+        "q1,q2"
+      ],
+      [
+        "q2",
+        "q3",
+        null
+      ],
+      [
+        "q1",
+        null,
+        "q3"
+      ],
+      [
+        "q0",
+        "q3",
+        "q3"
+      ]
+    ],
+    "alfabetoTable": [
+      "Estados",
+      "0",
+      "1"
+    ]
+  },
+  "config": [],
+  "debug": false,
+  "aceitacao": [
+    0
+  ],
+  "estadoInicial": 3,
+  "transicao": [
+    [
+      [
+        3,
+        2
+      ],
+      [
+        2,
+        1
+      ]
+    ],
+    [
+      [
+        0
+      ],
+      []
+    ],
+    [
+      [],
+      [
+        0
+      ]
+    ],
+    [
+      [
+        0
+      ],
+      [
+        0
+      ]
+    ]
+  ],
+  "alfabeto": "01"
+}
