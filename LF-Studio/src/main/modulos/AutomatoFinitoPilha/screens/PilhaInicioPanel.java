@@ -120,9 +120,9 @@ public class PilhaInicioPanel extends javax.swing.JPanel {
                     .addComponent(PILHA_LabelImportarAutomato4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
             .addGroup(pilhaTitleLayout.createSequentialGroup()
-                .addGap(284, 284, 284)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(287, Short.MAX_VALUE))
+                .addGap(319, 319, 319)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pilhaTitleLayout.setVerticalGroup(
             pilhaTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

@@ -59,6 +59,7 @@ public class PilhaProcessamentoPanel extends javax.swing.JPanel {
 
         AFP_Retorno.setBackground(new java.awt.Color(0, 0, 0));
         AFP_Retorno.setColumns(20);
+        AFP_Retorno.setFont(new java.awt.Font("Noto Sans", 0, 12)); // NOI18N
         AFP_Retorno.setForeground(new java.awt.Color(255, 255, 255));
         AFP_Retorno.setRows(5);
         jScrollPane1.setViewportView(AFP_Retorno);
@@ -103,6 +104,9 @@ public class PilhaProcessamentoPanel extends javax.swing.JPanel {
         t_proces1.setFont(new java.awt.Font("Noto Sans", 0, 20)); // NOI18N
         t_proces1.setForeground(new java.awt.Color(255, 255, 255));
         t_proces1.setText("Processamento:");
+
+        r_e.setFont(new java.awt.Font("Noto Sans", 0, 14)); // NOI18N
+        r_e.setForeground(new java.awt.Color(255, 255, 255));
 
         AFND3_Titulo7.setFont(new java.awt.Font("Noto Sans", 0, 32)); // NOI18N
         AFND3_Titulo7.setForeground(new java.awt.Color(255, 255, 255));

@@ -61,7 +61,7 @@ public class FndProcessamentoPanel extends javax.swing.JPanel {
         AFND3_Titulo4.setBorder(javax.swing.BorderFactory.createMatteBorder(0, 0, 2, 0, new java.awt.Color(255, 255, 255)));
 
         AFND3_TextFieldEntrada1.setBackground(new java.awt.Color(255, 255, 255));
-        AFND3_TextFieldEntrada1.setFont(new java.awt.Font("SansSerif", 0, 18)); // NOI18N
+        AFND3_TextFieldEntrada1.setFont(new java.awt.Font("Noto Sans", 0, 18)); // NOI18N
         AFND3_TextFieldEntrada1.setForeground(new java.awt.Color(0, 0, 0));
         AFND3_TextFieldEntrada1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         AFND3_TextFieldEntrada1.addActionListener(new java.awt.event.ActionListener() {

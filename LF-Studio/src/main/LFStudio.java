@@ -21,6 +21,15 @@ import main.modulos.AutomatoFinitoNaoDeterministico.screens.FndProcessamentoPane
 import main.modulos.AutomatoFinitoPilha.screens.PilhaConfigPanel;
 import main.modulos.AutomatoFinitoPilha.screens.PilhaInicioPanel;
 import main.modulos.AutomatoFinitoPilha.screens.PilhaProcessamentoPanel;
+import main.modulos.ExpressoesRegulares.screens.ERForm;
+import main.modulos.ExpressoesRegulares.screens.ERHome;
+import main.modulos.GramaticasLivreDeContexto.screens.GLCForm;
+import main.modulos.GramaticasLivreDeContexto.screens.GLCHome;
+import main.modulos.GramaticasRegulares.screens.GRForm;
+import main.modulos.GramaticasRegulares.screens.GRHome;
+import main.modulos.MaquinaTuring.screens.TuringConfigPanel;
+import main.modulos.MaquinaTuring.screens.TuringInicioPanel;
+import main.modulos.MaquinaTuring.screens.TuringProcessamentoPanel;
 /**
  *
  * @author thiag
@@ -37,6 +46,15 @@ public class LFStudio extends javax.swing.JFrame {
     PilhaInicioPanel pilhaInicioPanel;
     PilhaProcessamentoPanel pilhaProcessamentoPanel;
     PilhaConfigPanel pilhaConfigPanel;
+    GLCHome glcHome;
+    GLCForm glcForm;
+    GRHome grHome;
+    GRForm grForm;
+    ERHome erHome;
+    ERForm erForm;
+    TuringInicioPanel turingInicioPanel;
+    TuringProcessamentoPanel turingProcessamentoPanel;
+    TuringConfigPanel turingConfigPanel;
     
     Color defaultColor = null;
     
@@ -61,6 +79,13 @@ public class LFStudio extends javax.swing.JFrame {
         JanelaExecucao.add(pilhaInicioPanel, "pilhaInicioPanel");
     }
     
+    void setTuringInicioPanel(){
+        turingInicioPanel =  new TuringInicioPanel(JanelaExecucao);
+        turingInicioPanel.setBackground(new java.awt.Color(70, 71, 74));
+        turingInicioPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        JanelaExecucao.add(turingInicioPanel, "turingInicioPanel");
+    }
+    
     void setFndProcessamentoPanel(){
         fndProcessamentoPanel =  new FndProcessamentoPanel(JanelaExecucao);
         fndProcessamentoPanel.setBackground(new java.awt.Color(70, 71, 74));
@@ -83,6 +108,13 @@ public class LFStudio extends javax.swing.JFrame {
         JanelaExecucao.add(pilhaProcessamentoPanel, "pilhaProcessamentoPanel");
     }
     
+        void setTuringProcessamentoPanel(){
+        turingProcessamentoPanel =  new TuringProcessamentoPanel(JanelaExecucao);
+        turingProcessamentoPanel.setBackground(new java.awt.Color(70, 71, 74));
+        turingProcessamentoPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        JanelaExecucao.add(turingProcessamentoPanel, "turingProcessamentoPanel");
+    }
+    
     void setFndConfigPanel(){
         fndConfigPanel =  new FndConfigPanel(JanelaExecucao);
         fndConfigPanel.setBackground(new java.awt.Color(70, 71, 74));
@@ -103,6 +135,55 @@ public class LFStudio extends javax.swing.JFrame {
         pilhaConfigPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
         JanelaExecucao.add(pilhaConfigPanel, "pilhaConfigPanel");
     }
+    
+    void setTuringConfigPanel(){
+        turingConfigPanel =  new TuringConfigPanel(JanelaExecucao);
+        turingConfigPanel.setBackground(new java.awt.Color(70, 71, 74));
+        turingConfigPanel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        JanelaExecucao.add(turingConfigPanel, "turingConfigPanel");
+    }
+    
+    void setGlcHome(){
+        glcHome =  new GLCHome(JanelaExecucao);
+        glcHome.setBackground(new java.awt.Color(70, 71, 74));
+        glcHome.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        JanelaExecucao.add(glcHome, "glcHome");
+    }
+    
+    void setGlcForm(){
+        glcForm =  new GLCForm(JanelaExecucao);
+        glcForm.setBackground(new java.awt.Color(70, 71, 74));
+        glcForm.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        JanelaExecucao.add(glcForm, "glcForm");
+    }
+    
+    void setGrHome(){
+        grHome =  new GRHome(JanelaExecucao);
+        grHome.setBackground(new java.awt.Color(70, 71, 74));
+        grHome.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        JanelaExecucao.add(grHome, "grHome");
+    }
+    
+    void setGrForm(){
+        grForm =  new GRForm(JanelaExecucao);
+        grForm.setBackground(new java.awt.Color(70, 71, 74));
+        grForm.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        JanelaExecucao.add(grForm, "grForm");
+    }
+    
+    void setErHome(){
+        erHome =  new ERHome(JanelaExecucao);
+        erHome.setBackground(new java.awt.Color(70, 71, 74));
+        erHome.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        JanelaExecucao.add(erHome, "erHome");
+    }
+    
+    void setErForm(){
+        erForm =  new ERForm(JanelaExecucao);
+        erForm.setBackground(new java.awt.Color(70, 71, 74));
+        erForm.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(51, 51, 51)));
+        JanelaExecucao.add(erForm, "erForm");
+    }
      
     void initPanels(){
         setFndConfigPanel();
@@ -114,6 +195,15 @@ public class LFStudio extends javax.swing.JFrame {
         setPilhaConfigPanel();
         setPilhaInicioPanel();
         setPilhaProcessamentoPanel();
+        setGlcHome();
+        setGlcForm();
+        setGrHome();
+        setGrForm();
+        setErHome();
+        setErForm();
+        setTuringInicioPanel();
+        setTuringConfigPanel();
+        setTuringProcessamentoPanel();
     }
     
     public LFStudio() {
@@ -252,6 +342,9 @@ public class LFStudio extends javax.swing.JFrame {
         menuRegX.setMaximumSize(new java.awt.Dimension(344, 539));
         menuRegX.setOpaque(true);
         menuRegX.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuRegXMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 menuRegXMouseEntered(evt);
             }
@@ -338,6 +431,9 @@ public class LFStudio extends javax.swing.JFrame {
         menuGLC.setMaximumSize(new java.awt.Dimension(344, 539));
         menuGLC.setOpaque(true);
         menuGLC.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuGLCMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 menuGLCMouseEntered(evt);
             }
@@ -360,6 +456,9 @@ public class LFStudio extends javax.swing.JFrame {
         menuGramaticasRegulares.setMaximumSize(new java.awt.Dimension(344, 539));
         menuGramaticasRegulares.setOpaque(true);
         menuGramaticasRegulares.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuGramaticasRegularesMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 menuGramaticasRegularesMouseEntered(evt);
             }
@@ -382,6 +481,9 @@ public class LFStudio extends javax.swing.JFrame {
         menuTuring.setMaximumSize(new java.awt.Dimension(344, 539));
         menuTuring.setOpaque(true);
         menuTuring.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                menuTuringMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 menuTuringMouseEntered(evt);
             }
@@ -618,6 +720,22 @@ public class LFStudio extends javax.swing.JFrame {
     private void menuPilhaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuPilhaMouseClicked
         cl.show(JanelaExecucao, "pilhaInicioPanel");
     }//GEN-LAST:event_menuPilhaMouseClicked
+
+    private void menuTuringMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuTuringMouseClicked
+        cl.show(JanelaExecucao, "turingInicioPanel");
+    }//GEN-LAST:event_menuTuringMouseClicked
+
+    private void menuGLCMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGLCMouseClicked
+        cl.show(JanelaExecucao, "glcHome");
+    }//GEN-LAST:event_menuGLCMouseClicked
+
+    private void menuGramaticasRegularesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuGramaticasRegularesMouseClicked
+        cl.show(JanelaExecucao, "grHome");
+    }//GEN-LAST:event_menuGramaticasRegularesMouseClicked
+
+    private void menuRegXMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_menuRegXMouseClicked
+        cl.show(JanelaExecucao, "erHome");
+    }//GEN-LAST:event_menuRegXMouseClicked
 
 
   
